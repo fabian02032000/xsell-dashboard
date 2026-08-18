@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Lee el gasto (inversión) de Meta Ads y genera meta_data.json para el dashboard.
+Lee el gasto (inversión) y las creatividades activas de Meta Ads,
+y genera meta_data.json para el dashboard.
 Se ejecuta automáticamente vía GitHub Actions, junto con fetch_hubspot.py.
 """
 import os
@@ -60,6 +61,57 @@ def fetch_daily_spend(since_date, until_date):
     return [{"date": row["date_start"], "spend": float(row.get("spend", 0))} for row in data.get("data", [])]
 
 
+def fetch_active_creatives():
+    """
+    Trae los anuncios activos de la cuenta junto con la imagen real de su
+    creatividad, y los separa entre "campaña de leads" y "otros".
+    Si algo falla (permisos, formato, etc.) devuelve listas vacías en vez de
+    romper todo el script — el gasto sigue actualizándose igual.
+    """
+    try:
+        data = meta_get(
+            f"/{AD_ACCOUNT_ID}/ads",
+            {
+                "fields": "name,effective_status,campaign{name},creative{image_url,thumbnail_url,name}",
+                "effective_status": json.dumps(["ACTIVE"]),
+                "limit": 200,
+            },
+        )
+    except urllib.error.HTTPError as e:
+        print(f"AVISO: no se pudieron traer las creatividades: {e.code} {e.read().decode()}", file=sys.stderr)
+        return [], [], False
+    except Exception as e:
+        print(f"AVISO: no se pudieron traer las creatividades: {e}", file=sys.stderr)
+        return [], [], False
+
+    leads_creatives = []
+    other_creatives = []
+    seen_images = set()
+
+    for ad in data.get("data", []):
+        creative = ad.get("creative") or {}
+        image_url = creative.get("image_url") or creative.get("thumbnail_url")
+        if not image_url:
+            continue
+        # Evita repetir la misma imagen varias veces si varios anuncios la comparten.
+        if image_url in seen_images:
+            continue
+        seen_images.add(image_url)
+
+        campaign_name = (ad.get("campaign") or {}).get("name", "")
+        entry = {
+            "ad_name": ad.get("name"),
+            "campaign_name": campaign_name,
+            "image_url": image_url,
+        }
+        if LEADS_CAMPAIGN_MATCH.lower() in campaign_name.lower():
+            leads_creatives.append(entry)
+        else:
+            other_creatives.append(entry)
+
+    return leads_creatives, other_creatives, True
+
+
 def main():
     if not META_TOKEN:
         print("ERROR: falta la variable de entorno META_TOKEN", file=sys.stderr)
@@ -76,6 +128,8 @@ def main():
     except urllib.error.HTTPError as e:
         print(f"ERROR al llamar a Meta: {e.code} {e.read().decode()}", file=sys.stderr)
         sys.exit(1)
+
+    leads_creatives, other_creatives, creatives_available = fetch_active_creatives()
 
     total_spend = sum(float(c.get("spend", 0)) for c in campaigns)
     month_spend = sum(float(c.get("spend", 0)) for c in campaigns_month)
@@ -102,12 +156,18 @@ def main():
             for c in campaigns
         ],
         "daily_spend": daily,
+        "creatives_available": creatives_available,
+        "leads_creatives": leads_creatives,
+        "other_creatives": other_creatives,
     }
 
     with open("meta_data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"OK: gasto total S/{total_spend:.2f}, este mes S/{month_spend:.2f}")
+    print(
+        f"OK: gasto total S/{total_spend:.2f}, este mes S/{month_spend:.2f}, "
+        f"{len(leads_creatives)} creatividades de leads, {len(other_creatives)} otras"
+    )
 
 
 if __name__ == "__main__":
