@@ -1,13 +1,101 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-08-18T21:51:52.852738+00:00",
   "campaign_start": "2026-07-25",
-  "monthly_goal": 74,
+  "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 0,
-  "leads_by_day": [],
-  "current_month_leads": 0,
-  "current_month_label": "",
-  "current_week_leads": 0,
-  "closed_deals": { "count": null, "available": false }
+  "total_leads": 72,
+  "leads_by_day": [
+    {
+      "date": "2026-07-25",
+      "count": 4
+    },
+    {
+      "date": "2026-07-26",
+      "count": 1
+    },
+    {
+      "date": "2026-07-27",
+      "count": 1
+    },
+    {
+      "date": "2026-07-28",
+      "count": 1
+    },
+    {
+      "date": "2026-07-29",
+      "count": 8
+    },
+    {
+      "date": "2026-07-30",
+      "count": 2
+    },
+    {
+      "date": "2026-07-31",
+      "count": 3
+    },
+    {
+      "date": "2026-08-01",
+      "count": 4
+    },
+    {
+      "date": "2026-08-02",
+      "count": 5
+    },
+    {
+      "date": "2026-08-03",
+      "count": 4
+    },
+    {
+      "date": "2026-08-06",
+      "count": 4
+    },
+    {
+      "date": "2026-08-07",
+      "count": 2
+    },
+    {
+      "date": "2026-08-08",
+      "count": 5
+    },
+    {
+      "date": "2026-08-09",
+      "count": 2
+    },
+    {
+      "date": "2026-08-10",
+      "count": 6
+    },
+    {
+      "date": "2026-08-11",
+      "count": 2
+    },
+    {
+      "date": "2026-08-12",
+      "count": 4
+    },
+    {
+      "date": "2026-08-13",
+      "count": 2
+    },
+    {
+      "date": "2026-08-15",
+      "count": 1
+    },
+    {
+      "date": "2026-08-16",
+      "count": 2
+    },
+    {
+      "date": "2026-08-17",
+      "count": 9
+    }
+  ],
+  "current_month_leads": 52,
+  "current_month_label": "August 2026",
+  "current_week_leads": 9,
+  "closed_deals": {
+    "count": 0,
+    "available": true
+  }
 }
