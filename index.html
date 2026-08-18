@@ -9,7 +9,7 @@
     --bg:#0E0A1A; --surface:#171025; --surface-2:#1F1730;
     --border:rgba(255,255,255,0.08);
     --text-primary:#F5F3FA; --text-muted:#9C93B5;
-    --purple-1:#5D17A0; --purple-2:#7B2BC9; --orange:#FF6B13;
+    --purple-1:#5D17A0; --purple-2:#7B2BC9; --orange:#FF6B13; --orange-2:#FFA366;
     --good:#2ECC71; --warning:#FAB219; --critical:#FF5C5C;
   }
   *{box-sizing:border-box;}
@@ -18,7 +18,7 @@
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
     padding:32px 24px 64px;
   }
-  .wrap{max-width:1100px; margin:0 auto;}
+  .wrap{max-width:1140px; margin:0 auto;}
   header{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:28px;}
   .wordmark{color:var(--purple-2); font-weight:800; letter-spacing:1px; margin:0 0 4px; font-size:13px;}
   h1{margin:0 0 4px; font-size:26px;}
@@ -27,16 +27,18 @@
   .badge{display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:600;}
   .badge.good{ color:var(--good); border:1px solid rgba(46,204,113,0.4); background:rgba(46,204,113,0.12); }
   .badge.warn{ color:var(--warning); border:1px solid rgba(250,178,25,0.4); background:rgba(250,178,25,0.12); }
-  .kpi-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; margin-bottom:28px;}
+  .kpi-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; margin-bottom:8px;}
   .tile{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:18px;}
   .tile-label{font-size:12px; color:var(--text-muted); margin:0 0 6px;}
   .tile-value{font-size:28px; font-weight:800; margin:0 0 4px;}
   .tile-sub{font-size:12px; color:var(--text-muted); margin:0;}
-  section{margin-bottom:32px;}
+  section{margin-bottom:36px;}
   .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;}
-  h2{font-size:17px; margin:0;}
+  h2{font-size:18px; margin:0;}
   .hint{font-size:12px; color:var(--text-muted);}
   .chart-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px;}
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width: 760px){ .grid-2{ grid-template-columns:1fr; } }
   .chart-wrap{position:relative;}
   svg.chart{width:100%; height:auto; display:block; overflow:visible;}
   .bar{cursor:pointer;}
@@ -45,11 +47,38 @@
   .bar-label{fill:var(--text-primary); font-size:11px; font-weight:700; text-anchor:middle;}
   .target-line{stroke:var(--text-muted); stroke-width:1.5; stroke-dasharray:5,4;}
   .tooltip{position:absolute; background:#241A38; border:1px solid var(--border); border-radius:8px; padding:6px 10px; font-size:12px; pointer-events:none; opacity:0; transition:opacity .1s; white-space:nowrap; z-index:5;}
+  .legend{display:flex; gap:16px; margin-bottom:10px; font-size:12px; color:var(--text-muted);}
+  .legend .key{display:flex; align-items:center; gap:6px;}
+  .swatch{width:10px; height:10px; border-radius:3px; display:inline-block;}
   .meter{background:var(--surface-2); border-radius:999px; height:14px; overflow:hidden; position:relative;}
   .meter-fill{height:100%; border-radius:999px;}
   .meter-labels{display:flex; justify-content:space-between; margin-top:6px; font-size:12px; color:var(--text-muted);}
   .callout{display:flex; gap:10px; background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--purple-2); border-radius:10px; padding:14px 16px; font-size:13px; color:var(--text-muted); line-height:1.5;}
   footer{color:var(--text-muted); font-size:11px; text-align:center; margin-top:40px;}
+
+  /* Creative gallery */
+  .creative-hero{display:grid; grid-template-columns:280px 1fr; gap:20px; background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+  @media (max-width: 700px){ .creative-hero{ grid-template-columns:1fr; } }
+  .creative-hero img{width:100%; height:100%; object-fit:cover; display:block;}
+  .creative-hero-body{padding:20px 22px 20px 0;}
+  @media (max-width: 700px){ .creative-hero-body{ padding:0 20px 20px; } }
+  .creative-hero-body h3{margin:0 0 6px; font-size:16px;}
+  .creative-hero-body p{margin:0 0 14px; font-size:13px; color:var(--text-muted); line-height:1.5;}
+  .creative-stats{display:flex; gap:20px; flex-wrap:wrap;}
+  .creative-stats div p:first-child{font-size:11px; color:var(--text-muted); margin:0;}
+  .creative-stats div p:last-child{font-size:18px; font-weight:800; margin:2px 0 0;}
+  .gallery-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:12px; margin-top:14px;}
+  .gallery-grid figure{margin:0; background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+  .gallery-grid img{width:100%; height:140px; object-fit:cover; display:block;}
+  .gallery-grid figcaption{padding:8px 10px; font-size:11px; color:var(--text-muted);}
+
+  /* Funnel */
+  .funnel{display:flex; flex-direction:column; gap:10px;}
+  .funnel-row{display:grid; grid-template-columns:120px 1fr 90px; align-items:center; gap:12px;}
+  .funnel-label{font-size:13px; color:var(--text-primary); font-weight:600;}
+  .funnel-track{background:var(--surface-2); border-radius:8px; height:34px; position:relative;}
+  .funnel-fill{background:var(--orange); height:100%; border-radius:8px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; color:#1a0f00; font-weight:800; font-size:13px; transition:width .3s;}
+  .funnel-pct{font-size:12px; color:var(--text-muted); text-align:right;}
 </style>
 </head>
 <body>
@@ -58,8 +87,8 @@
   <header>
     <div>
       <p class="wordmark">XSELL</p>
-      <h1>Dashboard de leads en tiempo real</h1>
-      <p class="subtitle">Datos en vivo desde HubSpot · se actualiza automáticamente cada hora</p>
+      <h1>Dashboard de leads y pauta en tiempo real</h1>
+      <p class="subtitle">Leads desde HubSpot · Inversión desde Meta Ads · se actualiza automáticamente cada hora</p>
     </div>
     <div class="updated">
       <span class="badge good" id="statusBadge">● Cargando…</span><br>
@@ -67,14 +96,89 @@
     </div>
   </header>
 
-  <div class="kpi-row" id="kpiRow"></div>
+  <section>
+    <div class="kpi-row" id="kpiRow"></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>De dónde vienen los leads</h2>
+      <span class="hint">Creatividad activa de la campaña de generación de leads</span>
+    </div>
+    <div class="creative-hero">
+      <img src="images/est-vende-mas.jpg" alt="Creatividad Vende más — Xsell">
+      <div class="creative-hero-body">
+        <h3>"Vende más." — Prospectos B2B</h3>
+        <p>Esta es la única pieza activa generando leads hoy — el 100% de los leads que ves en este dashboard entran por este anuncio, vía el formulario de Meta Lead Ads de la campaña "Prospectos B2B".</p>
+        <div class="creative-stats" id="creativeStats"></div>
+      </div>
+    </div>
+    <details style="margin-top:14px;">
+      <summary style="cursor:pointer; font-size:13px; color:var(--text-muted);">Ver otras piezas activas en la cuenta (campaña Awareness — no generan leads)</summary>
+      <div class="gallery-grid">
+        <figure><img src="images/post1-algo-cambiando.jpg" alt="Post 1"><figcaption>Post 1 · Carrusel</figcaption></figure>
+        <figure><img src="images/post2-cada-generacion.jpg" alt="Post 2"><figcaption>Post 2 · Cómo vender a cada generación</figcaption></figure>
+        <figure><img src="images/post3-no-digas-mejor-di.jpg" alt="Post 3"><figcaption>Post 3 · No digas, mejor di</figcaption></figure>
+        <figure><img src="images/post4-no-digas-gracias.jpg" alt="Post 4"><figcaption>Post 4 · No digas gracias</figcaption></figure>
+        <figure><img src="images/post5-terminos-venta-b2b.jpg" alt="Post 5"><figcaption>Post 5 · KPIs / Términos de venta B2B</figcaption></figure>
+      </div>
+    </details>
+  </section>
 
   <section>
     <div class="section-head">
       <h2>Meta de leads</h2>
       <span class="hint" id="metaHint"></span>
     </div>
-    <div class="kpi-row" id="metaRow"></div>
+    <div class="kpi-row" id="metaRow" style="margin-bottom:16px;"></div>
+    <div class="chart-card">
+      <div class="legend">
+        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Leads reales</span>
+        <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta mensual</span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart" id="leadsMonthChart" viewBox="0 0 960 220"></svg>
+        <div class="tooltip" id="leadsMonthTooltip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Presupuesto</h2>
+      <span class="hint" id="budgetHint"></span>
+    </div>
+    <div class="kpi-row" id="budgetRow" style="margin-bottom:16px;"></div>
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="legend">
+          <span class="key"><span class="swatch" style="background:var(--purple-2)"></span>Gasto real</span>
+          <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta de presupuesto</span>
+        </div>
+        <div class="chart-wrap">
+          <svg class="chart" id="budgetMonthChart" viewBox="0 0 480 220"></svg>
+          <div class="tooltip" id="budgetMonthTooltip"></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="legend"><span class="key"><span class="swatch" style="background:var(--purple-2)"></span>Gasto diario (toda la cuenta)</span></div>
+        <div class="chart-wrap">
+          <svg class="chart" id="dailySpendChart" viewBox="0 0 480 220"></svg>
+          <div class="tooltip" id="dailySpendTooltip"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="funnelSection">
+    <div class="section-head">
+      <h2>Embudo: de lead a cliente</h2>
+      <span class="hint">Leads en vivo (HubSpot) · Reuniones: dato manual · Cerrados en vivo (HubSpot Negocios)</span>
+    </div>
+    <div class="chart-card">
+      <div class="funnel" id="funnel"></div>
+    </div>
+    <div class="callout" id="funnelCallout" style="margin-top:14px;"></div>
   </section>
 
   <section>
@@ -90,55 +194,44 @@
     </div>
   </section>
 
-  <section id="closedDealsSection" style="display:none;">
-    <div class="section-head">
-      <h2>Clientes potenciales cerrados</h2>
-      <span class="hint">Vía HubSpot Negocios (Deals)</span>
-    </div>
-    <div class="chart-card" style="padding:20px;">
-      <div class="meter">
-        <div class="meter-fill" id="dealsFill"></div>
-      </div>
-      <div class="meter-labels">
-        <span id="dealsLabelLeft"></span>
-        <span id="dealsLabelRight"></span>
-      </div>
-    </div>
-  </section>
-
-  <div class="callout" id="dealsUnavailable" style="display:none;">
-    <span>ⓘ</span>
-    <div>El conteo de clientes cerrados no está disponible todavía — verifica que la etapa "Cerrado ganado" (<code>closedwon</code>) en tu pipeline de Negocios de HubSpot coincida con la configurada en <code>CLOSEDWON_STAGE</code>.</div>
-  </div>
-
   <footer>Generado automáticamente por GitHub Actions · Xsell</footer>
 </div>
 
 <script>
 (function(){
-  const seriesColor = getComputedStyle(document.documentElement).getPropertyValue('--orange').trim();
+  const orange = getComputedStyle(document.documentElement).getPropertyValue('--orange').trim();
+  const purple2 = getComputedStyle(document.documentElement).getPropertyValue('--purple-2').trim();
   const goodColor = getComputedStyle(document.documentElement).getPropertyValue('--good').trim();
+  const critColor = getComputedStyle(document.documentElement).getPropertyValue('--critical').trim();
+  const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim();
 
-  function fmt(n){ return new Intl.NumberFormat('es-PE').format(n); }
+  function fmt(n){ return new Intl.NumberFormat('es-PE').format(Math.round(n)); }
+  function fmtMoney(n){ return 'S/ ' + new Intl.NumberFormat('es-PE', {minimumFractionDigits:1, maximumFractionDigits:1}).format(n); }
 
-  fetch('./data.json?_=' + Date.now())
-    .then(r => r.json())
-    .then(render)
-    .catch(err => {
+  Promise.all([
+    fetch('./data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
+    fetch('./meta_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
+    fetch('./funnel_config.json?_=' + Date.now()).then(r => r.json()).catch(() => ({reuniones: null})),
+  ]).then(([leadsData, metaData, funnelCfg]) => {
+    if (!leadsData){
       document.getElementById('statusBadge').textContent = '● Sin datos aún';
       document.getElementById('statusBadge').className = 'badge warn';
       document.getElementById('updatedAt').textContent = 'Aún no se ha ejecutado la primera actualización.';
-      console.error(err);
-    });
+      return;
+    }
+    render(leadsData, metaData, funnelCfg || {});
+  });
 
-  function render(data){
+  function render(data, meta, funnelCfg){
     document.getElementById('statusBadge').textContent = '● Datos en vivo';
     const updated = new Date(data.updated_at);
     document.getElementById('updatedAt').textContent = 'Actualizado: ' + updated.toLocaleString('es-PE', { dateStyle:'medium', timeStyle:'short' });
 
-    // KPI row
+    const hasMeta = meta && meta.updated_at;
+
+    // ---- KPI hero ----
     const kpiRow = document.getElementById('kpiRow');
-    kpiRow.innerHTML = `
+    let kpiHtml = `
       <div class="tile">
         <p class="tile-label">Leads totales</p>
         <p class="tile-value">${fmt(data.total_leads)}</p>
@@ -148,46 +241,208 @@
         <p class="tile-label">Leads este mes</p>
         <p class="tile-value">${fmt(data.current_month_leads)}</p>
         <p class="tile-sub">${data.current_month_label}</p>
+      </div>`;
+    if (hasMeta){
+      kpiHtml += `
+      <div class="tile">
+        <p class="tile-label">Inversión total</p>
+        <p class="tile-value">${fmtMoney(meta.total_spend)}</p>
+        <p class="tile-sub">Todas las campañas, desde ${meta.campaign_start}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Costo por lead</p>
+        <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p>
+        <p class="tile-sub">Campaña Prospectos B2B</p>
+      </div>`;
+    } else {
+      kpiHtml += `
+      <div class="tile">
+        <p class="tile-label">Inversión</p>
+        <p class="tile-value">—</p>
+        <p class="tile-sub">Esperando primera actualización de Meta Ads</p>
+      </div>`;
+    }
+    kpiRow.innerHTML = kpiHtml;
+
+    // ---- Creative stats ----
+    document.getElementById('creativeStats').innerHTML = `
+      <div><p>Leads generados</p><p>${fmt(data.total_leads)}</p></div>
+      ${hasMeta ? `<div><p>Inversión</p><p>${fmtMoney(meta.leads_campaign_spend_total)}</p></div>
+      <div><p>Costo/lead</p><p>${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p></div>` : ''}
+    `;
+
+    // ---- Meta de leads ----
+    const pctMonth = (data.current_month_leads / data.monthly_goal) * 100;
+    document.getElementById('metaHint').textContent = `Meta mensual: ${data.monthly_goal} leads`;
+    document.getElementById('metaRow').innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Avance del mes</p>
+        <p class="tile-value">${Math.round(pctMonth)}%</p>
+        <p class="tile-sub">${fmt(data.current_month_leads)} / ${fmt(data.monthly_goal)} leads</p>
       </div>
       <div class="tile">
         <p class="tile-label">Leads esta semana</p>
         <p class="tile-value">${fmt(data.current_week_leads)}</p>
-        <p class="tile-sub">Semana en curso</p>
+        <p class="tile-sub">Meta semanal: ~${data.weekly_goal}</p>
       </div>
     `;
+    drawBarsWithTarget('leadsMonthChart', 'leadsMonthTooltip',
+      [data.current_month_label], [data.current_month_leads], data.monthly_goal, orange, 'Leads');
 
-    // Meta row
-    const pctMonth = Math.round((data.current_month_leads / data.monthly_goal) * 100);
-    const pctWeek = Math.round((data.current_week_leads / data.weekly_goal) * 100);
-    document.getElementById('metaHint').textContent = `Meta mensual: ${data.monthly_goal} leads · Meta semanal: ~${data.weekly_goal} leads`;
-    document.getElementById('metaRow').innerHTML = `
-      <div class="tile">
-        <p class="tile-label">Avance del mes</p>
-        <p class="tile-value">${pctMonth}%</p>
-        <p class="tile-sub">${fmt(data.current_month_leads)} / ${fmt(data.monthly_goal)} leads</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Avance de la semana</p>
-        <p class="tile-value">${pctWeek}%</p>
-        <p class="tile-sub">${fmt(data.current_week_leads)} / ${data.weekly_goal} leads</p>
-      </div>
-    `;
-
-    drawDailyChart(data.leads_by_day);
-
-    if (data.closed_deals && data.closed_deals.available){
-      document.getElementById('closedDealsSection').style.display = '';
-      const c = data.closed_deals.count || 0;
-      const goal = data.closed_deals_goal || 3;
-      const pct = Math.min(100, Math.round((c/goal)*100));
-      const fill = document.getElementById('dealsFill');
-      fill.style.width = pct + '%';
-      fill.style.background = c >= goal ? goodColor : 'var(--critical)';
-      document.getElementById('dealsLabelLeft').textContent = c + ' cerrados';
-      document.getElementById('dealsLabelRight').textContent = 'Meta: ' + goal + ' cerrados';
+    // ---- Presupuesto ----
+    if (hasMeta){
+      const pctBudget = (meta.month_spend / meta.monthly_budget_goal) * 100;
+      document.getElementById('budgetHint').textContent = `Meta de presupuesto mensual: ${fmtMoney(meta.monthly_budget_goal)}`;
+      document.getElementById('budgetRow').innerHTML = `
+        <div class="tile">
+          <p class="tile-label">Gasto este mes</p>
+          <p class="tile-value">${fmtMoney(meta.month_spend)}</p>
+          <p class="tile-sub">${Math.round(pctBudget)}% de la meta mensual</p>
+        </div>
+        <div class="tile">
+          <p class="tile-label">Gasto — campaña de leads</p>
+          <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_month)}</p>
+          <p class="tile-sub">Prospectos B2B, este mes</p>
+        </div>
+      `;
+      drawBarsWithTarget('budgetMonthChart', 'budgetMonthTooltip',
+        ['Este mes'], [meta.month_spend], meta.monthly_budget_goal, purple2, 'Gasto', v => fmtMoney(v));
+      drawDailySpend(meta.daily_spend || []);
     } else {
-      document.getElementById('dealsUnavailable').style.display = 'flex';
+      document.getElementById('budgetHint').textContent = 'Esperando primera actualización de Meta Ads';
+      document.getElementById('budgetRow').innerHTML = '';
     }
+
+    // ---- Funnel ----
+    drawFunnel(data, funnelCfg);
+
+    // ---- Leads por día ----
+    drawDailyChart(data.leads_by_day);
+  }
+
+  function drawFunnel(data, funnelCfg){
+    const el = document.getElementById('funnel');
+    const reuniones = (funnelCfg && typeof funnelCfg.reuniones === 'number') ? funnelCfg.reuniones : null;
+    const cerrados = (data.closed_deals && data.closed_deals.available) ? (data.closed_deals.count || 0) : null;
+
+    const stages = [
+      { label: 'Leads', value: data.total_leads, color: orange },
+      { label: 'Reuniones', value: reuniones, color: orange },
+      { label: 'Cerrados', value: cerrados, color: orange },
+    ];
+    const base = stages[0].value || 1;
+
+    el.innerHTML = stages.map((s, i) => {
+      const known = s.value !== null && s.value !== undefined;
+      const widthPct = known ? Math.max(4, Math.round((s.value / base) * 100)) : 0;
+      const pctLabel = known ? (i === 0 ? '100%' : Math.round((s.value / base) * 100) + '%') : 'sin dato';
+      return `
+        <div class="funnel-row">
+          <span class="funnel-label">${s.label}</span>
+          <div class="funnel-track">
+            <div class="funnel-fill" style="width:${known ? widthPct : 100}%; ${known ? '' : 'background:var(--surface); border:1px dashed var(--text-muted);'}">
+              ${known ? (s.value + (i>0 ? '' : '')) : ''}
+            </div>
+          </div>
+          <span class="funnel-pct">${pctLabel}</span>
+        </div>`;
+    }).join('');
+
+    let calloutText = 'Este embudo combina leads en vivo desde HubSpot y clientes cerrados en vivo desde Negocios de HubSpot. Las reuniones son un dato manual — actualízalo en <code>funnel_config.json</code>.';
+    if (cerrados === null){
+      calloutText += ' El conteo de cerrados no está disponible todavía: revisa que la etapa "closedwon" en tu pipeline de Negocios coincida con la configurada en el script.';
+    }
+    document.getElementById('funnelCallout').innerHTML = `<span>ⓘ</span><div>${calloutText}</div>`;
+  }
+
+  function drawBarsWithTarget(svgId, tooltipId, labels, series, target, color, seriesLabel, fmtFn){
+    fmtFn = fmtFn || fmt;
+    const svg = document.getElementById(svgId);
+    const tooltip = document.getElementById(tooltipId);
+    const W = svg.viewBox.baseVal.width || 480, H = svg.viewBox.baseVal.height || 220;
+    const padL = 46, padR = 16, padT = 20, padB = 34;
+    const maxVal = Math.max(...series, target) * 1.25;
+    const n = labels.length;
+    const step = (W - padL - padR) / n;
+    const barW = Math.min(70, step * 0.5);
+
+    const targetY = padT + (H - padT - padB) * (1 - target / maxVal);
+    let content = `<line class="target-line" x1="${padL}" x2="${W-padR}" y1="${targetY}" y2="${targetY}"/>`;
+    content += `<text class="axis-label" x="${W-padR}" y="${targetY-6}" text-anchor="end">Meta: ${fmtFn(target)}</text>`;
+
+    [0,0.5,1].forEach(f => {
+      const y = padT + (H - padT - padB) * (1 - f);
+      content += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+    });
+
+    labels.forEach((lab, i) => {
+      const val = series[i];
+      const x = padL + step * i + (step - barW)/2;
+      const h = (H - padT - padB) * (val / maxVal);
+      const y = H - padB - h;
+      const barColor = val >= target ? goodColor : color;
+      content += `<rect class="bar" data-i="${i}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="4" fill="${barColor}"/>`;
+      content += `<text class="bar-label" x="${x + barW/2}" y="${y-8}">${fmtFn(val)}</text>`;
+      content += `<text class="axis-label" x="${x + barW/2}" y="${H-padB+16}" text-anchor="middle">${lab}</text>`;
+    });
+
+    svg.innerHTML = content;
+    svg.querySelectorAll('.bar').forEach(bar => {
+      bar.addEventListener('pointerenter', () => {
+        const i = +bar.dataset.i;
+        tooltip.innerHTML = `<strong>${labels[i]}</strong><br>${seriesLabel}: ${fmtFn(series[i])}`;
+        tooltip.style.opacity = 1;
+      });
+      bar.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      bar.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
+  }
+
+  function drawDailySpend(daily){
+    const svg = document.getElementById('dailySpendChart');
+    const tooltip = document.getElementById('dailySpendTooltip');
+    const W = 480, H = 220, padL = 46, padR = 12, padT = 20, padB = 34;
+    if (!daily.length){ svg.innerHTML = ''; return; }
+    const values = daily.map(d => d.spend);
+    const maxVal = Math.max(...values, 1) * 1.2;
+    const n = daily.length;
+    const barW = Math.max(3, (W - padL - padR) / n * 0.6);
+    const step = (W - padL - padR) / n;
+
+    let content = '';
+    [0,0.5,1].forEach(f => {
+      const y = padT + (H - padT - padB) * (1 - f);
+      content += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+      content += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
+    });
+
+    daily.forEach((d, i) => {
+      const x = padL + step * i + (step - barW)/2;
+      const h = (H - padT - padB) * (d.spend / maxVal);
+      const y = H - padB - h;
+      content += `<rect class="bar" data-i="${i}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="2" fill="${purple2}"/>`;
+      if (n <= 15 || i % Math.ceil(n/15) === 0){
+        content += `<text class="axis-label" x="${x + barW/2}" y="${H-padB+14}" text-anchor="middle">${d.date.slice(5)}</text>`;
+      }
+    });
+    svg.innerHTML = content;
+    svg.querySelectorAll('.bar').forEach(bar => {
+      bar.addEventListener('pointerenter', () => {
+        const i = +bar.dataset.i;
+        tooltip.innerHTML = `<strong>${daily[i].date}</strong><br>${fmtMoney(daily[i].spend)}`;
+        tooltip.style.opacity = 1;
+      });
+      bar.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      bar.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
   }
 
   function drawDailyChart(days){
@@ -201,7 +456,6 @@
     const step = (W - padL - padR) / n;
 
     let svgContent = '';
-    // grid lines
     [0, 0.25, 0.5, 0.75, 1].forEach(f => {
       const y = padT + (H - padT - padB) * (1 - f);
       svgContent += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
@@ -212,7 +466,7 @@
       const x = padL + step * i + (step - barW)/2;
       const h = (H - padT - padB) * (d.count / maxVal);
       const y = H - padB - h;
-      svgContent += `<rect class="bar" data-i="${i}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="3" fill="${seriesColor}"/>`;
+      svgContent += `<rect class="bar" data-i="${i}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="3" fill="${orange}"/>`;
       if (n <= 20 || i % Math.ceil(n/20) === 0){
         svgContent += `<text class="axis-label" x="${x + barW/2}" y="${H-padB+14}" text-anchor="middle">${d.date.slice(5)}</text>`;
       }
@@ -221,7 +475,7 @@
     svg.innerHTML = svgContent;
 
     svg.querySelectorAll('.bar').forEach(bar => {
-      bar.addEventListener('pointerenter', (e) => {
+      bar.addEventListener('pointerenter', () => {
         const i = +bar.dataset.i;
         const d = days[i];
         tooltip.innerHTML = `<strong>${d.date}</strong><br>${d.count} leads`;
