@@ -4,6 +4,11 @@ Lee leads (contactos) desde HubSpot y genera data.json para el dashboard.
 No requiere conocimientos de programación para usarlo: se ejecuta solo,
 vía GitHub Actions, cada hora. Solo necesitas configurar el token una vez
 (ver README.md).
+
+Filtra los contactos para quedarse solo con los que vinieron de la campaña
+de Meta (Facebook Lead Ads / "prospectos b2b"), usando las propiedades de
+"Original source" de HubSpot — así no se cuentan contactos que entren por
+otras vías (email marketing, ingresados a mano, etc.).
 """
 import os
 import sys
@@ -24,8 +29,25 @@ CLOSED_DEALS_GOAL = int(os.environ.get("CLOSED_DEALS_GOAL", "3"))
 # muestra el nombre interno de cada etapa.
 CLOSEDWON_STAGE = os.environ.get("CLOSEDWON_STAGE", "closedwon")
 
+# Palabras clave (separadas por coma) que deben aparecer en la fuente del
+# contacto (Original source / drill-down) para considerarlo un lead de la
+# campaña de Meta. No distingue mayúsculas/minúsculas.
+SOURCE_MATCH_KEYWORDS = [
+    k.strip().lower()
+    for k in os.environ.get("SOURCE_MATCH_KEYWORDS", "facebook,prospectos b2b").split(",")
+    if k.strip()
+]
+
 HUBSPOT_TOKEN = os.environ.get("HUBSPOT_TOKEN")
 API_BASE = "https://api.hubapi.com"
+
+SOURCE_PROPERTIES = [
+    "createdate",
+    "email",
+    "hs_analytics_source",
+    "hs_analytics_source_data_1",
+    "hs_analytics_source_data_2",
+]
 
 
 def hubspot_post(path, body):
@@ -67,7 +89,7 @@ def fetch_all_contacts(since_date_str):
                     ]
                 }
             ],
-            "properties": ["createdate", "email"],
+            "properties": SOURCE_PROPERTIES,
             "limit": 100,
             "sorts": [{"propertyName": "createdate", "direction": "ASCENDING"}],
         }
@@ -79,6 +101,17 @@ def fetch_all_contacts(since_date_str):
         if not after:
             break
     return contacts
+
+
+def is_meta_lead(contact):
+    """True si alguna de las propiedades de fuente contiene una de las
+    palabras clave configuradas (ej. 'facebook', 'prospectos b2b')."""
+    props = contact.get("properties", {})
+    haystack = " ".join(
+        str(props.get(p) or "").lower()
+        for p in ("hs_analytics_source", "hs_analytics_source_data_1", "hs_analytics_source_data_2")
+    )
+    return any(kw in haystack for kw in SOURCE_MATCH_KEYWORDS)
 
 
 def fetch_closed_deals_count(since_date_str):
@@ -135,10 +168,14 @@ def main():
     month_start = today.replace(day=1).isoformat()
 
     try:
-        contacts = fetch_all_contacts(CAMPAIGN_START_DATE)
+        all_contacts = fetch_all_contacts(CAMPAIGN_START_DATE)
     except urllib.error.HTTPError as e:
         print(f"ERROR al llamar a HubSpot: {e.code} {e.read().decode()}", file=sys.stderr)
         sys.exit(1)
+
+    contacts = [c for c in all_contacts if is_meta_lead(c)]
+    excluded = len(all_contacts) - len(contacts)
+    print(f"Contactos totales en el rango: {len(all_contacts)} · de Meta: {len(contacts)} · excluidos: {excluded}")
 
     leads_by_day = build_leads_by_day(contacts)
     total_leads = len(contacts)
