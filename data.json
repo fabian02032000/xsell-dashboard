@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-18T23:04:42.189769+00:00",
+  "updated_at": "2026-08-18T23:12:48.682197+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -91,11 +91,574 @@
       "count": 5
     }
   ],
+  "leads_by_month": [
+    {
+      "month": "2026-07",
+      "label": "July 2026",
+      "leads": 20,
+      "goal": 16.7,
+      "is_partial": true
+    },
+    {
+      "month": "2026-08",
+      "label": "August 2026",
+      "leads": 44,
+      "goal": 74.0,
+      "is_partial": false
+    }
+  ],
+  "leads_by_week": [
+    {
+      "week_start": "2026-07-20",
+      "week_end": "2026-07-26",
+      "leads": 5,
+      "goal": 17.3
+    },
+    {
+      "week_start": "2026-07-27",
+      "week_end": "2026-08-02",
+      "leads": 23,
+      "goal": 17.3
+    },
+    {
+      "week_start": "2026-08-03",
+      "week_end": "2026-08-09",
+      "leads": 17,
+      "goal": 17.3
+    },
+    {
+      "week_start": "2026-08-10",
+      "week_end": "2026-08-16",
+      "leads": 14,
+      "goal": 17.3
+    },
+    {
+      "week_start": "2026-08-17",
+      "week_end": "2026-08-23",
+      "leads": 5,
+      "goal": 17.3
+    }
+  ],
   "current_month_leads": 44,
   "current_month_label": "August 2026",
   "current_week_leads": 5,
   "closed_deals": {
     "count": 0,
     "available": true
-  }
+  },
+  "leads_with_deal": 55,
+  "leads_detail": [
+    {
+      "name": "Franco B",
+      "email": "frankren.18@gmail.com",
+      "created_date": "2026-08-17",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Agroinvest Perú"
+    },
+    {
+      "name": "JA Fre",
+      "email": "fjulio16218501@gmail.com",
+      "created_date": "2026-08-17",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Mercal Ca"
+    },
+    {
+      "name": "Luis Suazo",
+      "email": "luis.suazo@andesseguridad.com",
+      "created_date": "2026-08-17",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Andes Seguridad S.A.C. -"
+    },
+    {
+      "name": "Oskar Kastro",
+      "email": "ocastro@grupocipsur.com",
+      "created_date": "2026-08-17",
+      "has_deal": true,
+      "deal_stage": "Reunión Agendadas",
+      "deal_name": "Grupo Cipsur"
+    },
+    {
+      "name": "Sandro Vasquez",
+      "email": "sandro.vasquez@bunnroasters.com",
+      "created_date": "2026-08-17",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Karina Puente de la Vega",
+      "email": "kpuentedelavega@beitgroup.cl",
+      "created_date": "2026-08-16",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "BeitGroup "
+    },
+    {
+      "name": "Eugenio Basilio Davila Paca",
+      "email": "edavila@averatech.net",
+      "created_date": "2026-08-16",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Averatech"
+    },
+    {
+      "name": "Bruno Rivera coello",
+      "email": "riverabruno457@gmail.com",
+      "created_date": "2026-08-15",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "B Agro "
+    },
+    {
+      "name": "Tu Casa Con Luis Valladares",
+      "email": "lvalladares@pandero.com.pe",
+      "created_date": "2026-08-13",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "PANDERO S.A. EAFC"
+    },
+    {
+      "name": "Pio Rondon Vera",
+      "email": "roversac@hotmail.com",
+      "created_date": "2026-08-13",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Pio Rondon Vera"
+    },
+    {
+      "name": "Eddy Fuño Becerril",
+      "email": "comercial@tupodcaste.pe",
+      "created_date": "2026-08-12",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Tu Podcaste "
+    },
+    {
+      "name": "Paola Maria Zúñiga Palomino",
+      "email": "pazupa.19@gmail.com",
+      "created_date": "2026-08-11",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Seiger "
+    },
+    {
+      "name": "Carlos Felipe Arauco",
+      "email": "cafe@maravia.pe",
+      "created_date": "2026-08-11",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "MaravIA"
+    },
+    {
+      "name": "Andrés Jiménez",
+      "email": "andresjp.mrk@gmail.com",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "DATEA - Andrés Jimenez"
+    },
+    {
+      "name": "Dilmer Junior",
+      "email": "goicocheadilmer4@gmail.com",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Dilmer Junior Informal "
+    },
+    {
+      "name": "Axel.Morales",
+      "email": "axel.moralesvas@gmail.com",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Axel Morales"
+    },
+    {
+      "name": "Aprendo Comodo",
+      "email": "danyvalverde7070@gmail.com",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Aprendo Comodo"
+    },
+    {
+      "name": "Jose Luis Piñella Marquez",
+      "email": "joseluispinella@gmail.com",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "José Luis Pinella"
+    },
+    {
+      "name": "Mario Augusto Garcės Fiol",
+      "email": "fiol08@hotmail.com",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Mario Augusto "
+    },
+    {
+      "name": "Cesar Abraham Bocanegra Benites",
+      "email": "bocanegrac877@gmail.com",
+      "created_date": "2026-08-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Cesar Bocanegra "
+    },
+    {
+      "name": "marco barrantes bay",
+      "email": "maplasac44@gmail.com",
+      "created_date": "2026-08-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Marco Barrantes - MAPLASAC"
+    },
+    {
+      "name": "Ricardo Gonzalez",
+      "email": "rgonzalez@smartway.pe",
+      "created_date": "2026-08-08",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Smartway "
+    },
+    {
+      "name": "Edgar Choquecahua Aguilar",
+      "email": "servicios@echosperu.com",
+      "created_date": "2026-08-08",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Echos Perú -"
+    },
+    {
+      "name": "Anthony Reyes",
+      "email": "a.reyes@poligruas.com.pe",
+      "created_date": "2026-08-08",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Misitio  Poligruas"
+    },
+    {
+      "name": "jorge.noa.95@gmail.com",
+      "email": "jorge.noa.95@gmail.com",
+      "created_date": "2026-08-08",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jorge Noa "
+    },
+    {
+      "name": "Luis Muñoz",
+      "email": "lumimuam0501@gmail.com",
+      "created_date": "2026-08-08",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Luis Muñoz"
+    },
+    {
+      "name": "Robert Alva",
+      "email": "roaries.1995@gmail.com",
+      "created_date": "2026-08-07",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Robert Alva"
+    },
+    {
+      "name": "Ricardo Giraldo",
+      "email": "ricardo.giraldo@korval.com.pe",
+      "created_date": "2026-08-07",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Korval"
+    },
+    {
+      "name": "Pablo",
+      "email": "pablo.hashimoto@cip.org.pe",
+      "created_date": "2026-08-06",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Agroinversiones Premium"
+    },
+    {
+      "name": "Antony Chinchay",
+      "email": "antony.digital.1@gmail.com",
+      "created_date": "2026-08-06",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Antony Chinchay "
+    },
+    {
+      "name": "Fredy Garay",
+      "email": "fgaray@3p.pe",
+      "created_date": "2026-08-06",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "3P Seguridad Industrial"
+    },
+    {
+      "name": "Cacao Peruano",
+      "email": "yover_rubio28@hotmail.com",
+      "created_date": "2026-08-06",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Cacao Peruano"
+    },
+    {
+      "name": "Carlos Medina",
+      "email": "ciudadrealmarketing@gmail.com",
+      "created_date": "2026-08-03",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Carlos Medina"
+    },
+    {
+      "name": "Juan carlos Urquizo",
+      "email": "jcurquizoa@hotmail.com",
+      "created_date": "2026-08-03",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Universo virtual de negocios mineros SAC"
+    },
+    {
+      "name": "Joao Riega",
+      "email": "administracion@mohrroce.com",
+      "created_date": "2026-08-03",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Mohrroce - Joao Riega"
+    },
+    {
+      "name": "Cristhian Vega Pastor",
+      "email": "crigivepa@gmail.com",
+      "created_date": "2026-08-03",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Pastor Cristhian Vega CrisTech Solutions"
+    },
+    {
+      "name": "Antony Soto",
+      "email": "sotoantony@madereraelamigo.com",
+      "created_date": "2026-08-02",
+      "has_deal": true,
+      "deal_stage": "Reunión Agendadas",
+      "deal_name": "Maderera El Amigo -"
+    },
+    {
+      "name": "Paolo Gabriel Nuñez Sotelo",
+      "email": "nuso46@gmail.com",
+      "created_date": "2026-08-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Paolo Gabriel "
+    },
+    {
+      "name": "hector jimenez",
+      "email": "hector@tmopp.com",
+      "created_date": "2026-08-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "The Magic - "
+    },
+    {
+      "name": "Carlos Segura",
+      "email": "corebposolution@outlook.com",
+      "created_date": "2026-08-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Core BPO Solution - Terceros de On Negocios"
+    },
+    {
+      "name": "Manuel Huaman",
+      "email": "mhuaman@tresdirectoperu.com",
+      "created_date": "2026-08-02",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Tres Directo Perú"
+    },
+    {
+      "name": "Carlos alva",
+      "email": "carlos.alva@absisa.com",
+      "created_date": "2026-08-01",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "ABSISA "
+    },
+    {
+      "name": "Enrique Ramírez",
+      "email": "constructora.ramhersac@gmail.com",
+      "created_date": "2026-08-01",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Constructora Ramher SAC"
+    },
+    {
+      "name": "Dante Favarato",
+      "email": "dante.favarato@gmail.com",
+      "created_date": "2026-08-01",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Dante Favarato"
+    },
+    {
+      "name": "melissa perez",
+      "email": "andre260120@gmail.com",
+      "created_date": "2026-07-31",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Melissa Perez"
+    },
+    {
+      "name": "Cesar Vicente Ore Tarqui",
+      "email": "(sin correo)",
+      "created_date": "2026-07-31",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Grupo Inmobiliario sin Fronteras sac"
+    },
+    {
+      "name": "Efrain Arellano Solano",
+      "email": "insumastersac@gmail.com",
+      "created_date": "2026-07-31",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "INSUMASTER SAC"
+    },
+    {
+      "name": "Fabian.",
+      "email": "fabian02032000@gmail.com",
+      "created_date": "2026-07-30",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Mayra Arias",
+      "email": "mayra.arias89@gmail.com",
+      "created_date": "2026-07-30",
+      "has_deal": true,
+      "deal_stage": "Reunión Agendadas",
+      "deal_name": "Consultorio Dental - Mayra Arias "
+    },
+    {
+      "name": "Jorge Salas Rojas",
+      "email": "jsalasroj6674@gmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jorge Salas Rojas"
+    },
+    {
+      "name": "Leonidas Bances Damián",
+      "email": "leobadan06@gmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Roque Hipolito Saavedra Quino",
+      "email": "roquesaavedralkino@gmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Persona sin Negocio"
+    },
+    {
+      "name": "Juan Jose Mayaute Cordova",
+      "email": "juan_mayaute@hotmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Luis Alberto Castillo Leon",
+      "email": "luiscastillo_leon@hom.com",
+      "created_date": "2026-07-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Elizabeth Vizcarra Pacchioni",
+      "email": "marianella_1968@hotmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Elizabeth Vizcarra Pacchioni"
+    },
+    {
+      "name": "German Jesus Corra Flores",
+      "email": "corrafloresgermanjesus@gmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Tu Hogar Constructora"
+    },
+    {
+      "name": "Manolo Ríos",
+      "email": "manoloirv777@gmail.com",
+      "created_date": "2026-07-29",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Manolo Ríos"
+    },
+    {
+      "name": "Alfonso De La Cruz Rivera",
+      "email": "alfonsodelacruzrivera14@gmail.com",
+      "created_date": "2026-07-28",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Paulino Llanque Cutipa",
+      "email": "paulinollanque2@gmail.com",
+      "created_date": "2026-07-27",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Paulino Llanque Cutipa"
+    },
+    {
+      "name": "Ruben Huaman Pineda",
+      "email": "ventas@icmesur.com.pe",
+      "created_date": "2026-07-26",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Albino Marcial Rodriguez Abarca",
+      "email": "albino.rodriguez.a@gmail.com",
+      "created_date": "2026-07-25",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Alfredo Fuentes Bolivar",
+      "email": "alfred12_89@hotmail.com",
+      "created_date": "2026-07-25",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Alfredo Fuentes Bolivar"
+    },
+    {
+      "name": "Sofonias Montoya Cajalean",
+      "email": "sofoniasmontoya@gmail.com",
+      "created_date": "2026-07-25",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Luis Angel Carrasco Garcia",
+      "email": "langel27591@gmail.com",
+      "created_date": "2026-07-25",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Luis Angel Carrasco Garcia"
+    }
+  ]
 }
