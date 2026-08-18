@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-08-18T22:55:29.866079+00:00",
+  "updated_at": "2026-08-18T23:01:41.397817+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 1488.85,
-  "month_spend": 865.84,
-  "leads_campaign_spend_total": 1299.16,
-  "leads_campaign_spend_month": 812.9,
+  "total_spend": 1488.98,
+  "month_spend": 865.97,
+  "leads_campaign_spend_total": 1299.29,
+  "leads_campaign_spend_month": 813.03,
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 1299.16
+      "spend": 1299.29
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -115,7 +115,26 @@
     },
     {
       "date": "2026-08-18",
-      "spend": 33.02
+      "spend": 33.15
     }
-  ]
+  ],
+  "creatives_available": true,
+  "leads_creatives": [
+    {
+      "ad_name": "EST | \"LEADS FRIOS\"",
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=kvuQ58I91J4Q7kNvwGNUz-q&_nc_oc=AdppqQ5eusBlGyUUi_soQB-Ywq2pybRfvGLTPnSssBfmoN9sI3LHKsjwUW3RS9N5l74&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=PXZAk6XR75JyOrg1kKLhcw&_nc_tpa=Q5bMBQLfLNczNYVyGqTmSBhycl5eFJw3z-ctTqjhCl2G6cTunCuhr9SrhLBzm__GIKErBDJfWrCWFZb1uA&oh=00_AQHfFfKKLRIkfM25dVIE-SRQjTeen0F8MyaeIUgeefR8Mg&oe=6A8AC54F"
+    },
+    {
+      "ad_name": "EST | \"ABASTO DE LEADS\"",
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=-KOw27g9gLQQ7kNvwEsHyDb&_nc_oc=AdqFEFaTlKgb04uXI4a_JbhS2KiA1zFpqMHmZVQonjjQUEFCRLC2H2apxgvzr9VRilM&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=PXZAk6XR75JyOrg1kKLhcw&_nc_tpa=Q5bMBQK3vyuuKWqQsbgAwGLvjPa5ZU0ZVStf4S3rORLWXD9nmiZd1PH_eC4tESM14wso8KhcudK50yYrIw&oh=00_AQEHu9UqZK_h-RT91gDHC2dIPCSHKyYv9z4dUs28snipBQ&oe=6A8ABDBF"
+    },
+    {
+      "ad_name": "EST |  \"VENDE MÁS\"",
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=J8rXFI54AdsQ7kNvwGXgwtt&_nc_oc=Adr5yMnWtrSK-mRJ3BFgClzwhT9bs9qDjuH6bqTylgBiOKANUt_qpDfz8BQsBcH2B54&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=PXZAk6XR75JyOrg1kKLhcw&_nc_tpa=Q5bMBQIqKAfvaUBoreqOwdFd_miv8f22T3z8sxfym0myUH7qRh087pndM3txoi4VcBoNVxaeoh6LNSEshw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQH12k_p2oMhfaykNtGJHE5mmpghK-sNFm8-G0Q7yETXhA&oe=6A8A9D1B"
+    }
+  ],
+  "other_creatives": []
 }
