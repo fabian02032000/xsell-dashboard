@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xsell — Dashboard de leads en tiempo real</title>
+<style>
+  :root{
+    --bg:#0E0A1A; --surface:#171025; --surface-2:#1F1730;
+    --border:rgba(255,255,255,0.08);
+    --text-primary:#F5F3FA; --text-muted:#9C93B5;
+    --purple-1:#5D17A0; --purple-2:#7B2BC9; --orange:#FF6B13;
+    --good:#2ECC71; --warning:#FAB219; --critical:#FF5C5C;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text-primary);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    padding:32px 24px 64px;
+  }
+  .wrap{max-width:1100px; margin:0 auto;}
+  header{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:28px;}
+  .wordmark{color:var(--purple-2); font-weight:800; letter-spacing:1px; margin:0 0 4px; font-size:13px;}
+  h1{margin:0 0 4px; font-size:26px;}
+  .subtitle{color:var(--text-muted); margin:0; font-size:14px;}
+  .updated{font-size:12px; color:var(--text-muted); text-align:right;}
+  .badge{display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:600;}
+  .badge.good{ color:var(--good); border:1px solid rgba(46,204,113,0.4); background:rgba(46,204,113,0.12); }
+  .badge.warn{ color:var(--warning); border:1px solid rgba(250,178,25,0.4); background:rgba(250,178,25,0.12); }
+  .kpi-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; margin-bottom:28px;}
+  .tile{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:18px;}
+  .tile-label{font-size:12px; color:var(--text-muted); margin:0 0 6px;}
+  .tile-value{font-size:28px; font-weight:800; margin:0 0 4px;}
+  .tile-sub{font-size:12px; color:var(--text-muted); margin:0;}
+  section{margin-bottom:32px;}
+  .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;}
+  h2{font-size:17px; margin:0;}
+  .hint{font-size:12px; color:var(--text-muted);}
+  .chart-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px;}
+  .chart-wrap{position:relative;}
+  svg.chart{width:100%; height:auto; display:block; overflow:visible;}
+  .bar{cursor:pointer;}
+  .axis-line{stroke:var(--border); stroke-width:1;}
+  .axis-label{fill:var(--text-muted); font-size:10px;}
+  .bar-label{fill:var(--text-primary); font-size:11px; font-weight:700; text-anchor:middle;}
+  .target-line{stroke:var(--text-muted); stroke-width:1.5; stroke-dasharray:5,4;}
+  .tooltip{position:absolute; background:#241A38; border:1px solid var(--border); border-radius:8px; padding:6px 10px; font-size:12px; pointer-events:none; opacity:0; transition:opacity .1s; white-space:nowrap; z-index:5;}
+  .meter{background:var(--surface-2); border-radius:999px; height:14px; overflow:hidden; position:relative;}
+  .meter-fill{height:100%; border-radius:999px;}
+  .meter-labels{display:flex; justify-content:space-between; margin-top:6px; font-size:12px; color:var(--text-muted);}
+  .callout{display:flex; gap:10px; background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--purple-2); border-radius:10px; padding:14px 16px; font-size:13px; color:var(--text-muted); line-height:1.5;}
+  footer{color:var(--text-muted); font-size:11px; text-align:center; margin-top:40px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <p class="wordmark">XSELL</p>
+      <h1>Dashboard de leads en tiempo real</h1>
+      <p class="subtitle">Datos en vivo desde HubSpot · se actualiza automáticamente cada hora</p>
+    </div>
+    <div class="updated">
+      <span class="badge good" id="statusBadge">● Cargando…</span><br>
+      <span id="updatedAt"></span>
+    </div>
+  </header>
+
+  <div class="kpi-row" id="kpiRow"></div>
+
+  <section>
+    <div class="section-head">
+      <h2>Meta de leads</h2>
+      <span class="hint" id="metaHint"></span>
+    </div>
+    <div class="kpi-row" id="metaRow"></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Leads por día</h2>
+      <span class="hint">Desde el inicio de campaña</span>
+    </div>
+    <div class="chart-card">
+      <div class="chart-wrap">
+        <svg class="chart" id="dailyChart" viewBox="0 0 960 260"></svg>
+        <div class="tooltip" id="dailyTooltip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="closedDealsSection" style="display:none;">
+    <div class="section-head">
+      <h2>Clientes potenciales cerrados</h2>
+      <span class="hint">Vía HubSpot Negocios (Deals)</span>
+    </div>
+    <div class="chart-card" style="padding:20px;">
+      <div class="meter">
+        <div class="meter-fill" id="dealsFill"></div>
+      </div>
+      <div class="meter-labels">
+        <span id="dealsLabelLeft"></span>
+        <span id="dealsLabelRight"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout" id="dealsUnavailable" style="display:none;">
+    <span>ⓘ</span>
+    <div>El conteo de clientes cerrados no está disponible todavía — verifica que la etapa "Cerrado ganado" (<code>closedwon</code>) en tu pipeline de Negocios de HubSpot coincida con la configurada en <code>CLOSEDWON_STAGE</code>.</div>
+  </div>
+
+  <footer>Generado automáticamente por GitHub Actions · Xsell</footer>
+</div>
+
+<script>
+(function(){
+  const seriesColor = getComputedStyle(document.documentElement).getPropertyValue('--orange').trim();
+  const goodColor = getComputedStyle(document.documentElement).getPropertyValue('--good').trim();
+
+  function fmt(n){ return new Intl.NumberFormat('es-PE').format(n); }
+
+  fetch('./data.json?_=' + Date.now())
+    .then(r => r.json())
+    .then(render)
+    .catch(err => {
+      document.getElementById('statusBadge').textContent = '● Sin datos aún';
+      document.getElementById('statusBadge').className = 'badge warn';
+      document.getElementById('updatedAt').textContent = 'Aún no se ha ejecutado la primera actualización.';
+      console.error(err);
+    });
+
+  function render(data){
+    document.getElementById('statusBadge').textContent = '● Datos en vivo';
+    const updated = new Date(data.updated_at);
+    document.getElementById('updatedAt').textContent = 'Actualizado: ' + updated.toLocaleString('es-PE', { dateStyle:'medium', timeStyle:'short' });
+
+    // KPI row
+    const kpiRow = document.getElementById('kpiRow');
+    kpiRow.innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Leads totales</p>
+        <p class="tile-value">${fmt(data.total_leads)}</p>
+        <p class="tile-sub">Desde ${data.campaign_start}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Leads este mes</p>
+        <p class="tile-value">${fmt(data.current_month_leads)}</p>
+        <p class="tile-sub">${data.current_month_label}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Leads esta semana</p>
+        <p class="tile-value">${fmt(data.current_week_leads)}</p>
+        <p class="tile-sub">Semana en curso</p>
+      </div>
+    `;
+
+    // Meta row
+    const pctMonth = Math.round((data.current_month_leads / data.monthly_goal) * 100);
+    const pctWeek = Math.round((data.current_week_leads / data.weekly_goal) * 100);
+    document.getElementById('metaHint').textContent = `Meta mensual: ${data.monthly_goal} leads · Meta semanal: ~${data.weekly_goal} leads`;
+    document.getElementById('metaRow').innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Avance del mes</p>
+        <p class="tile-value">${pctMonth}%</p>
+        <p class="tile-sub">${fmt(data.current_month_leads)} / ${fmt(data.monthly_goal)} leads</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Avance de la semana</p>
+        <p class="tile-value">${pctWeek}%</p>
+        <p class="tile-sub">${fmt(data.current_week_leads)} / ${data.weekly_goal} leads</p>
+      </div>
+    `;
+
+    drawDailyChart(data.leads_by_day);
+
+    if (data.closed_deals && data.closed_deals.available){
+      document.getElementById('closedDealsSection').style.display = '';
+      const c = data.closed_deals.count || 0;
+      const goal = data.closed_deals_goal || 3;
+      const pct = Math.min(100, Math.round((c/goal)*100));
+      const fill = document.getElementById('dealsFill');
+      fill.style.width = pct + '%';
+      fill.style.background = c >= goal ? goodColor : 'var(--critical)';
+      document.getElementById('dealsLabelLeft').textContent = c + ' cerrados';
+      document.getElementById('dealsLabelRight').textContent = 'Meta: ' + goal + ' cerrados';
+    } else {
+      document.getElementById('dealsUnavailable').style.display = 'flex';
+    }
+  }
+
+  function drawDailyChart(days){
+    const svg = document.getElementById('dailyChart');
+    const tooltip = document.getElementById('dailyTooltip');
+    const W = 960, H = 260, padL = 34, padR = 12, padT = 20, padB = 40;
+    const values = days.map(d => d.count);
+    const maxVal = Math.max(...values, 1) * 1.2;
+    const n = days.length;
+    const barW = Math.max(6, (W - padL - padR) / n * 0.6);
+    const step = (W - padL - padR) / n;
+
+    let svgContent = '';
+    // grid lines
+    [0, 0.25, 0.5, 0.75, 1].forEach(f => {
+      const y = padT + (H - padT - padB) * (1 - f);
+      svgContent += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+      svgContent += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
+    });
+
+    days.forEach((d, i) => {
+      const x = padL + step * i + (step - barW)/2;
+      const h = (H - padT - padB) * (d.count / maxVal);
+      const y = H - padB - h;
+      svgContent += `<rect class="bar" data-i="${i}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="3" fill="${seriesColor}"/>`;
+      if (n <= 20 || i % Math.ceil(n/20) === 0){
+        svgContent += `<text class="axis-label" x="${x + barW/2}" y="${H-padB+14}" text-anchor="middle">${d.date.slice(5)}</text>`;
+      }
+    });
+
+    svg.innerHTML = svgContent;
+
+    svg.querySelectorAll('.bar').forEach(bar => {
+      bar.addEventListener('pointerenter', (e) => {
+        const i = +bar.dataset.i;
+        const d = days[i];
+        tooltip.innerHTML = `<strong>${d.date}</strong><br>${d.count} leads`;
+        tooltip.style.opacity = 1;
+      });
+      bar.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      bar.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
+  }
+})();
+</script>
+</body>
+</html>
