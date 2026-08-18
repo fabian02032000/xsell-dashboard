@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-18T21:51:52.852738+00:00",
+  "updated_at": "2026-08-18T21:59:21.867671+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 72,
+  "total_leads": 64,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -36,7 +36,7 @@
     },
     {
       "date": "2026-08-01",
-      "count": 4
+      "count": 3
     },
     {
       "date": "2026-08-02",
@@ -72,7 +72,7 @@
     },
     {
       "date": "2026-08-12",
-      "count": 4
+      "count": 1
     },
     {
       "date": "2026-08-13",
@@ -88,12 +88,12 @@
     },
     {
       "date": "2026-08-17",
-      "count": 9
+      "count": 5
     }
   ],
-  "current_month_leads": 52,
+  "current_month_leads": 44,
   "current_month_label": "August 2026",
-  "current_week_leads": 9,
+  "current_week_leads": 5,
   "closed_deals": {
     "count": 0,
     "available": true
