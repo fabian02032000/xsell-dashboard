@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Xsell — Dashboard de leads en tiempo real</title>
 <style>
   :root{
@@ -79,6 +80,26 @@
   .funnel-track{background:var(--surface-2); border-radius:8px; height:34px; position:relative;}
   .funnel-fill{background:var(--orange); height:100%; border-radius:8px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; color:#1a0f00; font-weight:800; font-size:13px; transition:width .3s;}
   .funnel-pct{font-size:12px; color:var(--text-muted); text-align:right;}
+
+  /* Tables (progreso mensual, semanal, estado de leads) */
+  .table-wrap{overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  thead th{text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-muted); padding:0 12px 10px; font-weight:600; white-space:nowrap;}
+  tbody td{padding:10px 12px; border-top:1px solid var(--border); vertical-align:middle; white-space:nowrap;}
+  tbody tr:hover{background:var(--surface-2);}
+  .mini-bar-track{background:var(--surface-2); border-radius:999px; height:8px; width:120px; overflow:hidden; display:inline-block; vertical-align:middle; margin-right:8px;}
+  .mini-bar-fill{height:100%; border-radius:999px; background:var(--orange);}
+  .mini-bar-fill.good{background:var(--good);}
+  .status-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:600; white-space:nowrap;}
+  .status-pill.yes{color:var(--good); background:rgba(46,204,113,0.12); border:1px solid rgba(46,204,113,0.4);}
+  .status-pill.no{color:var(--text-muted); background:rgba(156,147,181,0.12); border:1px solid rgba(156,147,181,0.3);}
+  .scroll-y{max-height:420px; overflow-y:auto;}
+  .table-name{font-weight:600; color:var(--text-primary);}
+  .table-sub{color:var(--text-muted); font-size:12px;}
+  .milestone-list{display:flex; flex-direction:column; gap:8px; margin-top:14px;}
+  .milestone-row{display:flex; gap:10px; font-size:12px; color:var(--text-muted); align-items:baseline;}
+  .milestone-date{color:var(--text-primary); font-weight:600; min-width:76px;}
+  .milestone-marker{cursor:pointer;}
 </style>
 </head>
 <body>
@@ -103,25 +124,12 @@
   <section>
     <div class="section-head">
       <h2>De dónde vienen los leads</h2>
-      <span class="hint">Creatividad activa de la campaña de generación de leads</span>
+      <span class="hint">Creatividades activas ahora mismo en Meta Ads — se actualizan solas</span>
     </div>
-    <div class="creative-hero">
-      <img src="images/est-vende-mas.jpg" alt="Creatividad Vende más — Xsell">
-      <div class="creative-hero-body">
-        <h3>"Vende más." — Prospectos B2B</h3>
-        <p>Esta es la única pieza activa generando leads hoy — el 100% de los leads que ves en este dashboard entran por este anuncio, vía el formulario de Meta Lead Ads de la campaña "Prospectos B2B".</p>
-        <div class="creative-stats" id="creativeStats"></div>
-      </div>
-    </div>
-    <details style="margin-top:14px;">
-      <summary style="cursor:pointer; font-size:13px; color:var(--text-muted);">Ver otras piezas activas en la cuenta (campaña Awareness — no generan leads)</summary>
-      <div class="gallery-grid">
-        <figure><img src="images/post1-algo-cambiando.jpg" alt="Post 1"><figcaption>Post 1 · Carrusel</figcaption></figure>
-        <figure><img src="images/post2-cada-generacion.jpg" alt="Post 2"><figcaption>Post 2 · Cómo vender a cada generación</figcaption></figure>
-        <figure><img src="images/post3-no-digas-mejor-di.jpg" alt="Post 3"><figcaption>Post 3 · No digas, mejor di</figcaption></figure>
-        <figure><img src="images/post4-no-digas-gracias.jpg" alt="Post 4"><figcaption>Post 4 · No digas gracias</figcaption></figure>
-        <figure><img src="images/post5-terminos-venta-b2b.jpg" alt="Post 5"><figcaption>Post 5 · KPIs / Términos de venta B2B</figcaption></figure>
-      </div>
+    <div id="creativeHeroWrap"></div>
+    <details style="margin-top:14px;" id="galleryDetails">
+      <summary style="cursor:pointer; font-size:13px; color:var(--text-muted);">Ver otras piezas activas en la cuenta</summary>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </details>
   </section>
 
@@ -139,6 +147,21 @@
       <div class="chart-wrap">
         <svg class="chart" id="leadsMonthChart" viewBox="0 0 960 220"></svg>
         <div class="tooltip" id="leadsMonthTooltip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Progreso por mes</h2>
+      <span class="hint">Julio, agosto y los meses que sigan — se agregan solos</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mes</th><th>Leads</th><th>Meta</th><th>Avance</th></tr></thead>
+          <tbody id="monthlyTableBody"></tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -170,6 +193,22 @@
     </div>
   </section>
 
+  <section>
+    <div class="section-head">
+      <h2>Detalle semanal</h2>
+      <span class="hint">Compromiso de leads, gasto, costo por lead y frecuencia — semana a semana</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Semana</th><th>Leads</th><th>Meta semanal</th><th>Gasto</th><th>CPL</th><th>Frecuencia</th></tr></thead>
+          <tbody id="weeklyTableBody"></tbody>
+        </table>
+      </div>
+      <p class="hint" id="weeklyHint" style="margin-top:10px;"></p>
+    </div>
+  </section>
+
   <section id="funnelSection">
     <div class="section-head">
       <h2>Embudo: de lead a cliente</h2>
@@ -183,14 +222,30 @@
 
   <section>
     <div class="section-head">
+      <h2>Estado de cada lead</h2>
+      <span class="hint" id="leadsTableHint">¿Ingrid ya le generó un negocio en HubSpot?</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap scroll-y">
+        <table>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Correo</th><th>Estado</th></tr></thead>
+          <tbody id="leadsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
       <h2>Leads por día</h2>
-      <span class="hint">Desde el inicio de campaña</span>
+      <span class="hint">Desde el inicio de campaña · ▲ marca un cambio hecho en la campaña de Meta</span>
     </div>
     <div class="chart-card">
       <div class="chart-wrap">
         <svg class="chart" id="dailyChart" viewBox="0 0 960 260"></svg>
         <div class="tooltip" id="dailyTooltip"></div>
       </div>
+      <div class="milestone-list" id="milestoneList"></div>
     </div>
   </section>
 
@@ -264,12 +319,8 @@
     }
     kpiRow.innerHTML = kpiHtml;
 
-    // ---- Creative stats ----
-    document.getElementById('creativeStats').innerHTML = `
-      <div><p>Leads generados</p><p>${fmt(data.total_leads)}</p></div>
-      ${hasMeta ? `<div><p>Inversión</p><p>${fmtMoney(meta.leads_campaign_spend_total)}</p></div>
-      <div><p>Costo/lead</p><p>${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p></div>` : ''}
-    `;
+    // ---- Creatividades (imágenes reales, en vivo desde Meta) ----
+    drawCreatives(data, meta, hasMeta);
 
     // ---- Meta de leads ----
     const pctMonth = (data.current_month_leads / data.monthly_goal) * 100;
@@ -288,6 +339,9 @@
     `;
     drawBarsWithTarget('leadsMonthChart', 'leadsMonthTooltip',
       [data.current_month_label], [data.current_month_leads], data.monthly_goal, orange, 'Leads');
+
+    // ---- Progreso por mes ----
+    drawMonthlyTable(data.leads_by_month || []);
 
     // ---- Presupuesto ----
     if (hasMeta){
@@ -313,11 +367,182 @@
       document.getElementById('budgetRow').innerHTML = '';
     }
 
+    // ---- Detalle semanal ----
+    drawWeeklyTable(data.leads_by_week || [], hasMeta ? (meta.spend_by_week || []) : []);
+
     // ---- Funnel ----
     drawFunnel(data, funnelCfg);
 
-    // ---- Leads por día ----
-    drawDailyChart(data.leads_by_day);
+    // ---- Estado de cada lead ----
+    drawLeadsTable(data.leads_detail || [], data.leads_with_deal, data.total_leads);
+
+    // ---- Leads por día (+ hitos de campaña) ----
+    const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
+    drawDailyChart(data.leads_by_day, milestones);
+    drawMilestoneList(milestones, hasMeta, meta);
+  }
+
+  function pct(part, total){
+    if (!total) return 0;
+    return Math.round((part / total) * 100);
+  }
+
+  function drawMonthlyTable(months){
+    const body = document.getElementById('monthlyTableBody');
+    if (!months.length){
+      body.innerHTML = `<tr><td colspan="4" class="table-sub">Aún no hay meses completos para mostrar.</td></tr>`;
+      return;
+    }
+    body.innerHTML = months.map(m => {
+      const p = pct(m.leads, m.goal);
+      const good = m.leads >= m.goal;
+      return `
+        <tr>
+          <td><span class="table-name">${m.label}</span>${m.is_partial ? ' <span class="table-sub">(mes parcial)</span>' : ''}</td>
+          <td>${fmt(m.leads)}</td>
+          <td>${fmt(m.goal)}</td>
+          <td>
+            <span class="mini-bar-track"><span class="mini-bar-fill ${good ? 'good' : ''}" style="width:${Math.min(100, p)}%;"></span></span>
+            ${p}%
+          </td>
+        </tr>`;
+    }).join('');
+  }
+
+  function drawWeeklyTable(weeks, spendWeeks){
+    const body = document.getElementById('weeklyTableBody');
+    const hint = document.getElementById('weeklyHint');
+    if (!weeks.length){
+      body.innerHTML = `<tr><td colspan="6" class="table-sub">Aún no hay semanas para mostrar.</td></tr>`;
+      hint.textContent = '';
+      return;
+    }
+    const spendByKey = {};
+    spendWeeks.forEach(w => { spendByKey[w.week_start] = w; });
+
+    hint.textContent = spendWeeks.length
+      ? ''
+      : 'El gasto y la frecuencia por semana aparecen apenas Meta Ads tenga su primera actualización.';
+
+    // Semana más reciente primero
+    const rows = [...weeks].reverse();
+    body.innerHTML = rows.map(w => {
+      const s = spendByKey[w.week_start];
+      const spend = s ? s.spend : null;
+      const cpl = (s && w.leads > 0) ? (s.spend / w.leads) : null;
+      const freq = s ? s.frequency : null;
+      const label = `${w.week_start.slice(5)} – ${w.week_end.slice(5)}`;
+      return `
+        <tr>
+          <td><span class="table-name">${label}</span></td>
+          <td>${fmt(w.leads)}</td>
+          <td>${fmt(w.goal)}</td>
+          <td>${spend !== null ? fmtMoney(spend) : '—'}</td>
+          <td>${cpl !== null ? fmtMoney(cpl) : '—'}</td>
+          <td>${freq !== null ? freq.toFixed(2) : '—'}</td>
+        </tr>`;
+    }).join('');
+  }
+
+  function drawLeadsTable(leads, leadsWithDeal, totalLeads){
+    const body = document.getElementById('leadsTableBody');
+    const hint = document.getElementById('leadsTableHint');
+    hint.textContent = `${fmt(leadsWithDeal || 0)} de ${fmt(totalLeads || 0)} leads ya tienen un negocio creado en HubSpot`;
+
+    if (!leads.length){
+      body.innerHTML = `<tr><td colspan="4" class="table-sub">Aún no hay leads para mostrar.</td></tr>`;
+      return;
+    }
+    body.innerHTML = leads.map(l => {
+      const statusHtml = l.has_deal
+        ? `<span class="status-pill yes">✓ ${l.deal_stage || 'Negocio creado'}</span>`
+        : `<span class="status-pill no">Sin negocio</span>`;
+      return `
+        <tr>
+          <td>${l.created_date || '—'}</td>
+          <td class="table-name">${l.name || '(sin nombre)'}</td>
+          <td>${l.email || '(sin correo)'}</td>
+          <td>${statusHtml}</td>
+        </tr>`;
+    }).join('');
+  }
+
+  function drawMilestoneList(milestones, hasMeta, meta){
+    const el = document.getElementById('milestoneList');
+    if (!hasMeta){
+      el.innerHTML = '';
+      return;
+    }
+    if (!meta.milestones_available){
+      el.innerHTML = `<p class="table-sub">Los hitos automáticos de cambios en la campaña no están disponibles con el permiso actual del token de Meta.</p>`;
+      return;
+    }
+    if (!milestones.length){
+      el.innerHTML = `<p class="table-sub">No se registraron cambios en la cuenta de Meta Ads en este período.</p>`;
+      return;
+    }
+    const recent = [...milestones].reverse().slice(0, 8);
+    el.innerHTML = recent.map(m => `
+      <div class="milestone-row">
+        <span class="milestone-date">${m.date}</span>
+        <span>${m.label}</span>
+      </div>`).join('');
+  }
+
+  function drawCreatives(data, meta, hasMeta){
+    const heroWrap = document.getElementById('creativeHeroWrap');
+    const galleryDetails = document.getElementById('galleryDetails');
+    const galleryGrid = document.getElementById('galleryGrid');
+
+    const creativesAvailable = hasMeta && meta.creatives_available;
+    const leadsCreatives = (creativesAvailable && meta.leads_creatives) ? meta.leads_creatives : [];
+    const otherCreatives = (creativesAvailable && meta.other_creatives) ? meta.other_creatives : [];
+
+    if (!hasMeta){
+      heroWrap.innerHTML = `
+        <div class="chart-card">
+          <p style="margin:0; color:var(--text-muted); font-size:13px;">Esperando la primera actualización de Meta Ads para mostrar las creatividades activas.</p>
+        </div>`;
+      galleryDetails.style.display = 'none';
+      return;
+    }
+
+    if (!creativesAvailable || leadsCreatives.length === 0){
+      heroWrap.innerHTML = `
+        <div class="chart-card">
+          <p style="margin:0; color:var(--text-muted); font-size:13px;">No se encontró ninguna creatividad activa en la campaña de leads en este momento. Verifica que la campaña siga activa en Meta Ads Manager.</p>
+        </div>`;
+      galleryDetails.style.display = 'none';
+      return;
+    }
+
+    const hero = leadsCreatives[0];
+    heroWrap.innerHTML = `
+      <div class="creative-hero">
+        <img src="${hero.image_url}" alt="${hero.ad_name || 'Creatividad activa'}">
+        <div class="creative-hero-body">
+          <h3>${hero.ad_name || 'Anuncio activo'}</h3>
+          <p>Esta es la pieza activa generando leads ahora mismo — vía el formulario de Meta Lead Ads de la campaña "${hero.campaign_name}". La imagen se trae en vivo desde tu cuenta de Meta Ads, así que si cambias el anuncio, se actualiza sola.</p>
+          <div class="creative-stats">
+            <div><p>Leads generados</p><p>${fmt(data.total_leads)}</p></div>
+            <div><p>Inversión</p><p>${fmtMoney(meta.leads_campaign_spend_total)}</p></div>
+            <div><p>Costo/lead</p><p>${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p></div>
+          </div>
+        </div>
+      </div>`;
+
+    const restOfLeadsCreatives = leadsCreatives.slice(1);
+    const galleryItems = [...restOfLeadsCreatives, ...otherCreatives];
+    if (galleryItems.length === 0){
+      galleryDetails.style.display = 'none';
+    } else {
+      galleryDetails.style.display = '';
+      galleryGrid.innerHTML = galleryItems.map(c => `
+        <figure>
+          <img src="${c.image_url}" alt="${c.ad_name || ''}">
+          <figcaption>${c.ad_name || 'Anuncio'} · ${c.campaign_name || ''}</figcaption>
+        </figure>`).join('');
+    }
   }
 
   function drawFunnel(data, funnelCfg){
@@ -445,15 +670,22 @@
     });
   }
 
-  function drawDailyChart(days){
+  function drawDailyChart(days, milestones){
+    milestones = milestones || [];
     const svg = document.getElementById('dailyChart');
     const tooltip = document.getElementById('dailyTooltip');
-    const W = 960, H = 260, padL = 34, padR = 12, padT = 20, padB = 40;
+    const W = 960, H = 260, padL = 34, padR = 12, padT = 26, padB = 40;
     const values = days.map(d => d.count);
     const maxVal = Math.max(...values, 1) * 1.2;
     const n = days.length;
     const barW = Math.max(6, (W - padL - padR) / n * 0.6);
     const step = (W - padL - padR) / n;
+
+    const milestonesByDate = {};
+    milestones.forEach(m => {
+      if (!milestonesByDate[m.date]) milestonesByDate[m.date] = [];
+      milestonesByDate[m.date].push(m);
+    });
 
     let svgContent = '';
     [0, 0.25, 0.5, 0.75, 1].forEach(f => {
@@ -470,6 +702,10 @@
       if (n <= 20 || i % Math.ceil(n/20) === 0){
         svgContent += `<text class="axis-label" x="${x + barW/2}" y="${H-padB+14}" text-anchor="middle">${d.date.slice(5)}</text>`;
       }
+      if (milestonesByDate[d.date]){
+        const cx = x + barW/2;
+        svgContent += `<polygon class="milestone-marker" data-date="${d.date}" points="${cx-5},${padT-10} ${cx+5},${padT-10} ${cx},${padT-2}" fill="${purple2}"/>`;
+      }
     });
 
     svg.innerHTML = svgContent;
@@ -478,7 +714,11 @@
       bar.addEventListener('pointerenter', () => {
         const i = +bar.dataset.i;
         const d = days[i];
-        tooltip.innerHTML = `<strong>${d.date}</strong><br>${d.count} leads`;
+        let html = `<strong>${d.date}</strong><br>${d.count} leads`;
+        if (milestonesByDate[d.date]){
+          html += '<br>' + milestonesByDate[d.date].map(m => `▲ ${m.label}`).join('<br>');
+        }
+        tooltip.innerHTML = html;
         tooltip.style.opacity = 1;
       });
       bar.addEventListener('pointermove', (e) => {
@@ -487,6 +727,20 @@
         tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
       });
       bar.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
+
+    svg.querySelectorAll('.milestone-marker').forEach(marker => {
+      marker.addEventListener('pointerenter', () => {
+        const date = marker.dataset.date;
+        tooltip.innerHTML = `<strong>${date}</strong><br>` + milestonesByDate[date].map(m => `▲ ${m.label}`).join('<br>');
+        tooltip.style.opacity = 1;
+      });
+      marker.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      marker.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
     });
   }
 })();
