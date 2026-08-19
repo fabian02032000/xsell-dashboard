@@ -1,19 +1,29 @@
 {
-  "updated_at": "2026-08-19T01:19:36.110517+00:00",
+  "updated_at": "2026-08-19T02:48:03.459331+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 1490.62,
-  "month_spend": 867.61,
-  "leads_campaign_spend_total": 1300.93,
-  "leads_campaign_spend_month": 814.67,
+  "total_spend": 1492.89,
+  "month_spend": 869.88,
+  "leads_campaign_spend_total": 1303.2,
+  "leads_campaign_spend_month": 816.94,
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 1300.93
+      "spend": 1303.2
     },
     {
       "name": "CAMPAÑA | AWARENESS",
       "spend": 189.69
+    }
+  ],
+  "campaigns_month": [
+    {
+      "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "spend": 816.94
+    },
+    {
+      "name": "CAMPAÑA | AWARENESS",
+      "spend": 52.94
     }
   ],
   "daily_spend": [
@@ -115,7 +125,7 @@
     },
     {
       "date": "2026-08-18",
-      "spend": 34.79
+      "spend": 37.06
     }
   ],
   "spend_by_week": [
@@ -154,25 +164,14 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "spend": 86.15,
-      "impressions": 2951,
-      "reach": 2165,
-      "frequency": 1.36
+      "spend": 88.42,
+      "impressions": 3012,
+      "reach": 2192,
+      "frequency": 1.37
     }
   ],
-  "creatives_available": true,
-  "leads_creatives": [
-    {
-      "ad_name": "EST | \"ABASTO DE LEADS\"",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=-KOw27g9gLQQ7kNvwFkyUGP&_nc_oc=Adr2zbwrvnRbc8IE4KorAl_fykS8QJjmMy9YuyzsMcyfYijSgLUI_ni-vYT8Vj7cFUk&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rFqckRjODG37auG446w1iw&_nc_tpa=Q5bMBQL3IEJldBBsI_y6jdzrQyGhLL_t8kD0AX9S8geJiNYwsErfsndGFEi11qbIsy_OBmUGL3xeZWSoGw&oh=00_AQG-rTgtro89rohKB35zRVQYJD1sjma6yfUKPHojRMJFpQ&oe=6A8ABDBF"
-    },
-    {
-      "ad_name": "EST | \"LEADS FRIOS\"",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=kvuQ58I91J4Q7kNvwGXh2ie&_nc_oc=Adrdq7bC8f0PTkLH_KaW_qb4mqX-fe-NiJARVvywy5Yk09wy9XHwWgK1PWzGQwq7k_o&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rFqckRjODG37auG446w1iw&_nc_tpa=Q5bMBQIjnaegWkcpEEIeSJuZmqAkjSJmCuBqEMbSsViWu_C0vMhqbkOSwRzeRP8z7VmcGGXAL1xQa2NexA&oh=00_AQFH3AtB_rmH8X6ZjFu5k1ppu5cdOpeG_uP715Qp23nJ5w&oe=6A8AC54F"
-    }
-  ],
+  "creatives_available": false,
+  "leads_creatives": [],
   "other_creatives": [],
   "milestones_available": true,
   "milestones": [
@@ -576,5 +575,7 @@
       "date": "2026-07-27",
       "label": "Cuenta facturada"
     }
-  ]
+  ],
+  "ads_performance_available": false,
+  "ads_performance": []
 }
