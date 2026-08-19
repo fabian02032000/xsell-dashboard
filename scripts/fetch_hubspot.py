@@ -23,6 +23,7 @@ import os
 import sys
 import json
 import datetime
+import unicodedata
 import urllib.request
 import urllib.error
 
@@ -46,6 +47,23 @@ SOURCE_MATCH_KEYWORDS = [
     for k in os.environ.get("SOURCE_MATCH_KEYWORDS", "facebook,prospectos b2b").split(",")
     if k.strip()
 ]
+
+# Palabras clave (sin tildes, minúsculas) que, si aparecen en la etapa del
+# Negocio (dealstage) de un lead, cuentan como "hubo reunión" para el embudo.
+# Así se calcula el número de reuniones automáticamente desde la tipificación
+# que Ingrid pone en HubSpot, en vez de tener que actualizarlo a mano.
+REUNION_MATCH_KEYWORDS = [
+    k.strip().lower()
+    for k in os.environ.get("REUNION_MATCH_KEYWORDS", "reunion").split(",")
+    if k.strip()
+]
+
+
+def strip_accents(text):
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text)
+        if unicodedata.category(c) != "Mn"
+    )
 
 HUBSPOT_TOKEN = os.environ.get("HUBSPOT_TOKEN")
 API_BASE = "https://api.hubapi.com"
@@ -369,6 +387,25 @@ def main():
     leads_detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
     leads_with_deal = sum(1 for r in leads_detail if r["has_deal"])
 
+    # ---- Reuniones automáticas, según la tipificación (etapa del negocio) que pone Ingrid ----
+    reuniones_auto = sum(
+        1 for r in leads_detail
+        if r["has_deal"] and any(
+            kw in strip_accents((r["deal_stage"] or "").lower())
+            for kw in REUNION_MATCH_KEYWORDS
+        )
+    )
+
+    # ---- Distribución de estado de leads (para la barra/torta de estado) ----
+    status_counts = {}
+    for r in leads_detail:
+        label = r["deal_stage"] if r["has_deal"] and r["deal_stage"] else "Sin negocio"
+        status_counts[label] = status_counts.get(label, 0) + 1
+    leads_status_breakdown = [
+        {"label": label, "count": count}
+        for label, count in sorted(status_counts.items(), key=lambda kv: -kv[1])
+    ]
+
     # ---- Progreso mensual y semanal ----
     leads_by_month = build_leads_by_month(leads_by_day, CAMPAIGN_START_DATE)
     weeks = build_week_ranges(CAMPAIGN_START_DATE, today)
@@ -390,6 +427,8 @@ def main():
         "closed_deals": closed_deals,
         "leads_with_deal": leads_with_deal,
         "leads_detail": leads_detail,
+        "reuniones_auto": reuniones_auto,
+        "leads_status_breakdown": leads_status_breakdown,
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
@@ -397,7 +436,8 @@ def main():
 
     print(
         f"OK: {total_leads} leads totales, {current_month_leads} este mes, "
-        f"{current_week_leads} esta semana, {leads_with_deal} con negocio creado."
+        f"{current_week_leads} esta semana, {leads_with_deal} con negocio creado, "
+        f"{reuniones_auto} con reunión (automático)."
     )
 
 
