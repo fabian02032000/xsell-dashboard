@@ -100,6 +100,12 @@
   .milestone-row{display:flex; gap:10px; font-size:12px; color:var(--text-muted); align-items:baseline;}
   .milestone-date{color:var(--text-primary); font-weight:600; min-width:76px;}
   .milestone-marker{cursor:pointer;}
+
+  /* Distribución de estado de leads */
+  .status-dist-bar{display:flex; height:36px; border-radius:8px; overflow:hidden; background:var(--surface-2);}
+  .status-dist-seg{height:100%; display:flex; align-items:center; justify-content:center; color:#0c0716; font-size:11px; font-weight:800; white-space:nowrap; overflow:hidden;}
+  .status-dist-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px;}
+  .status-dist-legend .key{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--text-muted);}
 </style>
 </head>
 <body>
@@ -191,6 +197,18 @@
         </div>
       </div>
     </div>
+    <div class="chart-card" style="margin-top:16px;">
+      <div class="section-head" style="margin-bottom:10px;">
+        <h2 style="font-size:14px;">Gasto por campaña</h2>
+        <span class="hint">Incluye Awareness y cualquier otra campaña activa en la cuenta</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Campaña</th><th>Gasto total</th><th>Gasto este mes</th></tr></thead>
+          <tbody id="campaignsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -222,13 +240,24 @@
 
   <section>
     <div class="section-head">
+      <h2>Distribución de estado de leads</h2>
+      <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot</span>
+    </div>
+    <div class="chart-card">
+      <div class="status-dist-bar" id="statusDistBar"></div>
+      <div class="status-dist-legend" id="statusDistLegend"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
       <h2>Estado de cada lead</h2>
       <span class="hint" id="leadsTableHint">¿Ingrid ya le generó un negocio en HubSpot?</span>
     </div>
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th>Fecha</th><th>Nombre</th><th>Correo</th><th>Estado</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Estado</th></tr></thead>
           <tbody id="leadsTableBody"></tbody>
         </table>
       </div>
@@ -362,9 +391,11 @@
       drawBarsWithTarget('budgetMonthChart', 'budgetMonthTooltip',
         ['Este mes'], [meta.month_spend], meta.monthly_budget_goal, purple2, 'Gasto', v => fmtMoney(v));
       drawDailySpend(meta.daily_spend || []);
+      drawCampaignsTable(meta.campaigns || [], meta.campaigns_month || []);
     } else {
       document.getElementById('budgetHint').textContent = 'Esperando primera actualización de Meta Ads';
       document.getElementById('budgetRow').innerHTML = '';
+      drawCampaignsTable([], []);
     }
 
     // ---- Detalle semanal ----
@@ -373,13 +404,34 @@
     // ---- Funnel ----
     drawFunnel(data, funnelCfg);
 
+    // ---- Distribución de estado de leads ----
+    drawStatusDistribution(data.leads_status_breakdown || []);
+
     // ---- Estado de cada lead ----
     drawLeadsTable(data.leads_detail || [], data.leads_with_deal, data.total_leads);
 
     // ---- Leads por día (+ hitos de campaña) ----
     const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
-    drawDailyChart(data.leads_by_day, milestones);
+    drawDailyChart(data.leads_by_day, milestones, data.weekly_goal);
     drawMilestoneList(milestones, hasMeta, meta);
+  }
+
+  function drawCampaignsTable(campaignsTotal, campaignsMonth){
+    const body = document.getElementById('campaignsTableBody');
+    if (!campaignsTotal.length){
+      body.innerHTML = `<tr><td colspan="3" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
+      return;
+    }
+    const monthByName = {};
+    campaignsMonth.forEach(c => { monthByName[c.name] = c.spend; });
+
+    const rows = [...campaignsTotal].sort((a, b) => b.spend - a.spend);
+    body.innerHTML = rows.map(c => `
+      <tr>
+        <td class="table-name">${c.name || '(sin nombre)'}</td>
+        <td>${fmtMoney(c.spend)}</td>
+        <td>${fmtMoney(monthByName[c.name] || 0)}</td>
+      </tr>`).join('');
   }
 
   function pct(part, total){
@@ -450,17 +502,20 @@
     hint.textContent = `${fmt(leadsWithDeal || 0)} de ${fmt(totalLeads || 0)} leads ya tienen un negocio creado en HubSpot`;
 
     if (!leads.length){
-      body.innerHTML = `<tr><td colspan="4" class="table-sub">Aún no hay leads para mostrar.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="5" class="table-sub">Aún no hay leads para mostrar.</td></tr>`;
       return;
     }
     body.innerHTML = leads.map(l => {
+      const stageLabel = l.deal_stage || 'Negocio creado';
+      const alreadyMarked = /^[✓✔]/.test(stageLabel.trim());
       const statusHtml = l.has_deal
-        ? `<span class="status-pill yes">✓ ${l.deal_stage || 'Negocio creado'}</span>`
+        ? `<span class="status-pill yes">${alreadyMarked ? '' : '✓ '}${stageLabel}</span>`
         : `<span class="status-pill no">Sin negocio</span>`;
       return `
         <tr>
           <td>${l.created_date || '—'}</td>
           <td class="table-name">${l.name || '(sin nombre)'}</td>
+          <td>${l.company || '(sin empresa)'}</td>
           <td>${l.email || '(sin correo)'}</td>
           <td>${statusHtml}</td>
         </tr>`;
@@ -547,7 +602,10 @@
 
   function drawFunnel(data, funnelCfg){
     const el = document.getElementById('funnel');
-    const reuniones = (funnelCfg && typeof funnelCfg.reuniones === 'number') ? funnelCfg.reuniones : null;
+    const reunionesAuto = typeof data.reuniones_auto === 'number' ? data.reuniones_auto : null;
+    const reunionesManual = (funnelCfg && typeof funnelCfg.reuniones === 'number') ? funnelCfg.reuniones : null;
+    const reuniones = reunionesAuto !== null ? reunionesAuto : reunionesManual;
+    const reunionesEsAutomatico = reunionesAuto !== null;
     const cerrados = (data.closed_deals && data.closed_deals.available) ? (data.closed_deals.count || 0) : null;
 
     const stages = [
@@ -573,11 +631,53 @@
         </div>`;
     }).join('');
 
-    let calloutText = 'Este embudo combina leads en vivo desde HubSpot y clientes cerrados en vivo desde Negocios de HubSpot. Las reuniones son un dato manual — actualízalo en <code>funnel_config.json</code>.';
+    let calloutText = 'Este embudo combina leads en vivo desde HubSpot y clientes cerrados en vivo desde Negocios de HubSpot.';
+    calloutText += reunionesEsAutomatico
+      ? ' Las reuniones se calculan en vivo según la etapa del negocio que pone Ingrid en HubSpot (tipificación).'
+      : ' Las reuniones son un dato manual — actualízalo en <code>funnel_config.json</code>.';
     if (cerrados === null){
       calloutText += ' El conteo de cerrados no está disponible todavía: revisa que la etapa "closedwon" en tu pipeline de Negocios coincida con la configurada en el script.';
     }
     document.getElementById('funnelCallout').innerHTML = `<span>ⓘ</span><div>${calloutText}</div>`;
+  }
+
+  const STATUS_COLOR_RULES = [
+    { test: label => /reuni/.test(label), color: goodColor },
+    { test: label => /descart/.test(label), color: critColor },
+    { test: label => /cerrad.*(gan|won)/.test(label), color: '#2ECC71' },
+    { test: label => /sin negocio/.test(label), color: mutedColor },
+  ];
+  const STATUS_FALLBACK_COLORS = [orange, purple2, '#FAB219', '#8B7FD1', '#5D9CEC'];
+
+  function statusColor(label, fallbackIndexRef){
+    const norm = label.toLowerCase();
+    const rule = STATUS_COLOR_RULES.find(r => r.test(norm));
+    if (rule) return rule.color;
+    const color = STATUS_FALLBACK_COLORS[fallbackIndexRef.i % STATUS_FALLBACK_COLORS.length];
+    fallbackIndexRef.i++;
+    return color;
+  }
+
+  function drawStatusDistribution(breakdown){
+    const bar = document.getElementById('statusDistBar');
+    const legend = document.getElementById('statusDistLegend');
+    if (!breakdown.length){
+      bar.innerHTML = '';
+      legend.innerHTML = `<span class="table-sub">Aún no hay leads para mostrar.</span>`;
+      return;
+    }
+    const total = breakdown.reduce((sum, s) => sum + s.count, 0) || 1;
+    const fallbackIndexRef = { i: 0 };
+    const withColor = breakdown.map(s => ({ ...s, color: statusColor(s.label, fallbackIndexRef), pct: Math.round((s.count / total) * 100) }));
+
+    bar.innerHTML = withColor.map(s => `
+      <div class="status-dist-seg" style="width:${(s.count/total)*100}%; background:${s.color};" title="${s.label}: ${s.count} (${s.pct}%)">
+        ${s.pct >= 8 ? s.pct + '%' : ''}
+      </div>`).join('');
+
+    legend.innerHTML = withColor.map(s => `
+      <span class="key"><span class="swatch" style="background:${s.color}"></span>${s.label} — ${fmt(s.count)} (${s.pct}%)</span>
+    `).join('');
   }
 
   function drawBarsWithTarget(svgId, tooltipId, labels, series, target, color, seriesLabel, fmtFn){
@@ -670,13 +770,14 @@
     });
   }
 
-  function drawDailyChart(days, milestones){
+  function drawDailyChart(days, milestones, weeklyGoal){
     milestones = milestones || [];
     const svg = document.getElementById('dailyChart');
     const tooltip = document.getElementById('dailyTooltip');
     const W = 960, H = 260, padL = 34, padR = 12, padT = 26, padB = 40;
+    const dailyGoal = weeklyGoal ? weeklyGoal / 7 : null;
     const values = days.map(d => d.count);
-    const maxVal = Math.max(...values, 1) * 1.2;
+    const maxVal = Math.max(...values, dailyGoal || 0, 1) * 1.2;
     const n = days.length;
     const barW = Math.max(6, (W - padL - padR) / n * 0.6);
     const step = (W - padL - padR) / n;
@@ -693,6 +794,12 @@
       svgContent += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
       svgContent += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
     });
+
+    if (dailyGoal){
+      const goalY = padT + (H - padT - padB) * (1 - dailyGoal / maxVal);
+      svgContent += `<line class="target-line" x1="${padL}" x2="${W-padR}" y1="${goalY}" y2="${goalY}"/>`;
+      svgContent += `<text class="axis-label" x="${W-padR}" y="${goalY-6}" text-anchor="end">Meta semanal ÷7: ~${dailyGoal.toFixed(1)}/día</text>`;
+    }
 
     days.forEach((d, i) => {
       const x = padL + step * i + (step - barW)/2;
