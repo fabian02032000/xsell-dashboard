@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-19T17:24:35.762021+00:00",
+  "updated_at": "2026-08-19T18:32:39.968860+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 64,
+  "total_leads": 65,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -89,6 +89,10 @@
     {
       "date": "2026-08-17",
       "count": 5
+    },
+    {
+      "date": "2026-08-19",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -102,7 +106,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 44,
+      "leads": 45,
       "goal": 74.0,
       "is_partial": false
     }
@@ -135,19 +139,28 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "leads": 5,
+      "leads": 6,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 44,
+  "current_month_leads": 45,
   "current_month_label": "August 2026",
-  "current_week_leads": 5,
+  "current_week_leads": 6,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 63,
   "leads_detail": [
+    {
+      "name": "Angel RS",
+      "email": "dbambinosperu@gmail.com",
+      "company": "D'BAMBINOS",
+      "created_date": "2026-08-19",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
     {
       "name": "Franco B",
       "email": "frankren.18@gmail.com",
@@ -741,7 +754,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
