@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T00:46:32.795576+00:00",
+  "updated_at": "2026-08-19T01:03:59.345658+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -723,6 +723,25 @@
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "Luis Angel Carrasco Garcia"
+    }
+  ],
+  "reuniones_auto": 3,
+  "leads_status_breakdown": [
+    {
+      "label": "Descartada",
+      "count": 44
+    },
+    {
+      "label": "Sin negocio",
+      "count": 9
+    },
+    {
+      "label": "Prospectos Contactados",
+      "count": 8
+    },
+    {
+      "label": "Reunión Agendadas",
+      "count": 3
     }
   ]
 }
