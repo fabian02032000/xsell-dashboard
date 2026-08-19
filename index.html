@@ -65,6 +65,9 @@
   @media (max-width: 700px){ .creative-hero-body{ padding:0 20px 20px; } }
   .creative-hero-body h3{margin:0 0 6px; font-size:16px;}
   .creative-hero-body p{margin:0 0 14px; font-size:13px; color:var(--text-muted); line-height:1.5;}
+  .creative-copy{margin:0 0 16px; font-size:13px; color:var(--text-muted); line-height:1.6; background:var(--surface-2); border-radius:10px; padding:12px 14px;}
+  .creative-copy strong{display:block; color:var(--text-primary); font-size:14px; margin-bottom:4px;}
+  .creative-copy em{display:block; margin-top:6px; font-style:normal; color:var(--text-muted);}
   .creative-stats{display:flex; gap:20px; flex-wrap:wrap;}
   .creative-stats div p:first-child{font-size:11px; color:var(--text-muted); margin:0;}
   .creative-stats div p:last-child{font-size:18px; font-weight:800; margin:2px 0 0;}
@@ -124,6 +127,16 @@
   .ad-toggle.expanded{color:var(--orange); border-color:var(--orange);}
   .ad-detail-row td{background:var(--surface-2);}
 
+  /* Filtro de rango de fechas */
+  .date-filter-bar{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;}
+  .date-filter-presets{display:flex; flex-wrap:wrap; gap:8px;}
+  .filter-btn{background:var(--surface-2); border:1px solid var(--border); color:var(--text-muted); font-size:12px; font-weight:600; padding:7px 12px; border-radius:8px; cursor:pointer; font-family:inherit;}
+  .filter-btn:hover{color:var(--text-primary);}
+  .filter-btn.active{color:var(--orange); border-color:var(--orange); background:rgba(255,107,19,0.12);}
+  .date-filter-inputs{display:flex; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:var(--text-muted);}
+  .date-filter-inputs label{display:flex; align-items:center; gap:6px;}
+  .date-filter-inputs input[type="date"]{background:var(--surface-2); border:1px solid var(--border); color:var(--text-primary); border-radius:8px; padding:6px 8px; font-family:inherit; font-size:12px; color-scheme:dark;}
+
   /* Calendario de publicaciones */
   .calendar-grid{display:grid; grid-template-columns:repeat(7, 1fr); gap:6px;}
   .calendar-dow{font-size:11px; color:var(--text-muted); text-align:center; padding-bottom:4px;}
@@ -167,6 +180,28 @@
 
   <section>
     <div class="kpi-row" id="kpiRow"></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Filtrar por rango de fechas</h2>
+      <span class="hint">Aplica a "Leads por día", "Gasto diario" y "Estado de cada lead" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
+    </div>
+    <div class="chart-card">
+      <div class="date-filter-bar">
+        <div class="date-filter-presets">
+          <button type="button" class="filter-btn active" data-preset="all">Todo el período</button>
+          <button type="button" class="filter-btn" data-preset="7">Últimos 7 días</button>
+          <button type="button" class="filter-btn" data-preset="30">Últimos 30 días</button>
+          <button type="button" class="filter-btn" data-preset="month">Este mes</button>
+        </div>
+        <div class="date-filter-inputs">
+          <label>Desde <input type="date" id="dateFrom"></label>
+          <label>Hasta <input type="date" id="dateTo"></label>
+        </div>
+      </div>
+      <div class="kpi-row" id="rangeKpiRow" style="margin-top:16px;"></div>
+    </div>
   </section>
 
   <section>
@@ -566,7 +601,7 @@
       `;
       drawBarsWithTarget('budgetMonthChart', 'budgetMonthTooltip',
         ['Este mes'], [meta.month_spend], meta.monthly_budget_goal, purple2, 'Gasto', v => fmtMoney(v));
-      drawDailySpend(meta.daily_spend || []);
+      // El gráfico de gasto diario se dibuja más abajo, según el rango de fechas elegido (initDateFilter/applyDateRange).
       drawCampaignsTable(meta.campaigns || [], meta.campaigns_month || []);
       drawAdsPerformanceTable(meta.ads_performance_available ? (meta.ads_performance || []) : [], meta.ads_performance_available);
     } else {
@@ -586,13 +621,103 @@
     // ---- Distribución de estado de leads ----
     drawStatusDistribution(data.leads_status_breakdown || []);
 
-    // ---- Estado de cada lead ----
-    drawLeadsTable(data.leads_detail || [], data.leads_with_deal, data.total_leads);
-
-    // ---- Leads por día (+ hitos de campaña) ----
+    // ---- Milestones (lista completa, no depende del filtro de fechas) ----
     const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
-    drawDailyChart(data.leads_by_day, milestones, data.weekly_goal);
     drawMilestoneList(milestones, hasMeta, meta);
+
+    // ---- Filtro de rango de fechas: dibuja "Leads por día", "Gasto diario"
+    // y "Estado de cada lead" según el rango elegido (por defecto, todo el período) ----
+    initDateFilter(data, meta);
+  }
+
+  let filterCtx = { data: null, meta: null };
+
+  function initDateFilter(data, meta){
+    filterCtx = { data, meta };
+    const fromInput = document.getElementById('dateFrom');
+    const toInput = document.getElementById('dateTo');
+    const days = data.leads_by_day || [];
+    const today = days.length ? days[days.length - 1].date : new Date().toISOString().slice(0, 10);
+    const start = data.campaign_start;
+
+    [fromInput, toInput].forEach(inp => { inp.min = start; inp.max = today; });
+    fromInput.value = start;
+    toInput.value = today;
+
+    fromInput.addEventListener('change', () => {
+      setPresetActive(null);
+      applyDateRange(fromInput.value, toInput.value);
+    });
+    toInput.addEventListener('change', () => {
+      setPresetActive(null);
+      applyDateRange(fromInput.value, toInput.value);
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setPresetActive(btn);
+        let from = start;
+        const preset = btn.dataset.preset;
+        if (preset === '7'){
+          const d = new Date(today + 'T00:00:00'); d.setDate(d.getDate() - 6);
+          from = d.toISOString().slice(0, 10);
+        } else if (preset === '30'){
+          const d = new Date(today + 'T00:00:00'); d.setDate(d.getDate() - 29);
+          from = d.toISOString().slice(0, 10);
+        } else if (preset === 'month'){
+          from = today.slice(0, 7) + '-01';
+        }
+        if (from < start) from = start;
+        fromInput.value = from;
+        toInput.value = today;
+        applyDateRange(from, today);
+      });
+    });
+
+    applyDateRange(start, today);
+  }
+
+  function setPresetActive(btn){
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+  }
+
+  function applyDateRange(from, to){
+    const { data, meta } = filterCtx;
+    const hasMeta = meta && meta.updated_at;
+
+    const filteredDays = (data.leads_by_day || []).filter(d => d.date >= from && d.date <= to);
+    const rangeLeads = filteredDays.reduce((sum, d) => sum + d.count, 0);
+
+    const filteredSpendDays = hasMeta ? (meta.daily_spend || []).filter(d => d.date >= from && d.date <= to) : [];
+    const rangeSpend = filteredSpendDays.reduce((sum, d) => sum + d.spend, 0);
+
+    document.getElementById('rangeKpiRow').innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Leads en el rango</p>
+        <p class="tile-value">${fmt(rangeLeads)}</p>
+        <p class="tile-sub">${from} — ${to}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Inversión en el rango</p>
+        <p class="tile-value">${hasMeta ? fmtMoney(rangeSpend) : '—'}</p>
+        <p class="tile-sub">${hasMeta ? 'Toda la cuenta, en Meta Ads' : 'Esperando Meta Ads'}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Costo por lead en el rango</p>
+        <p class="tile-value">${(hasMeta && rangeLeads) ? fmtMoney(rangeSpend / rangeLeads) : '—'}</p>
+        <p class="tile-sub">Gasto ÷ leads del rango</p>
+      </div>
+    `;
+
+    const milestonesInRange = (hasMeta && meta.milestones_available)
+      ? (meta.milestones || []).filter(m => m.date >= from && m.date <= to)
+      : [];
+    drawDailyChart(filteredDays, milestonesInRange, data.weekly_goal);
+    if (hasMeta) drawDailySpend(filteredSpendDays);
+
+    const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
+    drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length);
   }
 
   function drawCampaignsTable(campaignsTotal, campaignsMonth){
@@ -867,12 +992,21 @@
     }
 
     const hero = leadsCreatives[0];
+    const heroCopyParts = [];
+    if (hero.title) heroCopyParts.push(`<strong>${escapeHtml(hero.title)}</strong>`);
+    if (hero.body) heroCopyParts.push(escapeHtml(hero.body));
+    if (hero.description) heroCopyParts.push(`<em>${escapeHtml(hero.description)}</em>`);
+    const heroCopyHtml = heroCopyParts.length
+      ? `<div class="creative-copy">${heroCopyParts.join('<br>')}</div>`
+      : `<div class="creative-copy table-sub">Este anuncio no tiene título ni texto configurado en Meta Ads.</div>`;
+
     heroWrap.innerHTML = `
       <div class="creative-hero">
         <img src="${hero.image_url}" alt="${hero.ad_name || 'Creatividad activa'}">
         <div class="creative-hero-body">
           <h3>${hero.ad_name || 'Anuncio activo'}</h3>
           <p>Esta es la pieza activa generando leads ahora mismo — vía el formulario de Meta Lead Ads de la campaña "${hero.campaign_name}". La imagen se trae en vivo desde tu cuenta de Meta Ads, así que si cambias el anuncio, se actualiza sola.</p>
+          ${heroCopyHtml}
           <div class="creative-stats">
             <div><p>Leads generados</p><p>${fmt(data.total_leads)}</p></div>
             <div><p>Inversión</p><p>${fmtMoney(meta.leads_campaign_spend_total)}</p></div>
@@ -890,7 +1024,7 @@
       galleryGrid.innerHTML = galleryItems.map(c => `
         <figure>
           <img src="${c.image_url}" alt="${c.ad_name || ''}">
-          <figcaption>${c.ad_name || 'Anuncio'} · ${c.campaign_name || ''}</figcaption>
+          <figcaption>${c.title ? `<strong style="display:block; color:var(--text-primary); margin-bottom:2px;">${escapeHtml(c.title)}</strong>` : ''}${c.ad_name || 'Anuncio'} · ${c.campaign_name || ''}</figcaption>
         </figure>`).join('');
     }
   }
