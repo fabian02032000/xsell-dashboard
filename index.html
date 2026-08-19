@@ -106,6 +106,37 @@
   .status-dist-seg{height:100%; display:flex; align-items:center; justify-content:center; color:#0c0716; font-size:11px; font-weight:800; white-space:nowrap; overflow:hidden;}
   .status-dist-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px;}
   .status-dist-legend .key{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--text-muted);}
+
+  /* Pestañas */
+  .tab-nav{display:flex; gap:8px; margin-bottom:28px; border-bottom:1px solid var(--border); padding-bottom:0;}
+  .tab-btn{background:none; border:none; color:var(--text-muted); font-size:14px; font-weight:700; padding:10px 16px; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; font-family:inherit;}
+  .tab-btn:hover{color:var(--text-primary);}
+  .tab-btn.active{color:var(--orange); border-bottom-color:var(--orange);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  /* Rendimiento de cada anuncio */
+  .ad-thumb{width:56px; height:56px; object-fit:cover; border-radius:8px; display:block; background:var(--surface-2);}
+  .ad-copy-cell{max-width:260px; white-space:normal; font-size:12px; color:var(--text-muted); line-height:1.4;}
+  .ad-copy-cell strong{display:block; color:var(--text-primary); font-size:13px; margin-bottom:2px; white-space:normal;}
+
+  /* Calendario de publicaciones */
+  .calendar-grid{display:grid; grid-template-columns:repeat(7, 1fr); gap:6px;}
+  .calendar-dow{font-size:11px; color:var(--text-muted); text-align:center; padding-bottom:4px;}
+  .calendar-day{aspect-ratio:1; border-radius:8px; background:var(--surface-2); display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:11px; color:var(--text-muted); position:relative; cursor:default;}
+  .calendar-day.has-post{background:rgba(255,107,19,0.16); border:1px solid rgba(255,107,19,0.4); color:var(--text-primary); font-weight:700;}
+  .calendar-day.empty{background:transparent;}
+  .calendar-day .cal-num{font-size:10px; color:var(--text-muted); position:absolute; top:4px; left:6px;}
+  .calendar-day .cal-dots{display:flex; gap:3px; margin-top:8px;}
+  .calendar-dot{width:6px; height:6px; border-radius:50%;}
+  .calendar-legend{display:flex; gap:16px; margin-top:14px; font-size:12px; color:var(--text-muted);}
+
+  /* Publicaciones orgánicas */
+  .post-thumb{width:48px; height:48px; object-fit:cover; border-radius:8px; display:block; background:var(--surface-2);}
+  .post-text-cell{max-width:280px; white-space:normal; font-size:12px; color:var(--text-muted); line-height:1.4;}
+  .platform-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:700; white-space:nowrap;}
+  .platform-pill.facebook{color:#6EA8FE; background:rgba(110,168,254,0.12); border:1px solid rgba(110,168,254,0.4);}
+  .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 </style>
 </head>
 <body>
@@ -122,6 +153,13 @@
       <span id="updatedAt"></span>
     </div>
   </header>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" data-tab="leads">📊 Leads y ventas</button>
+    <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-leads">
 
   <section>
     <div class="kpi-row" id="kpiRow"></div>
@@ -213,6 +251,21 @@
 
   <section>
     <div class="section-head">
+      <h2>Rendimiento de cada anuncio</h2>
+      <span class="hint">Título, texto e imagen de cada pieza, en vivo desde Meta Ads · ordenado por gasto</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap scroll-y">
+        <table>
+          <thead><tr><th>Anuncio</th><th>Título y texto</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Leads</th><th>Costo/lead</th></tr></thead>
+          <tbody id="adsPerformanceTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
       <h2>Detalle semanal</h2>
       <span class="hint">Compromiso de leads, gasto, costo por lead y frecuencia — semana a semana</span>
     </div>
@@ -278,6 +331,96 @@
     </div>
   </section>
 
+  </div>
+
+  <div class="tab-panel" id="tab-organic">
+
+  <section>
+    <div class="kpi-row" id="organicKpiRow"></div>
+  </section>
+
+  <section id="organicUnavailable" style="display:none;">
+    <div class="callout"><span>ⓘ</span><div id="organicUnavailableText"></div></div>
+  </section>
+
+  <div id="organicContent" style="display:none;">
+
+  <section>
+    <div class="section-head">
+      <h2>Seguidores por mes</h2>
+      <span class="hint">Facebook e Instagram — se registra un dato por día y se muestra el cierre de cada mes</span>
+    </div>
+    <div class="chart-card">
+      <div class="legend">
+        <span class="key"><span class="swatch" style="background:#6EA8FE"></span>Facebook</span>
+        <span class="key"><span class="swatch" style="background:#FF6BAA"></span>Instagram</span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart" id="followerChart" viewBox="0 0 960 220"></svg>
+        <div class="tooltip" id="followerTooltip"></div>
+      </div>
+      <p class="hint" id="followerHint" style="margin-top:10px;"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Calendario de publicaciones</h2>
+      <span class="hint">Qué días se subió contenido — últimos 42 días</span>
+    </div>
+    <div class="chart-card">
+      <div class="calendar-grid" id="postingCalendar"></div>
+      <div class="calendar-legend">
+        <span class="key"><span class="swatch" style="background:rgba(255,107,19,0.5)"></span>Día con publicación</span>
+        <span class="key"><span class="swatch" style="background:#6EA8FE"></span>Facebook</span>
+        <span class="key"><span class="swatch" style="background:#FF6BAA"></span>Instagram</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Alcance e interacciones por mes</h2>
+      <span class="hint">Suma de todas las publicaciones (Facebook + Instagram) de cada mes</span>
+    </div>
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="legend"><span class="key"><span class="swatch" style="background:var(--orange)"></span>Interacciones (likes + comentarios + compartidos)</span></div>
+        <div class="chart-wrap">
+          <svg class="chart" id="interactionsMonthChart" viewBox="0 0 480 220"></svg>
+          <div class="tooltip" id="interactionsMonthTooltip"></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="legend"><span class="key"><span class="swatch" style="background:var(--purple-2)"></span>Alcance</span></div>
+        <div class="chart-wrap">
+          <svg class="chart" id="reachMonthChart" viewBox="0 0 480 220"></svg>
+          <div class="tooltip" id="reachMonthTooltip"></div>
+        </div>
+        <p class="hint" id="reachHint" style="margin-top:10px;"></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Publicaciones</h2>
+      <span class="hint">Post por post, lo más reciente primero</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap scroll-y">
+        <table>
+          <thead><tr><th></th><th>Red</th><th>Fecha</th><th>Contenido</th><th>Likes</th><th>Comentarios</th><th>Compartidos</th><th>Alcance</th><th>Interacciones</th></tr></thead>
+          <tbody id="postsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  </div>
+
   <footer>Generado automáticamente por GitHub Actions · Xsell</footer>
 </div>
 
@@ -292,11 +435,22 @@
   function fmt(n){ return new Intl.NumberFormat('es-PE').format(Math.round(n)); }
   function fmtMoney(n){ return 'S/ ' + new Intl.NumberFormat('es-PE', {minimumFractionDigits:1, maximumFractionDigits:1}).format(n); }
 
+  // ---- Pestañas ----
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
   Promise.all([
     fetch('./data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./meta_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./funnel_config.json?_=' + Date.now()).then(r => r.json()).catch(() => ({reuniones: null})),
-  ]).then(([leadsData, metaData, funnelCfg]) => {
+    fetch('./organic_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
+  ]).then(([leadsData, metaData, funnelCfg, organicData]) => {
     if (!leadsData){
       document.getElementById('statusBadge').textContent = '● Sin datos aún';
       document.getElementById('statusBadge').className = 'badge warn';
@@ -304,6 +458,7 @@
       return;
     }
     render(leadsData, metaData, funnelCfg || {});
+    renderOrganic(organicData);
   });
 
   function render(data, meta, funnelCfg){
@@ -392,10 +547,12 @@
         ['Este mes'], [meta.month_spend], meta.monthly_budget_goal, purple2, 'Gasto', v => fmtMoney(v));
       drawDailySpend(meta.daily_spend || []);
       drawCampaignsTable(meta.campaigns || [], meta.campaigns_month || []);
+      drawAdsPerformanceTable(meta.ads_performance_available ? (meta.ads_performance || []) : [], meta.ads_performance_available);
     } else {
       document.getElementById('budgetHint').textContent = 'Esperando primera actualización de Meta Ads';
       document.getElementById('budgetRow').innerHTML = '';
       drawCampaignsTable([], []);
+      drawAdsPerformanceTable([], false);
     }
 
     // ---- Detalle semanal ----
@@ -432,6 +589,43 @@
         <td>${fmtMoney(c.spend)}</td>
         <td>${fmtMoney(monthByName[c.name] || 0)}</td>
       </tr>`).join('');
+  }
+
+  function escapeHtml(s){
+    return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function drawAdsPerformanceTable(ads, available){
+    const body = document.getElementById('adsPerformanceTableBody');
+    if (!available){
+      body.innerHTML = `<tr><td colspan="8" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
+      return;
+    }
+    if (!ads.length){
+      body.innerHTML = `<tr><td colspan="8" class="table-sub">No se encontraron anuncios con datos en este período.</td></tr>`;
+      return;
+    }
+    body.innerHTML = ads.map(a => {
+      const img = a.image_url
+        ? `<img class="ad-thumb" src="${a.image_url}" alt="${escapeHtml(a.ad_name)}">`
+        : `<div class="ad-thumb"></div>`;
+      const copyParts = [];
+      if (a.title) copyParts.push(`<strong>${escapeHtml(a.title)}</strong>`);
+      if (a.body) copyParts.push(escapeHtml(a.body).slice(0, 140) + (a.body.length > 140 ? '…' : ''));
+      if (a.description) copyParts.push(`<em>${escapeHtml(a.description)}</em>`);
+      const copyHtml = copyParts.length ? copyParts.join('<br>') : '<span class="table-sub">(sin texto)</span>';
+      return `
+        <tr>
+          <td>${img}<div class="table-sub" style="margin-top:4px;">${escapeHtml(a.ad_name)}</div></td>
+          <td class="ad-copy-cell">${copyHtml}</td>
+          <td>${fmtMoney(a.spend)}</td>
+          <td>${fmt(a.impressions)}</td>
+          <td>${fmt(a.clicks)}</td>
+          <td>${a.ctr.toFixed(2)}%</td>
+          <td>${fmt(a.leads)}</td>
+          <td>${a.cost_per_lead !== null && a.cost_per_lead !== undefined ? fmtMoney(a.cost_per_lead) : '—'}</td>
+        </tr>`;
+    }).join('');
   }
 
   function pct(part, total){
@@ -849,6 +1043,251 @@
       });
       marker.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
     });
+  }
+
+  // =================== Contenido orgánico (Facebook e Instagram) ===================
+
+  function renderOrganic(organic){
+    const kpiRow = document.getElementById('organicKpiRow');
+    const unavailableSection = document.getElementById('organicUnavailable');
+    const unavailableText = document.getElementById('organicUnavailableText');
+    const content = document.getElementById('organicContent');
+
+    if (!organic || (!organic.facebook_available && !organic.instagram_available)){
+      kpiRow.innerHTML = '';
+      content.style.display = 'none';
+      unavailableSection.style.display = '';
+      unavailableText.textContent = (organic && organic.error)
+        ? organic.error
+        : 'Esperando la primera actualización del contenido orgánico (Facebook e Instagram).';
+      return;
+    }
+
+    unavailableSection.style.display = 'none';
+    content.style.display = '';
+
+    const posts = organic.posts || [];
+    const totalInteractions = posts.reduce((sum, p) => sum + (p.interactions || 0), 0);
+    const fbPostsCount = posts.filter(p => p.platform === 'facebook').length;
+    const igPostsCount = posts.filter(p => p.platform === 'instagram').length;
+
+    kpiRow.innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Seguidores Facebook</p>
+        <p class="tile-value">${(organic.fb_followers !== null && organic.fb_followers !== undefined) ? fmt(organic.fb_followers) : '—'}</p>
+        <p class="tile-sub">${organic.page_name || ''}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Seguidores Instagram</p>
+        <p class="tile-value">${(organic.ig_followers !== null && organic.ig_followers !== undefined) ? fmt(organic.ig_followers) : '—'}</p>
+        <p class="tile-sub">${organic.ig_username ? '@' + organic.ig_username : 'No conectado'}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Publicaciones</p>
+        <p class="tile-value">${fmt(posts.length)}</p>
+        <p class="tile-sub">${fmt(fbPostsCount)} en Facebook · ${fmt(igPostsCount)} en Instagram</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Interacciones totales</p>
+        <p class="tile-value">${fmt(totalInteractions)}</p>
+        <p class="tile-sub">Likes + comentarios + compartidos</p>
+      </div>
+    `;
+
+    drawFollowerChart(organic.follower_history || []);
+    drawPostingCalendar(organic.posting_calendar || {});
+
+    const months = organic.monthly_summary || [];
+    drawMonthlyBarChart('interactionsMonthChart', 'interactionsMonthTooltip', months, 'interactions', orange, fmt, 'Interacciones');
+    drawMonthlyBarChart('reachMonthChart', 'reachMonthTooltip', months, 'reach', purple2, fmt, 'Alcance');
+    document.getElementById('reachHint').textContent = months.some(m => m.reach === null)
+      ? 'El alcance no está disponible para todas las publicaciones — depende del tipo de contenido y de los permisos que tenga el token de Meta.'
+      : '';
+
+    drawPostsTable(posts);
+  }
+
+  function monthlyFollowerSeries(history){
+    const byMonth = {};
+    history.forEach(h => {
+      if (!h.date) return;
+      byMonth[h.date.slice(0, 7)] = h; // el historial viene ordenado por fecha ascendente, se queda con el último dato de cada mes
+    });
+    return Object.keys(byMonth).sort().map(m => ({ month: m, fb: byMonth[m].fb_followers, ig: byMonth[m].ig_followers }));
+  }
+
+  function drawFollowerChart(history){
+    const svg = document.getElementById('followerChart');
+    const tooltip = document.getElementById('followerTooltip');
+    const hint = document.getElementById('followerHint');
+    const W = 960, H = 220, padL = 46, padR = 16, padT = 20, padB = 34;
+
+    const series = monthlyFollowerSeries(history);
+    if (series.length < 2){
+      svg.innerHTML = '';
+      hint.textContent = 'Todavía no hay suficientes días registrados para mostrar la tendencia mensual — el historial se va guardando automáticamente cada día, vuelve a revisar en unos días.';
+      return;
+    }
+    hint.textContent = '';
+
+    const allValues = series.flatMap(s => [s.fb || 0, s.ig || 0]);
+    const maxVal = Math.max(...allValues, 1) * 1.15;
+    const n = series.length;
+    const step = (W - padL - padR) / Math.max(1, n - 1);
+
+    let content = '';
+    [0, 0.5, 1].forEach(f => {
+      const y = padT + (H - padT - padB) * (1 - f);
+      content += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+      content += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
+    });
+
+    function pointsFor(key){
+      return series.map((s, i) => {
+        const x = padL + step * i;
+        const v = s[key] || 0;
+        const y = H - padB - (H - padT - padB) * (v / maxVal);
+        return { x, y };
+      });
+    }
+
+    function drawLine(points, color){
+      const path = points.map((p, i) => (i === 0 ? 'M' : 'L') + p.x + ',' + p.y).join(' ');
+      let html = `<path d="${path}" fill="none" stroke="${color}" stroke-width="2"/>`;
+      points.forEach(p => { html += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="${color}"/>`; });
+      return html;
+    }
+
+    content += drawLine(pointsFor('fb'), '#6EA8FE');
+    content += drawLine(pointsFor('ig'), '#FF6BAA');
+
+    series.forEach((s, i) => {
+      const x = padL + step * i;
+      content += `<text class="axis-label" x="${x}" y="${H-padB+16}" text-anchor="middle">${s.month.slice(5)}</text>`;
+      content += `<rect class="bar" data-i="${i}" x="${x-10}" y="${padT}" width="20" height="${H-padT-padB}" fill="transparent"/>`;
+    });
+
+    svg.innerHTML = content;
+    svg.querySelectorAll('.bar').forEach(hit => {
+      hit.addEventListener('pointerenter', () => {
+        const i = +hit.dataset.i;
+        const s = series[i];
+        tooltip.innerHTML = `<strong>${s.month}</strong><br>Facebook: ${(s.fb !== null && s.fb !== undefined) ? fmt(s.fb) : '—'}<br>Instagram: ${(s.ig !== null && s.ig !== undefined) ? fmt(s.ig) : '—'}`;
+        tooltip.style.opacity = 1;
+      });
+      hit.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      hit.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
+  }
+
+  function drawPostingCalendar(calendar){
+    const grid = document.getElementById('postingCalendar');
+    const today = new Date();
+    const days = [];
+    for (let i = 41; i >= 0; i--){
+      const d = new Date(today);
+      d.setDate(d.getDate() - i);
+      days.push(d);
+    }
+    const firstDow = (days[0].getDay() + 6) % 7; // 0 = lunes
+    const dowLabels = ['L','M','X','J','V','S','D'];
+
+    let html = dowLabels.map(l => `<div class="calendar-dow">${l}</div>`).join('');
+    for (let i = 0; i < firstDow; i++){
+      html += `<div class="calendar-day empty"></div>`;
+    }
+    days.forEach(d => {
+      const key = d.toISOString().slice(0, 10);
+      const info = calendar[key];
+      const hasPost = !!(info && (info.facebook > 0 || info.instagram > 0));
+      let dots = '';
+      if (info && info.facebook > 0) dots += `<span class="calendar-dot" style="background:#6EA8FE"></span>`;
+      if (info && info.instagram > 0) dots += `<span class="calendar-dot" style="background:#FF6BAA"></span>`;
+      const total = info ? (info.facebook + info.instagram) : 0;
+      html += `
+        <div class="calendar-day ${hasPost ? 'has-post' : ''}" title="${key}${total ? ': ' + total + ' publicación(es)' : ''}">
+          <span class="cal-num">${d.getDate()}</span>
+          <div class="cal-dots">${dots}</div>
+        </div>`;
+    });
+    grid.innerHTML = html;
+  }
+
+  function drawMonthlyBarChart(svgId, tooltipId, months, valueKey, color, fmtFn, seriesLabel){
+    const svg = document.getElementById(svgId);
+    const tooltip = document.getElementById(tooltipId);
+    const W = 480, H = 220, padL = 46, padR = 12, padT = 20, padB = 34;
+    if (!months.length){ svg.innerHTML = ''; return; }
+    const values = months.map(m => m[valueKey] || 0);
+    const maxVal = Math.max(...values, 1) * 1.2;
+    const n = months.length;
+    const barW = Math.min(50, (W - padL - padR) / n * 0.55);
+    const step = (W - padL - padR) / n;
+
+    let content = '';
+    [0, 0.5, 1].forEach(f => {
+      const y = padT + (H - padT - padB) * (1 - f);
+      content += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+      content += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
+    });
+
+    months.forEach((m, i) => {
+      const val = m[valueKey] || 0;
+      const x = padL + step * i + (step - barW) / 2;
+      const h = (H - padT - padB) * (val / maxVal);
+      const y = H - padB - h;
+      content += `<rect class="bar" data-i="${i}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="3" fill="${color}"/>`;
+      content += `<text class="axis-label" x="${x + barW/2}" y="${H-padB+16}" text-anchor="middle">${m.month.slice(5)}</text>`;
+    });
+
+    svg.innerHTML = content;
+    svg.querySelectorAll('.bar').forEach(bar => {
+      bar.addEventListener('pointerenter', () => {
+        const i = +bar.dataset.i;
+        const m = months[i];
+        const val = m[valueKey];
+        tooltip.innerHTML = `<strong>${m.month}</strong><br>${seriesLabel}: ${(val !== null && val !== undefined) ? fmtFn(val) : 'sin dato'}`;
+        tooltip.style.opacity = 1;
+      });
+      bar.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      bar.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
+  }
+
+  function drawPostsTable(posts){
+    const body = document.getElementById('postsTableBody');
+    if (!posts.length){
+      body.innerHTML = `<tr><td colspan="9" class="table-sub">Aún no hay publicaciones para mostrar.</td></tr>`;
+      return;
+    }
+    body.innerHTML = posts.map(p => {
+      const img = p.image_url ? `<img class="post-thumb" src="${p.image_url}" alt="">` : `<div class="post-thumb"></div>`;
+      const platformLabel = p.platform === 'facebook' ? 'Facebook' : 'Instagram';
+      const textEsc = escapeHtml(p.text) || '(sin texto)';
+      const textHtml = p.permalink
+        ? `<a href="${p.permalink}" target="_blank" rel="noopener" style="color:inherit;">${textEsc}</a>`
+        : textEsc;
+      return `
+        <tr>
+          <td>${img}</td>
+          <td><span class="platform-pill ${p.platform}">${platformLabel}</span></td>
+          <td>${p.date || '—'}</td>
+          <td class="post-text-cell">${textHtml}</td>
+          <td>${fmt(p.likes || 0)}</td>
+          <td>${fmt(p.comments || 0)}</td>
+          <td>${p.platform === 'facebook' ? fmt(p.shares || 0) : '—'}</td>
+          <td>${(p.reach !== null && p.reach !== undefined) ? fmt(p.reach) : '—'}</td>
+          <td>${fmt(p.interactions || 0)}</td>
+        </tr>`;
+    }).join('');
   }
 })();
 </script>
