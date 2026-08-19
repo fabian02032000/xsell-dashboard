@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """
-Lee las publicaciones orgánicas (sin pago) de la Página de Facebook y de la
-cuenta de Instagram conectada, junto con sus seguidores, alcance e
-interacciones, y genera organic_data.json para la pestaña de "Contenido
-orgánico" del dashboard. Se ejecuta automáticamente vía GitHub Actions,
-junto con fetch_hubspot.py y fetch_meta.py.
-
-Usa el mismo token del sistema (META_TOKEN) que fetch_meta.py, pero con
-permisos adicionales sobre la Página y la cuenta de Instagram.
+Lee el gasto (inversión), las creatividades activas, el detalle semanal
+(gasto, frecuencia) y los hitos de cambios de campaña desde Meta Ads,
+y genera meta_data.json para el dashboard.
+Se ejecuta automáticamente vía GitHub Actions, junto con fetch_hubspot.py.
 """
 import os
 import sys
@@ -16,237 +12,295 @@ import datetime
 import urllib.request
 import urllib.parse
 import urllib.error
-from collections import defaultdict
 
 # ---------------------- CONFIGURACIÓN ----------------------
+CAMPAIGN_START_DATE = os.environ.get("CAMPAIGN_START_DATE", "2026-07-25")
+AD_ACCOUNT_ID = os.environ.get("AD_ACCOUNT_ID", "act_1550453590204187")
+MONTHLY_BUDGET_GOAL = float(os.environ.get("MONTHLY_BUDGET_GOAL", "1500"))
+# Nombre (o parte del nombre) de la campaña de leads, para identificarla entre
+# todas las campañas de la cuenta.
+LEADS_CAMPAIGN_MATCH = os.environ.get("LEADS_CAMPAIGN_MATCH", "prospectos b2b")
+
 META_TOKEN = os.environ.get("META_TOKEN")
 API_VERSION = "v21.0"
 API_BASE = f"https://graph.facebook.com/{API_VERSION}"
-# Parte del nombre de la Página de Facebook, para identificarla si el usuario
-# del sistema tuviera acceso a más de una.
-PAGE_NAME_MATCH = os.environ.get("PAGE_NAME_MATCH", "Xsell")
-OUTPUT_FILE = "organic_data.json"
-MAX_POSTS = 60
-MAX_HISTORY_DAYS = 180
 
 
-def meta_get(path, params, token=None):
+def meta_get(path, params):
     params = dict(params)
-    params["access_token"] = token or META_TOKEN
+    params["access_token"] = META_TOKEN
     url = f"{API_BASE}{path}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, method="GET")
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def discover_assets():
+def fetch_campaign_totals(since_date, until_date):
+    """Gasto total por campaña, en el rango dado."""
+    data = meta_get(
+        f"/{AD_ACCOUNT_ID}/insights",
+        {
+            "level": "campaign",
+            "fields": "spend,campaign_name",
+            "time_range": json.dumps({"since": since_date, "until": until_date}),
+        },
+    )
+    return data.get("data", [])
+
+
+def fetch_daily_spend(since_date, until_date):
+    """Gasto diario de toda la cuenta, para el gráfico."""
+    data = meta_get(
+        f"/{AD_ACCOUNT_ID}/insights",
+        {
+            "level": "account",
+            "fields": "spend",
+            "time_increment": 1,
+            "time_range": json.dumps({"since": since_date, "until": until_date}),
+        },
+    )
+    return [{"date": row["date_start"], "spend": float(row.get("spend", 0))} for row in data.get("data", [])]
+
+
+def build_week_ranges(campaign_start_str, today):
+    """Semanas de lunes a domingo, desde la semana de inicio de campaña
+    hasta la semana actual (incluida, aunque esté en curso). Debe coincidir
+    exactamente con la misma lógica en fetch_hubspot.py para poder cruzar
+    los datos en el dashboard."""
+    campaign_start = datetime.date.fromisoformat(campaign_start_str)
+    first_monday = campaign_start - datetime.timedelta(days=campaign_start.weekday())
+    weeks = []
+    cursor = first_monday
+    while cursor <= today:
+        week_end = cursor + datetime.timedelta(days=6)
+        weeks.append({"week_start": cursor.isoformat(), "week_end": week_end.isoformat()})
+        cursor += datetime.timedelta(days=7)
+    return weeks
+
+
+def fetch_spend_by_week(weeks):
+    """Gasto, impresiones, alcance y frecuencia por semana. Si una semana
+    falla (p.ej. está fuera de rango de datos disponibles en la cuenta), esa
+    semana queda con ceros en vez de romper el resto."""
+    result = []
+    today = datetime.date.today()
+    for w in weeks:
+        until = min(datetime.date.fromisoformat(w["week_end"]), today).isoformat()
+        try:
+            data = meta_get(
+                f"/{AD_ACCOUNT_ID}/insights",
+                {
+                    "level": "account",
+                    "fields": "spend,impressions,reach,frequency",
+                    "time_range": json.dumps({"since": w["week_start"], "until": until}),
+                },
+            )
+            rows = data.get("data", [])
+            row = rows[0] if rows else {}
+            result.append({
+                **w,
+                "spend": round(float(row.get("spend", 0)), 2),
+                "impressions": int(float(row.get("impressions", 0))),
+                "reach": int(float(row.get("reach", 0))),
+                "frequency": round(float(row.get("frequency", 0)), 2),
+            })
+        except Exception as e:
+            print(f"AVISO: no se pudo traer el detalle de la semana {w['week_start']}: {e}", file=sys.stderr)
+            result.append({**w, "spend": 0, "impressions": 0, "reach": 0, "frequency": 0})
+    return result
+
+
+def fetch_ad_creatives_map():
     """
-    Encuentra la Página de Facebook asignada al usuario del sistema y, si
-    tiene una cuenta de Instagram profesional conectada, también su ID.
-    Devuelve None si no se encontró ninguna Página (por ejemplo, si aún no
-    se le asignó acceso).
+    Trae el texto real de cada anuncio (título, texto principal, descripción)
+    y su imagen, para poder mostrarlo junto a su rendimiento. Si falla, devuelve
+    un diccionario vacío y el resto del script sigue funcionando igual.
     """
     try:
-        data = meta_get("/me/accounts", {
-            "fields": "id,name,access_token,instagram_business_account{id,username}",
-            "limit": 50,
-        })
+        data = meta_get(
+            f"/{AD_ACCOUNT_ID}/ads",
+            {
+                "fields": "id,name,campaign{name},creative{title,body,link_description,image_url,thumbnail_url}",
+                "limit": 500,
+            },
+        )
     except Exception as e:
-        print(f"ERROR: no se pudo listar las páginas conectadas al token: {e}", file=sys.stderr)
+        print(f"AVISO: no se pudo traer el texto de los anuncios: {e}", file=sys.stderr)
+        return {}, False
+
+    creatives_map = {}
+    for ad in data.get("data", []):
+        creative = ad.get("creative") or {}
+        creatives_map[ad.get("id")] = {
+            "ad_name": ad.get("name"),
+            "campaign_name": (ad.get("campaign") or {}).get("name", ""),
+            "title": creative.get("title") or "",
+            "body": creative.get("body") or "",
+            "description": creative.get("link_description") or "",
+            "image_url": creative.get("image_url") or creative.get("thumbnail_url") or "",
+        }
+    return creatives_map, True
+
+
+def fetch_ads_performance(since_date, until_date):
+    """
+    Rendimiento (gasto, impresiones, clics, leads) de cada anuncio individual,
+    combinado con su texto real (título, texto principal, descripción) e imagen,
+    para el reporte de "cómo va cada anuncio". Si algo falla, devuelve una lista
+    vacía en vez de romper el resto del script.
+    """
+    creatives_map, creatives_ok = fetch_ad_creatives_map()
+    if not creatives_ok:
+        return [], False
+
+    try:
+        data = meta_get(
+            f"/{AD_ACCOUNT_ID}/insights",
+            {
+                "level": "ad",
+                "fields": "ad_id,ad_name,campaign_name,spend,impressions,clicks,ctr,actions,cost_per_action_type",
+                "time_range": json.dumps({"since": since_date, "until": until_date}),
+                "limit": 500,
+            },
+        )
+    except Exception as e:
+        print(f"AVISO: no se pudo traer el rendimiento por anuncio: {e}", file=sys.stderr)
+        return [], False
+
+    lead_action_types = ("lead", "onsite_conversion.lead_grouped", "offsite_conversion.fb_pixel_lead")
+
+    def extract_leads(actions):
+        if not actions:
+            return 0
+        for a in actions:
+            if a.get("action_type") in lead_action_types:
+                return int(float(a.get("value", 0)))
+        return 0
+
+    def extract_cost_per_lead(cost_per_action_type):
+        if not cost_per_action_type:
+            return None
+        for c in cost_per_action_type:
+            if c.get("action_type") in lead_action_types:
+                return round(float(c.get("value", 0)), 2)
         return None
-
-    pages = data.get("data", [])
-    if not pages:
-        print("ERROR: el usuario del sistema no tiene ninguna página de Facebook asignada.", file=sys.stderr)
-        return None
-
-    page = None
-    for p in pages:
-        if PAGE_NAME_MATCH.lower() in (p.get("name") or "").lower():
-            page = p
-            break
-    if page is None:
-        page = pages[0]
-
-    ig = page.get("instagram_business_account") or {}
-    return {
-        "page_id": page.get("id"),
-        "page_name": page.get("name"),
-        "page_token": page.get("access_token"),
-        "ig_user_id": ig.get("id"),
-        "ig_username": ig.get("username"),
-    }
-
-
-def fetch_facebook_posts(page_id, page_token):
-    """Publicaciones de la Página, con likes/comentarios/compartidos."""
-    try:
-        data = meta_get(f"/{page_id}/posts", {
-            "fields": "id,message,created_time,full_picture,permalink_url,"
-                      "likes.summary(true),comments.summary(true),shares",
-            "limit": MAX_POSTS,
-        }, token=page_token)
-    except Exception as e:
-        print(f"AVISO: no se pudieron traer las publicaciones de Facebook: {e}", file=sys.stderr)
-        return [], False
-
-    posts = []
-    for row in data.get("data", []):
-        likes = ((row.get("likes") or {}).get("summary") or {}).get("total_count", 0) or 0
-        comments = ((row.get("comments") or {}).get("summary") or {}).get("total_count", 0) or 0
-        shares = (row.get("shares") or {}).get("count", 0) or 0
-        posts.append({
-            "platform": "facebook",
-            "id": row.get("id"),
-            "date": (row.get("created_time") or "")[:10],
-            "text": (row.get("message") or "")[:280],
-            "image_url": row.get("full_picture") or "",
-            "permalink": row.get("permalink_url") or "",
-            "likes": likes,
-            "comments": comments,
-            "shares": shares,
-            "reach": None,
-            "interactions": likes + comments + shares,
-        })
-    return posts, True
-
-
-def fetch_instagram_media_insights(media_id, page_token):
-    """
-    Alcance e interacciones de una publicación puntual de Instagram. Si el
-    permiso, la versión de la API o el tipo de publicación no lo permiten,
-    devuelve (None, None) sin romper el resto del script.
-    """
-    try:
-        data = meta_get(f"/{media_id}/insights", {
-            "metric": "reach,total_interactions",
-        }, token=page_token)
-        values = {}
-        for row in data.get("data", []):
-            vlist = row.get("values") or [{}]
-            values[row.get("name")] = vlist[0].get("value")
-        return values.get("reach"), values.get("total_interactions")
-    except Exception:
-        return None, None
-
-
-def fetch_instagram_media(ig_user_id, page_token):
-    """Publicaciones de Instagram (post por post), con su alcance e interacciones."""
-    if not ig_user_id:
-        return [], False
-    try:
-        data = meta_get(f"/{ig_user_id}/media", {
-            "fields": "id,caption,timestamp,permalink,media_type,media_url,"
-                      "thumbnail_url,like_count,comments_count",
-            "limit": 40,
-        }, token=page_token)
-    except Exception as e:
-        print(f"AVISO: no se pudieron traer las publicaciones de Instagram: {e}", file=sys.stderr)
-        return [], False
-
-    posts = []
-    for row in data.get("data", []):
-        media_id = row.get("id")
-        reach, engagement = fetch_instagram_media_insights(media_id, page_token)
-        likes = row.get("like_count", 0) or 0
-        comments = row.get("comments_count", 0) or 0
-        image = row.get("thumbnail_url") or row.get("media_url") or ""
-        posts.append({
-            "platform": "instagram",
-            "id": media_id,
-            "date": (row.get("timestamp") or "")[:10],
-            "text": (row.get("caption") or "")[:280],
-            "image_url": image,
-            "permalink": row.get("permalink") or "",
-            "likes": likes,
-            "comments": comments,
-            "shares": 0,
-            "reach": reach,
-            "interactions": engagement if engagement is not None else (likes + comments),
-        })
-    return posts, True
-
-
-def fetch_facebook_snapshot(page_id, page_token):
-    """Seguidores actuales de la Página, en este momento."""
-    try:
-        data = meta_get(f"/{page_id}", {"fields": "followers_count,fan_count"}, token=page_token)
-        return data.get("followers_count") or data.get("fan_count") or 0, True
-    except Exception as e:
-        print(f"AVISO: no se pudo traer el número de seguidores de Facebook: {e}", file=sys.stderr)
-        return None, False
-
-
-def fetch_instagram_snapshot(ig_user_id, page_token):
-    """Seguidores actuales de Instagram, en este momento."""
-    if not ig_user_id:
-        return None, False
-    try:
-        data = meta_get(f"/{ig_user_id}", {"fields": "followers_count,media_count"}, token=page_token)
-        return data.get("followers_count"), True
-    except Exception as e:
-        print(f"AVISO: no se pudo traer el número de seguidores de Instagram: {e}", file=sys.stderr)
-        return None, False
-
-
-def load_previous_history():
-    """
-    Lee el organic_data.json de la ejecución anterior (si existe) para no
-    perder el historial de seguidores acumulado día a día — Meta no entrega
-    ese histórico completo por API, así que lo vamos guardando nosotros.
-    """
-    try:
-        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-            prev = json.load(f)
-        return prev.get("follower_history", [])
-    except Exception:
-        return []
-
-
-def update_follower_history(history, today_str, fb_followers, ig_followers):
-    history = [h for h in history if h.get("date") != today_str]
-    history.append({"date": today_str, "fb_followers": fb_followers, "ig_followers": ig_followers})
-    history.sort(key=lambda h: h["date"])
-    return history[-MAX_HISTORY_DAYS:]
-
-
-def build_posting_calendar(posts):
-    """Cuántas publicaciones (por red) se hicieron cada día, para el calendario."""
-    calendar = {}
-    for p in posts:
-        d = p.get("date")
-        if not d:
-            continue
-        if d not in calendar:
-            calendar[d] = {"facebook": 0, "instagram": 0}
-        calendar[d][p["platform"]] += 1
-    return calendar
-
-
-def build_monthly_summary(posts):
-    """Publicaciones, interacciones y alcance sumado, mes a mes."""
-    months = defaultdict(lambda: {"posts": 0, "interactions": 0, "reach": 0, "reach_count": 0})
-    for p in posts:
-        d = p.get("date")
-        if not d:
-            continue
-        m = months[d[:7]]
-        m["posts"] += 1
-        m["interactions"] += p.get("interactions") or 0
-        if p.get("reach"):
-            m["reach"] += p["reach"]
-            m["reach_count"] += 1
 
     result = []
-    for key in sorted(months.keys()):
-        m = months[key]
+    for row in data.get("data", []):
+        ad_id = row.get("ad_id")
+        extra = creatives_map.get(ad_id, {})
+        leads = extract_leads(row.get("actions"))
+        spend = round(float(row.get("spend", 0)), 2)
+        cpl = extract_cost_per_lead(row.get("cost_per_action_type"))
+        if cpl is None and leads:
+            cpl = round(spend / leads, 2)
         result.append({
-            "month": key,
-            "posts": m["posts"],
-            "interactions": m["interactions"],
-            "reach": m["reach"] if m["reach_count"] else None,
+            "ad_name": row.get("ad_name") or extra.get("ad_name") or "(sin nombre)",
+            "campaign_name": row.get("campaign_name") or extra.get("campaign_name") or "",
+            "title": extra.get("title", ""),
+            "body": extra.get("body", ""),
+            "description": extra.get("description", ""),
+            "image_url": extra.get("image_url", ""),
+            "spend": spend,
+            "impressions": int(float(row.get("impressions", 0))),
+            "clicks": int(float(row.get("clicks", 0))),
+            "ctr": round(float(row.get("ctr", 0)), 2),
+            "leads": leads,
+            "cost_per_lead": cpl,
         })
-    return result
+
+    result.sort(key=lambda r: r["spend"], reverse=True)
+    return result, True
+
+
+def fetch_active_creatives():
+    """
+    Trae los anuncios activos de la cuenta junto con la imagen real de su
+    creatividad, y los separa entre "campaña de leads" y "otros".
+    Si algo falla (permisos, formato, etc.) devuelve listas vacías en vez de
+    romper todo el script — el gasto sigue actualizándose igual.
+    """
+    try:
+        data = meta_get(
+            f"/{AD_ACCOUNT_ID}/ads",
+            {
+                "fields": "name,effective_status,campaign{name},creative{image_url,thumbnail_url,name,title,body,link_description}",
+                "effective_status": json.dumps(["ACTIVE"]),
+                "limit": 200,
+            },
+        )
+    except urllib.error.HTTPError as e:
+        print(f"AVISO: no se pudieron traer las creatividades: {e.code} {e.read().decode()}", file=sys.stderr)
+        return [], [], False
+    except Exception as e:
+        print(f"AVISO: no se pudieron traer las creatividades: {e}", file=sys.stderr)
+        return [], [], False
+
+    leads_creatives = []
+    other_creatives = []
+    seen_images = set()
+
+    for ad in data.get("data", []):
+        creative = ad.get("creative") or {}
+        image_url = creative.get("image_url") or creative.get("thumbnail_url")
+        if not image_url:
+            continue
+        if image_url in seen_images:
+            continue
+        seen_images.add(image_url)
+
+        campaign_name = (ad.get("campaign") or {}).get("name", "")
+        entry = {
+            "ad_name": ad.get("name"),
+            "campaign_name": campaign_name,
+            "image_url": image_url,
+            # Texto real del anuncio (título, texto principal, descripción), para
+            # mostrarlo directamente junto a la imagen sin tener que hacer clic.
+            "title": creative.get("title") or "",
+            "body": creative.get("body") or "",
+            "description": creative.get("link_description") or "",
+        }
+        if LEADS_CAMPAIGN_MATCH.lower() in campaign_name.lower():
+            leads_creatives.append(entry)
+        else:
+            other_creatives.append(entry)
+
+    return leads_creatives, other_creatives, True
+
+
+def fetch_milestones(since_date):
+    """
+    Hitos: cambios hechos en la cuenta de Meta Ads (presupuesto, creatividad,
+    pausas, etc.), para marcarlos en los gráficos del dashboard.
+    Requiere que el token tenga permiso para ver el historial de cambios de
+    la cuenta — si no lo tiene, devuelve una lista vacía sin romper nada.
+    """
+    try:
+        data = meta_get(
+            f"/{AD_ACCOUNT_ID}/activities",
+            {
+                "fields": "event_type,event_time,translated_event_type",
+                "since": since_date,
+                "limit": 100,
+            },
+        )
+        milestones = []
+        for row in data.get("data", []):
+            event_time = row.get("event_time")
+            if not event_time:
+                continue
+            date_only = event_time[:10]
+            milestones.append({
+                "date": date_only,
+                "label": row.get("translated_event_type") or row.get("event_type") or "Cambio en la cuenta",
+            })
+        return milestones, True
+    except urllib.error.HTTPError as e:
+        print(f"AVISO: no se pudo traer el historial de cambios (hitos): {e.code} {e.read().decode()}", file=sys.stderr)
+        return [], False
+    except Exception as e:
+        print(f"AVISO: no se pudo traer el historial de cambios (hitos): {e}", file=sys.stderr)
+        return [], False
 
 
 def main():
@@ -254,60 +308,72 @@ def main():
         print("ERROR: falta la variable de entorno META_TOKEN", file=sys.stderr)
         sys.exit(1)
 
-    today_str = datetime.date.today().isoformat()
-    history_so_far = load_previous_history()
+    today = datetime.date.today()
+    month_start = today.replace(day=1).isoformat()
+    today_str = today.isoformat()
 
-    assets = discover_assets()
-    if assets is None:
-        data = {
-            "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-            "facebook_available": False,
-            "instagram_available": False,
-            "error": "No se encontró ninguna página de Facebook asignada al usuario del sistema.",
-            "page_name": None,
-            "ig_username": None,
-            "fb_followers": None,
-            "ig_followers": None,
-            "posts": [],
-            "monthly_summary": [],
-            "posting_calendar": {},
-            "follower_history": history_so_far,
-        }
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print("AVISO: no se encontraron activos de Facebook/Instagram — organic_data.json quedó vacío.")
-        return
+    try:
+        campaigns = fetch_campaign_totals(CAMPAIGN_START_DATE, today_str)
+        campaigns_month = fetch_campaign_totals(month_start, today_str)
+        daily = fetch_daily_spend(CAMPAIGN_START_DATE, today_str)
+    except urllib.error.HTTPError as e:
+        print(f"ERROR al llamar a Meta: {e.code} {e.read().decode()}", file=sys.stderr)
+        sys.exit(1)
 
-    fb_posts, fb_ok = fetch_facebook_posts(assets["page_id"], assets["page_token"])
-    ig_posts, ig_ok = fetch_instagram_media(assets["ig_user_id"], assets["page_token"])
-    fb_followers, fb_snap_ok = fetch_facebook_snapshot(assets["page_id"], assets["page_token"])
-    ig_followers, ig_snap_ok = fetch_instagram_snapshot(assets["ig_user_id"], assets["page_token"])
+    leads_creatives, other_creatives, creatives_available = fetch_active_creatives()
 
-    all_posts = fb_posts + ig_posts
-    all_posts.sort(key=lambda p: p["date"], reverse=True)
+    weeks = build_week_ranges(CAMPAIGN_START_DATE, today)
+    spend_by_week = fetch_spend_by_week(weeks)
 
-    history = update_follower_history(history_so_far, today_str, fb_followers, ig_followers)
+    milestones, milestones_available = fetch_milestones(CAMPAIGN_START_DATE)
+
+    ads_performance, ads_performance_available = fetch_ads_performance(CAMPAIGN_START_DATE, today_str)
+
+    total_spend = sum(float(c.get("spend", 0)) for c in campaigns)
+    month_spend = sum(float(c.get("spend", 0)) for c in campaigns_month)
+
+    leads_campaign_spend_total = sum(
+        float(c.get("spend", 0)) for c in campaigns
+        if LEADS_CAMPAIGN_MATCH.lower() in c.get("campaign_name", "").lower()
+    )
+    leads_campaign_spend_month = sum(
+        float(c.get("spend", 0)) for c in campaigns_month
+        if LEADS_CAMPAIGN_MATCH.lower() in c.get("campaign_name", "").lower()
+    )
 
     data = {
         "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "facebook_available": fb_ok,
-        "instagram_available": ig_ok and bool(assets["ig_user_id"]),
-        "page_name": assets["page_name"],
-        "ig_username": assets["ig_username"],
-        "fb_followers": fb_followers,
-        "ig_followers": ig_followers,
-        "posts": all_posts,
-        "monthly_summary": build_monthly_summary(all_posts),
-        "posting_calendar": build_posting_calendar(all_posts),
-        "follower_history": history,
+        "campaign_start": CAMPAIGN_START_DATE,
+        "monthly_budget_goal": MONTHLY_BUDGET_GOAL,
+        "total_spend": round(total_spend, 2),
+        "month_spend": round(month_spend, 2),
+        "leads_campaign_spend_total": round(leads_campaign_spend_total, 2),
+        "leads_campaign_spend_month": round(leads_campaign_spend_month, 2),
+        "campaigns": [
+            {"name": c.get("campaign_name"), "spend": round(float(c.get("spend", 0)), 2)}
+            for c in campaigns
+        ],
+        "campaigns_month": [
+            {"name": c.get("campaign_name"), "spend": round(float(c.get("spend", 0)), 2)}
+            for c in campaigns_month
+        ],
+        "daily_spend": daily,
+        "spend_by_week": spend_by_week,
+        "creatives_available": creatives_available,
+        "leads_creatives": leads_creatives,
+        "other_creatives": other_creatives,
+        "milestones_available": milestones_available,
+        "milestones": milestones,
+        "ads_performance_available": ads_performance_available,
+        "ads_performance": ads_performance,
     }
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    with open("meta_data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     print(
-        f"OK: {len(fb_posts)} publicaciones de Facebook, {len(ig_posts)} de Instagram, "
-        f"{fb_followers or 0} seguidores FB, {ig_followers or 0} seguidores IG"
+        f"OK: gasto total S/{total_spend:.2f}, este mes S/{month_spend:.2f}, "
+        f"{len(leads_creatives)} creatividades de leads, {len(milestones)} hitos"
     )
 
 
