@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T22:22:08.796470+00:00",
+  "updated_at": "2026-08-19T23:20:41.007263+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -150,16 +150,16 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 63,
+  "leads_with_deal": 64,
   "leads_detail": [
     {
       "name": "Angel RS",
       "email": "dbambinosperu@gmail.com",
       "company": "D'BAMBINOS",
       "created_date": "2026-08-19",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "D Bamninos"
     },
     {
       "name": "Franco B",
@@ -746,7 +746,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 9
+      "count": 10
     },
     {
       "label": "Reunión Agendadas",
@@ -754,7 +754,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
