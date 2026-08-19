@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T02:55:30.864354+00:00",
+  "updated_at": "2026-08-19T04:34:25.547621+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -146,7 +146,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 55,
+  "leads_with_deal": 63,
   "leads_detail": [
     {
       "name": "Franco B",
@@ -189,9 +189,9 @@
       "email": "sandro.vasquez@bunnroasters.com",
       "company": "Delvasesq Industries",
       "created_date": "2026-08-17",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Bunn Roasters Coffee "
     },
     {
       "name": "Karina Puente de la Vega",
@@ -603,9 +603,9 @@
       "email": "leobadan06@gmail.com",
       "company": "(sin empresa)",
       "created_date": "2026-07-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Bances Damián"
     },
     {
       "name": "Roque Hipolito Saavedra Quino",
@@ -621,18 +621,18 @@
       "email": "juan_mayaute@hotmail.com",
       "company": "(sin empresa)",
       "created_date": "2026-07-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jose Mayaute Cordova"
     },
     {
       "name": "Luis Alberto Castillo Leon",
       "email": "luiscastillo_leon@hom.com",
       "company": "(sin empresa)",
       "created_date": "2026-07-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "HOM "
     },
     {
       "name": "Elizabeth Vizcarra Pacchioni",
@@ -666,9 +666,9 @@
       "email": "alfonsodelacruzrivera14@gmail.com",
       "company": "(sin empresa)",
       "created_date": "2026-07-28",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Alfonso De La Cruz Rivera"
     },
     {
       "name": "Paulino Llanque Cutipa",
@@ -684,18 +684,18 @@
       "email": "ventas@icmesur.com.pe",
       "company": "(sin empresa)",
       "created_date": "2026-07-26",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Rubén Huamán"
     },
     {
       "name": "Albino Marcial Rodriguez Abarca",
       "email": "albino.rodriguez.a@gmail.com",
       "company": "(sin empresa)",
       "created_date": "2026-07-25",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Alfonso De La Cruz Rivera"
     },
     {
       "name": "Alfredo Fuentes Bolivar",
@@ -711,9 +711,9 @@
       "email": "sofoniasmontoya@gmail.com",
       "company": "(sin empresa)",
       "created_date": "2026-07-25",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sofonías Montoya "
     },
     {
       "name": "Luis Angel Carrasco Garcia",
@@ -729,19 +729,19 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 44
-    },
-    {
-      "label": "Sin negocio",
-      "count": 9
+      "count": 51
     },
     {
       "label": "Prospectos Contactados",
-      "count": 8
+      "count": 9
     },
     {
       "label": "Reunión Agendadas",
       "count": 3
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ]
 }

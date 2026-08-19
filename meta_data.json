@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-08-19T02:55:35.874880+00:00",
+  "updated_at": "2026-08-19T04:34:30.714002+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 1493.01,
-  "month_spend": 870.0,
-  "leads_campaign_spend_total": 1303.32,
-  "leads_campaign_spend_month": 817.06,
+  "total_spend": 1499.93,
+  "month_spend": 876.92,
+  "leads_campaign_spend_total": 1310.24,
+  "leads_campaign_spend_month": 823.98,
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 1303.32
+      "spend": 1310.24
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -19,7 +19,7 @@
   "campaigns_month": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 817.06
+      "spend": 823.98
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -125,7 +125,7 @@
     },
     {
       "date": "2026-08-18",
-      "spend": 37.18
+      "spend": 44.1
     }
   ],
   "spend_by_week": [
@@ -164,10 +164,10 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "spend": 88.54,
-      "impressions": 3018,
-      "reach": 2192,
-      "frequency": 1.38
+      "spend": 95.46,
+      "impressions": 3128,
+      "reach": 2233,
+      "frequency": 1.4
     }
   ],
   "creatives_available": false,
@@ -190,6 +190,10 @@
     {
       "date": "2026-08-18",
       "label": "Anuncio entregado"
+    },
+    {
+      "date": "2026-08-18",
+      "label": "Estado de anuncio actualizado"
     },
     {
       "date": "2026-08-18",
@@ -565,10 +569,6 @@
     },
     {
       "date": "2026-07-28",
-      "label": "Cuenta facturada"
-    },
-    {
-      "date": "2026-07-27",
       "label": "Cuenta facturada"
     },
     {
