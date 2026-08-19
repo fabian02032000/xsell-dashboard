@@ -110,6 +110,18 @@ def fetch_spend_by_week(weeks):
     return result
 
 
+def extract_link_description(creative):
+    """
+    La descripción corta que aparece debajo del título en un anuncio de enlace
+    no viene como un campo directo del creative — Meta la guarda dentro de
+    object_story_spec.link_data.description. Si el anuncio no tiene esa
+    estructura (por ejemplo, es un anuncio de otro formato), devuelve "".
+    """
+    story = creative.get("object_story_spec") or {}
+    link_data = story.get("link_data") or {}
+    return link_data.get("description") or link_data.get("caption") or ""
+
+
 def fetch_ad_creatives_map():
     """
     Trae el texto real de cada anuncio (título, texto principal, descripción)
@@ -120,7 +132,7 @@ def fetch_ad_creatives_map():
         data = meta_get(
             f"/{AD_ACCOUNT_ID}/ads",
             {
-                "fields": "id,name,campaign{name},creative{title,body,link_description,image_url,thumbnail_url}",
+                "fields": "id,name,campaign{name},creative{title,body,image_url,thumbnail_url,object_story_spec}",
                 "limit": 500,
             },
         )
@@ -136,7 +148,7 @@ def fetch_ad_creatives_map():
             "campaign_name": (ad.get("campaign") or {}).get("name", ""),
             "title": creative.get("title") or "",
             "body": creative.get("body") or "",
-            "description": creative.get("link_description") or "",
+            "description": extract_link_description(creative),
             "image_url": creative.get("image_url") or creative.get("thumbnail_url") or "",
         }
     return creatives_map, True
@@ -224,7 +236,7 @@ def fetch_active_creatives():
         data = meta_get(
             f"/{AD_ACCOUNT_ID}/ads",
             {
-                "fields": "name,effective_status,campaign{name},creative{image_url,thumbnail_url,name,title,body,link_description}",
+                "fields": "name,effective_status,campaign{name},creative{image_url,thumbnail_url,name,title,body,object_story_spec}",
                 "effective_status": json.dumps(["ACTIVE"]),
                 "limit": 200,
             },
@@ -258,7 +270,7 @@ def fetch_active_creatives():
             # mostrarlo directamente junto a la imagen sin tener que hacer clic.
             "title": creative.get("title") or "",
             "body": creative.get("body") or "",
-            "description": creative.get("link_description") or "",
+            "description": extract_link_description(creative),
         }
         if LEADS_CAMPAIGN_MATCH.lower() in campaign_name.lower():
             leads_creatives.append(entry)
