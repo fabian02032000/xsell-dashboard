@@ -270,6 +270,23 @@
 
   <section>
     <div class="section-head">
+      <h2>Meta semanal de leads</h2>
+      <span class="hint">Tendencia semana a semana · pasa el mouse sobre un punto para ver la fracción exacta</span>
+    </div>
+    <div class="chart-card">
+      <div class="legend">
+        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Leads reales</span>
+        <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta semanal</span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart" id="weeklyTrendChart" viewBox="0 0 960 220"></svg>
+        <div class="tooltip" id="weeklyTrendTooltip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
       <h2>Detalle semanal</h2>
       <span class="hint">Compromiso de leads, gasto, costo por lead y frecuencia — semana a semana</span>
     </div>
@@ -560,6 +577,7 @@
     }
 
     // ---- Detalle semanal ----
+    drawWeeklyTrendChart(data.leads_by_week || []);
     drawWeeklyTable(data.leads_by_week || [], hasMeta ? (meta.spend_by_week || []) : []);
 
     // ---- Funnel ----
@@ -672,6 +690,70 @@
           </td>
         </tr>`;
     }).join('');
+  }
+
+  function drawWeeklyTrendChart(weeks){
+    const svg = document.getElementById('weeklyTrendChart');
+    const tooltip = document.getElementById('weeklyTrendTooltip');
+    const W = 960, H = 220, padL = 46, padR = 16, padT = 20, padB = 34;
+    if (!weeks.length){
+      svg.innerHTML = '';
+      return;
+    }
+    const maxVal = Math.max(...weeks.map(w => Math.max(w.leads, w.goal)), 1) * 1.15;
+    const n = weeks.length;
+    const step = (W - padL - padR) / Math.max(1, n - 1);
+
+    let content = '';
+    [0, 0.5, 1].forEach(f => {
+      const y = padT + (H - padT - padB) * (1 - f);
+      content += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+      content += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
+    });
+
+    function pointsFor(key){
+      return weeks.map((w, i) => {
+        const x = padL + step * i;
+        const v = w[key] || 0;
+        const y = H - padB - (H - padT - padB) * (v / maxVal);
+        return { x, y };
+      });
+    }
+    function linePath(points){
+      return points.map((p, i) => (i === 0 ? 'M' : 'L') + p.x + ',' + p.y).join(' ');
+    }
+
+    const goalPoints = pointsFor('goal');
+    const leadsPoints = pointsFor('leads');
+
+    content += `<path d="${linePath(goalPoints)}" fill="none" stroke="${mutedColor}" stroke-width="2" stroke-dasharray="5,4"/>`;
+    content += `<path d="${linePath(leadsPoints)}" fill="none" stroke="${orange}" stroke-width="2.5"/>`;
+    leadsPoints.forEach((p, i) => {
+      const good = weeks[i].leads >= weeks[i].goal;
+      content += `<circle cx="${p.x}" cy="${p.y}" r="5" fill="${good ? goodColor : orange}"/>`;
+    });
+
+    weeks.forEach((w, i) => {
+      const x = padL + step * i;
+      content += `<text class="axis-label" x="${x}" y="${H-padB+16}" text-anchor="middle">${w.week_start.slice(5)}</text>`;
+      content += `<rect class="bar" data-i="${i}" x="${x-14}" y="${padT}" width="28" height="${H-padT-padB}" fill="transparent"/>`;
+    });
+
+    svg.innerHTML = content;
+    svg.querySelectorAll('.bar').forEach(hit => {
+      hit.addEventListener('pointerenter', () => {
+        const w = weeks[+hit.dataset.i];
+        const p = w.goal ? Math.round((w.leads / w.goal) * 100) : 0;
+        tooltip.innerHTML = `<strong>${w.week_start} – ${w.week_end}</strong><br>${fmt(w.leads)} / ${fmt(w.goal)} leads (${p}%)`;
+        tooltip.style.opacity = 1;
+      });
+      hit.addEventListener('pointermove', (e) => {
+        const rect = svg.parentElement.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+      });
+      hit.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+    });
   }
 
   function drawWeeklyTable(weeks, spendWeeks){
