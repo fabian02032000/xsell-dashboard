@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-08-19T02:51:36.636374+00:00",
+  "updated_at": "2026-08-19T02:55:35.874880+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 1492.94,
-  "month_spend": 869.93,
-  "leads_campaign_spend_total": 1303.25,
-  "leads_campaign_spend_month": 816.99,
+  "total_spend": 1493.01,
+  "month_spend": 870.0,
+  "leads_campaign_spend_total": 1303.32,
+  "leads_campaign_spend_month": 817.06,
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 1303.25
+      "spend": 1303.32
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -19,7 +19,7 @@
   "campaigns_month": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 816.99
+      "spend": 817.06
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -125,7 +125,7 @@
     },
     {
       "date": "2026-08-18",
-      "spend": 37.06
+      "spend": 37.18
     }
   ],
   "spend_by_week": [
@@ -164,8 +164,8 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "spend": 88.47,
-      "impressions": 3016,
+      "spend": 88.54,
+      "impressions": 3018,
       "reach": 2192,
       "frequency": 1.38
     }
