@@ -117,8 +117,12 @@
 
   /* Rendimiento de cada anuncio */
   .ad-thumb{width:56px; height:56px; object-fit:cover; border-radius:8px; display:block; background:var(--surface-2);}
-  .ad-copy-cell{max-width:260px; white-space:normal; font-size:12px; color:var(--text-muted); line-height:1.4;}
-  .ad-copy-cell strong{display:block; color:var(--text-primary); font-size:13px; margin-bottom:2px; white-space:normal;}
+  .ad-copy-cell{white-space:normal; font-size:13px; color:var(--text-muted); line-height:1.6; padding-top:4px !important; padding-bottom:16px !important;}
+  .ad-copy-cell strong{display:block; color:var(--text-primary); font-size:14px; margin-bottom:4px; white-space:normal;}
+  .ad-toggle{background:none; border:1px solid var(--border); color:var(--text-muted); cursor:pointer; font-size:12px; width:26px; height:26px; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-family:inherit;}
+  .ad-toggle:hover{color:var(--text-primary); border-color:var(--text-muted);}
+  .ad-toggle.expanded{color:var(--orange); border-color:var(--orange);}
+  .ad-detail-row td{background:var(--surface-2);}
 
   /* Calendario de publicaciones */
   .calendar-grid{display:grid; grid-template-columns:repeat(7, 1fr); gap:6px;}
@@ -252,12 +256,12 @@
   <section>
     <div class="section-head">
       <h2>Rendimiento de cada anuncio</h2>
-      <span class="hint">Título, texto e imagen de cada pieza, en vivo desde Meta Ads · ordenado por gasto</span>
+      <span class="hint">Haz clic en ▸ para ver el título, texto y descripción de cada pieza · ordenado por gasto</span>
     </div>
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th>Anuncio</th><th>Título y texto</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Leads</th><th>Costo/lead</th></tr></thead>
+          <thead><tr><th></th><th>Anuncio</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Leads</th><th>Costo/lead</th></tr></thead>
           <tbody id="adsPerformanceTableBody"></tbody>
         </table>
       </div>
@@ -598,34 +602,49 @@
   function drawAdsPerformanceTable(ads, available){
     const body = document.getElementById('adsPerformanceTableBody');
     if (!available){
-      body.innerHTML = `<tr><td colspan="8" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="9" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
       return;
     }
     if (!ads.length){
-      body.innerHTML = `<tr><td colspan="8" class="table-sub">No se encontraron anuncios con datos en este período.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="9" class="table-sub">No se encontraron anuncios con datos en este período.</td></tr>`;
       return;
     }
-    body.innerHTML = ads.map(a => {
+    body.innerHTML = ads.map((a, i) => {
       const img = a.image_url
         ? `<img class="ad-thumb" src="${a.image_url}" alt="${escapeHtml(a.ad_name)}">`
         : `<div class="ad-thumb"></div>`;
       const copyParts = [];
       if (a.title) copyParts.push(`<strong>${escapeHtml(a.title)}</strong>`);
-      if (a.body) copyParts.push(escapeHtml(a.body).slice(0, 140) + (a.body.length > 140 ? '…' : ''));
+      if (a.body) copyParts.push(escapeHtml(a.body));
       if (a.description) copyParts.push(`<em>${escapeHtml(a.description)}</em>`);
-      const copyHtml = copyParts.length ? copyParts.join('<br>') : '<span class="table-sub">(sin texto)</span>';
+      const copyHtml = copyParts.length ? copyParts.join('<br>') : '<span class="table-sub">Este anuncio no tiene título ni texto configurado.</span>';
       return `
         <tr>
+          <td><button class="ad-toggle" type="button" data-idx="${i}" aria-label="Ver título y texto del anuncio">▸</button></td>
           <td>${img}<div class="table-sub" style="margin-top:4px;">${escapeHtml(a.ad_name)}</div></td>
-          <td class="ad-copy-cell">${copyHtml}</td>
+          <td>${escapeHtml(a.campaign_name) || '—'}</td>
           <td>${fmtMoney(a.spend)}</td>
           <td>${fmt(a.impressions)}</td>
           <td>${fmt(a.clicks)}</td>
           <td>${a.ctr.toFixed(2)}%</td>
           <td>${fmt(a.leads)}</td>
           <td>${a.cost_per_lead !== null && a.cost_per_lead !== undefined ? fmtMoney(a.cost_per_lead) : '—'}</td>
+        </tr>
+        <tr class="ad-detail-row" id="ad-detail-${i}" style="display:none;">
+          <td></td>
+          <td colspan="8" class="ad-copy-cell">${copyHtml}</td>
         </tr>`;
     }).join('');
+
+    body.querySelectorAll('.ad-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const row = document.getElementById('ad-detail-' + btn.dataset.idx);
+        const isOpen = row.style.display !== 'none';
+        row.style.display = isOpen ? 'none' : 'table-row';
+        btn.textContent = isOpen ? '▸' : '▾';
+        btn.classList.toggle('expanded', !isOpen);
+      });
+    });
   }
 
   function pct(part, total){
