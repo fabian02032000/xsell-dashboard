@@ -13,10 +13,10 @@ otras vías (email marketing, ingresados a mano, etc.).
 También revisa, para cada lead, si ya se le creó un Negocio en HubSpot (y en
 qué etapa está), y arma vistas de progreso por mes y por semana.
 
-AVISO DE PRIVACIDAD: este script incluye nombre y correo de cada lead en
-data.json, y ese archivo queda visible en un repositorio público de GitHub.
-Esto fue una decisión explícita del dueño del dashboard — si en algún
-momento se prefiere dejar de exponer nombres/correos, hay que quitar el
+AVISO DE PRIVACIDAD: este script incluye nombre, empresa y correo de cada
+lead en data.json, y ese archivo queda visible en un repositorio público de
+GitHub. Esto fue una decisión explícita del dueño del dashboard — si en
+algún momento se prefiere dejar de exponer estos datos, hay que quitar el
 bloque "leads_detail" antes de que corra de nuevo.
 """
 import os
@@ -55,6 +55,7 @@ SOURCE_PROPERTIES = [
     "email",
     "firstname",
     "lastname",
+    "company",
     "hs_analytics_source",
     "hs_analytics_source_data_1",
     "hs_analytics_source_data_2",
@@ -344,7 +345,7 @@ def main():
 
     closed_deals = fetch_closed_deals_count(month_start)
 
-    # ---- Estado de negocio por lead (nombre/correo visibles a propósito — ver aviso arriba) ----
+    # ---- Estado de negocio por lead (nombre/correo/empresa visibles a propósito — ver aviso arriba) ----
     stage_labels = fetch_deal_stage_labels()
     contact_ids = [c["id"] for c in contacts]
     deal_status_by_contact = fetch_contact_deal_status(contact_ids, stage_labels)
@@ -358,6 +359,7 @@ def main():
         leads_detail.append({
             "name": full_name or "(sin nombre)",
             "email": props.get("email") or "(sin correo)",
+            "company": props.get("company") or "(sin empresa)",
             "created_date": createdate[:10] if createdate else None,
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
