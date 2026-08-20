@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T16:32:38.433996+00:00",
+  "updated_at": "2026-08-20T17:27:02.912867+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -154,16 +154,16 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 64,
+  "leads_with_deal": 65,
   "leads_detail": [
     {
       "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
       "email": "edu@gmail.com",
       "company": "Eduardo baldeon",
       "created_date": "2026-08-20",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Eduardo baldeon"
     },
     {
       "name": "Angel RS",
@@ -759,7 +759,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 10
+      "count": 11
     },
     {
       "label": "Reunión Agendadas",
@@ -767,7 +767,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
