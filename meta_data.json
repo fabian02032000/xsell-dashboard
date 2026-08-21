@@ -1,22 +1,31 @@
 {
-  "updated_at": "2026-08-21T09:34:40.722594+00:00",
+  "updated_at": "2026-08-21T10:28:20.231608+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 1596.51,
-  "month_spend": 0,
-  "leads_campaign_spend_total": 1406.82,
-  "leads_campaign_spend_month": 0,
+  "total_spend": 1597.63,
+  "month_spend": 974.62,
+  "leads_campaign_spend_total": 1407.94,
+  "leads_campaign_spend_month": 921.68,
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 1406.82
+      "spend": 1407.94
     },
     {
       "name": "CAMPAÑA | AWARENESS",
       "spend": 189.69
     }
   ],
-  "campaigns_month": [],
+  "campaigns_month": [
+    {
+      "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "spend": 921.68
+    },
+    {
+      "name": "CAMPAÑA | AWARENESS",
+      "spend": 52.94
+    }
+  ],
   "daily_spend": [
     {
       "date": "2026-07-25",
@@ -155,9 +164,9 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "spend": 192.04,
-      "impressions": 5552,
-      "reach": 3259,
+      "spend": 193.16,
+      "impressions": 5564,
+      "reach": 3264,
       "frequency": 1.7
     }
   ],
@@ -166,7 +175,7 @@
     {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=h9y8pk9nI1AQ7kNvwH6Ro8n&_nc_oc=AdrvQspTm26Iugqg6QyW960tJTAyHcXgKrn0ArmzuG3WXiN6uRgrvg4gbnwGZvywRzk&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=-VkACxjPDfL4PpsMFZnmNg&_nc_tpa=Q5bMBQLI42II_osysgadqxbQ_eHtMdnY7OktRYXlkNDIfaiw28aBa0VKsCEHjVot8bOQhCWhULwd-zA6Dg&oh=00_AQHX1Kei6o89MWVwjIyw4q4GSUKEW6sW5lJrL-8W7RtlkA&oe=6A8E097F",
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=h9y8pk9nI1AQ7kNvwFtGPeQ&_nc_oc=Adr4U8oRoNqGKzZcO28xvZCpp4TVwB6ZzleJn_aFSE3F46eH7yAmMKlGAifywKjjwHk&_nc_zt=1&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=p8oGH0PGOT2zx8HpPgikHg&_nc_tpa=Q5bMBQK_3mmfqhDA5Oz1JHA85xSxDKFGJulbvbMsLchLN2c9-Mj8YtGKJU8Zj-HWhPInIyqL5pBXX7_bag&oh=00_AQGJQuPgRkV2sRm4ZGdOk-YdxHTvn0AZiuMaBxJC2SjRdQ&oe=6A8E097F",
       "title": "📈 ¿Muchos leads, poco equipo?",
       "body": "📈 ¿Tu equipo de ventas ya no da abasto con tantos leads? Sumamos el equipo extra para que cada contacto reciba respuesta a tiempo, sin perder oportunidades por el camino.",
       "description": ""
@@ -174,7 +183,7 @@
     {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=cl9JhnnyeDwQ7kNvwEnk2yd&_nc_oc=Adpo6zdhs0SiE2O-p-kPCQIFvqimPY52kPyTyj_70cfT0Nh6ixwJo_hCMBZCgK7nc-0&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=-VkACxjPDfL4PpsMFZnmNg&_nc_tpa=Q5bMBQJjr4hp3HmEyEp2CjhbKNfXPAA4MhVa3cn8TFgxngM00p2d4WTiVP6pNpo9rFixAiJbMGN1WrMmhQ&oh=00_AQGupwCnIha0cuj5TkAxchDrmLCNHvtxgyhrnlh0Msl4pg&oe=6A8DD8CF",
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=cl9JhnnyeDwQ7kNvwHB2nvo&_nc_oc=AdoAVYFpl8BEhhncPxEcFF2CzZefWORjpVWhyTYA8s8Fk7Q3cuj6_9Uh9aOezjzvA74&_nc_zt=1&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=p8oGH0PGOT2zx8HpPgikHg&_nc_tpa=Q5bMBQL0h_GSUEZdyvAdYbpZOFxTzpf-6MQpgtiGjYsZOPB8iXLCng8DOvPTbjraSk49TZjVJgz0Cwm90Q&oh=00_AQFLhPl0aexElxchfUOmmBPkYRwyn1Omh_XwuGufmrE9YA&oe=6A8E110F",
       "title": "💬 ¿Cuántos chats sin responder tienes?",
       "body": "💬 ¿Cuántos chats de clientes se te quedaron sin responder esta semana? No es falta de tiempo, es falta de un equipo comercial detrás. En Xsell ponemos la estrategia y el equipo para que ninguna venta se enfríe.",
       "description": ""
@@ -592,7 +601,7 @@
       "title": "",
       "body": "",
       "description": "",
-      "image_url": "https://scontent-sea1-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=kF2SJULFqGYQ7kNvwH5DMlk&_nc_oc=AdqCefEMuiOfmtueNn3yMgFbcw9D2o2I05ChsO-RF1lA2zkeLc4kK3TIhbs9WN6r2sE&_nc_zt=1&_nc_ht=scontent-sea1-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_tpa=Q5bMBQJZBJUC9PVeJ_z1zFYWSODg5pZ6a93SiSIJhujHsAdnS3qIKC0IGe1lj9Eb73a0G-wupzKXUHzxew&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQHAjT_hRHtMCUd-Ayi31gTqoO__-Vdd0fqLGgALiBO43w&oe=6A8DE8DB",
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=kF2SJULFqGYQ7kNvwHXvEH8&_nc_oc=AdoP_j9PFEIjiNcHHnrUSucywCcib4Mn0s9jtQX0MowZudV36LRnUDICOcS8zWK8tHY&_nc_zt=1&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_tpa=Q5bMBQIlDBgR5Xh-qchvhxPFEeNjRxNO9DNDSvwNnLxJSwDbMlLO7DW5pzO0eSZdhj-Eztb8zIpHe4JxWw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQEl_wM_6v6S8PyoZXei51NAcX1Bok7pz4XweZkmKwi7uQ&oe=6A8DE8DB",
       "spend": 1276.92,
       "impressions": 55306,
       "clicks": 1088,
@@ -606,7 +615,7 @@
       "title": "Xsell",
       "body": "Durante 14 años nos llamamos \"contact center\".\nProbamos de todo: distintos rubros, distintos intentos, distintas formas de explicar lo que hacíamos.\n\nHasta que entendimos algo simple, lo que mejor sabemos hacer es vender.\n\nHoy lo decimos con claridad: somos Xsell, una agencia de ventas.\n\nMejores y distintos.\n\nDesliza para ver la historia completa 👉\n\n#Xsell #AgenciaDeVentas #Ventas #MejoresYDistintos #B2B",
       "description": "",
-      "image_url": "https://external-sea1-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_oc=AdqDW7diI1xPsS4RTYNa1W2uIN9pkIWhZOwpcT62c0Xw_ggpZyUWAd7c24j8tLoEm0w&ccb=13-1&oh=06_Q3_CAT5gEJOBMdznMtLJo04BNeOZvz5IGshYHBEiqypgG74c&oe=6A89E48B&_nc_sid=58080a",
+      "image_url": "https://external-ams2-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_oc=AdofO-aM8BWCQcEVtvGHQIzUWyuS5NSL53EqljU5Gom-ie1IsITUdmwjV0_qIzhWnVc&ccb=13-1&oh=06_Q3_CAfejB01Wi1PeYnEuF4cQ6UGzC40P3DAuzCB2zlYG-WxO&oe=6A8A1CCB&_nc_sid=58080a",
       "spend": 93.72,
       "impressions": 130671,
       "clicks": 112,
@@ -620,13 +629,13 @@
       "title": "💬 ¿Cuántos chats sin responder tienes?",
       "body": "💬 ¿Cuántos chats de clientes se te quedaron sin responder esta semana? No es falta de tiempo, es falta de un equipo comercial detrás. En Xsell ponemos la estrategia y el equipo para que ninguna venta se enfríe.",
       "description": "",
-      "image_url": "https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=cl9JhnnyeDwQ7kNvwEnk2yd&_nc_oc=Adpo6zdhs0SiE2O-p-kPCQIFvqimPY52kPyTyj_70cfT0Nh6ixwJo_hCMBZCgK7nc-0&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_tpa=Q5bMBQKqOqmGwI9KxzlmgKl2l4yLc-hXH4a9B3mSgd66d-9-PeIwcMV9R34aBKyv4Oon5fu-zI5c67yvew&oh=00_AQEjcGD55rvfrs1bi3dLXE5ufmR1EhDnW4IrpMQbcL9DvA&oe=6A8DD8CF",
-      "spend": 90.95,
-      "impressions": 2511,
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=cl9JhnnyeDwQ7kNvwHB2nvo&_nc_oc=AdoAVYFpl8BEhhncPxEcFF2CzZefWORjpVWhyTYA8s8Fk7Q3cuj6_9Uh9aOezjzvA74&_nc_zt=1&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_tpa=Q5bMBQJdjSD3H08pzI2_ekkEK_6tSjCZwk8k_m5TPc-626h8cJL6UzHJWeYmjpowK0mCp6C3vO_GP7mw-g&oh=00_AQGUABFT3bO_5P_04GUWYMg_aoIKQpkmDgSjM1t0S0JPSA&oe=6A8E110F",
+      "spend": 91.41,
+      "impressions": 2518,
       "clicks": 27,
-      "ctr": 1.08,
+      "ctr": 1.07,
       "leads": 2,
-      "cost_per_lead": 45.48
+      "cost_per_lead": 45.7
     },
     {
       "ad_name": "POST 3 | CARRUSEL | NO DIGAS, MEJOR DI",
@@ -634,7 +643,7 @@
       "title": "",
       "body": "¿Sabes por qué se te caen propuestas que iban bien encaminadas? No es el precio. Es lo que dices (o no dices) después de enviarla.\n\nHay frases de seguimiento que matan la venta sin que te des cuenta, y otras que la mantienen viva. Te dejamos 4 cambios directos: qué no decir y qué decir en su lugar.\n\nGuárdalo antes de tu próximo seguimiento. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #SeguimientoComercial #TécnicasDeVenta #CierreDeVentas #EquipoComercial #Perú",
       "description": "",
-      "image_url": "https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=r21__0jDuMIQ7kNvwFvpxio&_nc_oc=Adp73V7pARiYD_p2b0KXQpgKXl6h-7b6yYdSzoQtHhG6fwin_FNuizJlRBNat3nrHmQ&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_tpa=Q5bMBQJhiNaBB2o-oKMfKavP4JDdinTKZPQEVjFJDhjY1e6y8K4N-kBeJJHOFvob64tUy4uC_2bz8FmEgg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQGjUBSZ-nuhAfpx866wIckm8GEpLovPZOO7yRiEWxC5bg&oe=6A8DE1FF",
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=r21__0jDuMIQ7kNvwGDVNft&_nc_oc=AdpSmjLHFCIzweESMeupCstc1eCcYk2ePLkw2gkilwlpB4cq1Azd-avsHTlJCPpKLeA&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_tpa=Q5bMBQKEDSjKg0D0cqGRYDq-FYgpErtRGs4zGrPJx82N_9LzJIojTfI-D-Mr3gipGSBvPvXTgvTXIV1uig&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQGRYvsaGlXkocUuQXCag8MDg_RddoIDd1r9D9orRs7EZQ&oe=6A8DE1FF",
       "spend": 65.7,
       "impressions": 112114,
       "clicks": 138,
@@ -648,13 +657,13 @@
       "title": "📈 ¿Muchos leads, poco equipo?",
       "body": "📈 ¿Tu equipo de ventas ya no da abasto con tantos leads? Sumamos el equipo extra para que cada contacto reciba respuesta a tiempo, sin perder oportunidades por el camino.",
       "description": "",
-      "image_url": "https://scontent-sea5-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=h9y8pk9nI1AQ7kNvwH6Ro8n&_nc_oc=AdrvQspTm26Iugqg6QyW960tJTAyHcXgKrn0ArmzuG3WXiN6uRgrvg4gbnwGZvywRzk&_nc_zt=1&_nc_ht=scontent-sea5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_tpa=Q5bMBQJ0Hnky6Iw_Vs3zLMPPqsvywI6CDiFzGXrrugAh4uDul_kZWCQQFXa1d6k9a9wK6eClazFVBucMcw&oh=00_AQGanMAG695crhT1v-gYvgQNWJ9wKpSmqJLmUwpv0jyAeA&oe=6A8E097F",
-      "spend": 38.95,
-      "impressions": 734,
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=h9y8pk9nI1AQ7kNvwFtGPeQ&_nc_oc=Adr4U8oRoNqGKzZcO28xvZCpp4TVwB6ZzleJn_aFSE3F46eH7yAmMKlGAifywKjjwHk&_nc_zt=1&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_tpa=Q5bMBQLvkk6ASlaVceARKvpNxEbMECSaJC48qiEaEfsZhST4XeqdTR9_RAGv2JxkD6PZmCiROSln-56xbg&oh=00_AQFnlpJ2U7tvDcXyOAzkdU5U5G1hTV16KCtPPyYcidhWHQ&oe=6A8E097F",
+      "spend": 39.61,
+      "impressions": 739,
       "clicks": 14,
-      "ctr": 1.91,
+      "ctr": 1.89,
       "leads": 1,
-      "cost_per_lead": 38.95
+      "cost_per_lead": 39.61
     },
     {
       "ad_name": "POST 5 | CARRUSEL | KPIs",
@@ -662,7 +671,7 @@
       "title": "",
       "body": "¿Sabes qué significa tu CAC, tu LTV o tu Pipeline? Muchos negocios manejan estos números en sus reportes sin entender realmente qué significan ni qué decisión deberían tomar con ellos.\n\nEn este carrusel te explicamos términos clave de venta B2B de forma simple, sin tecnicismos, para que sepas qué está pasando de verdad con tus números comerciales.\n\nGuárdalo y comparte con tu equipo. 👉\n#VentasB2B #Xsell",
       "description": "",
-      "image_url": "https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=H5EAXmKBj4cQ7kNvwFeSqCa&_nc_oc=AdouXqpGVKd6pTqbZ2m8_Rb-qyXsYC2EbeTF8a8a0OKjSmR_0AN8kXVfz068yhIyQT0&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_tpa=Q5bMBQLbO00K2uA3Za1BUQB-IF3FKuwefGx6AlHtcUroljSC-Ty63MkHIGlbcct1_NSRCGBxmib6dvp2TA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQHQbFiMLbKs6X6TiHl3cTVzkeqDYF9EAMekHa-GZUcnDA&oe=6A8DDCC7",
+      "image_url": "https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=H5EAXmKBj4cQ7kNvwFTCG4k&_nc_oc=AdpU0cZ124OZUTcvaH3QPvpxezQ3d_-NAx4MXZknFrl1Ya-JPi1sbH9VU-aAYDP4DZw&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_tpa=Q5bMBQJ4j6e69boRUgCQ4x6zUYF-fjBFCwqJOxj2tPLnSx_6qLi3gEsOiQApfoChYekOhfwRGRfTXvPgPA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQFWzyhhCBp00jQhHC5mYOBeuEoEkfVdA37IEUIgpiqsWA&oe=6A8E1507",
       "spend": 27.51,
       "impressions": 48550,
       "clicks": 50,
@@ -676,7 +685,7 @@
       "title": "Xsell",
       "body": "No le des solo las gracias. Dale la razón. \n\nDespués de comprar, tu cliente necesita sentir que:\n\n✅ Eligió correctamente.\n✅ Su inversión tiene sentido.\n✅ Tomó una decisión inteligente.\n\nLa venta termina cuando cobras. La fidelización comienza cuando confirmas su elección.\n\n¿Tu comunicación genera esa seguridad?\n\n#AgenciaDeVentas #Clientes #Fidelización #ExperienciaDelCliente #EstrategiaDeVentas #Xsell",
       "description": "",
-      "image_url": "https://external-sea1-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_oc=Adpwpg8L1kqKt7B7U0LRRlxtMWzwnI7Z8p5SCt0k9jScGMJ-ZgiHrTCR-BuPM28lp6U&ccb=13-1&oh=06_Q3_CAT0LArY78RsnKpSmDnVp-GS0oJaCsipkP-7_Q92Ih_F8&oe=6A89FA31&_nc_sid=58080a",
+      "image_url": "https://external-ams2-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_oc=AdqukSvWAgJ9R7Ye52MzMA6wADZZQ-_ZuAKS3Rnhtcc6XJ2N03K9SmeBWjgaszQRums&ccb=13-1&oh=06_Q3_CAXQhBU56VF9i8CTHM6kHGhExCoTqifyK9yDki6Nz66d8&oe=6A89FA31&_nc_sid=58080a",
       "spend": 1.97,
       "impressions": 3080,
       "clicks": 4,
@@ -690,7 +699,7 @@
       "title": "Xsell",
       "body": "¿Le hablas igual a un Boomer que a un Gen Z? Ahí está el problema.\n\nCada generación decide distinto: unos necesitan confianza, otros necesitan velocidad, otros necesitan que seas real. Si tu discurso de venta es el mismo para todos, le estás fallando a la mayoría.\n\nTe dejamos qué valora cada generación y cómo venderle \nSin genéricos, sin adivinar.\n\nGuárdalo, te va a servir más de una vez. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #EstrategiaComercial #MarketingGeneracional #GenX #GenZ #Millennials #EquipoDeVentas #Perú",
       "description": "",
-      "image_url": "https://external-sea1-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=TAJB-XCCrTKd9fhNgYOOug&_nc_oc=AdrzkJro_Jw56fqkfZJBiXVFZxNIGkAFZRaYasCk8HSKBKPkawQO8CSrPavprZFDwj8&ccb=13-1&oh=06_Q3_CAbHvGL6XrkzYxI3crwnvvK-9DhgB0VmTRvt3tNOAVrLI&oe=6A8A11FC&_nc_sid=58080a",
+      "image_url": "https://external-ams2-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=AU0rdFlM8EcPymMrrZ98Bw&_nc_oc=Adr92J9Zxp32EVMW2fP4gwMISAulPt2PlFj84QkXq2f_7tAti9loBDEBfZOLH23JR7U&ccb=13-1&oh=06_Q3_CAftSrVlkdPOtedwq6Ia3HUnVsg9xv6eHLixy2OYYR1ZQ&oe=6A8A11FC&_nc_sid=58080a",
       "spend": 0.79,
       "impressions": 1333,
       "clicks": 0,
