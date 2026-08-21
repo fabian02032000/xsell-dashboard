@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-21T03:00:27.389824+00:00",
+  "updated_at": "2026-08-21T04:35:53.523986+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 66,
+  "total_leads": 67,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -97,6 +97,10 @@
     {
       "date": "2026-08-20",
       "count": 1
+    },
+    {
+      "date": "2026-08-21",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -110,7 +114,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 46,
+      "leads": 47,
       "goal": 74.0,
       "is_partial": false
     }
@@ -143,19 +147,28 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 46,
+  "current_month_leads": 47,
   "current_month_label": "August 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 65,
   "leads_detail": [
+    {
+      "name": "Johana Ardiles Escarza",
+      "email": "johanaae111@gmail.com",
+      "company": "Taller mecanico",
+      "created_date": "2026-08-21",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
     {
       "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
       "email": "edu@gmail.com",
@@ -767,7 +780,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
