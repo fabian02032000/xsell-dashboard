@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-22T02:52:38.990412+00:00",
+  "updated_at": "2026-08-22T03:39:48.263431+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 68,
+  "total_leads": 69,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -104,7 +104,7 @@
     },
     {
       "date": "2026-08-22",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -118,7 +118,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 48,
+      "leads": 49,
       "goal": 74.0,
       "is_partial": false
     }
@@ -151,13 +151,13 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "leads": 9,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 48,
+  "current_month_leads": 49,
   "current_month_label": "August 2026",
-  "current_week_leads": 9,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -168,6 +168,15 @@
       "name": "José Palomino",
       "email": "hugoxz100@gmail.com",
       "company": "eurolavadoras",
+      "created_date": "2026-08-22",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "Jose Zapata",
+      "email": "josezapata_31@hotmail.com",
+      "company": "grupo zetus",
       "created_date": "2026-08-22",
       "has_deal": false,
       "deal_stage": null,
@@ -789,7 +798,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 4
     },
     {
       "label": "Reunión Agendadas",
