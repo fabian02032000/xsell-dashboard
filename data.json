@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-22T17:18:45.717250+00:00",
+  "updated_at": "2026-08-22T18:27:13.729813+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 69,
+  "total_leads": 70,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -104,7 +104,7 @@
     },
     {
       "date": "2026-08-22",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -118,7 +118,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 49,
+      "leads": 50,
       "goal": 74.0,
       "is_partial": false
     }
@@ -151,13 +151,13 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "leads": 10,
+      "leads": 11,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 49,
+  "current_month_leads": 50,
   "current_month_label": "August 2026",
-  "current_week_leads": 10,
+  "current_week_leads": 11,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -177,6 +177,15 @@
       "name": "Jose Zapata",
       "email": "josezapata_31@hotmail.com",
       "company": "grupo zetus",
+      "created_date": "2026-08-22",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "yogamed",
+      "email": "quispe.work@gmail.com",
+      "company": "Inversiones Casa Grande",
       "created_date": "2026-08-22",
       "has_deal": false,
       "deal_stage": null,
@@ -798,7 +807,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 5
     },
     {
       "label": "Reunión Agendadas",
