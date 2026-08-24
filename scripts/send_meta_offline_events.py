@@ -60,12 +60,11 @@ def sha256_hex(value):
     return hashlib.sha256(value.strip().lower().encode("utf-8")).hexdigest()
 
 
-def date_to_unix(date_str):
-    try:
-        dt = datetime.strptime(date_str, "%Y-%m-%d").replace(hour=12, tzinfo=timezone.utc)
-        return int(dt.timestamp())
-    except Exception:
-        return int(datetime.now(timezone.utc).timestamp())
+def now_unix():
+    # Meta exige que la marca de tiempo del evento sea de los ultimos 7 dias.
+    # Como este evento representa "asi esta el lead AHORA" (no cuando se creo),
+    # siempre usamos el momento del envio, sin importar la fecha de creacion.
+    return int(datetime.now(timezone.utc).timestamp())
 
 
 def load_state():
@@ -111,7 +110,7 @@ def build_events(leads, state):
 
         to_send.append({
             "event_name": event_name,
-            "event_time": date_to_unix(lead.get("created_date")),
+            "event_time": now_unix(),
             "action_source": "system_generated",
             "user_data": {
                 "em": [sha256_hex(email)],
