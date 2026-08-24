@@ -13,14 +13,16 @@ otras vías (email marketing, ingresados a mano, etc.).
 También revisa, para cada lead, si ya se le creó un Negocio en HubSpot (y en
 qué etapa está), y arma vistas de progreso por mes y por semana.
 
-AVISO DE PRIVACIDAD: este script incluye nombre, empresa y correo de cada
-lead en data.json, y ese archivo queda visible en un repositorio público de
-GitHub. Esto fue una decisión explícita del dueño del dashboard — si en
-algún momento se prefiere dejar de exponer estos datos, hay que quitar el
+AVISO DE PRIVACIDAD: este script incluye nombre y correo de cada lead en
+data.json, y ese archivo queda visible en un repositorio público de GitHub.
+Esto fue una decisión explícita del dueño del dashboard — si en algún
+momento se prefiere dejar de exponer nombres/correos, hay que quitar el
 bloque "leads_detail" antes de que corra de nuevo.
 """
 import os
+import re
 import sys
+import html
 import json
 import datetime
 import unicodedata
@@ -240,13 +242,16 @@ def fetch_contact_deal_status(contact_ids, stage_labels):
 
         # 3) Combina: para cada contacto, toma el negocio más reciente asociado
         for cid, deal_ids in contact_to_deal_ids.items():
-            candidate_deals = [deal_info[str(d)] for d in deal_ids if str(d) in deal_info]
+            candidate_deals = [
+                (str(d), deal_info[str(d)]) for d in deal_ids if str(d) in deal_info
+            ]
             if not candidate_deals:
                 continue
-            candidate_deals.sort(key=lambda p: p.get("createdate") or "", reverse=True)
-            best = candidate_deals[0]
+            candidate_deals.sort(key=lambda pair: pair[1].get("createdate") or "", reverse=True)
+            best_id, best = candidate_deals[0]
             stage_id = best.get("dealstage")
             status_by_contact[cid] = {
+                "deal_id": best_id,
                 "deal_name": best.get("dealname"),
                 "stage_label": stage_labels.get(stage_id, stage_id),
             }
@@ -254,6 +259,65 @@ def fetch_contact_deal_status(contact_ids, stage_labels):
         print(f"AVISO: no se pudo revisar el estado de negocios por lead: {e}", file=sys.stderr)
 
     return status_by_contact
+
+
+def strip_note_html(body):
+    """Las notas de HubSpot vienen con HTML simple (<p>, <br>, etc.). Esto las
+    deja como texto plano, legible en el dashboard."""
+    if not body:
+        return ""
+    text = re.sub(r"<br\s*/?>", "\n", body, flags=re.IGNORECASE)
+    text = re.sub(r"</p\s*>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    return text.strip()
+
+
+def fetch_notes_for_deals(deal_ids):
+    """Para cada deal_id, trae la nota más reciente asociada al negocio (la
+    que Ingrid escribe al tipificar). Best-effort: si el token no tiene el
+    permiso de Notes o algo falla, todos quedan sin nota en vez de romper
+    el script completo."""
+    notes_by_deal = {did: None for did in deal_ids}
+    if not deal_ids:
+        return notes_by_deal
+
+    try:
+        # 1) Asociaciones negocio -> nota (por lotes de 100)
+        deal_to_note_ids = {}
+        for batch in chunked(deal_ids, 100):
+            body = {"inputs": [{"id": did} for did in batch]}
+            resp = hubspot_post("/crm/v4/associations/deals/notes/batch/read", body)
+            for row in resp.get("results", []):
+                from_id = row.get("from", {}).get("id")
+                note_ids = [t.get("toObjectId") for t in row.get("to", [])]
+                if from_id and note_ids:
+                    deal_to_note_ids[from_id] = note_ids
+
+        all_note_ids = sorted({str(n) for ids in deal_to_note_ids.values() for n in ids})
+
+        # 2) Detalle de cada nota (texto y fecha)
+        note_info = {}
+        for batch in chunked(all_note_ids, 100):
+            body = {
+                "inputs": [{"id": nid} for nid in batch],
+                "properties": ["hs_note_body", "hs_timestamp"],
+            }
+            resp = hubspot_post("/crm/v3/objects/notes/batch/read", body)
+            for n in resp.get("results", []):
+                note_info[n["id"]] = n.get("properties", {})
+
+        # 3) Combina: para cada negocio, toma la nota más reciente
+        for did, note_ids in deal_to_note_ids.items():
+            candidate_notes = [note_info[str(n)] for n in note_ids if str(n) in note_info]
+            if not candidate_notes:
+                continue
+            candidate_notes.sort(key=lambda p: p.get("hs_timestamp") or "", reverse=True)
+            notes_by_deal[did] = strip_note_html(candidate_notes[0].get("hs_note_body"))
+    except Exception as e:
+        print(f"AVISO: no se pudieron traer las notas de los negocios: {e}", file=sys.stderr)
+
+    return notes_by_deal
 
 
 def build_leads_by_day(contacts):
@@ -363,10 +427,17 @@ def main():
 
     closed_deals = fetch_closed_deals_count(month_start)
 
-    # ---- Estado de negocio por lead (nombre/correo/empresa visibles a propósito — ver aviso arriba) ----
+    # ---- Estado de negocio por lead (nombre/correo visibles a propósito — ver aviso arriba) ----
     stage_labels = fetch_deal_stage_labels()
     contact_ids = [c["id"] for c in contacts]
     deal_status_by_contact = fetch_contact_deal_status(contact_ids, stage_labels)
+
+    # ---- Nota que Ingrid deja en el negocio al tipificar ----
+    deal_ids_with_status = sorted({
+        status["deal_id"] for status in deal_status_by_contact.values()
+        if status and status.get("deal_id")
+    })
+    notes_by_deal = fetch_notes_for_deals(deal_ids_with_status)
 
     leads_detail = []
     for c in contacts:
@@ -382,6 +453,7 @@ def main():
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
             "deal_name": status.get("deal_name") if status else None,
+            "deal_note": notes_by_deal.get(status.get("deal_id")) if status else None,
         })
     # Más recientes primero
     leads_detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
