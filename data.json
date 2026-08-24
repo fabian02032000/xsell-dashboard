@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-24T07:56:52.509884+00:00",
+  "updated_at": "2026-08-24T08:51:26.711227+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 72,
+  "total_leads": 73,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -112,7 +112,7 @@
     },
     {
       "date": "2026-08-24",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -126,7 +126,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 52,
+      "leads": 53,
       "goal": 74.0,
       "is_partial": false
     }
@@ -165,13 +165,13 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 1,
+      "leads": 2,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 52,
+  "current_month_leads": 53,
   "current_month_label": "August 2026",
-  "current_week_leads": 1,
+  "current_week_leads": 2,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -182,6 +182,15 @@
       "name": "María vela",
       "email": "presidencia@camarainternacionaldecomercio.org",
       "company": "cámara internacional de comercio",
+      "created_date": "2026-08-24",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
+    {
+      "name": "cristofer correa",
+      "email": "cristofer.correa@levigrouplogistics.com",
+      "company": "Levi Group",
       "created_date": "2026-08-24",
       "has_deal": false,
       "deal_stage": null,
@@ -839,7 +848,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 7
+      "count": 8
     },
     {
       "label": "Reunión Agendadas",
