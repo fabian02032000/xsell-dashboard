@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T14:39:24.411017+00:00",
+  "updated_at": "2026-08-24T15:37:11.980843+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -176,70 +176,70 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 65,
+  "leads_with_deal": 72,
   "leads_detail": [
     {
       "name": "María vela",
       "email": "presidencia@camarainternacionaldecomercio.org",
       "company": "cámara internacional de comercio",
       "created_date": "2026-08-24",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Camara internacional de comercio"
     },
     {
       "name": "cristofer correa",
       "email": "cristofer.correa@levigrouplogistics.com",
       "company": "Levi Group",
       "created_date": "2026-08-24",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Grupo Levi"
     },
     {
       "name": "Ivan Borjas Hilario",
       "email": "comercial@punchay.dev",
       "company": "Punchay Digital Solutions",
       "created_date": "2026-08-23",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Soluciones Digitales de Punchay "
     },
     {
       "name": "José Palomino",
       "email": "hugoxz100@gmail.com",
       "company": "eurolavadoras",
       "created_date": "2026-08-22",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Eurolavadoras"
     },
     {
       "name": "Jose Zapata",
       "email": "josezapata_31@hotmail.com",
       "company": "grupo zetus",
       "created_date": "2026-08-22",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Grupo Zetus"
     },
     {
       "name": "yogamed",
       "email": "quispe.work@gmail.com",
       "company": "Inversiones Casa Grande",
       "created_date": "2026-08-22",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Inversiones Casa Grande"
     },
     {
       "name": "Johana Ardiles Escarza",
       "email": "johanaae111@gmail.com",
       "company": "Taller mecanico",
       "created_date": "2026-08-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Taller mecánico"
     },
     {
       "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
@@ -840,19 +840,19 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 51
+      "count": 52
     },
     {
       "label": "Prospectos Contactados",
-      "count": 11
-    },
-    {
-      "label": "Sin negocio",
-      "count": 8
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
       "count": 3
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ]
 }
