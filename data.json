@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-24T05:36:10.374018+00:00",
+  "updated_at": "2026-08-24T06:54:21.774881+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 71,
+  "total_leads": 72,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -109,6 +109,10 @@
     {
       "date": "2026-08-23",
       "count": 1
+    },
+    {
+      "date": "2026-08-24",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -122,7 +126,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 51,
+      "leads": 52,
       "goal": 74.0,
       "is_partial": false
     }
@@ -161,19 +165,28 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 0,
+      "leads": 1,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 51,
+  "current_month_leads": 52,
   "current_month_label": "August 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 1,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 65,
   "leads_detail": [
+    {
+      "name": "María vela",
+      "email": "presidencia@camarainternacionaldecomercio.org",
+      "company": "cámara internacional de comercio",
+      "created_date": "2026-08-24",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
     {
       "name": "Ivan Borjas Hilario",
       "email": "comercial@punchay.dev",
@@ -826,7 +839,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 6
+      "count": 7
     },
     {
       "label": "Reunión Agendadas",
