@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-23T23:19:09.000045+00:00",
+  "updated_at": "2026-08-24T01:10:12.584027+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 70,
+  "total_leads": 71,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -105,6 +105,10 @@
     {
       "date": "2026-08-22",
       "count": 3
+    },
+    {
+      "date": "2026-08-23",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -118,7 +122,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 50,
+      "leads": 51,
       "goal": 74.0,
       "is_partial": false
     }
@@ -151,19 +155,34 @@
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "leads": 11,
+      "leads": 12,
+      "goal": 17.3
+    },
+    {
+      "week_start": "2026-08-24",
+      "week_end": "2026-08-30",
+      "leads": 0,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 50,
+  "current_month_leads": 51,
   "current_month_label": "August 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 0,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 65,
   "leads_detail": [
+    {
+      "name": "Ivan Borjas Hilario",
+      "email": "comercial@punchay.dev",
+      "company": "Punchay Digital Solutions",
+      "created_date": "2026-08-23",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null
+    },
     {
       "name": "José Palomino",
       "email": "hugoxz100@gmail.com",
@@ -807,7 +826,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 6
     },
     {
       "label": "Reunión Agendadas",
