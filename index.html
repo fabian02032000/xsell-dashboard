@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Xsell — Dashboard de leads en tiempo real</title>
+<title>Xsell — Dashboard de registros en tiempo real</title>
 <style>
   :root{
     --bg:#0E0A1A; --surface:#171025; --surface-2:#1F1730;
@@ -84,7 +84,7 @@
   .funnel-fill{background:var(--orange); height:100%; border-radius:8px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; color:#1a0f00; font-weight:800; font-size:13px; transition:width .3s;}
   .funnel-pct{font-size:12px; color:var(--text-muted); text-align:right;}
 
-  /* Tables (progreso mensual, semanal, estado de leads) */
+  /* Tables (progreso mensual, semanal, estado de registros) */
   .table-wrap{overflow-x:auto;}
   table{width:100%; border-collapse:collapse; font-size:13px;}
   thead th{text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.03em; color:var(--text-muted); padding:0 12px 10px; font-weight:600; white-space:nowrap;}
@@ -104,7 +104,7 @@
   .milestone-date{color:var(--text-primary); font-weight:600; min-width:76px;}
   .milestone-marker{cursor:pointer;}
 
-  /* Distribución de estado de leads */
+  /* Distribución de estado de registros */
   .status-dist-bar{display:flex; height:36px; border-radius:8px; overflow:hidden; background:var(--surface-2);}
   .status-dist-seg{height:100%; display:flex; align-items:center; justify-content:center; color:#0c0716; font-size:11px; font-weight:800; white-space:nowrap; overflow:hidden;}
   .status-dist-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px;}
@@ -162,8 +162,8 @@
   <header>
     <div>
       <p class="wordmark">XSELL</p>
-      <h1>Dashboard de leads y pauta en tiempo real</h1>
-      <p class="subtitle">Leads desde HubSpot · Inversión desde Meta Ads · se actualiza automáticamente cada hora</p>
+      <h1>Dashboard de registros y pauta en tiempo real</h1>
+      <p class="subtitle">Registros desde HubSpot · Inversión desde Meta Ads · se actualiza automáticamente cada hora</p>
     </div>
     <div class="updated">
       <span class="badge good" id="statusBadge">● Cargando…</span><br>
@@ -172,7 +172,7 @@
   </header>
 
   <div class="tab-nav">
-    <button class="tab-btn active" data-tab="leads">📊 Leads y ventas</button>
+    <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
   </div>
 
@@ -185,7 +185,7 @@
   <section>
     <div class="section-head">
       <h2>Filtrar por rango de fechas</h2>
-      <span class="hint">Aplica a "Leads por día", "Gasto diario" y "Estado de cada lead" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
+      <span class="hint">Aplica a "Registros por día", "Gasto diario" y "Estado de cada registro" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
     </div>
     <div class="chart-card">
       <div class="date-filter-bar">
@@ -206,7 +206,7 @@
 
   <section>
     <div class="section-head">
-      <h2>De dónde vienen los leads</h2>
+      <h2>De dónde vienen los registros</h2>
       <span class="hint">Creatividades activas ahora mismo en Meta Ads — se actualizan solas</span>
     </div>
     <div id="creativeHeroWrap"></div>
@@ -218,13 +218,13 @@
 
   <section>
     <div class="section-head">
-      <h2>Meta de leads</h2>
+      <h2>Meta de registros</h2>
       <span class="hint" id="metaHint"></span>
     </div>
     <div class="kpi-row" id="metaRow" style="margin-bottom:16px;"></div>
     <div class="chart-card">
       <div class="legend">
-        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Leads reales</span>
+        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Registros reales</span>
         <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta mensual</span>
       </div>
       <div class="chart-wrap">
@@ -242,7 +242,7 @@
     <div class="chart-card">
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Mes</th><th>Leads</th><th>Meta</th><th>Avance</th></tr></thead>
+          <thead><tr><th>Mes</th><th>Registros</th><th>Meta</th><th>Avance</th></tr></thead>
           <tbody id="monthlyTableBody"></tbody>
         </table>
       </div>
@@ -296,7 +296,7 @@
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th></th><th>Anuncio</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Leads</th><th>Costo/lead</th></tr></thead>
+          <thead><tr><th></th><th>Anuncio</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Registros</th><th>Costo/registro</th></tr></thead>
           <tbody id="adsPerformanceTableBody"></tbody>
         </table>
       </div>
@@ -305,12 +305,12 @@
 
   <section>
     <div class="section-head">
-      <h2>Meta semanal de leads</h2>
+      <h2>Meta semanal de registros</h2>
       <span class="hint">Tendencia semana a semana · pasa el mouse sobre un punto para ver la fracción exacta</span>
     </div>
     <div class="chart-card">
       <div class="legend">
-        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Leads reales</span>
+        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Registros reales</span>
         <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta semanal</span>
       </div>
       <div class="chart-wrap">
@@ -323,12 +323,12 @@
   <section>
     <div class="section-head">
       <h2>Detalle semanal</h2>
-      <span class="hint">Compromiso de leads, gasto, costo por lead y frecuencia — semana a semana</span>
+      <span class="hint">Compromiso de registros, gasto, costo por registro y frecuencia — semana a semana</span>
     </div>
     <div class="chart-card">
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Semana</th><th>Leads</th><th>Meta semanal</th><th>Gasto</th><th>CPL</th><th>Frecuencia</th></tr></thead>
+          <thead><tr><th>Semana</th><th>Registros</th><th>Meta semanal</th><th>Gasto</th><th>CPL</th><th>Frecuencia</th></tr></thead>
           <tbody id="weeklyTableBody"></tbody>
         </table>
       </div>
@@ -338,8 +338,8 @@
 
   <section id="funnelSection">
     <div class="section-head">
-      <h2>Embudo: de lead a cliente</h2>
-      <span class="hint">Todo en vivo desde HubSpot — leads, reuniones (por tipificación) y cerrados</span>
+      <h2>Embudo: de registro a cliente</h2>
+      <span class="hint">Todo en vivo desde HubSpot — registros, reuniones (por tipificación) y cerrados</span>
     </div>
     <div class="chart-card">
       <div class="funnel" id="funnel"></div>
@@ -349,7 +349,7 @@
 
   <section>
     <div class="section-head">
-      <h2>Distribución de estado de leads</h2>
+      <h2>Distribución de estado de registros</h2>
       <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot</span>
     </div>
     <div class="chart-card">
@@ -360,7 +360,7 @@
 
   <section>
     <div class="section-head">
-      <h2>Estado de cada lead</h2>
+      <h2>Estado de cada registro</h2>
       <span class="hint" id="leadsTableHint">¿Ingrid ya le generó un negocio en HubSpot?</span>
     </div>
     <div class="chart-card">
@@ -375,7 +375,7 @@
 
   <section>
     <div class="section-head">
-      <h2>Leads por día</h2>
+      <h2>Registros por día</h2>
       <span class="hint">Desde el inicio de campaña · ▲ marca un cambio hecho en la campaña de Meta</span>
     </div>
     <div class="chart-card">
@@ -526,16 +526,22 @@
 
     // ---- KPI hero ----
     const kpiRow = document.getElementById('kpiRow');
+    const leadsClientePotencial = typeof data.reuniones_auto === 'number' ? data.reuniones_auto : 0;
     let kpiHtml = `
       <div class="tile">
-        <p class="tile-label">Leads totales</p>
+        <p class="tile-label">Registros totales</p>
         <p class="tile-value">${fmt(data.total_leads)}</p>
         <p class="tile-sub">Desde ${data.campaign_start}</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Leads este mes</p>
+        <p class="tile-label">Registros este mes</p>
         <p class="tile-value">${fmt(data.current_month_leads)}</p>
         <p class="tile-sub">${data.current_month_label}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Leads (cliente potencial)</p>
+        <p class="tile-value">${fmt(leadsClientePotencial)}</p>
+        <p class="tile-sub">Tipificados como "Reunión Agendadas" en HubSpot</p>
       </div>`;
     if (hasMeta){
       kpiHtml += `
@@ -545,7 +551,7 @@
         <p class="tile-sub">Todas las campañas, desde ${meta.campaign_start}</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Costo por lead</p>
+        <p class="tile-label">Costo por registro</p>
         <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p>
         <p class="tile-sub">Campaña Prospectos B2B</p>
       </div>`;
@@ -562,23 +568,23 @@
     // ---- Creatividades (imágenes reales, en vivo desde Meta) ----
     drawCreatives(data, meta, hasMeta);
 
-    // ---- Meta de leads ----
+    // ---- Meta de registros ----
     const pctMonth = (data.current_month_leads / data.monthly_goal) * 100;
-    document.getElementById('metaHint').textContent = `Meta mensual: ${data.monthly_goal} leads`;
+    document.getElementById('metaHint').textContent = `Meta mensual: ${data.monthly_goal} registros`;
     document.getElementById('metaRow').innerHTML = `
       <div class="tile">
         <p class="tile-label">Avance del mes</p>
         <p class="tile-value">${Math.round(pctMonth)}%</p>
-        <p class="tile-sub">${fmt(data.current_month_leads)} / ${fmt(data.monthly_goal)} leads</p>
+        <p class="tile-sub">${fmt(data.current_month_leads)} / ${fmt(data.monthly_goal)} registros</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Leads esta semana</p>
+        <p class="tile-label">Registros esta semana</p>
         <p class="tile-value">${fmt(data.current_week_leads)}</p>
         <p class="tile-sub">Meta semanal: ~${data.weekly_goal}</p>
       </div>
     `;
     drawBarsWithTarget('leadsMonthChart', 'leadsMonthTooltip',
-      [data.current_month_label], [data.current_month_leads], data.monthly_goal, orange, 'Leads');
+      [data.current_month_label], [data.current_month_leads], data.monthly_goal, orange, 'Registros');
 
     // ---- Progreso por mes ----
     drawMonthlyTable(data.leads_by_month || []);
@@ -594,7 +600,7 @@
           <p class="tile-sub">${Math.round(pctBudget)}% de la meta mensual</p>
         </div>
         <div class="tile">
-          <p class="tile-label">Gasto — campaña de leads</p>
+          <p class="tile-label">Gasto — campaña de registros</p>
           <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_month)}</p>
           <p class="tile-sub">Prospectos B2B, este mes</p>
         </div>
@@ -618,15 +624,15 @@
     // ---- Funnel ----
     drawFunnel(data, funnelCfg);
 
-    // ---- Distribución de estado de leads ----
+    // ---- Distribución de estado de registros ----
     drawStatusDistribution(data.leads_status_breakdown || []);
 
     // ---- Milestones (lista completa, no depende del filtro de fechas) ----
     const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
     drawMilestoneList(milestones, hasMeta, meta);
 
-    // ---- Filtro de rango de fechas: dibuja "Leads por día", "Gasto diario"
-    // y "Estado de cada lead" según el rango elegido (por defecto, todo el período) ----
+    // ---- Filtro de rango de fechas: dibuja "Registros por día", "Gasto diario"
+    // y "Estado de cada registro" según el rango elegido (por defecto, todo el período) ----
     initDateFilter(data, meta);
   }
 
@@ -694,7 +700,7 @@
 
     document.getElementById('rangeKpiRow').innerHTML = `
       <div class="tile">
-        <p class="tile-label">Leads en el rango</p>
+        <p class="tile-label">Registros en el rango</p>
         <p class="tile-value">${fmt(rangeLeads)}</p>
         <p class="tile-sub">${from} — ${to}</p>
       </div>
@@ -704,9 +710,9 @@
         <p class="tile-sub">${hasMeta ? 'Toda la cuenta, en Meta Ads' : 'Esperando Meta Ads'}</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Costo por lead en el rango</p>
+        <p class="tile-label">Costo por registro en el rango</p>
         <p class="tile-value">${(hasMeta && rangeLeads) ? fmtMoney(rangeSpend / rangeLeads) : '—'}</p>
-        <p class="tile-sub">Gasto ÷ leads del rango</p>
+        <p class="tile-sub">Gasto ÷ registros del rango</p>
       </div>
     `;
 
@@ -869,7 +875,7 @@
       hit.addEventListener('pointerenter', () => {
         const w = weeks[+hit.dataset.i];
         const p = w.goal ? Math.round((w.leads / w.goal) * 100) : 0;
-        tooltip.innerHTML = `<strong>${w.week_start} – ${w.week_end}</strong><br>${fmt(w.leads)} / ${fmt(w.goal)} leads (${p}%)`;
+        tooltip.innerHTML = `<strong>${w.week_start} – ${w.week_end}</strong><br>${fmt(w.leads)} / ${fmt(w.goal)} registros (${p}%)`;
         tooltip.style.opacity = 1;
       });
       hit.addEventListener('pointermove', (e) => {
@@ -919,10 +925,10 @@
   function drawLeadsTable(leads, leadsWithDeal, totalLeads){
     const body = document.getElementById('leadsTableBody');
     const hint = document.getElementById('leadsTableHint');
-    hint.textContent = `${fmt(leadsWithDeal || 0)} de ${fmt(totalLeads || 0)} leads ya tienen un negocio creado en HubSpot`;
+    hint.textContent = `${fmt(leadsWithDeal || 0)} de ${fmt(totalLeads || 0)} registros ya tienen un negocio creado en HubSpot`;
 
     if (!leads.length){
-      body.innerHTML = `<tr><td colspan="5" class="table-sub">Aún no hay leads para mostrar.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="5" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
       return;
     }
     body.innerHTML = leads.map(l => {
@@ -985,7 +991,7 @@
     if (!creativesAvailable || leadsCreatives.length === 0){
       heroWrap.innerHTML = `
         <div class="chart-card">
-          <p style="margin:0; color:var(--text-muted); font-size:13px;">No se encontró ninguna creatividad activa en la campaña de leads en este momento. Verifica que la campaña siga activa en Meta Ads Manager.</p>
+          <p style="margin:0; color:var(--text-muted); font-size:13px;">No se encontró ninguna creatividad activa en la campaña de registros en este momento. Verifica que la campaña siga activa en Meta Ads Manager.</p>
         </div>`;
       galleryDetails.style.display = 'none';
       return;
@@ -1005,12 +1011,12 @@
         <img src="${hero.image_url}" alt="${hero.ad_name || 'Creatividad activa'}">
         <div class="creative-hero-body">
           <h3>${hero.ad_name || 'Anuncio activo'}</h3>
-          <p>Esta es la pieza activa generando leads ahora mismo — vía el formulario de Meta Lead Ads de la campaña "${hero.campaign_name}". La imagen se trae en vivo desde tu cuenta de Meta Ads, así que si cambias el anuncio, se actualiza sola.</p>
+          <p>Esta es la pieza activa generando registros ahora mismo — vía el formulario de Meta Lead Ads de la campaña "${hero.campaign_name}". La imagen se trae en vivo desde tu cuenta de Meta Ads, así que si cambias el anuncio, se actualiza sola.</p>
           ${heroCopyHtml}
           <div class="creative-stats">
-            <div><p>Leads generados</p><p>${fmt(data.total_leads)}</p></div>
+            <div><p>Registros generados</p><p>${fmt(data.total_leads)}</p></div>
             <div><p>Inversión</p><p>${fmtMoney(meta.leads_campaign_spend_total)}</p></div>
-            <div><p>Costo/lead</p><p>${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p></div>
+            <div><p>Costo/registro</p><p>${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p></div>
           </div>
         </div>
       </div>`;
@@ -1038,7 +1044,7 @@
     const cerrados = (data.closed_deals && data.closed_deals.available) ? (data.closed_deals.count || 0) : null;
 
     const stages = [
-      { label: 'Leads', value: data.total_leads, color: orange },
+      { label: 'Registros', value: data.total_leads, color: orange },
       { label: 'Reuniones', value: reuniones, color: orange },
       { label: 'Cerrados', value: cerrados, color: orange },
     ];
@@ -1060,9 +1066,9 @@
         </div>`;
     }).join('');
 
-    let calloutText = 'Este embudo combina leads en vivo desde HubSpot y clientes cerrados en vivo desde Negocios de HubSpot.';
+    let calloutText = 'Este embudo combina registros en vivo desde HubSpot y clientes cerrados en vivo desde Negocios de HubSpot.';
     calloutText += reunionesEsAutomatico
-      ? ' Las reuniones se calculan en vivo según la etapa del negocio que pone Ingrid en HubSpot (tipificación).'
+      ? ' Las reuniones se calculan en vivo según la etapa del negocio que pone Ingrid en HubSpot (tipificación) — estos son los registros que arriba se cuentan como "Leads (cliente potencial)".'
       : ' Las reuniones son un dato manual — actualízalo en <code>funnel_config.json</code>.';
     if (cerrados === null){
       calloutText += ' El conteo de cerrados no está disponible todavía: revisa que la etapa "closedwon" en tu pipeline de Negocios coincida con la configurada en el script.';
@@ -1092,7 +1098,7 @@
     const legend = document.getElementById('statusDistLegend');
     if (!breakdown.length){
       bar.innerHTML = '';
-      legend.innerHTML = `<span class="table-sub">Aún no hay leads para mostrar.</span>`;
+      legend.innerHTML = `<span class="table-sub">Aún no hay registros para mostrar.</span>`;
       return;
     }
     const total = breakdown.reduce((sum, s) => sum + s.count, 0) || 1;
@@ -1250,7 +1256,7 @@
       bar.addEventListener('pointerenter', () => {
         const i = +bar.dataset.i;
         const d = days[i];
-        let html = `<strong>${d.date}</strong><br>${d.count} leads`;
+        let html = `<strong>${d.date}</strong><br>${d.count} registros`;
         if (milestonesByDate[d.date]){
           html += '<br>' + milestonesByDate[d.date].map(m => `▲ ${m.label}`).join('<br>');
         }
