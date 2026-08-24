@@ -47,6 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json meta_data.json organic_data.json meta_events_state.json
+          git add data.json meta_data.json organic_data.json
+          if [ -f meta_events_state.json ]; then git add meta_events_state.json; fi
           git diff --staged --quiet || git commit -m "Actualiza datos del dashboard"
           git push
