@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T15:37:11.980843+00:00",
+  "updated_at": "2026-08-24T16:34:55.717658+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -220,7 +220,7 @@
       "company": "grupo zetus",
       "created_date": "2026-08-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Grupo Zetus"
     },
     {
@@ -840,11 +840,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 52
+      "count": 53
     },
     {
       "label": "Prospectos Contactados",
-      "count": 17
+      "count": 16
     },
     {
       "label": "Reunión Agendadas",
