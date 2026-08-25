@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-25T01:08:44.426905+00:00",
+  "updated_at": "2026-08-25T02:56:34.183688+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 73,
+  "total_leads": 74,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -113,6 +113,10 @@
     {
       "date": "2026-08-24",
       "count": 2
+    },
+    {
+      "date": "2026-08-25",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -126,7 +130,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 53,
+      "leads": 54,
       "goal": 74.0,
       "is_partial": false
     }
@@ -165,19 +169,29 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 2,
+      "leads": 3,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 53,
+  "current_month_leads": 54,
   "current_month_label": "August 2026",
-  "current_week_leads": 2,
+  "current_week_leads": 3,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 72,
   "leads_detail": [
+    {
+      "name": "Josue Marin",
+      "email": "eversimclaro@gmail.com",
+      "company": "FFVV EVERSIM",
+      "created_date": "2026-08-25",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
     {
       "name": "María vela",
       "email": "presidencia@camarainternacionaldecomercio.org",
@@ -925,7 +939,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
