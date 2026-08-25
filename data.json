@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-25T04:36:39.542778+00:00",
+  "updated_at": "2026-08-25T05:29:45.532708+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 74,
+  "total_leads": 75,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -116,7 +116,7 @@
     },
     {
       "date": "2026-08-25",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -130,7 +130,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 54,
+      "leads": 55,
       "goal": 74.0,
       "is_partial": false
     }
@@ -169,13 +169,13 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 3,
+      "leads": 4,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 54,
+  "current_month_leads": 55,
   "current_month_label": "August 2026",
-  "current_week_leads": 3,
+  "current_week_leads": 4,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -186,6 +186,16 @@
       "name": "Josue Marin",
       "email": "eversimclaro@gmail.com",
       "company": "FFVV EVERSIM",
+      "created_date": "2026-08-25",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Rolando Irvin Romero Villanueva",
+      "email": "irvinvirgo18@gmail.com",
+      "company": "Orquesta Digital Destello de Oro",
       "created_date": "2026-08-25",
       "has_deal": false,
       "deal_stage": null,
@@ -934,12 +944,12 @@
       "count": 16
     },
     {
-      "label": "Reunión Agendadas",
+      "label": "Sin negocio",
       "count": 3
     },
     {
-      "label": "Sin negocio",
-      "count": 2
+      "label": "Reunión Agendadas",
+      "count": 3
     }
   ]
 }
