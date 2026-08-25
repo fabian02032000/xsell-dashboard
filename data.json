@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-25T19:29:48.925636+00:00",
+  "updated_at": "2026-08-25T20:26:16.572885+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 76,
+  "total_leads": 77,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -116,7 +116,7 @@
     },
     {
       "date": "2026-08-25",
-      "count": 3
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -130,7 +130,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 56,
+      "leads": 57,
       "goal": 74.0,
       "is_partial": false
     }
@@ -169,27 +169,27 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 5,
+      "leads": 6,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 56,
+  "current_month_leads": 57,
   "current_month_label": "August 2026",
-  "current_week_leads": 5,
+  "current_week_leads": 6,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 72,
+  "leads_with_deal": 76,
   "leads_detail": [
     {
       "name": "Josue Marin",
       "email": "eversimclaro@gmail.com",
       "company": "FFVV EVERSIM",
       "created_date": "2026-08-25",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "FFVV EVERSIM",
       "deal_note": null
     },
     {
@@ -197,9 +197,9 @@
       "email": "irvinvirgo18@gmail.com",
       "company": "Orquesta Digital Destello de Oro",
       "created_date": "2026-08-25",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Orquesta Digital Destello de Oro",
       "deal_note": null
     },
     {
@@ -207,9 +207,19 @@
       "email": "comercial01.capsur@gmail.com",
       "company": "corporacion capsursac",
       "created_date": "2026-08-25",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Corporación Capsursac",
+      "deal_note": null
+    },
+    {
+      "name": "Fabian meza",
+      "email": "duberfabianmezageronimo@gmail.com",
+      "company": "Minuto",
+      "created_date": "2026-08-25",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Estudiante Fabian Meza",
       "deal_note": null
     },
     {
@@ -951,15 +961,15 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 16
-    },
-    {
-      "label": "Sin negocio",
-      "count": 4
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
       "count": 3
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ]
 }
