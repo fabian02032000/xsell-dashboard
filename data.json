@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-27T13:47:23.162978+00:00",
+  "updated_at": "2026-08-27T23:35:45.947408+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 78,
+  "total_leads": 79,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -120,7 +120,7 @@
     },
     {
       "date": "2026-08-27",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -134,7 +134,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 58,
+      "leads": 59,
       "goal": 74.0,
       "is_partial": false
     }
@@ -173,27 +173,37 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 58,
+  "current_month_leads": 59,
   "current_month_label": "August 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 76,
+  "leads_with_deal": 78,
   "leads_detail": [
     {
       "name": "Mario Llirod",
       "email": "mariollirod@hotmail.com",
       "company": "Alfa Nevado",
       "created_date": "2026-08-27",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Alfa Nevado ",
+      "deal_note": null
+    },
+    {
+      "name": "Lucia Jimenez",
+      "email": "akirelucky001@gmail.com",
+      "company": ".",
+      "created_date": "2026-08-27",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Lucía Jiménez ",
       "deal_note": null
     },
     {
@@ -975,7 +985,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 20
+      "count": 22
     },
     {
       "label": "Reunión Agendadas",
@@ -983,7 +993,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
