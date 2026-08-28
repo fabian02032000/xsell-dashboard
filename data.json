@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T21:05:32.052727+00:00",
+  "updated_at": "2026-08-28T22:30:59.417630+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -188,7 +188,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 80,
+  "leads_with_deal": 81,
   "leads_detail": [
     {
       "name": "Roberto",
@@ -215,9 +215,9 @@
       "email": "ernestodanielpampaarbanil@gmail.com",
       "company": "delivery gooo.pe",
       "created_date": "2026-08-28",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Delivery Goo ",
       "deal_note": null
     },
     {
@@ -1019,7 +1019,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 24
+      "count": 25
     },
     {
       "label": "Reunión Agendadas",
@@ -1027,7 +1027,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
