@@ -44,18 +44,19 @@ LEAD_ACTION_TYPES = ("lead", "onsite_conversion.lead_grouped", "offsite_conversi
 EMAIL_FIELD_KEYS = ("email", "correo", "correo_electronico", "correo electrónico", "e-mail")
 
 
-def meta_get(path, params):
+def meta_get(path, params, token=None):
     params = dict(params)
-    params["access_token"] = META_TOKEN
+    params["access_token"] = token or META_TOKEN
     url = f"{API_BASE}{path}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, method="GET")
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def meta_get_paginated(path, params, max_pages=30):
+def meta_get_paginated(path, params, max_pages=30, token=None):
     """Igual que meta_get, pero sigue 'paging.next' hasta max_pages páginas
-    y devuelve todos los 'data' concatenados."""
+    y devuelve todos los 'data' concatenados. 'token' opcional para usar un
+    token distinto al META_TOKEN global (p.ej. un token de Página)."""
     all_rows = []
     next_url = None
     page = 0
@@ -65,13 +66,23 @@ def meta_get_paginated(path, params, max_pages=30):
             with urllib.request.urlopen(req, timeout=30) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
         else:
-            data = meta_get(path, params)
+            data = meta_get(path, params, token=token)
         all_rows.extend(data.get("data", []))
         next_url = (data.get("paging") or {}).get("next")
         page += 1
         if not next_url:
             break
     return all_rows
+
+
+def fetch_page_access_token(page_id):
+    """Intercambia el META_TOKEN (de usuario/usuario del sistema) por un
+    token de acceso a la Página — requerido por la API de Leads Retrieval
+    (leadgen_forms/leads exige un Page Access Token, no un token normal).
+    Requiere que META_TOKEN tenga acceso de administrador a la Página vía
+    el Business Manager (permisos pages_show_list y pages_manage_ads)."""
+    resp = meta_get(f"/{page_id}", {"fields": "access_token"})
+    return resp.get("access_token")
 
 
 def extract_leads(actions):
@@ -505,7 +516,17 @@ def fetch_leads_attribution_raw():
         return {}, False
 
     try:
-        forms = meta_get_paginated(f"/{FACEBOOK_PAGE_ID}/leadgen_forms", {"fields": "id,name", "limit": 100})
+        page_token = fetch_page_access_token(FACEBOOK_PAGE_ID)
+    except Exception as e:
+        print(f"AVISO: no se pudo obtener el token de acceso de la Página (¿falta pages_show_list o el token no administra esta Página?): {e}", file=sys.stderr)
+        return {}, False
+
+    if not page_token:
+        print("AVISO: la Página no devolvió un token de acceso — probablemente falta el permiso pages_manage_ads.", file=sys.stderr)
+        return {}, False
+
+    try:
+        forms = meta_get_paginated(f"/{FACEBOOK_PAGE_ID}/leadgen_forms", {"fields": "id,name", "limit": 100}, token=page_token)
     except Exception as e:
         print(f"AVISO: no se pudieron traer los formularios de leads (¿falta el permiso leads_retrieval?): {e}", file=sys.stderr)
         return {}, False
@@ -523,6 +544,7 @@ def fetch_leads_attribution_raw():
                 f"/{form_id}/leads",
                 {"fields": "id,created_time,ad_id,adset_id,campaign_id,field_data", "limit": 200},
                 max_pages=15,
+                token=page_token,
             )
             any_ok = True
         except Exception as e:
