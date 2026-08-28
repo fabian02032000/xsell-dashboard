@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T09:36:42.027001+00:00",
+  "updated_at": "2026-08-28T18:39:25.531628+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 81,
+  "total_leads": 82,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -124,7 +124,7 @@
     },
     {
       "date": "2026-08-28",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -138,7 +138,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 61,
+      "leads": 62,
       "goal": 74.0,
       "is_partial": false
     }
@@ -177,33 +177,43 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 10,
+      "leads": 11,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 61,
+  "current_month_leads": 62,
   "current_month_label": "August 2026",
-  "current_week_leads": 10,
+  "current_week_leads": 11,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 78,
+  "leads_with_deal": 80,
   "leads_detail": [
     {
       "name": "Roberto",
       "email": "info@robertoemprendiendo.com",
       "company": "Smart place",
       "created_date": "2026-08-28",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Roberto Emprendiendo",
       "deal_note": null
     },
     {
       "name": "Gladys Dávalos",
       "email": "gladys.davalos.gutierrez@gmail.com",
       "company": "Gladys Dávalos",
+      "created_date": "2026-08-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Gladys Dávalos ",
+      "deal_note": null
+    },
+    {
+      "name": "Daniel Parb",
+      "email": "ernestodanielpampaarbanil@gmail.com",
+      "company": "delivery gooo.pe",
       "created_date": "2026-08-28",
       "has_deal": false,
       "deal_stage": null,
@@ -1009,15 +1019,15 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 22
-    },
-    {
-      "label": "Sin negocio",
-      "count": 3
+      "count": 24
     },
     {
       "label": "Reunión Agendadas",
       "count": 3
+    },
+    {
+      "label": "Sin negocio",
+      "count": 2
     }
   ]
 }
