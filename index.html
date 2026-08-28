@@ -138,6 +138,7 @@
   .date-filter-inputs{display:flex; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:var(--text-muted);}
   .date-filter-inputs label{display:flex; align-items:center; gap:6px;}
   .date-filter-inputs input[type="date"]{background:var(--surface-2); border:1px solid var(--border); color:var(--text-primary); border-radius:8px; padding:6px 8px; font-family:inherit; font-size:12px; color-scheme:dark;}
+  .date-filter-inputs select{background:var(--surface-2); border:1px solid var(--border); color:var(--text-primary); border-radius:8px; padding:6px 8px; font-family:inherit; font-size:12px;}
 
   /* Calendario de publicaciones */
   .calendar-grid{display:grid; grid-template-columns:repeat(7, 1fr); gap:6px;}
@@ -369,7 +370,7 @@
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Estado</th><th>Nota de Ingrid</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Estado</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Nota de Ingrid</th></tr></thead>
           <tbody id="leadsTableBody"></tbody>
         </table>
       </div>
@@ -397,10 +398,27 @@
   <section>
     <div class="section-head">
       <h2>Análisis de campaña</h2>
-      <span class="hint">CPL, CTR, impresiones, inversión, frecuencia, alcance y CPM · elige el nivel de detalle</span>
+      <span class="hint">CPL, CTR, impresiones, inversión, frecuencia, alcance y CPM · elige el nivel, la campaña y el rango de fechas</span>
     </div>
     <div class="chart-card">
-      <div class="date-filter-presets" style="margin-bottom:14px;">
+      <div class="date-filter-bar" style="margin-bottom:14px;">
+        <div class="date-filter-presets" id="campaignDatePresets">
+          <button type="button" class="filter-btn active" data-preset="all">Todo el período</button>
+          <button type="button" class="filter-btn" data-preset="7">Últimos 7 días</button>
+          <button type="button" class="filter-btn" data-preset="30">Últimos 30 días</button>
+          <button type="button" class="filter-btn" data-preset="month">Este mes</button>
+        </div>
+        <div class="date-filter-inputs">
+          <label>Desde <input type="date" id="campaignDateFrom"></label>
+          <label>Hasta <input type="date" id="campaignDateTo"></label>
+          <label>Campaña
+            <select id="campaignFilterSelect">
+              <option value="__all__">Todas las campañas</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="date-filter-presets" id="campaignLevelToggle" style="margin-bottom:14px;">
         <button type="button" class="filter-btn active" data-level="campaign">Campaña</button>
         <button type="button" class="filter-btn" data-level="adset">Conjunto de anuncios</button>
         <button type="button" class="filter-btn" data-level="ad">Anuncio</button>
@@ -432,7 +450,7 @@
   <section>
     <div class="section-head">
       <h2>Tipificación por conjunto de anuncios</h2>
-      <span class="hint">De qué conjunto de anuncios salió cada registro Descartado, Contactado o con Reunión Agendada — según la tipificación de HubSpot</span>
+      <span class="hint">De qué conjunto de anuncios salió cada registro Descartado, Contactado o con Reunión Agendada — según la tipificación de HubSpot · respeta el mismo rango de fechas y campaña elegidos arriba</span>
     </div>
     <div class="chart-card">
       <div class="table-wrap scroll-y">
@@ -582,6 +600,16 @@
 
     const hasMeta = meta && meta.updated_at;
 
+    // ---- Cruce: de qué anuncio/conjunto de anuncios salió cada registro (por correo) ----
+    const attributionAvailable = !!(hasMeta && meta.leads_attribution_available);
+    const attributionMap = attributionAvailable ? (meta.leads_attribution || {}) : {};
+    (data.leads_detail || []).forEach(l => {
+      const attr = attributionMap[(l.email || '').trim().toLowerCase()];
+      l.adset_name = attr ? attr.adset_name : null;
+      l.ad_name = attr ? attr.ad_name : null;
+      l.attr_campaign_name = attr ? attr.campaign_name : null;
+    });
+
     // ---- KPI hero ----
     const kpiRow = document.getElementById('kpiRow');
     const leadsClientePotencial = typeof data.reuniones_auto === 'number' ? data.reuniones_auto : 0;
@@ -668,15 +696,13 @@
       // El gráfico de gasto diario se dibuja más abajo, según el rango de fechas elegido (initDateFilter/applyDateRange).
       drawCampaignsTable(meta.campaigns || [], meta.campaigns_month || []);
       drawAdsPerformanceTable(meta.ads_performance_available ? (meta.ads_performance || []) : [], meta.ads_performance_available);
-      initCampaignAnalysis(meta);
-      drawAdsetStatusTable(meta.leads_status_by_adset_available ? (meta.leads_status_by_adset || []) : [], meta.leads_status_by_adset_available);
+      initCampaignAnalysis(meta, data);
     } else {
       document.getElementById('budgetHint').textContent = 'Esperando primera actualización de Meta Ads';
       document.getElementById('budgetRow').innerHTML = '';
       drawCampaignsTable([], []);
       drawAdsPerformanceTable([], false);
-      initCampaignAnalysis(null);
-      drawAdsetStatusTable([], false);
+      initCampaignAnalysis(null, data);
     }
 
     // ---- Detalle semanal ----
@@ -785,7 +811,7 @@
     if (hasMeta) drawDailySpend(filteredSpendDays);
 
     const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
-    drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length);
+    drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
   }
 
   function drawCampaignsTable(campaignsTotal, campaignsMonth){
@@ -858,38 +884,156 @@
     });
   }
 
-  // ---- Análisis de campaña: vista por Campaña / Conjunto de anuncios / Anuncio ----
-  let campaignAnalysisMeta = null;
+  // ---- Análisis de campaña: vista por Campaña / Conjunto de anuncios / Anuncio, con filtro de fecha y campaña ----
+  let campaignAnalysisState = { meta: null, data: null };
 
-  function initCampaignAnalysis(meta){
-    campaignAnalysisMeta = meta;
-    const buttons = document.querySelectorAll('#tab-campaign .date-filter-presets .filter-btn');
-    buttons.forEach(btn => {
+  function initCampaignAnalysis(meta, data){
+    campaignAnalysisState = { meta, data };
+
+    const today = new Date().toISOString().slice(0, 10);
+    const start = (meta && meta.campaign_start) || (data && data.campaign_start) || today;
+    const fromInput = document.getElementById('campaignDateFrom');
+    const toInput = document.getElementById('campaignDateTo');
+    [fromInput, toInput].forEach(inp => { inp.min = start; inp.max = today; });
+    fromInput.value = start;
+    toInput.value = today;
+
+    // Selector de campaña: opciones = todas las campañas que aparezcan en cualquiera de los 3 niveles.
+    const select = document.getElementById('campaignFilterSelect');
+    const campaignNames = new Set();
+    if (meta){
+      (meta.campaigns_performance || []).forEach(r => r.name && campaignNames.add(r.name));
+      (meta.adsets_performance || []).forEach(r => r.campaign_name && campaignNames.add(r.campaign_name));
+      (meta.ads_performance || []).forEach(r => r.campaign_name && campaignNames.add(r.campaign_name));
+    }
+    const sortedNames = [...campaignNames].sort();
+    select.innerHTML = '<option value="__all__">Todas las campañas</option>' +
+      sortedNames.map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');
+
+    const levelButtons = document.querySelectorAll('#campaignLevelToggle .filter-btn');
+    levelButtons.forEach(btn => {
       btn.onclick = () => {
-        buttons.forEach(b => b.classList.remove('active'));
+        levelButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        drawCampaignAnalysisTable(btn.dataset.level);
+        renderCampaignAnalysisView();
       };
     });
-    const activeBtn = document.querySelector('#tab-campaign .date-filter-presets .filter-btn.active');
-    drawCampaignAnalysisTable(activeBtn ? activeBtn.dataset.level : 'campaign');
+
+    const presetButtons = document.querySelectorAll('#campaignDatePresets .filter-btn');
+    presetButtons.forEach(btn => {
+      btn.onclick = () => {
+        presetButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        let from = start;
+        const preset = btn.dataset.preset;
+        if (preset === '7'){
+          const d = new Date(today + 'T00:00:00'); d.setDate(d.getDate() - 6);
+          from = d.toISOString().slice(0, 10);
+        } else if (preset === '30'){
+          const d = new Date(today + 'T00:00:00'); d.setDate(d.getDate() - 29);
+          from = d.toISOString().slice(0, 10);
+        } else if (preset === 'month'){
+          from = today.slice(0, 7) + '-01';
+        }
+        if (from < start) from = start;
+        fromInput.value = from;
+        toInput.value = today;
+        renderCampaignAnalysisView();
+      };
+    });
+
+    fromInput.onchange = () => { presetButtons.forEach(b => b.classList.remove('active')); renderCampaignAnalysisView(); };
+    toInput.onchange = () => { presetButtons.forEach(b => b.classList.remove('active')); renderCampaignAnalysisView(); };
+    select.onchange = () => renderCampaignAnalysisView();
+
+    renderCampaignAnalysisView();
   }
 
-  function drawCampaignAnalysisTable(level){
-    const meta = campaignAnalysisMeta;
+  function isFullPeriod(from, to){
+    const { meta, data } = campaignAnalysisState;
+    const start = (meta && meta.campaign_start) || (data && data.campaign_start);
+    const today = new Date().toISOString().slice(0, 10);
+    return from === start && to === today;
+  }
+
+  function renderCampaignAnalysisView(){
+    const activeLevelBtn = document.querySelector('#campaignLevelToggle .filter-btn.active');
+    const level = activeLevelBtn ? activeLevelBtn.dataset.level : 'campaign';
+    const from = document.getElementById('campaignDateFrom').value;
+    const to = document.getElementById('campaignDateTo').value;
+    const campaignFilter = document.getElementById('campaignFilterSelect').value;
+
+    drawCampaignAnalysisTable(level, from, to, campaignFilter);
+    drawAdsetStatusTable(from, to, campaignFilter);
+  }
+
+  // Suma métricas "en bruto" (spend, impressions, clicks, reach, leads) de varias filas
+  // diarias agrupadas por id, y recién ahí recalcula CTR/CPM/frecuencia/CPL — nunca se
+  // promedian ratios ya calculados, porque eso da resultados incorrectos.
+  function aggregateRows(rawRows, from, to, campaignFilter, idKey){
+    const groups = new Map();
+    rawRows.forEach(r => {
+      if (!r.date || r.date < from || r.date > to) return;
+      if (campaignFilter !== '__all__' && r.campaign_name !== campaignFilter) return;
+      const key = r[idKey] || r.name;
+      if (!groups.has(key)){
+        groups.set(key, { name: r.name, campaign_name: r.campaign_name, spend: 0, impressions: 0, clicks: 0, reach: 0, leads: 0 });
+      }
+      const g = groups.get(key);
+      g.spend += r.spend || 0;
+      g.impressions += r.impressions || 0;
+      g.clicks += r.clicks || 0;
+      g.reach += r.reach || 0;
+      g.leads += r.leads || 0;
+    });
+    return [...groups.values()].map(g => ({
+      name: g.name,
+      campaign_name: g.campaign_name,
+      spend: Math.round(g.spend * 100) / 100,
+      impressions: g.impressions,
+      clicks: g.clicks,
+      reach: g.reach,
+      leads: g.leads,
+      ctr: g.impressions ? Math.round((g.clicks / g.impressions) * 10000) / 100 : 0,
+      cpm: g.impressions ? Math.round((g.spend / g.impressions) * 1000 * 100) / 100 : 0,
+      frequency: g.reach ? Math.round((g.impressions / g.reach) * 100) / 100 : 0,
+      cost_per_lead: g.leads ? Math.round((g.spend / g.leads) * 100) / 100 : null,
+    })).sort((a, b) => b.spend - a.spend);
+  }
+
+  function drawCampaignAnalysisTable(level, from, to, campaignFilter){
+    const { meta } = campaignAnalysisState;
     const table = document.getElementById('campaignAnalysisTable');
     const body = document.getElementById('campaignAnalysisTableBody');
     const hint = document.getElementById('campaignAnalysisHint');
     table.classList.toggle('hide-campaign-col', level === 'campaign');
 
-    let rows = [], available = false;
+    let rows = [], available = false, usedExact = false;
+    const fullPeriod = isFullPeriod(from, to) && campaignFilter === '__all__';
+    const daily = meta && meta.campaign_analysis_daily_available ? meta.campaign_analysis_daily : null;
+
     if (meta && meta.updated_at){
       if (level === 'campaign'){
-        rows = meta.campaigns_performance || []; available = !!meta.campaigns_performance_available;
+        available = !!meta.campaigns_performance_available || !!daily;
+        if (fullPeriod && meta.campaigns_performance_available){
+          rows = meta.campaigns_performance || []; usedExact = true;
+        } else if (daily){
+          rows = aggregateRows(daily.campaigns || [], from, to, campaignFilter, 'id');
+        }
       } else if (level === 'adset'){
-        rows = meta.adsets_performance || []; available = !!meta.adsets_performance_available;
+        available = !!meta.adsets_performance_available || !!daily;
+        if (fullPeriod && meta.adsets_performance_available){
+          rows = meta.adsets_performance || []; usedExact = true;
+        } else if (daily){
+          rows = aggregateRows(daily.adsets || [], from, to, campaignFilter, 'id');
+        }
       } else {
-        rows = meta.ads_performance || []; available = !!meta.ads_performance_available;
+        available = !!meta.ads_performance_available || !!daily;
+        if (fullPeriod && meta.ads_performance_available){
+          rows = (meta.ads_performance || []).map(r => ({ ...r, name: r.ad_name })); usedExact = true;
+        } else if (daily){
+          rows = aggregateRows(daily.ads || [], from, to, campaignFilter, 'id');
+        }
       }
     }
 
@@ -899,16 +1043,14 @@
       return;
     }
     if (!rows.length){
-      body.innerHTML = `<tr><td colspan="11" class="table-sub">No se encontraron datos con este nivel de detalle en el período.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="11" class="table-sub">No se encontraron datos con este nivel de detalle en el rango elegido.</td></tr>`;
       hint.textContent = '';
       return;
     }
 
-    body.innerHTML = rows.map(r => {
-      const name = level === 'ad' ? r.ad_name : r.name;
-      return `
+    body.innerHTML = rows.map(r => `
         <tr>
-          <td class="table-name">${escapeHtml(name)}</td>
+          <td class="table-name">${escapeHtml(r.name)}</td>
           <td class="col-campaign-name">${escapeHtml(r.campaign_name) || '—'}</td>
           <td>${fmtMoney(r.spend)}</td>
           <td>${fmt(r.impressions)}</td>
@@ -919,37 +1061,62 @@
           <td>${(r.ctr || 0).toFixed(2)}%</td>
           <td>${fmt(r.leads)}</td>
           <td>${r.cost_per_lead !== null && r.cost_per_lead !== undefined ? fmtMoney(r.cost_per_lead) : '—'}</td>
-        </tr>`;
-    }).join('');
+        </tr>`).join('');
 
-    hint.textContent = level === 'campaign'
+    const levelLabel = level === 'campaign'
       ? 'Un total por campaña — incluye todos sus conjuntos de anuncios y anuncios.'
       : level === 'adset'
         ? 'Un total por conjunto de anuncios — incluye todos sus anuncios.'
-        : 'Cada fila es un anuncio individual — mismos datos que en "Rendimiento de cada anuncio".';
+        : 'Cada fila es un anuncio individual.';
+    hint.textContent = usedExact
+      ? levelLabel
+      : levelLabel + ' Alcance y frecuencia de rangos personalizados son una aproximación (se suman los días del rango) — para el dato exacto, elige "Todo el período" y "Todas las campañas".';
   }
 
   // ---- Tipificación (Descartada / Contactado / Reunión Agendada / Sin negocio) por conjunto de anuncios ----
-  function drawAdsetStatusTable(rows, available){
+  function drawAdsetStatusTable(from, to, campaignFilter){
+    const { data, meta } = campaignAnalysisState;
     const thead = document.getElementById('adsetStatusTableHead');
     const body = document.getElementById('adsetStatusTableBody');
     const hint = document.getElementById('adsetStatusHint');
+    const attributionAvailable = !!(meta && meta.leads_attribution_available);
 
-    if (!available){
+    if (!attributionAvailable){
       thead.innerHTML = '<th>Conjunto de anuncios</th><th>Total</th>';
       body.innerHTML = `<tr><td colspan="2" class="table-sub">Aún no disponible — falta configurar el cruce con Meta (variable FACEBOOK_PAGE_ID y permiso "leads_retrieval" del token) para saber de qué conjunto de anuncios salió cada registro.</td></tr>`;
       hint.textContent = '';
       return;
     }
-    if (!rows.length){
+
+    const leads = ((data && data.leads_detail) || []).filter(l => {
+      if ((l.created_date || '') < from || (l.created_date || '') > to) return false;
+      if (!l.adset_name) return false;
+      if (campaignFilter !== '__all__' && l.attr_campaign_name !== campaignFilter) return false;
+      return true;
+    });
+
+    if (!leads.length){
       thead.innerHTML = '<th>Conjunto de anuncios</th><th>Total</th>';
-      body.innerHTML = `<tr><td colspan="2" class="table-sub">Sin registros con atribución todavía.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="2" class="table-sub">Sin registros con atribución en este rango.</td></tr>`;
       hint.textContent = '';
       return;
     }
 
+    const counts = {};
+    leads.forEach(l => {
+      const status = (l.has_deal && l.deal_stage) ? l.deal_stage : 'Sin negocio';
+      counts[l.adset_name] = counts[l.adset_name] || {};
+      counts[l.adset_name][status] = (counts[l.adset_name][status] || 0) + 1;
+    });
+
+    const rows = Object.entries(counts).map(([adset_name, status_counts]) => ({
+      adset_name,
+      status_counts,
+      total: Object.values(status_counts).reduce((a, b) => a + b, 0),
+    })).sort((a, b) => b.total - a.total);
+
     const allLabels = new Set();
-    rows.forEach(r => Object.keys(r.status_counts || {}).forEach(l => allLabels.add(l)));
+    rows.forEach(r => Object.keys(r.status_counts).forEach(l => allLabels.add(l)));
     const priorityTests = [/reuni/i, /contact/i, /descart/i, /cerrad/i, /sin negocio/i];
     const labels = [...allLabels].sort((a, b) => {
       const pa = priorityTests.findIndex(t => t.test(a));
@@ -973,7 +1140,7 @@
       return `<tr><td class="table-name">${escapeHtml(r.adset_name)}</td>${cells}<td><strong>${fmt(r.total)}</strong></td></tr>`;
     }).join('');
 
-    hint.textContent = 'Cruce entre la tipificación de HubSpot y el conjunto de anuncios de origen (vía Meta Leads Retrieval).';
+    hint.textContent = 'Cruce entre la tipificación de HubSpot y el conjunto de anuncios de origen (vía Meta Leads Retrieval), filtrado por el rango y campaña elegidos arriba.';
   }
 
   function pct(part, total){
@@ -1102,13 +1269,17 @@
     }).join('');
   }
 
-  function drawLeadsTable(leads, leadsWithDeal, totalLeads){
+  function drawLeadsTable(leads, leadsWithDeal, totalLeads, attributionAvailable){
     const body = document.getElementById('leadsTableBody');
     const hint = document.getElementById('leadsTableHint');
-    hint.textContent = `${fmt(leadsWithDeal || 0)} de ${fmt(totalLeads || 0)} registros ya tienen un negocio creado en HubSpot`;
+    let hintText = `${fmt(leadsWithDeal || 0)} de ${fmt(totalLeads || 0)} registros ya tienen un negocio creado en HubSpot`;
+    if (!attributionAvailable){
+      hintText += ' · "Conjunto de anuncios" y "Anuncio" aún no disponibles — falta configurar el cruce con Meta';
+    }
+    hint.textContent = hintText;
 
     if (!leads.length){
-      body.innerHTML = `<tr><td colspan="6" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="8" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
       return;
     }
     body.innerHTML = leads.map(l => {
@@ -1127,6 +1298,8 @@
           <td>${l.company || '(sin empresa)'}</td>
           <td>${l.email || '(sin correo)'}</td>
           <td>${statusHtml}</td>
+          <td>${l.adset_name ? escapeHtml(l.adset_name) : '<span class="table-sub">—</span>'}</td>
+          <td>${l.ad_name ? escapeHtml(l.ad_name) : '<span class="table-sub">—</span>'}</td>
           <td class="note-cell">${noteHtml}</td>
         </tr>`;
     }).join('');
