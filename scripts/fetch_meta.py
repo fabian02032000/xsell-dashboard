@@ -6,14 +6,15 @@ y genera meta_data.json para el dashboard.
 
 También arma el "Análisis de Campaña": rendimiento (CPL, CTR, impresiones,
 inversión, frecuencia, alcance, CPM) a nivel de Campaña, Conjunto de
-anuncios y Anuncio — y, si está disponible, cruza la tipificación de cada
-registro (Descartada / Contactado / Reunión Agendada / Sin negocio, según
-HubSpot) con el conjunto de anuncios del que salió, usando la API de
-"Leads Retrieval" de Meta.
+anuncios y Anuncio — con detalle día a día para poder filtrar por
+cualquier rango de fechas y por campaña directamente en el dashboard — y,
+si está disponible, la atribución de cada registro (de qué anuncio y
+conjunto de anuncios salió), usando la API de "Leads Retrieval" de Meta.
 
-Se ejecuta automáticamente vía GitHub Actions, junto con fetch_hubspot.py
-(que debe correr ANTES que este script, porque este lee data.json ya
-generado para cruzar la tipificación por conjunto de anuncios).
+Se ejecuta automáticamente vía GitHub Actions, junto con fetch_hubspot.py.
+Este script YA NO depende de leer data.json: la tipificación por conjunto
+de anuncios se cruza directamente en el navegador (index.html), combinando
+data.json (HubSpot) con la atribución que este script deja en meta_data.json.
 """
 import os
 import sys
@@ -31,8 +32,8 @@ MONTHLY_BUDGET_GOAL = float(os.environ.get("MONTHLY_BUDGET_GOAL", "1500"))
 # todas las campañas de la cuenta.
 LEADS_CAMPAIGN_MATCH = os.environ.get("LEADS_CAMPAIGN_MATCH", "prospectos b2b")
 # ID de la página de Facebook conectada al formulario de leads. Necesario
-# SOLO para cruzar la tipificación por conjunto de anuncios (opcional — si no
-# se configura, el resto del dashboard sigue funcionando igual).
+# SOLO para saber de qué anuncio/conjunto de anuncios salió cada registro
+# (opcional — si no se configura, el resto del dashboard sigue funcionando igual).
 FACEBOOK_PAGE_ID = os.environ.get("FACEBOOK_PAGE_ID", "")
 
 META_TOKEN = os.environ.get("META_TOKEN")
@@ -52,7 +53,7 @@ def meta_get(path, params):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def meta_get_paginated(path, params, max_pages=20):
+def meta_get_paginated(path, params, max_pages=30):
     """Igual que meta_get, pero sigue 'paging.next' hasta max_pages páginas
     y devuelve todos los 'data' concatenados."""
     all_rows = []
@@ -214,11 +215,10 @@ def fetch_ad_creatives_map():
 def fetch_ads_performance(since_date, until_date):
     """
     Rendimiento (gasto, impresiones, alcance, frecuencia, CPM, clics, leads)
-    de cada anuncio individual, combinado con su texto real (título, texto
-    principal, descripción) e imagen, y con el conjunto de anuncios/campaña
-    al que pertenece — para el "Análisis de Campaña" y el reporte de "cómo
-    va cada anuncio". Si algo falla, devuelve una lista vacía en vez de
-    romper el resto del script.
+    de cada anuncio individual en TODO el período, combinado con su texto
+    real (título, texto principal, descripción) e imagen — para la tabla
+    "Rendimiento de cada anuncio". Si algo falla, devuelve una lista vacía en
+    vez de romper el resto del script.
     """
     creatives_map, creatives_ok = fetch_ad_creatives_map()
     if not creatives_ok:
@@ -276,10 +276,12 @@ def fetch_ads_performance(since_date, until_date):
 
 def fetch_level_performance(level, since_date, until_date, name_field, id_field):
     """
-    Rendimiento agregado a nivel de Campaña o Conjunto de anuncios (mismas
-    métricas que a nivel de anuncio: gasto, impresiones, alcance, frecuencia,
-    CPM, clics, CTR, leads, CPL). 'level' es 'campaign' o 'adset'.
-    Best-effort: si falla, devuelve lista vacía sin romper el resto.
+    Rendimiento agregado de TODO el período a nivel de Campaña o Conjunto de
+    anuncios (gasto, impresiones, alcance, frecuencia, CPM, clics, CTR,
+    leads, CPL). 'level' es 'campaign' o 'adset'. Esta es la versión "exacta"
+    (una sola consulta a Meta, sin sumar días) — se usa como valor por
+    defecto en "Todo el período", donde el alcance y la frecuencia son
+    precisos. Best-effort: si falla, devuelve lista vacía sin romper el resto.
     """
     try:
         fields = (
@@ -319,6 +321,55 @@ def fetch_level_performance(level, since_date, until_date, name_field, id_field)
             "cost_per_lead": cpl,
         })
     result.sort(key=lambda r: r["spend"], reverse=True)
+    return result, True
+
+
+def fetch_level_performance_daily(level, since_date, until_date, name_field, id_field, extra_fields=""):
+    """
+    Igual que fetch_level_performance, pero día a día (time_increment=1), sin
+    calcular CTR/CPM/frecuencia/CPL todavía — esos se recalculan en el
+    navegador después de sumar el rango de fechas que la persona elija (sumar
+    gasto/impresiones/clics/alcance/leads es válido; sumar CTR/CPM/frecuencia
+    ya calculados NO lo es). Devuelve filas "en bruto": id, nombre, campaña
+    (y conjunto de anuncios si aplica), fecha, spend, impressions, clicks,
+    reach, leads. Best-effort: si falla, devuelve lista vacía sin romper el
+    resto del dashboard — la vista "Todo el período" sigue funcionando con
+    fetch_level_performance.
+    """
+    try:
+        fields = f"{id_field},{name_field},campaign_name,{extra_fields}spend,impressions,clicks,reach,actions"
+        rows = meta_get_paginated(
+            f"/{AD_ACCOUNT_ID}/insights",
+            {
+                "level": level,
+                "fields": fields,
+                "time_increment": 1,
+                "time_range": json.dumps({"since": since_date, "until": until_date}),
+                "limit": 500,
+            },
+            max_pages=60,
+        )
+    except Exception as e:
+        print(f"AVISO: no se pudo traer el detalle diario por {level}: {e}", file=sys.stderr)
+        return [], False
+
+    result = []
+    for row in rows:
+        entry = {
+            "id": row.get(id_field),
+            "name": row.get(name_field) or "(sin nombre)",
+            "campaign_name": row.get("campaign_name") or "",
+            "date": row.get("date_start"),
+            "spend": round(float(row.get("spend", 0)), 2),
+            "impressions": int(float(row.get("impressions", 0))),
+            "reach": int(float(row.get("reach", 0))),
+            "clicks": int(float(row.get("clicks", 0))),
+            "leads": extract_leads(row.get("actions")),
+        }
+        if level == "ad":
+            entry["adset_id"] = row.get("adset_id")
+            entry["adset_name"] = row.get("adset_name") or ""
+        result.append(entry)
     return result, True
 
 
@@ -412,15 +463,15 @@ def fetch_milestones(since_date):
         return [], False
 
 
-# ---------------------- Atribución: tipificación por conjunto de anuncios ----------------------
+# ---------------------- Atribución: de qué anuncio/conjunto salió cada registro ----------------------
 
-def fetch_adset_name_map():
-    """{adset_id: adset_name} de toda la cuenta. Best-effort."""
+def fetch_id_name_map(edge, fields="id,name"):
+    """{id: name} de un edge de la cuenta (adsets, ads, campaigns). Best-effort."""
     try:
-        rows = meta_get_paginated(f"/{AD_ACCOUNT_ID}/adsets", {"fields": "id,name", "limit": 200})
+        rows = meta_get_paginated(f"/{AD_ACCOUNT_ID}/{edge}", {"fields": fields, "limit": 500})
         return {r["id"]: r.get("name", "") for r in rows}
     except Exception as e:
-        print(f"AVISO: no se pudo traer el nombre de los conjuntos de anuncios: {e}", file=sys.stderr)
+        print(f"AVISO: no se pudo traer el nombre de {edge}: {e}", file=sys.stderr)
         return {}
 
 
@@ -436,20 +487,21 @@ def extract_field(field_data, keys):
     return None
 
 
-def fetch_leads_attribution():
+def fetch_leads_attribution_raw():
     """
-    Cruza cada lead con el anuncio/conjunto de anuncios/campaña del que salió,
-    usando la API de "Leads Retrieval" de Meta (requiere el permiso
-    leads_retrieval sobre la Página conectada al formulario, y la variable
-    FACEBOOK_PAGE_ID configurada). Devuelve {email_en_minuscula: {...}}.
+    Trae, para cada lead recibido en los formularios de la Página, el
+    ad_id/adset_id/campaign_id del que salió — usando la API de "Leads
+    Retrieval" de Meta (requiere el permiso leads_retrieval sobre la Página
+    conectada al formulario, y la variable FACEBOOK_PAGE_ID configurada).
+    Devuelve {email_en_minuscula: {ad_id, adset_id, campaign_id}}.
 
     Best-effort en cada paso: si falta el permiso, la variable de entorno, o
     cualquier llamada falla, devuelve un mapa vacío y available=False — el
-    resto del dashboard sigue funcionando igual, solo no se muestra el cruce
-    de tipificación por conjunto de anuncios.
+    resto del dashboard sigue funcionando igual, solo no se muestra de qué
+    anuncio/conjunto de anuncios salió cada registro.
     """
     if not FACEBOOK_PAGE_ID:
-        print("AVISO: falta FACEBOOK_PAGE_ID — se omite el cruce de tipificación por conjunto de anuncios.", file=sys.stderr)
+        print("AVISO: falta FACEBOOK_PAGE_ID — se omite la atribución de registros por anuncio/conjunto.", file=sys.stderr)
         return {}, False
 
     try:
@@ -470,7 +522,7 @@ def fetch_leads_attribution():
             leads = meta_get_paginated(
                 f"/{form_id}/leads",
                 {"fields": "id,created_time,ad_id,adset_id,campaign_id,field_data", "limit": 200},
-                max_pages=10,
+                max_pages=15,
             )
             any_ok = True
         except Exception as e:
@@ -490,44 +542,17 @@ def fetch_leads_attribution():
     return attribution, any_ok
 
 
-def build_leads_status_by_adset(attribution, adset_names):
-    """
-    Lee data.json (ya generado por fetch_hubspot.py en esta misma corrida) y
-    cruza cada lead con su conjunto de anuncios (por email), agrupando la
-    tipificación (Descartada / Contactado / Reunión Agendada / Sin negocio)
-    por conjunto de anuncios. Best-effort: si data.json no existe todavía o
-    algo falla, devuelve lista vacía sin romper el resto.
-    """
-    if not attribution:
-        return [], False
-    try:
-        with open("data.json", "r", encoding="utf-8") as f:
-            leads_data = json.load(f)
-    except Exception as e:
-        print(f"AVISO: no se pudo leer data.json para cruzar tipificación por conjunto de anuncios: {e}", file=sys.stderr)
-        return [], False
-
-    counts = {}  # adset_name -> {status_label: count}
-    matched = 0
-    for lead in leads_data.get("leads_detail", []):
-        email = (lead.get("email") or "").strip().lower()
-        attr = attribution.get(email)
-        if not attr:
-            continue
-        adset_id = attr.get("adset_id")
-        adset_name = adset_names.get(adset_id, adset_id or "(conjunto desconocido)")
-        status_label = lead.get("deal_stage") if lead.get("has_deal") and lead.get("deal_stage") else "Sin negocio"
-        counts.setdefault(adset_name, {})
-        counts[adset_name][status_label] = counts[adset_name].get(status_label, 0) + 1
-        matched += 1
-
-    result = [
-        {"adset_name": name, "status_counts": statuses, "total": sum(statuses.values())}
-        for name, statuses in counts.items()
-    ]
-    result.sort(key=lambda r: r["total"], reverse=True)
-    print(f"Cruce de tipificación por conjunto de anuncios: {matched} registros con atribución encontrada.")
-    return result, True
+def build_leads_attribution(attribution_raw, adset_names, ad_names, campaign_names):
+    """Resuelve ad_id/adset_id/campaign_id a sus nombres reales, para que
+    index.html pueda mostrarlos directamente junto a cada registro."""
+    resolved = {}
+    for email, attr in attribution_raw.items():
+        resolved[email] = {
+            "ad_name": ad_names.get(attr.get("ad_id"), attr.get("ad_id") or ""),
+            "adset_name": adset_names.get(attr.get("adset_id"), attr.get("adset_id") or ""),
+            "campaign_name": campaign_names.get(attr.get("campaign_id"), attr.get("campaign_id") or ""),
+        }
+    return resolved
 
 
 def main():
@@ -555,17 +580,33 @@ def main():
     milestones, milestones_available = fetch_milestones(CAMPAIGN_START_DATE)
 
     ads_performance, ads_performance_available = fetch_ads_performance(CAMPAIGN_START_DATE, today_str)
+
+    # ---- Análisis de campaña: "Todo el período" (exacto) + detalle diario (para filtrar por fecha) ----
     campaigns_performance, campaigns_performance_available = fetch_level_performance(
         "campaign", CAMPAIGN_START_DATE, today_str, "campaign_name", "campaign_id"
     )
     adsets_performance, adsets_performance_available = fetch_level_performance(
         "adset", CAMPAIGN_START_DATE, today_str, "adset_name", "adset_id"
     )
+    campaigns_daily, campaigns_daily_available = fetch_level_performance_daily(
+        "campaign", CAMPAIGN_START_DATE, today_str, "campaign_name", "campaign_id"
+    )
+    adsets_daily, adsets_daily_available = fetch_level_performance_daily(
+        "adset", CAMPAIGN_START_DATE, today_str, "adset_name", "adset_id"
+    )
+    ads_daily, ads_daily_available = fetch_level_performance_daily(
+        "ad", CAMPAIGN_START_DATE, today_str, "ad_name", "ad_id", extra_fields="adset_id,adset_name,"
+    )
 
-    # ---- Atribución: tipificación por conjunto de anuncios (opcional) ----
-    attribution, attribution_available = fetch_leads_attribution()
-    adset_names = fetch_adset_name_map() if attribution_available else {}
-    leads_status_by_adset, leads_status_by_adset_available = build_leads_status_by_adset(attribution, adset_names)
+    # ---- Atribución: de qué anuncio/conjunto de anuncios salió cada registro (opcional) ----
+    attribution_raw, attribution_available = fetch_leads_attribution_raw()
+    if attribution_available:
+        adset_names = fetch_id_name_map("adsets")
+        ad_names = fetch_id_name_map("ads")
+        campaign_names = fetch_id_name_map("campaigns")
+        leads_attribution = build_leads_attribution(attribution_raw, adset_names, ad_names, campaign_names)
+    else:
+        leads_attribution = {}
 
     total_spend = sum(float(c.get("spend", 0)) for c in campaigns)
     month_spend = sum(float(c.get("spend", 0)) for c in campaigns_month)
@@ -604,12 +645,20 @@ def main():
         "milestones": milestones,
         "ads_performance_available": ads_performance_available,
         "ads_performance": ads_performance,
+        # Análisis de campaña (por Campaña / Conjunto de anuncios / Anuncio)
         "campaigns_performance_available": campaigns_performance_available,
         "campaigns_performance": campaigns_performance,
         "adsets_performance_available": adsets_performance_available,
         "adsets_performance": adsets_performance,
-        "leads_status_by_adset_available": leads_status_by_adset_available,
-        "leads_status_by_adset": leads_status_by_adset,
+        "campaign_analysis_daily_available": campaigns_daily_available and adsets_daily_available and ads_daily_available,
+        "campaign_analysis_daily": {
+            "campaigns": campaigns_daily,
+            "adsets": adsets_daily,
+            "ads": ads_daily,
+        },
+        # De qué anuncio/conjunto de anuncios salió cada registro (por email)
+        "leads_attribution_available": attribution_available,
+        "leads_attribution": leads_attribution,
     }
 
     with open("meta_data.json", "w", encoding="utf-8") as f:
@@ -618,7 +667,8 @@ def main():
     print(
         f"OK: gasto total S/{total_spend:.2f}, este mes S/{month_spend:.2f}, "
         f"{len(leads_creatives)} creatividades de leads, {len(milestones)} hitos, "
-        f"{len(campaigns_performance)} campañas, {len(adsets_performance)} conjuntos de anuncios analizados"
+        f"{len(campaigns_performance)} campañas, {len(adsets_performance)} conjuntos de anuncios, "
+        f"atribución de registros: {'disponible (' + str(len(leads_attribution)) + ')' if attribution_available else 'no disponible'}"
     )
 
 
