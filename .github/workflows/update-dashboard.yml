@@ -31,6 +31,7 @@ jobs:
       - name: Traer gasto de Meta Ads
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
         run: python scripts/fetch_meta.py
 
       - name: Traer contenido orgánico (Facebook e Instagram)
