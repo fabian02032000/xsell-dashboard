@@ -17,8 +17,10 @@ de anuncios se cruza directamente en el navegador (index.html), combinando
 data.json (HubSpot) con la atribución que este script deja en meta_data.json.
 """
 import os
+import re
 import sys
 import json
+import unicodedata
 import datetime
 import urllib.request
 import urllib.parse
@@ -41,7 +43,10 @@ API_VERSION = "v21.0"
 API_BASE = f"https://graph.facebook.com/{API_VERSION}"
 
 LEAD_ACTION_TYPES = ("lead", "onsite_conversion.lead_grouped", "offsite_conversion.fb_pixel_lead")
-EMAIL_FIELD_KEYS = ("email", "correo", "correo_electronico", "correo electrónico", "e-mail")
+# Pistas (sin tildes, solo letras) para reconocer la pregunta de correo en
+# CUALQUIER formulario, sin importar cómo la haya nombrado quien lo creó
+# (ej. "work_email", "correo_electrónico_del_trabajo", "email_de_contacto").
+EMAIL_FIELD_HINTS = ("email", "correo")
 
 
 def meta_get(path, params, token=None):
@@ -295,8 +300,11 @@ def fetch_level_performance(level, since_date, until_date, name_field, id_field)
     precisos. Best-effort: si falla, devuelve lista vacía sin romper el resto.
     """
     try:
+        # Si name_field ya ES "campaign_name" (level="campaign"), no lo repetimos:
+        # Meta rechaza con error 2500 un campo pedido dos veces en la misma consulta.
+        extra_name = "" if name_field == "campaign_name" else "campaign_name,"
         fields = (
-            f"{id_field},{name_field},campaign_name,"
+            f"{id_field},{name_field},{extra_name}"
             "spend,impressions,clicks,ctr,cpm,reach,frequency,actions,cost_per_action_type"
         )
         data = meta_get(
@@ -348,7 +356,11 @@ def fetch_level_performance_daily(level, since_date, until_date, name_field, id_
     fetch_level_performance.
     """
     try:
-        fields = f"{id_field},{name_field},campaign_name,{extra_fields}spend,impressions,clicks,reach,actions"
+        # Mismo cuidado que en fetch_level_performance: no repetir campaign_name
+        # cuando name_field ya es "campaign_name" (level="campaign"), porque
+        # Meta rechaza un campo pedido dos veces en la misma consulta.
+        extra_name = "" if name_field == "campaign_name" else "campaign_name,"
+        fields = f"{id_field},{name_field},{extra_name}{extra_fields}spend,impressions,clicks,reach,actions"
         rows = meta_get_paginated(
             f"/{AD_ACCOUNT_ID}/insights",
             {
@@ -486,12 +498,24 @@ def fetch_id_name_map(edge, fields="id,name"):
         return {}
 
 
-def extract_field(field_data, keys):
+def _normalize_field_name(name):
+    """Quita tildes/ñ y cualquier caracter que no sea letra, para poder
+    reconocer el nombre del campo sin importar tildes, guiones o guiones
+    bajos (ej. 'correo_electrónico_del_trabajo' -> 'correoelectronicodeltrabajo')."""
+    name = unicodedata.normalize("NFKD", name or "")
+    name = "".join(c for c in name if not unicodedata.combining(c))
+    return re.sub(r"[^a-z]", "", name.lower())
+
+
+def extract_field(field_data, hints):
     """Busca en field_data (formato de Meta Lead Ads: [{name, values:[...]}]) el
-    primer campo cuyo nombre (en minúsculas) esté en 'keys'."""
+    primer campo cuyo nombre normalizado CONTENGA alguna de las 'hints'
+    (ej. 'email' o 'correo'), en vez de exigir una coincidencia exacta —
+    así reconoce variantes como 'work_email' o 'correo_electrónico_del_trabajo'
+    que no son iguales a una lista fija de nombres."""
     for f in field_data or []:
-        name = (f.get("name") or "").strip().lower()
-        if name in keys:
+        name = _normalize_field_name(f.get("name") or "")
+        if any(hint in name for hint in hints):
             values = f.get("values") or []
             if values:
                 return str(values[0]).strip().lower()
@@ -552,7 +576,7 @@ def fetch_leads_attribution_raw():
             continue
 
         for lead in leads:
-            email = extract_field(lead.get("field_data"), EMAIL_FIELD_KEYS)
+            email = extract_field(lead.get("field_data"), EMAIL_FIELD_HINTS)
             if not email:
                 continue
             attribution[email] = {
