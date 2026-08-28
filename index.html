@@ -99,6 +99,7 @@
   .scroll-y{max-height:420px; overflow-y:auto;}
   .table-name{font-weight:600; color:var(--text-primary);}
   .table-sub{color:var(--text-muted); font-size:12px;}
+  table.hide-campaign-col .col-campaign-name{display:none;}
   .note-cell{max-width:260px; white-space:normal; font-size:12px; color:var(--text-muted); line-height:1.4;}
   .milestone-list{display:flex; flex-direction:column; gap:8px; margin-top:14px;}
   .milestone-row{display:flex; gap:10px; font-size:12px; color:var(--text-muted); align-items:baseline;}
@@ -174,6 +175,7 @@
 
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
+    <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
   </div>
 
@@ -385,6 +387,61 @@
         <div class="tooltip" id="dailyTooltip"></div>
       </div>
       <div class="milestone-list" id="milestoneList"></div>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="tab-panel" id="tab-campaign">
+
+  <section>
+    <div class="section-head">
+      <h2>Análisis de campaña</h2>
+      <span class="hint">CPL, CTR, impresiones, inversión, frecuencia, alcance y CPM · elige el nivel de detalle</span>
+    </div>
+    <div class="chart-card">
+      <div class="date-filter-presets" style="margin-bottom:14px;">
+        <button type="button" class="filter-btn active" data-level="campaign">Campaña</button>
+        <button type="button" class="filter-btn" data-level="adset">Conjunto de anuncios</button>
+        <button type="button" class="filter-btn" data-level="ad">Anuncio</button>
+      </div>
+      <div class="table-wrap scroll-y">
+        <table id="campaignAnalysisTable">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th class="col-campaign-name">Campaña</th>
+              <th>Inversión</th>
+              <th>Impresiones</th>
+              <th>Alcance</th>
+              <th>Frecuencia</th>
+              <th>CPM</th>
+              <th>Clics</th>
+              <th>CTR</th>
+              <th>Registros</th>
+              <th>CPL</th>
+            </tr>
+          </thead>
+          <tbody id="campaignAnalysisTableBody"></tbody>
+        </table>
+      </div>
+      <p class="hint" id="campaignAnalysisHint" style="margin-top:10px;"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Tipificación por conjunto de anuncios</h2>
+      <span class="hint">De qué conjunto de anuncios salió cada registro Descartado, Contactado o con Reunión Agendada — según la tipificación de HubSpot</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap scroll-y">
+        <table id="adsetStatusTable">
+          <thead><tr id="adsetStatusTableHead"></tr></thead>
+          <tbody id="adsetStatusTableBody"></tbody>
+        </table>
+      </div>
+      <p class="hint" id="adsetStatusHint" style="margin-top:10px;"></p>
     </div>
   </section>
 
@@ -611,11 +668,15 @@
       // El gráfico de gasto diario se dibuja más abajo, según el rango de fechas elegido (initDateFilter/applyDateRange).
       drawCampaignsTable(meta.campaigns || [], meta.campaigns_month || []);
       drawAdsPerformanceTable(meta.ads_performance_available ? (meta.ads_performance || []) : [], meta.ads_performance_available);
+      initCampaignAnalysis(meta);
+      drawAdsetStatusTable(meta.leads_status_by_adset_available ? (meta.leads_status_by_adset || []) : [], meta.leads_status_by_adset_available);
     } else {
       document.getElementById('budgetHint').textContent = 'Esperando primera actualización de Meta Ads';
       document.getElementById('budgetRow').innerHTML = '';
       drawCampaignsTable([], []);
       drawAdsPerformanceTable([], false);
+      initCampaignAnalysis(null);
+      drawAdsetStatusTable([], false);
     }
 
     // ---- Detalle semanal ----
@@ -795,6 +856,124 @@
         btn.classList.toggle('expanded', !isOpen);
       });
     });
+  }
+
+  // ---- Análisis de campaña: vista por Campaña / Conjunto de anuncios / Anuncio ----
+  let campaignAnalysisMeta = null;
+
+  function initCampaignAnalysis(meta){
+    campaignAnalysisMeta = meta;
+    const buttons = document.querySelectorAll('#tab-campaign .date-filter-presets .filter-btn');
+    buttons.forEach(btn => {
+      btn.onclick = () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        drawCampaignAnalysisTable(btn.dataset.level);
+      };
+    });
+    const activeBtn = document.querySelector('#tab-campaign .date-filter-presets .filter-btn.active');
+    drawCampaignAnalysisTable(activeBtn ? activeBtn.dataset.level : 'campaign');
+  }
+
+  function drawCampaignAnalysisTable(level){
+    const meta = campaignAnalysisMeta;
+    const table = document.getElementById('campaignAnalysisTable');
+    const body = document.getElementById('campaignAnalysisTableBody');
+    const hint = document.getElementById('campaignAnalysisHint');
+    table.classList.toggle('hide-campaign-col', level === 'campaign');
+
+    let rows = [], available = false;
+    if (meta && meta.updated_at){
+      if (level === 'campaign'){
+        rows = meta.campaigns_performance || []; available = !!meta.campaigns_performance_available;
+      } else if (level === 'adset'){
+        rows = meta.adsets_performance || []; available = !!meta.adsets_performance_available;
+      } else {
+        rows = meta.ads_performance || []; available = !!meta.ads_performance_available;
+      }
+    }
+
+    if (!available){
+      body.innerHTML = `<tr><td colspan="11" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
+      hint.textContent = '';
+      return;
+    }
+    if (!rows.length){
+      body.innerHTML = `<tr><td colspan="11" class="table-sub">No se encontraron datos con este nivel de detalle en el período.</td></tr>`;
+      hint.textContent = '';
+      return;
+    }
+
+    body.innerHTML = rows.map(r => {
+      const name = level === 'ad' ? r.ad_name : r.name;
+      return `
+        <tr>
+          <td class="table-name">${escapeHtml(name)}</td>
+          <td class="col-campaign-name">${escapeHtml(r.campaign_name) || '—'}</td>
+          <td>${fmtMoney(r.spend)}</td>
+          <td>${fmt(r.impressions)}</td>
+          <td>${fmt(r.reach)}</td>
+          <td>${(r.frequency || 0).toFixed(2)}</td>
+          <td>${fmtMoney(r.cpm)}</td>
+          <td>${fmt(r.clicks)}</td>
+          <td>${(r.ctr || 0).toFixed(2)}%</td>
+          <td>${fmt(r.leads)}</td>
+          <td>${r.cost_per_lead !== null && r.cost_per_lead !== undefined ? fmtMoney(r.cost_per_lead) : '—'}</td>
+        </tr>`;
+    }).join('');
+
+    hint.textContent = level === 'campaign'
+      ? 'Un total por campaña — incluye todos sus conjuntos de anuncios y anuncios.'
+      : level === 'adset'
+        ? 'Un total por conjunto de anuncios — incluye todos sus anuncios.'
+        : 'Cada fila es un anuncio individual — mismos datos que en "Rendimiento de cada anuncio".';
+  }
+
+  // ---- Tipificación (Descartada / Contactado / Reunión Agendada / Sin negocio) por conjunto de anuncios ----
+  function drawAdsetStatusTable(rows, available){
+    const thead = document.getElementById('adsetStatusTableHead');
+    const body = document.getElementById('adsetStatusTableBody');
+    const hint = document.getElementById('adsetStatusHint');
+
+    if (!available){
+      thead.innerHTML = '<th>Conjunto de anuncios</th><th>Total</th>';
+      body.innerHTML = `<tr><td colspan="2" class="table-sub">Aún no disponible — falta configurar el cruce con Meta (variable FACEBOOK_PAGE_ID y permiso "leads_retrieval" del token) para saber de qué conjunto de anuncios salió cada registro.</td></tr>`;
+      hint.textContent = '';
+      return;
+    }
+    if (!rows.length){
+      thead.innerHTML = '<th>Conjunto de anuncios</th><th>Total</th>';
+      body.innerHTML = `<tr><td colspan="2" class="table-sub">Sin registros con atribución todavía.</td></tr>`;
+      hint.textContent = '';
+      return;
+    }
+
+    const allLabels = new Set();
+    rows.forEach(r => Object.keys(r.status_counts || {}).forEach(l => allLabels.add(l)));
+    const priorityTests = [/reuni/i, /contact/i, /descart/i, /cerrad/i, /sin negocio/i];
+    const labels = [...allLabels].sort((a, b) => {
+      const pa = priorityTests.findIndex(t => t.test(a));
+      const pb = priorityTests.findIndex(t => t.test(b));
+      const ra = pa === -1 ? priorityTests.length : pa;
+      const rb = pb === -1 ? priorityTests.length : pb;
+      if (ra !== rb) return ra - rb;
+      return a.localeCompare(b);
+    });
+
+    const fallbackIndexRef = { i: 0 };
+    const labelColors = {};
+    labels.forEach(l => { labelColors[l] = statusColor(l, fallbackIndexRef); });
+
+    thead.innerHTML = '<th>Conjunto de anuncios</th>' +
+      labels.map(l => `<th><span class="swatch" style="background:${labelColors[l]}; display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:5px;"></span>${escapeHtml(l)}</th>`).join('') +
+      '<th>Total</th>';
+
+    body.innerHTML = rows.map(r => {
+      const cells = labels.map(l => `<td>${fmt(r.status_counts[l] || 0)}</td>`).join('');
+      return `<tr><td class="table-name">${escapeHtml(r.adset_name)}</td>${cells}<td><strong>${fmt(r.total)}</strong></td></tr>`;
+    }).join('');
+
+    hint.textContent = 'Cruce entre la tipificación de HubSpot y el conjunto de anuncios de origen (vía Meta Leads Retrieval).';
   }
 
   function pct(part, total){
