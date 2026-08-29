@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-29T19:12:05.676726+00:00",
+  "updated_at": "2026-08-29T22:21:32.658337+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 86,
+  "total_leads": 87,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -128,7 +128,7 @@
     },
     {
       "date": "2026-08-29",
-      "count": 4
+      "count": 5
     }
   ],
   "leads_by_month": [
@@ -142,7 +142,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 66,
+      "leads": 67,
       "goal": 74.0,
       "is_partial": false
     }
@@ -181,13 +181,13 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 15,
+      "leads": 16,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 66,
+  "current_month_leads": 67,
   "current_month_label": "August 2026",
-  "current_week_leads": 15,
+  "current_week_leads": 16,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -228,6 +228,16 @@
       "name": "Viviana Serrano Vega",
       "email": "vsvphysio@hotmail.com",
       "company": "SERVAL",
+      "created_date": "2026-08-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "JDaniel",
+      "email": "d.reyes@cybertec.com.pe",
+      "company": "CYBER TECHNOLOGY SOLUTIONS",
       "created_date": "2026-08-29",
       "has_deal": false,
       "deal_stage": null,
@@ -1067,7 +1077,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 6
     },
     {
       "label": "Reunión Agendadas",
