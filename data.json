@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-29T03:30:15.822618+00:00",
+  "updated_at": "2026-08-29T10:47:51.680345+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 84,
+  "total_leads": 86,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -128,7 +128,7 @@
     },
     {
       "date": "2026-08-29",
-      "count": 2
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -142,7 +142,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 64,
+      "leads": 66,
       "goal": 74.0,
       "is_partial": false
     }
@@ -181,13 +181,13 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "leads": 13,
+      "leads": 15,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 64,
+  "current_month_leads": 66,
   "current_month_label": "August 2026",
-  "current_week_leads": 13,
+  "current_week_leads": 15,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -208,6 +208,26 @@
       "name": "Paul Saavedra Colmenares",
       "email": "rrhh@ugi.org.pe",
       "company": "UGI",
+      "created_date": "2026-08-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Luis",
+      "email": "carlomontoyac3018@gmail.com",
+      "company": "Agencia GMG",
+      "created_date": "2026-08-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Viviana Serrano Vega",
+      "email": "vsvphysio@hotmail.com",
+      "company": "SERVAL",
       "created_date": "2026-08-29",
       "has_deal": false,
       "deal_stage": null,
@@ -1047,7 +1067,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 5
     },
     {
       "label": "Reunión Agendadas",
