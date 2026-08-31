@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-31T10:32:46.930791+00:00",
+  "updated_at": "2026-08-31T17:52:43.529158+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 87,
+  "total_leads": 88,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -129,6 +129,10 @@
     {
       "date": "2026-08-29",
       "count": 5
+    },
+    {
+      "date": "2026-08-31",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -142,7 +146,7 @@
     {
       "month": "2026-08",
       "label": "August 2026",
-      "leads": 67,
+      "leads": 68,
       "goal": 74.0,
       "is_partial": false
     }
@@ -187,27 +191,37 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 0,
+      "leads": 1,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 67,
+  "current_month_leads": 68,
   "current_month_label": "August 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 1,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 81,
+  "leads_with_deal": 87,
   "leads_detail": [
+    {
+      "name": "Giardel R. Gervasi",
+      "email": "giardel.riega@inmater.pe",
+      "company": "inmater",
+      "created_date": "2026-08-31",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Inmater",
+      "deal_note": null
+    },
     {
       "name": "Fabricio Castro",
       "email": "fcastro@perupack.biz",
       "company": "Perupack",
       "created_date": "2026-08-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Perupack ",
       "deal_note": null
     },
     {
@@ -215,9 +229,9 @@
       "email": "rrhh@ugi.org.pe",
       "company": "UGI",
       "created_date": "2026-08-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "UGI ",
       "deal_note": null
     },
     {
@@ -225,9 +239,9 @@
       "email": "carlomontoyac3018@gmail.com",
       "company": "Agencia GMG",
       "created_date": "2026-08-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Luis - Gerente General ",
       "deal_note": null
     },
     {
@@ -235,9 +249,9 @@
       "email": "vsvphysio@hotmail.com",
       "company": "SERVAL",
       "created_date": "2026-08-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Viviana Fisioterapeuta ",
       "deal_note": null
     },
     {
@@ -245,9 +259,9 @@
       "email": "d.reyes@cybertec.com.pe",
       "company": "CYBER TECHNOLOGY SOLUTIONS",
       "created_date": "2026-08-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Cyber Tecnology Solutions ",
       "deal_note": null
     },
     {
@@ -256,9 +270,9 @@
       "company": "Smart place",
       "created_date": "2026-08-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Roberto Emprendiendo",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Gladys Dávalos",
@@ -266,9 +280,9 @@
       "company": "Gladys Dávalos",
       "created_date": "2026-08-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Gladys Dávalos ",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Daniel Parb",
@@ -276,9 +290,9 @@
       "company": "delivery gooo.pe",
       "created_date": "2026-08-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Delivery Goo ",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Mario Llirod",
@@ -286,9 +300,9 @@
       "company": "Alfa Nevado",
       "created_date": "2026-08-27",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Alfa Nevado ",
-      "deal_note": null
+      "deal_note": "No responde wsp, no brinda mayor detalle. Solo indicó que vende terrenos."
     },
     {
       "name": "Lucia Jimenez",
@@ -296,9 +310,9 @@
       "company": ".",
       "created_date": "2026-08-27",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Lucía Jiménez ",
-      "deal_note": null
+      "deal_note": "No calificable, solo se tiene respuesta automatizada de su asistente de IA"
     },
     {
       "name": "Josue Marin",
@@ -306,9 +320,9 @@
       "company": "FFVV EVERSIM",
       "created_date": "2026-08-25",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "FFVV EVERSIM",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Rolando Irvin Romero Villanueva",
@@ -316,9 +330,9 @@
       "company": "Orquesta Digital Destello de Oro",
       "created_date": "2026-08-25",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Orquesta Digital Destello de Oro",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Gianina elizabeth Tirado Gonzales",
@@ -326,9 +340,9 @@
       "company": "corporacion capsursac",
       "created_date": "2026-08-25",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Corporación Capsursac",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Fabian meza",
@@ -336,9 +350,9 @@
       "company": "Minuto",
       "created_date": "2026-08-25",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Estudiante Fabian Meza",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp. Indicó en el formulario que era estudiante."
     },
     {
       "name": "María vela",
@@ -346,9 +360,9 @@
       "company": "cámara internacional de comercio",
       "created_date": "2026-08-24",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Camara internacional de comercio",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "cristofer correa",
@@ -356,9 +370,9 @@
       "company": "Levi Group",
       "created_date": "2026-08-24",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Grupo Levi",
-      "deal_note": null
+      "deal_note": "Nunca respondió WhatsApp"
     },
     {
       "name": "Ivan Borjas Hilario",
@@ -366,9 +380,9 @@
       "company": "Punchay Digital Solutions",
       "created_date": "2026-08-23",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Soluciones Digitales de Punchay ",
-      "deal_note": "No llenó datos de filtro en el formulario. Solo dejo nombre correo y celular."
+      "deal_note": "Nunca respondió Wsp. No lleno datos de negocio en el formulario."
     },
     {
       "name": "José Palomino",
@@ -376,9 +390,9 @@
       "company": "eurolavadoras",
       "created_date": "2026-08-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Eurolavadoras",
-      "deal_note": null
+      "deal_note": "No responde wsp de seguimiento. Solo respondió que preparan toda clase de lavadoras y refrigeradoras en Huancayo"
     },
     {
       "name": "Jose Zapata",
@@ -406,9 +420,9 @@
       "company": "Taller mecanico",
       "created_date": "2026-08-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Taller mecánico",
-      "deal_note": "No llenó datos de filtro en el formulario. Solo dejo nombre correo y celular."
+      "deal_note": "Nunca respondió Wsp. No llenó datos de negocio en el formulario."
     },
     {
       "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
@@ -416,9 +430,9 @@
       "company": "Eduardo baldeon",
       "created_date": "2026-08-20",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Eduardo baldeon",
-      "deal_note": null
+      "deal_note": "No brinda mayor detalle"
     },
     {
       "name": "Angel RS",
@@ -426,9 +440,9 @@
       "company": "D'BAMBINOS",
       "created_date": "2026-08-19",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "D Bamninos",
-      "deal_note": null
+      "deal_note": "No responde wsp de seguimiento"
     },
     {
       "name": "Franco B",
@@ -456,9 +470,9 @@
       "company": "ANDES SEGURIDAD",
       "created_date": "2026-08-17",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Andes Seguridad S.A.C. -",
-      "deal_note": null
+      "deal_note": "Nunca respondió mensajes"
     },
     {
       "name": "Oskar Kastro",
@@ -476,9 +490,9 @@
       "company": "Delvasesq Industries",
       "created_date": "2026-08-17",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Bunn Roasters Coffee ",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp"
     },
     {
       "name": "Karina Puente de la Vega",
@@ -496,9 +510,9 @@
       "company": "Avera technology",
       "created_date": "2026-08-16",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Averatech",
-      "deal_note": null
+      "deal_note": "Se propuso horario de reunió no responde. Solo indicó por chat que los leads le ingresan por meta y 1 persona le ayuda con el cierre."
     },
     {
       "name": "Bruno Rivera coello",
@@ -606,9 +620,9 @@
       "company": "nodo IA",
       "created_date": "2026-08-10",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "José Luis Pinella",
-      "deal_note": null
+      "deal_note": "No calificado, sin base de datos"
     },
     {
       "name": "Mario Augusto Garcės Fiol",
@@ -666,9 +680,9 @@
       "company": "Poligruas",
       "created_date": "2026-08-08",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Misitio  Poligruas",
-      "deal_note": null
+      "deal_note": "Contacto no responde"
     },
     {
       "name": "jorge.noa.95@gmail.com",
@@ -1075,19 +1089,19 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 53
+      "count": 74
     },
     {
       "label": "Prospectos Contactados",
-      "count": 25
-    },
-    {
-      "label": "Sin negocio",
-      "count": 6
+      "count": 10
     },
     {
       "label": "Reunión Agendadas",
       "count": 3
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ]
 }
