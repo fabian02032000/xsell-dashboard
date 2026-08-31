@@ -123,17 +123,25 @@ def fetch_campaign_totals(since_date, until_date):
 
 
 def fetch_daily_spend(since_date, until_date):
-    """Gasto diario de toda la cuenta, para el gráfico."""
-    data = meta_get(
+    """Gasto diario de toda la cuenta, para el gráfico.
+
+    Usa meta_get_paginated (en vez de meta_get simple) porque la API de Meta
+    devuelve por defecto ~25 filas por página: con time_increment=1 sobre un
+    rango de campaña de varias semanas, un fetch sin paginar se quedaba solo
+    con los primeros días y subestimaba el gasto total en "Inversión en el
+    rango" y en el gráfico de gasto diario."""
+    rows = meta_get_paginated(
         f"/{AD_ACCOUNT_ID}/insights",
         {
             "level": "account",
             "fields": "spend",
             "time_increment": 1,
             "time_range": json.dumps({"since": since_date, "until": until_date}),
+            "limit": 500,
         },
+        max_pages=60,
     )
-    return [{"date": row["date_start"], "spend": float(row.get("spend", 0))} for row in data.get("data", [])]
+    return [{"date": row["date_start"], "spend": float(row.get("spend", 0))} for row in rows]
 
 
 def build_week_ranges(campaign_start_str, today):
