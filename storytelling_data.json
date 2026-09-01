@@ -1,0 +1,143 @@
+{
+  "_nota": "Este archivo alimenta la pestaña 'Historia de la cuenta' del dashboard. Los campos 'comentario' están vacíos a propósito — edítalos tú directamente aquí (o pídeselo a Fabián/Claude) para agregar tu punto de vista a cualquier hito. No lo borra ni lo sobrescribe la actualización automática horaria: ese proceso solo toca data.json, meta_data.json y organic_data.json.",
+  "milestones": [
+    {
+      "id": "m01",
+      "date": "2026-07-25",
+      "exact_date": true,
+      "tag": "lanzamiento",
+      "title": "Arranque de la campaña de registros",
+      "description": "Sale al aire la campaña \"CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1\" con el formulario instantáneo de Meta. El primer día llegan 4 registros.",
+      "comentario": ""
+    },
+    {
+      "id": "m02",
+      "date": "2026-07-27",
+      "date_end": "2026-08-02",
+      "exact_date": true,
+      "tag": "pico",
+      "title": "Mejor semana de la campaña: 23 registros",
+      "description": "Segunda semana de pauta: 23 registros vs. una meta semanal de 17.3, con S/657.49 invertidos (≈S/28.6 por registro). Es el pico más alto de todo el período.",
+      "comentario": ""
+    },
+    {
+      "id": "m03",
+      "date": "2026-08-10",
+      "date_end": "2026-08-23",
+      "exact_date": true,
+      "tag": "alerta",
+      "title": "Caída sostenida y fatiga de creatividad",
+      "description": "Entre el 10 y el 23 de agosto los registros bajan de 17 a 14 y luego a 12 por semana, mientras la frecuencia sube de 1.27 a 2.08 (la misma persona ve el anuncio más de 2 veces en promedio) — señal clásica de que la creatividad se está agotando y necesita renovarse.",
+      "comentario": ""
+    },
+    {
+      "id": "m04",
+      "date": "2026-08-18",
+      "exact_date": true,
+      "tag": "tecnico",
+      "title": "Se construye el dashboard en vivo",
+      "description": "Se crea la automatización que trae los datos de Meta Ads y HubSpot cada hora (fetch_meta.py, fetch_hubspot.py y el flujo de GitHub Actions que los ejecuta) y se publica la primera versión del dashboard.",
+      "comentario": ""
+    },
+    {
+      "id": "m05",
+      "date": "2026-08-24",
+      "exact_date": true,
+      "tag": "tecnico",
+      "title": "Conexión de eventos offline a Meta",
+      "description": "Se agrega el envío de eventos de conversión offline hacia Meta (send_meta_offline_events.py), para que la plataforma reciba señal de qué registros avanzan en el proceso comercial y pueda optimizar mejor la entrega.",
+      "comentario": ""
+    },
+    {
+      "id": "m06",
+      "date": "2026-08-28",
+      "exact_date": true,
+      "tag": "tecnico",
+      "title": "Ajustes de atribución y visualización",
+      "description": "Se corrige la extracción de correos para hacer un mejor cruce entre los registros de Meta y HubSpot (usando pistas adicionales de coincidencia) y se actualizan varias vistas del dashboard.",
+      "comentario": ""
+    },
+    {
+      "id": "m07",
+      "date": null,
+      "exact_date": false,
+      "period_label": "Detectado y corregido en conversación directa contigo — pendiente de subir a GitHub",
+      "tag": "bug",
+      "title": "Bug: \"Inversión en el rango\" no coincidía con el gasto real",
+      "description": "Reportaste que el filtro de fechas mostraba menos inversión de la real. La causa: al pedir el gasto día por día en un rango largo, la API de Meta corta la respuesta a ~25 días si no se pagina, y el cálculo se quedaba con datos incompletos. Ya corregido en el código (fetch_daily_spend); falta que subas el archivo actualizado a GitHub para que tome efecto.",
+      "comentario": ""
+    },
+    {
+      "id": "m08",
+      "date": null,
+      "exact_date": false,
+      "period_label": "Detectado al preparar esta misma línea de tiempo — pendiente de subir a GitHub",
+      "tag": "bug",
+      "title": "Bug: el historial de cambios de la cuenta solo mostraba agosto",
+      "description": "El mismo problema de paginación afectaba el historial de hitos de Meta: se traían como máximo 100 eventos, y como la cuenta genera muchos eventos automáticos, julio completo quedaba fuera. Ya corregido (fetch_milestones); falta subir el archivo a GitHub para recuperar el historial completo de julio.",
+      "comentario": ""
+    },
+    {
+      "id": "m09",
+      "date": null,
+      "exact_date": false,
+      "period_label": "Trabajo de segmentación (sin commit asociado — coordinado por chat)",
+      "tag": "segmentacion",
+      "title": "Auditoría y reconstrucción de la audiencia Automotriz",
+      "description": "Se detectó que la audiencia semilla de Automotriz era pequeña y de baja calidad, y que el presupuesto estaba fragmentado entre conjuntos de anuncios (CBO). Se reconstruyó la audiencia (Lima + Callao) y se subió el presupuesto diario a S/60.",
+      "comentario": ""
+    },
+    {
+      "id": "m10",
+      "date": null,
+      "exact_date": false,
+      "period_label": "Trabajo de segmentación (sin commit asociado — coordinado por chat)",
+      "tag": "segmentacion",
+      "title": "Nueva audiencia \"Textiles\" tipo Blueshark",
+      "description": "Se construyó y subió a Meta (\"Cliente ideal - Textiles\", agregando sin reemplazar) una audiencia de 167 negocios: 157 mayoristas de ropa encontrados en la base de datos (categoría Comercializadoras → Venta por mayor de ropa, concentrados en Gamarra/La Victoria) más 10 negocios reales que identificaste a mano.",
+      "comentario": ""
+    },
+    {
+      "id": "m11",
+      "date": null,
+      "exact_date": false,
+      "period_label": "Trabajo de mensaje (sin commit asociado — coordinado por chat)",
+      "tag": "mensaje",
+      "title": "Corrección de la propuesta de valor en el copy de Textiles",
+      "description": "El primer borrador del copy sonaba a que Xsell entra a regular la pauta del cliente para mejorar la calidad de sus leads — algo que no ofrecemos. Se corrigió hacia el mensaje real: Xsell cierra la venta directamente por el cliente, bajo una estrategia con medición real de resultados.",
+      "comentario": ""
+    },
+    {
+      "id": "m12",
+      "date": null,
+      "exact_date": false,
+      "period_label": "Hallazgo vigente a la fecha de este reporte",
+      "tag": "hallazgo",
+      "title": "0 de 88 registros se convirtieron en negocio cerrado",
+      "description": "Con 88 registros, un CPL de S/21.98 en la campaña de prospectos y una meta mensual de 74 registros ya superada, el embudo comercial no está cerrando: 74 se descartaron, 10 siguen contactados, 3 llegaron a reunión agendada y 1 quedó sin negocio — pero ninguno se registra como venta cerrada frente a una meta de 3.",
+      "comentario": ""
+    }
+  ],
+  "next_steps": [
+    {
+      "id": "n1",
+      "title": "Subir a GitHub los 2 fixes de paginación",
+      "description": "Con eso, el próximo reporte automático va a traer el historial completo de julio (gasto diario e hitos) y el rango de fechas va a mostrar la inversión real."
+    },
+    {
+      "id": "n2",
+      "title": "Renovar la creatividad de Automotriz",
+      "description": "Publicar los nuevos Reels/imágenes (persona concesionario y persona autopartes) para frenar la fatiga de creatividad que se ve desde mediados de agosto."
+    },
+    {
+      "id": "n3",
+      "title": "Activar los anuncios de Textiles",
+      "description": "El conjunto de anuncios y el público ya están listos; falta publicar las piezas sobre el nuevo mensaje (\"cerramos la venta por ti\")."
+    },
+    {
+      "id": "n4",
+      "title": "Investigar por qué 0 de 88 registros cerraron venta",
+      "description": "El volumen y el costo por registro están en buen nivel — el cuello de botella parece estar después del formulario, en el seguimiento comercial. Vale revisar qué pasa entre \"Prospectos Contactados\" y el cierre."
+    }
+  ]
+}
