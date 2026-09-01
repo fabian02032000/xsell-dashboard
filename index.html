@@ -149,6 +149,20 @@
   .story-form-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:2px;}
   .story-form-actions .story-btn-save{background:var(--orange); color:#1a0f00; border-color:var(--orange); font-weight:800;}
 
+  /* Conexión con GitHub */
+  .story-gh-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:10px 14px; margin-top:10px;}
+  .story-gh-status{font-size:12.5px; color:var(--text-muted);}
+  .story-gh-status.connected{color:var(--good); font-weight:700;}
+  .story-gh-panel{background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:14px; margin-top:10px; display:flex; flex-direction:column; gap:9px;}
+  .story-gh-panel label{display:flex; flex-direction:column; gap:4px; font-size:11px; color:var(--text-muted); font-weight:600;}
+  .story-gh-panel input{background:var(--surface); border:1px solid var(--border); color:var(--text-primary); border-radius:8px; padding:7px 9px; font-family:inherit; font-size:13px;}
+  .story-gh-msg{margin:8px 0 0; min-height:14px;}
+  .story-gh-msg.ok{color:var(--good);}
+  .story-gh-msg.err{color:var(--critical);}
+  .filter-btn.danger-outline{color:var(--critical); border-color:rgba(255,92,92,0.4);}
+  .story-form-actions .story-btn-publish, .story-toolbar .story-btn-publish{background:var(--purple-2); color:#fff; border-color:var(--purple-2); font-weight:800;}
+  .story-btn-publish[disabled]{opacity:.6; cursor:wait;}
+
   /* Pestañas */
   .tab-nav{display:flex; gap:8px; margin-bottom:28px; border-bottom:1px solid var(--border); padding-bottom:0;}
   .tab-btn{background:none; border:none; color:var(--text-muted); font-size:14px; font-weight:700; padding:10px 16px; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; font-family:inherit;}
@@ -648,8 +662,41 @@
       <h2>Línea de tiempo</h2>
       <span class="hint" id="storyEditHint">Cargando…</span>
     </div>
+
+    <div class="story-gh-bar">
+      <span id="storyGhStatus" class="story-gh-status">⚙️ Sin conectar a GitHub — los cambios solo se guardan en este navegador</span>
+      <button type="button" class="filter-btn" id="storyGhConfigBtn">⚙️ Conectar con GitHub</button>
+    </div>
+    <div class="story-gh-panel" id="storyGhPanel" hidden>
+      <p class="hint" style="margin:0 0 10px;">Esto conecta el dashboard directamente a tu repositorio de GitHub para que, al guardar, el cambio se vea para cualquiera que abra el link — no solo en tu navegador. El token que pegues aquí se queda únicamente guardado en este navegador; nunca se envía a Claude ni a nadie más, solo a GitHub.</p>
+      <div class="story-form-row">
+        <label>Usuario/organización de GitHub
+          <input type="text" id="storyGhOwner" placeholder="fabian02032000">
+        </label>
+        <label>Nombre del repositorio
+          <input type="text" id="storyGhRepo" placeholder="xsell-dashboard">
+        </label>
+        <label>Rama
+          <input type="text" id="storyGhBranch" placeholder="main">
+        </label>
+      </div>
+      <label>Token de acceso personal de GitHub (fine-grained, con permiso de escritura solo sobre este repo)
+        <input type="password" id="storyGhToken" placeholder="github_pat_...">
+      </label>
+      <p class="hint" id="storyGhHelp" style="margin:2px 0 0;"></p>
+      <div class="story-form-actions" style="justify-content:space-between;">
+        <button type="button" class="filter-btn danger-outline" id="storyGhDisconnectBtn">Desconectar</button>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="filter-btn" id="storyGhCancelBtn">Cancelar</button>
+          <button type="button" class="filter-btn story-btn-save" id="storyGhSaveBtn">Guardar conexión</button>
+        </div>
+      </div>
+    </div>
+    <p class="hint story-gh-msg" id="storyGhMsg"></p>
+
     <div class="story-toolbar">
       <button type="button" class="filter-btn" id="storyAddBtn">➕ Agregar hito</button>
+      <button type="button" class="filter-btn story-btn-publish" id="storyPublishBtn" hidden>☁️ Guardar en GitHub (visible para todos)</button>
       <button type="button" class="filter-btn" id="storyExportBtn">⬇️ Descargar JSON con mis cambios</button>
       <button type="button" class="filter-btn" id="storyResetBtn">↺ Descartar cambios locales</button>
     </div>
@@ -2185,9 +2232,158 @@
     if (!hint) return;
     let hasOverride = false;
     try { hasOverride = !!localStorage.getItem(STORY_STORAGE_KEY); } catch (e) { hasOverride = false; }
-    hint.textContent = hasOverride
-      ? '✏️ Tienes cambios guardados solo en este navegador — descarga el JSON y súbelo a GitHub para que se vean en cualquier dispositivo.'
-      : 'Hitos reales, marcados por tipo. Usa ⋮ en cada bloque para editar, reordenar o eliminar — tus cambios se guardan en este navegador.';
+    if (!hasOverride){
+      hint.textContent = 'Hitos reales, marcados por tipo. Usa ⋮ en cada bloque para editar, reordenar o eliminar.';
+      return;
+    }
+    hint.textContent = storyGhIsConnected()
+      ? '✏️ Tienes cambios sin publicar — usa "☁️ Guardar en GitHub" para que se vean en cualquier dispositivo.'
+      : '✏️ Tienes cambios guardados solo en este navegador — descarga el JSON y súbelo a GitHub, o conecta GitHub arriba para publicarlos con un clic.';
+  }
+
+  // ---- Conexión directa con GitHub (para que los cambios se vean para todos) ----
+  const STORY_GH_KEY = 'xsell_story_github_v1';
+  const STORY_GH_PATH = 'storytelling_data.json';
+
+  function storyGhLoadConfig(){
+    try {
+      const raw = localStorage.getItem(STORY_GH_KEY);
+      if (!raw) return null;
+      const cfg = JSON.parse(raw);
+      if (cfg && cfg.owner && cfg.repo && cfg.token) return cfg;
+      return null;
+    } catch (e) { return null; }
+  }
+
+  function storyGhSaveConfig(cfg){
+    try { localStorage.setItem(STORY_GH_KEY, JSON.stringify(cfg)); } catch (e) { /* noop */ }
+  }
+
+  function storyGhClearConfig(){
+    try { localStorage.removeItem(STORY_GH_KEY); } catch (e) { /* noop */ }
+  }
+
+  function storyGhIsConnected(){ return !!storyGhLoadConfig(); }
+
+  function storyGhBase64Utf8(str){
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+
+  function storyGhRenderStatus(){
+    const statusEl = document.getElementById('storyGhStatus');
+    const publishBtn = document.getElementById('storyPublishBtn');
+    const cfg = storyGhLoadConfig();
+    if (!statusEl || !publishBtn) return;
+    if (cfg){
+      statusEl.textContent = `☁️ Conectado a ${cfg.owner}/${cfg.repo} (${cfg.branch || 'main'}) — puedes guardar para todos con un clic`;
+      statusEl.classList.add('connected');
+      publishBtn.hidden = false;
+    } else {
+      statusEl.textContent = '⚙️ Sin conectar a GitHub — los cambios solo se guardan en este navegador';
+      statusEl.classList.remove('connected');
+      publishBtn.hidden = true;
+    }
+    storyUpdateEditHint();
+  }
+
+  function storyGhOpenPanel(){
+    const panel = document.getElementById('storyGhPanel');
+    const cfg = storyGhLoadConfig() || {};
+    document.getElementById('storyGhOwner').value = cfg.owner || 'fabian02032000';
+    document.getElementById('storyGhRepo').value = cfg.repo || 'xsell-dashboard';
+    document.getElementById('storyGhBranch').value = cfg.branch || 'main';
+    document.getElementById('storyGhToken').value = '';
+    document.getElementById('storyGhHelp').textContent = cfg.token
+      ? 'Ya hay un token guardado en este navegador. Déjalo en blanco para conservarlo, o pega uno nuevo para reemplazarlo.'
+      : 'Pega aquí un token de acceso personal "fine-grained" con permiso de escritura (Contents: Read and write) solo sobre este repositorio.';
+    document.getElementById('storyGhMsg').textContent = '';
+    document.getElementById('storyGhMsg').className = 'hint story-gh-msg';
+    panel.hidden = false;
+  }
+
+  function storyGhClosePanel(){
+    document.getElementById('storyGhPanel').hidden = true;
+  }
+
+  function storyGhSaveFromPanel(){
+    const owner = document.getElementById('storyGhOwner').value.trim();
+    const repo = document.getElementById('storyGhRepo').value.trim();
+    const branch = document.getElementById('storyGhBranch').value.trim() || 'main';
+    const tokenInput = document.getElementById('storyGhToken').value.trim();
+    const existing = storyGhLoadConfig();
+    const token = tokenInput || (existing ? existing.token : '');
+    const msg = document.getElementById('storyGhMsg');
+    if (!owner || !repo || !token){
+      msg.textContent = 'Falta usuario/organización, repositorio o token.';
+      msg.className = 'hint story-gh-msg err';
+      return;
+    }
+    storyGhSaveConfig({ owner, repo, branch, token });
+    storyGhClosePanel();
+    storyGhRenderStatus();
+    msg.textContent = '';
+  }
+
+  function storyGhDisconnect(){
+    if (!confirm('¿Desconectar GitHub? Vas a poder seguir editando localmente, pero para publicar tendrás que volver a conectar un token.')) return;
+    storyGhClearConfig();
+    storyGhClosePanel();
+    storyGhRenderStatus();
+  }
+
+  async function storyPublishToGithub(){
+    const cfg = storyGhLoadConfig();
+    const btn = document.getElementById('storyPublishBtn');
+    const msg = document.getElementById('storyGhMsg');
+    if (!cfg || !btn) return;
+    btn.disabled = true;
+    const originalLabel = btn.textContent;
+    btn.textContent = '☁️ Guardando…';
+    msg.className = 'hint story-gh-msg';
+    msg.textContent = '';
+    const apiUrl = `https://api.github.com/repos/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/contents/${STORY_GH_PATH}`;
+    const headers = {
+      'Authorization': 'token ' + cfg.token,
+      'Accept': 'application/vnd.github+json',
+    };
+    try {
+      const getResp = await fetch(`${apiUrl}?ref=${encodeURIComponent(cfg.branch || 'main')}&_=${Date.now()}`, { headers });
+      let sha = undefined;
+      if (getResp.status === 200){
+        const info = await getResp.json();
+        sha = info.sha;
+      } else if (getResp.status !== 404){
+        throw new Error(`No se pudo leer el archivo actual en GitHub (código ${getResp.status}). Revisa que el usuario, repositorio y token sean correctos.`);
+      }
+      const out = Object.assign({}, storyMeta, { milestones: storyState.milestones, next_steps: storyState.next_steps });
+      const content = storyGhBase64Utf8(JSON.stringify(out, null, 2));
+      const putBody = {
+        message: 'Actualiza historia de la cuenta (desde el dashboard)',
+        content,
+        branch: cfg.branch || 'main',
+      };
+      if (sha) putBody.sha = sha;
+      const putResp = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
+        body: JSON.stringify(putBody),
+      });
+      if (putResp.status !== 200 && putResp.status !== 201){
+        const errBody = await putResp.json().catch(() => ({}));
+        throw new Error(`GitHub respondió con error ${putResp.status}: ${errBody.message || 'sin detalle'}. Revisa que el token tenga permiso de escritura sobre este repositorio.`);
+      }
+      msg.textContent = '✅ Guardado en GitHub — puede tardar hasta un minuto en verse para otras personas mientras el sitio se actualiza.';
+      msg.className = 'hint story-gh-msg ok';
+    } catch (err){
+      const isNetworkError = err instanceof TypeError;
+      msg.textContent = isNetworkError
+        ? '❌ No se pudo conectar con GitHub. Revisa tu conexión a internet y que el usuario y el repositorio estén bien escritos.'
+        : '❌ ' + (err && err.message ? err.message : 'No se pudo guardar en GitHub.');
+      msg.className = 'hint story-gh-msg err';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
   }
 
   function storyCloseMenus(){
@@ -2540,6 +2736,18 @@
     if (nextAddBtn) nextAddBtn.addEventListener('click', () => storyAddStep(null));
     if (exportBtn) exportBtn.addEventListener('click', storyExportJSON);
     if (resetBtn) resetBtn.addEventListener('click', storyResetToPublished);
+
+    const ghConfigBtn = document.getElementById('storyGhConfigBtn');
+    const ghSaveBtn = document.getElementById('storyGhSaveBtn');
+    const ghCancelBtn = document.getElementById('storyGhCancelBtn');
+    const ghDisconnectBtn = document.getElementById('storyGhDisconnectBtn');
+    const publishBtn = document.getElementById('storyPublishBtn');
+    if (ghConfigBtn) ghConfigBtn.addEventListener('click', storyGhOpenPanel);
+    if (ghSaveBtn) ghSaveBtn.addEventListener('click', storyGhSaveFromPanel);
+    if (ghCancelBtn) ghCancelBtn.addEventListener('click', storyGhClosePanel);
+    if (ghDisconnectBtn) ghDisconnectBtn.addEventListener('click', storyGhDisconnect);
+    if (publishBtn) publishBtn.addEventListener('click', storyPublishToGithub);
+    storyGhRenderStatus();
   }
 })();
 </script>
