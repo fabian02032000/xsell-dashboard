@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-01T01:38:29.755682+00:00",
+  "updated_at": "2026-09-01T07:16:43.042667+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 88,
+  "total_leads": 89,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -133,6 +133,10 @@
     {
       "date": "2026-08-31",
       "count": 1
+    },
+    {
+      "date": "2026-09-01",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -147,6 +151,13 @@
       "month": "2026-08",
       "label": "August 2026",
       "leads": 68,
+      "goal": 74.0,
+      "is_partial": false
+    },
+    {
+      "month": "2026-09",
+      "label": "September 2026",
+      "leads": 1,
       "goal": 74.0,
       "is_partial": false
     }
@@ -191,19 +202,29 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 1,
+      "leads": 2,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 0,
+  "current_month_leads": 1,
   "current_month_label": "September 2026",
-  "current_week_leads": 1,
+  "current_week_leads": 2,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 87,
   "leads_detail": [
+    {
+      "name": "Christian Christian",
+      "email": "christiaanjbb@gmail.com",
+      "company": "hogares",
+      "created_date": "2026-09-01",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
     {
       "name": "Giardel R. Gervasi",
       "email": "giardel.riega@inmater.pe",
@@ -1101,7 +1122,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
