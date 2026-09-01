@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-01T17:36:12.697692+00:00",
+  "updated_at": "2026-09-01T20:34:13.588134+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 91,
+  "total_leads": 92,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -136,7 +136,7 @@
     },
     {
       "date": "2026-09-01",
-      "count": 3
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -157,7 +157,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 3,
+      "leads": 4,
       "goal": 74.0,
       "is_partial": false
     }
@@ -202,13 +202,13 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 4,
+      "leads": 5,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 3,
+  "current_month_leads": 4,
   "current_month_label": "September 2026",
-  "current_week_leads": 4,
+  "current_week_leads": 5,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -243,6 +243,16 @@
       "has_deal": true,
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Automotores Inka ",
+      "deal_note": null
+    },
+    {
+      "name": "kenny GS",
+      "email": "kenny.grandez.1292@gmail.com",
+      "company": "Umbrella",
+      "created_date": "2026-09-01",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
       "deal_note": null
     },
     {
@@ -1142,7 +1152,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
