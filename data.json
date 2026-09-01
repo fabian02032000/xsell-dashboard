@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-01T13:05:46.989978+00:00",
+  "updated_at": "2026-09-01T14:04:00.393088+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 89,
+  "total_leads": 90,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -136,7 +136,7 @@
     },
     {
       "date": "2026-09-01",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -157,7 +157,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 1,
+      "leads": 2,
       "goal": 74.0,
       "is_partial": false
     }
@@ -202,13 +202,13 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 2,
+      "leads": 3,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 1,
+  "current_month_leads": 2,
   "current_month_label": "September 2026",
-  "current_week_leads": 2,
+  "current_week_leads": 3,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -219,6 +219,16 @@
       "name": "Christian Christian",
       "email": "christiaanjbb@gmail.com",
       "company": "hogares",
+      "created_date": "2026-09-01",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "karen Arrivasplata Vasquez",
+      "email": "karrivasplata30@gmail.com",
+      "company": "Entel Perú",
       "created_date": "2026-09-01",
       "has_deal": false,
       "deal_stage": null,
@@ -1117,12 +1127,12 @@
       "count": 10
     },
     {
-      "label": "Reunión Agendadas",
+      "label": "Sin negocio",
       "count": 3
     },
     {
-      "label": "Sin negocio",
-      "count": 2
+      "label": "Reunión Agendadas",
+      "count": 3
     }
   ]
 }
