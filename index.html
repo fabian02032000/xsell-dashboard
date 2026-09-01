@@ -112,6 +112,43 @@
   .status-dist-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px;}
   .status-dist-legend .key{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--text-muted);}
 
+  /* Historia de la cuenta */
+  .story-timeline{position:relative; display:flex; flex-direction:column; margin-top:14px;}
+  .story-item{position:relative; padding:0 34px 26px 30px; border-left:2px solid var(--border);}
+  .story-item:last-child{border-left-color:transparent; padding-bottom:2px;}
+  .story-dot{position:absolute; left:-7px; top:2px; width:12px; height:12px; border-radius:50%; border:3px solid var(--bg);}
+  .story-tag{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:3px 9px; border-radius:6px; margin-bottom:8px;}
+  .story-date{font-size:12px; color:var(--text-muted); font-weight:700; margin:0 0 2px;}
+  .story-title{font-size:14px; font-weight:700; color:var(--text-primary); margin:2px 0 5px;}
+  .story-desc{font-size:13px; color:var(--text-muted); line-height:1.55; margin:0;}
+  .story-comment{margin-top:10px; background:var(--surface-2); border-radius:8px; padding:9px 12px; font-size:12.5px; color:var(--text-primary); border-left:3px solid var(--orange); line-height:1.5;}
+  .story-comment .label{color:var(--orange); font-weight:800; margin-right:6px;}
+  .story-next .story-dot{background:var(--purple-2);}
+  .story-next .story-item{border-left-style:dashed;}
+
+  /* Edición en vivo de la historia */
+  .story-toolbar{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 6px;}
+  .story-drag-handle{cursor:grab; color:var(--text-muted); font-size:13px; margin-right:6px; user-select:none; display:inline-block;}
+  .story-drag-handle:active{cursor:grabbing;}
+  .story-item.story-dragging{opacity:.35;}
+  .story-item.story-drag-over{border-left-color:var(--orange);}
+  .story-menu-btn{position:absolute; top:0; right:0; background:var(--surface-2); border:1px solid var(--border); color:var(--text-muted); width:26px; height:24px; border-radius:8px; cursor:pointer; font-size:15px; line-height:1; font-family:inherit;}
+  .story-menu-btn:hover{color:var(--text-primary); border-color:var(--purple-2);}
+  .story-menu{position:absolute; top:28px; right:0; background:#241A38; border:1px solid var(--border); border-radius:10px; padding:6px; min-width:190px; z-index:20; box-shadow:0 8px 24px rgba(0,0,0,.45); display:none;}
+  .story-menu.story-menu-open{display:block;}
+  .story-menu.story-menu-flip{top:auto; bottom:28px;}
+  .story-menu button{display:flex; align-items:center; gap:8px; width:100%; background:none; border:none; color:var(--text-primary); font-size:13px; padding:8px 10px; border-radius:6px; cursor:pointer; text-align:left; font-family:inherit;}
+  .story-menu button:hover{background:rgba(255,255,255,0.08);}
+  .story-menu button.danger{color:var(--critical);}
+  .story-form{display:flex; flex-direction:column; gap:9px; background:var(--surface-2); border-radius:10px; padding:14px; margin-top:2px;}
+  .story-form label{display:flex; flex-direction:column; gap:4px; font-size:11px; color:var(--text-muted); font-weight:600;}
+  .story-form input, .story-form select, .story-form textarea{background:var(--surface); border:1px solid var(--border); color:var(--text-primary); border-radius:8px; padding:7px 9px; font-family:inherit; font-size:13px; color-scheme:dark;}
+  .story-form textarea{resize:vertical; min-height:56px; line-height:1.4;}
+  .story-form-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .story-form-row > *{flex:1; min-width:150px;}
+  .story-form-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:2px;}
+  .story-form-actions .story-btn-save{background:var(--orange); color:#1a0f00; border-color:var(--orange); font-weight:800;}
+
   /* Pestañas */
   .tab-nav{display:flex; gap:8px; margin-bottom:28px; border-bottom:1px solid var(--border); padding-bottom:0;}
   .tab-btn{background:none; border:none; color:var(--text-muted); font-size:14px; font-weight:700; padding:10px 16px; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; font-family:inherit;}
@@ -178,6 +215,7 @@
     <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
     <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
+    <button class="tab-btn" data-tab="story">🕒 Historia de la cuenta</button>
   </div>
 
   <div class="tab-panel active" id="tab-leads">
@@ -553,6 +591,83 @@
 
   </div>
 
+  <div class="tab-panel" id="tab-story">
+
+  <section>
+    <div class="section-head">
+      <h2>Historia de la cuenta</h2>
+      <span class="hint">Cómo evolucionó la pauta desde el lanzamiento — cambios, hallazgos, decisiones y qué sigue · datos reales desde julio</span>
+    </div>
+
+    <div class="kpi-row">
+      <div class="tile">
+        <p class="tile-label">Campaña activa desde</p>
+        <p class="tile-value" id="storyStartDate">—</p>
+        <p class="tile-sub">Registros: HubSpot · Pauta: Meta Ads</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Registros totales</p>
+        <p class="tile-value" id="storyTotalLeads">—</p>
+        <p class="tile-sub" id="storyGoalSub"></p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">CPL — campaña de registros</p>
+        <p class="tile-value" id="storyCPL">—</p>
+        <p class="tile-sub">Campaña "PROSPECTOS B2B | FORMULARIO V.1"</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Negocios cerrados</p>
+        <p class="tile-value" id="storyClosedDeals">—</p>
+        <p class="tile-sub" id="storyClosedSub"></p>
+      </div>
+    </div>
+
+    <div class="callout"><span>💡</span><div id="storyHeadline">Cargando resumen…</div></div>
+
+    <div class="chart-card" style="margin-top:18px;">
+      <div class="section-head" style="margin-bottom:6px;">
+        <h2 style="font-size:15px;">Registros por semana vs. meta</h2>
+        <span class="hint">Cada punto es una semana real desde el lanzamiento (25 jul)</span>
+      </div>
+      <div class="chart-wrap">
+        <svg id="storyWeeklyChart" viewBox="0 0 960 220" preserveAspectRatio="none"></svg>
+        <div class="tooltip" id="storyWeeklyTooltip"></div>
+      </div>
+    </div>
+
+    <div class="chart-card" style="margin-top:18px;">
+      <div class="section-head" style="margin-bottom:6px;">
+        <h2 style="font-size:15px;">En qué terminaron los registros</h2>
+        <span class="hint">Distribución de los 88 registros según su estado en HubSpot</span>
+      </div>
+      <div class="status-dist-bar" id="storyStatusBar"></div>
+      <div class="status-dist-legend" id="storyStatusLegend"></div>
+    </div>
+
+    <div class="section-head" style="margin-top:24px;">
+      <h2>Línea de tiempo</h2>
+      <span class="hint" id="storyEditHint">Cargando…</span>
+    </div>
+    <div class="story-toolbar">
+      <button type="button" class="filter-btn" id="storyAddBtn">➕ Agregar hito</button>
+      <button type="button" class="filter-btn" id="storyExportBtn">⬇️ Descargar JSON con mis cambios</button>
+      <button type="button" class="filter-btn" id="storyResetBtn">↺ Descartar cambios locales</button>
+    </div>
+    <div class="story-timeline" id="storyTimeline"></div>
+
+    <div class="section-head" style="margin-top:8px;">
+      <h2>Próximos pasos</h2>
+    </div>
+    <div class="story-toolbar">
+      <button type="button" class="filter-btn" id="storyNextAddBtn">➕ Agregar paso</button>
+    </div>
+    <div class="story-timeline story-next" id="storyNextSteps"></div>
+  </section>
+
+  </div>
+
+  </div>
+
   <footer>Generado automáticamente por GitHub Actions · Xsell</footer>
 </div>
 
@@ -563,6 +678,7 @@
   const goodColor = getComputedStyle(document.documentElement).getPropertyValue('--good').trim();
   const critColor = getComputedStyle(document.documentElement).getPropertyValue('--critical').trim();
   const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim();
+  const warnColor = getComputedStyle(document.documentElement).getPropertyValue('--warning').trim();
 
   function fmt(n){ return new Intl.NumberFormat('es-PE').format(Math.round(n)); }
   function fmtMoney(n){ return 'S/ ' + new Intl.NumberFormat('es-PE', {minimumFractionDigits:1, maximumFractionDigits:1}).format(n); }
@@ -582,7 +698,8 @@
     fetch('./meta_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./funnel_config.json?_=' + Date.now()).then(r => r.json()).catch(() => ({reuniones: null})),
     fetch('./organic_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-  ]).then(([leadsData, metaData, funnelCfg, organicData]) => {
+    fetch('./storytelling_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
+  ]).then(([leadsData, metaData, funnelCfg, organicData, storyData]) => {
     if (!leadsData){
       document.getElementById('statusBadge').textContent = '● Sin datos aún';
       document.getElementById('statusBadge').className = 'badge warn';
@@ -591,6 +708,7 @@
     }
     render(leadsData, metaData, funnelCfg || {});
     renderOrganic(organicData);
+    drawStoryTab(leadsData, metaData, storyData);
   });
 
   function render(data, meta, funnelCfg){
@@ -1886,6 +2004,542 @@
           <td>${fmt(p.interactions || 0)}</td>
         </tr>`;
     }).join('');
+  }
+
+  // ---- Historia de la cuenta ----
+  const STORY_TAGS = {
+    lanzamiento: { label: '🚀 Lanzamiento', color: purple2 },
+    pico:        { label: '📈 Buen resultado', color: goodColor },
+    alerta:      { label: '⚠️ Alerta', color: warnColor },
+    tecnico:     { label: '🛠️ Técnico', color: mutedColor },
+    bug:         { label: '🐞 Bug corregido', color: critColor },
+    segmentacion:{ label: '🎯 Segmentación', color: orange },
+    mensaje:     { label: '✍️ Mensaje', color: orange },
+    hallazgo:    { label: '🔍 Hallazgo', color: critColor },
+  };
+
+  function storyDateLabel(m){
+    const fmtOne = (iso) => {
+      const [y,mo,d] = iso.split('-');
+      return `${d}/${mo}/${y.slice(2)}`;
+    };
+    if (m.exact_date && m.date){
+      return m.date_end ? `${fmtOne(m.date)} – ${fmtOne(m.date_end)}` : fmtOne(m.date);
+    }
+    return m.period_label || 'Sin fecha exacta';
+  }
+
+  function drawStoryTab(data, meta, story){
+    const hasMeta = !!meta;
+    document.getElementById('storyStartDate').textContent = data.campaign_start
+      ? (() => { const [y,mo,d] = data.campaign_start.split('-'); return `${d}/${mo}/${y}`; })()
+      : '—';
+    document.getElementById('storyTotalLeads').textContent = fmt(data.total_leads || 0);
+    document.getElementById('storyGoalSub').textContent = `Meta mensual: ${fmt(data.monthly_goal || 0)}`;
+
+    const leadsCampaign = hasMeta && meta.campaigns_performance
+      ? meta.campaigns_performance.find(c => (c.leads || 0) > 0)
+      : null;
+    document.getElementById('storyCPL').textContent = leadsCampaign && leadsCampaign.cost_per_lead != null
+      ? fmtMoney(leadsCampaign.cost_per_lead)
+      : '—';
+
+    const closed = data.closed_deals || {};
+    document.getElementById('storyClosedDeals').textContent = closed.available ? fmt(closed.count || 0) : '—';
+    document.getElementById('storyClosedSub').textContent = closed.available
+      ? `Meta: ${fmt(data.closed_deals_goal || 0)} · de ${fmt(data.leads_with_deal || 0)} registros con negocio`
+      : 'Sin datos de negocios cerrados aún';
+
+    const headline = document.getElementById('storyHeadline');
+    if (closed.available && closed.count === 0 && (data.total_leads || 0) > 0){
+      headline.innerHTML = `Desde el lanzamiento (25 jul) van <strong>${fmt(data.total_leads)} registros</strong> `
+        + (leadsCampaign ? `a un CPL de <strong>${fmtMoney(leadsCampaign.cost_per_lead)}</strong> ` : '')
+        + `— pero <strong>ningún registro se ha convertido en negocio cerrado</strong> todavía frente a una meta de ${fmt(data.closed_deals_goal || 0)}. `
+        + `El volumen y el costo están en buen nivel; el punto a resolver está después del formulario, en el seguimiento comercial.`;
+    } else {
+      headline.textContent = `Resumen desde el lanzamiento del ${data.campaign_start || '—'}.`;
+    }
+
+    // Gráfico: registros por semana vs. meta (mismo patrón que "Registros y ventas")
+    const weeks = data.leads_by_week || [];
+    const svg = document.getElementById('storyWeeklyChart');
+    const tooltip = document.getElementById('storyWeeklyTooltip');
+    if (svg && weeks.length){
+      const W = 960, H = 220, padL = 46, padR = 16, padT = 20, padB = 34;
+      const maxVal = Math.max(...weeks.map(w => Math.max(w.leads, w.goal)), 1) * 1.15;
+      const n = weeks.length;
+      const step = (W - padL - padR) / Math.max(1, n - 1);
+      let content = '';
+      [0, 0.5, 1].forEach(f => {
+        const y = padT + (H - padT - padB) * (1 - f);
+        content += `<line class="axis-line" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+        content += `<text class="axis-label" x="${padL-6}" y="${y+3}" text-anchor="end">${Math.round(maxVal*f)}</text>`;
+      });
+      function pointsFor(key){
+        return weeks.map((w, i) => {
+          const x = padL + step * i;
+          const v = w[key] || 0;
+          const y = H - padB - (H - padT - padB) * (v / maxVal);
+          return { x, y };
+        });
+      }
+      function linePath(points){ return points.map((p, i) => (i === 0 ? 'M' : 'L') + p.x + ',' + p.y).join(' '); }
+      const goalPoints = pointsFor('goal');
+      const leadsPoints = pointsFor('leads');
+      content += `<path d="${linePath(goalPoints)}" fill="none" stroke="${mutedColor}" stroke-width="2" stroke-dasharray="5,4"/>`;
+      content += `<path d="${linePath(leadsPoints)}" fill="none" stroke="${orange}" stroke-width="2.5"/>`;
+      leadsPoints.forEach((p, i) => {
+        const good = weeks[i].leads >= weeks[i].goal;
+        content += `<circle cx="${p.x}" cy="${p.y}" r="5" fill="${good ? goodColor : orange}"/>`;
+      });
+      weeks.forEach((w, i) => {
+        const x = padL + step * i;
+        content += `<text class="axis-label" x="${x}" y="${H-padB+16}" text-anchor="middle">${w.week_start.slice(5)}</text>`;
+        content += `<rect class="bar" data-i="${i}" x="${x-14}" y="${padT}" width="28" height="${H-padT-padB}" fill="transparent"/>`;
+      });
+      svg.innerHTML = content;
+      svg.querySelectorAll('.bar').forEach(hit => {
+        hit.addEventListener('pointerenter', () => {
+          const w = weeks[+hit.dataset.i];
+          const p = w.goal ? Math.round((w.leads / w.goal) * 100) : 0;
+          tooltip.innerHTML = `<strong>${w.week_start} – ${w.week_end}</strong><br>${fmt(w.leads)} / ${fmt(w.goal)} registros (${p}%)`;
+          tooltip.style.opacity = 1;
+        });
+        hit.addEventListener('pointermove', (e) => {
+          const rect = svg.parentElement.getBoundingClientRect();
+          tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+          tooltip.style.top = (e.clientY - rect.top - 40) + 'px';
+        });
+        hit.addEventListener('pointerleave', () => { tooltip.style.opacity = 0; });
+      });
+    }
+
+    // Distribución de estado (mismo componente visual que la pestaña de registros)
+    const bar = document.getElementById('storyStatusBar');
+    const legend = document.getElementById('storyStatusLegend');
+    const breakdown = data.leads_status_breakdown || [];
+    if (bar && legend){
+      if (!breakdown.length){
+        bar.innerHTML = '';
+        legend.innerHTML = `<span class="table-sub">Aún no hay registros para mostrar.</span>`;
+      } else {
+        const total = breakdown.reduce((sum, s) => sum + s.count, 0) || 1;
+        const fallbackIndexRef = { i: 0 };
+        const withColor = breakdown.map(s => ({ ...s, color: statusColor(s.label, fallbackIndexRef), pct: Math.round((s.count / total) * 100) }));
+        bar.innerHTML = withColor.map(s => `
+          <div class="status-dist-seg" style="width:${(s.count/total)*100}%; background:${s.color};" title="${s.label}: ${s.count} (${s.pct}%)">
+            ${s.pct >= 8 ? s.pct + '%' : ''}
+          </div>`).join('');
+        legend.innerHTML = withColor.map(s => `
+          <span class="key"><span class="swatch" style="background:${s.color}"></span>${s.label} — ${fmt(s.count)} (${s.pct}%)</span>
+        `).join('');
+      }
+    }
+
+    // Línea de tiempo — editable en vivo (se guarda en este navegador)
+    storyFetchedRaw = story || { milestones: [], next_steps: [] };
+    storyMeta = { _nota: (story && story._nota) || STORY_DEFAULT_NOTA };
+    storyLoadState(storyFetchedRaw);
+    storyRenderTimeline();
+    storyRenderNextSteps();
+    storyUpdateEditHint();
+    storyBindToolbarOnce();
+  }
+
+  // ---- Historia de la cuenta: estado editable ----
+  const STORY_STORAGE_KEY = 'xsell_story_overrides_v1';
+  const STORY_DEFAULT_NOTA = 'Este archivo alimenta la pestaña "Historia de la cuenta" del dashboard.';
+  let storyState = { milestones: [], next_steps: [] };
+  let storyFetchedRaw = { milestones: [], next_steps: [] };
+  let storyMeta = { _nota: STORY_DEFAULT_NOTA };
+  let storyEditingId = null;
+  let storyOpenMenuId = null;
+  let storyDraggedId = null;
+  let storyDraggedList = null;
+  let storyToolbarBound = false;
+
+  function storyUid(prefix){ return prefix + '-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+  function storyCloneArr(arr){ return JSON.parse(JSON.stringify(arr || [])); }
+
+  function storyLoadState(fetched){
+    let saved = null;
+    try {
+      const raw = localStorage.getItem(STORY_STORAGE_KEY);
+      if (raw) saved = JSON.parse(raw);
+    } catch (e) { saved = null; }
+    if (saved && Array.isArray(saved.milestones) && Array.isArray(saved.next_steps)){
+      storyState = saved;
+    } else {
+      storyState = { milestones: storyCloneArr(fetched.milestones), next_steps: storyCloneArr(fetched.next_steps) };
+    }
+  }
+
+  function storySave(){
+    try { localStorage.setItem(STORY_STORAGE_KEY, JSON.stringify(storyState)); } catch (e) { /* almacenamiento no disponible */ }
+    storyUpdateEditHint();
+  }
+
+  function storyUpdateEditHint(){
+    const hint = document.getElementById('storyEditHint');
+    if (!hint) return;
+    let hasOverride = false;
+    try { hasOverride = !!localStorage.getItem(STORY_STORAGE_KEY); } catch (e) { hasOverride = false; }
+    hint.textContent = hasOverride
+      ? '✏️ Tienes cambios guardados solo en este navegador — descarga el JSON y súbelo a GitHub para que se vean en cualquier dispositivo.'
+      : 'Hitos reales, marcados por tipo. Usa ⋮ en cada bloque para editar, reordenar o eliminar — tus cambios se guardan en este navegador.';
+  }
+
+  function storyCloseMenus(){
+    storyOpenMenuId = null;
+    document.querySelectorAll('.story-menu.story-menu-open').forEach(m => m.classList.remove('story-menu-open'));
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.story-menu') && !e.target.closest('.story-menu-btn')) storyCloseMenus();
+  });
+
+  function storyMilestoneViewHtml(m){
+    const tagInfo = STORY_TAGS[m.tag] || { label: m.tag || '•', color: mutedColor };
+    const comment = (m.comentario || '').trim();
+    return `
+      <span class="story-dot" style="background:${tagInfo.color};"></span>
+      <span class="story-drag-handle" draggable="true" title="Arrastra para reordenar">⠿</span>
+      <span class="story-tag" style="background:${tagInfo.color}22; color:${tagInfo.color};">${tagInfo.label}</span>
+      <button type="button" class="story-menu-btn" data-menu-toggle="${m.id}" title="Opciones">⋮</button>
+      <div class="story-menu${storyOpenMenuId === m.id ? ' story-menu-open' : ''}" data-menu="${m.id}">
+        <button type="button" data-action="edit" data-id="${m.id}">✏️ Editar</button>
+        <button type="button" data-action="move-up" data-id="${m.id}">⬆️ Subir</button>
+        <button type="button" data-action="move-down" data-id="${m.id}">⬇️ Bajar</button>
+        <button type="button" data-action="add-after" data-id="${m.id}">➕ Agregar hito debajo</button>
+        <button type="button" class="danger" data-action="delete" data-id="${m.id}">🗑️ Eliminar</button>
+      </div>
+      <p class="story-date">${escapeHtml(storyDateLabel(m))}</p>
+      <p class="story-title">${escapeHtml(m.title || '')}</p>
+      <p class="story-desc">${escapeHtml(m.description || '')}</p>
+      ${comment ? `<div class="story-comment"><span class="label">Comentario:</span>${escapeHtml(comment)}</div>` : ''}
+    `;
+  }
+
+  function storyMilestoneFormHtml(m){
+    const tagOptions = Object.keys(STORY_TAGS).map(k =>
+      `<option value="${k}" ${m.tag === k ? 'selected' : ''}>${STORY_TAGS[k].label}</option>`
+    ).join('');
+    return `
+      <div class="story-form">
+        <div class="story-form-row">
+          <label>Tipo
+            <select data-field="tag">${tagOptions}</select>
+          </label>
+          <label>Fecha exacta (opcional)
+            <input type="date" data-field="date" value="${m.exact_date && m.date ? m.date : ''}">
+          </label>
+          <label>Fecha final del rango (opcional)
+            <input type="date" data-field="date_end" value="${m.date_end || ''}">
+          </label>
+        </div>
+        <label>Si no pones fecha exacta, descríbela aquí (ej: "última semana de agosto")
+          <input type="text" data-field="period_label" value="${escapeHtml(m.period_label || '')}">
+        </label>
+        <label>Título
+          <input type="text" data-field="title" value="${escapeHtml(m.title || '')}">
+        </label>
+        <label>Descripción
+          <textarea data-field="description">${escapeHtml(m.description || '')}</textarea>
+        </label>
+        <label>Tu comentario (opcional)
+          <textarea data-field="comentario">${escapeHtml(m.comentario || '')}</textarea>
+        </label>
+        <div class="story-form-actions">
+          <button type="button" class="filter-btn" data-action="cancel-edit" data-id="${m.id}">Cancelar</button>
+          <button type="button" class="filter-btn story-btn-save" data-action="save-edit" data-id="${m.id}">Guardar</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function storyStepViewHtml(s){
+    return `
+      <span class="story-dot"></span>
+      <span class="story-drag-handle" draggable="true" title="Arrastra para reordenar">⠿</span>
+      <button type="button" class="story-menu-btn" data-menu-toggle="${s.id}" title="Opciones">⋮</button>
+      <div class="story-menu${storyOpenMenuId === s.id ? ' story-menu-open' : ''}" data-menu="${s.id}">
+        <button type="button" data-action="edit-step" data-id="${s.id}">✏️ Editar</button>
+        <button type="button" data-action="move-up-step" data-id="${s.id}">⬆️ Subir</button>
+        <button type="button" data-action="move-down-step" data-id="${s.id}">⬇️ Bajar</button>
+        <button type="button" data-action="add-after-step" data-id="${s.id}">➕ Agregar paso debajo</button>
+        <button type="button" class="danger" data-action="delete-step" data-id="${s.id}">🗑️ Eliminar</button>
+      </div>
+      <p class="story-title">${escapeHtml(s.title || '')}</p>
+      <p class="story-desc">${escapeHtml(s.description || '')}</p>
+    `;
+  }
+
+  function storyStepFormHtml(s){
+    return `
+      <div class="story-form">
+        <label>Título
+          <input type="text" data-field="title" value="${escapeHtml(s.title || '')}">
+        </label>
+        <label>Descripción
+          <textarea data-field="description">${escapeHtml(s.description || '')}</textarea>
+        </label>
+        <div class="story-form-actions">
+          <button type="button" class="filter-btn" data-action="cancel-edit-step" data-id="${s.id}">Cancelar</button>
+          <button type="button" class="filter-btn story-btn-save" data-action="save-edit-step" data-id="${s.id}">Guardar</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function storyPositionMenus(){
+    document.querySelectorAll('.story-menu.story-menu-open').forEach(menu => {
+      menu.classList.remove('story-menu-flip');
+      const rect = menu.getBoundingClientRect();
+      if (rect.bottom > window.innerHeight) menu.classList.add('story-menu-flip');
+    });
+  }
+
+  function storyRenderTimeline(){
+    const el = document.getElementById('storyTimeline');
+    if (!el) return;
+    if (!storyState.milestones.length){
+      el.innerHTML = `<p class="hint">Sin hitos todavía — usa "➕ Agregar hito" para crear el primero.</p>`;
+      return;
+    }
+    el.innerHTML = storyState.milestones.map(m => `
+      <div class="story-item" data-id="${m.id}" data-list="milestones">
+        ${storyEditingId === m.id ? storyMilestoneFormHtml(m) : storyMilestoneViewHtml(m)}
+      </div>`).join('');
+    storyPositionMenus();
+  }
+
+  function storyRenderNextSteps(){
+    const el = document.getElementById('storyNextSteps');
+    if (!el) return;
+    if (!storyState.next_steps.length){
+      el.innerHTML = `<p class="hint">Sin próximos pasos — usa "➕ Agregar paso" para crear el primero.</p>`;
+      return;
+    }
+    el.innerHTML = storyState.next_steps.map(s => `
+      <div class="story-item" data-id="${s.id}" data-list="next_steps">
+        ${storyEditingId === s.id ? storyStepFormHtml(s) : storyStepViewHtml(s)}
+      </div>`).join('');
+    storyPositionMenus();
+  }
+
+  function storyFindList(id){
+    if (storyState.milestones.some(m => m.id === id)) return storyState.milestones;
+    if (storyState.next_steps.some(s => s.id === id)) return storyState.next_steps;
+    return null;
+  }
+
+  function storyMove(id, delta){
+    const list = storyFindList(id);
+    if (!list) return;
+    const i = list.findIndex(x => x.id === id);
+    const j = i + delta;
+    if (j < 0 || j >= list.length) return;
+    const tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+    storySave();
+    storyRenderTimeline(); storyRenderNextSteps();
+  }
+
+  function storyReorder(list, draggedId, targetId){
+    if (draggedId === targetId) return;
+    const fromIdx = list.findIndex(x => x.id === draggedId);
+    const toIdx = list.findIndex(x => x.id === targetId);
+    if (fromIdx === -1 || toIdx === -1) return;
+    const [item] = list.splice(fromIdx, 1);
+    list.splice(toIdx, 0, item);
+  }
+
+  function storyDelete(id){
+    const list = storyFindList(id);
+    if (!list) return;
+    if (!confirm('¿Eliminar este bloque? Puedes deshacerlo con "Descartar cambios locales" si aún no has descargado el JSON.')) return;
+    const i = list.findIndex(x => x.id === id);
+    if (i === -1) return;
+    list.splice(i, 1);
+    if (storyEditingId === id) storyEditingId = null;
+    storySave();
+    storyRenderTimeline(); storyRenderNextSteps();
+  }
+
+  function storyAddMilestone(afterId){
+    const fresh = { id: storyUid('m'), date: null, exact_date: false, period_label: 'Sin fecha exacta', tag: 'tecnico', title: '', description: '', comentario: '' };
+    if (afterId){
+      const i = storyState.milestones.findIndex(x => x.id === afterId);
+      storyState.milestones.splice(i + 1, 0, fresh);
+    } else {
+      storyState.milestones.push(fresh);
+    }
+    storyEditingId = fresh.id;
+    storySave();
+    storyRenderTimeline();
+  }
+
+  function storyAddStep(afterId){
+    const fresh = { id: storyUid('n'), title: '', description: '' };
+    if (afterId){
+      const i = storyState.next_steps.findIndex(x => x.id === afterId);
+      storyState.next_steps.splice(i + 1, 0, fresh);
+    } else {
+      storyState.next_steps.push(fresh);
+    }
+    storyEditingId = fresh.id;
+    storySave();
+    storyRenderNextSteps();
+  }
+
+  function storySaveMilestoneEdit(id, formEl){
+    const m = storyState.milestones.find(x => x.id === id);
+    if (!m) return;
+    const val = (field) => { const inp = formEl.querySelector(`[data-field="${field}"]`); return inp ? inp.value.trim() : ''; };
+    const dateVal = val('date');
+    m.tag = val('tag') || 'tecnico';
+    m.title = val('title');
+    m.description = val('description');
+    m.comentario = val('comentario');
+    if (dateVal){
+      m.exact_date = true;
+      m.date = dateVal;
+      m.date_end = val('date_end') || null;
+      m.period_label = null;
+    } else {
+      m.exact_date = false;
+      m.date = null;
+      m.date_end = null;
+      m.period_label = val('period_label') || 'Sin fecha exacta';
+    }
+    storyEditingId = null;
+    storySave();
+    storyRenderTimeline();
+  }
+
+  function storySaveStepEdit(id, formEl){
+    const s = storyState.next_steps.find(x => x.id === id);
+    if (!s) return;
+    const val = (field) => { const inp = formEl.querySelector(`[data-field="${field}"]`); return inp ? inp.value.trim() : ''; };
+    s.title = val('title');
+    s.description = val('description');
+    storyEditingId = null;
+    storySave();
+    storyRenderNextSteps();
+  }
+
+  function storyExportJSON(){
+    const out = Object.assign({}, storyMeta, { milestones: storyState.milestones, next_steps: storyState.next_steps });
+    const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'storytelling_data.json';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function storyResetToPublished(){
+    if (!confirm('¿Descartar tus cambios locales y volver a la versión publicada en GitHub?')) return;
+    try { localStorage.removeItem(STORY_STORAGE_KEY); } catch (e) { /* noop */ }
+    storyState = { milestones: storyCloneArr(storyFetchedRaw.milestones), next_steps: storyCloneArr(storyFetchedRaw.next_steps) };
+    storyEditingId = null; storyOpenMenuId = null;
+    storyRenderTimeline(); storyRenderNextSteps(); storyUpdateEditHint();
+  }
+
+  function storyHandleAction(action, id){
+    switch (action){
+      case 'edit': storyEditingId = id; storyRenderTimeline(); break;
+      case 'edit-step': storyEditingId = id; storyRenderNextSteps(); break;
+      case 'cancel-edit': storyEditingId = null; storyRenderTimeline(); break;
+      case 'cancel-edit-step': storyEditingId = null; storyRenderNextSteps(); break;
+      case 'move-up': storyMove(id, -1); break;
+      case 'move-down': storyMove(id, 1); break;
+      case 'move-up-step': storyMove(id, -1); break;
+      case 'move-down-step': storyMove(id, 1); break;
+      case 'add-after': storyAddMilestone(id); break;
+      case 'add-after-step': storyAddStep(id); break;
+      case 'delete': storyDelete(id); break;
+      case 'delete-step': storyDelete(id); break;
+      default: break;
+    }
+  }
+
+  function storyBindContainer(containerId, isSteps){
+    const el = document.getElementById(containerId);
+    if (!el) return;
+
+    el.addEventListener('click', (e) => {
+      const menuToggle = e.target.closest('[data-menu-toggle]');
+      if (menuToggle){
+        const id = menuToggle.dataset.menuToggle;
+        const wasOpen = storyOpenMenuId === id;
+        storyCloseMenus();
+        storyOpenMenuId = wasOpen ? null : id;
+        isSteps ? storyRenderNextSteps() : storyRenderTimeline();
+        return;
+      }
+      const actionBtn = e.target.closest('[data-action]');
+      if (actionBtn){
+        const action = actionBtn.dataset.action;
+        const id = actionBtn.dataset.id;
+        if (action === 'save-edit'){
+          storySaveMilestoneEdit(id, actionBtn.closest('.story-form'));
+        } else if (action === 'save-edit-step'){
+          storySaveStepEdit(id, actionBtn.closest('.story-form'));
+        } else {
+          storyHandleAction(action, id);
+        }
+      }
+    });
+
+    el.addEventListener('dragstart', (e) => {
+      if (!e.target.classList.contains('story-drag-handle')) return;
+      const item = e.target.closest('.story-item');
+      if (!item) return;
+      storyDraggedId = item.dataset.id;
+      storyDraggedList = item.dataset.list;
+      item.classList.add('story-dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    el.addEventListener('dragover', (e) => {
+      if (!storyDraggedId) return;
+      e.preventDefault();
+      const item = e.target.closest('.story-item');
+      el.querySelectorAll('.story-drag-over').forEach(n => n.classList.remove('story-drag-over'));
+      if (item && item.dataset.id !== storyDraggedId) item.classList.add('story-drag-over');
+    });
+    el.addEventListener('drop', (e) => {
+      if (!storyDraggedId) return;
+      e.preventDefault();
+      const item = e.target.closest('.story-item');
+      if (item && item.dataset.list === storyDraggedList){
+        const list = storyDraggedList === 'milestones' ? storyState.milestones : storyState.next_steps;
+        storyReorder(list, storyDraggedId, item.dataset.id);
+        storySave();
+        storyRenderTimeline(); storyRenderNextSteps();
+      }
+      storyDraggedId = null; storyDraggedList = null;
+    });
+    el.addEventListener('dragend', () => {
+      el.querySelectorAll('.story-dragging').forEach(n => n.classList.remove('story-dragging'));
+      el.querySelectorAll('.story-drag-over').forEach(n => n.classList.remove('story-drag-over'));
+      storyDraggedId = null; storyDraggedList = null;
+    });
+  }
+
+  function storyBindToolbarOnce(){
+    if (storyToolbarBound) return;
+    storyToolbarBound = true;
+    storyBindContainer('storyTimeline', false);
+    storyBindContainer('storyNextSteps', true);
+    const addBtn = document.getElementById('storyAddBtn');
+    const nextAddBtn = document.getElementById('storyNextAddBtn');
+    const exportBtn = document.getElementById('storyExportBtn');
+    const resetBtn = document.getElementById('storyResetBtn');
+    if (addBtn) addBtn.addEventListener('click', () => storyAddMilestone(null));
+    if (nextAddBtn) nextAddBtn.addEventListener('click', () => storyAddStep(null));
+    if (exportBtn) exportBtn.addEventListener('click', storyExportJSON);
+    if (resetBtn) resetBtn.addEventListener('click', storyResetToPublished);
   }
 })();
 </script>
