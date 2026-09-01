@@ -1,0 +1,40 @@
+name: Benchmark de competidores
+
+on:
+  schedule:
+    # Todos los lunes a las 09:00 UTC (04:00 hora Perú). Los anuncios de
+    # competidores no cambian hora a hora como el gasto propio, por eso va
+    # semanal y no junto al workflow horario del dashboard.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar Playwright y Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Leer anuncios activos de competidores (Biblioteca de Anuncios de Meta)
+        run: python scripts/fetch_benchmark.py
+
+      - name: Guardar los datos actualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add benchmark_data.json
+          git diff --staged --quiet || git commit -m "Actualiza benchmark de competidores"
+          git push
