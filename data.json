@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-02T00:55:33.191841+00:00",
+  "updated_at": "2026-09-02T02:56:35.457360+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 94,
+  "total_leads": 95,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -137,6 +137,10 @@
     {
       "date": "2026-09-01",
       "count": 6
+    },
+    {
+      "date": "2026-09-02",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -157,7 +161,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 6,
+      "leads": 7,
       "goal": 74.0,
       "is_partial": false
     }
@@ -202,19 +206,29 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 6,
+  "current_month_leads": 7,
   "current_month_label": "September 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 90,
   "leads_detail": [
+    {
+      "name": "Bryan",
+      "email": "ryfcontactcenter@gmail.com",
+      "company": "R&F Contact Center SAC",
+      "created_date": "2026-09-02",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
     {
       "name": "Christian Christian",
       "email": "christiaanjbb@gmail.com",
@@ -1168,7 +1182,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 5
     },
     {
       "label": "Reunión Agendadas",
