@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-02T02:56:35.457360+00:00",
+  "updated_at": "2026-09-02T07:43:24.662113+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 95,
+  "total_leads": 97,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -140,7 +140,7 @@
     },
     {
       "date": "2026-09-02",
-      "count": 1
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -161,7 +161,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 7,
+      "leads": 9,
       "goal": 74.0,
       "is_partial": false
     }
@@ -206,13 +206,13 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 8,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 7,
+  "current_month_leads": 9,
   "current_month_label": "September 2026",
-  "current_week_leads": 8,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -223,6 +223,26 @@
       "name": "Bryan",
       "email": "ryfcontactcenter@gmail.com",
       "company": "R&F Contact Center SAC",
+      "created_date": "2026-09-02",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Fernando OE",
+      "email": "fer9918orbegoso@gmail.com",
+      "company": "CASTILIAN",
+      "created_date": "2026-09-02",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Sara Nahir Alonzo Ortiz",
+      "email": "saraalonzoortiz25@gmail.com",
+      "company": "LikeMundos",
       "created_date": "2026-09-02",
       "has_deal": false,
       "deal_stage": null,
@@ -1182,7 +1202,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 7
     },
     {
       "label": "Reunión Agendadas",
