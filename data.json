@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T21:33:47.919398+00:00",
+  "updated_at": "2026-09-03T23:46:50.452121+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -221,7 +221,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 99,
+  "leads_with_deal": 102,
   "leads_detail": [
     {
       "name": "Carlos López",
@@ -248,30 +248,30 @@
       "email": "rodolfo.montoya@oymgroup.com",
       "company": "O&M SERVICIOS COMERCIALES SAC",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "O&M SERVICIOS COMERCIALES SAC",
+      "deal_note": "No llegó al botón de wsp. Es una empresa de tercerización de servicios comerciales y captación de clientes (confirmado por fuentes públicas)"
     },
     {
       "name": "Isaac Herrera Villafuerte",
       "email": "equipos.naquinarias.imka@gmail.com",
       "company": "EQUIPOS MAQUINARIAS INDUSTRIALES IM KA EIRL",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "EQUIPOS MAQUINARIAS INDUSTRIALES IM KA EIRL",
+      "deal_note": "No llegó al botón de wsp"
     },
     {
       "name": "Edward Roberto Serrano Milla",
       "email": "edsemill69@gmail.com",
       "company": "10062345301",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Edward Roberto Serrano Milla",
+      "deal_note": "No llegó al botón de wsp"
     },
     {
       "name": "Ruben Molina barraza",
@@ -1282,15 +1282,15 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 20
-    },
-    {
-      "label": "Sin negocio",
-      "count": 6
+      "count": 23
     },
     {
       "label": "Reunión Agendadas",
       "count": 5
+    },
+    {
+      "label": "Sin negocio",
+      "count": 3
     }
   ]
 }
