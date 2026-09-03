@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T18:20:45.510670+00:00",
+  "updated_at": "2026-09-03T21:33:47.919398+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -221,27 +221,27 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 97,
+  "leads_with_deal": 99,
   "leads_detail": [
     {
       "name": "Carlos López",
       "email": "adheplastgerencia@gmail.com",
       "company": "Adheplast envases",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Adheplast envases",
+      "deal_note": "No llegó al botón de wsp"
     },
     {
       "name": "Amdres Reyes",
       "email": "victorandresrecaldereyes8@gmail.com",
       "company": "domcar",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Domcar",
+      "deal_note": "No llegó al botón de wsp"
     },
     {
       "name": "Rodolfo Enrique Montoya Miniza",
@@ -409,7 +409,7 @@
       "company": "Perupack",
       "created_date": "2026-08-29",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Reunión Agendadas",
       "deal_name": "Perupack ",
       "deal_note": null
     },
@@ -639,7 +639,7 @@
       "company": "Agroinvest Peru",
       "created_date": "2026-08-17",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Reunión Agendadas",
       "deal_name": "Agroinvest Perú",
       "deal_note": null
     },
@@ -1274,7 +1274,7 @@
       "deal_note": "No responde después de 2 wsp de seguimiento."
     }
   ],
-  "reuniones_auto": 3,
+  "reuniones_auto": 5,
   "leads_status_breakdown": [
     {
       "label": "Descartada",
@@ -1286,11 +1286,11 @@
     },
     {
       "label": "Sin negocio",
-      "count": 8
+      "count": 6
     },
     {
       "label": "Reunión Agendadas",
-      "count": 3
+      "count": 5
     }
   ]
 }
