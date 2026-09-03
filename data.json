@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-03T00:56:43.231584+00:00",
+  "updated_at": "2026-09-03T05:32:34.743181+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 98,
+  "total_leads": 101,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -141,6 +141,10 @@
     {
       "date": "2026-09-02",
       "count": 4
+    },
+    {
+      "date": "2026-09-03",
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -161,7 +165,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 10,
+      "leads": 13,
       "goal": 74.0,
       "is_partial": false
     }
@@ -206,19 +210,49 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 11,
+      "leads": 14,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 10,
+  "current_month_leads": 13,
   "current_month_label": "September 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 14,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 97,
   "leads_detail": [
+    {
+      "name": "Carlos López",
+      "email": "adheplastgerencia@gmail.com",
+      "company": "Adheplast envases",
+      "created_date": "2026-09-03",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Amdres Reyes",
+      "email": "victorandresrecaldereyes8@gmail.com",
+      "company": "domcar",
+      "created_date": "2026-09-03",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Rodolfo Enrique Montoya Miniza",
+      "email": "rodolfo.montoya@oymgroup.com",
+      "company": "O&M SERVICIOS COMERCIALES SAC",
+      "created_date": "2026-09-03",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
     {
       "name": "Bryan",
       "email": "ryfcontactcenter@gmail.com",
@@ -1211,12 +1245,12 @@
       "count": 20
     },
     {
-      "label": "Reunión Agendadas",
-      "count": 3
+      "label": "Sin negocio",
+      "count": 4
     },
     {
-      "label": "Sin negocio",
-      "count": 1
+      "label": "Reunión Agendadas",
+      "count": 3
     }
   ]
 }
