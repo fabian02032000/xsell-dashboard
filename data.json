@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T23:46:50.452121+00:00",
+  "updated_at": "2026-09-04T02:58:32.676072+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -221,7 +221,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 102,
+  "leads_with_deal": 104,
   "leads_detail": [
     {
       "name": "Carlos López",
@@ -278,9 +278,9 @@
       "email": "molinabarrazaruben@gmail.com",
       "company": "Oro azul",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Oro azul",
       "deal_note": null
     },
     {
@@ -288,9 +288,9 @@
       "email": "jacobgalarzamorales18@gmail.com",
       "company": "jasumy",
       "created_date": "2026-09-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Jasumy ",
       "deal_note": null
     },
     {
@@ -439,9 +439,9 @@
       "company": "SERVAL",
       "created_date": "2026-08-29",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Viviana Fisioterapeuta ",
-      "deal_note": null
+      "deal_note": "No califica. Indica que llegan sus clientes a través de referidos. Publico adulto mayor"
     },
     {
       "name": "JDaniel",
@@ -1278,11 +1278,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 74
+      "count": 75
     },
     {
       "label": "Prospectos Contactados",
-      "count": 23
+      "count": 24
     },
     {
       "label": "Reunión Agendadas",
@@ -1290,7 +1290,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ]
 }
