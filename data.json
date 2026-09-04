@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-04T12:30:32.468180+00:00",
+  "updated_at": "2026-09-04T16:43:39.745355+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 107,
+  "total_leads": 108,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -148,7 +148,7 @@
     },
     {
       "date": "2026-09-04",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -169,7 +169,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 19,
+      "leads": 20,
       "goal": 74.0,
       "is_partial": false
     }
@@ -214,13 +214,13 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 20,
+      "leads": 21,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 19,
+  "current_month_leads": 20,
   "current_month_label": "September 2026",
-  "current_week_leads": 20,
+  "current_week_leads": 21,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -241,6 +241,16 @@
       "name": "Daniela Mori Bertetti",
       "email": "danielamori2015@gmail.com",
       "company": "Iseia Swim",
+      "created_date": "2026-09-04",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Gonzalo Car",
+      "email": "gcarrion@mopal.com.pe",
+      "company": "Grupo Mopal - Toyota e Hino",
       "created_date": "2026-09-04",
       "has_deal": false,
       "deal_stage": null,
@@ -1314,7 +1324,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 4
     }
   ]
 }
