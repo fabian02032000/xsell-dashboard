@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-06T10:17:11.587546+00:00",
+  "updated_at": "2026-09-06T13:56:00.715829+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 111,
+  "total_leads": 112,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -156,7 +156,7 @@
     },
     {
       "date": "2026-09-06",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -177,7 +177,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 23,
+      "leads": 24,
       "goal": 74.0,
       "is_partial": false
     }
@@ -222,13 +222,13 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 24,
+      "leads": 25,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 23,
+  "current_month_leads": 24,
   "current_month_label": "September 2026",
-  "current_week_leads": 24,
+  "current_week_leads": 25,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -249,6 +249,16 @@
       "name": "Chávez rivera Willian edu",
       "email": "manufacturas.brayan73@gmail.com",
       "company": "rivera brand corp.",
+      "created_date": "2026-09-06",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
+    {
+      "name": "Julio Centeno",
+      "email": "ventas@antys-uniformes.com",
+      "company": "Antys Uniformes",
       "created_date": "2026-09-06",
       "has_deal": false,
       "deal_stage": null,
@@ -1358,7 +1368,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 7
+      "count": 8
     },
     {
       "label": "Reunión Agendadas",
