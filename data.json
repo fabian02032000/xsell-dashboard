@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-06T00:34:08.348885+00:00",
+  "updated_at": "2026-09-06T05:30:07.724950+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 109,
+  "total_leads": 110,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -153,6 +153,10 @@
     {
       "date": "2026-09-05",
       "count": 1
+    },
+    {
+      "date": "2026-09-06",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -173,7 +177,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 21,
+      "leads": 22,
       "goal": 74.0,
       "is_partial": false
     }
@@ -218,19 +222,29 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 22,
+      "leads": 23,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 21,
+  "current_month_leads": 22,
   "current_month_label": "September 2026",
-  "current_week_leads": 22,
+  "current_week_leads": 23,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 104,
   "leads_detail": [
+    {
+      "name": "Christian Diaz",
+      "email": "christian.diaz448@hotmail.com",
+      "company": "Marxo",
+      "created_date": "2026-09-06",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
     {
       "name": "Pedro Valdez",
       "email": "pvaldezcabrera@gmail.com",
@@ -1334,7 +1348,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 6
     },
     {
       "label": "Reunión Agendadas",
