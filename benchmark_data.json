@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-01T00:00:00Z",
-  "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera. Este primer dato se armó a mano el 1 de septiembre de 2026 revisando la Biblioteca de Anuncios directamente; desde el próximo lunes lo actualiza solo el robot (fetch_benchmark.py, vía GitHub Actions).",
+  "generated_at": "2026-09-07T14:39:31.254034Z",
+  "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
       "id": "pacs",
@@ -8,22 +8,48 @@
       "country": "AR",
       "country_label": "Argentina",
       "profile": "Ayuda a empresas B2B a conseguir reuniones y cerrar más ventas, con un método propio (\"anti-ghosting\", seguimiento, manejo de objeciones).",
-      "active_ads_count": 49,
-      "search_match_count": 49,
-      "oldest_active_since": "2025-10-07",
-      "newest_active_since": "2026-08-24",
+      "active_ads_count": 24,
+      "search_match_count": 25,
+      "oldest_active_since": "2026-01-27",
+      "newest_active_since": "2026-09-07",
       "sample_ads": [
-        { "since": "2026-08-24", "text": "Un aliento para los que sufrimos las ventas... De todo lo que implica emprender, lo que más cuesta es vender." },
-        { "since": "2026-08-17", "text": "Si aún no tienes un método que lleve a tu negocio a conseguir reuniones con marcas gigantes. Ahora es momento de implementar PACS." },
-        { "since": "2026-08-20", "text": "El síndrome de la venta serrucho... qué cosa dura. Ese sube y baja de ingresos que te arruina la cabeza (y la caja)." },
-        { "since": "2026-03-19", "text": "La n°1 táctica Anti-Ghosting. Rompe más hielos que cualquier barco de la Antártida." },
-        { "since": "2026-01-27", "text": "Conoce el método de 8 pasos para aumentar tus reuniones con marcas grandes, sin hacer spam." }
+        {
+          "since": "2026-03-19",
+          "text": "La n1 táctica Anti-Ghosting."
+        },
+        {
+          "since": "2026-03-20",
+          "text": "La n1 táctica Anti-Ghosting."
+        },
+        {
+          "since": "2026-01-27",
+          "text": "El síndrome de la venta serrucho... que cosa dura..."
+        },
+        {
+          "since": "2026-06-03",
+          "text": "Do your F#@! Follow up"
+        },
+        {
+          "since": "2026-01-27",
+          "text": "Un aliento para los que sufrimos las ventas..."
+        },
+        {
+          "since": "2026-01-27",
+          "text": "Emprender es para locos."
+        }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-01",
+      "last_checked_ok": "2026-09-07",
       "status": "ok",
       "history": [
-        { "date": "2026-09-01", "active_ads_count": 49 }
+        {
+          "date": "2026-09-01",
+          "active_ads_count": 49
+        },
+        {
+          "date": "2026-09-07",
+          "active_ads_count": 24
+        }
       ]
     },
     "enbi": {
@@ -32,21 +58,48 @@
       "country": "CO",
       "country_label": "Colombia (alcance regional)",
       "profile": "Agencia de prospección B2B: agenda reuniones calificadas para empresas de tecnología/software.",
-      "active_ads_count": 13,
-      "search_match_count": 13,
-      "oldest_active_since": "2026-06-21",
-      "newest_active_since": "2026-08-09",
+      "active_ads_count": 9,
+      "search_match_count": 16,
+      "oldest_active_since": "2026-06-20",
+      "newest_active_since": "2026-09-06",
       "sample_ads": [
-        { "since": "2026-08-09", "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos? Eso puede ser el mayor freno para crecer." },
-        { "since": "2026-08-03", "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones." },
-        { "since": "2026-07-08", "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones." },
-        { "since": "2026-06-21", "text": "EMPRESAS DE DESARROLLO DE SOFTWARE A LA MEDIDA CON +5 AÑOS DE ANTIGÜEDAD! Llenamos tu calendario con reuniones de alto valor." }
+        {
+          "since": "2026-08-03",
+          "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-08-09",
+          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+        },
+        {
+          "since": "2026-08-15",
+          "text": "0:00 / 0:53"
+        },
+        {
+          "since": "2026-06-21",
+          "text": "EMPRESAS DE DESARROLLO DE SOFTWARE A LA MEDIDA CON +5 AÑOS DE ANTIGUEDAD❗"
+        },
+        {
+          "since": "2026-07-08",
+          "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-09-01",
+          "text": "¿Sos Ads Manager de Meta con experiencia real?"
+        }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-01",
+      "last_checked_ok": "2026-09-07",
       "status": "ok",
       "history": [
-        { "date": "2026-09-01", "active_ads_count": 13 }
+        {
+          "date": "2026-09-01",
+          "active_ads_count": 13
+        },
+        {
+          "date": "2026-09-07",
+          "active_ads_count": 9
+        }
       ]
     },
     "aurum": {
@@ -60,14 +113,27 @@
       "oldest_active_since": "2026-03-05",
       "newest_active_since": "2026-03-05",
       "sample_ads": [
-        { "since": "2026-03-05", "text": "Seu negócio pode vender mais sem dor de cabeça. Conte com nosso time comercial terceirizado especializado em acelerar resultados." },
-        { "since": "2026-03-05", "text": "Atuamos lado a lado com sua empresa para conectar seu negócio a leads qualificados e maximizar conversões." }
+        {
+          "since": "2026-03-05",
+          "text": "Seu negócio pode vender mais sem dor de cabeça. Conte com nosso time comercial terceirizado especializado em acelerar resultados."
+        },
+        {
+          "since": "2026-03-05",
+          "text": "Atuamos lado a lado com sua empresa para conectar seu negócio a leads qualificados e maximizar conversões."
+        }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&q=Aurum%20Sales&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-01",
+      "last_checked_ok": "2026-09-07",
       "status": "ok",
       "history": [
-        { "date": "2026-09-01", "active_ads_count": 2 }
+        {
+          "date": "2026-09-01",
+          "active_ads_count": 2
+        },
+        {
+          "date": "2026-09-07",
+          "active_ads_count": 2
+        }
       ]
     }
   }
