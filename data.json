@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-07T14:47:23.841788+00:00",
+  "updated_at": "2026-09-07T18:59:28.534420+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 114,
+  "total_leads": 115,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -157,6 +157,10 @@
     {
       "date": "2026-09-06",
       "count": 5
+    },
+    {
+      "date": "2026-09-07",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -177,7 +181,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 26,
+      "leads": 27,
       "goal": 74.0,
       "is_partial": false
     }
@@ -228,27 +232,37 @@
     {
       "week_start": "2026-09-07",
       "week_end": "2026-09-13",
-      "leads": 0,
+      "leads": 1,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 26,
+  "current_month_leads": 27,
   "current_month_label": "September 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 1,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 104,
+  "leads_with_deal": 113,
   "leads_detail": [
+    {
+      "name": "Carles Ortiz Urquiaga",
+      "email": "innovacion360.info@gmail.com",
+      "company": "Ortiz proveedores peru",
+      "created_date": "2026-09-07",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null
+    },
     {
       "name": "Christian Diaz",
       "email": "christian.diaz448@hotmail.com",
       "company": "Marxo",
       "created_date": "2026-09-06",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Marxo",
       "deal_note": null
     },
     {
@@ -256,9 +270,9 @@
       "email": "manufacturas.brayan73@gmail.com",
       "company": "rivera brand corp.",
       "created_date": "2026-09-06",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Rivera Brand corp.",
       "deal_note": null
     },
     {
@@ -266,9 +280,9 @@
       "email": "ventas@antys-uniformes.com",
       "company": "Antys Uniformes",
       "created_date": "2026-09-06",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Antys Uniformes ",
       "deal_note": null
     },
     {
@@ -276,9 +290,9 @@
       "email": "wildervasquezchavez1509@gmail.com",
       "company": "Independiente",
       "created_date": "2026-09-06",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Independiente",
       "deal_note": null
     },
     {
@@ -286,9 +300,9 @@
       "email": "farias@alvcom.com.pe",
       "company": "Sef solution sac",
       "created_date": "2026-09-06",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Alvcom - Sef solution sac",
       "deal_note": null
     },
     {
@@ -296,9 +310,9 @@
       "email": "pvaldezcabrera@gmail.com",
       "company": "VClean",
       "created_date": "2026-09-05",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "VClean",
       "deal_note": null
     },
     {
@@ -306,9 +320,9 @@
       "email": "jusjs@whdj.com",
       "company": "Emprendedor Global",
       "created_date": "2026-09-04",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Emprendedor Global",
       "deal_note": null
     },
     {
@@ -316,9 +330,9 @@
       "email": "danielamori2015@gmail.com",
       "company": "Iseia Swim",
       "created_date": "2026-09-04",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Iseia Swim",
       "deal_note": null
     },
     {
@@ -326,9 +340,9 @@
       "email": "gcarrion@mopal.com.pe",
       "company": "Grupo Mopal - Toyota e Hino",
       "created_date": "2026-09-04",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "AUTOMOTORES MOPAL S.A.",
       "deal_note": null
     },
     {
@@ -1390,15 +1404,15 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 24
-    },
-    {
-      "label": "Sin negocio",
-      "count": 10
+      "count": 33
     },
     {
       "label": "Reunión Agendadas",
       "count": 5
+    },
+    {
+      "label": "Sin negocio",
+      "count": 2
     }
   ]
 }
