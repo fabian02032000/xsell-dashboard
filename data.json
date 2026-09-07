@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T23:28:52.597668+00:00",
+  "updated_at": "2026-09-07T02:57:37.925603+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -224,11 +224,17 @@
       "week_end": "2026-09-06",
       "leads": 27,
       "goal": 17.3
+    },
+    {
+      "week_start": "2026-09-07",
+      "week_end": "2026-09-13",
+      "leads": 0,
+      "goal": 17.3
     }
   ],
   "current_month_leads": 26,
   "current_month_label": "September 2026",
-  "current_week_leads": 27,
+  "current_week_leads": 0,
   "closed_deals": {
     "count": 0,
     "available": true
