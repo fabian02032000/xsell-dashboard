@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T00:06:20.378378+00:00",
+  "updated_at": "2026-09-08T05:36:15.863545+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -351,9 +351,9 @@
       "company": "Adheplast envases",
       "created_date": "2026-09-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Adheplast envases",
-      "deal_note": "No llegó al botón de wsp"
+      "deal_note": "Nunca respondió el Wsp . No llegó al botón de wsp."
     },
     {
       "name": "Amdres Reyes",
@@ -391,9 +391,9 @@
       "company": "10062345301",
       "created_date": "2026-09-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Edward Roberto Serrano Milla",
-      "deal_note": "No llegó al botón de wsp"
+      "deal_note": "Nunca respondió wsp y no llegó al botón de wsp en la pauta"
     },
     {
       "name": "Ruben Molina barraza",
@@ -401,9 +401,9 @@
       "company": "Oro azul",
       "created_date": "2026-09-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Oro azul",
-      "deal_note": null
+      "deal_note": "Quiere talleres para su equipo."
     },
     {
       "name": "Jacob Galarza Morales",
@@ -411,9 +411,9 @@
       "company": "jasumy",
       "created_date": "2026-09-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Jasumy ",
-      "deal_note": null
+      "deal_note": "No es nuestro core, empresa informal, desea asesoria para la formalización."
     },
     {
       "name": "Bryan",
@@ -441,9 +441,9 @@
       "company": "LikeMundos",
       "created_date": "2026-09-02",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "LikeMundos",
-      "deal_note": null
+      "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta"
     },
     {
       "name": "Pedro",
@@ -1400,11 +1400,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 91
+      "count": 96
     },
     {
       "label": "Prospectos Contactados",
-      "count": 16
+      "count": 11
     },
     {
       "label": "Reunión Agendadas",
