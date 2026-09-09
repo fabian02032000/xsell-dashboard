@@ -60,6 +60,62 @@ REUNION_MATCH_KEYWORDS = [
     if k.strip()
 ]
 
+# "Nombre interno" (internal name) de los 2 campos que Ingrid tipifica a mano
+# en el Negocio: Estadio del Lead y Nivel de Urgencia.
+#
+# La cuenta de HubSpot es del plan gratuito (10 propiedades personalizadas en
+# total para toda la cuenta) y ya estaba al límite, así que en vez de crear 2
+# campos NUEVOS (lo que hubiera hecho falta) reutilizamos 2 que ya existían
+# y que verificamos que NADIE está usando en ningún Negocio de la cuenta:
+#   - "etapa_final" (Etapa Final): campo personalizado, desplegable, 0 de
+#     2,096 negocios lo tenían con valor. Ahora se reetiqueta como
+#     "Estadio del Lead" con las 4 opciones nuevas (Semilla / En Crecimiento /
+#     Consolidado / Alto Nivel).
+#   - "hs_priority" (Priority): campo que YA viene incluido gratis en
+#     cualquier cuenta de HubSpot (no cuenta contra el límite de 10), también
+#     0 de 2,096 negocios lo tenían con valor. Se usa para Nivel de Urgencia.
+# Si en el futuro cambias de plan y prefieres campos propios con esos nombres,
+# solo hay que ajustar estas 2 líneas (o las variables de entorno).
+ESTADIO_LEAD_PROPERTY = os.environ.get("ESTADIO_LEAD_PROPERTY", "etapa_final")
+NIVEL_URGENCIA_PROPERTY = os.environ.get("NIVEL_URGENCIA_PROPERTY", "hs_priority")
+
+# HubSpot guarda, para cada opción de una lista desplegable, un "valor interno"
+# que no siempre es idéntico al texto que ve Ingrid (puede quedar en minúsculas,
+# con guiones bajos, etc.). Este mapa traduce lo que sea que llegue de HubSpot
+# al texto exacto que usa el dashboard, para que nunca se pierda un dato por
+# una diferencia de mayúsculas o espacios.
+ESTADIO_LEAD_LABELS = {
+    "semilla": "Semilla",
+    "en_crecimiento": "En Crecimiento",
+    "consolidado": "Consolidado",
+    "alto_nivel": "Alto Nivel",
+}
+# "hs_priority" es un campo estándar de HubSpot: sus 3 opciones internas
+# siempre son low/medium/high, incluso si logras cambiarles la etiqueta
+# visible a Bajo/Medio/Alto en HubSpot (puede que esa parte esté bloqueada
+# por ser un campo del sistema). Por eso este mapa cubre ambos casos: pase lo
+# que pase en HubSpot, el dashboard siempre va a mostrar Bajo/Medio/Alto.
+NIVEL_URGENCIA_LABELS = {
+    "low": "Bajo",
+    "medium": "Medio",
+    "high": "Alto",
+    "bajo": "Bajo",
+    "medio": "Medio",
+    "alto": "Alto",
+}
+
+
+def normalize_enum(raw_value, label_map):
+    """Normaliza el valor crudo que devuelve HubSpot para una lista
+    desplegable al texto exacto que espera el dashboard. Si no reconoce el
+    valor (por ejemplo, alguien agregó una opción nueva en HubSpot que no está
+    en este mapa), lo deja tal cual en vez de perderlo — así se nota en el
+    dashboard que hay que agregarlo aquí."""
+    if not raw_value:
+        return None
+    key = raw_value.strip().lower().replace(" ", "_").replace("-", "_")
+    return label_map.get(key, raw_value)
+
 
 def strip_accents(text):
     return "".join(
@@ -76,6 +132,8 @@ SOURCE_PROPERTIES = [
     "firstname",
     "lastname",
     "company",
+    "phone",
+    "mobilephone",
     "hs_analytics_source",
     "hs_analytics_source_data_1",
     "hs_analytics_source_data_2",
@@ -229,12 +287,17 @@ def fetch_contact_deal_status(contact_ids, stage_labels):
 
         all_deal_ids = sorted({str(d) for ids in contact_to_deal_ids.values() for d in ids})
 
-        # 2) Detalle de cada negocio (etapa, nombre, fecha de creación)
+        # 2) Detalle de cada negocio (etapa, nombre, fecha de creación, y la
+        # tipificación manual de Ingrid: Estadio del Lead y Nivel de Urgencia)
         deal_info = {}
+        deal_properties = [
+            "dealname", "dealstage", "createdate",
+            ESTADIO_LEAD_PROPERTY, NIVEL_URGENCIA_PROPERTY,
+        ]
         for batch in chunked(all_deal_ids, 100):
             body = {
                 "inputs": [{"id": did} for did in batch],
-                "properties": ["dealname", "dealstage", "createdate"],
+                "properties": deal_properties,
             }
             resp = hubspot_post("/crm/v3/objects/deals/batch/read", body)
             for d in resp.get("results", []):
@@ -254,6 +317,8 @@ def fetch_contact_deal_status(contact_ids, stage_labels):
                 "deal_id": best_id,
                 "deal_name": best.get("dealname"),
                 "stage_label": stage_labels.get(stage_id, stage_id),
+                "estadio_lead": normalize_enum(best.get(ESTADIO_LEAD_PROPERTY), ESTADIO_LEAD_LABELS),
+                "nivel_urgencia": normalize_enum(best.get(NIVEL_URGENCIA_PROPERTY), NIVEL_URGENCIA_LABELS),
             }
     except Exception as e:
         print(f"AVISO: no se pudo revisar el estado de negocios por lead: {e}", file=sys.stderr)
@@ -448,12 +513,15 @@ def main():
         leads_detail.append({
             "name": full_name or "(sin nombre)",
             "email": props.get("email") or "(sin correo)",
+            "phone": props.get("phone") or props.get("mobilephone") or None,
             "company": props.get("company") or "(sin empresa)",
             "created_date": createdate[:10] if createdate else None,
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
             "deal_name": status.get("deal_name") if status else None,
             "deal_note": notes_by_deal.get(status.get("deal_id")) if status else None,
+            "estadio_lead": status.get("estadio_lead") if status else None,
+            "nivel_urgencia": status.get("nivel_urgencia") if status else None,
         })
     # Más recientes primero
     leads_detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
