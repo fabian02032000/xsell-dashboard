@@ -242,7 +242,7 @@
   <section>
     <div class="section-head">
       <h2>Filtrar por rango de fechas</h2>
-      <span class="hint">Aplica a "Registros por día", "Gasto diario" y "Estado de cada registro" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
+      <span class="hint">Aplica a "Registros por día", "Gasto diario", "Estado de cada registro" y "Distribución de estado de registros" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
     </div>
     <div class="chart-card">
       <div class="date-filter-bar">
@@ -429,7 +429,7 @@
   <section>
     <div class="section-head">
       <h2>Distribución de estado de registros</h2>
-      <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot</span>
+      <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot — se ajusta al mes/rango de fechas elegido en "Registros por día", más abajo</span>
     </div>
     <div class="chart-card">
       <div class="status-dist-bar" id="statusDistBar"></div>
@@ -901,7 +901,7 @@
     drawFunnel(data, funnelCfg);
 
     // ---- Distribución de estado de registros ----
-    drawStatusDistribution(data.leads_status_breakdown || []);
+    // drawStatusDistribution(data.leads_status_breakdown || []); // ahora se dibuja en applyDateRange() via computeStatusBreakdown() para respetar el filtro de fecha
 
     // ---- Estadio del Lead / Nivel de Urgencia (parte del embudo, sin filtro de fecha) ----
     drawTaggedDistribution('estadioDistBar', 'estadioDistLegend',
@@ -1006,6 +1006,21 @@
 
     const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
     drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
+    drawStatusDistribution(computeStatusBreakdown(filteredLeads));
+  }
+
+    // Recalcula "Distribución de estado de registros" a partir de los registros
+    // ya filtrados por el rango de fechas seleccionado. Misma lógica que
+    // leads_status_breakdown en fetch_hubspot.py (Python), pero en el cliente.
+    function computeStatusBreakdown(leads){
+          const counts = {};
+      (leads || []).forEach(l => {
+        const label = (l.has_deal && l.deal_stage) ? l.deal_stage : 'Sin negocio';
+  counts[label] = (counts[label] || 0) + 1;
+  });
+  return Object.entries(counts)
+  .map(([label, count]) => ({ label, count }))
+  .sort((a, b) => b.count - a.count);
   }
 
   function drawCampaignsTable(campaignsTotal, campaignsMonth){
