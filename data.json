@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T15:08:19.108730+00:00",
+  "updated_at": "2026-09-09T15:38:00.600206+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -251,7 +251,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 113,
+  "leads_with_deal": 116,
   "leads_detail": [
     {
       "name": "Raul Martinez",
@@ -259,9 +259,9 @@
       "phone": "+51901783600",
       "company": "Aquyra moda",
       "created_date": "2026-09-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Aquyra moda",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -272,9 +272,9 @@
       "phone": "+51968540794",
       "company": "solucionastack",
       "created_date": "2026-09-08",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Solucionastack",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -285,9 +285,9 @@
       "phone": "+51934251817",
       "company": "Ortiz proveedores peru",
       "created_date": "2026-09-07",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Ortiz proveedores peru",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -1783,7 +1783,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 11
+      "count": 14
     },
     {
       "label": "Reunión Agendadas",
@@ -1791,7 +1791,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 1
     }
   ]
 }
