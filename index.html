@@ -96,6 +96,7 @@
   .status-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:600; white-space:nowrap;}
   .status-pill.yes{color:var(--good); background:rgba(46,204,113,0.12); border:1px solid rgba(46,204,113,0.4);}
   .status-pill.no{color:var(--text-muted); background:rgba(156,147,181,0.12); border:1px solid rgba(156,147,181,0.3);}
+  .tag-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:700; white-space:nowrap;}
   .scroll-y{max-height:420px; overflow-y:auto;}
   .table-name{font-weight:600; color:var(--text-primary);}
   .table-sub{color:var(--text-muted); font-size:12px;}
@@ -405,6 +406,28 @@
 
   <section>
     <div class="section-head">
+      <h2>Estadio del Lead</h2>
+      <span class="hint">Qué tan avanzado está el negocio del lead — tipificación manual de Ingrid en HubSpot</span>
+    </div>
+    <div class="chart-card">
+      <div class="status-dist-bar" id="estadioDistBar"></div>
+      <div class="status-dist-legend" id="estadioDistLegend"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Nivel de Urgencia</h2>
+      <span class="hint">Qué tan necesitado está el lead del servicio — tipificación manual de Ingrid en HubSpot</span>
+    </div>
+    <div class="chart-card">
+      <div class="status-dist-bar" id="urgenciaDistBar"></div>
+      <div class="status-dist-legend" id="urgenciaDistLegend"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
       <h2>Distribución de estado de registros</h2>
       <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot</span>
     </div>
@@ -422,7 +445,7 @@
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Estado</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Nota de Ingrid</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Teléfono</th><th>Estado</th><th>Estadio</th><th>Urgencia</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Nota de Ingrid</th></tr></thead>
           <tbody id="leadsTableBody"></tbody>
         </table>
       </div>
@@ -879,6 +902,12 @@
 
     // ---- Distribución de estado de registros ----
     drawStatusDistribution(data.leads_status_breakdown || []);
+
+    // ---- Estadio del Lead / Nivel de Urgencia (parte del embudo, sin filtro de fecha) ----
+    drawTaggedDistribution('estadioDistBar', 'estadioDistLegend',
+      computeOrderedBreakdown(data.leads_detail || [], 'estadio_lead', ESTADIO_ORDER), ESTADIO_COLORS);
+    drawTaggedDistribution('urgenciaDistBar', 'urgenciaDistLegend',
+      computeOrderedBreakdown(data.leads_detail || [], 'nivel_urgencia', URGENCIA_ORDER), URGENCIA_COLORS);
 
     // ---- Milestones (lista completa, no depende del filtro de fechas) ----
     const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
@@ -1444,7 +1473,7 @@
     hint.textContent = hintText;
 
     if (!leads.length){
-      body.innerHTML = `<tr><td colspan="8" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="11" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
       return;
     }
     body.innerHTML = leads.map(l => {
@@ -1456,13 +1485,18 @@
       const noteHtml = l.deal_note
         ? escapeHtml(l.deal_note).replace(/\n/g, '<br>')
         : '<span class="table-sub">—</span>';
+      const estadioHtml = tagPillHtml(l.estadio_lead, ESTADIO_COLORS);
+      const urgenciaHtml = tagPillHtml(l.nivel_urgencia, URGENCIA_COLORS);
       return `
         <tr>
           <td>${l.created_date || '—'}</td>
           <td class="table-name">${l.name || '(sin nombre)'}</td>
           <td>${l.company || '(sin empresa)'}</td>
           <td>${l.email || '(sin correo)'}</td>
+          <td>${l.phone ? escapeHtml(l.phone) : '<span class="table-sub">—</span>'}</td>
           <td>${statusHtml}</td>
+          <td>${estadioHtml}</td>
+          <td>${urgenciaHtml}</td>
           <td>${l.adset_name ? escapeHtml(l.adset_name) : '<span class="table-sub">—</span>'}</td>
           <td>${l.ad_name ? escapeHtml(l.ad_name) : '<span class="table-sub">—</span>'}</td>
           <td class="note-cell">${noteHtml}</td>
@@ -1629,6 +1663,94 @@
 
     bar.innerHTML = withColor.map(s => `
       <div class="status-dist-seg" style="width:${(s.count/total)*100}%; background:${s.color};" title="${s.label}: ${s.count} (${s.pct}%)">
+        ${s.pct >= 8 ? s.pct + '%' : ''}
+      </div>`).join('');
+
+    legend.innerHTML = withColor.map(s => `
+      <span class="key"><span class="swatch" style="background:${s.color}"></span>${s.label} — ${fmt(s.count)} (${s.pct}%)</span>
+    `).join('');
+  }
+
+  // ---- Estadio del Lead / Nivel de Urgencia (tipificación manual de Ingrid) ----
+  // Orden fijo: para "Estadio" y "Urgencia" el orden SÍ importa (van de menos a
+  // más), así que nunca se ordenan por cantidad como el resto de estados.
+  const ESTADIO_ORDER = ['Semilla', 'En Crecimiento', 'Consolidado', 'Alto Nivel'];
+  const ESTADIO_COLORS = {
+    'Semilla':        '#E4D4F7',
+    'En Crecimiento': '#B98AE8',
+    'Consolidado':    '#8B3DD1',
+    'Alto Nivel':     '#5D17A0',
+  };
+  const URGENCIA_ORDER = ['Bajo', 'Medio', 'Alto'];
+  const URGENCIA_COLORS = {
+    'Bajo':  goodColor,
+    'Medio': warnColor,
+    'Alto':  critColor,
+  };
+  const SIN_CLASIFICAR_COLOR = '#4A4560';
+  const SIN_CLASIFICAR_LABEL = 'Sin clasificar';
+
+  function hexToRgb(hex){
+    const c = hex.replace('#', '');
+    const full = c.length === 3 ? c.split('').map(ch => ch + ch).join('') : c;
+    return {
+      r: parseInt(full.substr(0, 2), 16),
+      g: parseInt(full.substr(2, 2), 16),
+      b: parseInt(full.substr(4, 2), 16),
+    };
+  }
+  function hexToRgba(hex, alpha){
+    const { r, g, b } = hexToRgb(hex);
+    return `rgba(${r},${g},${b},${alpha})`;
+  }
+  // Texto oscuro sobre colores claros, texto blanco sobre colores oscuros —
+  // para que el % siempre se lea bien encima de cualquier tramo de la barra.
+  function idealTextColor(hex){
+    const { r, g, b } = hexToRgb(hex);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminance > 0.6 ? '#0c0716' : '#ffffff';
+  }
+
+  // Cuenta los leads por categoría, en el orden fijo dado, y agrupa el resto
+  // (campo vacío, o con un valor que ya no está en la lista) como "Sin clasificar".
+  function computeOrderedBreakdown(leads, field, order){
+    const counts = {};
+    order.forEach(k => { counts[k] = 0; });
+    let sinClasificar = 0;
+    leads.forEach(l => {
+      const v = l[field];
+      if (v && Object.prototype.hasOwnProperty.call(counts, v)) counts[v]++;
+      else sinClasificar++;
+    });
+    const rows = order.map(k => ({ label: k, count: counts[k] }));
+    rows.push({ label: SIN_CLASIFICAR_LABEL, count: sinClasificar });
+    return rows;
+  }
+
+  function tagPillHtml(value, colorMap){
+    if (!value) return '<span class="table-sub">—</span>';
+    const color = colorMap[value] || SIN_CLASIFICAR_COLOR;
+    return `<span class="tag-pill" style="color:${color}; background:${hexToRgba(color, 0.16)}; border:1px solid ${hexToRgba(color, 0.45)};">${escapeHtml(value)}</span>`;
+  }
+
+  function drawTaggedDistribution(barId, legendId, breakdown, colorMap){
+    const bar = document.getElementById(barId);
+    const legend = document.getElementById(legendId);
+    const total = breakdown.reduce((sum, s) => sum + s.count, 0);
+    if (!total){
+      bar.innerHTML = '';
+      legend.innerHTML = `<span class="table-sub">Aún no hay leads tipificados — el equipo comercial recién está empezando a marcarlo en HubSpot.</span>`;
+      return;
+    }
+    const withColor = breakdown
+      .filter(s => s.count > 0)
+      .map(s => {
+        const color = colorMap[s.label] || SIN_CLASIFICAR_COLOR;
+        return { ...s, color, pct: Math.round((s.count / total) * 100) };
+      });
+
+    bar.innerHTML = withColor.map(s => `
+      <div class="status-dist-seg" style="width:${(s.count/total)*100}%; background:${s.color}; color:${idealTextColor(s.color)};" title="${s.label}: ${s.count} (${s.pct}%)">
         ${s.pct >= 8 ? s.pct + '%' : ''}
       </div>`).join('');
 
