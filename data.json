@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-10T22:54:37.279897+00:00",
+  "updated_at": "2026-09-10T23:43:24.502642+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 117,
+  "total_leads": 118,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -169,6 +169,10 @@
     {
       "date": "2026-09-09",
       "count": 1
+    },
+    {
+      "date": "2026-09-10",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -189,7 +193,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 29,
+      "leads": 30,
       "goal": 74.0,
       "is_partial": false
     }
@@ -240,19 +244,32 @@
     {
       "week_start": "2026-09-07",
       "week_end": "2026-09-13",
-      "leads": 3,
+      "leads": 4,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 29,
+  "current_month_leads": 30,
   "current_month_label": "September 2026",
-  "current_week_leads": 3,
+  "current_week_leads": 4,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 116,
   "leads_detail": [
+    {
+      "name": "Alina Ricsi",
+      "email": "alina.ricsi@syscopyperu.com",
+      "phone": "+51977585828",
+      "company": "Syscopy Peru Sac",
+      "created_date": "2026-09-10",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Raul Martinez",
       "email": "ingraul294@gmail.com",
@@ -1791,7 +1808,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
