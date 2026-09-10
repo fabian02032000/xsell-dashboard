@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T18:00:39.098576+00:00",
+  "updated_at": "2026-09-10T18:05:59.770686+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -432,8 +432,8 @@
       "deal_stage": "Reunión Agendadas",
       "deal_name": "Domcar",
       "deal_note": "No llegó al botón de wsp. Coordinamos reunión no asistió. Se le realiza seguimiento para reprogramación.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Medio"
     },
     {
       "name": "Rodolfo Enrique Montoya Miniza",
@@ -445,8 +445,8 @@
       "deal_stage": "Descartada",
       "deal_name": "O&M SERVICIOS COMERCIALES SAC",
       "deal_note": "Nunca respondió. No llegó al botón de wsp. Es una empresa de tercerización de servicios comerciales y captación de clientes (confirmado por fuentes públicas)",
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Isaac Herrera Villafuerte",
