@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T14:49:25.919382+00:00",
+  "updated_at": "2026-09-10T18:00:39.098576+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -273,11 +273,11 @@
       "company": "solucionastack",
       "created_date": "2026-09-08",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Solucionastack",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "deal_note": "Busca MKT",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Carles Ortiz Urquiaga",
@@ -289,8 +289,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Ortiz proveedores peru",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Christian Diaz",
@@ -302,8 +302,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Marxo",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Chávez rivera Willian edu",
@@ -315,8 +315,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Rivera Brand corp.",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Julio Centeno",
@@ -328,8 +328,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Antys Uniformes ",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Wilder Vasquez Chavez",
@@ -341,8 +341,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Independiente",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Fernando Arias Rebolledo",
@@ -354,8 +354,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Alvcom - Sef solution sac",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Pedro Valdez",
@@ -367,8 +367,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "VClean",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Hans Kevin",
@@ -393,8 +393,8 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Iseia Swim",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Gonzalo Car",
@@ -419,8 +419,8 @@
       "deal_stage": "Descartada",
       "deal_name": "Adheplast envases",
       "deal_note": "Nunca respondió el Wsp . No llegó al botón de wsp.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Amdres Reyes",
@@ -952,8 +952,8 @@
       "deal_stage": "Reunión Agendadas",
       "deal_name": "Agroinvest Perú",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Medio"
     },
     {
       "name": "JA Fre",
@@ -1779,11 +1779,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 96
+      "count": 97
     },
     {
       "label": "Prospectos Contactados",
-      "count": 14
+      "count": 13
     },
     {
       "label": "Reunión Agendadas",
