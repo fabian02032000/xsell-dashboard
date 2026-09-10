@@ -242,7 +242,7 @@
   <section>
     <div class="section-head">
       <h2>Filtrar por rango de fechas</h2>
-      <span class="hint">Aplica a "Registros por día", "Gasto diario", "Estado de cada registro" y "Distribución de estado de registros" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
+      <span class="hint">Aplica a "Registros por día", "Gasto diario", "Estado de cada registro", "Distribución de estado de registros", "Estadio del Lead" y "Nivel de Urgencia" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
     </div>
     <div class="chart-card">
       <div class="date-filter-bar">
@@ -407,7 +407,7 @@
   <section>
     <div class="section-head">
       <h2>Estadio del Lead</h2>
-      <span class="hint">Qué tan avanzado está el negocio del lead — tipificación manual de Ingrid en HubSpot</span>
+      <span class="hint">Qué tan avanzado está el negocio del lead — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido en "Registros por día", más abajo</span>
     </div>
     <div class="chart-card">
       <div class="status-dist-bar" id="estadioDistBar"></div>
@@ -418,7 +418,7 @@
   <section>
     <div class="section-head">
       <h2>Nivel de Urgencia</h2>
-      <span class="hint">Qué tan necesitado está el lead del servicio — tipificación manual de Ingrid en HubSpot</span>
+      <span class="hint">Qué tan necesitado está el lead del servicio — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido en "Registros por día", más abajo</span>
     </div>
     <div class="chart-card">
       <div class="status-dist-bar" id="urgenciaDistBar"></div>
@@ -903,11 +903,9 @@
     // ---- Distribución de estado de registros ----
     // drawStatusDistribution(data.leads_status_breakdown || []); // ahora se dibuja en applyDateRange() via computeStatusBreakdown() para respetar el filtro de fecha
 
-    // ---- Estadio del Lead / Nivel de Urgencia (parte del embudo, sin filtro de fecha) ----
-    drawTaggedDistribution('estadioDistBar', 'estadioDistLegend',
-      computeOrderedBreakdown(data.leads_detail || [], 'estadio_lead', ESTADIO_ORDER), ESTADIO_COLORS);
-    drawTaggedDistribution('urgenciaDistBar', 'urgenciaDistLegend',
-      computeOrderedBreakdown(data.leads_detail || [], 'nivel_urgencia', URGENCIA_ORDER), URGENCIA_COLORS);
+    // ---- Estadio del Lead / Nivel de Urgencia ----
+    // ahora se dibujan en applyDateRange() a partir de filteredLeads, para respetar
+    // el mes/rango de fechas elegido (antes mostraban siempre el global)
 
     // ---- Milestones (lista completa, no depende del filtro de fechas) ----
     const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
@@ -1007,6 +1005,13 @@
     const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
     drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
     drawStatusDistribution(computeStatusBreakdown(filteredLeads));
+
+    // Estadio del Lead / Nivel de Urgencia, recalculados sobre el mismo rango
+    // de fechas ya filtrado (antes se mostraba siempre el global, sin filtro).
+    drawTaggedDistribution('estadioDistBar', 'estadioDistLegend',
+      computeOrderedBreakdown(filteredLeads, 'estadio_lead', ESTADIO_ORDER), ESTADIO_COLORS);
+    drawTaggedDistribution('urgenciaDistBar', 'urgenciaDistLegend',
+      computeOrderedBreakdown(filteredLeads, 'nivel_urgencia', URGENCIA_ORDER), URGENCIA_COLORS);
   }
 
     // Recalcula "Distribución de estado de registros" a partir de los registros
