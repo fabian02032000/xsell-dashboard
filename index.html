@@ -112,6 +112,10 @@
   .status-dist-seg{height:100%; display:flex; align-items:center; justify-content:center; color:#0c0716; font-size:11px; font-weight:800; white-space:nowrap; overflow:hidden;}
   .status-dist-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px;}
   .status-dist-legend .key{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--text-muted);}
+  .tagdist-toggle{background:none; border:1px solid var(--border); color:var(--text-muted); cursor:pointer; font-size:12px; font-weight:600; padding:7px 12px; border-radius:8px; margin-top:14px; font-family:inherit;}
+  .tagdist-toggle:hover{color:var(--text-primary); border-color:var(--text-muted);}
+  .tagdist-toggle.expanded{color:var(--orange); border-color:var(--orange);}
+  .tagdist-clients{margin-top:12px;}
 
   /* Historia de la cuenta */
   .story-timeline{position:relative; display:flex; flex-direction:column; margin-top:14px;}
@@ -412,6 +416,8 @@
     <div class="chart-card">
       <div class="status-dist-bar" id="estadioDistBar"></div>
       <div class="status-dist-legend" id="estadioDistLegend"></div>
+      <button class="tagdist-toggle" type="button" id="estadioClientsToggle" aria-expanded="false">▸ Ver clientes</button>
+      <div class="tagdist-clients" id="estadioClientsList" style="display:none;"></div>
     </div>
   </section>
 
@@ -423,6 +429,8 @@
     <div class="chart-card">
       <div class="status-dist-bar" id="urgenciaDistBar"></div>
       <div class="status-dist-legend" id="urgenciaDistLegend"></div>
+      <button class="tagdist-toggle" type="button" id="urgenciaClientsToggle" aria-expanded="false">▸ Ver clientes</button>
+      <div class="tagdist-clients" id="urgenciaClientsList" style="display:none;"></div>
     </div>
   </section>
 
@@ -763,6 +771,19 @@
     });
   });
 
+  // ---- "Ver clientes" (Estadio del Lead / Nivel de Urgencia) ----
+  [['estadioClientsToggle', 'estadioClientsList'], ['urgenciaClientsToggle', 'urgenciaClientsList']].forEach(([btnId, panelId]) => {
+    const btn = document.getElementById(btnId);
+    const panel = document.getElementById(panelId);
+    btn.addEventListener('click', () => {
+      const isOpen = panel.style.display !== 'none';
+      panel.style.display = isOpen ? 'none' : 'block';
+      btn.textContent = (isOpen ? '▸' : '▾') + ' Ver clientes';
+      btn.classList.toggle('expanded', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
   Promise.all([
     fetch('./data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./meta_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
@@ -1010,8 +1031,10 @@
     // de fechas ya filtrado (antes se mostraba siempre el global, sin filtro).
     drawTaggedDistribution('estadioDistBar', 'estadioDistLegend',
       computeOrderedBreakdown(filteredLeads, 'estadio_lead', ESTADIO_ORDER), ESTADIO_COLORS);
+    drawTaggedClientList('estadioClientsList', filteredLeads, 'estadio_lead', ESTADIO_ORDER, ESTADIO_COLORS);
     drawTaggedDistribution('urgenciaDistBar', 'urgenciaDistLegend',
       computeOrderedBreakdown(filteredLeads, 'nivel_urgencia', URGENCIA_ORDER), URGENCIA_COLORS);
+    drawTaggedClientList('urgenciaClientsList', filteredLeads, 'nivel_urgencia', URGENCIA_ORDER, URGENCIA_COLORS);
   }
 
     // Recalcula "Distribución de estado de registros" a partir de los registros
@@ -1777,6 +1800,40 @@
     legend.innerHTML = withColor.map(s => `
       <span class="key"><span class="swatch" style="background:${s.color}"></span>${s.label} — ${fmt(s.count)} (${s.pct}%)</span>
     `).join('');
+  }
+
+  // Lista de "Empresa — Estado" para el desplegable "Ver clientes" de Estadio del
+  // Lead / Nivel de Urgencia. Respeta el mismo orden fijo que la barra (y agrupa
+  // al final a los que no tienen ese campo tipificado, como "Sin clasificar").
+  function drawTaggedClientList(containerId, leads, field, order, colorMap){
+    const container = document.getElementById(containerId);
+    if (!leads.length){
+      container.innerHTML = `<p class="table-sub">No hay registros en este rango de fechas.</p>`;
+      return;
+    }
+    const orderIndex = {};
+    order.forEach((k, i) => { orderIndex[k] = i; });
+    const rows = leads
+      .map(l => {
+        const raw = l[field];
+        const value = (raw && Object.prototype.hasOwnProperty.call(orderIndex, raw)) ? raw : SIN_CLASIFICAR_LABEL;
+        return { company: l.company || '(sin empresa)', value };
+      })
+      .sort((a, b) => {
+        const ia = orderIndex[a.value] !== undefined ? orderIndex[a.value] : order.length;
+        const ib = orderIndex[b.value] !== undefined ? orderIndex[b.value] : order.length;
+        if (ia !== ib) return ia - ib;
+        return a.company.localeCompare(b.company, 'es');
+      });
+    container.innerHTML = `
+      <div class="table-wrap scroll-y">
+        <table>
+          <thead><tr><th>Empresa</th><th>Estado</th></tr></thead>
+          <tbody>
+            ${rows.map(r => `<tr><td class="table-name">${escapeHtml(r.company)}</td><td>${tagPillHtml(r.value, colorMap)}</td></tr>`).join('')}
+          </tbody>
+        </table>
+      </div>`;
   }
 
   function drawBarsWithTarget(svgId, tooltipId, labels, series, target, color, seriesLabel, fmtFn){
