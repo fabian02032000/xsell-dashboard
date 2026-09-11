@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-11T09:53:54.614066+00:00",
+  "updated_at": "2026-09-11T13:14:22.267045+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 118,
+  "total_leads": 119,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -173,6 +173,10 @@
     {
       "date": "2026-09-10",
       "count": 1
+    },
+    {
+      "date": "2026-09-11",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -193,7 +197,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 30,
+      "leads": 31,
       "goal": 74.0,
       "is_partial": false
     }
@@ -244,19 +248,32 @@
     {
       "week_start": "2026-09-07",
       "week_end": "2026-09-13",
-      "leads": 4,
+      "leads": 5,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 30,
+  "current_month_leads": 31,
   "current_month_label": "September 2026",
-  "current_week_leads": 4,
+  "current_week_leads": 5,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 116,
   "leads_detail": [
+    {
+      "name": "Luis Vasquez Medina",
+      "email": "levm88123@gmail.com",
+      "phone": "+51976588148",
+      "company": "Northside",
+      "created_date": "2026-09-11",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Alina Ricsi",
       "email": "alina.ricsi@syscopyperu.com",
@@ -1808,7 +1825,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 3
     }
   ]
 }
