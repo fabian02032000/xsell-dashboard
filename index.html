@@ -96,6 +96,8 @@
   .status-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:600; white-space:nowrap;}
   .status-pill.yes{color:var(--good); background:rgba(46,204,113,0.12); border:1px solid rgba(46,204,113,0.4);}
   .status-pill.no{color:var(--text-muted); background:rgba(156,147,181,0.12); border:1px solid rgba(156,147,181,0.3);}
+  .status-pill.on{color:var(--good); background:rgba(46,204,113,0.12); border:1px solid rgba(46,204,113,0.4);}
+  .status-pill.off{color:var(--critical); background:rgba(255,92,92,0.12); border:1px solid rgba(255,92,92,0.4);}
   .tag-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:700; white-space:nowrap;}
   .scroll-y{max-height:420px; overflow-y:auto;}
   .table-name{font-weight:600; color:var(--text-primary);}
@@ -511,6 +513,7 @@
           <thead>
             <tr>
               <th>Nombre</th>
+              <th>Estado</th>
               <th class="col-campaign-name">Campaña</th>
               <th>Inversión</th>
               <th>Impresiones</th>
@@ -760,6 +763,15 @@
 
   function fmt(n){ return new Intl.NumberFormat('es-PE').format(Math.round(n)); }
   function fmtMoney(n){ return 'S/ ' + new Intl.NumberFormat('es-PE', {minimumFractionDigits:1, maximumFractionDigits:1}).format(n); }
+
+  // "Activo" (verde) solo cuando Meta reporta effective_status === 'ACTIVE'; cualquier otro
+  // estado (PAUSED, CAMPAIGN_PAUSED, ADSET_PAUSED, ARCHIVED, DELETED, etc.) se muestra como
+  // "Desactivado" (rojo). Sin dato de estado (p.ej. filas muy antiguas) muestra "—".
+  function statusBadge(status){
+    if (!status) return '<span class="status-pill no">—</span>';
+    const isActive = status === 'ACTIVE';
+    return `<span class="status-pill ${isActive ? 'on' : 'off'}">${isActive ? 'Activo' : 'Desactivado'}</span>`;
+  }
 
   // ---- Pestañas ----
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1214,7 +1226,7 @@
       if (campaignFilter !== '__all__' && r.campaign_name !== campaignFilter) return;
       const key = r[idKey] || r.name;
       if (!groups.has(key)){
-        groups.set(key, { name: r.name, campaign_name: r.campaign_name, spend: 0, impressions: 0, clicks: 0, reach: 0, leads: 0 });
+        groups.set(key, { id: key, name: r.name, campaign_name: r.campaign_name, spend: 0, impressions: 0, clicks: 0, reach: 0, leads: 0 });
       }
       const g = groups.get(key);
       g.spend += r.spend || 0;
@@ -1224,6 +1236,7 @@
       g.leads += r.leads || 0;
     });
     return [...groups.values()].map(g => ({
+      id: g.id,
       name: g.name,
       campaign_name: g.campaign_name,
       spend: Math.round(g.spend * 100) / 100,
@@ -1267,7 +1280,7 @@
       } else {
         available = !!meta.ads_performance_available || !!daily;
         if (fullPeriod && meta.ads_performance_available){
-          rows = (meta.ads_performance || []).map(r => ({ ...r, name: r.ad_name })); usedExact = true;
+          rows = (meta.ads_performance || []).map(r => ({ ...r, name: r.ad_name, id: r.ad_id })); usedExact = true;
         } else if (daily){
           rows = aggregateRows(daily.ads || [], from, to, campaignFilter, 'id');
         }
@@ -1275,19 +1288,25 @@
     }
 
     if (!available){
-      body.innerHTML = `<tr><td colspan="11" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="12" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
       hint.textContent = '';
       return;
     }
     if (!rows.length){
-      body.innerHTML = `<tr><td colspan="11" class="table-sub">No se encontraron datos con este nivel de detalle en el rango elegido.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="12" class="table-sub">No se encontraron datos con este nivel de detalle en el rango elegido.</td></tr>`;
       hint.textContent = '';
       return;
     }
 
+    const statusById = new Map();
+    (meta.campaigns_performance || []).forEach(c => statusById.set(c.id, c.status));
+    (meta.adsets_performance || []).forEach(a => statusById.set(a.id, a.status));
+    (meta.ads_performance || []).forEach(a => statusById.set(a.ad_id, a.status));
+
     body.innerHTML = rows.map(r => `
         <tr>
           <td class="table-name">${escapeHtml(r.name)}</td>
+          <td>${statusBadge(statusById.get(r.id))}</td>
           <td class="col-campaign-name">${escapeHtml(r.campaign_name) || '—'}</td>
           <td>${fmtMoney(r.spend)}</td>
           <td>${fmt(r.impressions)}</td>
