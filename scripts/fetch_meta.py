@@ -214,7 +214,7 @@ def fetch_ad_creatives_map():
         data = meta_get(
             f"/{AD_ACCOUNT_ID}/ads",
             {
-                "fields": "id,name,campaign{name},creative{title,body,image_url,thumbnail_url,object_story_spec}",
+                "fields": "id,name,effective_status,campaign{name},creative{title,body,image_url,thumbnail_url,object_story_spec}",
                 "limit": 500,
             },
         )
@@ -228,6 +228,7 @@ def fetch_ad_creatives_map():
         creatives_map[ad.get("id")] = {
             "ad_name": ad.get("name"),
             "campaign_name": (ad.get("campaign") or {}).get("name", ""),
+            "effective_status": ad.get("effective_status"),
             "title": creative.get("title") or "",
             "body": creative.get("body") or "",
             "description": extract_link_description(creative),
@@ -279,6 +280,7 @@ def fetch_ads_performance(since_date, until_date):
             "adset_name": row.get("adset_name") or "",
             "campaign_id": row.get("campaign_id"),
             "campaign_name": row.get("campaign_name") or extra.get("campaign_name") or "",
+            "status": extra.get("effective_status"),
             "title": extra.get("title", ""),
             "body": extra.get("body", ""),
             "description": extra.get("description", ""),
@@ -298,7 +300,7 @@ def fetch_ads_performance(since_date, until_date):
     return result, True
 
 
-def fetch_level_performance(level, since_date, until_date, name_field, id_field):
+def fetch_level_performance(level, since_date, until_date, name_field, id_field, status_map=None):
     """
     Rendimiento agregado de TODO el período a nivel de Campaña o Conjunto de
     anuncios (gasto, impresiones, alcance, frecuencia, CPM, clics, CTR,
@@ -337,6 +339,7 @@ def fetch_level_performance(level, since_date, until_date, name_field, id_field)
             "id": row.get(id_field),
             "name": row.get(name_field) or "(sin nombre)",
             "campaign_name": row.get("campaign_name") or "",
+            "status": (status_map or {}).get(row.get(id_field)),
             "spend": spend,
             "impressions": int(float(row.get("impressions", 0))),
             "reach": int(float(row.get("reach", 0))),
@@ -506,6 +509,21 @@ def fetch_id_name_map(edge, fields="id,name"):
         return {}
 
 
+def fetch_status_map(edge):
+    """{id: effective_status} de TODAS las campañas o conjuntos de anuncios de la
+    cuenta (edge='campaigns' o 'adsets') — para poder mostrar en el dashboard si
+    cada uno está Activo o Desactivado ahora mismo. 'effective_status' ya refleja
+    si está pausado directamente o porque su campaña/conjunto padre está pausado
+    (ACTIVE, PAUSED, CAMPAIGN_PAUSED, ADSET_PAUSED, ARCHIVED, DELETED, etc.).
+    Best-effort: si falla, devuelve un diccionario vacío sin romper el resto."""
+    try:
+        rows = meta_get_paginated(f"/{AD_ACCOUNT_ID}/{edge}", {"fields": "id,effective_status", "limit": 500})
+        return {r["id"]: r.get("effective_status") for r in rows}
+    except Exception as e:
+        print(f"AVISO: no se pudo traer el estado (activo/desactivado) de {edge}: {e}", file=sys.stderr)
+        return {}
+
+
 def _normalize_field_name(name):
     """Quita tildes/ñ y cualquier caracter que no sea letra, para poder
     reconocer el nombre del campo sin importar tildes, guiones o guiones
@@ -635,12 +653,16 @@ def main():
 
     ads_performance, ads_performance_available = fetch_ads_performance(CAMPAIGN_START_DATE, today_str)
 
+    # ---- Estado actual (Activo/Desactivado) de cada campaña y conjunto de anuncios ----
+    campaign_status = fetch_status_map("campaigns")
+    adset_status = fetch_status_map("adsets")
+
     # ---- Análisis de campaña: "Todo el período" (exacto) + detalle diario (para filtrar por fecha) ----
     campaigns_performance, campaigns_performance_available = fetch_level_performance(
-        "campaign", CAMPAIGN_START_DATE, today_str, "campaign_name", "campaign_id"
+        "campaign", CAMPAIGN_START_DATE, today_str, "campaign_name", "campaign_id", status_map=campaign_status
     )
     adsets_performance, adsets_performance_available = fetch_level_performance(
-        "adset", CAMPAIGN_START_DATE, today_str, "adset_name", "adset_id"
+        "adset", CAMPAIGN_START_DATE, today_str, "adset_name", "adset_id", status_map=adset_status
     )
     campaigns_daily, campaigns_daily_available = fetch_level_performance_daily(
         "campaign", CAMPAIGN_START_DATE, today_str, "campaign_name", "campaign_id"
