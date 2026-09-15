@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T22:26:25.979589+00:00",
+  "updated_at": "2026-09-15T00:17:27.573421+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -365,9 +365,9 @@
       "company": "Antys Uniformes",
       "created_date": "2026-09-06",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Antys Uniformes ",
-      "deal_note": null,
+      "deal_note": "Sin cartera mayorista. Recién quiere empezar a invertir en pauta",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -1819,11 +1819,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 97
+      "count": 98
     },
     {
       "label": "Prospectos Contactados",
-      "count": 15
+      "count": 14
     },
     {
       "label": "Reunión Agendadas",
