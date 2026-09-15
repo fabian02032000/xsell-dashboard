@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T20:00:00.889255+00:00",
+  "updated_at": "2026-09-15T21:55:00.750672+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -277,7 +277,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 120,
+  "leads_with_deal": 128,
   "leads_detail": [
     {
       "name": "Jeiner Huamán Gormas",
@@ -285,11 +285,11 @@
       "phone": "+51989440981",
       "company": "Jeiner",
       "created_date": "2026-09-15",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Jeiner",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
     {
@@ -311,11 +311,11 @@
       "phone": "+51972068674",
       "company": "Tiens",
       "created_date": "2026-09-14",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Tiens",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -324,11 +324,11 @@
       "phone": "+51976822288",
       "company": "Drsusse",
       "created_date": "2026-09-14",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Drsusse",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -350,9 +350,9 @@
       "phone": "+51990281870",
       "company": "Zí Vital",
       "created_date": "2026-09-14",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Zí Vital",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -363,11 +363,11 @@
       "phone": "+51924144637",
       "company": "kitaro",
       "created_date": "2026-09-14",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
-      "estadio_lead": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "kitaro",
+      "deal_note": "Número no tiene wsp",
+      "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
     {
@@ -376,11 +376,11 @@
       "phone": "+51942915788",
       "company": "OLYSAN LOVE EIRL",
       "created_date": "2026-09-13",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "OLYSAN LOVE EIRL",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -389,11 +389,11 @@
       "phone": "+51976369968",
       "company": "TU DISTI SAC",
       "created_date": "2026-09-13",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "TU DISTI SAC",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -402,9 +402,9 @@
       "phone": "+51923640527",
       "company": "David Jose Trillo Uculmana",
       "created_date": "2026-09-13",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "David Jose Trillo Uculmana",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -1964,16 +1964,16 @@
       "count": 107
     },
     {
-      "label": "Sin negocio",
-      "count": 9
-    },
-    {
       "label": "Prospectos Contactados",
-      "count": 7
+      "count": 15
     },
     {
       "label": "Reunión Agendadas",
       "count": 6
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ]
 }
