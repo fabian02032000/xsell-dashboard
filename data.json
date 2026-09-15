@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T18:55:54.419941+00:00",
+  "updated_at": "2026-09-15T20:00:00.889255+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -277,7 +277,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 119,
+  "leads_with_deal": 120,
   "leads_detail": [
     {
       "name": "Jeiner Huamán Gormas",
@@ -298,11 +298,11 @@
       "phone": "+51956629380",
       "company": "CREATIVE FOCUS",
       "created_date": "2026-09-15",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Creative Focus ",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
     {
@@ -1965,11 +1965,11 @@
     },
     {
       "label": "Sin negocio",
-      "count": 10
+      "count": 9
     },
     {
       "label": "Prospectos Contactados",
-      "count": 6
+      "count": 7
     },
     {
       "label": "Reunión Agendadas",
