@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T00:47:03.470376+00:00",
+  "updated_at": "2026-09-15T05:28:04.002293+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -339,9 +339,9 @@
       "company": "Marxo",
       "created_date": "2026-09-06",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Marxo",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -352,9 +352,9 @@
       "company": "rivera brand corp.",
       "created_date": "2026-09-06",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Rivera Brand corp.",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -378,9 +378,9 @@
       "company": "Independiente",
       "created_date": "2026-09-06",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Independiente",
-      "deal_note": null,
+      "deal_note": "Nunca respondio. Se registro como indepemdiente",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -391,9 +391,9 @@
       "company": "Sef solution sac",
       "created_date": "2026-09-06",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Alvcom - Sef solution sac",
-      "deal_note": null,
+      "deal_note": "Nunca respondió",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Bajo"
     },
@@ -404,9 +404,9 @@
       "company": "VClean",
       "created_date": "2026-09-05",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "VClean",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Bajo"
     },
@@ -417,9 +417,9 @@
       "company": "Emprendedor Global",
       "created_date": "2026-09-04",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Emprendedor Global",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -443,7 +443,7 @@
       "company": "Grupo Mopal - Toyota e Hino",
       "created_date": "2026-09-04",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "AUTOMOTORES MOPAL S.A.",
       "deal_note": null,
       "estadio_lead": null,
@@ -495,9 +495,9 @@
       "company": "EQUIPOS MAQUINARIAS INDUSTRIALES IM KA EIRL",
       "created_date": "2026-09-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "EQUIPOS MAQUINARIAS INDUSTRIALES IM KA EIRL",
-      "deal_note": "No llegó al botón de wsp",
+      "deal_note": "No respondió tras seguimiento. De frente solicito portafolio y costos. No llegó por botón de wsp.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo"
     },
@@ -586,9 +586,9 @@
       "company": "NVG",
       "created_date": "2026-09-02",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "NVG",
-      "deal_note": null,
+      "deal_note": "No responde tras seguimiento. Venta de productos naturales a consumidor final. No brindó mayor detalle de volumen de leads",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -1819,15 +1819,15 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 98
-    },
-    {
-      "label": "Prospectos Contactados",
-      "count": 14
+      "count": 107
     },
     {
       "label": "Reunión Agendadas",
       "count": 6
+    },
+    {
+      "label": "Prospectos Contactados",
+      "count": 5
     },
     {
       "label": "Sin negocio",
