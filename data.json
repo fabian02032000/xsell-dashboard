@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-15T11:06:22.607692+00:00",
+  "updated_at": "2026-09-15T13:12:44.621413+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 119,
+  "total_leads": 128,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -177,6 +177,18 @@
     {
       "date": "2026-09-11",
       "count": 1
+    },
+    {
+      "date": "2026-09-13",
+      "count": 3
+    },
+    {
+      "date": "2026-09-14",
+      "count": 4
+    },
+    {
+      "date": "2026-09-15",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -197,7 +209,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 31,
+      "leads": 40,
       "goal": 74.0,
       "is_partial": false
     }
@@ -248,25 +260,142 @@
     {
       "week_start": "2026-09-07",
       "week_end": "2026-09-13",
-      "leads": 5,
+      "leads": 8,
       "goal": 17.3
     },
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 0,
+      "leads": 6,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 31,
+  "current_month_leads": 40,
   "current_month_label": "September 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 6,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 118,
   "leads_detail": [
+    {
+      "name": "Jeiner Huamán Gormas",
+      "email": "jeiner2809@gmail.com",
+      "phone": "+51989440981",
+      "company": "Jeiner",
+      "created_date": "2026-09-15",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Jorge Barco Fenco",
+      "email": "jorgebarcofenco@gmail.com",
+      "phone": "+51956629380",
+      "company": "CREATIVE FOCUS",
+      "created_date": "2026-09-15",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Paqui Ramírez Olaya",
+      "email": "paqui0920@gmail.com",
+      "phone": "+51972068674",
+      "company": "Tiens",
+      "created_date": "2026-09-14",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Dardent Alejandría Alarcón",
+      "email": "dardent_86@outlook.es",
+      "phone": "+51976822288",
+      "company": "Drsusse",
+      "created_date": "2026-09-14",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Carmen Rosa Zare Uribe",
+      "email": "carmenzare@gmail.com",
+      "phone": "+51990281870",
+      "company": "Zí Vital",
+      "created_date": "2026-09-14",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Jhohan Kitaro Belito",
+      "email": "zte5jho@gmail.com",
+      "phone": "+51924144637",
+      "company": "kitaro",
+      "created_date": "2026-09-14",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Lucila Edith Vereau Luján",
+      "email": "lucilavl_64@hotmail.com",
+      "phone": "+51942915788",
+      "company": "OLYSAN LOVE EIRL",
+      "created_date": "2026-09-13",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Mayerlin Melo Delgado",
+      "email": "gerencia@tudisti.pe",
+      "phone": "+51976369968",
+      "company": "TU DISTI SAC",
+      "created_date": "2026-09-13",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "José Maximo Humberto Trillo",
+      "email": "jhtrillo4@gmail.com",
+      "phone": "+51923640527",
+      "company": "David Jose Trillo Uculmana",
+      "created_date": "2026-09-13",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Luis Vasquez Medina",
       "email": "levm88123@gmail.com",
@@ -1126,10 +1255,10 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Paola Maria Zúñiga Palomino",
+      "name": "Zupa Pao",
       "email": "pazupa.19@gmail.com",
       "phone": "+51913454134",
-      "company": "sieger",
+      "company": "Sieger",
       "created_date": "2026-08-11",
       "has_deal": true,
       "deal_stage": "Descartada",
@@ -1822,16 +1951,16 @@
       "count": 107
     },
     {
+      "label": "Sin negocio",
+      "count": 10
+    },
+    {
       "label": "Reunión Agendadas",
       "count": 6
     },
     {
       "label": "Prospectos Contactados",
       "count": 5
-    },
-    {
-      "label": "Sin negocio",
-      "count": 1
     }
   ]
 }
