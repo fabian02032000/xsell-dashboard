@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-15T13:12:44.621413+00:00",
+  "updated_at": "2026-09-15T15:05:32.784209+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 128,
+  "total_leads": 129,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -184,7 +184,7 @@
     },
     {
       "date": "2026-09-14",
-      "count": 4
+      "count": 5
     },
     {
       "date": "2026-09-15",
@@ -209,7 +209,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 40,
+      "leads": 41,
       "goal": 74.0,
       "is_partial": false
     }
@@ -266,18 +266,18 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 6,
+      "leads": 7,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 40,
+  "current_month_leads": 41,
   "current_month_label": "September 2026",
-  "current_week_leads": 6,
+  "current_week_leads": 7,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 118,
+  "leads_with_deal": 119,
   "leads_detail": [
     {
       "name": "Jeiner Huamán Gormas",
@@ -327,6 +327,19 @@
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Jordan  Trujillo tito",
+      "email": "grupoleonex@hotmail.com",
+      "phone": "+51989379738",
+      "company": "GRUPO Leonex S.A.C",
+      "created_date": "2026-09-14",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "GRUPO Leonex S.A.C",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -1955,12 +1968,12 @@
       "count": 10
     },
     {
-      "label": "Reunión Agendadas",
+      "label": "Prospectos Contactados",
       "count": 6
     },
     {
-      "label": "Prospectos Contactados",
-      "count": 5
+      "label": "Reunión Agendadas",
+      "count": 6
     }
   ]
 }
