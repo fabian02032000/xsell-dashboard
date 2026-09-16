@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T03:19:13.840368+00:00",
+  "updated_at": "2026-09-16T07:14:39.565046+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -416,9 +416,9 @@
       "company": "Northside",
       "created_date": "2026-09-11",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Northside",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -429,9 +429,9 @@
       "company": "Syscopy Peru Sac",
       "created_date": "2026-09-10",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Syscopy Perú ",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
@@ -442,9 +442,9 @@
       "company": "Aquyra moda",
       "created_date": "2026-09-09",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Aquyra moda",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -468,9 +468,9 @@
       "company": "Ortiz proveedores peru",
       "created_date": "2026-09-07",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Ortiz proveedores peru",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo"
     },
@@ -572,9 +572,9 @@
       "company": "Iseia Swim",
       "created_date": "2026-09-04",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Iseia Swim",
-      "deal_note": null,
+      "deal_note": "Nunca respondio wsp",
       "estadio_lead": "Alto Nivel",
       "nivel_urgencia": "Bajo"
     },
@@ -1961,11 +1961,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 107
+      "count": 112
     },
     {
       "label": "Prospectos Contactados",
-      "count": 15
+      "count": 10
     },
     {
       "label": "Reunión Agendadas",
