@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T12:01:21.887756+00:00",
+  "updated_at": "2026-09-17T15:30:10.546210+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -281,7 +281,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 128,
+  "leads_with_deal": 129,
   "leads_detail": [
     {
       "name": "Victor Vigo Paredes",
@@ -289,11 +289,11 @@
       "phone": "+51971929065",
       "company": "CORPORACIÓN INVISA S.A.C",
       "created_date": "2026-09-17",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "CORPORACIÓN INVISA S.A.C",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -1982,7 +1982,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 10
+      "count": 11
     },
     {
       "label": "Reunión Agendadas",
@@ -1990,7 +1990,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
