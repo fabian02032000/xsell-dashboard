@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-18T09:53:08.702347+00:00",
+  "updated_at": "2026-09-18T12:42:39.285999+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 131,
+  "total_leads": 132,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -196,7 +196,7 @@
     },
     {
       "date": "2026-09-18",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -217,7 +217,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 43,
+      "leads": 44,
       "goal": 74.0,
       "is_partial": false
     }
@@ -274,13 +274,13 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 9,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 43,
+  "current_month_leads": 44,
   "current_month_label": "September 2026",
-  "current_week_leads": 9,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -292,6 +292,19 @@
       "email": "metalimportsac@gmail.com",
       "phone": "+51968341170",
       "company": "Epps de seguridad",
+      "created_date": "2026-09-18",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Cristian",
+      "email": "cristaco.t@gmail.com",
+      "phone": "+51929052626",
+      "company": "inversiones",
       "created_date": "2026-09-18",
       "has_deal": false,
       "deal_stage": null,
@@ -2007,7 +2020,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 3
     }
   ]
 }
