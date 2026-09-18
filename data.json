@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-18T19:57:01.877002+00:00",
+  "updated_at": "2026-09-18T22:17:58.784949+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 132,
+  "total_leads": 133,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -196,7 +196,7 @@
     },
     {
       "date": "2026-09-18",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -217,7 +217,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 44,
+      "leads": 45,
       "goal": 74.0,
       "is_partial": false
     }
@@ -274,13 +274,13 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 10,
+      "leads": 11,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 44,
+  "current_month_leads": 45,
   "current_month_label": "September 2026",
-  "current_week_leads": 10,
+  "current_week_leads": 11,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -311,6 +311,19 @@
       "deal_name": "Inversiones ",
       "deal_note": null,
       "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Paolo Gaspar",
+      "email": "pgaspar@manufacturasemisa.com",
+      "phone": "+51959949096",
+      "company": "Manufacturas Emisa",
+      "created_date": "2026-09-18",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
       "nivel_urgencia": null
     },
     {
@@ -2020,7 +2033,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
