@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T22:21:38.270258+00:00",
+  "updated_at": "2026-09-19T00:28:21.901955+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -285,7 +285,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 131,
+  "leads_with_deal": 132,
   "leads_detail": [
     {
       "name": "Jim Brayan uceda Pisfil",
@@ -319,9 +319,9 @@
       "phone": "+51959949096",
       "company": "Manufacturas Emisa",
       "created_date": "2026-09-18",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Manufactura Emisa",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -2025,7 +2025,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 12
+      "count": 13
     },
     {
       "label": "Reunión Agendadas",
@@ -2033,7 +2033,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
