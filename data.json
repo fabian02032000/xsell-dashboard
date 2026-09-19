@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-19T00:58:03.485996+00:00",
+  "updated_at": "2026-09-19T04:54:30.165164+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 133,
+  "total_leads": 134,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -197,6 +197,10 @@
     {
       "date": "2026-09-18",
       "count": 3
+    },
+    {
+      "date": "2026-09-19",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -217,7 +221,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 45,
+      "leads": 46,
       "goal": 74.0,
       "is_partial": false
     }
@@ -274,19 +278,32 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 11,
+      "leads": 12,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 45,
+  "current_month_leads": 46,
   "current_month_label": "September 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 12,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 132,
   "leads_detail": [
+    {
+      "name": "Raquel Alvarado",
+      "email": "gerencia@ascensoresmesac.com",
+      "phone": "+51925050296",
+      "company": "Ascensores Eurolive",
+      "created_date": "2026-09-19",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Jim Brayan uceda Pisfil",
       "email": "metalimportsac@gmail.com",
@@ -2033,7 +2050,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ]
 }
