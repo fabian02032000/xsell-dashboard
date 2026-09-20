@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-20T22:58:46.027658+00:00",
+  "updated_at": "2026-09-20T23:36:11.770791+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 137,
+  "total_leads": 138,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -204,7 +204,7 @@
     },
     {
       "date": "2026-09-20",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -225,7 +225,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 49,
+      "leads": 50,
       "goal": 74.0,
       "is_partial": false
     }
@@ -282,13 +282,13 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 15,
+      "leads": 16,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 49,
+  "current_month_leads": 50,
   "current_month_label": "September 2026",
-  "current_week_leads": 15,
+  "current_week_leads": 16,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -300,6 +300,19 @@
       "email": "administracion@privateacher.edu.pe",
       "phone": "+51999371694",
       "company": "Privateacher International",
+      "created_date": "2026-09-20",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Chiara Cruz Hernandez",
+      "email": "dimajo2024@gmail.com",
+      "phone": "+51968474043",
+      "company": "Rimac Seguros",
       "created_date": "2026-09-20",
       "has_deal": false,
       "deal_stage": null,
@@ -2088,12 +2101,12 @@
       "count": 13
     },
     {
-      "label": "Reunión Agendadas",
+      "label": "Sin negocio",
       "count": 6
     },
     {
-      "label": "Sin negocio",
-      "count": 5
+      "label": "Reunión Agendadas",
+      "count": 6
     }
   ]
 }
