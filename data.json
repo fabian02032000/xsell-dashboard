@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-19T22:56:45.167588+00:00",
+  "updated_at": "2026-09-20T00:39:13.743319+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 134,
+  "total_leads": 136,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -200,7 +200,7 @@
     },
     {
       "date": "2026-09-19",
-      "count": 1
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -221,7 +221,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 46,
+      "leads": 48,
       "goal": 74.0,
       "is_partial": false
     }
@@ -278,13 +278,13 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 12,
+      "leads": 14,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 46,
+  "current_month_leads": 48,
   "current_month_label": "September 2026",
-  "current_week_leads": 12,
+  "current_week_leads": 14,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -296,6 +296,32 @@
       "email": "gerencia@ascensoresmesac.com",
       "phone": "+51925050296",
       "company": "Ascensores Eurolive",
+      "created_date": "2026-09-19",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Luis Alvarez Caro",
+      "email": "luis.alvarez@e-robot.pe",
+      "phone": "+51982232655",
+      "company": "e-Robot",
+      "created_date": "2026-09-19",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Paul Gamarra",
+      "email": "soypaulgamarra@gmail.com",
+      "phone": "+51934690932",
+      "company": "Mural",
       "created_date": "2026-09-19",
       "has_deal": false,
       "deal_stage": null,
@@ -2050,7 +2076,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 4
     }
   ]
 }
