@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-20T10:39:06.265015+00:00",
+  "updated_at": "2026-09-20T14:05:18.190129+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 136,
+  "total_leads": 137,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -201,6 +201,10 @@
     {
       "date": "2026-09-19",
       "count": 3
+    },
+    {
+      "date": "2026-09-20",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -221,7 +225,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 48,
+      "leads": 49,
       "goal": 74.0,
       "is_partial": false
     }
@@ -278,19 +282,32 @@
     {
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
-      "leads": 14,
+      "leads": 15,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 48,
+  "current_month_leads": 49,
   "current_month_label": "September 2026",
-  "current_week_leads": 14,
+  "current_week_leads": 15,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 132,
   "leads_detail": [
+    {
+      "name": "Miguel Angel Cayo Veit",
+      "email": "administracion@privateacher.edu.pe",
+      "phone": "+51999371694",
+      "company": "Privateacher International",
+      "created_date": "2026-09-20",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Raquel Alvarado",
       "email": "gerencia@ascensoresmesac.com",
@@ -2076,7 +2093,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 5
     }
   ]
 }
