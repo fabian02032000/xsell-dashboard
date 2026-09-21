@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-21T13:37:13.045345+00:00",
+  "updated_at": "2026-09-21T14:04:26.183411+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 140,
+  "total_leads": 141,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -208,7 +208,7 @@
     },
     {
       "date": "2026-09-21",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -229,7 +229,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 52,
+      "leads": 53,
       "goal": 74.0,
       "is_partial": false
     }
@@ -292,13 +292,13 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "leads": 2,
+      "leads": 3,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 52,
+  "current_month_leads": 53,
   "current_month_label": "September 2026",
-  "current_week_leads": 2,
+  "current_week_leads": 3,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -323,6 +323,19 @@
       "email": "zpalomino@eventosmultilibros.com.pe",
       "phone": "+51991880036",
       "company": "expo gourmet",
+      "created_date": "2026-09-21",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Eugenio Basilio Davila Paca",
+      "email": "edavila@academiasbraineer.com",
+      "phone": "+51930498696",
+      "company": "Academias Braineer",
       "created_date": "2026-09-21",
       "has_deal": false,
       "deal_stage": null,
@@ -2138,7 +2151,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 8
+      "count": 9
     },
     {
       "label": "Reunión Agendadas",
