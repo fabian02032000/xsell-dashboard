@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-21T07:08:41.708959+00:00",
+  "updated_at": "2026-09-21T13:37:13.045345+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 138,
+  "total_leads": 140,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -205,6 +205,10 @@
     {
       "date": "2026-09-20",
       "count": 2
+    },
+    {
+      "date": "2026-09-21",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -225,7 +229,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 50,
+      "leads": 52,
       "goal": 74.0,
       "is_partial": false
     }
@@ -288,19 +292,45 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "leads": 0,
+      "leads": 2,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 50,
+  "current_month_leads": 52,
   "current_month_label": "September 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 2,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 132,
   "leads_detail": [
+    {
+      "name": "JORGE LUIS TRAGODARA ACOSTA",
+      "email": "ventas@abmagre.com",
+      "phone": "+51946166060",
+      "company": "Tragmar sac",
+      "created_date": "2026-09-21",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Zulma Rosario",
+      "email": "zpalomino@eventosmultilibros.com.pe",
+      "phone": "+51991880036",
+      "company": "expo gourmet",
+      "created_date": "2026-09-21",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Miguel Angel Cayo Veit",
       "email": "administracion@privateacher.edu.pe",
@@ -2108,7 +2138,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 6
+      "count": 8
     },
     {
       "label": "Reunión Agendadas",
