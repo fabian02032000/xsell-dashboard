@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T14:04:26.183411+00:00",
+  "updated_at": "2026-09-21T19:03:18.801454+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -303,7 +303,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 132,
+  "leads_with_deal": 140,
   "leads_detail": [
     {
       "name": "JORGE LUIS TRAGODARA ACOSTA",
@@ -311,9 +311,9 @@
       "phone": "+51946166060",
       "company": "Tragmar sac",
       "created_date": "2026-09-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Trarmar SAC",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -324,9 +324,9 @@
       "phone": "+51991880036",
       "company": "expo gourmet",
       "created_date": "2026-09-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Expo Group Librerías Multilibros ",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -337,12 +337,12 @@
       "phone": "+51930498696",
       "company": "Academias Braineer",
       "created_date": "2026-09-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Academia Braineer ",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Miguel Angel Cayo Veit",
@@ -350,11 +350,11 @@
       "phone": "+51999371694",
       "company": "Privateacher International",
       "created_date": "2026-09-20",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
-      "estadio_lead": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Privateacher International ",
+      "deal_note": "Si respondió llamada. Empresa que vende cursos de idiomas. Indica que le escriba por wsp para coordinar horario de reunión.",
+      "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
     {
@@ -363,9 +363,9 @@
       "phone": "+51968474043",
       "company": "Rimac Seguros",
       "created_date": "2026-09-20",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Rimac Seguros",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -376,11 +376,11 @@
       "phone": "+51925050296",
       "company": "Ascensores Eurolive",
       "created_date": "2026-09-19",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Ascensores Eurolive",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -389,10 +389,10 @@
       "phone": "+51982232655",
       "company": "e-Robot",
       "created_date": "2026-09-19",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "e-Robot",
+      "deal_note": "Ocupado. Indica que lo llamen a 1:oo p.m.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -402,12 +402,12 @@
       "phone": "+51934690932",
       "company": "Mural",
       "created_date": "2026-09-19",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Mural ",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Jim Brayan uceda Pisfil",
@@ -2147,15 +2147,15 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 13
-    },
-    {
-      "label": "Sin negocio",
-      "count": 9
+      "count": 21
     },
     {
       "label": "Reunión Agendadas",
       "count": 6
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ]
 }
