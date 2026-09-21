@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T19:21:23.548222+00:00",
+  "updated_at": "2026-09-21T22:42:14.410556+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -377,9 +377,9 @@
       "company": "Ascensores Eurolive",
       "created_date": "2026-09-19",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Ascensores Eurolive",
-      "deal_note": null,
+      "deal_note": "No tienen inversión en pauta. Recién empezarán con ello.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -2143,11 +2143,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 113
+      "count": 114
     },
     {
       "label": "Prospectos Contactados",
-      "count": 21
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
