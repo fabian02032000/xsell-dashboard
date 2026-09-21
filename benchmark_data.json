@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T15:32:02.814199Z",
+  "generated_at": "2026-09-21T15:32:21.337355Z",
   "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
@@ -8,10 +8,10 @@
       "country": "AR",
       "country_label": "Argentina",
       "profile": "Ayuda a empresas B2B a conseguir reuniones y cerrar más ventas, con un método propio (\"anti-ghosting\", seguimiento, manejo de objeciones).",
-      "active_ads_count": 21,
-      "search_match_count": 21,
+      "active_ads_count": 13,
+      "search_match_count": 13,
       "oldest_active_since": "2026-01-27",
-      "newest_active_since": "2026-09-13",
+      "newest_active_since": "2026-09-16",
       "sample_ads": [
         {
           "since": "2026-03-19",
@@ -22,12 +22,12 @@
           "text": "La n1 táctica Anti-Ghosting."
         },
         {
-          "since": "2026-01-27",
-          "text": "El síndrome de la venta serrucho... que cosa dura..."
-        },
-        {
           "since": "2026-06-03",
           "text": "Do your F#@! Follow up"
+        },
+        {
+          "since": "2026-01-27",
+          "text": "El síndrome de la venta serrucho... que cosa dura..."
         },
         {
           "since": "2026-01-27",
@@ -39,7 +39,7 @@
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-14",
+      "last_checked_ok": "2026-09-21",
       "status": "ok",
       "history": [
         {
@@ -53,6 +53,10 @@
         {
           "date": "2026-09-14",
           "active_ads_count": 21
+        },
+        {
+          "date": "2026-09-21",
+          "active_ads_count": 13
         }
       ]
     },
@@ -62,38 +66,30 @@
       "country": "CO",
       "country_label": "Colombia (alcance regional)",
       "profile": "Agencia de prospección B2B: agenda reuniones calificadas para empresas de tecnología/software.",
-      "active_ads_count": 12,
-      "search_match_count": 16,
-      "oldest_active_since": "2026-07-08",
-      "newest_active_since": "2026-09-13",
+      "active_ads_count": 4,
+      "search_match_count": 4,
+      "oldest_active_since": "2026-08-25",
+      "newest_active_since": "2026-09-15",
       "sample_ads": [
         {
-          "since": "2026-07-08",
+          "since": "2026-08-25",
+          "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-09-10",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         },
         {
-          "since": "2026-09-13",
-          "text": "0:00 / 0:53"
+          "since": "2026-09-15",
+          "text": "EMPRESAS DE TECNOLOGIA"
         },
         {
-          "since": "2026-09-11",
-          "text": "Comenta SISTEMA"
-        },
-        {
-          "since": "2026-09-11",
-          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
-        },
-        {
-          "since": "2026-09-11",
-          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
-        },
-        {
-          "since": "2026-09-11",
+          "since": "2026-09-10",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-14",
+      "last_checked_ok": "2026-09-21",
       "status": "ok",
       "history": [
         {
@@ -107,6 +103,10 @@
         {
           "date": "2026-09-14",
           "active_ads_count": 12
+        },
+        {
+          "date": "2026-09-21",
+          "active_ads_count": 4
         }
       ]
     },
@@ -116,10 +116,10 @@
       "country": "BR",
       "country_label": "Brasil",
       "profile": "Equipo comercial tercerizado (\"time comercial terceirizado\") para acelerar resultados de venta B2B.",
-      "active_ads_count": 2,
-      "search_match_count": 2,
+      "active_ads_count": 3,
+      "search_match_count": 3,
       "oldest_active_since": "2026-03-05",
-      "newest_active_since": "2026-03-05",
+      "newest_active_since": "2026-09-17",
       "sample_ads": [
         {
           "since": "2026-03-05",
@@ -128,10 +128,14 @@
         {
           "since": "2026-03-05",
           "text": "Atuamos lado a lado com sua empresa para conectar seu negócio a leads qualificados e maximizar conversões."
+        },
+        {
+          "since": "2026-09-17",
+          "text": "Seu negócio pode vender mais sem dor de cabeça. Conte com nosso time comercial terceirizado especializado em acelerar resultados."
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&q=Aurum%20Sales&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-14",
+      "last_checked_ok": "2026-09-21",
       "status": "ok",
       "history": [
         {
@@ -145,6 +149,10 @@
         {
           "date": "2026-09-14",
           "active_ads_count": 2
+        },
+        {
+          "date": "2026-09-21",
+          "active_ads_count": 3
         }
       ]
     }
