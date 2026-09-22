@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T19:45:48.497748+00:00",
+  "updated_at": "2026-09-22T21:45:54.939328+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -303,7 +303,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 140,
+  "leads_with_deal": 141,
   "leads_detail": [
     {
       "name": "JORGE LUIS TRAGODARA ACOSTA",
@@ -350,9 +350,9 @@
       "phone": "+51998350329",
       "company": "SGS SERVICE EIRL",
       "created_date": "2026-09-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "SGS SERVICE EIRL",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -2160,7 +2160,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 20
+      "count": 21
     },
     {
       "label": "Reunión Agendadas",
@@ -2168,7 +2168,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ]
 }
