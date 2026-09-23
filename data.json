@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-23T10:06:09.061338+00:00",
+  "updated_at": "2026-09-23T14:41:33.181554+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 144,
+  "total_leads": 145,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -213,6 +213,10 @@
     {
       "date": "2026-09-22",
       "count": 2
+    },
+    {
+      "date": "2026-09-23",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -233,7 +237,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 56,
+      "leads": 57,
       "goal": 74.0,
       "is_partial": false
     }
@@ -296,19 +300,32 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "leads": 6,
+      "leads": 7,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 56,
+  "current_month_leads": 57,
   "current_month_label": "September 2026",
-  "current_week_leads": 6,
+  "current_week_leads": 7,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 143,
   "leads_detail": [
+    {
+      "name": "Renato Sánchez",
+      "email": "corredor@renatosanchez-seguros.com",
+      "phone": "+51936724970",
+      "company": "Reasam Corredor de Seguros",
+      "created_date": "2026-09-23",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Jose Melendez Quesada",
       "email": "gerencia@geonet.top",
@@ -2198,7 +2215,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
