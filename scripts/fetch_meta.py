@@ -38,6 +38,20 @@ LEADS_CAMPAIGN_MATCH = os.environ.get("LEADS_CAMPAIGN_MATCH", "prospectos b2b")
 # (opcional — si no se configura, el resto del dashboard sigue funcionando igual).
 FACEBOOK_PAGE_ID = os.environ.get("FACEBOOK_PAGE_ID", "")
 
+# Nombre (o parte del nombre) de la campaña de WhatsApp con conversión, para
+# identificarla entre todas las campañas de la cuenta — igual que
+# LEADS_CAMPAIGN_MATCH, pero para la campaña nueva de WhatsApp.
+WHATSAPP_CAMPAIGN_MATCH = os.environ.get("WHATSAPP_CAMPAIGN_MATCH", "whatsapp")
+
+# Pistas (sin tildes, minúsculas) para reconocer, dentro de las "actions" que
+# devuelve Meta, cuál corresponde a "se inició una conversación de
+# WhatsApp" — Meta la cuenta cuando la persona manda su primer mensaje
+# (no apenas hace clic en el botón del anuncio, que solo abre WhatsApp con
+# el mensaje ya escrito). Se busca por "contiene", no por nombre exacto,
+# porque Meta agrega sufijos de ventana de atribución (ej. "_7d") que pueden
+# cambiar.
+WHATSAPP_CONVERSATION_ACTION_HINTS = ("messaging_conversation_started", "onsite_conversion.messaging_conversation")
+
 META_TOKEN = os.environ.get("META_TOKEN")
 API_VERSION = "v21.0"
 API_BASE = f"https://graph.facebook.com/{API_VERSION}"
@@ -120,6 +134,69 @@ def fetch_campaign_totals(since_date, until_date):
         },
     )
     return data.get("data", [])
+
+
+def extract_conversations_started(actions):
+    """Busca, dentro de las 'actions' de un insight, la que corresponde a
+    'se inició una conversación de WhatsApp' (ver WHATSAPP_CONVERSATION_ACTION_HINTS).
+    Devuelve 0 si no encuentra ninguna coincidencia (por ejemplo, si la
+    campaña no está optimizada a conversaciones)."""
+    if not actions:
+        return 0
+    for a in actions:
+        action_type = (a.get("action_type") or "").lower()
+        if any(hint in action_type for hint in WHATSAPP_CONVERSATION_ACTION_HINTS):
+            return int(float(a.get("value", 0)))
+    return 0
+
+
+def fetch_whatsapp_campaign_summary(since_date, until_date):
+    """
+    Resumen REAL (según Meta, no inventado a mano) de la campaña de WhatsApp
+    con conversión: gasto, clics en el botón, y conversaciones de WhatsApp
+    realmente iniciadas (la persona mandó su primer mensaje) — con su costo
+    por conversación. Esto es lo que se compara, en el dashboard, contra
+    cuántos de esos contactos Ingrid ya subió a mano a HubSpot.
+
+    Best-effort: si la campaña no existe todavía, o la llamada falla, o
+    ninguna campaña coincide con WHATSAPP_CAMPAIGN_MATCH, devuelve un
+    resumen en ceros con available=False, sin romper el resto del script.
+    """
+    try:
+        data = meta_get(
+            f"/{AD_ACCOUNT_ID}/insights",
+            {
+                "level": "campaign",
+                "fields": "campaign_name,spend,clicks,actions,cost_per_action_type",
+                "time_range": json.dumps({"since": since_date, "until": until_date}),
+                "limit": 500,
+            },
+        )
+    except Exception as e:
+        print(f"AVISO: no se pudo traer el resumen de la campaña de WhatsApp: {e}", file=sys.stderr)
+        return {"available": False, "found": False, "spend": 0, "clicks": 0, "conversations": 0, "cost_per_conversation": None}
+
+    rows = [
+        r for r in data.get("data", [])
+        if WHATSAPP_CAMPAIGN_MATCH.lower() in (r.get("campaign_name") or "").lower()
+    ]
+    if not rows:
+        return {"available": True, "found": False, "spend": 0, "clicks": 0, "conversations": 0, "cost_per_conversation": None}
+
+    spend = sum(float(r.get("spend", 0)) for r in rows)
+    clicks = sum(int(float(r.get("clicks", 0))) for r in rows)
+    conversations = sum(extract_conversations_started(r.get("actions")) for r in rows)
+    cost_per_conversation = round(spend / conversations, 2) if conversations else None
+
+    return {
+        "available": True,
+        "found": True,
+        "campaign_names": sorted({r.get("campaign_name") for r in rows if r.get("campaign_name")}),
+        "spend": round(spend, 2),
+        "clicks": clicks,
+        "conversations": conversations,
+        "cost_per_conversation": cost_per_conversation,
+    }
 
 
 def fetch_daily_spend(since_date, until_date):
@@ -696,6 +773,10 @@ def main():
         if LEADS_CAMPAIGN_MATCH.lower() in c.get("campaign_name", "").lower()
     )
 
+    # ---- Campaña de WhatsApp: números reales de Meta (todo el período y este mes) ----
+    whatsapp_campaign_total = fetch_whatsapp_campaign_summary(CAMPAIGN_START_DATE, today_str)
+    whatsapp_campaign_month = fetch_whatsapp_campaign_summary(month_start, today_str)
+
     data = {
         "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "campaign_start": CAMPAIGN_START_DATE,
@@ -735,6 +816,10 @@ def main():
         # De qué anuncio/conjunto de anuncios salió cada registro (por email)
         "leads_attribution_available": attribution_available,
         "leads_attribution": leads_attribution,
+        # Campaña de WhatsApp: números reales de Meta (ver fetch_whatsapp_campaign_summary)
+        "whatsapp_campaign_match": WHATSAPP_CAMPAIGN_MATCH,
+        "whatsapp_campaign_total": whatsapp_campaign_total,
+        "whatsapp_campaign_month": whatsapp_campaign_month,
     }
 
     with open("meta_data.json", "w", encoding="utf-8") as f:
@@ -744,7 +829,8 @@ def main():
         f"OK: gasto total S/{total_spend:.2f}, este mes S/{month_spend:.2f}, "
         f"{len(leads_creatives)} creatividades de leads, {len(milestones)} hitos, "
         f"{len(campaigns_performance)} campañas, {len(adsets_performance)} conjuntos de anuncios, "
-        f"atribución de registros: {'disponible (' + str(len(leads_attribution)) + ')' if attribution_available else 'no disponible'}"
+        f"atribución de registros: {'disponible (' + str(len(leads_attribution)) + ')' if attribution_available else 'no disponible'}. "
+        f"Campaña WhatsApp: {'no encontrada' if not whatsapp_campaign_total.get('found') else str(whatsapp_campaign_total.get('conversations')) + ' conversaciones, S/' + str(whatsapp_campaign_total.get('spend'))}"
     )
 
 

@@ -104,6 +104,27 @@ NIVEL_URGENCIA_LABELS = {
     "alto": "Alto",
 }
 
+# ---- Envío "tibio" (correo a contactos de formulario para volver a
+# calentarlos) ----
+# Fabián decidió: el Estadio del Lead es lo que define si un contacto es
+# "potencial" (se le puede volver a escribir) o no; el Nivel de Urgencia no
+# se usa para incluir/excluir a nadie — se usa aparte, para decidir qué
+# variante de contenido mandarle a cada quien. Por eso acá solo se filtra
+# por Estadio.
+# Los que están en estos Estadios se EXCLUYEN del envío tibio (por defecto:
+# Semilla y En Crecimiento). Un contacto sin Negocio, o con Negocio pero sin
+# Estadio cargado, tampoco entra — no hay forma de saber si es potencial.
+WARM_AUDIENCE_EXCLUDE_ESTADIOS = {
+    v.strip() for v in os.environ.get("WARM_AUDIENCE_EXCLUDE_ESTADIOS", "Semilla,En Crecimiento").split(",")
+    if v.strip()
+}
+
+# ---- Campaña de WhatsApp (conversión de Meta) ----
+# Desde cuándo contar los contactos que Ingrid sube A MANO en HubSpot para
+# esta campaña (ver fetch_whatsapp_manual_contacts). Ajustable sin tocar el
+# código si la campaña empezó antes o después de esta fecha.
+WHATSAPP_CAMPAIGN_START_DATE = os.environ.get("WHATSAPP_CAMPAIGN_START_DATE", "2026-09-01")
+
 
 def normalize_enum(raw_value, label_map):
     """Normaliza el valor crudo que devuelve HubSpot para una lista
@@ -248,6 +269,61 @@ def fetch_closed_deals_count(since_date_str):
         return {"count": len(data.get("results", [])), "available": True}
     except Exception as e:
         return {"count": None, "available": False, "error": str(e)}
+
+
+def fetch_whatsapp_manual_contacts(since_date_str):
+    """Contactos que Ingrid sube A MANO en HubSpot para la campaña de
+    WhatsApp con conversión de Meta (hoy en día, sin automatizar). Se
+    reconocen por: 'Original Source' = Paid Social (lo que Ingrid tipifica
+    como 'redes sociales de pago') Y creados desde el propio HubSpot (no por
+    un formulario). Esto es justamente lo que se compara, en el dashboard,
+    contra el número REAL de conversaciones que reporta Meta Ads — para ver
+    cuántas conversaciones de Meta todavía no se han subido a HubSpot.
+    Best-effort: si falla, devuelve una lista vacía sin romper el resto del
+    script."""
+    try:
+        since_epoch = date_to_epoch_ms(since_date_str)
+        contacts = []
+        after = None
+        while True:
+            body = {
+                "filterGroups": [
+                    {
+                        "filters": [
+                            {"propertyName": "hs_analytics_source", "operator": "EQ", "value": "PAID_SOCIAL"},
+                            {"propertyName": "hs_object_source_label", "operator": "EQ", "value": "CRM_UI"},
+                            {"propertyName": "createdate", "operator": "GTE", "value": str(since_epoch)},
+                        ]
+                    }
+                ],
+                "properties": ["firstname", "lastname", "email", "phone", "mobilephone", "createdate", "company"],
+                "limit": 100,
+                "sorts": [{"propertyName": "createdate", "direction": "DESCENDING"}],
+            }
+            if after:
+                body["after"] = after
+            data = hubspot_post("/crm/v3/objects/contacts/search", body)
+            contacts.extend(data.get("results", []))
+            after = data.get("paging", {}).get("next", {}).get("after")
+            if not after:
+                break
+
+        detail = []
+        for c in contacts:
+            props = c.get("properties", {})
+            full_name = " ".join(x for x in [props.get("firstname"), props.get("lastname")] if x).strip()
+            createdate = props.get("createdate")
+            detail.append({
+                "name": full_name or "(sin nombre)",
+                "email": props.get("email") or "(sin correo)",
+                "phone": props.get("phone") or props.get("mobilephone") or None,
+                "company": props.get("company") or "(sin empresa)",
+                "created_date": createdate[:10] if createdate else None,
+            })
+        return {"count": len(detail), "detail": detail, "available": True}
+    except Exception as e:
+        print(f"AVISO: no se pudo revisar los contactos manuales de WhatsApp: {e}", file=sys.stderr)
+        return {"count": None, "detail": [], "available": False, "error": str(e)}
 
 
 def fetch_deal_stage_labels():
@@ -551,6 +627,23 @@ def main():
     weeks = build_week_ranges(CAMPAIGN_START_DATE, today)
     leads_by_week = build_leads_by_week(leads_by_day, weeks)
 
+    # ---- Audiencia disponible para el envío "tibio" (ver comentario junto a
+    # WARM_AUDIENCE_EXCLUDE_ESTADIOS) ----
+    warm_audience_detail = [
+        {
+            "name": r["name"],
+            "email": r["email"],
+            "company": r["company"],
+            "estadio_lead": r["estadio_lead"],
+            "nivel_urgencia": r["nivel_urgencia"],
+        }
+        for r in leads_detail
+        if r["estadio_lead"] and r["estadio_lead"] not in WARM_AUDIENCE_EXCLUDE_ESTADIOS
+    ]
+
+    # ---- Campaña de WhatsApp: contactos que Ingrid ya subió a mano ----
+    whatsapp_manual = fetch_whatsapp_manual_contacts(WHATSAPP_CAMPAIGN_START_DATE)
+
     data = {
         "updated_at": now.isoformat(),
         "campaign_start": CAMPAIGN_START_DATE,
@@ -569,6 +662,11 @@ def main():
         "leads_detail": leads_detail,
         "reuniones_auto": reuniones_auto,
         "leads_status_breakdown": leads_status_breakdown,
+        "warm_audience_exclude_estadios": sorted(WARM_AUDIENCE_EXCLUDE_ESTADIOS),
+        "warm_audience_count": len(warm_audience_detail),
+        "warm_audience_detail": warm_audience_detail,
+        "whatsapp_manual_start_date": WHATSAPP_CAMPAIGN_START_DATE,
+        "whatsapp_manual_contacts": whatsapp_manual,
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
@@ -577,7 +675,9 @@ def main():
     print(
         f"OK: {total_leads} leads totales, {current_month_leads} este mes, "
         f"{current_week_leads} esta semana, {leads_with_deal} con negocio creado, "
-        f"{reuniones_auto} con reunión (automático)."
+        f"{reuniones_auto} con reunión (automático). "
+        f"Audiencia tibia disponible: {len(warm_audience_detail)}. "
+        f"Contactos manuales de WhatsApp: {whatsapp_manual.get('count')}."
     )
 
 
