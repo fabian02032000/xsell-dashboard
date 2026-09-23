@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T04:52:01.621636+00:00",
+  "updated_at": "2026-09-23T05:17:02.745868+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -394,7 +394,7 @@
       "company": "Privateacher International",
       "created_date": "2026-09-20",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Reunión Agendadas",
       "deal_name": "Privateacher International ",
       "deal_note": "Si respondió llamada. Empresa que vende cursos de idiomas. Indica que le escriba por wsp para coordinar horario de reunión.",
       "estadio_lead": "En Crecimiento",
@@ -433,7 +433,7 @@
       "company": "e-Robot",
       "created_date": "2026-09-19",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Reunión Agendadas",
       "deal_name": "e-Robot",
       "deal_note": "Ocupado. Indica que lo llamen a 1:oo p.m.",
       "estadio_lead": null,
@@ -2182,7 +2182,7 @@
       "nivel_urgencia": null
     }
   ],
-  "reuniones_auto": 6,
+  "reuniones_auto": 8,
   "leads_status_breakdown": [
     {
       "label": "Descartada",
@@ -2190,11 +2190,11 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 13
+      "count": 11
     },
     {
       "label": "Reunión Agendadas",
-      "count": 6
+      "count": 8
     },
     {
       "label": "Sin negocio",
