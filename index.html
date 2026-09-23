@@ -237,6 +237,8 @@
     <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
     <button class="tab-btn" data-tab="story">🕒 Historia de la cuenta</button>
+    <button class="tab-btn" data-tab="emailmkt">📧 Email Marketing (Pauta)</button>
+    <button class="tab-btn" data-tab="insight">✉️ Correos Insight</button>
   </div>
 
   <div class="tab-panel active" id="tab-leads">
@@ -464,46 +466,6 @@
 
   <section>
     <div class="section-head">
-      <h2>Correos de prospección en frío (Ingrid)</h2>
-      <span class="hint">Correos "insight" que Ingrid envía uno por uno desde HubSpot — datos reales de HubSpot, sin tipificar a mano</span>
-    </div>
-    <div class="kpi-row" id="emailsKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="emailsRubroCallout" style="margin-bottom:14px;"></div>
-      <button class="tagdist-toggle" type="button" id="emailsClientsToggle" aria-expanded="false">▸ Ver detalle de cada correo</button>
-      <div class="tagdist-clients" id="emailsClientsList" style="display:none;">
-        <div class="table-wrap scroll-y">
-          <table>
-            <thead><tr><th>Fecha</th><th>Hora</th><th>Destinatario</th><th>Empresa / Rubro</th><th>Asunto</th><th>Estado</th><th>Aperturas</th><th>Clics</th><th>Respuestas</th></tr></thead>
-            <tbody id="emailsTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Audiencia disponible para envío tibio</h2>
-      <span class="hint">Contactos de formulario que sí consideramos potenciales, según el Estadio del Lead que tipifica Ingrid — la Urgencia se usa aparte, para decidir qué contenido enviarle a cada quien</span>
-    </div>
-    <div class="kpi-row" id="warmKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="warmCallout" style="margin-bottom:14px;"></div>
-      <button class="tagdist-toggle" type="button" id="warmClientsToggle" aria-expanded="false">▸ Ver contactos</button>
-      <div class="tagdist-clients" id="warmClientsList" style="display:none;">
-        <div class="table-wrap scroll-y">
-          <table>
-            <thead><tr><th>Nombre</th><th>Correo</th><th>Empresa</th><th>Estadio</th><th>Urgencia</th></tr></thead>
-            <tbody id="warmTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
       <h2>Campaña WhatsApp (Meta)</h2>
       <span class="hint">Números reales de Meta Ads para la campaña de conversión a WhatsApp — comparados con los contactos que Ingrid ya subió a mano en HubSpot</span>
     </div>
@@ -533,6 +495,54 @@
         <div class="tooltip" id="dailyTooltip"></div>
       </div>
       <div class="milestone-list" id="milestoneList"></div>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="tab-panel" id="tab-emailmkt">
+
+  <section>
+    <div class="section-head">
+      <h2>Audiencia disponible para envío tibio</h2>
+      <span class="hint">Contactos de formulario (pauta) que sí consideramos potenciales, según el Estadio del Lead que tipifica Ingrid — la Urgencia se usa aparte, para decidir qué contenido enviarle a cada quien</span>
+    </div>
+    <div class="kpi-row" id="warmKpiRow"></div>
+    <div class="chart-card">
+      <div class="callout" id="warmCallout" style="margin-bottom:14px;"></div>
+      <button class="tagdist-toggle" type="button" id="warmClientsToggle" aria-expanded="false">▸ Ver contactos</button>
+      <div class="tagdist-clients" id="warmClientsList" style="display:none;">
+        <div class="table-wrap scroll-y">
+          <table>
+            <thead><tr><th>Nombre</th><th>Correo</th><th>Empresa</th><th>Estadio</th><th>Urgencia</th></tr></thead>
+            <tbody id="warmTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="tab-panel" id="tab-insight">
+
+  <section>
+    <div class="section-head">
+      <h2>Correos de prospección en frío (Ingrid)</h2>
+      <span class="hint">Correos "insight" que Ingrid envía uno por uno desde HubSpot — datos reales de HubSpot, sin tipificar a mano</span>
+    </div>
+    <div class="kpi-row" id="emailsKpiRow"></div>
+    <div class="chart-card">
+      <div class="callout" id="emailsRubroCallout" style="margin-bottom:14px;"></div>
+      <button class="tagdist-toggle" type="button" id="emailsClientsToggle" aria-expanded="false">▸ Ver detalle de cada correo</button>
+      <div class="tagdist-clients" id="emailsClientsList" style="display:none;">
+        <div class="table-wrap scroll-y">
+          <table>
+            <thead><tr><th>Fecha</th><th>Hora</th><th>Destinatario</th><th>Empresa / Rubro</th><th>Asunto</th><th>Estado</th><th>Aperturas</th><th>Clics</th><th>Respuestas</th></tr></thead>
+            <tbody id="emailsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
