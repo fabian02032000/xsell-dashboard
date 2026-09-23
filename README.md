@@ -13,6 +13,7 @@ saber programar — solo sigue estos pasos una vez. Toma unos 15-20 minutos.
 5. Ve a la pestaña **Scopes** (alcances) y activa, como mínimo:
    - `crm.objects.contacts.read`
    - `crm.objects.deals.read` (opcional, solo si quieres el conteo de clientes cerrados)
+   - `crm.objects.emails.read` (para la sección "Correos de prospección en frío (Ingrid)")
 6. Clic en **Crear app**, luego **Continuar creando**.
 7. Copia el **token de acceso** que te muestra (empieza con `pat-...`). Guárdalo,
    lo vas a necesitar en el Paso 3. No lo compartas ni lo pegues en ningún
