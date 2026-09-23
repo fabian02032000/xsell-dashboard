@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T18:53:18.087868+00:00",
+  "updated_at": "2026-09-23T21:59:45.229638+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -311,7 +311,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 143,
+  "leads_with_deal": 145,
   "leads_detail": [
     {
       "name": "Renato Sánchez",
@@ -319,10 +319,10 @@
       "phone": "+51936724970",
       "company": "Reasam Corredor de Seguros",
       "created_date": "2026-09-23",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Reasam Corredor de Seguros",
+      "deal_note": "Busca MKT. Sí respondió llamada. No tiene inversión en pauta.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -332,9 +332,9 @@
       "phone": "+51938131652",
       "company": "CCprojects SAC",
       "created_date": "2026-09-23",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "CCprojects SAC",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -593,7 +593,7 @@
       "company": "GRUPO Leonex S.A.C",
       "created_date": "2026-09-14",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Calzado GRUPO Leonex S.A.C",
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": null,
@@ -2216,7 +2216,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 124
+      "count": 126
     },
     {
       "label": "Prospectos Contactados",
@@ -2228,7 +2228,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
