@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T00:49:40.047075+00:00",
+  "updated_at": "2026-09-23T04:21:07.575097+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -307,7 +307,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 141,
+  "leads_with_deal": 143,
   "leads_detail": [
     {
       "name": "Jose Melendez Quesada",
@@ -315,9 +315,9 @@
       "phone": "+51977575171",
       "company": "Geonet Import Sac",
       "created_date": "2026-09-22",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Geonet Import Sac",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -328,9 +328,9 @@
       "phone": "+51940485800",
       "company": "corporación Logística & Transporte S.A.C",
       "created_date": "2026-09-22",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Corporación Logística & TransporteDeal",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -485,9 +485,9 @@
       "company": "Manufacturas Emisa",
       "created_date": "2026-09-18",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Manufactura Emisa",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -498,9 +498,9 @@
       "company": "CORPORACIÓN INVISA S.A.C",
       "created_date": "2026-09-17",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "CORPORACIÓN INVISA S.A.C",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -511,9 +511,9 @@
       "company": "Jeiner",
       "created_date": "2026-09-15",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Jeiner",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
@@ -526,7 +526,7 @@
       "has_deal": true,
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Creative Focus ",
-      "deal_note": null,
+      "deal_note": "No responde wsp de seguimiento",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
@@ -537,9 +537,9 @@
       "company": "Tiens",
       "created_date": "2026-09-14",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Tiens",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -550,9 +550,9 @@
       "company": "Drsusse",
       "created_date": "2026-09-14",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Drsusse",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -564,8 +564,8 @@
       "created_date": "2026-09-14",
       "has_deal": true,
       "deal_stage": "Prospectos Contactados",
-      "deal_name": "GRUPO Leonex S.A.C",
-      "deal_note": null,
+      "deal_name": "Calzado GRUPO Leonex S.A.C",
+      "deal_note": "Nunca respondio wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -576,9 +576,9 @@
       "company": "Zí Vital",
       "created_date": "2026-09-14",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Zí Vital",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -589,9 +589,9 @@
       "company": "kitaro",
       "created_date": "2026-09-14",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "kitaro",
-      "deal_note": "Número no tiene wsp",
+      "deal_note": "Nunca respondió. No tiene wsp y no responde llamada",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
@@ -602,9 +602,9 @@
       "company": "OLYSAN LOVE EIRL",
       "created_date": "2026-09-13",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "OLYSAN LOVE EIRL",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -615,9 +615,9 @@
       "company": "TU DISTI SAC",
       "created_date": "2026-09-13",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "TU DISTI SAC",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -628,9 +628,9 @@
       "company": "David Jose Trillo Uculmana",
       "created_date": "2026-09-13",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "David Jose Trillo Uculmana",
-      "deal_note": null,
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2186,11 +2186,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 114
+      "count": 124
     },
     {
       "label": "Prospectos Contactados",
-      "count": 21
+      "count": 13
     },
     {
       "label": "Reunión Agendadas",
@@ -2198,7 +2198,91 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
-  ]
+  ],
+  "warm_audience_exclude_estadios": [
+    "En Crecimiento",
+    "Semilla"
+  ],
+  "warm_audience_count": 9,
+  "warm_audience_detail": [
+    {
+      "name": "Jorge Barco Fenco",
+      "email": "jorgebarcofenco@gmail.com",
+      "company": "CREATIVE FOCUS",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Alina Ricsi",
+      "email": "alina.ricsi@syscopyperu.com",
+      "company": "Syscopy Peru Sac",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Fernando Arias Rebolledo",
+      "email": "farias@alvcom.com.pe",
+      "company": "Sef solution sac",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Pedro Valdez",
+      "email": "pvaldezcabrera@gmail.com",
+      "company": "VClean",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Daniela Mori Bertetti",
+      "email": "danielamori2015@gmail.com",
+      "company": "Iseia Swim",
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Amdres Reyes",
+      "email": "victorandresrecaldereyes8@gmail.com",
+      "company": "domcar",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Medio"
+    },
+    {
+      "name": "Rodolfo Enrique Montoya Miniza",
+      "email": "rodolfo.montoya@oymgroup.com",
+      "company": "O&M SERVICIOS COMERCIALES SAC",
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Carlos Peramás",
+      "email": "carlos.peramas@automotoresinka.com",
+      "company": "Automotores Inka",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Franco B",
+      "email": "frankren.18@gmail.com",
+      "company": "Agroinvest Peru",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Medio"
+    }
+  ],
+  "whatsapp_manual_start_date": "2026-09-01",
+  "whatsapp_manual_contacts": {
+    "count": 1,
+    "detail": [
+      {
+        "name": "Jordan  Trujillo tito",
+        "email": "grupoleonex@hotmail.com",
+        "phone": "+51989379738",
+        "company": "GRUPO Leonex S.A.C",
+        "created_date": "2026-09-14"
+      }
+    ],
+    "available": true
+  }
 }
