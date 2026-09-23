@@ -28,6 +28,11 @@ jobs:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: python scripts/fetch_hubspot.py
 
+      - name: Traer correos de prospección en frío (Ingrid)
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: python scripts/fetch_ingrid_emails.py
+
       - name: Traer gasto de Meta Ads
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
@@ -48,7 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json meta_data.json organic_data.json
+          git add data.json meta_data.json organic_data.json emails_data.json
           if [ -f meta_events_state.json ]; then git add meta_events_state.json; fi
           git diff --staged --quiet || git commit -m "Actualiza datos del dashboard"
           git push
