@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-24T13:13:26.449805+00:00",
+  "updated_at": "2026-09-24T18:12:12.056243+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 3893.23,
-  "month_spend": 1712.79,
-  "leads_campaign_spend_total": 3703.54,
-  "leads_campaign_spend_month": 1712.79,
+  "total_spend": 3910.38,
+  "month_spend": 1729.94,
+  "leads_campaign_spend_total": 3720.69,
+  "leads_campaign_spend_month": 1729.94,
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 3589.93
+      "spend": 3600.0
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -17,17 +17,17 @@
     },
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
-      "spend": 113.61
+      "spend": 120.69
     }
   ],
   "campaigns_month": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 1599.18
+      "spend": 1609.25
     },
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
-      "spend": 113.61
+      "spend": 120.69
     }
   ],
   "daily_spend": [
@@ -277,7 +277,7 @@
     },
     {
       "date": "2026-09-24",
-      "spend": 14.09
+      "spend": 31.24
     }
   ],
   "spend_by_week": [
@@ -356,10 +356,10 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "spend": 283.22,
-      "impressions": 7959,
-      "reach": 5011,
-      "frequency": 1.59
+      "spend": 300.37,
+      "impressions": 8309,
+      "reach": 5180,
+      "frequency": 1.6
     }
   ],
   "creatives_available": true,
@@ -367,7 +367,7 @@
     {
       "ad_name": "EST | TEXTIL | AGENCIA DE VENTAS | CTA WSP",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/814756282_122264023004105281_8059141053500958211_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=ff4730&_nc_ohc=aZ3-iNSoBJ0Q7kNvwEoxsw3&_nc_oc=Adqn8iUGe3DXxNJTjXRoC6lEoz4DsrF4-Y__MgPCnOLyz2sYFob0G3nAJIws8Pg_51s&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQKzWVREwfHmMaMwSvOH3f6sg6weiatD9dE9sncqXycSDhStRtzYgrBcDHbjVQQWetBv6cMZar0TqA&oh=00_AQJd8ihG3J7K2GBrZhWIv5XusaHfqge-xl6qhEBRy86KVA&oe=6ABAF0FE",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/814756282_122264023004105281_8059141053500958211_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=ff4730&_nc_ohc=aZ3-iNSoBJ0Q7kNvwE81Njw&_nc_oc=AdoW9c0mU0Tf5Ltw_dA_BqMxmxpznupVM5cqK37eINlroDFwD7_2XKxeebSVB74P3s4&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQIvKqGednsAZXwIXrcwB9OcwQgcp4AL_y_QdJ2XVW9YbW_1_LOCnPCI4YOyapWz-nYEiXWbn-Ykdg&oh=00_AQLiFJH2pN170ksVwJSp00_dkDKq9PeVpgMJoopNURCUKg&oe=6ABB293E",
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Escríbenos por WhatsApp y cuéntanos cómo gestionas hoy tus pedidos.",
       "description": ""
@@ -375,7 +375,7 @@
     {
       "ad_name": "EST | PROBLEMAS CIERRE DE VENTAS | CTA FORMULARIO",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=_1MFmN0g2BcQ7kNvwEewXxB&_nc_oc=AdrElbi8vOpxZ06wH-P055LdNqILgqqrMCMGHDdRygtBQ9qFP5sCJUHWuiJ-tcKjgT0&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQJ-X-MwnA0NL5ubssMqgEKGf32U23_LO62Z-89Rr_nXnDFYZRCdgMR409Iqei417aNzHfUDL3zlSw&oh=00_AQK-5uq66XePFlRHVXGePh3rtCEMYCmUOENNZYnsof-SnQ&oe=6ABAEE4A",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=_1MFmN0g2BcQ7kNvwHqDdyH&_nc_oc=AdqNop736BZ3uPywPpyHYC5odt3Fl6JMRAVtJZ_tQcYtULQXt1bWu-N4plbrDJSay8I&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQLqku8RBuyp8FvQHekYl6E-fALWnwQwT7J4sSyRuoNgcGb3G-ghJSzq4ppsQ2fU7c8SHOmsAFgPJw&oh=00_AQKNUcK7BZ-Yy5uMfclCffjF_rge2J7fP5-sKc7EFDbnow&oe=6ABB268A",
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Completa el formulario y te ayudamos a hacer crecer tus ventas",
       "description": ""
@@ -383,7 +383,7 @@
     {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=kGBsreEqwHQQ7kNvwG-_VIa&_nc_oc=AdowUwo9ukQckl8n5F7HvsK--FSsUW_mkb5j0v7bL13hz852rNdZ7MP6l3GQKdjZYYQ&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQJ3g_pnLnMoUs55g1tht7nOtrZqsYUV2PMq9pxIQs-fRtr9yTmUd0JeQnAvT4iPUjceTKTLN32o_Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQIl240ex2MiVL5OoEa78SVeUwOQjec1lPTrbVj2X0wqxg&oe=6ABAF4EB",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=kGBsreEqwHQQ7kNvwEcEslK&_nc_oc=AdonmXDeYjSZCvIOilz4myyIe3fyM_E6NTMQresWkN_xX9rO0ApDIsmwYrTOA8Qy_f8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQIpyEYEkKnJNlO28oeea7zIvVn1JIW166BRWmZFL0-234OEBc8ei9VniM26MGEgqoGspID9U_gPUQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLXClMWHR_9kfuVjipLswGz-MI9KSvc6ZZnrxg8Gmzsdw&oe=6ABB2D2B",
       "title": "Vende más textil sin contratar",
       "body": "¿Cuántas cotizaciones se te enfrían por no responder a tiempo? Nosotros las cerramos por ti. Agenda una reunión gratis hoy.",
       "description": ""
@@ -391,7 +391,7 @@
     {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=Sq7y1wohlQMQ7kNvwErTLcM&_nc_oc=AdoBTr1axhuRjJTRwlDP-H729RKOsn3E8FkqIHFlkoqgFaDOQC9dTEnZzQ1NT6DbRmU&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQLVuWFHwR-M9tKTmVaOIEgxjNNPnLBhEyXs2ob0Yp56cBKisC6mTz7IBKFogSOFRq91DdP3CbTlMQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQKNq1umYvDPBBcZ355oVE0ENal0RDNLTd5DdpwD3uR4TQ&oe=6ABAFF28",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=YWu__o5y3QgQ7kNvwH56vAG&_nc_oc=AdrGmY1Ixzahe4lw39QYuJI1hvwkgtzRCcuwd0xjPVbJQ2qUyb8sY53XYgyl-1cqd1M&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQLdeVyFESAc4p3SpzETcJ5DZEJAIBsOA1hm5PwgPn81smr5u73Pq9AUHdXv53eoEWL88OxuC3Q_3g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLE530wK238jBll-CZg57G1SdrHb9qlCLWy9YICkqf8OA&oe=6ABB3768",
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": ""
@@ -399,7 +399,7 @@
     {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jcQhGvhR_lsQ7kNvwFhNM0c&_nc_oc=Adp8ne5rp-jsYuHFk7GcpOu5NMLzUsQlIy_jFZ7dB5hJuY6xffY8n4bOPK33IWF13KE&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQILVMqa3XFLH-W9zfigDLEAHOubnatT8qTd7d_cPTFjRWIELao6fgS7eFf9RmbMRYS3nKu_rJIrNg&oh=00_AQJFTe1I_e0DezuEfZKqKiQ4KHFxCvGpqSU-NAPiMqnj2Q&oe=6ABAE40F",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jcQhGvhR_lsQ7kNvwEQ_j0M&_nc_oc=AdrhJ_53PL7oCpiTkOD_cpOqs-xaKa6rT4TkhIe7yaDoPjJRHad9mqx6qHH3wX_4nvI&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQKc1-bLD80bD7FyNQRCppdvOAFvIICz3yzVRk5eHRy7MD_m-9HyYcyxXzAhikTPTo0FG6wPkSxLcA&oh=00_AQJ0dHbcuBRzT_XuOP0ZoG6kP12kAlpYNl5JEBuq4oFrsA&oe=6ABB548F",
       "title": "💬 ¿Cuántos chats sin responder tienes?",
       "body": "💬 ¿Cuántos chats de clientes se te quedaron sin responder esta semana? No es falta de tiempo, es falta de un equipo comercial detrás. En Xsell ponemos la estrategia y el equipo para que ninguna venta se enfríe.",
       "description": ""
@@ -407,7 +407,7 @@
     {
       "ad_name": "REEL | LEAD FRIOS - FABIAN",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=_SYyXD7aaNMQ7kNvwGhfdWW&_nc_oc=AdpV2eMPM4XY6FxQ3xjuMvOhZL29YD5C6bm1dLA2sSklqTk_KaO7BgC8ARkCu6dtfv8&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQJBVav9J6H-1xZhnTnyZF82hJ3aLnsXYdmTa3-s5afrzzPxiURTzRZSRl-992xacnIv7OeXZ84FZw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQJd9f8ZhxWHHbvqfXe6FRXMJWS_YoRvyN70eQFgelGJ7w&oe=6ABB06B4",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=_SYyXD7aaNMQ7kNvwGY6-3B&_nc_oc=Ado-OOVFgZk_-jPR2m_gjej6yHzK5vKpJBeSwynd6cc2l1RNwPlzG_5qk2a4s2742nc&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQJmZ0_PY6n1rPT-uy3FnjWKjXM5g_rW2HN0-YLu6Fol6GQEPsLZA7N611aru0W7X2kNqryAkhb_PQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQIlLX7O6GTnm7AO96NhZDutKcTDbAJwJgYIWFc_FjHkwA&oe=6ABB3EF4",
       "title": "⏱️ El tiempo cierra ventas",
       "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
       "description": ""
@@ -415,7 +415,7 @@
     {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jn0V40yr6cwQ7kNvwEWbJCr&_nc_oc=Ado5yfMH2MTXr_bXpJCf7UBjMqJAjFezFhcjh9KguZZqiWg0kis2byVMftEoOuEck90&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=RjrbgxsiK3AFLFgqLUcZkg&_nc_tpa=Q5bMBQLQlDnxQF1XSxitfcKDqJhreB5-9I6yIAhFKX-tUso0T71CAaav4d5m9rhW4ME1s6A_GpkkEJxKkQ&oh=00_AQKw65CXHhXhpus2WYvhCNPRcEs6ad3a2zxCW4AIuqVgsg&oe=6ABADC7F",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jn0V40yr6cwQ7kNvwFZZBQC&_nc_oc=AdoswBKWmFp39sgU_OY3OwgUrzLO4qPwphOdUmJPJkSaWm_iuOvyInL64nou4BLevUw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=qCfitEV_740K9uypym2mFw&_nc_tpa=Q5bMBQITh_jKFkwveQhsKNIvi-Pe-K7Dcb4ICTwG3QO5RAzt1U4rj_IbgvG-v1QdviytzQOZh99a6mC6eQ&oh=00_AQKoZjPozYyeMve_ltCvP76xo1XS5l5D9F_wiJTtNAItGw&oe=6ABB4CFF",
       "title": "📈 ¿Muchos leads, poco equipo?",
       "body": "📈 ¿Tu equipo de ventas ya no da abasto con tantos leads? Sumamos el equipo extra para que cada contacto reciba respuesta a tiempo, sin perder oportunidades por el camino.",
       "description": ""
@@ -530,6 +530,10 @@
     },
     {
       "date": "2026-09-21",
+      "label": "Anuncio creado"
+    },
+    {
+      "date": "2026-09-21",
       "label": "Segmentación del conjunto de anuncios actualizada"
     },
     {
@@ -591,6 +595,10 @@
     {
       "date": "2026-09-18",
       "label": "Anuncio actualizado"
+    },
+    {
+      "date": "2026-09-18",
+      "label": "Estado de anuncio actualizado"
     },
     {
       "date": "2026-09-18",
@@ -815,14 +823,6 @@
     {
       "date": "2026-09-10",
       "label": "Se ha actualizado el estado de la campaña"
-    },
-    {
-      "date": "2026-09-08",
-      "label": "Cuenta facturada"
-    },
-    {
-      "date": "2026-09-05",
-      "label": "Cuenta facturada"
     }
   ],
   "ads_performance_available": true,
@@ -838,7 +838,7 @@
       "title": "",
       "body": "",
       "description": "",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=liQ2VWr5tGcQ7kNvwF1U2TA&_nc_oc=Adqqp2_YxdxY9lKSTitf04jDXbNjLrihbOglk6KkVMK9KKFZOFUdSnkbXhsVpgyVq7E&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQKelvSCIdvo8ny3Q2U0XY4NHbHBzegpdvcGNRJCIVkHR4YWxFVyRQCo19Iey8Iz3PkV2EGW3G15Kg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQI_9Ak5Lq7UjH0e8GrVjeQyxSDfatGaFQt-NZ-ZGs2S8w&oe=6ABAF41B",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=liQ2VWr5tGcQ7kNvwGMb7gp&_nc_oc=AdrK1r-5nPpy78QZb-TvcpmtxutF9mdZC1vMrnF1GB8nx-Yhgd2DsZiOpLHOaDFTXoo&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLyL3C_MvWoqI0kSh3hksamNb6_2202hgD6dC_Dp3cD_cOO7v1IPeBxzopw7esycfv96DXpfDRX7w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQIDLZ9u2TzvjJrJEK9Paozkj4GtyaEkNBhPT4eFKRrzrQ&oe=6ABB2C5B",
       "spend": 1276.92,
       "impressions": 55306,
       "reach": 20882,
@@ -860,7 +860,7 @@
       "title": "📈 Tu negocio tiene un techo",
       "body": "📈 Tu negocio no puede crecer más si cada venta depende de ti. Nosotros cerramos la venta por ti, con una estrategia y medición real de resultados, para que tu crecimiento no dependa de tu tiempo.",
       "description": "",
-      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/7210789227175194364?url=https%3A%2F%2Fwww.facebook.com%2Fimages%2Fshare_options%2Fshare_arrow.gif&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKOuM7zYV9WKTxg0kbUKzJQ7woa5xe8kQsjoVrhNQiDStdCfwpxvRWrHCjM7-ylgtL1nV4QFosNWg&oh=06_Q3_DAe-RFC5lvBqPs-Ujb8PnKdgR3V9x8EmoljtxfZ_tLa_e&oe=6AB71B35",
+      "image_url": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/7210789227175194364?url=https%3A%2F%2Fwww.facebook.com%2Fimages%2Fshare_options%2Fshare_arrow.gif&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CwenjHt6cO566Uh8kAZfDA&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIY0T4BWPBJnzlTL_-FqZLm8zdLTxHqPDuUb4CfUZj4YdnCgNrmZnyBnjtLdkWLkSqUZRoN_kwUVQ&oh=06_Q3_DAevKlN7xuaGbWY7xQHB2wmnAkeWp-nqC7DG768Cw4eHz&oe=6AB75375",
       "spend": 660.02,
       "impressions": 21431,
       "reach": 9349,
@@ -882,16 +882,16 @@
       "title": "📈 ¿Muchos leads, poco equipo?",
       "body": "📈 ¿Tu equipo de ventas ya no da abasto con tantos leads? Sumamos el equipo extra para que cada contacto reciba respuesta a tiempo, sin perder oportunidades por el camino.",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jn0V40yr6cwQ7kNvwEWbJCr&_nc_oc=Ado5yfMH2MTXr_bXpJCf7UBjMqJAjFezFhcjh9KguZZqiWg0kis2byVMftEoOuEck90&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQLDexuPV415Dt9XiJGXOsvU-_V5CgVXuKI1pLoEDShYV_0r8h-WkEgaFg81s5CAJQG2XFTfhJxhEg&oh=00_AQJNlzFtbqlTbiNTJ7BHLsYGElkzB2XgjHUAZ1I0qSYhkA&oe=6ABADC7F",
-      "spend": 504.36,
-      "impressions": 11669,
-      "reach": 5055,
-      "frequency": 2.31,
-      "cpm": 43.22,
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jn0V40yr6cwQ7kNvwFZZBQC&_nc_oc=AdoswBKWmFp39sgU_OY3OwgUrzLO4qPwphOdUmJPJkSaWm_iuOvyInL64nou4BLevUw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQJklk2AnAebczYa0ftI5Ovp1JI-dvzF-SnFWi9SxfibP4gCxosmIVexGpsl9NbCIpSxw7dg1_Xl7Q&oh=00_AQJfULt2VlyfzpSEFHGZXdMdgLxiAwN1Y6FJ8XBAsR_C3Q&oe=6ABB4CFF",
+      "spend": 505.72,
+      "impressions": 11679,
+      "reach": 5073,
+      "frequency": 2.3,
+      "cpm": 43.3,
       "clicks": 161,
       "ctr": 1.38,
       "leads": 20,
-      "cost_per_lead": 25.22
+      "cost_per_lead": 25.29
     },
     {
       "ad_id": "120251910846650597",
@@ -904,7 +904,7 @@
       "title": "🎯 No todos los leads son iguales",
       "body": "🎯 No todos los leads valen lo mismo, pero tu equipo los trata igual. Te ayudamos a convertir esos leads en ventas con un proceso de priorización real.",
       "description": "",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/779976512_122262096662105281_3750831697722198775_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=hzYQMIkePDUQ7kNvwGgNJFj&_nc_oc=AdrIuYnEvl9bxYg54tVeIzfFQFcu6V6iU4AyoX-R3Zmlfc60rpP02uuCozxXU47Wujw&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQJwmHK0Xz1TSBxVrZJjgbWmkSG-nDmZVRWL-6Az1pq4uMtCbh26uPDlUOJLWn1Xco616SxsQzFBEg&oh=00_AQJi-4EIEeq-YqacIWXLPrr7hsLoHcZf7cFQN6tArI7DQA&oe=6ABAF7BF",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/779976512_122262096662105281_3750831697722198775_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=hzYQMIkePDUQ7kNvwHaDTZz&_nc_oc=AdoBTdV6_n8NcL9iwuGiahqEGm_gbObloN48NS1RBKPKKH4xsToyHtFwOFK7kwtDVMQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLjOghSXOLnfkJtCp7sxq8u5hKeSkrDVIxRVdFTKPMBCnWXtDHiTwsAWzku6_gvTuBJLmk9iJ366w&oh=00_AQIAAEdVOt870QtMNVvMUVR1cCBteWFF1-jqbn4LMuy5Iw&oe=6ABB2FFF",
       "spend": 315.15,
       "impressions": 9458,
       "reach": 3717,
@@ -926,16 +926,16 @@
       "title": "💬 ¿Cuántos chats sin responder tienes?",
       "body": "💬 ¿Cuántos chats de clientes se te quedaron sin responder esta semana? No es falta de tiempo, es falta de un equipo comercial detrás. En Xsell ponemos la estrategia y el equipo para que ninguna venta se enfríe.",
       "description": "",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jcQhGvhR_lsQ7kNvwFhNM0c&_nc_oc=Adp8ne5rp-jsYuHFk7GcpOu5NMLzUsQlIy_jFZ7dB5hJuY6xffY8n4bOPK33IWF13KE&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQL4iWKBYhnt-NnvxLOt7YJAp8lij2kn-5f9hMEysuIupH6Sphlc053QC2LgHAnMILdHI2i4Ygwlyg&oh=00_AQL7eCnPKQTgqpcbWGBoapAfirTRNp4iLieZM-5yUDpGtg&oe=6ABAE40F",
-      "spend": 309.99,
-      "impressions": 7351,
-      "reach": 3544,
-      "frequency": 2.07,
-      "cpm": 42.17,
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jcQhGvhR_lsQ7kNvwEQ_j0M&_nc_oc=AdrhJ_53PL7oCpiTkOD_cpOqs-xaKa6rT4TkhIe7yaDoPjJRHad9mqx6qHH3wX_4nvI&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLSqYg9Hv0ozgalDdx2ZtixbznaIvRoG59AbyC4-kERGjH6a9GujtE07kZmmPn_jfrRIWfsVvBdAw&oh=00_AQKZgavU-78Jk8E534UZC3jDT2nor4YxltbePhufDnUDsA&oe=6ABB548F",
+      "spend": 310.86,
+      "impressions": 7366,
+      "reach": 3547,
+      "frequency": 2.08,
+      "cpm": 42.2,
       "clicks": 89,
       "ctr": 1.21,
       "leads": 5,
-      "cost_per_lead": 62.0
+      "cost_per_lead": 62.17
     },
     {
       "ad_id": "120252139690380597",
@@ -948,16 +948,16 @@
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": "",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=Sq7y1wohlQMQ7kNvwErTLcM&_nc_oc=AdoBTr1axhuRjJTRwlDP-H729RKOsn3E8FkqIHFlkoqgFaDOQC9dTEnZzQ1NT6DbRmU&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQJt4u4cmQb8FiriY2M6JzslVjBMQT7URyb5IzgjhlKe37rsy7mwde4kNUg3frU9wLu3X3dazzItMg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLfjaIIiLrQ4_zBQw5Y6qS8cFtnLvhOSfzSxgVgcnw9rg&oe=6ABAFF28",
-      "spend": 283.25,
-      "impressions": 6411,
-      "reach": 3277,
-      "frequency": 1.96,
-      "cpm": 44.18,
-      "clicks": 130,
-      "ctr": 2.03,
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=YWu__o5y3QgQ7kNvwH56vAG&_nc_oc=AdrGmY1Ixzahe4lw39QYuJI1hvwkgtzRCcuwd0xjPVbJQ2qUyb8sY53XYgyl-1cqd1M&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLHSRDaRFeomeb7mkgVog7xMKcIr0tUgWo4BTNqv3yQt9o_V_9P2W9tQI7ZVC6jUdtvsE1nr7GpCw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLnV1ldJCNFEhgJAELNKLoTSlFLezHtubgMyYXUxcf0Mw&oe=6ABB3768",
+      "spend": 289.43,
+      "impressions": 6568,
+      "reach": 3337,
+      "frequency": 1.97,
+      "cpm": 44.07,
+      "clicks": 132,
+      "ctr": 2.01,
       "leads": 15,
-      "cost_per_lead": 18.88
+      "cost_per_lead": 19.3
     },
     {
       "ad_id": "120252145540340597",
@@ -970,7 +970,7 @@
       "title": "Vende más textil sin contratar",
       "body": "¿Cuántas cotizaciones se te enfrían por no responder a tiempo? Nosotros las cerramos por ti. Agenda una reunión gratis hoy.",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=kGBsreEqwHQQ7kNvwG-_VIa&_nc_oc=AdowUwo9ukQckl8n5F7HvsK--FSsUW_mkb5j0v7bL13hz852rNdZ7MP6l3GQKdjZYYQ&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQL8Cq4lc9KGCfbBjH8c8ydOkm1U1htMPemfX2bdpgE5-UwScIn86aNcXXtUoGlzTxoGvuF9mhN03w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLSf0jWkn_aECHRsFbCS0PYJHHCWyTQVLk6N0pFc-8CVA&oe=6ABAF4EB",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=kGBsreEqwHQQ7kNvwEcEslK&_nc_oc=AdonmXDeYjSZCvIOilz4myyIe3fyM_E6NTMQresWkN_xX9rO0ApDIsmwYrTOA8Qy_f8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQJfWOcjW5bPHkJsBncG-c008NIQjtMWpXXyWIiDnNsWe7SThr8Rnv9zp8_aeYgLYpBH6SUw7ZCQ2Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQIV7zX-n5-kJge50GzjXe4HnR2uoXvlVNwWdd88zwR2NQ&oe=6ABB2D2B",
       "spend": 125.83,
       "impressions": 2333,
       "reach": 1464,
@@ -992,16 +992,16 @@
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Escríbenos por WhatsApp y cuéntanos cómo gestionas hoy tus pedidos.",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/814756282_122264023004105281_8059141053500958211_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=ff4730&_nc_ohc=aZ3-iNSoBJ0Q7kNvwEoxsw3&_nc_oc=Adqn8iUGe3DXxNJTjXRoC6lEoz4DsrF4-Y__MgPCnOLyz2sYFob0G3nAJIws8Pg_51s&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQLAgVTfwu2UMhuTsLZpXKZzz0SoZFV6jYtbzahVkxQ_HS-EUzXeJnAJCINgA7yXcplGNInef3HWTg&oh=00_AQL5jpRr0WwooM-g_yVUJX_TsZU9csQ8HvwNvOjV6RUDlg&oe=6ABAF0FE",
-      "spend": 113.61,
-      "impressions": 4129,
-      "reach": 3002,
-      "frequency": 1.38,
-      "cpm": 27.52,
-      "clicks": 46,
-      "ctr": 1.11,
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/814756282_122264023004105281_8059141053500958211_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=ff4730&_nc_ohc=aZ3-iNSoBJ0Q7kNvwE81Njw&_nc_oc=AdoW9c0mU0Tf5Ltw_dA_BqMxmxpznupVM5cqK37eINlroDFwD7_2XKxeebSVB74P3s4&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQI198lBAYwbYhoBWrsV1qF7zSInuy5M0wqmTejgjMs2ViroOkO1N-GTSIW9lyyEwVXM_3ie6uOMeA&oh=00_AQLIXIj4U9BbQDnQJ30aJhny9lshBRcrcZtn08UKn8NrUQ&oe=6ABB293E",
+      "spend": 120.69,
+      "impressions": 4279,
+      "reach": 3064,
+      "frequency": 1.4,
+      "cpm": 28.21,
+      "clicks": 48,
+      "ctr": 1.12,
       "leads": 2,
-      "cost_per_lead": 56.8
+      "cost_per_lead": 60.34
     },
     {
       "ad_id": "120251103077310597",
@@ -1014,7 +1014,7 @@
       "title": "Xsell",
       "body": "Durante 14 años nos llamamos \"contact center\".\nProbamos de todo: distintos rubros, distintos intentos, distintas formas de explicar lo que hacíamos.\n\nHasta que entendimos algo simple, lo que mejor sabemos hacer es vender.\n\nHoy lo decimos con claridad: somos Xsell, una agencia de ventas.\n\nMejores y distintos.\n\nDesliza para ver la historia completa 👉\n\n#Xsell #AgenciaDeVentas #Ventas #MejoresYDistintos #B2B",
       "description": "",
-      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJ3KnsA5jYb1smVTlUIVwo9nIpBuQYJ0xcmvJjAJMvnL9Z9U5M6T5uwYKeOIXW3OsR_BnUYVe8oNg&oh=06_Q3_DAdLfu8d7f4SLTjyBJ8DP43EEk3A4XeXDcgmxWvXhq5cS&oe=6AB6EFCB",
+      "image_url": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CwenjHt6cO566Uh8kAZfDA&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIbEv70HCIxAugzDxpu812GNOtuKjHTlKrqzhGhsKcNOaMZgjVHMOT8fMy0kf1JkspZJllSVHXL2Q&oh=06_Q3_DAbKZ_PfOqC5su5gcbiCj-gbYYfJBsIr78sGXtm-mOvK-&oe=6AB7604B",
       "spend": 93.72,
       "impressions": 130671,
       "reach": 101665,
@@ -1036,7 +1036,7 @@
       "title": "",
       "body": "¿Sabes por qué se te caen propuestas que iban bien encaminadas? No es el precio. Es lo que dices (o no dices) después de enviarla.\n\nHay frases de seguimiento que matan la venta sin que te des cuenta, y otras que la mantienen viva. Te dejamos 4 cambios directos: qué no decir y qué decir en su lugar.\n\nGuárdalo antes de tu próximo seguimiento. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #SeguimientoComercial #TécnicasDeVenta #CierreDeVentas #EquipoComercial #Perú",
       "description": "",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=LfR1N82I--0Q7kNvwGI2U9N&_nc_oc=Adq-HxXCuRIenzWda6boDqtD6u5_oiXtVOc7KiIc5huMeYokC9Mnb5xZYtKGRZW_Ndk&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQIhd0llPl0FFnhB5FKNm0bGW3tlE_A2JE1xt9ZkC9cEA9cCifY0Paj63P5eR-LUs65ptavdCBe0Bg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQL_bf5tEUFq0LT7UXz2oEOYgX1eGu4MV9LvGp-H8GNfyg&oe=6ABAED3F",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=LfR1N82I--0Q7kNvwEEHVtz&_nc_oc=Adozs7uQHhB-Ol8XPx7RXAg2dluOtSX7We5bH3zDpemmmI_GzEhnBDhF-zGIuKnRUyA&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLXj5M-7S6FlEMHk6Z-ZnwiqZAgGYUoIHs1Y0zMNxPYSiCjP-8J7M5wOQrvPV4_nyzVZnmsd6W82A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQIALDWHX2z6fEvPcHotu4W5duQ6FrkW-59L5D9C-s52EA&oe=6ABB257F",
       "spend": 65.7,
       "impressions": 112114,
       "reach": 98676,
@@ -1058,7 +1058,7 @@
       "title": "⏱️ El tiempo cierra ventas",
       "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/784982010_122262089546105281_4528964337175950226_n.png?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=ff4730&_nc_ohc=zl4YcYtbw3IQ7kNvwGCWaAW&_nc_oc=Ado-gCYIIQQm49YN3VDaxwrH8sU5i3mSIln_QLN1zL0OXLyvARcG_t2Xp3e9541s80s&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQJYCK5vDLcqqiMNv8GC-IXgNv6JwsI7O1GMsCiEsOkhMCmLrDFxkwjIxudo8u1pK3h3HNtmi51ErQ&oh=00_AQI_Z4J3a3osvnxAG2BCeOCy71Dw79sVzZ_NPbUM4scdlw&oe=6ABB0A70",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/784982010_122262089546105281_4528964337175950226_n.png?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=ff4730&_nc_ohc=zl4YcYtbw3IQ7kNvwF9WuJN&_nc_oc=Adqe_L7JdqucAz81JAGCsD4zcrw-EG_IzmlrWsV6ZjuA1JHI9ReTOrsYQnSwl64DN8c&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQKEnbPjJRGRdXB11EDmtOYFnKcciVl3KUJtRsbxeRcwBO2izjw-unb47Klmtvsl5ryDI5TcFKe0lQ&oh=00_AQLoNKbC8BjIy8fVe5udykS5iUebpD9Rpb8jy053mJK-jA&oe=6ABB42B0",
       "spend": 33.97,
       "impressions": 529,
       "reach": 331,
@@ -1080,14 +1080,14 @@
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Completa el formulario y te ayudamos a hacer crecer tus ventas",
       "description": "",
-      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=_1MFmN0g2BcQ7kNvwEewXxB&_nc_oc=AdrElbi8vOpxZ06wH-P055LdNqILgqqrMCMGHDdRygtBQ9qFP5sCJUHWuiJ-tcKjgT0&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQK669lkuxl746-QZTBxVWCXi0Kwd_JbgsNLkCY8H8IDMvClM7aygqY6H-udBs3stTnqvJxUbvRlyA&oh=00_AQLrwHOwtDg5VAPJeLMVAnlWhUk4myxhyRa8eRKnD4CtVA&oe=6ABAEE4A",
-      "spend": 28.39,
-      "impressions": 514,
-      "reach": 290,
-      "frequency": 1.77,
-      "cpm": 55.23,
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=_1MFmN0g2BcQ7kNvwHqDdyH&_nc_oc=AdqNop736BZ3uPywPpyHYC5odt3Fl6JMRAVtJZ_tQcYtULQXt1bWu-N4plbrDJSay8I&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLIhE2XNPxJ4LiUfWouhyi7uybcP-ppZ6Xz0H_ZnUdBNp81PNUWJg4h6kQyiOeCQloMYiJVkb6AsQ&oh=00_AQI33-PBf4QU5zcMA_RVsNpb5aRd9u_4SXp5ZRrrZ8Gh7Q&oe=6ABB268A",
+      "spend": 30.05,
+      "impressions": 532,
+      "reach": 295,
+      "frequency": 1.8,
+      "cpm": 56.48,
       "clicks": 9,
-      "ctr": 1.75,
+      "ctr": 1.69,
       "leads": 0,
       "cost_per_lead": null
     },
@@ -1102,7 +1102,7 @@
       "title": "⏱️ El tiempo cierra ventas",
       "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=_SYyXD7aaNMQ7kNvwGhfdWW&_nc_oc=AdpV2eMPM4XY6FxQ3xjuMvOhZL29YD5C6bm1dLA2sSklqTk_KaO7BgC8ARkCu6dtfv8&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQLQmqd_WYlBPKTTSBNfy7qOg1VVt64St72wujZtZADLrn-KiXCUpqgFI521JCYQONZHLEgyAaQ_IQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQL4Dc4sGcENMzh0o1ASP7mpQko73UDieSKqEVkZR34Thg&oe=6ABB06B4",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=_SYyXD7aaNMQ7kNvwGY6-3B&_nc_oc=Ado-OOVFgZk_-jPR2m_gjej6yHzK5vKpJBeSwynd6cc2l1RNwPlzG_5qk2a4s2742nc&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQJglILtUCarozDF1v6jAzH1eRUT7Mcm4kLZ4WitOltqWCIrUq6DlYjbYvvL1nr5AGLhpFwhmAbB0A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLJb8ZujZHWdY33yxMssU4NibekxCMLgiLm7BcRGEr1hQ&oe=6ABB3EF4",
       "spend": 27.87,
       "impressions": 669,
       "reach": 521,
@@ -1124,7 +1124,7 @@
       "title": "",
       "body": "¿Sabes qué significa tu CAC, tu LTV o tu Pipeline? Muchos negocios manejan estos números en sus reportes sin entender realmente qué significan ni qué decisión deberían tomar con ellos.\n\nEn este carrusel te explicamos términos clave de venta B2B de forma simple, sin tecnicismos, para que sepas qué está pasando de verdad con tus números comerciales.\n\nGuárdalo y comparte con tu equipo. 👉\n#VentasB2B #Xsell",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=zcqimzTINa8Q7kNvwHGqnCB&_nc_oc=Ado182lSPFJGlEl2R2R3bx_jXdnfP0l6Z1cUnWyyUvulu7Q-vlHnlh8Etn7oCDTRTz8&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQILRihR4zgxwVzT9_QxQ2dGM7SOBLvu45iRTexd1uNF1CtXkdH-295zG59CpLke24--9bWEZKdOxg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQIm85wf2-DRZZvi1hF_mQdRH6dXTDDA9_zXBvfCsdX1TQ&oe=6ABAE807",
+      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=zcqimzTINa8Q7kNvwGFhpA5&_nc_oc=Adrf0S77zNbX2phO22zKHjrDZcA8p_5F8otVjYijJ8SPvuNBdB25a56YneNmO_W45SY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQL00GhXKcoff44uEU8dGwwtsteI11q_3q9USDaROfNLQRi7qPCsXjsIyD_n5gEBP18zBhf5iW9MAg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQK6d8QUqd0jt4qg0yBMTd-bZJFSznJDyyuH5_W3zfxpnQ&oe=6ABB2047",
       "spend": 27.51,
       "impressions": 48550,
       "reach": 43784,
@@ -1146,7 +1146,7 @@
       "title": "📊 Tu equipo no da abasto",
       "body": "📊 Más leads no significa más ventas si tu equipo no da abasto. En Xsell te ayudamos a cerrar esas ventas con la estrategia y el equipo comercial que te falta.",
       "description": "",
-      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/779976724_122262032528105281_6589079236808904190_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=T_sGj58MkjYQ7kNvwEOuQJV&_nc_oc=AdqVLCoZTzFRC8gc7-l8IefoyWCIsyu2BC1vEY3emgzLCqdxwBhcHblKZ8mgS0vj1Vw&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&_nc_tpa=Q5bMBQLBsadpoTx1FlxcKi4fUDkQUv36eTblb17KDw8GK7MT_tr-s3Yjeewzu78WSDDaySRpvSY7gvN5vQ&oh=00_AQK6HSIlxpppGl6Il_0e7PkeS2elh-lfJo1377cVqy9LVQ&oe=6ABAE72A",
+      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/779976724_122262032528105281_6589079236808904190_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=T_sGj58MkjYQ7kNvwGhLX5r&_nc_oc=AdpBRleKTVuAH920eAtKpoO-xGAopsVw4aMX_upIVIcDnQkSDftz4jmbrWmpciMdTE4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=CwenjHt6cO566Uh8kAZfDA&_nc_tpa=Q5bMBQLI_HIr2PmCDwFDVc0h2On51AI4yAbC3ljQTHgdM0oJLcMNV-S1kLZ17ZLyBBLaKlaq7EzzFNRvsQ&oh=00_AQJVCdY_jYnTBrhJDLZcLhiHkfNJoE7uiUgsaxlyJx7x_Q&oe=6ABB1F6A",
       "spend": 24.18,
       "impressions": 645,
       "reach": 386,
@@ -1168,7 +1168,7 @@
       "title": "Xsell",
       "body": "No le des solo las gracias. Dale la razón. \n\nDespués de comprar, tu cliente necesita sentir que:\n\n✅ Eligió correctamente.\n✅ Su inversión tiene sentido.\n✅ Tomó una decisión inteligente.\n\nLa venta termina cuando cobras. La fidelización comienza cuando confirmas su elección.\n\n¿Tu comunicación genera esa seguridad?\n\n#AgenciaDeVentas #Clientes #Fidelización #ExperienciaDelCliente #EstrategiaDeVentas #Xsell",
       "description": "",
-      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLKXP9shnuHTllyuTEbCzgN8bMHCB2v6VCvy1yhR0BG2Nexuerbl8ehsj8tOMGYfkffdf766vz_Vw&oh=06_Q3_DASQ1y9PRvRxVD_XVYZBCZWeWrOWQVkxvumFjxhSK0peS&oe=6AB70571",
+      "image_url": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CwenjHt6cO566Uh8kAZfDA&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQI0Q0tSIAkusq4pVA-G3Ls9mcJZjz1D_oa4IVR-vLT8o9yL7ZZYWRzPq2JREEGh1vEs83NJnnSvog&oh=06_Q3_DAcwB1YL7AZ-K7KBQZVlQo6T4at2rRAhbudBJkVAP5lZN&oe=6AB73DB1",
       "spend": 1.97,
       "impressions": 3080,
       "reach": 2988,
@@ -1190,7 +1190,7 @@
       "title": "Xsell",
       "body": "¿Le hablas igual a un Boomer que a un Gen Z? Ahí está el problema.\n\nCada generación decide distinto: unos necesitan confianza, otros necesitan velocidad, otros necesitan que seas real. Si tu discurso de venta es el mismo para todos, le estás fallando a la mayoría.\n\nTe dejamos qué valora cada generación y cómo venderle \nSin genéricos, sin adivinar.\n\nGuárdalo, te va a servir más de una vez. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #EstrategiaComercial #MarketingGeneracional #GenX #GenZ #Millennials #EquipoDeVentas #Perú",
       "description": "",
-      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=DeBH0doo3dC-zvfMcd_ruw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJb_RLW3urteP2OtPeCf-GeZb3db8aidEt13mz-XZDNlYXJGXJBHrniDBeoDojLMT5vXrQIT9gmvg&oh=06_Q3_DAeoQbV73liFKbZXUqtEqLFpwAMaG1gcWarsX4WF-OgI6&oe=6AB6E4FC",
+      "image_url": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CwenjHt6cO566Uh8kAZfDA&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKWE9D7MySGM-HaO_trxDkh5LHQ8uEmpGe0PdvZZfrZc9pq_7r2GN8qxVgJwx4Vnq7b7sIWpZ6ecA&oh=06_Q3_DAQK3SUDFfIAAWlMh9lw9ad0mFRW0JzjdNLfYFvpqWi5-&oe=6AB7557C",
       "spend": 0.79,
       "impressions": 1333,
       "reach": 1307,
@@ -1209,15 +1209,15 @@
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "status": "ACTIVE",
-      "spend": 3589.93,
-      "impressions": 116316,
-      "reach": 35743,
-      "frequency": 3.25,
-      "cpm": 30.86,
-      "clicks": 2062,
+      "spend": 3600.0,
+      "impressions": 116516,
+      "reach": 35745,
+      "frequency": 3.26,
+      "cpm": 30.9,
+      "clicks": 2064,
       "ctr": 1.77,
       "leads": 151,
-      "cost_per_lead": 23.77
+      "cost_per_lead": 23.84
     },
     {
       "id": "120251103077290597",
@@ -1239,15 +1239,15 @@
       "name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
       "status": "ACTIVE",
-      "spend": 113.61,
-      "impressions": 4129,
-      "reach": 3002,
-      "frequency": 1.38,
-      "cpm": 27.52,
-      "clicks": 46,
-      "ctr": 1.11,
+      "spend": 120.69,
+      "impressions": 4279,
+      "reach": 3064,
+      "frequency": 1.4,
+      "cpm": 28.21,
+      "clicks": 48,
+      "ctr": 1.12,
       "leads": 2,
-      "cost_per_lead": 56.8
+      "cost_per_lead": 60.34
     }
   ],
   "adsets_performance_available": true,
@@ -1257,45 +1257,45 @@
       "name": "PE | AMBOS | ADVANTAGE",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "status": "ACTIVE",
-      "spend": 2119.14,
-      "impressions": 74995,
-      "reach": 25489,
+      "spend": 2121.37,
+      "impressions": 75020,
+      "reach": 25490,
       "frequency": 2.94,
-      "cpm": 28.26,
+      "cpm": 28.28,
       "clicks": 1346,
       "ctr": 1.79,
       "leads": 90,
-      "cost_per_lead": 23.55
+      "cost_per_lead": 23.57
     },
     {
       "id": "120251925475080597",
       "name": "PE | AMBOS | TEXTIL | SIMILAR",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "status": "ACTIVE",
-      "spend": 814.24,
-      "impressions": 24278,
+      "spend": 815.9,
+      "impressions": 24296,
       "reach": 10175,
       "frequency": 2.39,
-      "cpm": 33.54,
+      "cpm": 33.58,
       "clicks": 445,
       "ctr": 1.83,
       "leads": 31,
-      "cost_per_lead": 26.27
+      "cost_per_lead": 26.32
     },
     {
       "id": "120251821265250597",
       "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "status": "ACTIVE",
-      "spend": 656.84,
-      "impressions": 17051,
-      "reach": 6029,
-      "frequency": 2.83,
-      "cpm": 38.52,
-      "clicks": 271,
+      "spend": 662.73,
+      "impressions": 17200,
+      "reach": 6052,
+      "frequency": 2.84,
+      "cpm": 38.53,
+      "clicks": 273,
       "ctr": 1.59,
       "leads": 30,
-      "cost_per_lead": 21.89
+      "cost_per_lead": 22.09
     },
     {
       "id": "120251103077300597",
@@ -1317,15 +1317,15 @@
       "name": "PE | AMBOS | TEXTIL | SIMILAR 1%",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
       "status": "ACTIVE",
-      "spend": 113.61,
-      "impressions": 4129,
-      "reach": 3002,
-      "frequency": 1.38,
-      "cpm": 27.52,
-      "clicks": 46,
-      "ctr": 1.11,
+      "spend": 120.69,
+      "impressions": 4279,
+      "reach": 3064,
+      "frequency": 1.4,
+      "cpm": 28.21,
+      "clicks": 48,
+      "ctr": 1.12,
       "leads": 2,
-      "cost_per_lead": 56.8
+      "cost_per_lead": 60.34
     }
   ],
   "campaign_analysis_daily_available": true,
@@ -2150,10 +2150,10 @@
         "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 12.11,
-        "impressions": 252,
-        "reach": 213,
-        "clicks": 5,
+        "spend": 22.18,
+        "impressions": 452,
+        "reach": 373,
+        "clicks": 7,
         "leads": 0
       },
       {
@@ -2161,10 +2161,10 @@
         "name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
         "date": "2026-09-24",
-        "spend": 1.98,
-        "impressions": 74,
-        "reach": 66,
-        "clicks": 1,
+        "spend": 9.06,
+        "impressions": 224,
+        "reach": 194,
+        "clicks": 3,
         "leads": 0
       }
     ],
@@ -3560,9 +3560,9 @@
         "name": "PE | AMBOS | ADVANTAGE",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 1.97,
-        "impressions": 23,
-        "reach": 21,
+        "spend": 4.2,
+        "impressions": 48,
+        "reach": 42,
         "clicks": 0,
         "leads": 0
       },
@@ -3571,10 +3571,10 @@
         "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 9.17,
-        "impressions": 220,
-        "reach": 182,
-        "clicks": 4,
+        "spend": 15.06,
+        "impressions": 369,
+        "reach": 314,
+        "clicks": 6,
         "leads": 0
       },
       {
@@ -3582,9 +3582,9 @@
         "name": "PE | AMBOS | TEXTIL | SIMILAR",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 1.26,
-        "impressions": 17,
-        "reach": 13,
+        "spend": 2.92,
+        "impressions": 35,
+        "reach": 27,
         "clicks": 1,
         "leads": 0
       },
@@ -3593,10 +3593,10 @@
         "name": "PE | AMBOS | TEXTIL | SIMILAR 1%",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
         "date": "2026-09-24",
-        "spend": 1.98,
-        "impressions": 74,
-        "reach": 63,
-        "clicks": 1,
+        "spend": 9.06,
+        "impressions": 224,
+        "reach": 194,
+        "clicks": 3,
         "leads": 0
       }
     ],
@@ -6596,9 +6596,9 @@
         "name": "EST | \"LEADS FRIOS\"",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 1.72,
-        "impressions": 17,
-        "reach": 15,
+        "spend": 2.59,
+        "impressions": 32,
+        "reach": 27,
         "clicks": 0,
         "leads": 0,
         "adset_id": "120251097501900597",
@@ -6609,9 +6609,9 @@
         "name": "EST | \"ABASTO DE LEADS\"",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 0.25,
-        "impressions": 6,
-        "reach": 6,
+        "spend": 1.61,
+        "impressions": 16,
+        "reach": 16,
         "clicks": 0,
         "leads": 0,
         "adset_id": "120251097501900597",
@@ -6622,10 +6622,10 @@
         "name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 8.88,
-        "impressions": 212,
-        "reach": 182,
-        "clicks": 4,
+        "spend": 15.06,
+        "impressions": 369,
+        "reach": 314,
+        "clicks": 6,
         "leads": 0,
         "adset_id": "120251821265250597",
         "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
@@ -6635,10 +6635,10 @@
         "name": "EST | TEXTIL | AGENCIA DE VENTAS | CTA WSP",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
         "date": "2026-09-24",
-        "spend": 1.98,
-        "impressions": 74,
-        "reach": 63,
-        "clicks": 1,
+        "spend": 9.06,
+        "impressions": 224,
+        "reach": 194,
+        "clicks": 3,
         "leads": 0,
         "adset_id": "120252217536750597",
         "adset_name": "PE | AMBOS | TEXTIL | SIMILAR 1%"
@@ -6648,9 +6648,9 @@
         "name": "EST | PROBLEMAS CIERRE DE VENTAS | CTA FORMULARIO",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
-        "spend": 1.26,
-        "impressions": 17,
-        "reach": 13,
+        "spend": 2.92,
+        "impressions": 35,
+        "reach": 27,
         "clicks": 1,
         "leads": 0,
         "adset_id": "120251925475080597",
@@ -7408,10 +7408,10 @@
     "campaign_names": [
       "CAMPAÑA | PROSPECTOS B2B | WHATSAPP"
     ],
-    "spend": 113.61,
-    "clicks": 46,
+    "spend": 120.69,
+    "clicks": 48,
     "conversations": 9,
-    "cost_per_conversation": 12.62
+    "cost_per_conversation": 13.41
   },
   "whatsapp_campaign_month": {
     "available": true,
@@ -7419,9 +7419,9 @@
     "campaign_names": [
       "CAMPAÑA | PROSPECTOS B2B | WHATSAPP"
     ],
-    "spend": 113.61,
-    "clicks": 46,
+    "spend": 120.69,
+    "clicks": 48,
     "conversations": 9,
-    "cost_per_conversation": 12.62
+    "cost_per_conversation": 13.41
   }
 }

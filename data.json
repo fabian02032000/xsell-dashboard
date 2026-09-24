@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T14:42:57.276317+00:00",
+  "updated_at": "2026-09-24T18:11:43.981894+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -336,7 +336,7 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "CCprojects SAC",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -359,10 +359,10 @@
       "company": "corporación Logística & Transporte S.A.C",
       "created_date": "2026-09-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Reunión Agendadas",
       "deal_name": "Corporación Logística & TransporteDeal",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
     {
@@ -427,7 +427,7 @@
       "deal_stage": "Reunión Agendadas",
       "deal_name": "Privateacher International ",
       "deal_note": "Si respondió llamada. Empresa que vende cursos de idiomas. Indica que le escriba por wsp para coordinar horario de reunión.",
-      "estadio_lead": "En Crecimiento",
+      "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
     {
@@ -466,7 +466,7 @@
       "deal_stage": "Reunión Agendadas",
       "deal_name": "e-Robot",
       "deal_note": "Ocupado. Indica que lo llamen a 1:oo p.m.",
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -866,9 +866,9 @@
       "company": "domcar",
       "created_date": "2026-09-03",
       "has_deal": true,
-      "deal_stage": "Reunión Agendadas",
+      "deal_stage": "Descartada",
       "deal_name": "Domcar",
-      "deal_note": "No llegó al botón de wsp. Coordinamos reunión no asistió. Se le realiza seguimiento para reprogramación.",
+      "deal_note": "Contrataron a un personal de confianza",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Medio"
     },
@@ -1516,10 +1516,10 @@
       "company": "Tu podcast peru",
       "created_date": "2026-08-12",
       "has_deal": true,
-      "deal_stage": "Descartada",
+      "deal_stage": "Reunión Agendadas",
       "deal_name": "Tu Podcaste ",
-      "deal_note": "No responde despues de 2 wsp.  (Solo llega mensaje predeterminado),",
-      "estadio_lead": null,
+      "deal_note": "Registró formulario por segunda vez. Sí respondió la llamada esta vez. Se agendó reunión.",
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -2212,7 +2212,7 @@
       "nivel_urgencia": null
     }
   ],
-  "reuniones_auto": 8,
+  "reuniones_auto": 9,
   "leads_status_breakdown": [
     {
       "label": "Descartada",
@@ -2220,11 +2220,11 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 11
+      "count": 10
     },
     {
       "label": "Reunión Agendadas",
-      "count": 8
+      "count": 9
     },
     {
       "label": "Sin negocio",
@@ -2235,8 +2235,22 @@
     "En Crecimiento",
     "Semilla"
   ],
-  "warm_audience_count": 9,
+  "warm_audience_count": 11,
   "warm_audience_detail": [
+    {
+      "name": "luis tenorio",
+      "email": "luis.tenorio@cltsac.com.pe",
+      "company": "corporación Logística & Transporte S.A.C",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Miguel Angel Cayo Veit",
+      "email": "administracion@privateacher.edu.pe",
+      "company": "Privateacher International",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
     {
       "name": "Jorge Barco Fenco",
       "email": "jorgebarcofenco@gmail.com",
