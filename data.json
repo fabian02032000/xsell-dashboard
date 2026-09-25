@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-25T11:10:59.512604+00:00",
+  "updated_at": "2026-09-25T15:13:54.280984+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 146,
+  "total_leads": 147,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -217,6 +217,10 @@
     {
       "date": "2026-09-23",
       "count": 2
+    },
+    {
+      "date": "2026-09-25",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -237,7 +241,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 58,
+      "leads": 59,
       "goal": 74.0,
       "is_partial": false
     }
@@ -300,19 +304,32 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "leads": 8,
+      "leads": 9,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 58,
+  "current_month_leads": 59,
   "current_month_label": "September 2026",
-  "current_week_leads": 8,
+  "current_week_leads": 9,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 145,
+  "leads_with_deal": 146,
   "leads_detail": [
+    {
+      "name": "Pedro Romero",
+      "email": "renanpromero@gmail.com",
+      "phone": "+51924598236",
+      "company": "New house",
+      "created_date": "2026-09-25",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "New house",
+      "deal_note": null,
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
     {
       "name": "Renato Sánchez",
       "email": "corredor@renatosanchez-seguros.com",
@@ -2220,7 +2237,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 10
+      "count": 11
     },
     {
       "label": "Reunión Agendadas",
@@ -2235,8 +2252,15 @@
     "En Crecimiento",
     "Semilla"
   ],
-  "warm_audience_count": 11,
+  "warm_audience_count": 12,
   "warm_audience_detail": [
+    {
+      "name": "Pedro Romero",
+      "email": "renanpromero@gmail.com",
+      "company": "New house",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
     {
       "name": "luis tenorio",
       "email": "luis.tenorio@cltsac.com.pe",
