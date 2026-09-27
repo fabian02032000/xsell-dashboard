@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-27T07:07:49.762454+00:00",
+  "updated_at": "2026-09-27T12:45:16.895901+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 147,
+  "total_leads": 149,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -221,6 +221,10 @@
     {
       "date": "2026-09-25",
       "count": 1
+    },
+    {
+      "date": "2026-09-27",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -241,7 +245,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 59,
+      "leads": 61,
       "goal": 74.0,
       "is_partial": false
     }
@@ -304,19 +308,45 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "leads": 9,
+      "leads": 11,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 59,
+  "current_month_leads": 61,
   "current_month_label": "September 2026",
-  "current_week_leads": 9,
+  "current_week_leads": 11,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 146,
   "leads_detail": [
+    {
+      "name": "Javier Salmon",
+      "email": "jsalmon@jsindustrial.pe",
+      "phone": "+51997568740",
+      "company": "JS INDUSTRIAL",
+      "created_date": "2026-09-27",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Johan Flores Ramos",
+      "email": "johan_f_20@hotmail.com",
+      "phone": "+51984146464",
+      "company": "varios",
+      "created_date": "2026-09-27",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Pedro Romero",
       "email": "renanpromero@gmail.com",
@@ -2245,7 +2275,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 3
     }
   ],
   "warm_audience_exclude_estadios": [
