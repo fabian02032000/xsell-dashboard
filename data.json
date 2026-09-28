@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-28T14:38:56.646265+00:00",
+  "updated_at": "2026-09-28T16:02:07.088983+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 162,
-  "leads_whatsapp_count": 11,
+  "total_leads": 168,
+  "leads_whatsapp_count": 16,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -229,7 +229,7 @@
     },
     {
       "date": "2026-09-28",
-      "count": 1
+      "count": 7
     }
   ],
   "leads_by_month": [
@@ -250,7 +250,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 74,
+      "leads": 80,
       "goal": 74.0,
       "is_partial": false
     }
@@ -319,18 +319,18 @@
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 1,
+      "leads": 7,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 74,
+  "current_month_leads": 80,
   "current_month_label": "September 2026",
-  "current_week_leads": 1,
+  "current_week_leads": 7,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 157,
+  "leads_with_deal": 167,
   "leads_detail": [
     {
       "name": "Jorge Izquierdo",
@@ -339,9 +339,93 @@
       "company": "Pintaza",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-28",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Pintaza",
+      "deal_note": null,
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Karl vasquez",
+      "email": "karl.vasquez.u@gmail.com",
+      "phone": "+51918333600",
+      "company": "Proser-group",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Proser-group",
+      "deal_note": "Descalificado por fit: busca MKT, no conversión\nPerfil del prospecto\nRubro: inmobiliario corporativo, administración de bienes inmuebles, servicios de limpieza y afines.\nClientes: empresas administradoras, inmobiliarias y personas naturales.\nNecesidad\nBusca generar nuevos clientes. Hoy no tiene un flujo de leads propio; busca Mkt o base de datos para generar demanda.",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "@negociosindustriales331",
+      "email": "(sin correo)",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - @negociosindustriales331",
+      "deal_note": "Descartado: postulante laboral, no es prospecto comercial",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Violeta  Navarro moscoso",
+      "email": "(sin correo)",
+      "phone": "967 462 361",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Violeta Navarro moscoso",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Esaú Ur",
+      "email": "(sin correo)",
+      "phone": "994 177 320",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Esaú Ur",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Luisa  Paucar Rojas",
+      "email": "(sin correo)",
+      "phone": "954 715 055",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Luisa Paucar Rojas",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "TPD",
+      "email": "(sin correo)",
+      "phone": "998 891 972",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Tpd",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -353,9 +437,9 @@
       "company": "JS INDUSTRIAL",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-27",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "JS INDUSTRIAL",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -367,9 +451,9 @@
       "company": "varios",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-27",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Johan Flores Ramos",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -381,10 +465,10 @@
       "company": "Loops",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-27",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Loops",
+      "deal_note": "Descalificado por fit (por ahora): prospecto muy pequeño\nPerfil del prospecto\nRubro: Desarrollo de software\nAntigüedad: inició operaciones a comienzos de 2026\nSituación comercial actual\nInversión en pauta: S/ 100 mensuales, solo en Meta\nVolumen: ~130 leads al mes\nCierres: entre 3 y 5 clientes al mes (conversión aprox. 2.3% a 3.8%)\nTicket promedio de venta: S/ 100\nIngreso mensual estimado por esta vía: S/ 300 a S/ 500",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2605,11 +2689,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 127
+      "count": 130
     },
     {
       "label": "Prospectos Contactados",
-      "count": 21
+      "count": 28
     },
     {
       "label": "Reunión Agendadas",
@@ -2617,15 +2701,22 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
     "En Crecimiento",
     "Semilla"
   ],
-  "warm_audience_count": 12,
+  "warm_audience_count": 13,
   "warm_audience_detail": [
+    {
+      "name": "Jorge Izquierdo",
+      "email": "jorgeizquierdocobos@gmail.com",
+      "company": "Pintaza",
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": null
+    },
     {
       "name": "Pedro Romero",
       "email": "renanpromero@gmail.com",
@@ -2713,8 +2804,43 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 11,
+    "count": 16,
     "detail": [
+      {
+        "name": "TPD",
+        "email": "(sin correo)",
+        "phone": "998 891 972",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "Luisa  Paucar Rojas",
+        "email": "(sin correo)",
+        "phone": "954 715 055",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "Esaú Ur",
+        "email": "(sin correo)",
+        "phone": "994 177 320",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "Violeta  Navarro moscoso",
+        "email": "(sin correo)",
+        "phone": "967 462 361",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "@negociosindustriales331",
+        "email": "(sin correo)",
+        "phone": null,
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
       {
         "name": "Xiomi Peru",
         "email": "(sin correo)",
