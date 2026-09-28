@@ -125,9 +125,39 @@ WARM_AUDIENCE_EXCLUDE_ESTADIOS = {
 
 # ---- Campaña de WhatsApp (conversión de Meta) ----
 # Desde cuándo contar los contactos que Ingrid sube A MANO en HubSpot para
-# esta campaña (ver fetch_whatsapp_manual_contacts). Ajustable sin tocar el
-# código si la campaña empezó antes o después de esta fecha.
+# esta campaña (ver is_whatsapp_manual_lead). Ajustable sin tocar el código
+# si la campaña empezó antes o después de esta fecha.
 WHATSAPP_CAMPAIGN_START_DATE = os.environ.get("WHATSAPP_CAMPAIGN_START_DATE", "2026-09-01")
+
+# Palabras (sin tildes, minúsculas) que, si aparecen en el nombre del Negocio
+# de un contacto que por lo demás calza con el patrón de "WhatsApp manual"
+# (ver is_whatsapp_manual_lead), indican que en realidad es OTRA gestión del
+# equipo de ventas y no un lead de esta campaña — ej. "Mitsubishi - Whatsapp
+# SALIENTES Mitsubishi" (un WhatsApp que el equipo mandó, no uno que llegó) o
+# "Crosland PERFILAMIENTO de Leads" (trabajo interno de perfilamiento, no una
+# conversación de la campaña). Encontrado y verificado con Fabián, sep-2026,
+# al revisar por qué el dashboard mostraba más registros de los que Ingrid
+# contaba en su export de HubSpot.
+WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS = [
+    k.strip().lower()
+    for k in os.environ.get("WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS", "saliente,perfilamiento").split(",")
+    if k.strip()
+]
+
+# Campo "Canal" (desplegable que ya existía en HubSpot, con la opción
+# "Whatsapp" entre otras) — la idea es que Ingrid lo marque a mano en cada
+# contacto que crea por una conversación de WhatsApp de esta campaña. Es la
+# señal MÁS confiable de todas porque es explícita (ella la elige a
+# propósito), así que manda por encima de la regla técnica de abajo:
+#   - Si Ingrid marcó "Canal = Whatsapp", el contacto SIEMPRE cuenta como
+#     WhatsApp, aunque la regla técnica no lo hubiera detectado.
+#   - Si Ingrid marcó cualquier OTRO valor de Canal (ej. "Referido",
+#     "Facebook"), el contacto NUNCA cuenta como WhatsApp, aunque la regla
+#     técnica sí lo hubiera marcado.
+#   - Si el campo Canal está vacío (todavía no se lo han puesto), se usa la
+#     regla técnica de siempre como respaldo.
+CANAL_PROPERTY = "canal"
+CANAL_WHATSAPP_VALUE = "whatsapp"
 
 
 def normalize_enum(raw_value, label_map):
@@ -163,6 +193,7 @@ SOURCE_PROPERTIES = [
     "hs_analytics_source_data_1",
     "hs_analytics_source_data_2",
     "hs_object_source_label",
+    CANAL_PROPERTY,
 ]
 
 
@@ -272,6 +303,63 @@ def is_whatsapp_manual_lead(contact, since_date_str):
     return int(dt.timestamp() * 1000) >= since_epoch
 
 
+def canal_value(contact):
+    return (contact.get("properties", {}).get(CANAL_PROPERTY) or "").strip()
+
+
+def canal_says_whatsapp(contact):
+    return canal_value(contact).lower() == CANAL_WHATSAPP_VALUE
+
+
+def canal_says_otro_canal(contact):
+    """True si Ingrid marcó el Canal a mano con algo que NO es Whatsapp
+    (ej. 'Referido'). Si está vacío, no dice nada todavía — no es esto."""
+    v = canal_value(contact)
+    return bool(v) and v.lower() != CANAL_WHATSAPP_VALUE
+
+
+def fetch_contact_deal_names(contact_ids):
+    """Trae, para cada contact_id, los nombres de los Negocios asociados.
+    Se usa SOLO para descartar falsos positivos de la campaña de WhatsApp
+    (ver WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS) antes de decidir el conteo
+    final — es una versión liviana de fetch_contact_deal_status (que trae
+    mucho más detalle y se usa más abajo para toda la tabla de 'Estado de
+    cada registro'). Best-effort: si falla, no se descarta a nadie por este
+    motivo en vez de romper el script."""
+    names_by_contact = {cid: [] for cid in contact_ids}
+    if not contact_ids:
+        return names_by_contact
+    try:
+        contact_to_deal_ids = {}
+        for batch in chunked(contact_ids, 100):
+            body = {"inputs": [{"id": cid} for cid in batch]}
+            resp = hubspot_post("/crm/v4/associations/contacts/deals/batch/read", body)
+            for row in resp.get("results", []):
+                from_id = row.get("from", {}).get("id")
+                deal_ids = [t.get("toObjectId") for t in row.get("to", [])]
+                if from_id and deal_ids:
+                    contact_to_deal_ids[from_id] = deal_ids
+
+        all_deal_ids = sorted({str(d) for ids in contact_to_deal_ids.values() for d in ids})
+        deal_names = {}
+        for batch in chunked(all_deal_ids, 100):
+            body = {"inputs": [{"id": did} for did in batch], "properties": ["dealname"]}
+            resp = hubspot_post("/crm/v3/objects/deals/batch/read", body)
+            for d in resp.get("results", []):
+                deal_names[d["id"]] = d.get("properties", {}).get("dealname") or ""
+
+        for cid, deal_ids in contact_to_deal_ids.items():
+            names_by_contact[cid] = [deal_names[str(d)] for d in deal_ids if str(d) in deal_names]
+    except Exception as e:
+        print(f"AVISO: no se pudo revisar nombres de negocio para filtrar falsos positivos de WhatsApp: {e}", file=sys.stderr)
+    return names_by_contact
+
+
+def has_excluded_dealname(deal_names):
+    haystack = strip_accents(" ".join(deal_names).lower())
+    return any(kw in haystack for kw in WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS)
+
+
 def fetch_closed_deals_count(since_date_str):
     """Best-effort: cuenta negocios en la etapa 'cerrado ganado' desde since_date.
     Si el pipeline no coincide o la cuenta no usa Negocios, no rompe el script."""
@@ -303,66 +391,30 @@ def fetch_closed_deals_count(since_date_str):
         return {"count": None, "available": False, "error": str(e)}
 
 
-def fetch_whatsapp_manual_contacts(since_date_str):
-    """Contactos que Ingrid sube A MANO en HubSpot para la campaña de
-    WhatsApp con conversión de Meta (hoy en día, sin automatizar). Se
-    reconocen por: 'Fuente original' (hs_analytics_source) = "OFFLINE"
-    ("Fuentes sin conexión") Y creados desde el propio HubSpot, no por un
-    formulario ni una integración (hs_object_source_label = "CRM_UI").
-    Esto es justamente lo que se compara, en el dashboard, contra el número
-    REAL de conversaciones que reporta Meta Ads — para ver cuántas
-    conversaciones de Meta todavía no se han subido a HubSpot.
+def build_whatsapp_manual_detail(leads_detail):
+    """Arma el detalle de leads de WhatsApp a partir de leads_detail — es
+    decir, el MISMO conjunto que ya se decidió en whatsapp_manual_ids (con
+    la señal del Canal y el descarte por nombre de Negocio ya aplicados),
+    en vez de volver a consultarlo aparte con su propio criterio.
 
-    AVISO: se verificó a mano en HubSpot (setiembre 2026) cuál es el valor
-    real de 'Fuente original' que le queda a estos contactos — no es "Paid
-    Social" (Redes sociales de pago) como se pensaba antes, sino "OFFLINE"
-    (Fuentes sin conexión). Antes de este cambio, este filtro casi no
-    encontraba ningún contacto real de Ingrid.
-    Best-effort: si falla, devuelve una lista vacía sin romper el resto del
-    script."""
-    try:
-        since_epoch = date_to_epoch_ms(since_date_str)
-        contacts = []
-        after = None
-        while True:
-            body = {
-                "filterGroups": [
-                    {
-                        "filters": [
-                            {"propertyName": "hs_analytics_source", "operator": "EQ", "value": "OFFLINE"},
-                            {"propertyName": "hs_object_source_label", "operator": "EQ", "value": "CRM_UI"},
-                            {"propertyName": "createdate", "operator": "GTE", "value": str(since_epoch)},
-                        ]
-                    }
-                ],
-                "properties": ["firstname", "lastname", "email", "phone", "mobilephone", "createdate", "company"],
-                "limit": 100,
-                "sorts": [{"propertyName": "createdate", "direction": "DESCENDING"}],
-            }
-            if after:
-                body["after"] = after
-            data = hubspot_post("/crm/v3/objects/contacts/search", body)
-            contacts.extend(data.get("results", []))
-            after = data.get("paging", {}).get("next", {}).get("after")
-            if not after:
-                break
-
-        detail = []
-        for c in contacts:
-            props = c.get("properties", {})
-            full_name = " ".join(x for x in [props.get("firstname"), props.get("lastname")] if x).strip()
-            createdate = props.get("createdate")
-            detail.append({
-                "name": full_name or "(sin nombre)",
-                "email": props.get("email") or "(sin correo)",
-                "phone": props.get("phone") or props.get("mobilephone") or None,
-                "company": props.get("company") or "(sin empresa)",
-                "created_date": createdate[:10] if createdate else None,
-            })
-        return {"count": len(detail), "detail": detail, "available": True}
-    except Exception as e:
-        print(f"AVISO: no se pudo revisar los contactos manuales de WhatsApp: {e}", file=sys.stderr)
-        return {"count": None, "detail": [], "available": False, "error": str(e)}
+    ANTES esto se calculaba con una consulta independiente a HubSpot que
+    repetía la regla técnica vieja (sin Canal ni descarte por nombre de
+    Negocio) — por eso el número acá podía no coincidir con el resto del
+    dashboard, que es justo el problema que se revisó con Fabián en
+    setiembre 2026."""
+    detail = [
+        {
+            "name": r["name"],
+            "email": r["email"],
+            "phone": r["phone"],
+            "company": r["company"],
+            "created_date": r["created_date"],
+        }
+        for r in leads_detail
+        if r["lead_source"] == "WhatsApp (conversión)"
+    ]
+    detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
+    return {"count": len(detail), "detail": detail, "available": True}
 
 
 def fetch_deal_stage_labels():
@@ -591,10 +643,44 @@ def main():
     # ---- Leads del formulario de Meta Ads + leads manuales de la campaña de
     # WhatsApp (los que Ingrid sube a mano) — Fabián decidió que ambos cuenten
     # juntos en el total de "Registros" del dashboard. ----
-    whatsapp_manual_ids = {
+    #
+    # El conteo de WhatsApp se arma en 3 pasos (revisado con Fabián, sep-2026,
+    # después de encontrar que el dashboard mostraba más registros de los que
+    # Ingrid contaba en su export de HubSpot):
+    #   1) Candidatos: la regla técnica de siempre (creado a mano, sin
+    #      formulario, desde WHATSAPP_CAMPAIGN_START_DATE) MÁS cualquier
+    #      contacto donde Ingrid ya marcó el Canal como "Whatsapp" a mano
+    #      (aunque la regla técnica no lo hubiera agarrado).
+    #   2) Se saca a quien Ingrid marcó el Canal con otro valor (ella ya dijo
+    #      de dónde vino, no hay que adivinar).
+    #   3) De los que quedan, se saca a quien tiene un Negocio con nombre que
+    #      indica que es OTRA gestión de ventas y no de esta campaña (ej.
+    #      "... Whatsapp SALIENTES ..." o "... PERFILAMIENTO de Leads ...") —
+    #      salvo que Ingrid ya lo haya marcado a mano como Whatsapp en el
+    #      Canal, en cuyo caso se respeta su palabra por encima del nombre
+    #      del Negocio.
+    technical_candidate_ids = {
         c["id"] for c in all_contacts
-        if is_whatsapp_manual_lead(c, WHATSAPP_CAMPAIGN_START_DATE)
+        if is_whatsapp_manual_lead(c, WHATSAPP_CAMPAIGN_START_DATE) or canal_says_whatsapp(c)
     }
+    canal_whatsapp_ids = {c["id"] for c in all_contacts if canal_says_whatsapp(c)}
+    canal_otro_ids = {c["id"] for c in all_contacts if canal_says_otro_canal(c)}
+    technical_candidate_ids -= canal_otro_ids
+
+    deal_names_by_contact = fetch_contact_deal_names(sorted(technical_candidate_ids))
+    excluded_by_dealname_ids = {
+        cid for cid in technical_candidate_ids
+        if cid not in canal_whatsapp_ids
+        and has_excluded_dealname(deal_names_by_contact.get(cid, []))
+    }
+    if excluded_by_dealname_ids:
+        print(
+            f"AVISO: se descartaron {len(excluded_by_dealname_ids)} contacto(s) de la campaña de "
+            f"WhatsApp por tener un Negocio de otra gestión (ver WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS): "
+            f"{sorted(excluded_by_dealname_ids)}"
+        )
+    whatsapp_manual_ids = technical_candidate_ids - excluded_by_dealname_ids
+
     contacts = [
         c for c in all_contacts
         if is_meta_lead(c) or c["id"] in whatsapp_manual_ids
@@ -701,7 +787,7 @@ def main():
     ]
 
     # ---- Campaña de WhatsApp: contactos que Ingrid ya subió a mano ----
-    whatsapp_manual = fetch_whatsapp_manual_contacts(WHATSAPP_CAMPAIGN_START_DATE)
+    whatsapp_manual = build_whatsapp_manual_detail(leads_detail)
 
     data = {
         "updated_at": now.isoformat(),
