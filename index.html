@@ -271,6 +271,43 @@
 
   <section>
     <div class="section-head">
+      <h2>Estadio del Lead</h2>
+      <span class="hint">Qué tan avanzado está el negocio del lead — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido arriba, en "Filtrar por rango de fechas"</span>
+    </div>
+    <div class="chart-card">
+      <div class="status-dist-bar" id="estadioDistBar"></div>
+      <div class="status-dist-legend" id="estadioDistLegend"></div>
+      <button class="tagdist-toggle" type="button" id="estadioClientsToggle" aria-expanded="false">▸ Ver clientes</button>
+      <div class="tagdist-clients" id="estadioClientsList" style="display:none;"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Nivel de Urgencia</h2>
+      <span class="hint">Qué tan necesitado está el lead del servicio — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido arriba, en "Filtrar por rango de fechas"</span>
+    </div>
+    <div class="chart-card">
+      <div class="status-dist-bar" id="urgenciaDistBar"></div>
+      <div class="status-dist-legend" id="urgenciaDistLegend"></div>
+      <button class="tagdist-toggle" type="button" id="urgenciaClientsToggle" aria-expanded="false">▸ Ver clientes</button>
+      <div class="tagdist-clients" id="urgenciaClientsList" style="display:none;"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Distribución de estado de registros</h2>
+      <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot — se ajusta al mes/rango de fechas elegido arriba, en "Filtrar por rango de fechas"</span>
+    </div>
+    <div class="chart-card">
+      <div class="status-dist-bar" id="statusDistBar"></div>
+      <div class="status-dist-legend" id="statusDistLegend"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
       <h2>De dónde vienen los registros</h2>
       <span class="hint">Creatividades activas ahora mismo en Meta Ads — se actualizan solas</span>
     </div>
@@ -414,50 +451,13 @@
 
   <section>
     <div class="section-head">
-      <h2>Estadio del Lead</h2>
-      <span class="hint">Qué tan avanzado está el negocio del lead — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido en "Registros por día", más abajo</span>
-    </div>
-    <div class="chart-card">
-      <div class="status-dist-bar" id="estadioDistBar"></div>
-      <div class="status-dist-legend" id="estadioDistLegend"></div>
-      <button class="tagdist-toggle" type="button" id="estadioClientsToggle" aria-expanded="false">▸ Ver clientes</button>
-      <div class="tagdist-clients" id="estadioClientsList" style="display:none;"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Nivel de Urgencia</h2>
-      <span class="hint">Qué tan necesitado está el lead del servicio — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido en "Registros por día", más abajo</span>
-    </div>
-    <div class="chart-card">
-      <div class="status-dist-bar" id="urgenciaDistBar"></div>
-      <div class="status-dist-legend" id="urgenciaDistLegend"></div>
-      <button class="tagdist-toggle" type="button" id="urgenciaClientsToggle" aria-expanded="false">▸ Ver clientes</button>
-      <div class="tagdist-clients" id="urgenciaClientsList" style="display:none;"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Distribución de estado de registros</h2>
-      <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot — se ajusta al mes/rango de fechas elegido en "Registros por día", más abajo</span>
-    </div>
-    <div class="chart-card">
-      <div class="status-dist-bar" id="statusDistBar"></div>
-      <div class="status-dist-legend" id="statusDistLegend"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
       <h2>Estado de cada registro</h2>
       <span class="hint" id="leadsTableHint">¿Ingrid ya le generó un negocio en HubSpot?</span>
     </div>
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Teléfono</th><th>Estado</th><th>Estadio</th><th>Urgencia</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Nota de Ingrid</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Teléfono</th><th>Canal</th><th>Estado</th><th>Estadio</th><th>Urgencia</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Nota de Ingrid</th></tr></thead>
           <tbody id="leadsTableBody"></tbody>
         </table>
       </div>
@@ -1036,14 +1036,12 @@
     });
 
     // ---- KPI hero ----
+    // Solo se muestra lo del mes actual (no el acumulado histórico) — decisión
+    // de Fabián, sep-2026.
     const kpiRow = document.getElementById('kpiRow');
     const leadsClientePotencial = typeof data.reuniones_auto === 'number' ? data.reuniones_auto : 0;
+    const pctLeadsDeRegistros = data.total_leads ? (leadsClientePotencial / data.total_leads) * 100 : 0;
     let kpiHtml = `
-      <div class="tile">
-        <p class="tile-label">Registros totales</p>
-        <p class="tile-value">${fmt(data.total_leads)}</p>
-        <p class="tile-sub">Desde ${data.campaign_start}</p>
-      </div>
       <div class="tile">
         <p class="tile-label">Registros este mes</p>
         <p class="tile-value">${fmt(data.current_month_leads)}</p>
@@ -1053,6 +1051,11 @@
         <p class="tile-label">Leads (cliente potencial)</p>
         <p class="tile-value">${fmt(leadsClientePotencial)}</p>
         <p class="tile-sub">Tipificados como "Reunión Agendadas" en HubSpot</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">% de registros que son leads</p>
+        <p class="tile-value">${pctLeadsDeRegistros.toFixed(1)}%</p>
+        <p class="tile-sub">${fmt(leadsClientePotencial)} de ${fmt(data.total_leads)} registros totales</p>
       </div>`;
     if (hasMeta){
       kpiHtml += `
@@ -1064,7 +1067,7 @@
       <div class="tile">
         <p class="tile-label">Costo por registro</p>
         <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p>
-        <p class="tile-sub">Campaña Prospectos B2B</p>
+        <p class="tile-sub">Gasto de la campaña de formulario ÷ total de registros (incluye WhatsApp)</p>
       </div>`;
     } else {
       kpiHtml += `
@@ -1739,7 +1742,7 @@
     hint.textContent = hintText;
 
     if (!leads.length){
-      body.innerHTML = `<tr><td colspan="11" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="12" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
       return;
     }
     body.innerHTML = leads.map(l => {
@@ -1753,6 +1756,7 @@
         : '<span class="table-sub">—</span>';
       const estadioHtml = tagPillHtml(l.estadio_lead, ESTADIO_COLORS);
       const urgenciaHtml = tagPillHtml(l.nivel_urgencia, URGENCIA_COLORS);
+      const canalHtml = escapeHtml(l.lead_source || 'Formulario (Meta Ads)');
       return `
         <tr>
           <td>${l.created_date || '—'}</td>
@@ -1760,6 +1764,7 @@
           <td>${l.company || '(sin empresa)'}</td>
           <td>${l.email || '(sin correo)'}</td>
           <td>${l.phone ? escapeHtml(l.phone) : '<span class="table-sub">—</span>'}</td>
+          <td>${canalHtml}</td>
           <td>${statusHtml}</td>
           <td>${estadioHtml}</td>
           <td>${urgenciaHtml}</td>
