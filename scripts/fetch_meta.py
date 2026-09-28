@@ -785,6 +785,12 @@ def main():
         "month_spend": round(month_spend, 2),
         "leads_campaign_spend_total": round(leads_campaign_spend_total, 2),
         "leads_campaign_spend_month": round(leads_campaign_spend_month, 2),
+        # Se expone también el criterio de coincidencia (en vez de repetirlo
+        # hardcodeado en el HTML) para que el dashboard pueda sumar el gasto
+        # de las campañas de leads (Formulario + WhatsApp) día a día, para
+        # cualquier rango de fechas que la persona elija — no solo "todo el
+        # período" o "este mes", que es lo único que se calcula acá arriba.
+        "leads_campaign_match": LEADS_CAMPAIGN_MATCH,
         "campaigns": [
             {"name": c.get("campaign_name"), "spend": round(float(c.get("spend", 0)), 2)}
             for c in campaigns
