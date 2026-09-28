@@ -5,10 +5,14 @@ No requiere conocimientos de programación para usarlo: se ejecuta solo,
 vía GitHub Actions, cada hora. Solo necesitas configurar el token una vez
 (ver README.md).
 
-Filtra los contactos para quedarse solo con los que vinieron de la campaña
-de Meta (Facebook Lead Ads / "prospectos b2b"), usando las propiedades de
-"Original source" de HubSpot — así no se cuentan contactos que entren por
-otras vías (email marketing, ingresados a mano, etc.).
+Filtra los contactos para quedarse solo con los que cuentan como "Registro"
+del embudo: los que vinieron de la campaña de Meta (Facebook Lead Ads /
+"prospectos b2b"), usando las propiedades de "Original source" de HubSpot, MÁS
+los que Ingrid sube a mano en HubSpot para la campaña de conversión a
+WhatsApp (ver is_whatsapp_manual_lead) — así no se cuentan contactos que
+entren por otras vías (email marketing, pruebas, etc.). Cada lead queda
+marcado con su "lead_source" (Formulario vs. WhatsApp) para que se note de
+dónde vino.
 
 También revisa, para cada lead, si ya se le creó un Negocio en HubSpot (y en
 qué etapa está), y arma vistas de progreso por mes y por semana.
@@ -158,6 +162,7 @@ SOURCE_PROPERTIES = [
     "hs_analytics_source",
     "hs_analytics_source_data_1",
     "hs_analytics_source_data_2",
+    "hs_object_source_label",
 ]
 
 
@@ -240,6 +245,33 @@ def is_meta_lead(contact):
     return any(kw in haystack for kw in SOURCE_MATCH_KEYWORDS)
 
 
+def is_whatsapp_manual_lead(contact, since_date_str):
+    """True si el contacto es uno de los que Ingrid sube A MANO en HubSpot
+    para la campaña de WhatsApp con conversión de Meta.
+
+    Se reconocen por: 'Fuente original' (hs_analytics_source) = "OFFLINE"
+    ("Fuentes sin conexión" en el HubSpot en español) Y creados directamente
+    desde la interfaz de HubSpot, no por un formulario ni una integración
+    (hs_object_source_label = "CRM_UI").
+
+    AVISO: esto se verificó a mano, abriendo varios contactos reales en
+    HubSpot (setiembre 2026) — los que Ingrid crea manualmente para esta
+    campaña NO quedan con 'Redes sociales de pago' (PAID_SOCIAL) como podría
+    parecer lógico, sino con 'Fuentes sin conexión' (OFFLINE). Si en algún
+    momento Ingrid cambia cómo los crea, hay que volver a verificar esto."""
+    props = contact.get("properties", {})
+    if (props.get("hs_analytics_source") or "").upper() != "OFFLINE":
+        return False
+    if (props.get("hs_object_source_label") or "").upper() != "CRM_UI":
+        return False
+    createdate = props.get("createdate")
+    if not createdate:
+        return False
+    since_epoch = date_to_epoch_ms(since_date_str)
+    dt = datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
+    return int(dt.timestamp() * 1000) >= since_epoch
+
+
 def fetch_closed_deals_count(since_date_str):
     """Best-effort: cuenta negocios en la etapa 'cerrado ganado' desde since_date.
     Si el pipeline no coincide o la cuenta no usa Negocios, no rompe el script."""
@@ -274,11 +306,18 @@ def fetch_closed_deals_count(since_date_str):
 def fetch_whatsapp_manual_contacts(since_date_str):
     """Contactos que Ingrid sube A MANO en HubSpot para la campaña de
     WhatsApp con conversión de Meta (hoy en día, sin automatizar). Se
-    reconocen por: 'Original Source' = Paid Social (lo que Ingrid tipifica
-    como 'redes sociales de pago') Y creados desde el propio HubSpot (no por
-    un formulario). Esto es justamente lo que se compara, en el dashboard,
-    contra el número REAL de conversaciones que reporta Meta Ads — para ver
-    cuántas conversaciones de Meta todavía no se han subido a HubSpot.
+    reconocen por: 'Fuente original' (hs_analytics_source) = "OFFLINE"
+    ("Fuentes sin conexión") Y creados desde el propio HubSpot, no por un
+    formulario ni una integración (hs_object_source_label = "CRM_UI").
+    Esto es justamente lo que se compara, en el dashboard, contra el número
+    REAL de conversaciones que reporta Meta Ads — para ver cuántas
+    conversaciones de Meta todavía no se han subido a HubSpot.
+
+    AVISO: se verificó a mano en HubSpot (setiembre 2026) cuál es el valor
+    real de 'Fuente original' que le queda a estos contactos — no es "Paid
+    Social" (Redes sociales de pago) como se pensaba antes, sino "OFFLINE"
+    (Fuentes sin conexión). Antes de este cambio, este filtro casi no
+    encontraba ningún contacto real de Ingrid.
     Best-effort: si falla, devuelve una lista vacía sin romper el resto del
     script."""
     try:
@@ -290,7 +329,7 @@ def fetch_whatsapp_manual_contacts(since_date_str):
                 "filterGroups": [
                     {
                         "filters": [
-                            {"propertyName": "hs_analytics_source", "operator": "EQ", "value": "PAID_SOCIAL"},
+                            {"propertyName": "hs_analytics_source", "operator": "EQ", "value": "OFFLINE"},
                             {"propertyName": "hs_object_source_label", "operator": "EQ", "value": "CRM_UI"},
                             {"propertyName": "createdate", "operator": "GTE", "value": str(since_epoch)},
                         ]
@@ -549,9 +588,23 @@ def main():
         print(f"ERROR al llamar a HubSpot: {e.code} {e.read().decode()}", file=sys.stderr)
         sys.exit(1)
 
-    contacts = [c for c in all_contacts if is_meta_lead(c)]
+    # ---- Leads del formulario de Meta Ads + leads manuales de la campaña de
+    # WhatsApp (los que Ingrid sube a mano) — Fabián decidió que ambos cuenten
+    # juntos en el total de "Registros" del dashboard. ----
+    whatsapp_manual_ids = {
+        c["id"] for c in all_contacts
+        if is_whatsapp_manual_lead(c, WHATSAPP_CAMPAIGN_START_DATE)
+    }
+    contacts = [
+        c for c in all_contacts
+        if is_meta_lead(c) or c["id"] in whatsapp_manual_ids
+    ]
     excluded = len(all_contacts) - len(contacts)
-    print(f"Contactos totales en el rango: {len(all_contacts)} · de Meta: {len(contacts)} · excluidos: {excluded}")
+    print(
+        f"Contactos totales en el rango: {len(all_contacts)} · de Meta (formulario): "
+        f"{len(contacts) - len(whatsapp_manual_ids)} · manuales de WhatsApp: {len(whatsapp_manual_ids)} · "
+        f"excluidos: {excluded}"
+    )
 
     leads_by_day = build_leads_by_day(contacts)
     total_leads = len(contacts)
@@ -591,6 +644,7 @@ def main():
             "email": props.get("email") or "(sin correo)",
             "phone": props.get("phone") or props.get("mobilephone") or None,
             "company": props.get("company") or "(sin empresa)",
+            "lead_source": "WhatsApp (conversión)" if c["id"] in whatsapp_manual_ids else "Formulario (Meta Ads)",
             "created_date": createdate[:10] if createdate else None,
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
@@ -628,7 +682,10 @@ def main():
     leads_by_week = build_leads_by_week(leads_by_day, weeks)
 
     # ---- Audiencia disponible para el envío "tibio" (ver comentario junto a
-    # WARM_AUDIENCE_EXCLUDE_ESTADIOS) ----
+    # WARM_AUDIENCE_EXCLUDE_ESTADIOS). Se excluyen también los leads de la
+    # campaña de WhatsApp: ese envío tibio es para reenganchar por correo a
+    # quien llegó por el formulario de Meta Ads, no tiene que ver con la
+    # campaña de conversión a WhatsApp. ----
     warm_audience_detail = [
         {
             "name": r["name"],
@@ -638,7 +695,9 @@ def main():
             "nivel_urgencia": r["nivel_urgencia"],
         }
         for r in leads_detail
-        if r["estadio_lead"] and r["estadio_lead"] not in WARM_AUDIENCE_EXCLUDE_ESTADIOS
+        if r["estadio_lead"]
+        and r["estadio_lead"] not in WARM_AUDIENCE_EXCLUDE_ESTADIOS
+        and r["lead_source"] != "WhatsApp (conversión)"
     ]
 
     # ---- Campaña de WhatsApp: contactos que Ingrid ya subió a mano ----
@@ -651,6 +710,7 @@ def main():
         "weekly_goal": WEEKLY_GOAL,
         "closed_deals_goal": CLOSED_DEALS_GOAL,
         "total_leads": total_leads,
+        "leads_whatsapp_count": len(whatsapp_manual_ids),
         "leads_by_day": leads_by_day,
         "leads_by_month": leads_by_month,
         "leads_by_week": leads_by_week,
