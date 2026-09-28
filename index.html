@@ -237,8 +237,6 @@
     <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
     <button class="tab-btn" data-tab="story">🕒 Historia de la cuenta</button>
-    <button class="tab-btn" data-tab="emailmkt">📧 Email Marketing (Pauta)</button>
-    <button class="tab-btn" data-tab="insight">✉️ Correos Insight</button>
   </div>
 
   <div class="tab-panel active" id="tab-leads">
@@ -502,54 +500,6 @@
         <div class="tooltip" id="dailyTooltip"></div>
       </div>
       <div class="milestone-list" id="milestoneList"></div>
-    </div>
-  </section>
-
-  </div>
-
-  <div class="tab-panel" id="tab-emailmkt">
-
-  <section>
-    <div class="section-head">
-      <h2>Audiencia disponible para envío tibio</h2>
-      <span class="hint">Contactos de formulario (pauta) que sí consideramos potenciales, según el Estadio del Lead que tipifica Ingrid — la Urgencia se usa aparte, para decidir qué contenido enviarle a cada quien</span>
-    </div>
-    <div class="kpi-row" id="warmKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="warmCallout" style="margin-bottom:14px;"></div>
-      <button class="tagdist-toggle" type="button" id="warmClientsToggle" aria-expanded="false">▸ Ver contactos</button>
-      <div class="tagdist-clients" id="warmClientsList" style="display:none;">
-        <div class="table-wrap scroll-y">
-          <table>
-            <thead><tr><th>Nombre</th><th>Correo</th><th>Empresa</th><th>Estadio</th><th>Urgencia</th></tr></thead>
-            <tbody id="warmTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  </div>
-
-  <div class="tab-panel" id="tab-insight">
-
-  <section>
-    <div class="section-head">
-      <h2>Correos de prospección en frío (Ingrid)</h2>
-      <span class="hint">Correos "insight" que Ingrid envía uno por uno desde HubSpot — datos reales de HubSpot, sin tipificar a mano</span>
-    </div>
-    <div class="kpi-row" id="emailsKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="emailsRubroCallout" style="margin-bottom:14px;"></div>
-      <button class="tagdist-toggle" type="button" id="emailsClientsToggle" aria-expanded="false">▸ Ver detalle de cada correo</button>
-      <div class="tagdist-clients" id="emailsClientsList" style="display:none;">
-        <div class="table-wrap scroll-y">
-          <table>
-            <thead><tr><th>Fecha</th><th>Hora</th><th>Destinatario</th><th>Empresa / Rubro</th><th>Asunto</th><th>Estado</th><th>Aperturas</th><th>Clics</th><th>Respuestas</th></tr></thead>
-            <tbody id="emailsTableBody"></tbody>
-          </table>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -864,8 +814,6 @@
   [
     ['estadioClientsToggle', 'estadioClientsList'],
     ['urgenciaClientsToggle', 'urgenciaClientsList'],
-    ['emailsClientsToggle', 'emailsClientsList'],
-    ['warmClientsToggle', 'warmClientsList'],
     ['whatsappClientsToggle', 'whatsappClientsList'],
   ].forEach(([btnId, panelId]) => {
     const btn = document.getElementById(btnId);
@@ -885,8 +833,7 @@
     fetch('./funnel_config.json?_=' + Date.now()).then(r => r.json()).catch(() => ({reuniones: null})),
     fetch('./organic_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./storytelling_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-    fetch('./emails_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-  ]).then(([leadsData, metaData, funnelCfg, organicData, storyData, emailsData]) => {
+  ]).then(([leadsData, metaData, funnelCfg, organicData, storyData]) => {
     if (!leadsData){
       document.getElementById('statusBadge').textContent = '● Sin datos aún';
       document.getElementById('statusBadge').className = 'badge warn';
@@ -896,90 +843,9 @@
     render(leadsData, metaData, funnelCfg || {});
     renderOrganic(organicData);
     drawStoryTab(leadsData, metaData, storyData);
-    renderEmails(emailsData);
-    renderWarmAudience(leadsData);
     renderFormCampaign(leadsData, metaData);
     renderWhatsappCampaign(leadsData, metaData);
   });
-
-  // ---- Correos de prospección en frío (Ingrid) ----
-  function renderEmails(emails){
-    const kpiRow = document.getElementById('emailsKpiRow');
-    const callout = document.getElementById('emailsRubroCallout');
-    const tbody = document.getElementById('emailsTableBody');
-    if (!emails){
-      kpiRow.innerHTML = `<div class="tile"><p class="tile-label">Correos de Ingrid</p><p class="tile-value">—</p><p class="tile-sub">Aún no se ha ejecutado la primera actualización de este dato</p></div>`;
-      callout.textContent = '';
-      tbody.innerHTML = '';
-      return;
-    }
-    kpiRow.innerHTML = `
-      <div class="tile">
-        <p class="tile-label">Enviados</p>
-        <p class="tile-value">${fmt(emails.total_sent)}</p>
-        <p class="tile-sub">${fmt(emails.total_bounced)} rebotados · ${fmt(emails.total_failed)} fallidos</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Tasa de apertura</p>
-        <p class="tile-value">${emails.open_rate}%</p>
-        <p class="tile-sub">${fmt(emails.total_opened)} correos abiertos</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Clics</p>
-        <p class="tile-value">${emails.click_rate}%</p>
-        <p class="tile-sub">${fmt(emails.total_clicked)} correos con clic</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Respuestas</p>
-        <p class="tile-value">${emails.reply_rate}%</p>
-        <p class="tile-sub">${fmt(emails.total_replied)} correos respondidos</p>
-      </div>`;
-
-    callout.innerHTML = `📋 El rubro/empresa de cada destinatario solo está disponible cuando ya existía en HubSpot antes del envío (${fmt(emails.total_with_rubro)} de ${fmt(emails.total_emails)} · ${emails.rubro_coverage_rate}%). Cuando no hay dato real, se muestra una empresa "adivinada" a partir del dominio del correo, marcada con *.`;
-
-    tbody.innerHTML = (emails.detail || []).map(r => {
-      const empresa = r.company ? escapeHtml(r.company) + (r.company_is_guess ? ' *' : '') : '—';
-      const rubro = r.rubro ? ' · ' + escapeHtml(r.rubro) : '';
-      const destinatario = (r.recipient_name ? escapeHtml(r.recipient_name) + '<br>' : '') + `<span class="hint">${escapeHtml(r.recipient_email)}</span>`;
-      return `<tr>
-        <td>${r.sent_date || '—'}</td>
-        <td>${r.sent_time || '—'}</td>
-        <td>${destinatario}</td>
-        <td>${empresa}${rubro}</td>
-        <td>${escapeHtml(r.subject)}</td>
-        <td>${escapeHtml(r.status)}</td>
-        <td>${fmt(r.opens)}</td>
-        <td>${fmt(r.clicks)}</td>
-        <td>${fmt(r.replies)}</td>
-      </tr>`;
-    }).join('');
-  }
-
-  // ---- Audiencia disponible para envío tibio ----
-  function renderWarmAudience(data){
-    const kpiRow = document.getElementById('warmKpiRow');
-    const callout = document.getElementById('warmCallout');
-    const tbody = document.getElementById('warmTableBody');
-    const detail = data.warm_audience_detail || [];
-    const excluded = data.warm_audience_exclude_estadios || [];
-
-    kpiRow.innerHTML = `
-      <div class="tile">
-        <p class="tile-label">Contactos potenciales</p>
-        <p class="tile-value">${fmt(data.warm_audience_count || 0)}</p>
-        <p class="tile-sub">Con Negocio y Estadio del Lead cargado</p>
-      </div>`;
-
-    callout.innerHTML = `Se excluyen los contactos en Estadio ${excluded.map(e => '"' + escapeHtml(e) + '"').join(' o ')}, y los que aún no tienen Negocio o Estadio cargado en HubSpot (no se puede saber si son potenciales).`;
-
-    tbody.innerHTML = detail.map(r => `<tr>
-      <td>${escapeHtml(r.name || '(sin nombre)')}</td>
-      <td>${escapeHtml(r.email || '(sin correo)')}</td>
-      <td>${escapeHtml(r.company || '(sin empresa)')}</td>
-      <td>${escapeHtml(r.estadio_lead || '—')}</td>
-      <td>${escapeHtml(r.nivel_urgencia || '—')}</td>
-    </tr>`).join('');
-  }
 
   // ---- Campaña de Formulario (Meta) ----
   // Compara lo que Meta reporta para la campaña de formulario contra los
