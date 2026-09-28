@@ -998,8 +998,16 @@
       return;
     }
 
+    // "Creados en HubSpot" es el número que de verdad importa: los que ya
+    // están en HubSpot y listos para trabajar. La diferencia con lo que
+    // reporta Meta NO es necesariamente un problema — HubSpot llega
+    // automático desde el formulario, y si la misma persona lo envía más de
+    // una vez, Meta cuenta 2 leads pero HubSpot no crea un registro
+    // duplicado (actualiza el contacto que ya existía por correo/teléfono).
+    // Decisión de Fabián, sep-2026: no dar a entender que esa diferencia son
+    // leads "perdidos" — se muestra solo como referencia, en % sobre Meta.
     const creadosEnHubspot = Math.max(0, (data.total_leads || 0) - (data.leads_whatsapp_count || 0));
-    const faltarian = Math.max((campaign.leads || 0) - creadosEnHubspot, 0);
+    const pctCreados = campaign.leads ? (creadosEnHubspot / campaign.leads) * 100 : 0;
 
     kpiRow.innerHTML = `
       <div class="tile">
@@ -1020,10 +1028,10 @@
       <div class="tile">
         <p class="tile-label">Creados en HubSpot</p>
         <p class="tile-value">${fmt(creadosEnHubspot)}</p>
-        <p class="tile-sub">${'Faltarían ' + fmt(faltarian) + ' por crear (estimado)'}</p>
+        <p class="tile-sub">${pctCreados.toFixed(1)}% de los leads reportados por Meta — este es el número real</p>
       </div>`;
 
-    callout.innerHTML = `Meta cuenta un "lead" apenas la persona envía el formulario dentro de Facebook o Instagram — antes de que ese dato llegue a crearse como registro en HubSpot (eso es "Creados en HubSpot", arriba). Esta comparación ayuda a ver cuántos leads que Meta reporta no terminaron como registro real, por ejemplo por datos inválidos, duplicados o demoras de la integración.`;
+    callout.innerHTML = `El formulario crea el registro en HubSpot automáticamente, así que "Creados en HubSpot" es el número que de verdad importa. Casi siempre es un poco menor al que reporta Meta, y no es necesariamente un problema: Meta cuenta un "lead" cada vez que alguien envía el formulario, pero si la misma persona lo envía más de una vez, HubSpot no crea un registro duplicado — actualiza el contacto que ya tenía guardado por correo o teléfono. También puede haber algún caso de dato inválido o demora real de la integración, pero la mayor parte de esa diferencia suele explicarse por envíos repetidos de la misma persona.`;
   }
 
   // ---- Campaña WhatsApp (Meta) ----
