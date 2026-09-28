@@ -244,10 +244,6 @@
   <div class="tab-panel active" id="tab-leads">
 
   <section>
-    <div class="kpi-row" id="kpiRow"></div>
-  </section>
-
-  <section>
     <div class="section-head">
       <h2>Filtrar por rango de fechas</h2>
       <span class="hint">Aplica a "Registros por día", "Gasto diario", "Estado de cada registro", "Distribución de estado de registros", "Estadio del Lead" y "Nivel de Urgencia" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
@@ -461,6 +457,17 @@
           <tbody id="leadsTableBody"></tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Campaña de Formulario (Meta)</h2>
+      <span class="hint">Números reales de Meta Ads para la campaña de formulario — comparados con los registros que sí llegaron a crearse en HubSpot</span>
+    </div>
+    <div class="kpi-row" id="formCampaignKpiRow"></div>
+    <div class="chart-card">
+      <div class="callout" id="formCampaignCallout"></div>
     </div>
   </section>
 
@@ -891,6 +898,7 @@
     drawStoryTab(leadsData, metaData, storyData);
     renderEmails(emailsData);
     renderWarmAudience(leadsData);
+    renderFormCampaign(leadsData, metaData);
     renderWhatsappCampaign(leadsData, metaData);
   });
 
@@ -973,6 +981,51 @@
     </tr>`).join('');
   }
 
+  // ---- Campaña de Formulario (Meta) ----
+  // Compara lo que Meta reporta para la campaña de formulario contra los
+  // registros que efectivamente se llegaron a crear en HubSpot (mismo tipo
+  // de comparación que ya existía para la campaña de WhatsApp, más abajo).
+  function renderFormCampaign(data, meta){
+    const kpiRow = document.getElementById('formCampaignKpiRow');
+    const callout = document.getElementById('formCampaignCallout');
+    const hasMeta = meta && meta.updated_at;
+    const campaigns = (hasMeta && meta.campaigns_performance) || [];
+    const campaign = campaigns.find(c => (c.name || c.campaign_name || '').toLowerCase().includes('formulario'));
+
+    if (!hasMeta || !campaign){
+      kpiRow.innerHTML = `<div class="tile"><p class="tile-label">Campaña de Formulario</p><p class="tile-value">—</p><p class="tile-sub">${!hasMeta ? 'Aún no se ha traído este dato de Meta' : 'No se encontró ninguna campaña que coincida con "formulario"'}</p></div>`;
+      callout.innerHTML = '';
+      return;
+    }
+
+    const creadosEnHubspot = Math.max(0, (data.total_leads || 0) - (data.leads_whatsapp_count || 0));
+    const faltarian = Math.max((campaign.leads || 0) - creadosEnHubspot, 0);
+
+    kpiRow.innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Leads reportados por Meta</p>
+        <p class="tile-value">${fmt(campaign.leads)}</p>
+        <p class="tile-sub">Según el formulario, dentro de Meta Ads</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Clics en el anuncio</p>
+        <p class="tile-value">${fmt(campaign.clicks)}</p>
+        <p class="tile-sub">Personas que hicieron clic (no todas llenan el formulario)</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Costo por lead (Meta)</p>
+        <p class="tile-value">${campaign.cost_per_lead != null ? fmtMoney(campaign.cost_per_lead) : '—'}</p>
+        <p class="tile-sub">Gasto total: ${fmtMoney(campaign.spend)}</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Creados en HubSpot</p>
+        <p class="tile-value">${fmt(creadosEnHubspot)}</p>
+        <p class="tile-sub">${'Faltarían ' + fmt(faltarian) + ' por crear (estimado)'}</p>
+      </div>`;
+
+    callout.innerHTML = `Meta cuenta un "lead" apenas la persona envía el formulario dentro de Facebook o Instagram — antes de que ese dato llegue a crearse como registro en HubSpot (eso es "Creados en HubSpot", arriba). Esta comparación ayuda a ver cuántos leads que Meta reporta no terminaron como registro real, por ejemplo por datos inválidos, duplicados o demoras de la integración.`;
+  }
+
   // ---- Campaña WhatsApp (Meta) ----
   function renderWhatsappCampaign(data, meta){
     const kpiRow = document.getElementById('whatsappKpiRow');
@@ -1034,50 +1087,6 @@
       l.ad_name = attr ? attr.ad_name : null;
       l.attr_campaign_name = attr ? attr.campaign_name : null;
     });
-
-    // ---- KPI hero ----
-    // Solo se muestra lo del mes actual (no el acumulado histórico) — decisión
-    // de Fabián, sep-2026.
-    const kpiRow = document.getElementById('kpiRow');
-    const leadsClientePotencial = typeof data.reuniones_auto === 'number' ? data.reuniones_auto : 0;
-    const pctLeadsDeRegistros = data.total_leads ? (leadsClientePotencial / data.total_leads) * 100 : 0;
-    let kpiHtml = `
-      <div class="tile">
-        <p class="tile-label">Registros este mes</p>
-        <p class="tile-value">${fmt(data.current_month_leads)}</p>
-        <p class="tile-sub">${data.current_month_label}</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Leads (cliente potencial)</p>
-        <p class="tile-value">${fmt(leadsClientePotencial)}</p>
-        <p class="tile-sub">Tipificados como "Reunión Agendadas" en HubSpot</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">% de registros que son leads</p>
-        <p class="tile-value">${pctLeadsDeRegistros.toFixed(1)}%</p>
-        <p class="tile-sub">${fmt(leadsClientePotencial)} de ${fmt(data.total_leads)} registros totales</p>
-      </div>`;
-    if (hasMeta){
-      kpiHtml += `
-      <div class="tile">
-        <p class="tile-label">Inversión total</p>
-        <p class="tile-value">${fmtMoney(meta.total_spend)}</p>
-        <p class="tile-sub">Todas las campañas, desde ${meta.campaign_start}</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Costo por registro</p>
-        <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_total / Math.max(1, data.total_leads))}</p>
-        <p class="tile-sub">Gasto de la campaña de formulario ÷ total de registros (incluye WhatsApp)</p>
-      </div>`;
-    } else {
-      kpiHtml += `
-      <div class="tile">
-        <p class="tile-label">Inversión</p>
-        <p class="tile-value">—</p>
-        <p class="tile-sub">Esperando primera actualización de Meta Ads</p>
-      </div>`;
-    }
-    kpiRow.innerHTML = kpiHtml;
 
     // ---- Creatividades (imágenes reales, en vivo desde Meta) ----
     drawCreatives(data, meta, hasMeta);
@@ -1218,6 +1227,30 @@
     const filteredSpendDays = hasMeta ? (meta.daily_spend || []).filter(d => d.date >= from && d.date <= to) : [];
     const rangeSpend = filteredSpendDays.reduce((sum, d) => sum + d.spend, 0);
 
+    // Inversión "vista general": se suma SOLO el gasto de las campañas que
+    // generan registros (Formulario + WhatsApp), sin la de Awareness — mismo
+    // criterio que "leads_campaign_spend_total" en fetch_meta.py
+    // (LEADS_CAMPAIGN_MATCH = "prospectos b2b"), pero calculado acá día a día
+    // para que funcione con cualquier rango de fechas elegido, no solo
+    // "todo el período" o "este mes". Decisión de Fabián, sep-2026: la meta
+    // mensual y el costo por registro se ven "en general" sumando ambas
+    // campañas y ambos tipos de registro; el desglose por campaña por
+    // separado está más abajo, en "Campaña de Formulario" y "Campaña WhatsApp".
+    const leadsCampaignDaily = (hasMeta && meta.campaign_analysis_daily && meta.campaign_analysis_daily.campaigns) || [];
+    const leadsCampaignMatch = (hasMeta && meta.leads_campaign_match) ? meta.leads_campaign_match.toLowerCase() : 'prospectos b2b';
+    const hasLeadsCampaignDaily = hasMeta && !!meta.campaign_analysis_daily_available && leadsCampaignDaily.length > 0;
+    const rangeLeadsCampaignSpend = leadsCampaignDaily
+      .filter(r => r.date >= from && r.date <= to && (r.name || '').toLowerCase().includes(leadsCampaignMatch))
+      .reduce((sum, r) => sum + (r.spend || 0), 0);
+    const rangeInvestment = hasLeadsCampaignDaily ? rangeLeadsCampaignSpend : rangeSpend;
+
+    // "Leads (cliente potencial)" es un SUBCONJUNTO de "Registros en el rango"
+    // (los que además ya tienen Negocio con etapa "Reunión...") — no se resta
+    // del total de registros, solo se informa aparte cuántos y qué % son.
+    const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
+    const rangeLeadsClientePotencial = filteredLeads.filter(l => l.has_deal && /reuni/i.test(l.deal_stage || '')).length;
+    const pctLeadsRango = rangeLeads ? (rangeLeadsClientePotencial / rangeLeads) * 100 : 0;
+
     document.getElementById('rangeKpiRow').innerHTML = `
       <div class="tile">
         <p class="tile-label">Registros en el rango</p>
@@ -1225,14 +1258,19 @@
         <p class="tile-sub">${from} — ${to}</p>
       </div>
       <div class="tile">
+        <p class="tile-label">Leads (cliente potencial)</p>
+        <p class="tile-value">${fmt(rangeLeadsClientePotencial)}</p>
+        <p class="tile-sub">${pctLeadsRango.toFixed(1)}% de los registros del rango · tipificados como "Reunión Agendada" en HubSpot</p>
+      </div>
+      <div class="tile">
         <p class="tile-label">Inversión en el rango</p>
-        <p class="tile-value">${hasMeta ? fmtMoney(rangeSpend) : '—'}</p>
-        <p class="tile-sub">${hasMeta ? 'Toda la cuenta, en Meta Ads' : 'Esperando Meta Ads'}</p>
+        <p class="tile-value">${hasMeta ? fmtMoney(rangeInvestment) : '—'}</p>
+        <p class="tile-sub">${hasLeadsCampaignDaily ? 'Campaña Formulario + campaña WhatsApp' : (hasMeta ? 'Toda la cuenta, en Meta Ads' : 'Esperando Meta Ads')}</p>
       </div>
       <div class="tile">
         <p class="tile-label">Costo por registro en el rango</p>
-        <p class="tile-value">${(hasMeta && rangeLeads) ? fmtMoney(rangeSpend / rangeLeads) : '—'}</p>
-        <p class="tile-sub">Gasto ÷ registros del rango</p>
+        <p class="tile-value">${(hasMeta && rangeLeads) ? fmtMoney(rangeInvestment / rangeLeads) : '—'}</p>
+        <p class="tile-sub">Gasto de ambas campañas ÷ registros del rango (incluye WhatsApp)</p>
       </div>
     `;
 
@@ -1242,7 +1280,6 @@
     drawDailyChart(filteredDays, milestonesInRange, data.weekly_goal);
     if (hasMeta) drawDailySpend(filteredSpendDays);
 
-    const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
     drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
     drawStatusDistribution(computeStatusBreakdown(filteredLeads));
 
