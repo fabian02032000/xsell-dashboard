@@ -2,8 +2,13 @@ name: Actualizar dashboard
 
 on:
   schedule:
-    # Corre cada hora, en el minuto 0. Ajusta el cron si quieres más o menos frecuencia.
-    - cron: "0 * * * *"
+    # Corre cada 5 minutos (el mínimo que permite GitHub Actions) para que el
+    # desfase entre HubSpot y el dashboard sea de unos 6-7 minutos como
+    # máximo, contando lo que tarda en correr. Ajusta el cron si en algún
+    # momento quieres más o menos frecuencia — OJO: GitHub puede demorar un
+    # poco más la ejecución en horas de mucho tráfico, así que 5 minutos es
+    # el mejor esfuerzo, no una garantía exacta.
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}
   push:
     branches: [ main ]
