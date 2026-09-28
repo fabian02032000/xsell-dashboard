@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T15:32:21.337355Z",
+  "generated_at": "2026-09-28T17:14:12.177469Z",
   "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
@@ -8,10 +8,10 @@
       "country": "AR",
       "country_label": "Argentina",
       "profile": "Ayuda a empresas B2B a conseguir reuniones y cerrar más ventas, con un método propio (\"anti-ghosting\", seguimiento, manejo de objeciones).",
-      "active_ads_count": 13,
-      "search_match_count": 13,
+      "active_ads_count": 20,
+      "search_match_count": 20,
       "oldest_active_since": "2026-01-27",
-      "newest_active_since": "2026-09-16",
+      "newest_active_since": "2026-09-25",
       "sample_ads": [
         {
           "since": "2026-03-19",
@@ -39,7 +39,7 @@
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-21",
+      "last_checked_ok": "2026-09-28",
       "status": "ok",
       "history": [
         {
@@ -57,6 +57,10 @@
         {
           "date": "2026-09-21",
           "active_ads_count": 13
+        },
+        {
+          "date": "2026-09-28",
+          "active_ads_count": 20
         }
       ]
     },
@@ -66,30 +70,38 @@
       "country": "CO",
       "country_label": "Colombia (alcance regional)",
       "profile": "Agencia de prospección B2B: agenda reuniones calificadas para empresas de tecnología/software.",
-      "active_ads_count": 4,
-      "search_match_count": 4,
+      "active_ads_count": 10,
+      "search_match_count": 14,
       "oldest_active_since": "2026-08-25",
-      "newest_active_since": "2026-09-15",
+      "newest_active_since": "2026-09-27",
       "sample_ads": [
         {
           "since": "2026-08-25",
           "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones."
         },
         {
-          "since": "2026-09-10",
+          "since": "2026-09-23",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         },
         {
-          "since": "2026-09-15",
-          "text": "EMPRESAS DE TECNOLOGIA"
+          "since": "2026-09-23",
+          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         },
         {
-          "since": "2026-09-10",
+          "since": "2026-09-21",
+          "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-09-24",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+        },
+        {
+          "since": "2026-09-27",
+          "text": "La mayoría de los Partners de Odoo consiguen nuevos proyectos gracias a referidos o recomendaciones."
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-21",
+      "last_checked_ok": "2026-09-28",
       "status": "ok",
       "history": [
         {
@@ -107,6 +119,10 @@
         {
           "date": "2026-09-21",
           "active_ads_count": 4
+        },
+        {
+          "date": "2026-09-28",
+          "active_ads_count": 10
         }
       ]
     },
@@ -136,7 +152,7 @@
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&q=Aurum%20Sales&search_type=keyword_unordered",
       "last_checked_ok": "2026-09-21",
-      "status": "ok",
+      "status": "stale",
       "history": [
         {
           "date": "2026-09-01",
