@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:02:07.088983+00:00",
+  "updated_at": "2026-09-28T17:24:01.161263+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -145,7 +145,7 @@
     },
     {
       "date": "2026-09-03",
-      "count": 8
+      "count": 7
     },
     {
       "date": "2026-09-04",
@@ -217,7 +217,7 @@
     },
     {
       "date": "2026-09-23",
-      "count": 7
+      "count": 6
     },
     {
       "date": "2026-09-25",
@@ -229,7 +229,7 @@
     },
     {
       "date": "2026-09-28",
-      "count": 7
+      "count": 9
     }
   ],
   "leads_by_month": [
@@ -295,7 +295,7 @@
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
-      "leads": 28,
+      "leads": 27,
       "goal": 17.3
     },
     {
@@ -313,19 +313,19 @@
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
-      "leads": 22,
+      "leads": 21,
       "goal": 17.3
     },
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 7,
+      "leads": 9,
       "goal": 17.3
     }
   ],
   "current_month_leads": 80,
   "current_month_label": "September 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 9,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -428,6 +428,34 @@
       "deal_name": "Sin datos - Tpd",
       "deal_note": null,
       "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Sin datos - aduva6",
+      "email": "(sin correo)",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - aduva6",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Eric  Torres",
+      "email": "eric.torres.p.@gmail.com",
+      "phone": "952388644",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Claro Perú ",
+      "deal_note": "Sí respondió llamada. Indica que entrará a reunión que lo llamemos por la tarde.",
+      "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
     {
@@ -552,20 +580,6 @@
       "has_deal": true,
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Sin datos - Perez",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Ines Sara  Marie Diaz",
-      "email": "ines.diaz@astara.com",
-      "phone": null,
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-23",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Mitsubishi - Whatsapp salientes Mitsubishi",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -1297,20 +1311,6 @@
       "deal_note": "No es nuestro core, empresa informal, desea asesoria para la formalización.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
-    },
-    {
-      "name": "Mariela Mendoza",
-      "email": "mmendoza@crosland.com.pe",
-      "phone": "+51 965 150 289",
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-03",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Crosland Perfilamiento de Leads ",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
     },
     {
       "name": "Bryan",
@@ -2807,23 +2807,9 @@
     "count": 16,
     "detail": [
       {
-        "name": "TPD",
+        "name": "@negociosindustriales331",
         "email": "(sin correo)",
-        "phone": "998 891 972",
-        "company": "(sin empresa)",
-        "created_date": "2026-09-28"
-      },
-      {
-        "name": "Luisa  Paucar Rojas",
-        "email": "(sin correo)",
-        "phone": "954 715 055",
-        "company": "(sin empresa)",
-        "created_date": "2026-09-28"
-      },
-      {
-        "name": "Esaú Ur",
-        "email": "(sin correo)",
-        "phone": "994 177 320",
+        "phone": null,
         "company": "(sin empresa)",
         "created_date": "2026-09-28"
       },
@@ -2835,9 +2821,37 @@
         "created_date": "2026-09-28"
       },
       {
-        "name": "@negociosindustriales331",
+        "name": "Esaú Ur",
+        "email": "(sin correo)",
+        "phone": "994 177 320",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "Luisa  Paucar Rojas",
+        "email": "(sin correo)",
+        "phone": "954 715 055",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "TPD",
+        "email": "(sin correo)",
+        "phone": "998 891 972",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "Sin datos - aduva6",
         "email": "(sin correo)",
         "phone": null,
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
+        "name": "Eric  Torres",
+        "email": "eric.torres.p.@gmail.com",
+        "phone": "952388644",
         "company": "(sin empresa)",
         "created_date": "2026-09-28"
       },
@@ -2849,23 +2863,9 @@
         "created_date": "2026-09-25"
       },
       {
-        "name": "Ines Sara  Marie Diaz",
-        "email": "ines.diaz@astara.com",
+        "name": "(sin nombre)",
+        "email": "contacto@jopesa.pe",
         "phone": null,
-        "company": "(sin empresa)",
-        "created_date": "2026-09-23"
-      },
-      {
-        "name": "Perez",
-        "email": "(sin correo)",
-        "phone": "+51 907 515 857",
-        "company": "(sin empresa)",
-        "created_date": "2026-09-23"
-      },
-      {
-        "name": "Sin datos",
-        "email": "(sin correo)",
-        "phone": "958 282 830",
         "company": "(sin empresa)",
         "created_date": "2026-09-23"
       },
@@ -2877,9 +2877,16 @@
         "created_date": "2026-09-23"
       },
       {
-        "name": "(sin nombre)",
-        "email": "contacto@jopesa.pe",
-        "phone": null,
+        "name": "Sin datos",
+        "email": "(sin correo)",
+        "phone": "958 282 830",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-23"
+      },
+      {
+        "name": "Perez",
+        "email": "(sin correo)",
+        "phone": "+51 907 515 857",
         "company": "(sin empresa)",
         "created_date": "2026-09-23"
       },
@@ -2891,9 +2898,9 @@
         "created_date": "2026-09-22"
       },
       {
-        "name": "Sin datos - Liliana padilla",
+        "name": "Micaela",
         "email": "(sin correo)",
-        "phone": "988831795",
+        "phone": "+51 980 943 131",
         "company": "(sin empresa)",
         "created_date": "2026-09-21"
       },
@@ -2905,18 +2912,11 @@
         "created_date": "2026-09-21"
       },
       {
-        "name": "Micaela",
+        "name": "Sin datos - Liliana padilla",
         "email": "(sin correo)",
-        "phone": "+51 980 943 131",
+        "phone": "988831795",
         "company": "(sin empresa)",
         "created_date": "2026-09-21"
-      },
-      {
-        "name": "Mariela Mendoza",
-        "email": "mmendoza@crosland.com.pe",
-        "phone": "+51 965 150 289",
-        "company": "(sin empresa)",
-        "created_date": "2026-09-03"
       }
     ],
     "available": true
