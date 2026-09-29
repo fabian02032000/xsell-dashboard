@@ -51,9 +51,17 @@
   .legend{display:flex; gap:16px; margin-bottom:10px; font-size:12px; color:var(--text-muted);}
   .legend .key{display:flex; align-items:center; gap:6px;}
   .swatch{width:10px; height:10px; border-radius:3px; display:inline-block;}
-  .meter{background:var(--surface-2); border-radius:999px; height:14px; overflow:hidden; position:relative;}
-  .meter-fill{height:100%; border-radius:999px;}
+  .meter{background:var(--surface-2); border-radius:999px; height:14px; overflow:visible; position:relative;}
+  .meter-fill{height:100%; border-radius:999px; transition:width .3s;}
+  .meter-marker{position:absolute; top:-4px; bottom:-4px; width:2px; background:var(--text-primary); opacity:.85;}
+  .meter-marker::after{content:''; position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:6px; height:6px; border-radius:50%; background:var(--text-primary);}
   .meter-labels{display:flex; justify-content:space-between; margin-top:6px; font-size:12px; color:var(--text-muted);}
+
+  /* Email marketing */
+  .email-preview-frame{background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden;}
+  .email-preview-bar{display:flex; gap:6px; padding:10px 12px; background:var(--surface-2); border-bottom:1px solid var(--border);}
+  .email-preview-bar span{width:10px; height:10px; border-radius:50%; background:var(--border); display:inline-block;}
+  .email-preview-iframe{width:100%; height:1200px; border:0; display:block;}
   .callout{display:flex; gap:10px; background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--purple-2); border-radius:10px; padding:14px 16px; font-size:13px; color:var(--text-muted); line-height:1.5;}
   footer{color:var(--text-muted); font-size:11px; text-align:center; margin-top:40px;}
 
@@ -236,6 +244,7 @@
     <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
     <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
+    <button class="tab-btn" data-tab="email">📧 Email marketing</button>
     <button class="tab-btn" data-tab="story">🕒 Historia de la cuenta</button>
   </div>
 
@@ -666,6 +675,70 @@
 
   </div>
 
+  <div class="tab-panel" id="tab-email">
+
+  <section>
+    <div class="kpi-row" id="emailKpiRow"></div>
+  </section>
+
+  <section id="emailUnavailable" style="display:none;">
+    <div class="callout"><span>ⓘ</span><div id="emailUnavailableText"></div></div>
+  </section>
+
+  <div id="emailContent" style="display:none;">
+
+  <section>
+    <div class="section-head">
+      <h2>Apertura y clics vs. el promedio de la industria</h2>
+      <span class="hint">Promedio de tus campañas de correo enviadas · el punto blanco marca el promedio de empresas similares (dato que entrega Mailchimp)</span>
+    </div>
+    <div class="chart-card">
+      <div style="margin-bottom:26px;">
+        <div class="meter-labels"><span>Tasa de apertura</span><span id="openRateLabel"></span></div>
+        <div class="meter"><div class="meter-fill" id="openRateFill" style="background:var(--orange);"></div><div class="meter-marker" id="openRateMarker" style="display:none;"></div></div>
+        <p class="hint" id="openRateHint" style="margin-top:8px;"></p>
+      </div>
+      <div>
+        <div class="meter-labels"><span>Tasa de clics</span><span id="clickRateLabel"></span></div>
+        <div class="meter"><div class="meter-fill" id="clickRateFill" style="background:var(--purple-2);"></div><div class="meter-marker" id="clickRateMarker" style="display:none;"></div></div>
+        <p class="hint" id="clickRateHint" style="margin-top:8px;"></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Historial de campañas</h2>
+      <span class="hint">Todas las campañas de correo enviadas, la más reciente primero</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap scroll-y">
+        <table>
+          <thead><tr><th>Fecha</th><th>Asunto</th><th>Enviado a</th><th>Destinatarios</th><th>Apertura</th><th>Clics</th><th>Rebotes</th><th>Bajas</th></tr></thead>
+          <tbody id="emailCampaignsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Correo más reciente</h2>
+      <span class="hint" id="emailLatestHint"></span>
+    </div>
+    <div class="chart-card">
+      <div class="email-preview-frame">
+        <div class="email-preview-bar"><span></span><span></span><span></span></div>
+        <iframe class="email-preview-iframe" id="emailPreviewIframe" title="Vista previa del correo" sandbox=""></iframe>
+      </div>
+      <p class="hint" style="margin-top:12px;"><a id="emailArchiveLink" href="#" target="_blank" rel="noopener" style="color:var(--orange);">Ver este correo en el navegador ↗</a></p>
+    </div>
+  </section>
+
+  </div>
+
+  </div>
+
   <div class="tab-panel" id="tab-story">
 
   <section>
@@ -833,7 +906,8 @@
     fetch('./funnel_config.json?_=' + Date.now()).then(r => r.json()).catch(() => ({reuniones: null})),
     fetch('./organic_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./storytelling_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-  ]).then(([leadsData, metaData, funnelCfg, organicData, storyData]) => {
+    fetch('./mailchimp_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
+  ]).then(([leadsData, metaData, funnelCfg, organicData, storyData, mailchimpData]) => {
     if (!leadsData){
       document.getElementById('statusBadge').textContent = '● Sin datos aún';
       document.getElementById('statusBadge').className = 'badge warn';
@@ -845,6 +919,7 @@
     drawStoryTab(leadsData, metaData, storyData);
     renderFormCampaign(leadsData, metaData);
     renderWhatsappCampaign(leadsData, metaData);
+    renderEmailMkt(mailchimpData);
   });
 
   // ---- Campaña de Formulario (Meta) ----
@@ -3086,6 +3161,137 @@
     if (ghDisconnectBtn) ghDisconnectBtn.addEventListener('click', storyGhDisconnect);
     if (publishBtn) publishBtn.addEventListener('click', storyPublishToGithub);
     storyGhRenderStatus();
+  }
+
+  // =================== Email marketing (Mailchimp) ===================
+
+  function pct1(v){
+    if (v === null || v === undefined || isNaN(v)) return '—';
+    return (v * 100).toFixed(1).replace('.', ',') + '%';
+  }
+
+  function fmtDateEs(iso){
+    if (!iso) return '—';
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return '—';
+    return d.toLocaleDateString('es-PE', {day:'2-digit', month:'short', year:'numeric'}) + ' ' +
+      d.toLocaleTimeString('es-PE', {hour:'2-digit', minute:'2-digit'});
+  }
+
+  // Barra "medidor": tu tasa como relleno de color, y un marcador blanco en
+  // la posición del promedio de la industria (dato que entrega Mailchimp en
+  // cada reporte de campaña), para comparar de un vistazo.
+  function setEmailMeter(prefix, yourRate, industryRate){
+    const label = document.getElementById(prefix + 'Label');
+    const fill = document.getElementById(prefix + 'Fill');
+    const marker = document.getElementById(prefix + 'Marker');
+    const hint = document.getElementById(prefix + 'Hint');
+    const yr = yourRate || 0;
+    const ir = industryRate || 0;
+    const scaleMax = Math.max(yr, ir, 0.01) * 1.3;
+
+    label.textContent = pct1(yourRate);
+    fill.style.width = Math.min(100, (yr / scaleMax) * 100) + '%';
+
+    if (ir > 0){
+      marker.style.left = Math.min(100, (ir / scaleMax) * 100) + '%';
+      marker.style.display = '';
+      const diff = yr - ir;
+      const diffTxt = diff >= 0
+        ? `${pct1(Math.abs(diff))} por encima del promedio de la industria`
+        : `${pct1(Math.abs(diff))} por debajo del promedio de la industria`;
+      hint.innerHTML = `Promedio de la industria: <strong>${pct1(ir)}</strong> (punto blanco) — tú estás ${diffTxt}.`;
+    } else {
+      marker.style.display = 'none';
+      hint.textContent = '';
+    }
+  }
+
+  function renderEmailMkt(mail){
+    const kpiRow = document.getElementById('emailKpiRow');
+    const unavailableSection = document.getElementById('emailUnavailable');
+    const unavailableText = document.getElementById('emailUnavailableText');
+    const content = document.getElementById('emailContent');
+
+    if (!mail || !mail.available){
+      kpiRow.innerHTML = '';
+      content.style.display = 'none';
+      unavailableSection.style.display = '';
+      unavailableText.textContent = (mail && mail.error)
+        ? mail.error
+        : 'Esperando conectar Mailchimp — agrega el API Key de Mailchimp como secreto del repositorio (ver README) para ver aquí tus campañas de correo.';
+      return;
+    }
+
+    unavailableSection.style.display = 'none';
+    content.style.display = '';
+
+    const s = mail.summary || {};
+    const campaigns = mail.campaigns || [];
+
+    kpiRow.innerHTML = `
+      <div class="tile">
+        <p class="tile-label">Campañas enviadas</p>
+        <p class="tile-value">${fmt(s.total_campaigns || 0)}</p>
+        <p class="tile-sub">${fmt(s.total_recipients_all || 0)} destinatarios en total</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Tasa de apertura promedio</p>
+        <p class="tile-value">${pct1(s.avg_open_rate)}</p>
+        <p class="tile-sub">Promedio de todas tus campañas</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Tasa de clics promedio</p>
+        <p class="tile-value">${pct1(s.avg_click_rate)}</p>
+        <p class="tile-sub">Promedio de todas tus campañas</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Rebotes / bajas</p>
+        <p class="tile-value">${fmt(s.total_bounces || 0)} / ${fmt(s.total_unsubscribes || 0)}</p>
+        <p class="tile-sub">Correos rebotados / personas que se dieron de baja</p>
+      </div>
+    `;
+
+    setEmailMeter('openRate', s.avg_open_rate, s.industry_avg_open_rate);
+    setEmailMeter('clickRate', s.avg_click_rate, s.industry_avg_click_rate);
+
+    const tbody = document.getElementById('emailCampaignsTableBody');
+    if (!campaigns.length){
+      tbody.innerHTML = `<tr><td colspan="8" class="table-sub">Aún no hay campañas de correo enviadas.</td></tr>`;
+    } else {
+      tbody.innerHTML = campaigns.map(c => `
+        <tr>
+          <td>${fmtDateEs(c.send_time)}</td>
+          <td class="table-name">${escapeHtml(c.subject || '(sin asunto)')}</td>
+          <td class="table-sub">${escapeHtml(c.segment_text || c.list_name || '—')}</td>
+          <td>${fmt(c.recipients || 0)}</td>
+          <td>${pct1(c.open_rate)}</td>
+          <td>${pct1(c.click_rate)}</td>
+          <td>${fmt((c.hard_bounces || 0) + (c.soft_bounces || 0))}</td>
+          <td>${fmt(c.unsubscribes || 0)}</td>
+        </tr>
+      `).join('');
+    }
+
+    const latest = campaigns[0];
+    const hint = document.getElementById('emailLatestHint');
+    const iframe = document.getElementById('emailPreviewIframe');
+    const link = document.getElementById('emailArchiveLink');
+
+    if (latest && mail.latest_campaign_html){
+      hint.textContent = `"${latest.subject || ''}" · enviado ${fmtDateEs(latest.send_time)} a ${fmt(latest.recipients || 0)} contactos`;
+      iframe.srcdoc = mail.latest_campaign_html;
+      if (latest.archive_url){
+        link.href = latest.archive_url;
+        link.style.display = '';
+      } else {
+        link.style.display = 'none';
+      }
+    } else {
+      hint.textContent = 'Aún no hay ningún correo enviado.';
+      iframe.srcdoc = '';
+      link.style.display = 'none';
+    }
   }
 })();
 </script>
