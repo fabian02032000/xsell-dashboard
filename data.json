@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:06:20.540515+00:00",
+  "updated_at": "2026-09-29T15:30:59.380633+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -334,7 +334,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 168,
+  "leads_with_deal": 169,
   "leads_detail": [
     {
       "name": "Mariana",
@@ -357,11 +357,11 @@
       "company": "IRON GROUP SAC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "IRON GROUP SAC",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -848,9 +848,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-19",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Mural ",
-      "deal_note": null,
+      "deal_note": "Nunca respondió",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo"
     },
@@ -876,9 +876,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-18",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Inversiones ",
-      "deal_note": null,
+      "deal_note": "Quería precio directamente. No respondió llamada en el horario acordado.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null
     },
@@ -932,7 +932,7 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-15",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Creative Focus ",
       "deal_note": "No responde wsp de seguimiento",
       "estadio_lead": "Consolidado",
@@ -2721,11 +2721,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 130
+      "count": 133
     },
     {
       "label": "Prospectos Contactados",
-      "count": 29
+      "count": 27
     },
     {
       "label": "Reunión Agendadas",
@@ -2733,7 +2733,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
