@@ -1,0 +1,39 @@
+{
+  "updated_at": "2026-09-29T14:53:46.072201+00:00",
+  "available": true,
+  "error": null,
+  "summary": {
+    "total_campaigns": 1,
+    "total_recipients_all": 127,
+    "avg_open_rate": 0.0,
+    "avg_click_rate": 0.0,
+    "total_bounces": 0,
+    "total_unsubscribes": 0,
+    "industry_avg_open_rate": null,
+    "industry_avg_click_rate": null
+  },
+  "campaigns": [
+    {
+      "id": "12851462",
+      "subject": "3 datos sobre cuánto te cuesta tardar en responder a un lead",
+      "preview_text": "",
+      "send_time": "2026-09-29T10:10:00-05:00",
+      "recipients": 127,
+      "list_name": "Xsell",
+      "segment_text": "Remarketing Descartados Consolidado",
+      "archive_url": "https://mailchi.mp/364434697669/3-datos-sobre-cunto-te-cuesta-tardar-en-responder-a-un-lead",
+      "opens_total": 0,
+      "unique_opens": 0,
+      "open_rate": 0.0,
+      "clicks_total": 0,
+      "unique_clicks": 0,
+      "click_rate": 0.0,
+      "hard_bounces": 0,
+      "soft_bounces": 0,
+      "unsubscribes": 0,
+      "industry_open_rate": null,
+      "industry_click_rate": null
+    }
+  ],
+  "latest_campaign_html": "<html><body style=\"margin:0; padding:0; background-color:#f4f4f5; font-family:Manrope, Arial, Helvetica, sans-serif;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f4f4f5; padding:24px 0;\">\n<tbody><tr>\n<td align=\"center\">\n<table role=\"presentation\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#ffffff; border-radius:8px; overflow:hidden; max-width:600px; width:100%; border:1px solid #e5e5e8;\">\n\n<!-- Header: línea gráfica oficial Xsell (fondo #0E0A1A, franja morada) -->\n<tbody><tr>\n<td style=\"background-color:#0E0A1A; padding:28px 32px;\">\n<span style=\"color:#ffffff; font-size:20px; font-weight:700; letter-spacing:0.5px; font-family:'Sora', Arial, sans-serif;\">XSELL</span>\n</td>\n</tr>\n<tr>\n<td style=\"padding:0; font-size:1px; line-height:4px; background:linear-gradient(90deg, #5D17A0 0%, #7B2BC9 100%);\">&nbsp;</td>\n</tr>\n\n<!-- Saludo -->\n<tr>\n<td style=\"padding:32px 32px 8px 32px;\">\n<p style=\"margin:0; font-size:16px; line-height:24px; color:#0E0A1A;\">\nHola &lt;&lt;Nombre&gt;&gt;,\n</p>\n</td>\n</tr>\n\n<tr>\n<td style=\"padding:8px 32px 24px 32px;\">\n<p style=\"margin:0; font-size:16px; line-height:24px; color:#444448;\">\nQuisimos compartirte 3 datos sobre algo que puede estar costándote ventas todos los días: la velocidad con la que tu equipo responde a un lead nuevo, esté o no en tus planes trabajar con nosotros.\n</p>\n</td>\n</tr>\n\n<!-- Dato 1: distribución del tiempo de respuesta -->\n<tr>\n<td style=\"padding:0 32px 20px 32px;\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f6f1fb; border-left:4px solid #7B2BC9; border-radius:4px;\">\n<tbody><tr>\n<td style=\"padding:20px 24px;\">\n<p style=\"margin:0 0 4px 0; font-size:28px; font-weight:700; color:#5D17A0; font-family:'Sora', Arial, sans-serif;\">63%</p>\n<p style=\"margin:0 0 14px 0; font-size:14px; line-height:20px; color:#444448;\">\nde las empresas tarda más de una hora en responder a un lead nuevo, o nunca responde. Así se reparte el tiempo de respuesta:\n</p>\n<img src=\"https://mcusercontent.com/4026bde513f12e7a0f0675227/images/73693d7a-7f99-9623-f1d3-765835d2a2af.png\" width=\"552\" alt=\"Gráfico: distribución del tiempo que tardan las empresas en responder a un lead nuevo. 37% responde en la primera hora, 16% entre 1 y 24 horas, 24% después de 24 horas, 23% nunca responde\" style=\"display:block; width:100%; max-width:552px; height:auto; border-radius:8px; margin:0;\">\n</td>\n</tr>\n</tbody></table>\n</td>\n</tr>\n<!-- Dato 2: impacto de responder en la primera hora -->\n<tr>\n<td style=\"padding:0 32px 20px 32px;\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f6f1fb; border-left:4px solid #7B2BC9; border-radius:4px;\">\n<tbody><tr>\n<td style=\"padding:20px 24px;\">\n<p style=\"margin:0 0 4px 0; font-size:28px; font-weight:700; color:#5D17A0; font-family:'Sora', Arial, sans-serif;\">60x</p>\n<p style=\"margin:0 0 14px 0; font-size:14px; line-height:20px; color:#444448;\">\nmás probabilidades de calificar un lead si lo contactas en la primera hora, frente a esperar más de 24 horas.\n</p>\n<img src=\"https://mcusercontent.com/4026bde513f12e7a0f0675227/images/52b9bb9e-e3cd-7a3d-4439-4e3aecd8c3e7.png\" width=\"552\" alt=\"Gráfico: 60 veces más probabilidades de calificar un lead si se contacta en la primera hora, frente a esperar más de 24 horas\" style=\"display:block; width:100%; max-width:552px; height:auto; border-radius:8px; margin:0;\">\n</td>\n</tr>\n</tbody></table>\n</td>\n</tr>\n<!-- Dato 3: impacto de responder en los primeros 5 minutos -->\n<tr>\n<td style=\"padding:0 32px 8px 32px;\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f6f1fb; border-left:4px solid #7B2BC9; border-radius:4px;\">\n<tbody><tr>\n<td style=\"padding:20px 24px;\">\n<p style=\"margin:0 0 4px 0; font-size:28px; font-weight:700; color:#5D17A0; font-family:'Sora', Arial, sans-serif;\">21x</p>\n<p style=\"margin:0 0 14px 0; font-size:14px; line-height:20px; color:#444448;\">\nmás probabilidades de calificar un lead si respondes en los primeros 5 minutos, en lugar de esperar más de 30. Aun así, solo el 7% de las empresas lo logra.\n</p>\n<img src=\"https://mcusercontent.com/4026bde513f12e7a0f0675227/images/114aa830-2714-766b-4fe0-06a6d6ac08a2.png\" width=\"552\" alt=\"Gráfico: 21 veces más probabilidades de calificar un lead si se responde en los primeros 5 minutos; solo el 7% de las empresas lo logra\" style=\"display:block; width:100%; max-width:552px; height:auto; border-radius:8px; margin:0 0 10px 0;\">\n</td>\n</tr>\n</tbody></table>\n</td>\n</tr>\n\n<!-- Cierre informativo, sin presión de conversión -->\n<tr>\n<td style=\"padding:24px 32px 32px 32px;\">\n<p style=\"margin:0; font-size:15px; line-height:22px; color:#444448;\">\nEsperamos que esta información te sea útil para revisar cómo tu equipo responde hoy a los leads nuevos. Si tienes alguna pregunta o quieres profundizar en el tema, <a href=\"PON_AQUI_TU_LINK_DE_CONTACTO\" style=\"color:#FF6B13; font-weight:600; text-decoration:none;\">escríbenos con confianza</a>.\n</p>\n</td>\n</tr>\n\n<!-- Footer -->\n<tr>\n<td style=\"background-color:#f4f4f5; padding:20px 32px; text-align:center; border-top:1px solid #e5e5e8;\">\n<p style=\"margin:0; font-size:12px; color:#9a9aa5; line-height:18px;\">\nXsell · Este correo se envió porque conversamos anteriormente sobre tu proyecto.<br>\nXsell · Calle Los Halcones Nro 102 · Surquillo 15047 · Peru\n</p>\n</td>\n</tr>\n\n</tbody></table>\n</td>\n</tr>\n</tbody></table></body></html>"
+}
