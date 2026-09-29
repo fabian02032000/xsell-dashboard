@@ -34,6 +34,19 @@ import urllib.request
 import urllib.error
 
 # ---------------------- CONFIGURACIÓN ----------------------
+# Perú no tiene horario de verano, así que su offset respecto a UTC es
+# siempre -5, todo el año — un offset fijo es más simple y confiable aquí
+# que usar zoneinfo (que depende de que el runner tenga la base de datos de
+# zonas horarias instalada).
+#
+# Se usa para "cortar" el día/mes de cada lead con el mismo criterio que ve
+# Ingrid en HubSpot (que muestra las fechas en hora de Lima), en vez de UTC.
+# Antes de este ajuste (sep-2026), un lead creado por ejemplo a las 8pm del
+# 31 de agosto en Lima quedaba en UTC como 1 de setiembre 1am, y el dashboard
+# lo contaba como lead de setiembre aunque para Ingrid siguiera siendo de
+# agosto — de ahí el desfase de unos pocos registros que reportó Fabián.
+LIMA_TZ = datetime.timezone(datetime.timedelta(hours=-5))
+
 # Puedes ajustar estos valores sin tocar el resto del código.
 CAMPAIGN_START_DATE = os.environ.get("CAMPAIGN_START_DATE", "2026-07-25")  # YYYY-MM-DD
 MONTHLY_GOAL = float(os.environ.get("MONTHLY_GOAL", "74"))
@@ -559,7 +572,7 @@ def build_leads_by_day(contacts):
         if not createdate:
             continue
         dt = datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
-        day = dt.date().isoformat()
+        day = dt.astimezone(LIMA_TZ).date().isoformat()
         counts[day] = counts.get(day, 0) + 1
     return [{"date": d, "count": counts[d]} for d in sorted(counts)]
 
@@ -631,7 +644,7 @@ def main():
         sys.exit(1)
 
     now = datetime.datetime.now(datetime.timezone.utc)
-    today = now.date()
+    today = now.astimezone(LIMA_TZ).date()
     month_start = today.replace(day=1).isoformat()
 
     try:
@@ -725,13 +738,18 @@ def main():
         full_name = " ".join(x for x in [props.get("firstname"), props.get("lastname")] if x).strip()
         status = deal_status_by_contact.get(c["id"])
         createdate = props.get("createdate")
+        created_date_lima = (
+            datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
+            .astimezone(LIMA_TZ).date().isoformat()
+            if createdate else None
+        )
         leads_detail.append({
             "name": full_name or "(sin nombre)",
             "email": props.get("email") or "(sin correo)",
             "phone": props.get("phone") or props.get("mobilephone") or None,
             "company": props.get("company") or "(sin empresa)",
             "lead_source": "WhatsApp (conversión)" if c["id"] in whatsapp_manual_ids else "Formulario (Meta Ads)",
-            "created_date": createdate[:10] if createdate else None,
+            "created_date": created_date_lima,
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
             "deal_name": status.get("deal_name") if status else None,
