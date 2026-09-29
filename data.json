@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T19:57:42.655702+00:00",
+  "updated_at": "2026-09-29T23:00:15.967771+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -9,7 +9,7 @@
   "leads_by_day": [
     {
       "date": "2026-07-25",
-      "count": 4
+      "count": 5
     },
     {
       "date": "2026-07-26",
@@ -21,15 +21,15 @@
     },
     {
       "date": "2026-07-28",
-      "count": 1
+      "count": 5
     },
     {
       "date": "2026-07-29",
-      "count": 8
+      "count": 3
     },
     {
       "date": "2026-07-30",
-      "count": 2
+      "count": 3
     },
     {
       "date": "2026-07-31",
@@ -37,15 +37,19 @@
     },
     {
       "date": "2026-08-01",
-      "count": 3
+      "count": 4
     },
     {
       "date": "2026-08-02",
-      "count": 5
+      "count": 4
     },
     {
       "date": "2026-08-03",
-      "count": 4
+      "count": 3
+    },
+    {
+      "date": "2026-08-05",
+      "count": 1
     },
     {
       "date": "2026-08-06",
@@ -57,43 +61,43 @@
     },
     {
       "date": "2026-08-08",
-      "count": 5
+      "count": 4
     },
     {
       "date": "2026-08-09",
-      "count": 2
+      "count": 4
     },
     {
       "date": "2026-08-10",
-      "count": 6
+      "count": 5
     },
     {
       "date": "2026-08-11",
-      "count": 2
-    },
-    {
-      "date": "2026-08-12",
       "count": 1
     },
     {
-      "date": "2026-08-13",
+      "date": "2026-08-12",
       "count": 2
     },
     {
-      "date": "2026-08-15",
+      "date": "2026-08-13",
+      "count": 1
+    },
+    {
+      "date": "2026-08-14",
       "count": 1
     },
     {
       "date": "2026-08-16",
-      "count": 2
-    },
-    {
-      "date": "2026-08-17",
       "count": 5
     },
     {
+      "date": "2026-08-17",
+      "count": 2
+    },
+    {
       "date": "2026-08-19",
-      "count": 1
+      "count": 2
     },
     {
       "date": "2026-08-20",
@@ -101,11 +105,11 @@
     },
     {
       "date": "2026-08-21",
-      "count": 1
+      "count": 2
     },
     {
       "date": "2026-08-22",
-      "count": 3
+      "count": 1
     },
     {
       "date": "2026-08-23",
@@ -113,39 +117,39 @@
     },
     {
       "date": "2026-08-24",
-      "count": 2
+      "count": 4
     },
     {
       "date": "2026-08-25",
-      "count": 4
-    },
-    {
-      "date": "2026-08-27",
       "count": 2
     },
     {
-      "date": "2026-08-28",
-      "count": 3
-    },
-    {
-      "date": "2026-08-29",
-      "count": 5
-    },
-    {
-      "date": "2026-08-31",
-      "count": 1
-    },
-    {
-      "date": "2026-09-01",
-      "count": 6
-    },
-    {
-      "date": "2026-09-02",
+      "date": "2026-08-27",
       "count": 4
     },
     {
-      "date": "2026-09-03",
+      "date": "2026-08-28",
+      "count": 4
+    },
+    {
+      "date": "2026-08-29",
+      "count": 2
+    },
+    {
+      "date": "2026-08-31",
+      "count": 2
+    },
+    {
+      "date": "2026-09-01",
       "count": 7
+    },
+    {
+      "date": "2026-09-02",
+      "count": 5
+    },
+    {
+      "date": "2026-09-03",
+      "count": 4
     },
     {
       "date": "2026-09-04",
@@ -153,11 +157,11 @@
     },
     {
       "date": "2026-09-05",
-      "count": 1
+      "count": 2
     },
     {
       "date": "2026-09-06",
-      "count": 5
+      "count": 4
     },
     {
       "date": "2026-09-07",
@@ -165,11 +169,7 @@
     },
     {
       "date": "2026-09-08",
-      "count": 1
-    },
-    {
-      "date": "2026-09-09",
-      "count": 1
+      "count": 2
     },
     {
       "date": "2026-09-10",
@@ -185,11 +185,11 @@
     },
     {
       "date": "2026-09-14",
-      "count": 5
+      "count": 7
     },
     {
-      "date": "2026-09-15",
-      "count": 2
+      "date": "2026-09-16",
+      "count": 1
     },
     {
       "date": "2026-09-17",
@@ -201,7 +201,7 @@
     },
     {
       "date": "2026-09-19",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2026-09-20",
@@ -209,15 +209,15 @@
     },
     {
       "date": "2026-09-21",
-      "count": 7
+      "count": 8
     },
     {
       "date": "2026-09-22",
-      "count": 3
+      "count": 6
     },
     {
       "date": "2026-09-23",
-      "count": 6
+      "count": 2
     },
     {
       "date": "2026-09-25",
@@ -229,18 +229,14 @@
     },
     {
       "date": "2026-09-28",
-      "count": 9
-    },
-    {
-      "date": "2026-09-29",
-      "count": 2
+      "count": 11
     }
   ],
   "leads_by_month": [
     {
       "month": "2026-07",
       "label": "July 2026",
-      "leads": 20,
+      "leads": 21,
       "goal": 16.7,
       "is_partial": true
     },
@@ -254,7 +250,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 82,
+      "leads": 81,
       "goal": 74.0,
       "is_partial": false
     }
@@ -263,7 +259,7 @@
     {
       "week_start": "2026-07-20",
       "week_end": "2026-07-26",
-      "leads": 5,
+      "leads": 6,
       "goal": 17.3
     },
     {
@@ -275,19 +271,19 @@
     {
       "week_start": "2026-08-03",
       "week_end": "2026-08-09",
-      "leads": 17,
+      "leads": 18,
       "goal": 17.3
     },
     {
       "week_start": "2026-08-10",
       "week_end": "2026-08-16",
-      "leads": 14,
+      "leads": 15,
       "goal": 17.3
     },
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
-      "leads": 12,
+      "leads": 9,
       "goal": 17.3
     },
     {
@@ -327,7 +323,7 @@
       "goal": 17.3
     }
   ],
-  "current_month_leads": 82,
+  "current_month_leads": 81,
   "current_month_label": "September 2026",
   "current_week_leads": 11,
   "closed_deals": {
@@ -336,34 +332,6 @@
   },
   "leads_with_deal": 169,
   "leads_detail": [
-    {
-      "name": "Mariana",
-      "email": "(sin correo)",
-      "phone": "952 769 793",
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-29",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Mariana",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Mariangelica López Castañeda",
-      "email": "mariangelica.lop@gmail.com",
-      "phone": "+51924217318",
-      "company": "IRON GROUP SAC",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-29",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "IRON GROUP SAC",
-      "deal_note": null,
-      "estadio_lead": "Semilla",
-      "nivel_urgencia": null
-    },
     {
       "name": "Jorge Izquierdo",
       "email": "jorgeizquierdocobos@gmail.com",
@@ -484,10 +452,38 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Claro Perú ",
-      "deal_note": "Sí respondió llamada. Indica que entrará a reunión que lo llamemos por la tarde.",
+      "deal_note": "Sí respondio llamada pero indicó que estaba ocupado. No volvió a responder llamada de seguimiento ni wsp.",
       "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Mariana",
+      "email": "(sin correo)",
+      "phone": "952 769 793",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Mariana",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Mariangelica López Castañeda",
+      "email": "mariangelica.lop@gmail.com",
+      "phone": "+51924217318",
+      "company": "IRON GROUP SAC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-28",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "IRON GROUP SAC",
+      "deal_note": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
     {
@@ -540,9 +536,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-25",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "New house",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp de seguimiento",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
@@ -556,62 +552,6 @@
       "has_deal": true,
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Xiomi Perú",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "(sin nombre)",
-      "email": "contacto@jopesa.pe",
-      "phone": null,
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-23",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Jopesa Inmobiliaria",
-      "deal_note": "Más de 30 entregados. Proyecto de referencia: Hatuey 205, San Miguel. Sector: Real Estate. Fuente: https://www.jopesa.pe/. Correo público no encontrado (solo formulario web).",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "(sin nombre)",
-      "email": "ventas@armonhy.com.pe",
-      "phone": null,
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-23",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Armonhy Inmobiliaria",
-      "deal_note": "Más de 10 entregados. Proyecto de referencia: Flora Tristán. Sector: Real Estate. Fuente: https://armonhy.com.pe/. Correo protegido por Cloudflare, no accesible públicamente.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Sin datos",
-      "email": "(sin correo)",
-      "phone": "958 282 830",
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-23",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Sin datos - 958 282 830",
-      "deal_note": "Nunca respondió llamada ni wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Perez",
-      "email": "(sin correo)",
-      "phone": "+51 907 515 857",
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-23",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Sin datos - Perez",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -645,20 +585,6 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Thony",
-      "email": "(sin correo)",
-      "phone": "+51 977 820 213",
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-09-22",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Sin datos - Thony",
-      "deal_note": "Nunca respondió llamada ni wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
       "name": "Jose Melendez Quesada",
       "email": "gerencia@geonet.top",
       "phone": "+51977575171",
@@ -684,6 +610,62 @@
       "deal_name": "Corporación Logística & TransporteDeal",
       "deal_note": null,
       "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "(sin nombre)",
+      "email": "contacto@jopesa.pe",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-22",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Jopesa Inmobiliaria",
+      "deal_note": "Más de 30 entregados. Proyecto de referencia: Hatuey 205, San Miguel. Sector: Real Estate. Fuente: https://www.jopesa.pe/. Correo público no encontrado (solo formulario web).",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "(sin nombre)",
+      "email": "ventas@armonhy.com.pe",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-22",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Armonhy Inmobiliaria",
+      "deal_note": "Más de 10 entregados. Proyecto de referencia: Flora Tristán. Sector: Real Estate. Fuente: https://armonhy.com.pe/. Correo protegido por Cloudflare, no accesible públicamente.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Sin datos",
+      "email": "(sin correo)",
+      "phone": "958 282 830",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-22",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - 958 282 830",
+      "deal_note": "Nunca respondió llamada ni wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Perez",
+      "email": "(sin correo)",
+      "phone": "+51 907 515 857",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-22",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Perez",
+      "deal_note": null,
+      "estadio_lead": null,
       "nivel_urgencia": null
     },
     {
@@ -785,6 +767,20 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Thony",
+      "email": "(sin correo)",
+      "phone": "+51 977 820 213",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-21",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Thony",
+      "deal_note": "Nunca respondió llamada ni wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Miguel Angel Cayo Veit",
       "email": "administracion@privateacher.edu.pe",
       "phone": "+51999371694",
@@ -813,20 +809,6 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Raquel Alvarado",
-      "email": "gerencia@ascensoresmesac.com",
-      "phone": "+51925050296",
-      "company": "Ascensores Eurolive",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-19",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Ascensores Eurolive",
-      "deal_note": "No tienen inversión en pauta. Recién empezarán con ello.",
-      "estadio_lead": "Semilla",
-      "nivel_urgencia": null
-    },
-    {
       "name": "Luis Alvarez Caro",
       "email": "luis.alvarez@e-robot.pe",
       "phone": "+51982232655",
@@ -834,9 +816,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-19",
       "has_deal": true,
-      "deal_stage": "Reunión Agendadas",
+      "deal_stage": "Descartada",
       "deal_name": "e-Robot",
-      "deal_note": "Ocupado. Indica que lo llamen a 1:oo p.m.",
+      "deal_note": "Motivo de descarte: No es nuestro core\nDetalle: Recibe solo 30 leads al mes (Estadio Semilla) — volumen insuficiente para el modelo de perfilamiento y cierre dedicado.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -851,20 +833,6 @@
       "deal_stage": "Descartada",
       "deal_name": "Mural ",
       "deal_note": "Nunca respondió",
-      "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
-    },
-    {
-      "name": "Jim Brayan uceda Pisfil",
-      "email": "metalimportsac@gmail.com",
-      "phone": "+51968341170",
-      "company": "Epps de seguridad",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-18",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Metal Import Sac",
-      "deal_note": "Está buscando solo CRM",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo"
     },
@@ -897,45 +865,45 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Raquel Alvarado",
+      "email": "gerencia@ascensoresmesac.com",
+      "phone": "+51925050296",
+      "company": "Ascensores Eurolive",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-18",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Ascensores Eurolive",
+      "deal_note": "No tienen inversión en pauta. Recién empezarán con ello.",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Jim Brayan uceda Pisfil",
+      "email": "metalimportsac@gmail.com",
+      "phone": "+51968341170",
+      "company": "Epps de seguridad",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-17",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Metal Import Sac",
+      "deal_note": "Está buscando solo CRM",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
+    },
+    {
       "name": "Victor Vigo Paredes",
       "email": "victorvigo@corporacioninvisa.com.pe",
       "phone": "+51971929065",
       "company": "CORPORACIÓN INVISA S.A.C",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-17",
+      "created_date": "2026-09-16",
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "CORPORACIÓN INVISA S.A.C",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Jeiner Huamán Gormas",
-      "email": "jeiner2809@gmail.com",
-      "phone": "+51989440981",
-      "company": "Jeiner",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-15",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Jeiner",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Jorge Barco Fenco",
-      "email": "jorgebarcofenco@gmail.com",
-      "phone": "+51956629380",
-      "company": "CREATIVE FOCUS",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-15",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Creative Focus ",
-      "deal_note": "No responde wsp de seguimiento",
-      "estadio_lead": "Consolidado",
       "nivel_urgencia": null
     },
     {
@@ -1009,6 +977,34 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Jeiner Huamán Gormas",
+      "email": "jeiner2809@gmail.com",
+      "phone": "+51989440981",
+      "company": "Jeiner",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-14",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jeiner",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Jorge Barco Fenco",
+      "email": "jorgebarcofenco@gmail.com",
+      "phone": "+51956629380",
+      "company": "CREATIVE FOCUS",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-14",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Creative Focus ",
+      "deal_note": "No responde wsp de seguimiento",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": null
+    },
+    {
       "name": "Lucila Edith Vereau Luján",
       "email": "lucilavl_64@hotmail.com",
       "phone": "+51942915788",
@@ -1079,20 +1075,6 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Raul Martinez",
-      "email": "ingraul294@gmail.com",
-      "phone": "+51901783600",
-      "company": "Aquyra moda",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-09",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Aquyra moda",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
-    },
-    {
       "name": "Medicita Sua",
       "email": "gustavoapk2017@gmail.com",
       "phone": "+51968540794",
@@ -1107,6 +1089,20 @@
       "nivel_urgencia": "Bajo"
     },
     {
+      "name": "Raul Martinez",
+      "email": "ingraul294@gmail.com",
+      "phone": "+51901783600",
+      "company": "Aquyra moda",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-08",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Aquyra moda",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
+    },
+    {
       "name": "Carles Ortiz Urquiaga",
       "email": "innovacion360.info@gmail.com",
       "phone": "+51934251817",
@@ -1118,20 +1114,6 @@
       "deal_name": "Ortiz proveedores peru",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
-    },
-    {
-      "name": "Christian Diaz",
-      "email": "christian.diaz448@hotmail.com",
-      "phone": "+51901797389",
-      "company": "Marxo",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-06",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Marxo",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
     {
@@ -1205,6 +1187,20 @@
       "nivel_urgencia": "Bajo"
     },
     {
+      "name": "Christian Diaz",
+      "email": "christian.diaz448@hotmail.com",
+      "phone": "+51901797389",
+      "company": "Marxo",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-05",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Marxo",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
+    },
+    {
       "name": "Hans Kevin",
       "email": "jusjs@whdj.com",
       "phone": "+51933815660",
@@ -1245,48 +1241,6 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
-    },
-    {
-      "name": "Carlos López",
-      "email": "adheplastgerencia@gmail.com",
-      "phone": "+51947210721",
-      "company": "Adheplast envases",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-03",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Adheplast envases",
-      "deal_note": "Nunca respondió el Wsp . No llegó al botón de wsp.",
-      "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
-    },
-    {
-      "name": "Amdres Reyes",
-      "email": "victorandresrecaldereyes8@gmail.com",
-      "phone": "+51987525354",
-      "company": "domcar",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-03",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Domcar",
-      "deal_note": "Contrataron a un personal de confianza",
-      "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Medio"
-    },
-    {
-      "name": "Rodolfo Enrique Montoya Miniza",
-      "email": "rodolfo.montoya@oymgroup.com",
-      "phone": "+51993614100",
-      "company": "O&M SERVICIOS COMERCIALES SAC",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-03",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "O&M SERVICIOS COMERCIALES SAC",
-      "deal_note": "Nunca respondió. No llegó al botón de wsp. Es una empresa de tercerización de servicios comerciales y captación de clientes (confirmado por fuentes públicas)",
-      "estadio_lead": "Alto Nivel",
-      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Isaac Herrera Villafuerte",
@@ -1345,34 +1299,6 @@
       "nivel_urgencia": "Bajo"
     },
     {
-      "name": "Bryan",
-      "email": "ryfcontactcenter@gmail.com",
-      "phone": "+51966764776",
-      "company": "R&F Contact Center SAC",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-02",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "R&F Contact Center SAC",
-      "deal_note": "Nunca respondió Wsp. Su WhatsApp Business aparece con logo de  WIN. No llegó al botón de wsp en la pauta.",
-      "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
-    },
-    {
-      "name": "Fernando OE",
-      "email": "fer9918orbegoso@gmail.com",
-      "phone": "+51923661802",
-      "company": "CASTILIAN",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-02",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Castilian",
-      "deal_note": "No asistió a reunión. Tras seguimiento ya no responde. No llegó al botón de wsp en la pauta",
-      "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
-    },
-    {
       "name": "Sara Nahir Alonzo Ortiz",
       "email": "saraalonzoortiz25@gmail.com",
       "phone": "+51908702209",
@@ -1401,18 +1327,46 @@
       "nivel_urgencia": "Bajo"
     },
     {
-      "name": "Christian Christian",
-      "email": "christiaanjbb@gmail.com",
-      "phone": "+51922663002",
-      "company": "hogares",
+      "name": "Carlos López",
+      "email": "adheplastgerencia@gmail.com",
+      "phone": "+51947210721",
+      "company": "Adheplast envases",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-09-01",
+      "created_date": "2026-09-02",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Christian ",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "deal_name": "Adheplast envases",
+      "deal_note": "Nunca respondió el Wsp . No llegó al botón de wsp.",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Amdres Reyes",
+      "email": "victorandresrecaldereyes8@gmail.com",
+      "phone": "+51987525354",
+      "company": "domcar",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Domcar",
+      "deal_note": "Contrataron a un personal de confianza",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Medio"
+    },
+    {
+      "name": "Rodolfo Enrique Montoya Miniza",
+      "email": "rodolfo.montoya@oymgroup.com",
+      "phone": "+51993614100",
+      "company": "O&M SERVICIOS COMERCIALES SAC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "O&M SERVICIOS COMERCIALES SAC",
+      "deal_note": "Nunca respondió. No llegó al botón de wsp. Es una empresa de tercerización de servicios comerciales y captación de clientes (confirmado por fuentes públicas)",
+      "estadio_lead": "Alto Nivel",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "karen Arrivasplata Vasquez",
@@ -1485,6 +1439,34 @@
       "nivel_urgencia": "Bajo"
     },
     {
+      "name": "Bryan",
+      "email": "ryfcontactcenter@gmail.com",
+      "phone": "+51966764776",
+      "company": "R&F Contact Center SAC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-01",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "R&F Contact Center SAC",
+      "deal_note": "Nunca respondió Wsp. Su WhatsApp Business aparece con logo de  WIN. No llegó al botón de wsp en la pauta.",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Fernando OE",
+      "email": "fer9918orbegoso@gmail.com",
+      "phone": "+51923661802",
+      "company": "CASTILIAN",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-09-01",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Castilian",
+      "deal_note": "No asistió a reunión. Tras seguimiento ya no responde. No llegó al botón de wsp en la pauta",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
+    },
+    {
       "name": "Giardel R. Gervasi",
       "email": "giardel.riega@inmater.pe",
       "phone": "+51931224183",
@@ -1499,44 +1481,16 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Fabricio Castro",
-      "email": "fcastro@perupack.biz",
-      "phone": "+51941976714",
-      "company": "Perupack",
+      "name": "Christian Christian",
+      "email": "christiaanjbb@gmail.com",
+      "phone": "+51922663002",
+      "company": "hogares",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-29",
-      "has_deal": true,
-      "deal_stage": "Reunión Agendadas",
-      "deal_name": "Perupack ",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Paul Saavedra Colmenares",
-      "email": "rrhh@ugi.org.pe",
-      "phone": "+51978500007",
-      "company": "UGI",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-29",
+      "created_date": "2026-08-31",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "UGI ",
-      "deal_note": "Nunca respondió wsp.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Luis",
-      "email": "carlomontoyac3018@gmail.com",
-      "phone": "+51938185483",
-      "company": "Agencia GMG",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-29",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Luis - Gerente General ",
-      "deal_note": "Nunca respondió",
+      "deal_name": "Christian ",
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1569,34 +1523,6 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Roberto",
-      "email": "info@robertoemprendiendo.com",
-      "phone": "+51991303376",
-      "company": "Smart place",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-28",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Roberto Emprendiendo",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Gladys Dávalos",
-      "email": "gladys.davalos.gutierrez@gmail.com",
-      "phone": "+51963754153",
-      "company": "Gladys Dávalos",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-28",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Gladys Dávalos ",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
       "name": "Daniel Parb",
       "email": "ernestodanielpampaarbanil@gmail.com",
       "phone": "+51930230319",
@@ -1607,6 +1533,48 @@
       "deal_stage": "Descartada",
       "deal_name": "Delivery Goo ",
       "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Fabricio Castro",
+      "email": "fcastro@perupack.biz",
+      "phone": "+51941976714",
+      "company": "Perupack",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-28",
+      "has_deal": true,
+      "deal_stage": "Reunión Agendadas",
+      "deal_name": "Perupack ",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Paul Saavedra Colmenares",
+      "email": "rrhh@ugi.org.pe",
+      "phone": "+51978500007",
+      "company": "UGI",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "UGI ",
+      "deal_note": "Nunca respondió wsp.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Luis",
+      "email": "carlomontoyac3018@gmail.com",
+      "phone": "+51938185483",
+      "company": "Agencia GMG",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Luis - Gerente General ",
+      "deal_note": "Nunca respondió",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1639,29 +1607,29 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Josue Marin",
-      "email": "eversimclaro@gmail.com",
-      "phone": "+51913589688",
-      "company": "FFVV EVERSIM",
+      "name": "Roberto",
+      "email": "info@robertoemprendiendo.com",
+      "phone": "+51991303376",
+      "company": "Smart place",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-25",
+      "created_date": "2026-08-27",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "FFVV EVERSIM",
+      "deal_name": "Roberto Emprendiendo",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
     {
-      "name": "Rolando Irvin Romero Villanueva",
-      "email": "irvinvirgo18@gmail.com",
-      "phone": "+51944868609",
-      "company": "Orquesta Digital Destello de Oro",
+      "name": "Gladys Dávalos",
+      "email": "gladys.davalos.gutierrez@gmail.com",
+      "phone": "+51963754153",
+      "company": "Gladys Dávalos",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-25",
+      "created_date": "2026-08-27",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Orquesta Digital Destello de Oro",
+      "deal_name": "Gladys Dávalos ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -1723,6 +1691,34 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Josue Marin",
+      "email": "eversimclaro@gmail.com",
+      "phone": "+51913589688",
+      "company": "FFVV EVERSIM",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-24",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "FFVV EVERSIM",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Rolando Irvin Romero Villanueva",
+      "email": "irvinvirgo18@gmail.com",
+      "phone": "+51944868609",
+      "company": "Orquesta Digital Destello de Oro",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-24",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Orquesta Digital Destello de Oro",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Ivan Borjas Hilario",
       "email": "comercial@punchay.dev",
       "phone": "+51910278408",
@@ -1733,34 +1729,6 @@
       "deal_stage": "Descartada",
       "deal_name": "Soluciones Digitales de Punchay ",
       "deal_note": "Nunca respondió Wsp. No lleno datos de negocio en el formulario.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "José Palomino",
-      "email": "hugoxz100@gmail.com",
-      "phone": "+51942107701",
-      "company": "eurolavadoras",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-22",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Eurolavadoras",
-      "deal_note": "No responde wsp de seguimiento. Solo respondió que preparan toda clase de lavadoras y refrigeradoras en Huancayo",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Jose Zapata",
-      "email": "josezapata_31@hotmail.com",
-      "phone": "+51974834506",
-      "company": "grupo zetus",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-22",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Grupo Zetus",
-      "deal_note": "call center/BPO para público español, Busca generación de leads",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1779,30 +1747,44 @@
       "nivel_urgencia": null
     },
     {
+      "name": "José Palomino",
+      "email": "hugoxz100@gmail.com",
+      "phone": "+51942107701",
+      "company": "eurolavadoras",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-21",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Eurolavadoras",
+      "deal_note": "No responde wsp de seguimiento. Solo respondió que preparan toda clase de lavadoras y refrigeradoras en Huancayo",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Jose Zapata",
+      "email": "josezapata_31@hotmail.com",
+      "phone": "+51974834506",
+      "company": "grupo zetus",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-21",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Grupo Zetus",
+      "deal_note": "call center/BPO para público español, Busca generación de leads",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Johana Ardiles Escarza",
       "email": "johanaae111@gmail.com",
       "phone": "+51908030909",
       "company": "Taller mecanico",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-21",
+      "created_date": "2026-08-20",
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "Taller mecánico",
       "deal_note": "Nunca respondió Wsp. No llenó datos de negocio en el formulario.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
-      "email": "edu@gmail.com",
-      "phone": "+51951770523",
-      "company": "Eduardo baldeon",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-20",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Eduardo baldeon",
-      "deal_note": "No brinda mayor detalle",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1821,44 +1803,16 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Franco B",
-      "email": "frankren.18@gmail.com",
-      "phone": "+51959383467",
-      "company": "Agroinvest Peru",
+      "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
+      "email": "edu@gmail.com",
+      "phone": "+51951770523",
+      "company": "Eduardo baldeon",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-17",
-      "has_deal": true,
-      "deal_stage": "Reunión Agendadas",
-      "deal_name": "Agroinvest Perú",
-      "deal_note": null,
-      "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Medio"
-    },
-    {
-      "name": "JA Fre",
-      "email": "fjulio16218501@gmail.com",
-      "phone": "+51924551013",
-      "company": "mercal c.a",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-17",
+      "created_date": "2026-08-19",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Mercal Ca",
-      "deal_note": "Busca MKT",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Luis Suazo",
-      "email": "luis.suazo@andesseguridad.com",
-      "phone": "+51989134005",
-      "company": "ANDES SEGURIDAD",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-17",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Andes Seguridad S.A.C. -",
-      "deal_note": "Nunca respondió mensajes",
+      "deal_name": "Eduardo baldeon",
+      "deal_note": "No brinda mayor detalle",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1919,30 +1873,58 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Franco B",
+      "email": "frankren.18@gmail.com",
+      "phone": "+51959383467",
+      "company": "Agroinvest Peru",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-16",
+      "has_deal": true,
+      "deal_stage": "Reunión Agendadas",
+      "deal_name": "Agroinvest Perú",
+      "deal_note": null,
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Medio"
+    },
+    {
+      "name": "JA Fre",
+      "email": "fjulio16218501@gmail.com",
+      "phone": "+51924551013",
+      "company": "mercal c.a",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-16",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Mercal Ca",
+      "deal_note": "Busca MKT",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Luis Suazo",
+      "email": "luis.suazo@andesseguridad.com",
+      "phone": "+51989134005",
+      "company": "ANDES SEGURIDAD",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-16",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Andes Seguridad S.A.C. -",
+      "deal_note": "Nunca respondió mensajes",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Bruno Rivera coello",
       "email": "riverabruno457@gmail.com",
       "phone": "+51910050501",
       "company": "B'Agro",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-15",
+      "created_date": "2026-08-14",
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "B Agro ",
       "deal_note": "Requiere netamente MKT",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Tu Casa Con Luis Valladares",
-      "email": "lvalladares@pandero.com.pe",
-      "phone": "+51935634143",
-      "company": "Pandero",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-13",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "PANDERO S.A. EAFC",
-      "deal_note": "Busca que le realicen el MKT. Descartado",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1975,16 +1957,16 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Zupa Pao",
-      "email": "pazupa.19@gmail.com",
-      "phone": "+51913454134",
-      "company": "Sieger",
+      "name": "Tu Casa Con Luis Valladares",
+      "email": "lvalladares@pandero.com.pe",
+      "phone": "+51935634143",
+      "company": "Pandero",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-11",
+      "created_date": "2026-08-12",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Seiger ",
-      "deal_note": "Nunca respondió wsp",
+      "deal_name": "PANDERO S.A. EAFC",
+      "deal_note": "Busca que le realicen el MKT. Descartado",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1999,34 +1981,6 @@
       "deal_stage": "Descartada",
       "deal_name": "MaravIA",
       "deal_note": "No brinda mayor información",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Andrés Jiménez",
-      "email": "andresjp.mrk@gmail.com",
-      "phone": "+51983506650",
-      "company": "Datea",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-10",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "DATEA - Andrés Jimenez",
-      "deal_note": "Nunca respondio wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Dilmer Junior",
-      "email": "goicocheadilmer4@gmail.com",
-      "phone": "+51926429172",
-      "company": "soy informal",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-10",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Dilmer Junior Informal ",
-      "deal_note": "Sin negocio formal",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2087,6 +2041,20 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Zupa Pao",
+      "email": "pazupa.19@gmail.com",
+      "phone": "+51913454134",
+      "company": "Sieger",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Seiger ",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Cesar Abraham Bocanegra Benites",
       "email": "bocanegrac877@gmail.com",
       "phone": "+51994448798",
@@ -2115,16 +2083,30 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Ricardo Gonzalez",
-      "email": "rgonzalez@smartway.pe",
-      "phone": "+51997521044",
-      "company": "SmartWaySpa",
+      "name": "Andrés Jiménez",
+      "email": "andresjp.mrk@gmail.com",
+      "phone": "+51983506650",
+      "company": "Datea",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-08",
+      "created_date": "2026-08-09",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Smartway ",
-      "deal_note": "Nunca respondió wsp",
+      "deal_name": "DATEA - Andrés Jimenez",
+      "deal_note": "Nunca respondio wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Dilmer Junior",
+      "email": "goicocheadilmer4@gmail.com",
+      "phone": "+51926429172",
+      "company": "soy informal",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Dilmer Junior Informal ",
+      "deal_note": "Sin negocio formal",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2185,20 +2167,6 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Robert Alva",
-      "email": "roaries.1995@gmail.com",
-      "phone": "+51960537923",
-      "company": "Roar",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-07",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Robert Alva",
-      "deal_note": "No responde despues de 2 wsp de seguimiento",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
       "name": "Ricardo Giraldo",
       "email": "ricardo.giraldo@korval.com.pe",
       "phone": "+51999083562",
@@ -2213,16 +2181,16 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Pablo",
-      "email": "pablo.hashimoto@cip.org.pe",
-      "phone": "+51962768309",
-      "company": "AGROINVERSIONES PREMIUM SAC",
+      "name": "Ricardo Gonzalez",
+      "email": "rgonzalez@smartway.pe",
+      "phone": "+51997521044",
+      "company": "SmartWaySpa",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-06",
+      "created_date": "2026-08-07",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Agroinversiones Premium",
-      "deal_note": "Proyecto aún sin canales de Leads. Están buscando MKT y consideran que podrian tener 100 leads mensuales.",
+      "deal_name": "Smartway ",
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2269,16 +2237,30 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Carlos Medina",
-      "email": "ciudadrealmarketing@gmail.com",
-      "phone": "+51975597785",
-      "company": "Ciudad Real",
+      "name": "Robert Alva",
+      "email": "roaries.1995@gmail.com",
+      "phone": "+51960537923",
+      "company": "Roar",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-03",
+      "created_date": "2026-08-06",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Carlos Medina",
-      "deal_note": "Nunca respondió wsp",
+      "deal_name": "Robert Alva",
+      "deal_note": "No responde despues de 2 wsp de seguimiento",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Pablo",
+      "email": "pablo.hashimoto@cip.org.pe",
+      "phone": "+51962768309",
+      "company": "AGROINVERSIONES PREMIUM SAC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-05",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Agroinversiones Premium",
+      "deal_note": "Proyecto aún sin canales de Leads. Están buscando MKT y consideran que podrian tener 100 leads mensuales.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2325,34 +2307,6 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Antony Soto",
-      "email": "sotoantony@madereraelamigo.com",
-      "phone": "+51955007596",
-      "company": "Maderera el amigo",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-02",
-      "has_deal": true,
-      "deal_stage": "Reunión Agendadas",
-      "deal_name": "Maderera El Amigo -",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Paolo Gabriel Nuñez Sotelo",
-      "email": "nuso46@gmail.com",
-      "phone": "+51929032222",
-      "company": "Nuso Peru Tour Sac",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-02",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Paolo Gabriel ",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
       "name": "hector jimenez",
       "email": "hector@tmopp.com",
       "phone": "+51999101722",
@@ -2395,16 +2349,16 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Carlos alva",
-      "email": "carlos.alva@absisa.com",
-      "phone": "+51989205902",
-      "company": "Absisa",
+      "name": "Carlos Medina",
+      "email": "ciudadrealmarketing@gmail.com",
+      "phone": "+51975597785",
+      "company": "Ciudad Real",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-08-01",
+      "created_date": "2026-08-02",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "ABSISA ",
-      "deal_note": "No responde después de 2 wsp de seguimiento",
+      "deal_name": "Carlos Medina",
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2437,16 +2391,30 @@
       "nivel_urgencia": null
     },
     {
-      "name": "melissa perez",
-      "email": "andre260120@gmail.com",
-      "phone": "+51997166812",
-      "company": "precall",
+      "name": "Antony Soto",
+      "email": "sotoantony@madereraelamigo.com",
+      "phone": "+51955007596",
+      "company": "Maderera el amigo",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-31",
+      "created_date": "2026-08-01",
+      "has_deal": true,
+      "deal_stage": "Reunión Agendadas",
+      "deal_name": "Maderera El Amigo -",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Paolo Gabriel Nuñez Sotelo",
+      "email": "nuso46@gmail.com",
+      "phone": "+51929032222",
+      "company": "Nuso Peru Tour Sac",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-08-01",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Melissa Perez",
-      "deal_note": "No responde wsp. Buscaba cartera de clientes.",
+      "deal_name": "Paolo Gabriel ",
+      "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2479,6 +2447,20 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Carlos alva",
+      "email": "carlos.alva@absisa.com",
+      "phone": "+51989205902",
+      "company": "Absisa",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-31",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "ABSISA ",
+      "deal_note": "No responde después de 2 wsp de seguimiento",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Fabian.",
       "email": "fabian02032000@gmail.com",
       "phone": "+51981557408",
@@ -2507,72 +2489,16 @@
       "nivel_urgencia": null
     },
     {
-      "name": "Jorge Salas Rojas",
-      "email": "jsalasroj6674@gmail.com",
-      "phone": "+51935989878",
-      "company": "(sin empresa)",
+      "name": "melissa perez",
+      "email": "andre260120@gmail.com",
+      "phone": "+51997166812",
+      "company": "precall",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-29",
+      "created_date": "2026-07-30",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Jorge Salas Rojas",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Leonidas Bances Damián",
-      "email": "leobadan06@gmail.com",
-      "phone": "+51908073794",
-      "company": "(sin empresa)",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-29",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Bances Damián",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Roque Hipolito Saavedra Quino",
-      "email": "roquesaavedralkino@gmail.com",
-      "phone": "+51951492948",
-      "company": "(sin empresa)",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-29",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Persona sin Negocio",
-      "deal_note": "Persona natural sin negocio. Tampoco escribe a nombre de ninguna empresa. No aplica para perfil de nuestros clientes.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Juan Jose Mayaute Cordova",
-      "email": "juan_mayaute@hotmail.com",
-      "phone": "+51956594396",
-      "company": "(sin empresa)",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-29",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Jose Mayaute Cordova",
-      "deal_note": "Nunca respondió wsp",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Luis Alberto Castillo Leon",
-      "email": "luiscastillo_leon@hom.com",
-      "phone": "+51948492121",
-      "company": "(sin empresa)",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-29",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "HOM ",
-      "deal_note": "Nunca respondió wsp",
+      "deal_name": "Melissa Perez",
+      "deal_note": "No responde wsp. Buscaba cartera de clientes.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2619,12 +2545,82 @@
       "nivel_urgencia": null
     },
     {
+      "name": "Jorge Salas Rojas",
+      "email": "jsalasroj6674@gmail.com",
+      "phone": "+51935989878",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jorge Salas Rojas",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Leonidas Bances Damián",
+      "email": "leobadan06@gmail.com",
+      "phone": "+51908073794",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Bances Damián",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Roque Hipolito Saavedra Quino",
+      "email": "roquesaavedralkino@gmail.com",
+      "phone": "+51951492948",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Persona sin Negocio",
+      "deal_note": "Persona natural sin negocio. Tampoco escribe a nombre de ninguna empresa. No aplica para perfil de nuestros clientes.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Juan Jose Mayaute Cordova",
+      "email": "juan_mayaute@hotmail.com",
+      "phone": "+51956594396",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jose Mayaute Cordova",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Luis Alberto Castillo Leon",
+      "email": "luiscastillo_leon@hom.com",
+      "phone": "+51948492121",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-28",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "HOM ",
+      "deal_note": "Nunca respondió wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Alfonso De La Cruz Rivera",
       "email": "alfonsodelacruzrivera14@gmail.com",
       "phone": "+51968169610",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-28",
+      "created_date": "2026-07-27",
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "Alfonso De La Cruz Rivera",
@@ -2638,25 +2634,11 @@
       "phone": "+51935279270",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-27",
+      "created_date": "2026-07-26",
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "Paulino Llanque Cutipa",
       "deal_note": "No responde wsp. Seguimiento 2 veces. No lleno nombre de empresa en  formulario.",
-      "estadio_lead": null,
-      "nivel_urgencia": null
-    },
-    {
-      "name": "Ruben Huaman Pineda",
-      "email": "ventas@icmesur.com.pe",
-      "phone": "+51953249148",
-      "company": "(sin empresa)",
-      "lead_source": "Formulario (Meta Ads)",
-      "created_date": "2026-07-26",
-      "has_deal": true,
-      "deal_stage": "Descartada",
-      "deal_name": "Rubén Huamán",
-      "deal_note": "Nunca respondió Wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2715,21 +2697,35 @@
       "deal_note": "No responde después de 2 wsp de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null
+    },
+    {
+      "name": "Ruben Huaman Pineda",
+      "email": "ventas@icmesur.com.pe",
+      "phone": "+51953249148",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-07-25",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Rubén Huamán",
+      "deal_note": "Nunca respondió Wsp",
+      "estadio_lead": null,
+      "nivel_urgencia": null
     }
   ],
-  "reuniones_auto": 9,
+  "reuniones_auto": 8,
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 143
+      "count": 146
     },
     {
       "label": "Prospectos Contactados",
-      "count": 17
+      "count": 15
     },
     {
       "label": "Reunión Agendadas",
-      "count": 9
+      "count": 8
     },
     {
       "label": "Sin negocio",
@@ -2839,13 +2835,6 @@
     "count": 17,
     "detail": [
       {
-        "name": "Mariana",
-        "email": "(sin correo)",
-        "phone": "952 769 793",
-        "company": "(sin empresa)",
-        "created_date": "2026-09-29"
-      },
-      {
         "name": "@negociosindustriales331",
         "email": "(sin correo)",
         "phone": null,
@@ -2895,6 +2884,13 @@
         "created_date": "2026-09-28"
       },
       {
+        "name": "Mariana",
+        "email": "(sin correo)",
+        "phone": "952 769 793",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-28"
+      },
+      {
         "name": "Xiomi Peru",
         "email": "(sin correo)",
         "phone": "904 410 845",
@@ -2906,33 +2902,26 @@
         "email": "contacto@jopesa.pe",
         "phone": null,
         "company": "(sin empresa)",
-        "created_date": "2026-09-23"
+        "created_date": "2026-09-22"
       },
       {
         "name": "(sin nombre)",
         "email": "ventas@armonhy.com.pe",
         "phone": null,
         "company": "(sin empresa)",
-        "created_date": "2026-09-23"
+        "created_date": "2026-09-22"
       },
       {
         "name": "Sin datos",
         "email": "(sin correo)",
         "phone": "958 282 830",
         "company": "(sin empresa)",
-        "created_date": "2026-09-23"
+        "created_date": "2026-09-22"
       },
       {
         "name": "Perez",
         "email": "(sin correo)",
         "phone": "+51 907 515 857",
-        "company": "(sin empresa)",
-        "created_date": "2026-09-23"
-      },
-      {
-        "name": "Thony",
-        "email": "(sin correo)",
-        "phone": "+51 977 820 213",
         "company": "(sin empresa)",
         "created_date": "2026-09-22"
       },
@@ -2954,6 +2943,13 @@
         "name": "Sin datos - Liliana padilla",
         "email": "(sin correo)",
         "phone": "988831795",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-21"
+      },
+      {
+        "name": "Thony",
+        "email": "(sin correo)",
+        "phone": "+51 977 820 213",
         "company": "(sin empresa)",
         "created_date": "2026-09-21"
       }
