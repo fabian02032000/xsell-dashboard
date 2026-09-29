@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T19:23:03.102219+00:00",
+  "updated_at": "2026-09-29T19:57:42.655702+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -638,9 +638,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-23",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "CCprojects SAC",
-      "deal_note": null,
+      "deal_note": "Descartado: Volumen insuficiente de leads ( menos de 130 al mes).  Sí respondió llamada.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null
     },
@@ -666,9 +666,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Geonet Import Sac",
-      "deal_note": null,
+      "deal_note": "Nunca respondió. Solo mensaje de BOT",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2721,11 +2721,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 141
+      "count": 143
     },
     {
       "label": "Prospectos Contactados",
-      "count": 19
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
