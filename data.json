@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:33:33.300301+00:00",
+  "updated_at": "2026-09-29T16:14:42.483157+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -708,9 +708,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Expo Group Librerías Multilibros ",
-      "deal_note": null,
+      "deal_note": "No respondió  llamada. se le dejó mensaje por wsp respondió solamente 15 minutos. Se le volvió a llamar, nunca respondió.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -722,9 +722,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Academia Braineer ",
-      "deal_note": null,
+      "deal_note": "No responde llamada de seguimiento. Pidió que lo llamen a la 1 y no respondió.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -806,9 +806,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-20",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Rimac Seguros",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada. Solo respondió con Hola al mensaje de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2721,11 +2721,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 133
+      "count": 136
     },
     {
       "label": "Prospectos Contactados",
-      "count": 27
+      "count": 24
     },
     {
       "label": "Reunión Agendadas",

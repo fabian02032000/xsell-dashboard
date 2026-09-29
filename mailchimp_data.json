@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-09-29T15:34:09.496849+00:00",
-  "available": false,
-  "error": "Todavía no se conectó Mailchimp — falta agregar el secreto MAILCHIMP_API_KEY en el repositorio (ver README.md, sección \"Conectar Mailchimp\").",
-  "summary": {},
+  "updated_at": "2026-09-29T16:15:23.627640+00:00",
+  "available": true,
+  "error": null,
+  "summary": {
+    "total_campaigns": 0,
+    "total_recipients_all": 0,
+    "avg_open_rate": null,
+    "avg_click_rate": null,
+    "total_bounces": 0,
+    "total_unsubscribes": 0,
+    "industry_avg_open_rate": null,
+    "industry_avg_click_rate": null
+  },
   "campaigns": [],
   "latest_campaign_html": null
 }
