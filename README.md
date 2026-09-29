@@ -59,6 +59,32 @@ esperar la primera vez:
 4. Espera 1-2 minutos y refresca la página — debería mostrar un check verde ✓.
 5. Abre tu link de GitHub Pages del Paso 4 — ya deberías ver tus datos reales.
 
+## Conectar Mailchimp (opcional, 5 min)
+
+Si además quieres ver tus campañas de correo (email marketing) en el
+dashboard — aperturas, clics, comparación con la industria y el cuerpo del
+último correo enviado — conecta Mailchimp. Es opcional: si no lo haces, esa
+pestaña del dashboard simplemente muestra un aviso de "todavía no conectado"
+y el resto del dashboard sigue funcionando normal.
+
+1. Entra a tu cuenta de Mailchimp.
+2. Arriba a la derecha, clic en tu ícono de perfil → **Profile** (Perfil).
+3. Ve a la pestaña **Extras** → **API keys**.
+4. Clic en **Create A Key**.
+5. Copia la key completa que te muestra (algo como `abcd1234...-us18`, fíjate
+   que siempre termina en un guion seguido de letras/números — esa parte del
+   final es importante, no la recortes). Guárdala, la vas a necesitar ahora.
+6. En tu repositorio de GitHub, ve a **Settings → Secrets and variables →
+   Actions** (el mismo lugar donde guardaste el token de HubSpot).
+7. Clic en **New repository secret**.
+8. Name: `MAILCHIMP_API_KEY`
+9. Value: pega la key que copiaste en el paso 5.
+10. Clic en **Add secret**.
+
+Luego repite el **Paso 5** de arriba (pestaña **Actions** → **Actualizar
+dashboard** → **Run workflow**) para que se traigan tus campañas de correo
+sin esperar a la próxima actualización automática.
+
 ## Después de esto
 
 No tienes que hacer nada más. El dashboard se actualiza solo cada hora
