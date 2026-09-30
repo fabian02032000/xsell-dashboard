@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-30T15:22:39.573207+00:00",
+  "updated_at": "2026-09-30T19:57:35.651638+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 170,
-  "leads_whatsapp_count": 17,
+  "total_leads": 172,
+  "leads_whatsapp_count": 19,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -230,6 +230,10 @@
     {
       "date": "2026-09-28",
       "count": 11
+    },
+    {
+      "date": "2026-09-30",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -250,7 +254,7 @@
     {
       "month": "2026-09",
       "label": "September 2026",
-      "leads": 81,
+      "leads": 83,
       "goal": 74.0,
       "is_partial": false
     }
@@ -319,19 +323,47 @@
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 11,
+      "leads": 13,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 81,
+  "current_month_leads": 83,
   "current_month_label": "September 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 13,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 169,
+  "leads_with_deal": 171,
   "leads_detail": [
+    {
+      "name": "REMASA Yolanda T.",
+      "email": "(sin correo)",
+      "phone": "998 321 124",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-30",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "REMASA Yolanda T.",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Aquino",
+      "email": "(sin correo)",
+      "phone": "989518476",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-09-30",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Aquino",
+      "deal_note": "Motivo de descarte: No interesado. \n indicó en la llamada que se confundió que por el momento no. Se le dejó mensaje de cierre de atención.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Jorge Izquierdo",
       "email": "jorgeizquierdocobos@gmail.com",
@@ -706,7 +738,7 @@
       "has_deal": true,
       "deal_stage": "Descartada",
       "deal_name": "Academia Braineer ",
-      "deal_note": "No responde llamada de seguimiento. Pidió que lo llamen a la 1 y no respondió.",
+      "deal_note": "Sí respondió llamada. Motivo de descarte, busca potenciar MKT recién 2 meses en el mercado invirtiendo en pauta. Academia pre univarsitaria en Arequipa.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -2717,11 +2749,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 146
+      "count": 147
     },
     {
       "label": "Prospectos Contactados",
-      "count": 15
+      "count": 16
     },
     {
       "label": "Reunión Agendadas",
@@ -2832,8 +2864,22 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 17,
+    "count": 19,
     "detail": [
+      {
+        "name": "REMASA Yolanda T.",
+        "email": "(sin correo)",
+        "phone": "998 321 124",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-30"
+      },
+      {
+        "name": "Aquino",
+        "email": "(sin correo)",
+        "phone": "989518476",
+        "company": "(sin empresa)",
+        "created_date": "2026-09-30"
+      },
       {
         "name": "@negociosindustriales331",
         "email": "(sin correo)",
