@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T16:35:01.285035+00:00",
+  "updated_at": "2026-10-01T21:14:38.344689+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -400,9 +400,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-30",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Susana Galvez Arce",
-      "deal_note": null,
+      "deal_note": "Sí respondió llamada. \nMotivo de descarte: No tiene empresa, vende de manera independiente. (Lotes).",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -2805,11 +2805,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 149
+      "count": 150
     },
     {
       "label": "Prospectos Contactados",
-      "count": 18
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
