@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-02T00:54:46.746992+00:00",
+  "updated_at": "2026-10-02T06:38:07.708504+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 179,
+  "total_leads": 181,
   "leads_whatsapp_count": 24,
   "leads_by_day": [
     {
@@ -238,6 +238,10 @@
     {
       "date": "2026-10-01",
       "count": 3
+    },
+    {
+      "date": "2026-10-02",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -265,7 +269,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 3,
+      "leads": 5,
       "goal": 74.0,
       "is_partial": false
     }
@@ -334,19 +338,47 @@
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 20,
+      "leads": 22,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 3,
+  "current_month_leads": 5,
   "current_month_label": "October 2026",
-  "current_week_leads": 20,
+  "current_week_leads": 22,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 178,
   "leads_detail": [
+    {
+      "name": "𝐺𝑒𝑟𝑎𝑙𝑑𝑖𝑛𝑒 𝐿𝑎ℎ𝑢𝑟𝑎",
+      "email": "melania.lc21@gmail.com",
+      "phone": "+51947861348",
+      "company": "Mars Maquinarias",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-02",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Yeni PV",
+      "email": "paredes151218@gmail.com",
+      "phone": "+51964270182",
+      "company": "BIMDEC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-02",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Sin datos",
       "email": "(sin correo)",
@@ -523,9 +555,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Violeta Navarro moscoso",
-      "deal_note": null,
+      "deal_note": "Nunca respondio llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -537,9 +569,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Esaú Ur",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada si wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -551,9 +583,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Luisa Paucar Rojas",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -565,9 +597,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Tpd",
-      "deal_note": null,
+      "deal_note": "Número suspendido. Nunca respondió Wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -607,7 +639,7 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Mariana",
       "deal_note": null,
       "estadio_lead": null,
@@ -649,9 +681,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-27",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Johan Flores Ramos",
-      "deal_note": null,
+      "deal_note": "Contacto con tercero, sin acceso al decisor\nContestó una persona distinta a quien dejó el registro. No quiso dar el número del titular. Le ofrecí escribirle por WhatsApp y me dijo que no le llegaría, porque el número es de trabajo. Quedó en avisarle y el titular decidirá si nos contacta.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -803,11 +835,11 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-09-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Perez",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "JORGE LUIS TRAGODARA ACOSTA",
@@ -817,9 +849,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Trarmar SAC",
-      "deal_note": null,
+      "deal_note": "No respondió llamada. Sí respondió wsp. Indicó que lo llamaramos el viernes y no respondió. Se le dejó nuevamente mensaje por wsp de recordatorio y no responde.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -901,7 +933,7 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "SGS SERVICE EIRL",
       "deal_note": null,
       "estadio_lead": null,
@@ -2858,11 +2890,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 151
+      "count": 160
     },
     {
       "label": "Prospectos Contactados",
-      "count": 19
+      "count": 10
     },
     {
       "label": "Reunión Agendadas",
@@ -2870,7 +2902,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 3
     }
   ],
   "warm_audience_exclude_estadios": [
