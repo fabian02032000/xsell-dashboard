@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-02T13:11:47.500587+00:00",
+  "updated_at": "2026-10-02T18:23:49.531551+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 181,
-  "leads_whatsapp_count": 24,
+  "total_leads": 182,
+  "leads_whatsapp_count": 25,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -241,7 +241,7 @@
     },
     {
       "date": "2026-10-02",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -269,7 +269,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 5,
+      "leads": 6,
       "goal": 74.0,
       "is_partial": false
     }
@@ -338,18 +338,18 @@
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 22,
+      "leads": 23,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 5,
+  "current_month_leads": 6,
   "current_month_label": "October 2026",
-  "current_week_leads": 22,
+  "current_week_leads": 23,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 178,
+  "leads_with_deal": 181,
   "leads_detail": [
     {
       "name": "𝐺𝑒𝑟𝑎𝑙𝑑𝑖𝑛𝑒 𝐿𝑎ℎ𝑢𝑟𝑎",
@@ -358,9 +358,9 @@
       "company": "Mars Maquinarias",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-02",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Mars Maquinarias",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -372,9 +372,23 @@
       "company": "BIMDEC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-02",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "BIMDEC",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Arturo",
+      "email": "(sin correo)",
+      "phone": "993 311 230",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Arturo",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -2890,11 +2904,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 160
+      "count": 161
     },
     {
       "label": "Prospectos Contactados",
-      "count": 10
+      "count": 12
     },
     {
       "label": "Reunión Agendadas",
@@ -2902,7 +2916,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
@@ -3005,8 +3019,15 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 24,
+    "count": 25,
     "detail": [
+      {
+        "name": "Arturo",
+        "email": "(sin correo)",
+        "phone": "993 311 230",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-02"
+      },
       {
         "name": "Sin datos",
         "email": "(sin correo)",
