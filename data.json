@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-01T21:18:06.427085+00:00",
+  "updated_at": "2026-10-02T00:50:40.908013+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 176,
-  "leads_whatsapp_count": 22,
+  "total_leads": 179,
+  "leads_whatsapp_count": 24,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -234,6 +234,10 @@
     {
       "date": "2026-09-30",
       "count": 6
+    },
+    {
+      "date": "2026-10-01",
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -255,6 +259,13 @@
       "month": "2026-09",
       "label": "September 2026",
       "leads": 87,
+      "goal": 74.0,
+      "is_partial": false
+    },
+    {
+      "month": "2026-10",
+      "label": "October 2026",
+      "leads": 3,
       "goal": 74.0,
       "is_partial": false
     }
@@ -323,19 +334,61 @@
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 17,
+      "leads": 20,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 0,
+  "current_month_leads": 3,
   "current_month_label": "October 2026",
-  "current_week_leads": 17,
+  "current_week_leads": 20,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 175,
+  "leads_with_deal": 178,
   "leads_detail": [
+    {
+      "name": "Sin datos",
+      "email": "(sin correo)",
+      "phone": "+51 970 486 405",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-01",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - 970 486 405",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Sin datos - Foryou",
+      "email": "(sin correo)",
+      "phone": "+51 989 955 711",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-01",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Foryou",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Danny Calua Cotrina",
+      "email": "johancotrina012@gmail.com",
+      "phone": "+51930718530",
+      "company": "Representaciones Danny",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-01",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Representaciones Danny",
+      "deal_note": "Descartada. Sí respondió llamada.\nMotivo de descarte: Aún no invierte en pauta.\n\nIndicó que aún no invierte en pauta y que recién empezarán a hacerlo. Se le explicó que trabajamos con empresas que ya tienen inversión en pauta y flujo de leads. Se descarta por el momento, dejando abierta la posibilidad de retomar el contacto cuando ya esté recibiendo leads.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "REMASA Yolanda T.",
       "email": "(sin correo)",
@@ -2805,11 +2858,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 150
+      "count": 151
     },
     {
       "label": "Prospectos Contactados",
-      "count": 17
+      "count": 19
     },
     {
       "label": "Reunión Agendadas",
@@ -2920,8 +2973,22 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 22,
+    "count": 24,
     "detail": [
+      {
+        "name": "Sin datos",
+        "email": "(sin correo)",
+        "phone": "+51 970 486 405",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-01"
+      },
+      {
+        "name": "Sin datos - Foryou",
+        "email": "(sin correo)",
+        "phone": "+51 989 955 711",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-01"
+      },
       {
         "name": "REMASA Yolanda T.",
         "email": "(sin correo)",
