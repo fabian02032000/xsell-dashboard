@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-04T00:42:17.339534+00:00",
+  "updated_at": "2026-10-04T06:18:40.415754+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 183,
+  "total_leads": 185,
   "leads_whatsapp_count": 25,
   "leads_by_day": [
     {
@@ -245,6 +245,10 @@
     },
     {
       "date": "2026-10-03",
+      "count": 2
+    },
+    {
+      "date": "2026-10-04",
       "count": 1
     }
   ],
@@ -273,7 +277,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 7,
+      "leads": 9,
       "goal": 74.0,
       "is_partial": false
     }
@@ -342,13 +346,13 @@
     {
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
-      "leads": 24,
+      "leads": 26,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 7,
+  "current_month_leads": 9,
   "current_month_label": "October 2026",
-  "current_week_leads": 24,
+  "current_week_leads": 26,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -356,10 +360,38 @@
   "leads_with_deal": 181,
   "leads_detail": [
     {
+      "name": "Omar Medina",
+      "email": "ventas@pabus.com.pe",
+      "phone": "+51940403329",
+      "company": "PA BUS Y TRUCKS",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-04",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
       "name": "Junior Quintana",
       "email": "quintanaquindeabogados@gmail.com",
       "phone": "+51928144703",
       "company": "Quintana & Quinde Abogados",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-03",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Denis",
+      "email": "falcon.denisgerman@gmail.com",
+      "phone": "+51978309835",
+      "company": "La Benita Alimentos SAC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-03",
       "has_deal": false,
@@ -2934,7 +2966,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 4
     }
   ],
   "warm_audience_exclude_estadios": [
