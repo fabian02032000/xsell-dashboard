@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-05T08:12:58.216590+00:00",
+  "updated_at": "2026-10-05T16:25:38.469724+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 185,
-  "leads_whatsapp_count": 25,
+  "total_leads": 190,
+  "leads_whatsapp_count": 29,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -250,6 +250,10 @@
     {
       "date": "2026-10-04",
       "count": 1
+    },
+    {
+      "date": "2026-10-05",
+      "count": 5
     }
   ],
   "leads_by_month": [
@@ -277,7 +281,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 9,
+      "leads": 14,
       "goal": 74.0,
       "is_partial": false
     }
@@ -352,19 +356,89 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 0,
+      "leads": 5,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 9,
+  "current_month_leads": 14,
   "current_month_label": "October 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 5,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 181,
+  "leads_with_deal": 189,
   "leads_detail": [
+    {
+      "name": "Anderson Romero",
+      "email": "romeroguillermoanderson@gmail.com",
+      "phone": "+51949604527",
+      "company": "Inmobiliaria Alterra Perú",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-05",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Inmobiliaria Alterra Perú",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Ulises",
+      "email": "(sin correo)",
+      "phone": "955 841 613",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-05",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - Ulises Textil",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Johon",
+      "email": "(sin correo)",
+      "phone": "969 000 503",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-05",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - Johon Textil",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Elteva",
+      "email": "(sin correo)",
+      "phone": "982 777 200",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-05",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - Elteva Textil ",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "@Sune9329",
+      "email": "(sin correo)",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-05",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - @Sune9329 Textil",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": "Bajo"
+    },
     {
       "name": "Omar Medina",
       "email": "ventas@pabus.com.pe",
@@ -372,9 +446,9 @@
       "company": "PA BUS Y TRUCKS",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-04",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "PA BUS Y TRUCKS",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -386,12 +460,12 @@
       "company": "Quintana & Quinde Abogados",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Quintana & Quinde Abogados",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Denis",
@@ -400,12 +474,12 @@
       "company": "La Benita Alimentos SAC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "La Benita Alimentos SAC",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "𝐺𝑒𝑟𝑎𝑙𝑑𝑖𝑛𝑒 𝐿𝑎ℎ𝑢𝑟𝑎",
@@ -2964,7 +3038,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 12
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
@@ -2972,7 +3046,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
@@ -3075,8 +3149,36 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 25,
+    "count": 29,
     "detail": [
+      {
+        "name": "Ulises",
+        "email": "(sin correo)",
+        "phone": "955 841 613",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-05"
+      },
+      {
+        "name": "Johon",
+        "email": "(sin correo)",
+        "phone": "969 000 503",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-05"
+      },
+      {
+        "name": "Elteva",
+        "email": "(sin correo)",
+        "phone": "982 777 200",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-05"
+      },
+      {
+        "name": "@Sune9329",
+        "email": "(sin correo)",
+        "phone": null,
+        "company": "(sin empresa)",
+        "created_date": "2026-10-05"
+      },
       {
         "name": "Arturo",
         "email": "(sin correo)",
