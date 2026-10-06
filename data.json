@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-05T23:10:55.926474+00:00",
+  "updated_at": "2026-10-06T02:33:13.008837+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 192,
-  "leads_whatsapp_count": 31,
+  "total_leads": 193,
+  "leads_whatsapp_count": 32,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -253,7 +253,7 @@
     },
     {
       "date": "2026-10-05",
-      "count": 7
+      "count": 8
     }
   ],
   "leads_by_month": [
@@ -281,7 +281,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 16,
+      "leads": 17,
       "goal": 74.0,
       "is_partial": false
     }
@@ -356,18 +356,18 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 16,
+  "current_month_leads": 17,
   "current_month_label": "October 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 191,
+  "leads_with_deal": 192,
   "leads_detail": [
     {
       "name": "Anderson Romero",
@@ -464,6 +464,20 @@
       "deal_stage": "Descartada",
       "deal_name": "Sin datos - Gloria Torres ",
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada y confirmó que completó el formulario por error. No busca ningún servicio.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Ciro  Falcón",
+      "email": "(sin correo)",
+      "phone": "922 230 097",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-05",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Ciro Falcon ",
+      "deal_note": "Indica que no lo molesten",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -3062,7 +3076,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 163
+      "count": 164
     },
     {
       "label": "Prospectos Contactados",
@@ -3177,7 +3191,7 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 31,
+    "count": 32,
     "detail": [
       {
         "name": "Ulises",
@@ -3218,6 +3232,13 @@
         "name": "Gloria Torres",
         "email": "(sin correo)",
         "phone": "989 268 918",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-05"
+      },
+      {
+        "name": "Ciro  Falcón",
+        "email": "(sin correo)",
+        "phone": "922 230 097",
         "company": "(sin empresa)",
         "created_date": "2026-10-05"
       },
