@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-06T16:45:51.137440+00:00",
+  "updated_at": "2026-10-06T20:56:15.677518+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 193,
-  "leads_whatsapp_count": 32,
+  "total_leads": 195,
+  "leads_whatsapp_count": 34,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -254,6 +254,10 @@
     {
       "date": "2026-10-05",
       "count": 8
+    },
+    {
+      "date": "2026-10-06",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -281,7 +285,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 17,
+      "leads": 19,
       "goal": 74.0,
       "is_partial": false
     }
@@ -356,19 +360,47 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 8,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 17,
+  "current_month_leads": 19,
   "current_month_label": "October 2026",
-  "current_week_leads": 8,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 192,
+  "leads_with_deal": 194,
   "leads_detail": [
+    {
+      "name": "Sin datos - @kkikw159 Adelavera I",
+      "email": "(sin correo)",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-06",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - @kkikw159 Adelavera I",
+      "deal_note": "Nunca respondió llamada ni wsp de seguimiento",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "yuyo72",
+      "email": "(sin correo)",
+      "phone": "977 149 226",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-06",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - yuyo72",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Anderson Romero",
       "email": "romeroguillermoanderson@gmail.com",
@@ -3076,7 +3108,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 168
+      "count": 170
     },
     {
       "label": "Prospectos Contactados",
@@ -3191,8 +3223,22 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 32,
+    "count": 34,
     "detail": [
+      {
+        "name": "Sin datos - @kkikw159 Adelavera I",
+        "email": "(sin correo)",
+        "phone": null,
+        "company": "(sin empresa)",
+        "created_date": "2026-10-06"
+      },
+      {
+        "name": "yuyo72",
+        "email": "(sin correo)",
+        "phone": "977 149 226",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-06"
+      },
       {
         "name": "Ulises",
         "email": "(sin correo)",
