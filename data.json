@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-07T13:35:48.356766+00:00",
+  "updated_at": "2026-10-07T13:51:17.437357+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 195,
+  "total_leads": 196,
   "leads_whatsapp_count": 34,
   "leads_by_day": [
     {
@@ -258,6 +258,10 @@
     {
       "date": "2026-10-06",
       "count": 2
+    },
+    {
+      "date": "2026-10-07",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -285,7 +289,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 19,
+      "leads": 20,
       "goal": 74.0,
       "is_partial": false
     }
@@ -360,19 +364,33 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 10,
+      "leads": 11,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 19,
+  "current_month_leads": 20,
   "current_month_label": "October 2026",
-  "current_week_leads": 10,
+  "current_week_leads": 11,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 194,
   "leads_detail": [
+    {
+      "name": "Eleazar Tapia Tarrillo",
+      "email": "eleazar.tapia@panoramahogar.com",
+      "phone": "+51994106911",
+      "company": "Panorama Hogar",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-07",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Sin datos - @kkikw159 Adelavera I",
       "email": "(sin correo)",
@@ -3120,7 +3138,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
