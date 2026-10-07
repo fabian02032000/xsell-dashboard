@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-07T13:51:17.437357+00:00",
+  "updated_at": "2026-10-07T19:30:53.580623+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 196,
-  "leads_whatsapp_count": 34,
+  "total_leads": 198,
+  "leads_whatsapp_count": 36,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -261,7 +261,7 @@
     },
     {
       "date": "2026-10-07",
-      "count": 1
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -289,7 +289,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 20,
+      "leads": 22,
       "goal": 74.0,
       "is_partial": false
     }
@@ -364,18 +364,18 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 11,
+      "leads": 13,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 20,
+  "current_month_leads": 22,
   "current_month_label": "October 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 13,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 194,
+  "leads_with_deal": 197,
   "leads_detail": [
     {
       "name": "Eleazar Tapia Tarrillo",
@@ -384,10 +384,38 @@
       "company": "Panorama Hogar",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-07",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Panorama Hogar ",
       "deal_note": null,
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": null
+    },
+    {
+      "name": "@cecibelia73",
+      "email": "(sin correo)",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-07",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "@cecibelia73",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": "Bajo"
+    },
+    {
+      "name": "Claudio  Saavedra",
+      "email": "(sin correo)",
+      "phone": "998 112 665",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-07",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Claudio Saavedra ",
+      "deal_note": "Sí respondió llamada. Indica que dio clic al formulario por error. \nDescatado: No interesado",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -539,9 +567,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-04",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "PA BUS Y TRUCKS",
-      "deal_note": null,
+      "deal_note": "Se llamó no responde. Tampoco responde mensaje de seguimiento por wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -3126,11 +3154,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 170
+      "count": 172
     },
     {
       "label": "Prospectos Contactados",
-      "count": 16
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
@@ -3138,7 +3166,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
@@ -3241,8 +3269,22 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 34,
+    "count": 36,
     "detail": [
+      {
+        "name": "@cecibelia73",
+        "email": "(sin correo)",
+        "phone": null,
+        "company": "(sin empresa)",
+        "created_date": "2026-10-07"
+      },
+      {
+        "name": "Claudio  Saavedra",
+        "email": "(sin correo)",
+        "phone": "998 112 665",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-07"
+      },
       {
         "name": "Sin datos - @kkikw159 Adelavera I",
         "email": "(sin correo)",
