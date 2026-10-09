@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-09T16:51:33.143177+00:00",
+  "updated_at": "2026-10-09T21:02:49.777780+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 200,
-  "leads_whatsapp_count": 36,
+  "total_leads": 209,
+  "leads_whatsapp_count": 45,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -269,7 +269,7 @@
     },
     {
       "date": "2026-10-09",
-      "count": 1
+      "count": 10
     }
   ],
   "leads_by_month": [
@@ -297,7 +297,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 24,
+      "leads": 33,
       "goal": 74.0,
       "is_partial": false
     }
@@ -372,18 +372,18 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 15,
+      "leads": 24,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 24,
+  "current_month_leads": 33,
   "current_month_label": "October 2026",
-  "current_week_leads": 15,
+  "current_week_leads": 24,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 197,
+  "leads_with_deal": 208,
   "leads_detail": [
     {
       "name": "Angel Solorzano",
@@ -392,10 +392,136 @@
       "company": "MEGATEK",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "S&S MEGATEK ",
+      "deal_note": "Descartado. Si respondió llamada. Aún no no invierten en Pauta. Están buscando empezar con ello. Venden maquinas industriales.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Sin datos",
+      "email": "(sin correo)",
+      "phone": "915 387 435",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Independiente",
+      "deal_note": "Vendedor inmobiliario Independiente. No tiene empresa",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Lourdes",
+      "email": "(sin correo)",
+      "phone": "942 192 398",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Lourdes",
+      "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Respondió al contacto por WhatsApp indicando que por ahora no requiere el servicio. No respondió llamada previa.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Sin datos",
+      "email": "(sin correo)",
+      "phone": "945 282 654",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - 945 282 654",
       "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Carmen  Chacón ramirez",
+      "email": "(sin correo)",
+      "phone": "906 155 167",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Carmen Chacón ramirez",
+      "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Pastelería con unos 6 meses de operación, sin RUC ni empresa constituida (negocio informal). Se cerró la atención dejando la puerta abierta para cuando esté formalizada y consolidada.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Rouss Real",
+      "email": "(sin correo)",
+      "phone": "976 129 202",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Rouss Real",
+      "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Agente inmobiliaria independiente, sin empresa constituida. Busca marketing para generar clientes, no perfilamiento ni cierre de leads. Se le aclaró el alcance de Xsell y se cerró la atención.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Alejandra  Navarro",
+      "email": "(sin correo)",
+      "phone": " 916 866 354",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos -  Alejandra Navarro ",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Arturo Laguna",
+      "email": "(sin correo)",
+      "phone": "930 931 702",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - 930 931 702",
+      "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Nunca ha invertido en pauta, brinda asesoría empresarial y recién está evaluando empezar, sin leads que perfilar ni cerrar. Se le aclaró el alcance de Xsell y se cerró la atención dejando la puerta abierta.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Roxana",
+      "email": "(sin correo)",
+      "phone": "927 926 008",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - Roxana",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Valentino",
+      "email": "(sin correo)",
+      "phone": "940 646 463",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos - Valentino",
+      "deal_note": "Descartado\nEstá buscando departamentos en alquiler. 3 habitaciones.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -406,9 +532,9 @@
       "company": "Pegsa",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-08",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Pegsa Industrial ",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -3190,11 +3316,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 172
+      "count": 178
     },
     {
       "label": "Prospectos Contactados",
-      "count": 17
+      "count": 22
     },
     {
       "label": "Reunión Agendadas",
@@ -3202,7 +3328,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
@@ -3305,8 +3431,71 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 36,
+    "count": 45,
     "detail": [
+      {
+        "name": "Sin datos",
+        "email": "(sin correo)",
+        "phone": "915 387 435",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Lourdes",
+        "email": "(sin correo)",
+        "phone": "942 192 398",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Sin datos",
+        "email": "(sin correo)",
+        "phone": "945 282 654",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Carmen  Chacón ramirez",
+        "email": "(sin correo)",
+        "phone": "906 155 167",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Rouss Real",
+        "email": "(sin correo)",
+        "phone": "976 129 202",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Alejandra  Navarro",
+        "email": "(sin correo)",
+        "phone": " 916 866 354",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Arturo Laguna",
+        "email": "(sin correo)",
+        "phone": "930 931 702",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Roxana",
+        "email": "(sin correo)",
+        "phone": "927 926 008",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Valentino",
+        "email": "(sin correo)",
+        "phone": "940 646 463",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
       {
         "name": "@cecibelia73",
         "email": "(sin correo)",
