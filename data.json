@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-09T21:02:49.777780+00:00",
+  "updated_at": "2026-10-09T21:26:43.426386+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 209,
-  "leads_whatsapp_count": 45,
+  "total_leads": 210,
+  "leads_whatsapp_count": 46,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -269,7 +269,7 @@
     },
     {
       "date": "2026-10-09",
-      "count": 10
+      "count": 11
     }
   ],
   "leads_by_month": [
@@ -297,7 +297,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 33,
+      "leads": 34,
       "goal": 74.0,
       "is_partial": false
     }
@@ -372,18 +372,18 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 24,
+      "leads": 25,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 33,
+  "current_month_leads": 34,
   "current_month_label": "October 2026",
-  "current_week_leads": 24,
+  "current_week_leads": 25,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 208,
+  "leads_with_deal": 209,
   "leads_detail": [
     {
       "name": "Angel Solorzano",
@@ -522,6 +522,20 @@
       "deal_stage": "Descartada",
       "deal_name": "Sin datos - Valentino",
       "deal_note": "Descartado\nEstá buscando departamentos en alquiler. 3 habitaciones.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Chabu",
+      "email": "(sin correo)",
+      "phone": "51 970 982 000",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-09",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sin datos  - Chabu",
+      "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Buscaba departamento en alquiler de 2 habitaciones. Dió clic al anuncio por confusión. Se cerró la atención.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -3316,7 +3330,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 178
+      "count": 179
     },
     {
       "label": "Prospectos Contactados",
@@ -3431,7 +3445,7 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 45,
+    "count": 46,
     "detail": [
       {
         "name": "Sin datos",
@@ -3493,6 +3507,13 @@
         "name": "Valentino",
         "email": "(sin correo)",
         "phone": "940 646 463",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-09"
+      },
+      {
+        "name": "Chabu",
+        "email": "(sin correo)",
+        "phone": "51 970 982 000",
         "company": "(sin empresa)",
         "created_date": "2026-10-09"
       },
