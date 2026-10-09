@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-08T23:00:52.370621+00:00",
+  "updated_at": "2026-10-09T02:19:18.672175+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 198,
+  "total_leads": 199,
   "leads_whatsapp_count": 36,
   "leads_by_day": [
     {
@@ -262,6 +262,10 @@
     {
       "date": "2026-10-07",
       "count": 3
+    },
+    {
+      "date": "2026-10-08",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -289,7 +293,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 22,
+      "leads": 23,
       "goal": 74.0,
       "is_partial": false
     }
@@ -364,19 +368,33 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 13,
+      "leads": 14,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 22,
+  "current_month_leads": 23,
   "current_month_label": "October 2026",
-  "current_week_leads": 13,
+  "current_week_leads": 14,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 197,
   "leads_detail": [
+    {
+      "name": "Renato Carrera",
+      "email": "rcarrera@pegsaindustrial.com",
+      "phone": "+51940495200",
+      "company": "Pegsa",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Eleazar Tapia Tarrillo",
       "email": "eleazar.tapia@panoramahogar.com",
@@ -3166,7 +3184,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
