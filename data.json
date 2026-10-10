@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-10T00:43:38.739055+00:00",
+  "updated_at": "2026-10-10T01:06:52.046478+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 210,
+  "total_leads": 211,
   "leads_whatsapp_count": 46,
   "leads_by_day": [
     {
@@ -269,7 +269,7 @@
     },
     {
       "date": "2026-10-09",
-      "count": 11
+      "count": 12
     }
   ],
   "leads_by_month": [
@@ -297,7 +297,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 34,
+      "leads": 35,
       "goal": 74.0,
       "is_partial": false
     }
@@ -372,13 +372,13 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 25,
+      "leads": 26,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 34,
+  "current_month_leads": 35,
   "current_month_label": "October 2026",
-  "current_week_leads": 25,
+  "current_week_leads": 26,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -536,6 +536,20 @@
       "deal_stage": "Descartada",
       "deal_name": "Sin datos  - Chabu",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Buscaba departamento en alquiler de 2 habitaciones. Dió clic al anuncio por confusión. Se cerró la atención.",
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Hugo Fernando Vasquez Matias",
+      "email": "motorgasimport2014@gmail.com",
+      "phone": "+51961617060",
+      "company": "Motorgas",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -3342,7 +3356,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
