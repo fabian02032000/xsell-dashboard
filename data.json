@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-10T13:34:49.278568+00:00",
+  "updated_at": "2026-10-10T17:33:43.804828+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 211,
+  "total_leads": 212,
   "leads_whatsapp_count": 46,
   "leads_by_day": [
     {
@@ -270,6 +270,10 @@
     {
       "date": "2026-10-09",
       "count": 12
+    },
+    {
+      "date": "2026-10-10",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -297,7 +301,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 35,
+      "leads": 36,
       "goal": 74.0,
       "is_partial": false
     }
@@ -372,19 +376,33 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 26,
+      "leads": 27,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 35,
+  "current_month_leads": 36,
   "current_month_label": "October 2026",
-  "current_week_leads": 26,
+  "current_week_leads": 27,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 209,
   "leads_detail": [
+    {
+      "name": "Omar Castro Salazar",
+      "email": "omarcastrosalazarpr@gmail.com",
+      "phone": "+51994031083",
+      "company": "Parque del Recuerdo",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-10",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Angel Solorzano",
       "email": "asolorzano@megatekperu.com",
@@ -3356,7 +3374,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 3
     }
   ],
   "warm_audience_exclude_estadios": [
