@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-11T19:45:24.006149+00:00",
+  "updated_at": "2026-10-11T21:05:18.884794+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 213,
+  "total_leads": 214,
   "leads_whatsapp_count": 46,
   "leads_by_day": [
     {
@@ -277,7 +277,7 @@
     },
     {
       "date": "2026-10-11",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -305,7 +305,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 37,
+      "leads": 38,
       "goal": 74.0,
       "is_partial": false
     }
@@ -380,13 +380,13 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 28,
+      "leads": 29,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 37,
+  "current_month_leads": 38,
   "current_month_label": "October 2026",
-  "current_week_leads": 28,
+  "current_week_leads": 29,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -398,6 +398,20 @@
       "email": "karla.sarmiento.trujillo@gmail.com",
       "phone": "+51962907010",
       "company": "Kamasa Service",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-11",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Carlos Saavedra",
+      "email": "csaavedra@cassa.pe",
+      "phone": "+51995238513",
+      "company": "SAM Taller Automotriz",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
       "has_deal": false,
@@ -3392,7 +3406,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 5
     }
   ],
   "warm_audience_exclude_estadios": [
