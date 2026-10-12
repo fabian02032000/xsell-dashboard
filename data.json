@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-12T19:41:26.840028+00:00",
+  "updated_at": "2026-10-12T22:42:10.418074+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 223,
+  "total_leads": 224,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -281,7 +281,7 @@
     },
     {
       "date": "2026-10-12",
-      "count": 8
+      "count": 9
     }
   ],
   "leads_by_month": [
@@ -309,7 +309,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 47,
+      "leads": 48,
       "goal": 74.0,
       "is_partial": false
     }
@@ -390,18 +390,18 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 8,
+      "leads": 9,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 47,
+  "current_month_leads": 48,
   "current_month_label": "October 2026",
-  "current_week_leads": 8,
+  "current_week_leads": 9,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 221,
+  "leads_with_deal": 222,
   "leads_detail": [
     {
       "name": "Amparo  García Huapaya",
@@ -506,6 +506,20 @@
       "email": "gary.priale@gpbusinesscall.com",
       "phone": "+51959590730",
       "company": "GP business call",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "GP Business Call ",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Katerin nilda alcahua rossell",
+      "email": "katty23ar@gmail.com",
+      "phone": "+51943888155",
+      "company": "auto ya Automotriz",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-12",
       "has_deal": false,
@@ -831,9 +845,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-05",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Inmobiliaria Alterra Perú",
-      "deal_note": null,
+      "deal_note": "Si respondió su agente de IA. No nos pasó con el titular. Descartado no responde wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -845,9 +859,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-05",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - Ulises Textil",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": "Bajo"
     },
@@ -859,9 +873,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-05",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - Johon Textil",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -873,9 +887,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-05",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - Elteva Textil ",
-      "deal_note": null,
+      "deal_note": "No responde. Respondió primera llamada, indica que está ocupada. Se realiza seguimiento no responde.",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -887,9 +901,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-05",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - @Sune9329 Textil",
-      "deal_note": null,
+      "deal_note": "Si respondió. Busca trabajo para señorita para la carrera de ingeniería ambiental",
       "estadio_lead": null,
       "nivel_urgencia": "Bajo"
     },
@@ -957,9 +971,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Quintana & Quinde Abogados",
-      "deal_note": null,
+      "deal_note": "Nunca respondio llamada ni wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -971,9 +985,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "La Benita Alimentos SAC",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo"
     },
@@ -985,9 +999,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-02",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Mars Maquinarias",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -999,9 +1013,9 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-02",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "BIMDEC",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1027,9 +1041,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-01",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - 970 486 405",
-      "deal_note": null,
+      "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -1041,9 +1055,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-01",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Foryou",
-      "deal_note": null,
+      "deal_note": "Respondió llamada. Descartada. Indica que no está interesada",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -3530,11 +3544,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 182
+      "count": 193
     },
     {
       "label": "Prospectos Contactados",
-      "count": 31
+      "count": 21
     },
     {
       "label": "Reunión Agendadas",
