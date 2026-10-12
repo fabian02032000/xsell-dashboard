@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-12T00:28:57.900770+00:00",
+  "updated_at": "2026-10-12T02:26:26.570595+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 214,
+  "total_leads": 215,
   "leads_whatsapp_count": 46,
   "leads_by_day": [
     {
@@ -277,7 +277,7 @@
     },
     {
       "date": "2026-10-11",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -305,7 +305,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 38,
+      "leads": 39,
       "goal": 74.0,
       "is_partial": false
     }
@@ -380,13 +380,13 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "leads": 29,
+      "leads": 30,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 38,
+  "current_month_leads": 39,
   "current_month_label": "October 2026",
-  "current_week_leads": 29,
+  "current_week_leads": 30,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -412,6 +412,20 @@
       "email": "csaavedra@cassa.pe",
       "phone": "+51995238513",
       "company": "SAM Taller Automotriz",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-11",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Alberto Huaman",
+      "email": "albertohd1991@gmail.com",
+      "phone": "+51979261775",
+      "company": "Remarc",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
       "has_deal": false,
@@ -3406,7 +3420,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 6
     }
   ],
   "warm_audience_exclude_estadios": [
