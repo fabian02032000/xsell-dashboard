@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-12T15:51:45.028711+00:00",
+  "updated_at": "2026-10-12T19:18:11.330759+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 222,
+  "total_leads": 223,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -281,7 +281,7 @@
     },
     {
       "date": "2026-10-12",
-      "count": 7
+      "count": 8
     }
   ],
   "leads_by_month": [
@@ -309,7 +309,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 46,
+      "leads": 47,
       "goal": 74.0,
       "is_partial": false
     }
@@ -390,13 +390,13 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 46,
+  "current_month_leads": 47,
   "current_month_label": "October 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -411,9 +411,9 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Amparo García Huapaya",
-      "deal_note": null,
+      "deal_note": "Agente inmobiliario independiente. Busca CRM",
       "estadio_lead": null,
       "nivel_urgencia": null
     },
@@ -497,6 +497,20 @@
       "has_deal": true,
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Sin datos  - ctecsolucionestecnologicas",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Eduardo",
+      "email": "gary.priale@gpbusinesscall.com",
+      "phone": "+51959590730",
+      "company": "GP business call",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-12",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -3516,11 +3530,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 181
+      "count": 182
     },
     {
       "label": "Prospectos Contactados",
-      "count": 32
+      "count": 31
     },
     {
       "label": "Reunión Agendadas",
@@ -3528,7 +3542,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
