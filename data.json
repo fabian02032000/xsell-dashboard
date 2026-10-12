@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-12T09:36:31.806784+00:00",
+  "updated_at": "2026-10-12T15:51:45.028711+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 215,
-  "leads_whatsapp_count": 46,
+  "total_leads": 222,
+  "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -278,6 +278,10 @@
     {
       "date": "2026-10-11",
       "count": 3
+    },
+    {
+      "date": "2026-10-12",
+      "count": 7
     }
   ],
   "leads_by_month": [
@@ -305,7 +309,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 39,
+      "leads": 46,
       "goal": 74.0,
       "is_partial": false
     }
@@ -386,19 +390,117 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 0,
+      "leads": 7,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 39,
+  "current_month_leads": 46,
   "current_month_label": "October 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 7,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 209,
+  "leads_with_deal": 221,
   "leads_detail": [
+    {
+      "name": "Amparo  García Huapaya",
+      "email": "(sin correo)",
+      "phone": "938 158 357",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Amparo García Huapaya",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Anyela Asesora inmobiliaria",
+      "email": "(sin correo)",
+      "phone": "935 823 521",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Anyela Asesora inmobiliaria",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Rouss",
+      "email": "(sin correo)",
+      "phone": "995 203 775",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Rouss",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Silvana  Grillo Gallardo",
+      "email": "(sin correo)",
+      "phone": "971 202 152",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos - Silvana Grillo Gallardo",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Bryan  Oropeza Vasquez",
+      "email": "(sin correo)",
+      "phone": "929554998",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Si datos  - Bryan Oropeza Vasquez",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "Leslie",
+      "email": "(sin correo)",
+      "phone": "910 882 116",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - Leslie",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
+    {
+      "name": "ctecsolucionestecnologicas",
+      "email": "(sin correo)",
+      "phone": "976 901 977",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-10-12",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Sin datos  - ctecsolucionestecnologicas",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null
+    },
     {
       "name": "Karla Sarmiento",
       "email": "karla.sarmiento.trujillo@gmail.com",
@@ -406,12 +508,12 @@
       "company": "Kamasa Service",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Kamasa Service",
+      "deal_note": "Realiza servicio técnico de electrodomésticos.",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Carlos Saavedra",
@@ -420,12 +522,12 @@
       "company": "SAM Taller Automotriz",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "SAM Taller Automotriz",
+      "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Taller multimarca en San Miguel (una sede, capacidad de 10 autos al día). Recibe unos 300 leads al mes desde hace 5 años, con inversión en pauta de S/1,000 y ticket promedio de S/800. Indica que llegan pocos leads, que pocos se convierten (en parte por la gestión propia del taller) y que muchos son de mala calidad. Busca mejorar la calidad o la cantidad de leads. Se le explicó la metodología y el diagnóstico gratuito, y quedó su contacto guardado para retomar cuando escale.",
+      "estadio_lead": "En Crecimiento",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Alberto Huaman",
@@ -434,12 +536,12 @@
       "company": "Remarc",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Remarc",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Omar Castro Salazar",
@@ -448,12 +550,12 @@
       "company": "Parque del Recuerdo",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-10",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Independiente - Parque del Recuerdo",
+      "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Trabaja como vendedor independiente de parque del recuerdo, sin empresa constituida. Busca vender más a título personal, no un servicio de perfilamiento y cierre para una empresa con flujo de leads.",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Angel Solorzano",
@@ -616,12 +718,12 @@
       "company": "Motorgas",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Motorgas",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo"
     },
     {
       "name": "Renato Carrera",
@@ -3414,11 +3516,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 179
+      "count": 181
     },
     {
       "label": "Prospectos Contactados",
-      "count": 22
+      "count": 32
     },
     {
       "label": "Reunión Agendadas",
@@ -3426,15 +3528,22 @@
     },
     {
       "label": "Sin negocio",
-      "count": 6
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
     "En Crecimiento",
     "Semilla"
   ],
-  "warm_audience_count": 13,
+  "warm_audience_count": 14,
   "warm_audience_detail": [
+    {
+      "name": "Alberto Huaman",
+      "email": "albertohd1991@gmail.com",
+      "company": "Remarc",
+      "estadio_lead": "Consolidado",
+      "nivel_urgencia": "Bajo"
+    },
     {
       "name": "Jorge Izquierdo",
       "email": "jorgeizquierdocobos@gmail.com",
@@ -3529,8 +3638,57 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 46,
+    "count": 53,
     "detail": [
+      {
+        "name": "Amparo  García Huapaya",
+        "email": "(sin correo)",
+        "phone": "938 158 357",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
+      {
+        "name": "Anyela Asesora inmobiliaria",
+        "email": "(sin correo)",
+        "phone": "935 823 521",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
+      {
+        "name": "Rouss",
+        "email": "(sin correo)",
+        "phone": "995 203 775",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
+      {
+        "name": "Silvana  Grillo Gallardo",
+        "email": "(sin correo)",
+        "phone": "971 202 152",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
+      {
+        "name": "Bryan  Oropeza Vasquez",
+        "email": "(sin correo)",
+        "phone": "929554998",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
+      {
+        "name": "Leslie",
+        "email": "(sin correo)",
+        "phone": "910 882 116",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
+      {
+        "name": "ctecsolucionestecnologicas",
+        "email": "(sin correo)",
+        "phone": "976 901 977",
+        "company": "(sin empresa)",
+        "created_date": "2026-10-12"
+      },
       {
         "name": "Sin datos",
         "email": "(sin correo)",
