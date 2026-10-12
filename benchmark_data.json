@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T17:39:19.677727Z",
+  "generated_at": "2026-10-12T18:26:24.323243Z",
   "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
@@ -8,10 +8,10 @@
       "country": "AR",
       "country_label": "Argentina",
       "profile": "Ayuda a empresas B2B a conseguir reuniones y cerrar más ventas, con un método propio (\"anti-ghosting\", seguimiento, manejo de objeciones).",
-      "active_ads_count": 21,
-      "search_match_count": 21,
+      "active_ads_count": 18,
+      "search_match_count": 18,
       "oldest_active_since": "2026-01-27",
-      "newest_active_since": "2026-10-05",
+      "newest_active_since": "2026-10-07",
       "sample_ads": [
         {
           "since": "2026-03-19",
@@ -39,7 +39,7 @@
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-10-05",
+      "last_checked_ok": "2026-10-12",
       "status": "ok",
       "history": [
         {
@@ -65,6 +65,10 @@
         {
           "date": "2026-10-05",
           "active_ads_count": 21
+        },
+        {
+          "date": "2026-10-12",
+          "active_ads_count": 18
         }
       ]
     },
@@ -77,20 +81,8 @@
       "active_ads_count": 6,
       "search_match_count": 6,
       "oldest_active_since": "2026-09-29",
-      "newest_active_since": "2026-10-04",
+      "newest_active_since": "2026-10-09",
       "sample_ads": [
-        {
-          "since": "2026-09-29",
-          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
-        },
-        {
-          "since": "2026-09-29",
-          "text": "Solo para Software Factories"
-        },
-        {
-          "since": "2026-09-29",
-          "text": "Solo para Software Factories"
-        },
         {
           "since": "2026-09-29",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
@@ -102,10 +94,22 @@
         {
           "since": "2026-09-29",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+        },
+        {
+          "since": "2026-10-09",
+          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+        },
+        {
+          "since": "2026-10-09",
+          "text": "Solo para Software Factories o partners de Odoo"
+        },
+        {
+          "since": "2026-10-09",
+          "text": "EMPRESAS DE DESARROLLO DE SOFTWARE ❗"
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-10-05",
+      "last_checked_ok": "2026-10-12",
       "status": "ok",
       "history": [
         {
@@ -131,6 +135,10 @@
         {
           "date": "2026-10-05",
           "active_ads_count": 6
+        },
+        {
+          "date": "2026-10-12",
+          "active_ads_count": 6
         }
       ]
     },
@@ -140,10 +148,10 @@
       "country": "BR",
       "country_label": "Brasil",
       "profile": "Equipo comercial tercerizado (\"time comercial terceirizado\") para acelerar resultados de venta B2B.",
-      "active_ads_count": 3,
-      "search_match_count": 3,
+      "active_ads_count": 2,
+      "search_match_count": 2,
       "oldest_active_since": "2026-03-05",
-      "newest_active_since": "2026-09-17",
+      "newest_active_since": "2026-03-05",
       "sample_ads": [
         {
           "since": "2026-03-05",
@@ -152,15 +160,11 @@
         {
           "since": "2026-03-05",
           "text": "Atuamos lado a lado com sua empresa para conectar seu negócio a leads qualificados e maximizar conversões."
-        },
-        {
-          "since": "2026-09-17",
-          "text": "Seu negócio pode vender mais sem dor de cabeça. Conte com nosso time comercial terceirizado especializado em acelerar resultados."
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&q=Aurum%20Sales&search_type=keyword_unordered",
-      "last_checked_ok": "2026-09-21",
-      "status": "stale",
+      "last_checked_ok": "2026-10-12",
+      "status": "ok",
       "history": [
         {
           "date": "2026-09-01",
@@ -177,6 +181,10 @@
         {
           "date": "2026-09-21",
           "active_ads_count": 3
+        },
+        {
+          "date": "2026-10-12",
+          "active_ads_count": 2
         }
       ]
     }
