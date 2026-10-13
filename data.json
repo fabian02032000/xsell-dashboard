@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T10:43:00.716477+00:00",
+  "updated_at": "2026-10-13T16:03:56.122945+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -401,7 +401,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 223,
+  "leads_with_deal": 224,
   "leads_detail": [
     {
       "name": "Amparo  García Huapaya",
@@ -536,9 +536,9 @@
       "company": "Feria De Carros los Brothers",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-12",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Feria De Carros los Brothers",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null
@@ -3562,7 +3562,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 22
+      "count": 23
     },
     {
       "label": "Reunión Agendadas",
@@ -3570,7 +3570,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
