@@ -217,6 +217,15 @@
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 
   /* ---- Pestaña principal (rediseño oct-2026) ---- */
+.note-btn{font:inherit;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--purple-2,#7c4dff);background:transparent;color:inherit;cursor:pointer;white-space:nowrap}
+.note-btn:hover{background:rgba(124,77,255,.15)}
+.note-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.note-modal[hidden]{display:none}
+.note-modal-card{background:var(--surface);border:1px solid var(--border);color:var(--text-primary);border-radius:14px;max-width:560px;width:100%;max-height:80vh;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.note-modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(127,127,127,.2)}
+.note-modal-close{font-size:22px;line-height:1;background:none;border:0;color:inherit;cursor:pointer}
+.note-modal-body{padding:16px 18px;overflow:auto;font-size:14px;line-height:1.55}
+
 .rs-det summary{list-style:none;cursor:pointer}.rs-det summary::-webkit-details-marker{display:none}
 .rs-det[open] summary .rs-name{font-weight:700}
 .rs-list{margin:2px 0 10px;padding:8px 10px;list-style:none;background:rgba(127,127,127,.08);border-radius:8px;font-size:12px;max-height:180px;overflow:auto}
@@ -443,7 +452,7 @@
     <div class="chart-card">
       <div class="table-wrap scroll-y">
         <table>
-          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Teléfono</th><th>Canal</th><th>Estado</th><th>Estadio</th><th>Urgencia</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Nota de Ingrid</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Teléfono</th><th>Canal</th><th>Estado</th><th>Estadio</th><th>Urgencia</th><th>Conjunto de anuncios</th><th>Anuncio</th><th>Motivo de descarte</th><th>Nota de Ingrid</th></tr></thead>
           <tbody id="leadsTableBody"></tbody>
         </table>
       </div>
@@ -1210,7 +1219,7 @@
           <span class="rs-track"><span class="rs-fill" style="width:${v / max * 100}%"></span></span>
           <span class="rs-val">${fmt(v)} · ${pctTxt(v, desc.length)}</span>
         </summary>
-        <ul class="rs-list">${byReason[label].map(l => `<li><strong>${escapeHtml(l.name || l.email || 'Sin nombre')}</strong>${l.company ? ' · ' + escapeHtml(l.company) : ''} <span>${escapeHtml((l.created_date || '').slice(0, 10))}${l.discard_reason ? '' : ' · según nota'}</span></li>`).join('')}</ul>
+        <ul class="rs-list">${byReason[label].map(l => `<li><strong>${escapeHtml(l.name || l.email || 'Sin nombre')}</strong>${' · ' + escapeHtml(companyOf(l))} <span>${escapeHtml((l.created_date || '').slice(0, 10))}${l.discard_reason ? '' : ' · según nota'}</span></li>`).join('')}</ul>
       </details>`).join('')}
       <p class="hint" style="margin-top:6px;">Haz clic en un motivo para ver quiénes son.</p>
       <p class="hint" style="margin-top:10px;">${fromField} de ${fmt(desc.length)} con el campo "Motivo de descarte (campaña)" lleno en HubSpot; en el resto, el motivo se lee de la nota de Ingrid.</p>`;
@@ -2030,6 +2039,29 @@
     }).join('');
   }
 
+  // Empresa: se toma del Negocio que crea Ingrid (el nombre del negocio),
+  // porque el campo "empresa" del contacto casi siempre viene vacío desde Meta.
+  function companyOf(l){
+    const dn = (l.deal_name || '').trim();
+    if (dn && !/^si[n]? *datos/i.test(dn)) return dn;
+    const c = (l.company || '').trim();
+    if (c && c !== '(sin empresa)') return c;
+    return dn ? 'Sin datos' : '(sin empresa)';
+  }
+  const NOTE_STORE = [];
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.note-btn');
+    if (b){
+      const it = NOTE_STORE[+b.dataset.noteIdx]; if (!it) return;
+      document.getElementById('noteModalTitle').textContent = 'Nota de Ingrid · ' + (it.name || '');
+      document.getElementById('noteModalBody').innerHTML = escapeHtml(it.note).replace(/\n/g, '<br>');
+      document.getElementById('noteModal').hidden = false;
+      return;
+    }
+    if (e.target.id === 'noteModal' || e.target.closest('.note-modal-close')) document.getElementById('noteModal').hidden = true;
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape'){ const m = document.getElementById('noteModal'); if (m) m.hidden = true; } });
+
   function drawLeadsTable(leads, leadsWithDeal, totalLeads, attributionAvailable){
     const body = document.getElementById('leadsTableBody');
     const hint = document.getElementById('leadsTableHint');
@@ -2040,9 +2072,10 @@
     hint.textContent = hintText;
 
     if (!leads.length){
-      body.innerHTML = `<tr><td colspan="12" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="13" class="table-sub">Aún no hay registros para mostrar.</td></tr>`;
       return;
     }
+    NOTE_STORE.length = 0;
     body.innerHTML = leads.map(l => {
       const stageLabel = l.deal_stage || 'Negocio creado';
       const alreadyMarked = /^[✓✔]/.test(stageLabel.trim());
@@ -2050,8 +2083,13 @@
         ? `<span class="status-pill yes">${alreadyMarked ? '' : '✓ '}${stageLabel}</span>`
         : `<span class="status-pill no">Sin negocio</span>`;
       const noteHtml = l.deal_note
-        ? escapeHtml(l.deal_note).replace(/\n/g, '<br>')
+        ? `<button type="button" class="note-btn" data-note-idx="${NOTE_STORE.push({ name: l.name || '', note: l.deal_note }) - 1}">Leer nota</button>`
         : '<span class="table-sub">—</span>';
+      let motivoHtml = '<span class="table-sub">—</span>';
+      if (leadState(l) === 'descartado'){
+        const r = discardReason(l);
+        motivoHtml = escapeHtml(r) + (l.discard_reason ? '' : ' <span class="table-sub">(según nota)</span>');
+      }
       const estadioHtml = tagPillHtml(l.estadio_lead, ESTADIO_COLORS);
       const urgenciaHtml = tagPillHtml(l.nivel_urgencia, URGENCIA_COLORS);
       const canalHtml = escapeHtml(l.lead_source || 'Formulario (Meta Ads)');
@@ -2059,7 +2097,7 @@
         <tr>
           <td>${l.created_date || '—'}</td>
           <td class="table-name">${l.name || '(sin nombre)'}</td>
-          <td>${l.company || '(sin empresa)'}</td>
+          <td>${escapeHtml(companyOf(l))}</td>
           <td>${l.email || '(sin correo)'}</td>
           <td>${l.phone ? escapeHtml(l.phone) : '<span class="table-sub">—</span>'}</td>
           <td>${canalHtml}</td>
@@ -2068,7 +2106,8 @@
           <td>${urgenciaHtml}</td>
           <td>${l.adset_name ? escapeHtml(l.adset_name) : '<span class="table-sub">—</span>'}</td>
           <td>${l.ad_name ? escapeHtml(l.ad_name) : '<span class="table-sub">—</span>'}</td>
-          <td class="note-cell">${noteHtml}</td>
+          <td>${motivoHtml}</td>
+          <td>${noteHtml}</td>
         </tr>`;
     }).join('');
   }
@@ -3476,5 +3515,6 @@
   }
 })();
 </script>
+<div id="noteModal" class="note-modal" hidden><div class="note-modal-card" role="dialog" aria-modal="true" aria-labelledby="noteModalTitle"><div class="note-modal-head"><strong id="noteModalTitle">Nota de Ingrid</strong><button type="button" class="note-modal-close" aria-label="Cerrar">×</button></div><div id="noteModalBody" class="note-modal-body"></div></div></div>
 </body>
 </html>
