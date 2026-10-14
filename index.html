@@ -525,6 +525,8 @@
               <th>CTR</th>
               <th>Registros</th>
               <th>CPL</th>
+              <th title="Clics en el enlace: cada uno abre el formulario instantáneo">Abrieron formulario</th>
+              <th title="Abrieron el formulario y no lo enviaron">Abandono</th>
             </tr>
           </thead>
           <tbody id="campaignAnalysisTableBody"></tbody>
@@ -1841,12 +1843,12 @@
     }
 
     if (!available){
-      body.innerHTML = `<tr><td colspan="12" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="14" class="table-sub">Esperando primera actualización de Meta Ads.</td></tr>`;
       hint.textContent = '';
       return;
     }
     if (!rows.length){
-      body.innerHTML = `<tr><td colspan="12" class="table-sub">No se encontraron datos con este nivel de detalle en el rango elegido.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="14" class="table-sub">No se encontraron datos con este nivel de detalle en el rango elegido.</td></tr>`;
       hint.textContent = '';
       return;
     }
@@ -1855,6 +1857,25 @@
     (meta.campaigns_performance || []).forEach(c => statusById.set(c.id, c.status));
     (meta.adsets_performance || []).forEach(a => statusById.set(a.id, a.status));
     (meta.ads_performance || []).forEach(a => statusById.set(a.ad_id, a.status));
+
+    // Abandono del formulario: siempre desde las filas diarias (traen
+    // link_clicks = aperturas del formulario), para cualquier nivel y rango.
+    const openMap = new Map(), sentMap = new Map();
+    const dailyLevel = daily ? (level === 'campaign' ? daily.campaigns : level === 'adset' ? daily.adsets : daily.ads) || [] : [];
+    dailyLevel.forEach(d => {
+      if (!d.date || d.date < from || d.date > to) return;
+      if (campaignFilter !== '__all__' && d.campaign_name !== campaignFilter) return;
+      if (!/formulario/i.test(d.campaign_name || d.name || '') || d.link_clicks == null) return;
+      const k = d.id || d.name;
+      openMap.set(k, (openMap.get(k) || 0) + (d.link_clicks || 0));
+      sentMap.set(k, (sentMap.get(k) || 0) + (d.leads || 0));
+    });
+    const abandonCells = r => {
+      const k = r.id || r.name, o = openMap.get(k);
+      if (!o) return '<td><span class="table-sub">—</span></td><td><span class="table-sub">—</span></td>';
+      const sent = sentMap.get(k) || 0;
+      return `<td>${fmt(o)}</td><td>${pctTxt(Math.max(0, o - sent), o)}</td>`;
+    };
 
     body.innerHTML = rows.map(r => `
         <tr>
@@ -1870,6 +1891,7 @@
           <td>${(r.ctr || 0).toFixed(2)}%</td>
           <td>${fmt(r.leads)}</td>
           <td>${r.cost_per_lead !== null && r.cost_per_lead !== undefined ? fmtMoney(r.cost_per_lead) : '—'}</td>
+          ${abandonCells(r)}
         </tr>`).join('');
 
     const levelLabel = level === 'campaign'
