@@ -217,6 +217,14 @@
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 
   /* ---- Pestaña principal (rediseño oct-2026) ---- */
+.fa-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.fa-row>div{background:var(--surface-2);border-radius:10px;padding:12px 14px}
+.fa-num{display:block;font-size:26px;font-weight:700}.fa-bad{color:var(--critical)}
+.fa-lbl{font-size:12px;color:var(--text-muted)}
+.fa-table{width:100%;margin-top:12px;font-size:13px;border-collapse:collapse}
+.fa-table th,.fa-table td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--border)}
+@media (max-width:760px){.fa-row{grid-template-columns:1fr}}
+
 .note-btn{font:inherit;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--purple-2,#7c4dff);background:transparent;color:inherit;cursor:pointer;white-space:nowrap}
 .note-btn:hover{background:rgba(124,77,255,.15)}
 .note-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
@@ -399,6 +407,7 @@
       <div class="chart-card"><div id="homeFunnel"></div></div>
       <div class="chart-card"><div id="discardPanel"></div></div>
     </div>
+    <div class="chart-card" style="margin-top:16px;"><div id="formAbandon"></div></div>
   </section>
 
   <section>
@@ -1225,6 +1234,35 @@
       <p class="hint" style="margin-top:10px;">${fromField} de ${fmt(desc.length)} con el campo "Motivo de descarte (campaña)" lleno en HubSpot; en el resto, el motivo se lee de la nota de Ingrid.</p>`;
   }
 
+  // Abandono del formulario instantáneo: Meta cuenta como "clic en el enlace"
+  // cada apertura del formulario; "leads" son los formularios enviados.
+  function drawFormAbandon(meta, from, to){
+    const el = document.getElementById('formAbandon');
+    if (!el) return;
+    const rows = ((meta && meta.campaign_analysis_daily && meta.campaign_analysis_daily.ads) || [])
+      .filter(r => /formulario/i.test(r.campaign_name || '') && !(r.date < from || r.date > to));
+    const withData = rows.filter(r => r.link_clicks != null);
+    if (!withData.length){
+      el.innerHTML = '<p class="tile-label" style="margin:0 0 6px;">Abandono del formulario</p><p class="table-sub">Se empezará a medir con la próxima actualización de Meta.</p>';
+      return;
+    }
+    const byAd = {};
+    withData.forEach(r => { const k = r.name || '(sin nombre)'; const a = byAd[k] = byAd[k] || { open: 0, sent: 0 }; a.open += r.link_clicks || 0; a.sent += r.leads || 0; });
+    const open = Object.values(byAd).reduce((t, a) => t + a.open, 0);
+    const sent = Object.values(byAd).reduce((t, a) => t + a.sent, 0);
+    const aband = open ? Math.max(0, open - sent) : 0;
+    const list = Object.entries(byAd).filter(([, a]) => a.open).sort((a, b) => b[1].open - a[1].open);
+    el.innerHTML = `
+      <p class="tile-label" style="margin:0 0 10px;">Abandono del formulario de Meta (campaña de formulario, mismo rango)</p>
+      <div class="fa-row">
+        <div><span class="fa-num">${fmt(open)}</span><span class="fa-lbl">abrieron el formulario</span></div>
+        <div><span class="fa-num">${fmt(sent)}</span><span class="fa-lbl">lo enviaron · ${pctTxt(sent, open)}</span></div>
+        <div><span class="fa-num fa-bad">${open ? pctTxt(aband, open) : '—'}</span><span class="fa-lbl">lo abandonaron (${fmt(aband)})</span></div>
+      </div>
+      ${list.length > 1 ? `<table class="fa-table"><thead><tr><th>Anuncio</th><th>Abrieron</th><th>Enviaron</th><th>Abandono</th></tr></thead><tbody>${list.map(([n, a]) => `<tr><td>${escapeHtml(n)}</td><td>${fmt(a.open)}</td><td>${fmt(a.sent)}</td><td>${pctTxt(Math.max(0, a.open - a.sent), a.open)}</td></tr>`).join('')}</tbody></table>` : ''}
+      <p class="hint" style="margin-top:8px;">"Abrieron" = clics en el enlace que reporta Meta (cada uno abre el formulario). "Enviaron" = formularios recibidos según Meta.</p>`;
+  }
+
   function drawAdCards(leads, meta, from, to){
     const el = document.getElementById('adCards');
     if (!el) return;
@@ -1551,6 +1589,7 @@
     drawHomeFunnel(filteredLeads);
     drawDiscardPanel(filteredLeads);
     drawAdCards(filteredLeads, meta, from, to);
+    drawFormAbandon(meta, from, to);
     drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
 
     // Estadio del Lead / Nivel de Urgencia, recalculados sobre el mismo rango
