@@ -217,6 +217,46 @@
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 
   /* ---- Pestaña principal (rediseño oct-2026) ---- */
+.cal-toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cal-nav{display:flex;align-items:center;gap:8px}.cal-nav h3{margin:0;min-width:170px;text-align:center;font-size:18px}
+.cal-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cal-filters select,.cal-form input,.cal-form select,.cal-form textarea,.cal-inline-status{background:var(--surface-2);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:7px 9px;font:inherit;font-size:13px}
+.cal-btn-primary{background:var(--orange);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer}
+.cal-btn-danger{background:transparent;color:var(--critical);border:1px solid var(--critical);border-radius:8px;padding:7px 12px;cursor:pointer}
+.cal-summary{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--text-muted);margin-bottom:12px;align-items:center}
+.cal-dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.cal-dot.cal-video{background:var(--purple-2)}.cal-dot.cal-static{background:var(--orange)}
+.cal-grid-wrap{overflow-x:auto}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(118px,1fr));gap:6px;min-width:840px}
+.cal-head div{font-size:12px;color:var(--text-muted);font-weight:700;text-align:center;padding:4px 0}
+.cal-cell{background:var(--surface-2);border-radius:10px;min-height:118px;padding:6px;display:flex;flex-direction:column;gap:6px}
+.cal-empty{background:transparent}
+.cal-today{outline:2px solid var(--orange)}
+.cal-day{font-size:12px;color:var(--text-muted);font-weight:700;cursor:pointer}
+.cal-card{border-radius:8px;padding:7px;background:var(--surface);border-left:4px solid var(--orange);cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.cal-card.cal-video{border-left-color:var(--purple-2)}
+.cal-card:hover,.cal-card:focus{outline:1px solid var(--border);background:#221a36}
+.cal-card-top{font-size:10.5px;color:var(--text-muted)}
+.cal-card-title{font-size:12.5px;font-weight:700;line-height:1.3}
+.cal-card-foot{display:flex;flex-wrap:wrap;gap:4px;align-items:center;justify-content:space-between}
+.cal-card .note-btn{font-size:10.5px;padding:2px 7px}
+.cal-status{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:999px;background:rgba(156,147,181,.18);color:var(--text-muted)}
+.cal-status.s-ready{background:rgba(123,43,201,.25);color:#c9a4f5}
+.cal-status.s-made{background:rgba(255,163,102,.18);color:var(--orange-2)}
+.cal-status.s-edit,.cal-status.s-review{background:rgba(250,178,25,.18);color:var(--warning)}
+.cal-status.s-ok{background:rgba(46,204,113,.15);color:#7fe0a6}
+.cal-status.s-pub{background:var(--good);color:#0b2416}
+.cal-table td,.cal-table th{vertical-align:middle}
+.cal-modal-wide{max-width:760px}
+.cal-form{display:flex;flex-direction:column;gap:10px}
+.cal-form label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--text-muted);flex:1}
+.cal-form textarea{resize:vertical;line-height:1.5}
+.cal-form-row{display:flex;gap:10px;flex-wrap:wrap}
+.cal-form-actions{display:flex;gap:8px;align-items:center;margin-top:6px}
+.cal-sp-meta{font-size:12px;color:var(--text-muted);margin:0 0 12px}
+.cal-sp-block{margin-bottom:14px}.cal-sp-block .tile-label{margin:0 0 4px}
+.cal-sp-speech>div{font-size:16px;line-height:1.7;background:var(--surface-2);border-radius:10px;padding:14px}
+
 .fa-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .fa-row>div{background:var(--surface-2);border-radius:10px;padding:12px 14px}
 .fa-num{display:block;font-size:26px;font-weight:700}.fa-bad{color:var(--critical)}
@@ -340,6 +380,7 @@
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
     <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
+    <button class="tab-btn" data-tab="calendar">🗓️ Calendario de creación</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
     <button class="tab-btn" data-tab="email">✉️ Email marketing</button>
     <button class="tab-btn" data-tab="story">🕒 Historia de la cuenta</button>
@@ -817,6 +858,100 @@
         <tbody id="emailTableBody"></tbody>
       </table>
     </div>
+  </div>
+
+  <div class="tab-panel" id="tab-calendar">
+  <section>
+    <div class="section-head">
+      <h2>Calendario de creación gráfica y audiovisual</h2>
+      <span class="hint" id="calSyncHint">Cargando…</span>
+    </div>
+    <div class="chart-card">
+      <div class="cal-toolbar">
+        <div class="cal-nav">
+          <button type="button" class="filter-btn" id="calPrev" aria-label="Mes anterior">‹</button>
+          <h3 id="calMonthTitle">—</h3>
+          <button type="button" class="filter-btn" id="calNext" aria-label="Mes siguiente">›</button>
+          <button type="button" class="filter-btn" id="calToday">Hoy</button>
+        </div>
+        <div class="cal-filters">
+          <select id="calFilterTipo" aria-label="Tipo">
+            <option value="">Todos los tipos</option>
+            <option>Video ads</option>
+            <option>Estático orgánico</option>
+          </select>
+          <select id="calFilterSector" aria-label="Sector">
+            <option value="">Todos los sectores</option>
+            <option>Automotriz</option><option>Inmobiliaria</option><option>Textil</option><option>Todos</option>
+          </select>
+          <button type="button" class="cal-btn-primary" id="calAdd">+ Nueva pieza</button>
+        </div>
+      </div>
+      <div class="cal-summary" id="calSummary"></div>
+      <div class="cal-grid-wrap">
+        <div class="cal-grid cal-head"><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div></div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+      <p class="hint" style="margin-top:10px;">Los videos se graban los viernes y salen en pauta desde el martes siguiente · los estáticos orgánicos se publican martes y jueves · haz clic en una pieza para editarla.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Programación del mes</h2>
+      <span class="hint">Cambia el estatus aquí mismo o abre el speech y los copys</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap">
+        <table class="cal-table">
+          <thead><tr><th>Fecha</th><th>Tipo</th><th>Sector</th><th>Pieza</th><th>Estatus</th><th>Responsable</th><th></th></tr></thead>
+          <tbody id="calListBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="note-modal" id="calSpeechModal" hidden>
+    <div class="note-modal-card cal-modal-wide" role="dialog" aria-modal="true" aria-labelledby="calSpeechTitle">
+      <div class="note-modal-head"><strong id="calSpeechTitle">Speech</strong><button type="button" class="note-modal-close" data-close="calSpeechModal" aria-label="Cerrar">×</button></div>
+      <div class="note-modal-body" id="calSpeechBody"></div>
+    </div>
+  </div>
+
+  <div class="note-modal" id="calEditModal" hidden>
+    <div class="note-modal-card cal-modal-wide" role="dialog" aria-modal="true" aria-labelledby="calEditTitle">
+      <div class="note-modal-head"><strong id="calEditTitle">Editar pieza</strong><button type="button" class="note-modal-close" data-close="calEditModal" aria-label="Cerrar">×</button></div>
+      <form class="note-modal-body cal-form" id="calEditForm">
+        <div class="cal-form-row">
+          <label>Fecha<input type="date" name="fecha" required></label>
+          <label>Tipo<select name="tipo"><option>Video ads</option><option>Estático orgánico</option></select></label>
+          <label>Sector<select name="sector"><option>Automotriz</option><option>Inmobiliaria</option><option>Textil</option><option>Todos</option></select></label>
+        </div>
+        <div class="cal-form-row">
+          <label>Estatus<select name="estatus" id="calStatusSelect"></select></label>
+          <label>Formato<input name="formato" placeholder="Reel 9:16 · 30–45 s"></label>
+          <label>Responsable<input name="responsable"></label>
+        </div>
+        <label>Título de la pieza<input name="titulo" required></label>
+        <label>Gancho (primeros 3 segundos / frase principal)<input name="gancho"></label>
+        <label>Speech o texto de la pieza<textarea name="speech" rows="9"></textarea></label>
+        <label>Copy (texto que acompaña la publicación)<textarea name="copy" rows="5"></textarea></label>
+        <div class="cal-form-row">
+          <label>Titular<input name="titular"></label>
+          <label>Llamada a la acción<input name="cta"></label>
+          <label>Publicación<input name="publicacion"></label>
+        </div>
+        <label>Base / fuente de la investigación<input name="base"></label>
+        <label>Notas<textarea name="notas" rows="2"></textarea></label>
+        <div class="cal-form-actions">
+          <button type="button" class="cal-btn-danger" id="calDelete">Eliminar</button>
+          <span style="flex:1"></span>
+          <button type="button" class="filter-btn" data-close="calEditModal">Cancelar</button>
+          <button type="submit" class="cal-btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
   </div>
 
   </div>
@@ -3577,5 +3712,186 @@
 })();
 </script>
 <div id="noteModal" class="note-modal" hidden><div class="note-modal-card" role="dialog" aria-modal="true" aria-labelledby="noteModalTitle"><div class="note-modal-head"><strong id="noteModalTitle">Nota de Ingrid</strong><button type="button" class="note-modal-close" aria-label="Cerrar">×</button></div><div id="noteModalBody" class="note-modal-body"></div></div></div>
+<script>
+// ===== Calendario de creación gráfica y audiovisual =====
+// Guardado: si calendar_config.json trae "api_url" (Apps Script + Google Sheet),
+// lee y escribe ahí y todos ven lo mismo. Si no, guarda en este navegador.
+(function(){
+  const LS_KEY = 'xsell_calendar_v1';
+  const STATUSES = ['Idea', 'Guion listo', 'Copy listo', 'Grabado', 'Diseñado', 'En edición', 'Por aprobar', 'Aprobado', 'Publicado'];
+  const STATUS_CLASS = { 'Idea': 's-idea', 'Guion listo': 's-ready', 'Copy listo': 's-ready', 'Grabado': 's-made', 'Diseñado': 's-made', 'En edición': 's-edit', 'Por aprobar': 's-review', 'Aprobado': 's-ok', 'Publicado': 's-pub' };
+  const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const nl = s => esc(s).replace(/\n/g, '<br>');
+  const lsGet = () => { try { return JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (e) { return null; } };
+  const lsSet = v => { try { localStorage.setItem(LS_KEY, JSON.stringify(v)); } catch (e) {} };
+
+  let items = [], apiUrl = '', view = null, editingId = null;
+  const $ = id => document.getElementById(id);
+  const hint = t => { const h = $('calSyncHint'); if (h) h.textContent = t; };
+
+  function limaToday(){ return new Date(Date.now() - 5 * 3600 * 1000).toISOString().slice(0, 10); }
+
+  async function api(body){
+    const r = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body) });
+    const j = await r.json(); if (!j.ok) throw new Error(j.error || 'error'); return j;
+  }
+
+  async function load(){
+    try { const c = await fetch('calendar_config.json?t=' + Date.now()).then(r => r.ok ? r.json() : {}); apiUrl = (c && c.api_url) || ''; } catch (e) { apiUrl = ''; }
+    let seed = [];
+    try { seed = (await fetch('calendar_seed.json?t=' + Date.now()).then(r => r.json())).items || []; } catch (e) {}
+    if (apiUrl){
+      try {
+        const j = await fetch(apiUrl + (apiUrl.includes('?') ? '&' : '?') + 't=' + Date.now()).then(r => r.json());
+        items = j.items || [];
+        if (!items.length && seed.length){ await api({ action: 'bulk', items: seed }); items = seed.slice(); }
+        lsSet(items);
+        hint('Guardado en línea: lo que cambies aquí lo ve todo el equipo.');
+      } catch (e) {
+        items = lsGet() || seed; hint('No se pudo conectar con la hoja de Google; mostrando la última copia de este navegador.');
+      }
+    } else {
+      items = lsGet() || seed;
+      hint('Por ahora los cambios se guardan solo en este navegador (falta conectar la hoja de Google).');
+    }
+    const t = limaToday(); view = { y: +t.slice(0, 4), m: +t.slice(5, 7) - 1 };
+    render();
+  }
+
+  async function saveItem(it){
+    const i = items.findIndex(x => x.id === it.id);
+    if (i >= 0) items[i] = it; else items.push(it);
+    lsSet(items); render();
+    if (apiUrl){ try { await api({ action: 'upsert', item: it }); hint('Guardado en línea · ' + new Date().toLocaleTimeString('es-PE')); } catch (e) { hint('No se pudo guardar en línea; quedó guardado en este navegador.'); } }
+  }
+  async function deleteItem(id){
+    items = items.filter(x => x.id !== id); lsSet(items); render();
+    if (apiUrl){ try { await api({ action: 'delete', id }); } catch (e) { hint('No se pudo borrar en línea.'); } }
+  }
+
+  function filtered(){
+    const tipo = $('calFilterTipo').value, sector = $('calFilterSector').value;
+    return items.filter(x => (!tipo || x.tipo === tipo) && (!sector || x.sector === sector));
+  }
+  const monthKey = () => `${view.y}-${String(view.m + 1).padStart(2, '0')}`;
+  const statusPill = s => `<span class="cal-status ${STATUS_CLASS[s] || 's-idea'}">${esc(s || 'Idea')}</span>`;
+  const typeClass = t => t === 'Video ads' ? 'cal-video' : 'cal-static';
+
+  function render(){
+    if (!view) return;
+    $('calMonthTitle').textContent = `${MONTHS[view.m]} ${view.y}`;
+    const mk = monthKey();
+    const monthItems = filtered().filter(x => (x.fecha || '').startsWith(mk)).sort((a, b) => (a.fecha + a.tipo).localeCompare(b.fecha + b.tipo));
+
+    // resumen
+    const cnt = {}; monthItems.forEach(x => { cnt[x.estatus] = (cnt[x.estatus] || 0) + 1; });
+    const nV = monthItems.filter(x => x.tipo === 'Video ads').length, nE = monthItems.length - nV;
+    $('calSummary').innerHTML = `<span><span class="cal-dot cal-video"></span>${nV} videos para ads</span><span><span class="cal-dot cal-static"></span>${nE} estáticos orgánicos</span>` +
+      Object.entries(cnt).map(([s, n]) => `<span>${statusPill(s)} ${n}</span>`).join('');
+
+    // grilla
+    const first = new Date(Date.UTC(view.y, view.m, 1));
+    const offset = (first.getUTCDay() + 6) % 7;
+    const days = new Date(Date.UTC(view.y, view.m + 1, 0)).getUTCDate();
+    const today = limaToday();
+    let html = '';
+    for (let i = 0; i < offset; i++) html += '<div class="cal-cell cal-empty"></div>';
+    for (let d = 1; d <= days; d++){
+      const ds = `${mk}-${String(d).padStart(2, '0')}`;
+      const its = monthItems.filter(x => x.fecha === ds);
+      html += `<div class="cal-cell${ds === today ? ' cal-today' : ''}" data-date="${ds}"><div class="cal-day">${d}</div>` +
+        its.map(x => `<div class="cal-card ${typeClass(x.tipo)}" data-id="${esc(x.id)}" tabindex="0">
+            <div class="cal-card-top"><span>${x.tipo === 'Video ads' ? '🎬 Video' : '🖼️ Estático'} · ${esc(x.sector)}</span></div>
+            <div class="cal-card-title">${esc(x.titulo)}</div>
+            <div class="cal-card-foot">${statusPill(x.estatus)}<button type="button" class="note-btn cal-speech-btn" data-id="${esc(x.id)}">Leer speech</button></div>
+          </div>`).join('') + '</div>';
+    }
+    const rest = (7 - (offset + days) % 7) % 7;
+    for (let i = 0; i < rest; i++) html += '<div class="cal-cell cal-empty"></div>';
+    $('calGrid').innerHTML = html;
+
+    // lista del mes
+    $('calListBody').innerHTML = monthItems.length ? monthItems.map(x => `<tr>
+        <td>${esc(x.fecha)}</td>
+        <td><span class="cal-dot ${typeClass(x.tipo)}"></span>${esc(x.tipo)}</td>
+        <td>${esc(x.sector)}</td>
+        <td class="table-name">${esc(x.titulo)}</td>
+        <td><select class="cal-inline-status" data-id="${esc(x.id)}">${STATUSES.map(s => `<option${s === x.estatus ? ' selected' : ''}>${s}</option>`).join('')}</select></td>
+        <td>${esc(x.responsable || '—')}</td>
+        <td style="white-space:nowrap"><button type="button" class="note-btn cal-speech-btn" data-id="${esc(x.id)}">Leer speech</button> <button type="button" class="note-btn cal-edit-btn" data-id="${esc(x.id)}">Editar</button></td>
+      </tr>`).join('') : '<tr><td colspan="7" class="table-sub">No hay piezas programadas este mes.</td></tr>';
+  }
+
+  function openSpeech(id){
+    const x = items.find(i => i.id === id); if (!x) return;
+    $('calSpeechTitle').textContent = `${x.tipo === 'Video ads' ? '🎬' : '🖼️'} ${x.titulo}`;
+    const block = (label, val) => val ? `<div class="cal-sp-block"><p class="tile-label">${label}</p><div>${nl(val)}</div></div>` : '';
+    $('calSpeechBody').innerHTML = `
+      <p class="cal-sp-meta">${esc(x.fecha)} · ${esc(x.tipo)} · ${esc(x.sector)} · ${esc(x.formato || '')} · ${statusPill(x.estatus)}</p>
+      ${block('Gancho', x.gancho)}
+      <div class="cal-sp-block cal-sp-speech"><p class="tile-label">${x.tipo === 'Video ads' ? 'Speech para grabar' : 'Texto de la pieza'}</p><div>${nl(x.speech)}</div></div>
+      ${block('Copy de la publicación', x.copy)}
+      ${block('Titular', x.titular)}${block('Llamada a la acción', x.cta)}${block('Publicación', x.publicacion)}
+      ${block('Base de la investigación', x.base)}${block('Notas', x.notas)}
+      <div class="cal-form-actions"><button type="button" class="filter-btn" id="calCopyCopy">Copiar copy</button><span style="flex:1"></span><button type="button" class="cal-btn-primary" id="calSpeechEdit">Editar</button></div>`;
+    $('calSpeechModal').hidden = false;
+    $('calCopyCopy').onclick = () => { try { navigator.clipboard.writeText(x.copy || ''); $('calCopyCopy').textContent = 'Copiado ✓'; } catch (e) {} };
+    $('calSpeechEdit').onclick = () => { $('calSpeechModal').hidden = true; openEdit(id); };
+  }
+
+  function openEdit(id, date){
+    const f = $('calEditForm');
+    const x = id ? items.find(i => i.id === id) : { id: '', fecha: date || limaToday(), tipo: 'Estático orgánico', sector: 'Automotriz', estatus: 'Idea', responsable: 'Fabián' };
+    if (!x) return;
+    editingId = id || null;
+    $('calEditTitle').textContent = id ? 'Editar pieza' : 'Nueva pieza';
+    $('calStatusSelect').innerHTML = STATUSES.map(s => `<option>${s}</option>`).join('');
+    ['fecha','tipo','sector','estatus','formato','responsable','titulo','gancho','speech','copy','titular','cta','publicacion','base','notas'].forEach(k => { if (f.elements[k]) f.elements[k].value = x[k] || ''; });
+    if (!f.elements.estatus.value) f.elements.estatus.value = 'Idea';
+    $('calDelete').style.visibility = id ? 'visible' : 'hidden';
+    $('calEditModal').hidden = false;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {});
+  function wire(){
+    $('calPrev').onclick = () => { view.m--; if (view.m < 0){ view.m = 11; view.y--; } render(); };
+    $('calNext').onclick = () => { view.m++; if (view.m > 11){ view.m = 0; view.y++; } render(); };
+    $('calToday').onclick = () => { const t = limaToday(); view = { y: +t.slice(0, 4), m: +t.slice(5, 7) - 1 }; render(); };
+    $('calFilterTipo').onchange = render; $('calFilterSector').onchange = render;
+    $('calAdd').onclick = () => openEdit(null);
+    // deslizar el calendario en el celular
+    let sx = null; const g = $('calGrid');
+    g.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    g.addEventListener('touchend', e => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 60) (dx < 0 ? $('calNext') : $('calPrev')).click(); });
+
+    document.getElementById('tab-calendar').addEventListener('click', e => {
+      const sp = e.target.closest('.cal-speech-btn'); if (sp){ e.stopPropagation(); openSpeech(sp.dataset.id); return; }
+      const ed = e.target.closest('.cal-edit-btn'); if (ed){ openEdit(ed.dataset.id); return; }
+      const card = e.target.closest('.cal-card'); if (card){ openEdit(card.dataset.id); return; }
+      const cell = e.target.closest('.cal-cell[data-date]'); if (cell && e.target.classList.contains('cal-day')){ openEdit(null, cell.dataset.date); return; }
+      const cl = e.target.closest('[data-close]'); if (cl){ $(cl.dataset.close).hidden = true; return; }
+      if (e.target.id === 'calSpeechModal' || e.target.id === 'calEditModal') e.target.hidden = true;
+    });
+    document.getElementById('tab-calendar').addEventListener('change', e => {
+      const s = e.target.closest('.cal-inline-status'); if (!s) return;
+      const x = items.find(i => i.id === s.dataset.id); if (x) saveItem({ ...x, estatus: s.value });
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape'){ $('calSpeechModal').hidden = true; $('calEditModal').hidden = true; } });
+
+    $('calEditForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target, it = {};
+      ['fecha','tipo','sector','estatus','formato','responsable','titulo','gancho','speech','copy','titular','cta','publicacion','base','notas'].forEach(k => { it[k] = f.elements[k].value.trim(); });
+      it.id = editingId || ('p' + Date.now().toString(36));
+      $('calEditModal').hidden = true;
+      saveItem(it);
+    });
+    $('calDelete').onclick = () => { if (!editingId || !window.confirm('¿Eliminar esta pieza del calendario?')) return; $('calEditModal').hidden = true; deleteItem(editingId); };
+  }
+  wire(); load();
+})();
+</script>
+
 </body>
 </html>
