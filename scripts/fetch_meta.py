@@ -461,7 +461,7 @@ def fetch_level_performance_daily(level, since_date, until_date, name_field, id_
         # cuando name_field ya es "campaign_name" (level="campaign"), porque
         # Meta rechaza un campo pedido dos veces en la misma consulta.
         extra_name = "" if name_field == "campaign_name" else "campaign_name,"
-        fields = f"{id_field},{name_field},{extra_name}{extra_fields}spend,impressions,clicks,reach,actions"
+        fields = f"{id_field},{name_field},{extra_name}{extra_fields}spend,impressions,clicks,inline_link_clicks,reach,actions"
         rows = meta_get_paginated(
             f"/{AD_ACCOUNT_ID}/insights",
             {
@@ -488,6 +488,10 @@ def fetch_level_performance_daily(level, since_date, until_date, name_field, id_
             "impressions": int(float(row.get("impressions", 0))),
             "reach": int(float(row.get("reach", 0))),
             "clicks": int(float(row.get("clicks", 0))),
+            # Clics en el enlace: en anuncios de formulario instantáneo, Meta
+            # cuenta aquí cada vez que alguien ABRE el formulario. Con esto se
+            # mide abiertos -> enviados -> abandono.
+            "link_clicks": int(float(row.get("inline_link_clicks", 0) or 0)),
             "leads": extract_leads(row.get("actions")),
             # Para las tarjetas de anuncios del dashboard (oct-2026):
             "engagement": extract_action_value(row.get("actions"), "post_engagement"),
