@@ -215,6 +215,89 @@
   .platform-pill{display:inline-block; padding:3px 9px; border-radius:999px; font-size:11px; font-weight:700; white-space:nowrap;}
   .platform-pill.facebook{color:#6EA8FE; background:rgba(110,168,254,0.12); border:1px solid rgba(110,168,254,0.4);}
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
+
+  /* ---- Pestaña principal (rediseño oct-2026) ---- */
+  .adc-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:16px;}
+  .adc{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;}
+  .adc-head{padding:10px 16px; font-size:11.5px; font-weight:700; letter-spacing:.3px; color:#fff; display:flex; justify-content:space-between; gap:8px;}
+  .adc-head.form{background:var(--purple-1);} .adc-head.wa{background:var(--orange); color:#1A0F00;} .adc-head.na{background:var(--surface-2); color:var(--text-muted);}
+  .adc-rank{opacity:.85;}
+  .adc-media{margin:12px 12px 0; height:190px; border-radius:10px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; overflow:hidden;}
+  .adc-media img{height:100%; width:100%; object-fit:contain;}
+  .adc-ph{font-size:22px; font-weight:800; color:var(--text-muted);}
+  .adc-body{padding:12px 16px 16px;}
+  .adc-name{font-size:15px; font-weight:700; color:var(--text-primary); line-height:1.3;}
+  .adc-sub{font-size:11.5px; color:var(--text-muted); margin:3px 0 10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .adc-hero{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;}
+  .adc-hero div{background:var(--surface-2); border-radius:8px; padding:8px 10px;}
+  .adc-hero span{display:block; font-size:11px; color:var(--text-muted);}
+  .adc-hero strong{font-size:20px; color:var(--text-primary);}
+  .adc-row{display:flex; justify-content:space-between; font-size:13px; padding:5px 0; border-bottom:1px solid var(--border);}
+  .adc-row:last-child{border-bottom:none;}
+  .adc-row span{color:var(--text-muted);} .adc-row strong{color:var(--text-primary); font-weight:600; font-variant-numeric:tabular-nums;}
+  .grid-2 > div{min-width:0;}
+  .tab-nav{overflow-x:auto; scrollbar-width:none;}
+  .tab-btn{white-space:nowrap; flex-shrink:0;}
+  .hf-step{margin-bottom:14px;}
+  .hf-top{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:6px;}
+  .hf-label{font-size:13px; font-weight:700; color:var(--text-primary);}
+  .hf-num{font-size:12.5px; color:var(--text-muted); text-align:right;}
+  .hf-num strong{font-size:18px; color:var(--text-primary); margin-right:6px;}
+  .hf-track{height:14px; border-radius:4px; background:var(--surface-2); overflow:hidden;}
+  .hf-fill{height:100%; border-radius:4px;}
+  .hf-conv{font-size:11.5px; color:var(--text-muted); margin:4px 0 0 2px;}
+  .hf-foot{display:flex; gap:16px; flex-wrap:wrap; font-size:12.5px; color:var(--text-muted); border-top:1px solid var(--border); padding-top:12px; margin-top:4px;}
+  .hf-foot strong{color:var(--text-primary);}
+  .dp-head{display:flex; align-items:baseline; gap:10px; margin-bottom:4px;}
+  .dp-big{font-size:28px; font-weight:800; color:var(--text-primary);}
+  .dp-sub{font-size:13px; color:var(--text-muted);}
+  .dp-alert{background:rgba(255,92,92,0.10); border:1px solid rgba(255,92,92,0.35); border-radius:10px; padding:10px 12px; margin:12px 0 14px; font-size:13px; color:var(--text-primary);}
+  .dp-alert strong{color:var(--critical); font-size:17px;}
+  .rs-row{display:grid; grid-template-columns:minmax(0,1fr) 90px 78px; gap:10px; align-items:center; padding:5px 0; font-size:12.5px;}
+  .rs-name{color:var(--text-primary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .rs-track{height:8px; border-radius:4px; background:var(--surface-2); overflow:hidden;}
+  .rs-fill{display:block; height:100%; background:var(--purple-2); border-radius:4px;}
+  .rs-val{text-align:right; color:var(--text-muted); font-variant-numeric:tabular-nums;}
+  .ad-row{display:grid; grid-template-columns:56px minmax(0,1fr) 170px 80px; gap:14px; align-items:center; padding:10px 0; border-bottom:1px solid var(--border);}
+  .ad-row:last-child{border-bottom:none;}
+  .ad-thumb{width:56px; height:56px; border-radius:8px; object-fit:cover; background:var(--surface-2); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--text-muted);}
+  .ad-name{font-size:13.5px; font-weight:700; color:var(--text-primary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .ad-sub{font-size:12px; color:var(--text-muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:2px;}
+  .ad-bar{height:8px; border-radius:4px; background:var(--surface-2); overflow:hidden;}
+  .ad-bar > span{display:block; height:100%; background:var(--orange); border-radius:4px;}
+  .ad-pct{font-size:11.5px; color:var(--text-muted); margin-top:5px;}
+  .ad-count{text-align:right; font-size:11.5px; color:var(--text-muted);}
+  .ad-count strong{display:block; font-size:18px; color:var(--text-primary);}
+  .goal-big{font-size:30px; font-weight:800; color:var(--text-primary); margin-top:2px;}
+  .goal-big span{font-size:15px; font-weight:600; color:var(--text-muted);}
+  .goal-track{height:12px; border-radius:6px; background:var(--surface-2); overflow:hidden; margin:10px 0 6px;}
+  .goal-fill{height:100%; background:var(--orange); border-radius:6px;}
+  .goal-sub{font-size:12.5px; color:var(--text-muted); margin:0;}
+  .goal-week{margin-top:16px; padding-top:12px; border-top:1px solid var(--border);}
+  table.compact td, table.compact th{padding:8px 10px;}
+  .wk-bar{display:flex; align-items:center; gap:8px;}
+  .wk-track{flex:1; height:6px; min-width:50px; border-radius:3px; background:var(--surface-2); overflow:hidden;}
+  .wk-fill{height:100%; border-radius:3px;}
+  .wk-pct{font-size:11.5px; color:var(--text-muted); min-width:36px; text-align:right;}
+  .heat-nav{display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:14px;}
+  .heat-nav strong{min-width:150px; text-align:center; font-size:14px; color:var(--text-primary);}
+  .heat-nav .filter-btn:disabled{opacity:.35; cursor:default;}
+  .heatmap{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:6px;}
+  .heat-dow{font-size:11px; color:var(--text-muted); text-align:center; padding-bottom:2px;}
+  .heat-cell{min-height:52px; border-radius:6px; background:var(--surface-2); border:none; padding:6px 8px; display:flex; flex-direction:column; justify-content:space-between; cursor:pointer; font-family:inherit; text-align:left; color:var(--text-primary);}
+  .heat-cell .d{font-size:11px; opacity:0.85;}
+  .heat-cell .c{font-size:16px; font-weight:800; align-self:flex-end; font-variant-numeric:tabular-nums;}
+  .heat-cell.empty{background:transparent; cursor:default;}
+  .heat-cell.today{outline:2px solid var(--purple-2); outline-offset:1px;}
+  .heat-cell:not(.empty):not(:disabled):hover{outline:2px solid var(--orange-2);}
+  .heat-legend{display:flex; align-items:center; gap:6px; margin-top:12px; font-size:11.5px; color:var(--text-muted);}
+  .heat-legend i{width:16px; height:12px; border-radius:3px; display:inline-block;}
+  @media (max-width:720px){
+    .ad-row{grid-template-columns:48px minmax(0,1fr) 64px;}
+    .ad-row .ad-mid{display:none;}
+    .heat-cell{min-height:40px; padding:4px 5px;}
+    .heat-cell .c{font-size:13px;}
+  }
 </style>
 </head>
 <body>
@@ -244,16 +327,16 @@
 
   <section>
     <div class="section-head">
-      <h2>Filtrar por rango de fechas</h2>
-      <span class="hint">Aplica a "Registros por día", "Gasto diario", "Estado de cada registro", "Distribución de estado de registros", "Estadio del Lead" y "Nivel de Urgencia" · las tablas de progreso mensual/semanal y el rendimiento de cada anuncio siempre muestran todo el período de campaña</span>
+      <h2>Rango de fechas</h2>
+      <span class="hint">Por defecto, los últimos 7 días. Todo lo de esta pestaña se ajusta a este rango, salvo la meta del mes, el detalle semanal y el mapa de calor.</span>
     </div>
     <div class="chart-card">
       <div class="date-filter-bar">
         <div class="date-filter-presets">
-          <button type="button" class="filter-btn active" data-preset="all">Todo el período</button>
-          <button type="button" class="filter-btn" data-preset="7">Últimos 7 días</button>
+          <button type="button" class="filter-btn active" data-preset="7">Últimos 7 días</button>
           <button type="button" class="filter-btn" data-preset="30">Últimos 30 días</button>
           <button type="button" class="filter-btn" data-preset="month">Este mes</button>
+          <button type="button" class="filter-btn" data-preset="all">Todo el período</button>
         </div>
         <div class="date-filter-inputs">
           <label>Desde <input type="date" id="dateFrom"></label>
@@ -265,189 +348,92 @@
   </section>
 
   <section>
-    <div class="section-head">
-      <h2>Estadio del Lead</h2>
-      <span class="hint">Qué tan avanzado está el negocio del lead — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido arriba, en "Filtrar por rango de fechas"</span>
-    </div>
-    <div class="chart-card">
-      <div class="status-dist-bar" id="estadioDistBar"></div>
+    <div class="grid-2">
+      <div>
+        <div class="section-head">
+          <h2>Estadio del Lead</h2>
+          <span class="hint">Qué tan avanzado está el negocio · tipificación de Ingrid</span>
+        </div>
+        <div class="chart-card">
+          <div class="status-dist-bar" id="estadioDistBar"></div>
       <div class="status-dist-legend" id="estadioDistLegend"></div>
       <button class="tagdist-toggle" type="button" id="estadioClientsToggle" aria-expanded="false">▸ Ver clientes</button>
       <div class="tagdist-clients" id="estadioClientsList" style="display:none;"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Nivel de Urgencia</h2>
-      <span class="hint">Qué tan necesitado está el lead del servicio — tipificación manual de Ingrid en HubSpot · se ajusta al mes/rango de fechas elegido arriba, en "Filtrar por rango de fechas"</span>
-    </div>
-    <div class="chart-card">
-      <div class="status-dist-bar" id="urgenciaDistBar"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-head">
+          <h2>Nivel de Urgencia</h2>
+          <span class="hint">Qué tan necesitado está del servicio · tipificación de Ingrid</span>
+        </div>
+        <div class="chart-card">
+          <div class="status-dist-bar" id="urgenciaDistBar"></div>
       <div class="status-dist-legend" id="urgenciaDistLegend"></div>
       <button class="tagdist-toggle" type="button" id="urgenciaClientsToggle" aria-expanded="false">▸ Ver clientes</button>
       <div class="tagdist-clients" id="urgenciaClientsList" style="display:none;"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Distribución de estado de registros</h2>
-      <span class="hint">Según la tipificación (etapa del negocio) que pone Ingrid en HubSpot — se ajusta al mes/rango de fechas elegido arriba, en "Filtrar por rango de fechas"</span>
-    </div>
-    <div class="chart-card">
-      <div class="status-dist-bar" id="statusDistBar"></div>
-      <div class="status-dist-legend" id="statusDistLegend"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>De dónde vienen los registros</h2>
-      <span class="hint">Creatividades activas ahora mismo en Meta Ads — se actualizan solas</span>
-    </div>
-    <div id="creativeHeroWrap"></div>
-    <details style="margin-top:14px;" id="galleryDetails">
-      <summary style="cursor:pointer; font-size:13px; color:var(--text-muted);">Ver otras piezas activas en la cuenta</summary>
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </details>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Meta de registros</h2>
-      <span class="hint" id="metaHint"></span>
-    </div>
-    <div class="kpi-row" id="metaRow" style="margin-bottom:16px;"></div>
-    <div class="chart-card">
-      <div class="legend">
-        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Registros reales</span>
-        <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta mensual</span>
-      </div>
-      <div class="chart-wrap">
-        <svg class="chart" id="leadsMonthChart" viewBox="0 0 960 220"></svg>
-        <div class="tooltip" id="leadsMonthTooltip"></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="section-head">
-      <h2>Progreso por mes</h2>
-      <span class="hint">Julio, agosto y los meses que sigan — se agregan solos</span>
+      <h2>Embudo: de registro a lead</h2>
+      <span class="hint">Cuántos registros pasaron a ser lead, cuántos se descartaron y por qué · según lo que tipifica Ingrid en HubSpot</span>
     </div>
-    <div class="chart-card">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Mes</th><th>Registros</th><th>Meta</th><th>Avance</th></tr></thead>
-          <tbody id="monthlyTableBody"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Presupuesto</h2>
-      <span class="hint" id="budgetHint"></span>
-    </div>
-    <div class="kpi-row" id="budgetRow" style="margin-bottom:16px;"></div>
     <div class="grid-2">
-      <div class="chart-card">
-        <div class="legend">
-          <span class="key"><span class="swatch" style="background:var(--purple-2)"></span>Gasto real</span>
-          <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta de presupuesto</span>
-        </div>
-        <div class="chart-wrap">
-          <svg class="chart" id="budgetMonthChart" viewBox="0 0 480 220"></svg>
-          <div class="tooltip" id="budgetMonthTooltip"></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="legend"><span class="key"><span class="swatch" style="background:var(--purple-2)"></span>Gasto diario (toda la cuenta)</span></div>
-        <div class="chart-wrap">
-          <svg class="chart" id="dailySpendChart" viewBox="0 0 480 220"></svg>
-          <div class="tooltip" id="dailySpendTooltip"></div>
-        </div>
-      </div>
+      <div class="chart-card"><div id="homeFunnel"></div></div>
+      <div class="chart-card"><div id="discardPanel"></div></div>
     </div>
-    <div class="chart-card" style="margin-top:16px;">
-      <div class="section-head" style="margin-bottom:10px;">
-        <h2 style="font-size:14px;">Gasto por campaña</h2>
-        <span class="hint">Incluye Awareness y cualquier otra campaña activa en la cuenta</span>
+  </section>
+
+  <section>
+    <div class="grid-2">
+      <div>
+        <div class="section-head">
+          <h2>Meta de registros</h2>
+          <span class="hint" id="metaHint"></span>
+        </div>
+        <div class="chart-card"><div id="goalSimple"></div></div>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Campaña</th><th>Gasto total</th><th>Gasto este mes</th></tr></thead>
-          <tbody id="campaignsTableBody"></tbody>
-        </table>
+      <div>
+        <div class="section-head">
+          <h2>Detalle semanal</h2>
+          <span class="hint">Registros contra la meta, leads y costo por registro</span>
+        </div>
+        <div class="chart-card">
+          <div class="table-wrap">
+            <table class="compact">
+              <thead><tr><th>Semana</th><th>Registros</th><th>Vs. meta</th><th>Leads</th><th>Costo/registro</th></tr></thead>
+              <tbody id="weeklyCompactBody"></tbody>
+            </table>
+          </div>
+          <button class="tagdist-toggle" type="button" id="weeklyMoreToggle" aria-expanded="false">▸ Ver todas las semanas</button>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="section-head">
-      <h2>Rendimiento de cada anuncio</h2>
-      <span class="hint">Haz clic en ▸ para ver el título, texto y descripción de cada pieza · ordenado por gasto</span>
+      <h2>Mapa de calor del mes</h2>
+      <span class="hint">Registros por día · haz clic en un día para ver solo ese día</span>
     </div>
     <div class="chart-card">
-      <div class="table-wrap scroll-y">
-        <table>
-          <thead><tr><th></th><th>Anuncio</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Registros</th><th>Costo/registro</th></tr></thead>
-          <tbody id="adsPerformanceTableBody"></tbody>
-        </table>
+      <div class="heat-nav">
+        <button type="button" class="filter-btn" id="heatPrev" aria-label="Mes anterior">‹</button>
+        <strong id="heatMonthLabel"></strong>
+        <button type="button" class="filter-btn" id="heatNext" aria-label="Mes siguiente">›</button>
       </div>
+      <div class="heatmap" id="heatmap"></div>
+      <div class="heat-legend" id="heatLegend"></div>
     </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Meta semanal de registros</h2>
-      <span class="hint">Tendencia semana a semana · pasa el mouse sobre un punto para ver la fracción exacta</span>
-    </div>
-    <div class="chart-card">
-      <div class="legend">
-        <span class="key"><span class="swatch" style="background:var(--orange)"></span>Registros reales</span>
-        <span class="key"><span class="swatch" style="background:var(--text-muted); opacity:0.7;"></span>Meta semanal</span>
-      </div>
-      <div class="chart-wrap">
-        <svg class="chart" id="weeklyTrendChart" viewBox="0 0 960 220"></svg>
-        <div class="tooltip" id="weeklyTrendTooltip"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Detalle semanal</h2>
-      <span class="hint">Compromiso de registros, gasto, costo por registro y frecuencia — semana a semana</span>
-    </div>
-    <div class="chart-card">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Semana</th><th>Registros</th><th>Meta semanal</th><th>Gasto</th><th>CPL</th><th>Frecuencia</th></tr></thead>
-          <tbody id="weeklyTableBody"></tbody>
-        </table>
-      </div>
-      <p class="hint" id="weeklyHint" style="margin-top:10px;"></p>
-    </div>
-  </section>
-
-  <section id="funnelSection">
-    <div class="section-head">
-      <h2>Embudo: de registro a cliente</h2>
-      <span class="hint">Todo en vivo desde HubSpot — registros, reuniones (por tipificación) y cerrados</span>
-    </div>
-    <div class="chart-card">
-      <div class="funnel" id="funnel"></div>
-    </div>
-    <div class="callout" id="funnelCallout" style="margin-top:14px;"></div>
   </section>
 
   <section>
     <div class="section-head">
       <h2>Estado de cada registro</h2>
-      <span class="hint" id="leadsTableHint">¿Ingrid ya le generó un negocio en HubSpot?</span>
+      <span class="hint" id="leadsTableHint">Solo los registros del rango elegido arriba</span>
     </div>
     <div class="chart-card">
       <div class="table-wrap scroll-y">
@@ -461,47 +447,11 @@
 
   <section>
     <div class="section-head">
-      <h2>Campaña de Formulario (Meta)</h2>
-      <span class="hint">Números reales de Meta Ads para la campaña de formulario — comparados con los registros que sí llegaron a crearse en HubSpot</span>
+      <h2>Anuncios activos</h2>
+      <span class="hint">Ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
     </div>
-    <div class="kpi-row" id="formCampaignKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="formCampaignCallout"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Campaña WhatsApp (Meta)</h2>
-      <span class="hint">Números reales de Meta Ads para la campaña de conversión a WhatsApp — comparados con los contactos que Ingrid ya subió a mano en HubSpot</span>
-    </div>
-    <div class="kpi-row" id="whatsappKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="whatsappCallout" style="margin-bottom:14px;"></div>
-      <button class="tagdist-toggle" type="button" id="whatsappClientsToggle" aria-expanded="false">▸ Ver contactos subidos por Ingrid</button>
-      <div class="tagdist-clients" id="whatsappClientsList" style="display:none;">
-        <div class="table-wrap scroll-y">
-          <table>
-            <thead><tr><th>Fecha</th><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Empresa</th></tr></thead>
-            <tbody id="whatsappTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Registros por día</h2>
-      <span class="hint">Desde el inicio de campaña · ▲ marca un cambio hecho en la campaña de Meta</span>
-    </div>
-    <div class="chart-card">
-      <div class="chart-wrap">
-        <svg class="chart" id="dailyChart" viewBox="0 0 960 260"></svg>
-        <div class="tooltip" id="dailyTooltip"></div>
-      </div>
-      <div class="milestone-list" id="milestoneList"></div>
-    </div>
+    <div class="adc-grid" id="adCards"></div>
+    <p class="hint" style="margin-top:10px;">El alcance de varios días se suma día a día, así que es aproximado (y la frecuencia también). Meta no indica qué anuncio trajo a cada contacto de WhatsApp: esos registros aparecen en "No identificado".</p>
   </section>
 
   </div>
@@ -574,6 +524,52 @@
         </table>
       </div>
       <p class="hint" id="adsetStatusHint" style="margin-top:10px;"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Rendimiento de cada anuncio</h2>
+      <span class="hint">Haz clic en ▸ para ver el título, texto y descripción de cada pieza · ordenado por gasto</span>
+    </div>
+    <div class="chart-card">
+      <div class="table-wrap scroll-y">
+        <table>
+          <thead><tr><th></th><th>Anuncio</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Registros</th><th>Costo/registro</th></tr></thead>
+          <tbody id="adsPerformanceTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Campaña de Formulario (Meta)</h2>
+      <span class="hint">Números reales de Meta Ads para la campaña de formulario — comparados con los registros que sí llegaron a crearse en HubSpot</span>
+    </div>
+    <div class="kpi-row" id="formCampaignKpiRow"></div>
+    <div class="chart-card">
+      <div class="callout" id="formCampaignCallout"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Campaña WhatsApp (Meta)</h2>
+      <span class="hint">Números reales de Meta Ads para la campaña de conversión a WhatsApp — comparados con los contactos que Ingrid ya subió a mano en HubSpot</span>
+    </div>
+    <div class="kpi-row" id="whatsappKpiRow"></div>
+    <div class="chart-card">
+      <div class="callout" id="whatsappCallout" style="margin-bottom:14px;"></div>
+      <button class="tagdist-toggle" type="button" id="whatsappClientsToggle" aria-expanded="false">▸ Ver contactos subidos por Ingrid</button>
+      <div class="tagdist-clients" id="whatsappClientsList" style="display:none;">
+        <div class="table-wrap scroll-y">
+          <table>
+            <thead><tr><th>Fecha</th><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Empresa</th></tr></thead>
+            <tbody id="whatsappTableBody"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1070,81 +1066,345 @@
       l.attr_campaign_name = attr ? attr.campaign_name : null;
     });
 
-    // ---- Creatividades (imágenes reales, en vivo desde Meta) ----
-    drawCreatives(data, meta, hasMeta);
+    // ---- Meta de registros (simple) y detalle semanal (compacto) ----
+    drawGoalSimple(data);
+    drawWeeklyCompact(data, hasMeta ? (meta.spend_by_week || []) : []);
 
-    // ---- Meta de registros ----
-    const pctMonth = (data.current_month_leads / data.monthly_goal) * 100;
-    document.getElementById('metaHint').textContent = `Meta mensual: ${data.monthly_goal} registros`;
-    document.getElementById('metaRow').innerHTML = `
-      <div class="tile">
-        <p class="tile-label">Avance del mes</p>
-        <p class="tile-value">${Math.round(pctMonth)}%</p>
-        <p class="tile-sub">${fmt(data.current_month_leads)} / ${fmt(data.monthly_goal)} registros</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Registros esta semana</p>
-        <p class="tile-value">${fmt(data.current_week_leads)}</p>
-        <p class="tile-sub">Meta semanal: ~${data.weekly_goal}</p>
-      </div>
-    `;
-    drawBarsWithTarget('leadsMonthChart', 'leadsMonthTooltip',
-      [data.current_month_label], [data.current_month_leads], data.monthly_goal, orange, 'Registros');
-
-    // ---- Progreso por mes ----
-    drawMonthlyTable(data.leads_by_month || []);
-
-    // ---- Presupuesto ----
+    // ---- Rendimiento de cada anuncio + análisis: viven en "Análisis de campaña" ----
     if (hasMeta){
-      const pctBudget = (meta.month_spend / meta.monthly_budget_goal) * 100;
-      document.getElementById('budgetHint').textContent = `Meta de presupuesto mensual: ${fmtMoney(meta.monthly_budget_goal)}`;
-      document.getElementById('budgetRow').innerHTML = `
-        <div class="tile">
-          <p class="tile-label">Gasto este mes</p>
-          <p class="tile-value">${fmtMoney(meta.month_spend)}</p>
-          <p class="tile-sub">${Math.round(pctBudget)}% de la meta mensual</p>
-        </div>
-        <div class="tile">
-          <p class="tile-label">Gasto — campaña de registros</p>
-          <p class="tile-value">${fmtMoney(meta.leads_campaign_spend_month)}</p>
-          <p class="tile-sub">Prospectos B2B, este mes</p>
-        </div>
-      `;
-      drawBarsWithTarget('budgetMonthChart', 'budgetMonthTooltip',
-        ['Este mes'], [meta.month_spend], meta.monthly_budget_goal, purple2, 'Gasto', v => fmtMoney(v));
-      // El gráfico de gasto diario se dibuja más abajo, según el rango de fechas elegido (initDateFilter/applyDateRange).
-      drawCampaignsTable(meta.campaigns || [], meta.campaigns_month || []);
       drawAdsPerformanceTable(meta.ads_performance_available ? (meta.ads_performance || []) : [], meta.ads_performance_available);
       initCampaignAnalysis(meta, data);
     } else {
-      document.getElementById('budgetHint').textContent = 'Esperando primera actualización de Meta Ads';
-      document.getElementById('budgetRow').innerHTML = '';
-      drawCampaignsTable([], []);
       drawAdsPerformanceTable([], false);
       initCampaignAnalysis(null, data);
     }
 
-    // ---- Detalle semanal ----
-    drawWeeklyTrendChart(data.leads_by_week || []);
-    drawWeeklyTable(data.leads_by_week || [], hasMeta ? (meta.spend_by_week || []) : []);
+    // ---- Mapa de calor del mes (no depende del rango) ----
+    initHeatmap(data);
 
-    // ---- Funnel ----
-    drawFunnel(data, funnelCfg);
-
-    // ---- Distribución de estado de registros ----
-    // drawStatusDistribution(data.leads_status_breakdown || []); // ahora se dibuja en applyDateRange() via computeStatusBreakdown() para respetar el filtro de fecha
-
-    // ---- Estadio del Lead / Nivel de Urgencia ----
-    // ahora se dibujan en applyDateRange() a partir de filteredLeads, para respetar
-    // el mes/rango de fechas elegido (antes mostraban siempre el global)
-
-    // ---- Milestones (lista completa, no depende del filtro de fechas) ----
-    const milestones = (hasMeta && meta.milestones_available) ? (meta.milestones || []) : [];
-    drawMilestoneList(milestones, hasMeta, meta);
-
-    // ---- Filtro de rango de fechas: dibuja "Registros por día", "Gasto diario"
-    // y "Estado de cada registro" según el rango elegido (por defecto, todo el período) ----
+    // ---- Rango de fechas: por defecto los últimos 7 días ----
     initDateFilter(data, meta);
+  }
+
+
+  // ===================== PESTAÑA PRINCIPAL (rediseño oct-2026) =====================
+  // Etapas del pipeline de Negocios de HubSpot, de menos a más avanzada.
+  const STAGE_LADDER = ['prospectos contactados', 'reunion agendadas', 'propuesta en elaboracion',
+    'propuesta enviada/en revision', 'propuesta aceptada', 'en implementacion', 'implementada'];
+
+  function normTxt(x){
+    return (x || '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+  function pctTxt(a, b){ return b ? Math.round(a / b * 100) + '%' : '0%'; }
+  // Fecha de hoy en Lima (UTC-5), para que "últimos 7 días" y el mapa de calor
+  // terminen hoy aunque hoy todavía no haya registros.
+  function limaToday(){ return new Date(Date.now() - 5 * 3600 * 1000).toISOString().slice(0, 10); }
+  function capFirst(x){ return x ? x.charAt(0).toUpperCase() + x.slice(1) : x; }
+
+  // Estado de un registro según la etapa del Negocio que pone Ingrid:
+  //   lead        = Negocio en "Reunión agendada" o más avanzado (decisión de Fabián, oct-2026)
+  //   contactado  = tiene Negocio en gestión pero aún sin reunión (p. ej. "Prospectos contactados")
+  //   descartado  = etapa "Descartada"
+  //   standby     = etapa "Stand By"
+  //   sin_gestion = todavía no tiene Negocio
+  function leadState(l){
+    if (!l.has_deal || !l.deal_stage) return 'sin_gestion';
+    const st = normTxt(l.deal_stage);
+    if (st.includes('descart')) return 'descartado';
+    if (st.includes('stand by') || st.includes('standby')) return 'standby';
+    const i = STAGE_LADDER.indexOf(st.trim());
+    return i >= 1 ? 'lead' : 'contactado';
+  }
+  function stageRank(l){
+    const ls = leadState(l);
+    if (ls !== 'lead' && ls !== 'contactado') return -1;
+    const i = STAGE_LADDER.indexOf(normTxt(l.deal_stage).trim());
+    return i === -1 ? 0 : i;
+  }
+
+  // Motivo de descarte: se lee de la nota que Ingrid deja en el Negocio (los
+  // leads de la campaña no tienen el campo "Motivo de descarte" lleno). El
+  // orden importa: la primera regla que calza es la que se usa.
+  const DISCARD_RULES = [
+    ['No respondió', /(nunca respond|no respond|no contest|sin respuesta|no responde|silencio|no llego al boton|veces no|no volvio a responder|no hubo respuesta)/],
+    ['No asistió a la reunión', /no asisti/],
+    ['Buscaba otra cosa (empleo, alquiler, marketing)', /(postulaci|busca trabajo|laboral|empleo|mkt|marketing|crm|no aplica|alquiler|por error|marco mal|busca una tienda|buscando una tienda|no busca ningun servicio|talleres para su equipo)/],
+    ['Negocio muy pequeño o pocos leads', /(volumen insuficiente|muy pequeno|pocos leads|solo \d+ leads|menos de \d+ al mes)/],
+    ['Independiente / sin empresa', /(independiente|sin empresa|no tiene empresa|informal|sin ruc|persona natural|titulo personal)/],
+    ['Aún no invierte en pauta', /(no invierte|nunca ha invertido|aun no|recien|empezar|evaluando)/],
+    ['No le interesa por ahora', /(no esta interesad|no requiere|no le interesa|por ahora no|no necesita|no interesad|no lo molesten)/],
+  ];
+  function discardReason(l){
+    if (l.discard_reason) return l.discard_reason;   // campo "Motivo de descarte" de HubSpot
+    const t = normTxt(l.deal_note);
+    if (!t.trim()) return 'Sin detalle';
+    for (const [label, re] of DISCARD_RULES){ if (re.test(t)) return label; }
+    return 'Otro motivo';
+  }
+
+  function drawHomeFunnel(leads){
+    const el = document.getElementById('homeFunnel');
+    if (!el) return;
+    const n = leads.length;
+    if (!n){ el.innerHTML = '<p class="table-sub">No hay registros en este rango.</p>'; return; }
+    const nCont = leads.filter(l => ['lead', 'contactado'].includes(leadState(l))).length;
+    const nLead = leads.filter(l => leadState(l) === 'lead').length;
+    const nProp = leads.filter(l => stageRank(l) >= 2).length;
+    const nSin = leads.filter(l => leadState(l) === 'sin_gestion').length;
+    const nStand = leads.filter(l => leadState(l) === 'standby').length;
+    const nDesc = leads.filter(l => leadState(l) === 'descartado').length;
+    const steps = [
+      { label: 'Registros', v: n, color: 'var(--purple-2)' },
+      { label: 'Contactados (en gestión)', v: nCont, color: 'var(--orange-2)' },
+      { label: 'Pasaron a lead (reunión agendada)', v: nLead, color: 'var(--orange)' },
+      { label: 'Propuesta o más', v: nProp, color: 'var(--orange)' },
+    ];
+    el.innerHTML = steps.map((st, i) => {
+      const w = st.v ? Math.max(2, st.v / n * 100) : 0;
+      const conv = i === 0 ? '' : `<p class="hf-conv">${pctTxt(st.v, steps[i - 1].v)} del paso anterior</p>`;
+      return `<div class="hf-step">
+        <div class="hf-top"><span class="hf-label">${st.label}</span><span class="hf-num"><strong>${fmt(st.v)}</strong>${i ? pctTxt(st.v, n) + ' de los registros' : ''}</span></div>
+        <div class="hf-track"><div class="hf-fill" style="width:${w}%; background:${st.color};"></div></div>
+        ${conv}
+      </div>`;
+    }).join('') + `<div class="hf-foot">
+        <span>Descartados: <strong>${fmt(nDesc)}</strong></span>
+        <span>Sin gestionar aún: <strong>${fmt(nSin)}</strong></span>
+        ${nStand ? `<span>En stand by: <strong>${fmt(nStand)}</strong></span>` : ''}
+      </div>`;
+  }
+
+  function drawDiscardPanel(leads){
+    const el = document.getElementById('discardPanel');
+    if (!el) return;
+    const n = leads.length;
+    const desc = leads.filter(l => leadState(l) === 'descartado');
+    if (!desc.length){
+      el.innerHTML = `<div class="dp-head"><span class="dp-big">0</span><span class="dp-sub">descartados en este rango</span></div>`;
+      return;
+    }
+    const counts = {};
+    desc.forEach(l => { const r = discardReason(l); counts[r] = (counts[r] || 0) + 1; });
+    const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const noResp = counts['No respondió'] || 0;
+    const fromField = fmt(desc.filter(l => l.discard_reason).length);
+    const max = rows[0][1];
+    el.innerHTML = `
+      <div class="dp-head"><span class="dp-big">${fmt(desc.length)}</span><span class="dp-sub">descartados · ${pctTxt(desc.length, n)} de los registros</span></div>
+      <div class="dp-alert"><strong>${pctTxt(noResp, n)}</strong> de los registros nunca respondió (${fmt(noResp)} de ${fmt(n)}).</div>
+      <p class="tile-label" style="margin:0 0 6px;">Por qué se descartaron</p>
+      ${rows.map(([label, v]) => `<div class="rs-row" title="${escapeHtml(label)}: ${v}">
+          <span class="rs-name">${escapeHtml(label)}</span>
+          <span class="rs-track"><span class="rs-fill" style="width:${v / max * 100}%"></span></span>
+          <span class="rs-val">${fmt(v)} · ${pctTxt(v, desc.length)}</span>
+        </div>`).join('')}
+      <p class="hint" style="margin-top:10px;">${fromField} de ${fmt(desc.length)} con el campo "Motivo de descarte" lleno en HubSpot; en el resto, el motivo se lee de la nota de Ingrid.</p>`;
+  }
+
+  function drawAdCards(leads, meta, from, to){
+    const el = document.getElementById('adCards');
+    if (!el) return;
+    if (!(meta && meta.updated_at)){ el.innerHTML = '<p class="table-sub">Esperando datos de Meta Ads.</p>'; return; }
+    const waMatch = (meta.whatsapp_campaign_match || 'whatsapp').toLowerCase();
+    const isWa = c => (c || '').toLowerCase().includes(waMatch);
+    const imgByAd = {};
+    (meta.leads_creatives || []).forEach(a => { if (a.ad_name && a.image_url) imgByAd[a.ad_name] = a.image_url; });
+    // Anuncios activos ahora mismo
+    const active = (meta.ads_performance || []).filter(a => a.status === 'ACTIVE');
+    // Métricas de Meta, sumadas día a día dentro del rango
+    const daily = (meta.campaign_analysis_daily && meta.campaign_analysis_daily.ads) || [];
+    const agg = {};
+    daily.forEach(r => {
+      if (r.date < from || r.date > to) return;
+      const k = r.id;
+      if (!agg[k]) agg[k] = { spend: 0, impressions: 0, reach: 0, clicks: 0, engagement: 0, conversations: 0, hasEng: false };
+      const g = agg[k];
+      g.spend += r.spend || 0; g.impressions += r.impressions || 0; g.reach += r.reach || 0; g.clicks += r.clicks || 0;
+      if (r.engagement != null){ g.engagement += r.engagement; g.hasEng = true; }
+      g.conversations += r.conversations || 0;
+    });
+    // Registros y leads de HubSpot por anuncio (formulario)
+    const byName = {};
+    leads.forEach(l => {
+      if (/whatsapp/i.test(l.lead_source || '') || !l.ad_name) return;
+      if (!byName[l.ad_name]) byName[l.ad_name] = { reg: 0, lead: 0 };
+      byName[l.ad_name].reg++;
+      if (leadState(l) === 'lead') byName[l.ad_name].lead++;
+    });
+    const cards = active.map(a => {
+      const m = agg[a.ad_id] || { spend: 0, impressions: 0, reach: 0, clicks: 0, engagement: 0, conversations: 0, hasEng: false };
+      const wa = isWa(a.campaign_name);
+      const h = byName[a.ad_name] || { reg: 0, lead: 0 };
+      return { a, m, wa, reg: wa ? null : h.reg, lead: wa ? null : h.lead, img: a.image_url || imgByAd[a.ad_name] || null };
+    });
+    cards.sort((x, y) => ((y.reg || 0) - (x.reg || 0)) || (y.m.conversations - x.m.conversations) || (y.m.impressions - x.m.impressions));
+    // Tarjeta "No identificado" con los registros de WhatsApp del rango
+    const waLeads = leads.filter(l => /whatsapp/i.test(l.lead_source || ''));
+    const money = v => fmtMoney(v);
+    const row = (label, val) => `<div class="adc-row"><span>${label}</span><strong>${val}</strong></div>`;
+    const html = cards.map((c, i) => {
+      const m = c.m;
+      const ctr = m.impressions ? (m.clicks / m.impressions * 100).toFixed(2) + '%' : '—';
+      const cpm = m.impressions ? money(m.spend / m.impressions * 1000) : '—';
+      const freq = m.reach ? (m.impressions / m.reach).toFixed(2) : '—';
+      const eng = m.hasEng ? fmt(m.engagement) : '—';
+      const cpr = (c.reg && m.spend) ? money(m.spend / c.reg) : '—';
+      const cpl = (c.lead && m.spend) ? money(m.spend / c.lead) : '—';
+      const hero = c.wa
+        ? `<div><span>Registros</span><strong style="font-size:13px;">No identificado</strong></div><div><span>Conversaciones</span><strong>${fmt(m.conversations)}</strong></div>`
+        : `<div><span>Registros</span><strong>${fmt(c.reg)}</strong></div><div><span>Leads</span><strong>${fmt(c.lead)}</strong></div>`;
+      return `<article class="adc">
+        <div class="adc-head ${c.wa ? 'wa' : 'form'}"><span>${c.wa ? 'WHATSAPP' : 'FORMULARIO'}</span><span class="adc-rank">#${i + 1}</span></div>
+        <div class="adc-media">${c.img
+          ? `<img src="${escapeHtml(c.img)}" alt="Miniatura del anuncio ${escapeHtml(c.a.ad_name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'), {className: 'adc-ph', textContent: 'Sin vista previa'}))">`
+          : `<span class="adc-ph">Sin vista previa</span>`}</div>
+        <div class="adc-body">
+          <div class="adc-name">${escapeHtml(c.a.ad_name || 'Sin nombre')}</div>
+          <div class="adc-sub" title="${escapeHtml(c.a.adset_name || '')}">Conjunto: ${escapeHtml(c.a.adset_name || '—')}</div>
+          <div class="adc-hero">${hero}</div>
+          ${row('Alcance', fmt(m.reach))}
+          ${row('Impresiones', fmt(m.impressions))}
+          ${row('CTR', ctr)}
+          ${row('CPM', cpm)}
+          ${row('Engagement', eng)}
+          ${row('Inversión', money(m.spend))}
+          ${row('Costo por registro', c.wa ? '—' : cpr)}
+          ${row('Costo por lead', c.wa ? '—' : cpl)}
+          ${row('Frecuencia', freq)}
+        </div>
+      </article>`;
+    }).join('');
+    const waCard = waLeads.length ? `<article class="adc">
+        <div class="adc-head na"><span>WHATSAPP · NO IDENTIFICADO</span></div>
+        <div class="adc-media"><span class="adc-ph">WA</span></div>
+        <div class="adc-body">
+          <div class="adc-name">Registros que llegaron por WhatsApp</div>
+          <div class="adc-sub">Meta no indica de qué anuncio vino cada uno</div>
+          <div class="adc-hero"><div><span>Registros</span><strong>${fmt(waLeads.length)}</strong></div><div><span>Leads</span><strong>${fmt(waLeads.filter(l => leadState(l) === 'lead').length)}</strong></div></div>
+        </div>
+      </article>` : '';
+    el.innerHTML = (html + waCard) || '<p class="table-sub">No hay anuncios activos ahora mismo.</p>';
+  }
+
+  function drawGoalSimple(data){
+    const el = document.getElementById('goalSimple');
+    if (!el) return;
+    const goal = data.monthly_goal || 0, cur = data.current_month_leads || 0;
+    const p = goal ? cur / goal * 100 : 0;
+    const wk = data.current_week_leads || 0, wg = data.weekly_goal || 0;
+    const hint = document.getElementById('metaHint');
+    const mesLabel = capFirst(new Date(limaToday() + 'T00:00:00').toLocaleDateString('es-PE', { month: 'long', year: 'numeric' }));
+    if (hint) hint.textContent = `${mesLabel} · meta mensual de ${fmt(goal)}`;
+    el.innerHTML = `
+      <p class="tile-label" style="margin:0;">Registros del mes</p>
+      <div class="goal-big">${fmt(cur)} <span>/ ${fmt(goal)}</span></div>
+      <div class="goal-track"><div class="goal-fill" style="width:${Math.min(100, p)}%"></div></div>
+      <p class="goal-sub">${Math.round(p)}% de la meta del mes</p>
+      <div class="goal-week">
+        <p class="tile-label" style="margin:0;">Esta semana</p>
+        <p class="goal-sub" style="margin-top:4px;"><strong style="color:var(--text-primary); font-size:16px;">${fmt(wk)}</strong> de ~${wg} registros (${wg ? Math.round(wk / wg * 100) : 0}%)</p>
+      </div>`;
+  }
+
+  let weeklyShowAll = false;
+  function drawWeeklyCompact(data, spendWeeks){
+    const body = document.getElementById('weeklyCompactBody');
+    if (!body) return;
+    const spendBy = {};
+    (spendWeeks || []).forEach(w => { spendBy[w.week_start] = w.spend; });
+    const detail = data.leads_detail || [];
+    const weeks = (data.leads_by_week || []).slice().reverse();
+    const shown = weeklyShowAll ? weeks : weeks.slice(0, 6);
+    const o = { day: 'numeric', month: 'short' };
+    const wkLabel = (a, b) => {
+      const da = new Date(a + 'T00:00:00'), db = new Date(b + 'T00:00:00');
+      return da.getMonth() === db.getMonth()
+        ? `${da.getDate()}–${db.toLocaleDateString('es-PE', o)}`
+        : `${da.toLocaleDateString('es-PE', o)} – ${db.toLocaleDateString('es-PE', o)}`;
+    };
+    body.innerHTML = shown.map(w => {
+      const inWk = detail.filter(l => (l.created_date || '') >= w.week_start && (l.created_date || '') <= w.week_end);
+      const nLead = inWk.filter(l => leadState(l) === 'lead').length;
+      const p = w.goal ? w.leads / w.goal * 100 : 0;
+      const col = p >= 100 ? 'var(--good)' : (p >= 70 ? 'var(--warning)' : 'var(--critical)');
+      const sp = spendBy[w.week_start];
+      return `<tr>
+        <td class="table-name">${wkLabel(w.week_start, w.week_end)}</td>
+        <td>${fmt(w.leads)}</td>
+        <td><div class="wk-bar"><div class="wk-track"><div class="wk-fill" style="width:${Math.min(100, p)}%; background:${col};"></div></div><span class="wk-pct">${Math.round(p)}%</span></div></td>
+        <td>${fmt(nLead)}</td>
+        <td>${(sp != null && w.leads) ? fmtMoney(sp / w.leads) : '—'}</td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="5" class="table-sub">Sin datos todavía.</td></tr>';
+    const t = document.getElementById('weeklyMoreToggle');
+    if (t){
+      t.style.display = weeks.length > 6 ? '' : 'none';
+      t.textContent = weeklyShowAll ? '▾ Ver solo las últimas 6' : `▸ Ver todas las semanas (${weeks.length})`;
+      t.setAttribute('aria-expanded', weeklyShowAll ? 'true' : 'false');
+      t.onclick = () => { weeklyShowAll = !weeklyShowAll; drawWeeklyCompact(data, spendWeeks); };
+    }
+  }
+
+  let heatCtx = { counts: {}, months: [], idx: 0, today: '' };
+  function initHeatmap(data){
+    const counts = {};
+    (data.leads_detail || []).forEach(l => { if (l.created_date) counts[l.created_date] = (counts[l.created_date] || 0) + 1; });
+    const days = data.leads_by_day || [];
+    const lastData = days.length ? days[days.length - 1].date : '';
+    const today = lastData > limaToday() ? lastData : limaToday();
+    let [y, m] = (data.campaign_start || today).slice(0, 7).split('-').map(Number);
+    const [ty, tm] = today.slice(0, 7).split('-').map(Number);
+    const months = [];
+    while (y < ty || (y === ty && m <= tm)){
+      months.push(`${y}-${String(m).padStart(2, '0')}`);
+      m++; if (m > 12){ m = 1; y++; }
+    }
+    heatCtx = { counts, months, idx: months.length - 1, today };
+    document.getElementById('heatPrev').onclick = () => { if (heatCtx.idx > 0){ heatCtx.idx--; drawHeatmap(); } };
+    document.getElementById('heatNext').onclick = () => { if (heatCtx.idx < heatCtx.months.length - 1){ heatCtx.idx++; drawHeatmap(); } };
+    drawHeatmap();
+  }
+  function drawHeatmap(){
+    const grid = document.getElementById('heatmap');
+    if (!grid || !heatCtx.months.length) return;
+    const ym = heatCtx.months[heatCtx.idx];
+    const [y, m] = ym.split('-').map(Number);
+    const first = new Date(y, m - 1, 1);
+    const nDays = new Date(y, m, 0).getDate();
+    const offset = (first.getDay() + 6) % 7; // lunes = primera columna
+    const key = d => `${ym}-${String(d).padStart(2, '0')}`;
+    let max = 0;
+    for (let d = 1; d <= nDays; d++) max = Math.max(max, heatCtx.counts[key(d)] || 0);
+    const level = c => !c ? 0 : (max <= 1 ? 4 : Math.max(1, Math.min(4, Math.ceil(c / max * 4))));
+    const ALPHA = [0, 0.22, 0.42, 0.68, 1];
+    const bg = lv => lv ? `rgba(255,107,19,${ALPHA[lv]})` : 'var(--surface-2)';
+    const monthName = first.toLocaleDateString('es-PE', { month: 'long' });
+    document.getElementById('heatMonthLabel').textContent = capFirst(first.toLocaleDateString('es-PE', { month: 'long', year: 'numeric' }));
+    document.getElementById('heatPrev').disabled = heatCtx.idx === 0;
+    document.getElementById('heatNext').disabled = heatCtx.idx === heatCtx.months.length - 1;
+    let html = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'].map(d => `<div class="heat-dow">${d}</div>`).join('');
+    for (let i = 0; i < offset; i++) html += '<div class="heat-cell empty" aria-hidden="true"></div>';
+    let total = 0;
+    for (let d = 1; d <= nDays; d++){
+      const k = key(d), c = heatCtx.counts[k] || 0, lv = level(c), future = k > heatCtx.today;
+      total += c;
+      const label = `${d} de ${monthName}: ${c} registro${c === 1 ? '' : 's'}`;
+      html += future
+        ? `<button type="button" class="heat-cell" disabled style="opacity:.35; cursor:default;" aria-label="${d} de ${monthName}"><span class="d">${d}</span><span class="c"></span></button>`
+        : `<button type="button" class="heat-cell${k === heatCtx.today ? ' today' : ''}" data-date="${k}" style="background:${bg(lv)}; color:${lv >= 4 ? '#1A0F00' : 'var(--text-primary)'};" title="${label}" aria-label="${label}"><span class="d">${d}</span><span class="c">${c}</span></button>`;
+    }
+    grid.innerHTML = html;
+    grid.querySelectorAll('.heat-cell[data-date]').forEach(btn => btn.addEventListener('click', () => {
+      const dt = btn.dataset.date;
+      document.getElementById('dateFrom').value = dt;
+      document.getElementById('dateTo').value = dt;
+      setPresetActive(null);
+      applyDateRange(dt, dt);
+      document.getElementById('tab-leads').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+    document.getElementById('heatLegend').innerHTML =
+      `<span>${fmt(total)} registros en el mes</span><span style="margin-left:auto;">Menos</span>` +
+      [0, 1, 2, 3, 4].map(lv => `<i style="background:${bg(lv)}"></i>`).join('') + '<span>Más</span>';
   }
 
   let filterCtx = { data: null, meta: null };
@@ -1154,7 +1414,8 @@
     const fromInput = document.getElementById('dateFrom');
     const toInput = document.getElementById('dateTo');
     const days = data.leads_by_day || [];
-    const today = days.length ? days[days.length - 1].date : new Date().toISOString().slice(0, 10);
+    const lastData = days.length ? days[days.length - 1].date : '';
+    const today = lastData > limaToday() ? lastData : limaToday();
     const start = data.campaign_start;
 
     [fromInput, toInput].forEach(inp => { inp.min = start; inp.max = today; });
@@ -1170,7 +1431,7 @@
       applyDateRange(fromInput.value, toInput.value);
     });
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    document.querySelectorAll('.date-filter-presets .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         setPresetActive(btn);
         let from = start;
@@ -1191,11 +1452,18 @@
       });
     });
 
-    applyDateRange(start, today);
+    // Por defecto: últimos 7 días (decisión de Fabián, oct-2026).
+    const d7 = new Date(today + 'T00:00:00'); d7.setDate(d7.getDate() - 6);
+    let from7 = d7.toISOString().slice(0, 10);
+    if (from7 < start) from7 = start;
+    fromInput.value = from7;
+    toInput.value = today;
+    setPresetActive(document.querySelector('.date-filter-presets .filter-btn[data-preset="7"]'));
+    applyDateRange(from7, today);
   }
 
   function setPresetActive(btn){
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.date-filter-presets .filter-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
   }
 
@@ -1226,44 +1494,40 @@
       .reduce((sum, r) => sum + (r.spend || 0), 0);
     const rangeInvestment = hasLeadsCampaignDaily ? rangeLeadsCampaignSpend : rangeSpend;
 
-    // "Leads (cliente potencial)" es un SUBCONJUNTO de "Registros en el rango"
-    // (los que además ya tienen Negocio con etapa "Reunión...") — no se resta
-    // del total de registros, solo se informa aparte cuántos y qué % son.
     const filteredLeads = (data.leads_detail || []).filter(l => (l.created_date || '') >= from && (l.created_date || '') <= to);
-    const rangeLeadsClientePotencial = filteredLeads.filter(l => l.has_deal && /reuni/i.test(l.deal_stage || '')).length;
-    const pctLeadsRango = rangeLeads ? (rangeLeadsClientePotencial / rangeLeads) * 100 : 0;
+    const nReg = filteredLeads.length;
+    const nLead = filteredLeads.filter(l => leadState(l) === 'lead').length;
+    const nDesc = filteredLeads.filter(l => leadState(l) === 'descartado').length;
+    const fmtD = x => new Date(x + 'T00:00:00').toLocaleDateString('es-PE', { day:'numeric', month:'short' });
+    const rangeLabel = from === to ? fmtD(from) : `${fmtD(from)} – ${fmtD(to)}`;
 
     document.getElementById('rangeKpiRow').innerHTML = `
       <div class="tile">
-        <p class="tile-label">Registros en el rango</p>
-        <p class="tile-value">${fmt(rangeLeads)}</p>
-        <p class="tile-sub">${from} — ${to}</p>
+        <p class="tile-label">Registros</p>
+        <p class="tile-value">${fmt(nReg)}</p>
+        <p class="tile-sub">${rangeLabel}</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Leads (cliente potencial)</p>
-        <p class="tile-value">${fmt(rangeLeadsClientePotencial)}</p>
-        <p class="tile-sub">${pctLeadsRango.toFixed(1)}% de los registros del rango · tipificados como "Reunión Agendada" en HubSpot</p>
+        <p class="tile-label">Pasaron a lead</p>
+        <p class="tile-value">${fmt(nLead)}</p>
+        <p class="tile-sub">${pctTxt(nLead, nReg)} de los registros · reunión agendada o más</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Inversión en el rango</p>
-        <p class="tile-value">${hasMeta ? fmtMoney(rangeInvestment) : '—'}</p>
-        <p class="tile-sub">${hasLeadsCampaignDaily ? 'Campaña Formulario + campaña WhatsApp' : (hasMeta ? 'Toda la cuenta, en Meta Ads' : 'Esperando Meta Ads')}</p>
+        <p class="tile-label">Descartados</p>
+        <p class="tile-value">${fmt(nDesc)}</p>
+        <p class="tile-sub">${pctTxt(nDesc, nReg)} de los registros</p>
       </div>
       <div class="tile">
-        <p class="tile-label">Costo por registro en el rango</p>
-        <p class="tile-value">${(hasMeta && rangeLeads) ? fmtMoney(rangeInvestment / rangeLeads) : '—'}</p>
-        <p class="tile-sub">Gasto de ambas campañas ÷ registros del rango (incluye WhatsApp)</p>
+        <p class="tile-label">Costo por registro</p>
+        <p class="tile-value">${(hasMeta && nReg) ? fmtMoney(rangeInvestment / nReg) : '—'}</p>
+        <p class="tile-sub">${hasMeta ? 'Inversión de ' + fmtMoney(rangeInvestment) + ' en el rango' : 'Esperando Meta Ads'}</p>
       </div>
     `;
 
-    const milestonesInRange = (hasMeta && meta.milestones_available)
-      ? (meta.milestones || []).filter(m => m.date >= from && m.date <= to)
-      : [];
-    drawDailyChart(filteredDays, milestonesInRange, data.weekly_goal);
-    if (hasMeta) drawDailySpend(filteredSpendDays);
-
+    drawHomeFunnel(filteredLeads);
+    drawDiscardPanel(filteredLeads);
+    drawAdCards(filteredLeads, meta, from, to);
     drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
-    drawStatusDistribution(computeStatusBreakdown(filteredLeads));
 
     // Estadio del Lead / Nivel de Urgencia, recalculados sobre el mismo rango
     // de fechas ya filtrado (antes se mostraba siempre el global, sin filtro).

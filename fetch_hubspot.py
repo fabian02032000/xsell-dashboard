@@ -1,0 +1,855 @@
+#!/usr/bin/env python3
+"""
+Lee leads (contactos) desde HubSpot y genera data.json para el dashboard.
+No requiere conocimientos de programación para usarlo: se ejecuta solo,
+vía GitHub Actions, cada hora. Solo necesitas configurar el token una vez
+(ver README.md).
+
+Filtra los contactos para quedarse solo con los que cuentan como "Registro"
+del embudo: los que vinieron de la campaña de Meta (Facebook Lead Ads /
+"prospectos b2b"), usando las propiedades de "Original source" de HubSpot, MÁS
+los que Ingrid sube a mano en HubSpot para la campaña de conversión a
+WhatsApp (ver is_whatsapp_manual_lead) — así no se cuentan contactos que
+entren por otras vías (email marketing, pruebas, etc.). Cada lead queda
+marcado con su "lead_source" (Formulario vs. WhatsApp) para que se note de
+dónde vino.
+
+También revisa, para cada lead, si ya se le creó un Negocio en HubSpot (y en
+qué etapa está), y arma vistas de progreso por mes y por semana.
+
+AVISO DE PRIVACIDAD: este script incluye nombre y correo de cada lead en
+data.json, y ese archivo queda visible en un repositorio público de GitHub.
+Esto fue una decisión explícita del dueño del dashboard — si en algún
+momento se prefiere dejar de exponer nombres/correos, hay que quitar el
+bloque "leads_detail" antes de que corra de nuevo.
+"""
+import os
+import re
+import sys
+import html
+import json
+import datetime
+import unicodedata
+import urllib.request
+import urllib.error
+
+# ---------------------- CONFIGURACIÓN ----------------------
+# Perú no tiene horario de verano, así que su offset respecto a UTC es
+# siempre -5, todo el año — un offset fijo es más simple y confiable aquí
+# que usar zoneinfo (que depende de que el runner tenga la base de datos de
+# zonas horarias instalada).
+#
+# Se usa para "cortar" el día/mes de cada lead con el mismo criterio que ve
+# Ingrid en HubSpot (que muestra las fechas en hora de Lima), en vez de UTC.
+# Antes de este ajuste (sep-2026), un lead creado por ejemplo a las 8pm del
+# 31 de agosto en Lima quedaba en UTC como 1 de setiembre 1am, y el dashboard
+# lo contaba como lead de setiembre aunque para Ingrid siguiera siendo de
+# agosto — de ahí el desfase de unos pocos registros que reportó Fabián.
+LIMA_TZ = datetime.timezone(datetime.timedelta(hours=-5))
+
+# Puedes ajustar estos valores sin tocar el resto del código.
+CAMPAIGN_START_DATE = os.environ.get("CAMPAIGN_START_DATE", "2026-07-25")  # YYYY-MM-DD
+MONTHLY_GOAL = float(os.environ.get("MONTHLY_GOAL", "74"))
+WEEKLY_GOAL = round(MONTHLY_GOAL * 7 / 30, 1)
+CLOSED_DEALS_GOAL = int(os.environ.get("CLOSED_DEALS_GOAL", "3"))
+# Debe coincidir con el "internal name" de tu etapa de "Cerrado ganado" en HubSpot.
+# Por defecto en portales nuevos suele ser "closedwon". Si tu pipeline es
+# personalizado, HubSpot > Configuración > Objetos > Negocios > Pipelines te
+# muestra el nombre interno de cada etapa.
+CLOSEDWON_STAGE = os.environ.get("CLOSEDWON_STAGE", "closedwon")
+
+# Palabras clave (separadas por coma) que deben aparecer en la fuente del
+# contacto (Original source / drill-down) para considerarlo un lead de la
+# campaña de Meta. No distingue mayúsculas/minúsculas.
+SOURCE_MATCH_KEYWORDS = [
+    k.strip().lower()
+    for k in os.environ.get("SOURCE_MATCH_KEYWORDS", "facebook,prospectos b2b").split(",")
+    if k.strip()
+]
+
+# Palabras clave (sin tildes, minúsculas) que, si aparecen en la etapa del
+# Negocio (dealstage) de un lead, cuentan como "hubo reunión" para el embudo.
+# Así se calcula el número de reuniones automáticamente desde la tipificación
+# que Ingrid pone en HubSpot, en vez de tener que actualizarlo a mano.
+REUNION_MATCH_KEYWORDS = [
+    k.strip().lower()
+    for k in os.environ.get("REUNION_MATCH_KEYWORDS", "reunion").split(",")
+    if k.strip()
+]
+
+# "Nombre interno" (internal name) de los 2 campos que Ingrid tipifica a mano
+# en el Negocio: Estadio del Lead y Nivel de Urgencia.
+#
+# La cuenta de HubSpot es del plan gratuito (10 propiedades personalizadas en
+# total para toda la cuenta) y ya estaba al límite, así que en vez de crear 2
+# campos NUEVOS (lo que hubiera hecho falta) reutilizamos 2 que ya existían
+# y que verificamos que NADIE está usando en ningún Negocio de la cuenta:
+#   - "etapa_final" (Etapa Final): campo personalizado, desplegable, 0 de
+#     2,096 negocios lo tenían con valor. Ahora se reetiqueta como
+#     "Estadio del Lead" con las 4 opciones nuevas (Semilla / En Crecimiento /
+#     Consolidado / Alto Nivel).
+#   - "hs_priority" (Priority): campo que YA viene incluido gratis en
+#     cualquier cuenta de HubSpot (no cuenta contra el límite de 10), también
+#     0 de 2,096 negocios lo tenían con valor. Se usa para Nivel de Urgencia.
+# Si en el futuro cambias de plan y prefieres campos propios con esos nombres,
+# solo hay que ajustar estas 2 líneas (o las variables de entorno).
+ESTADIO_LEAD_PROPERTY = os.environ.get("ESTADIO_LEAD_PROPERTY", "etapa_final")
+NIVEL_URGENCIA_PROPERTY = os.environ.get("NIVEL_URGENCIA_PROPERTY", "hs_priority")
+# Campo "Motivo de descarte" del Negocio (desplegable). Decisión de Fabián,
+# oct-2026: el dashboard usa este campo para explicar por qué se descartó cada
+# registro. Si está vacío, el dashboard cae a leer la nota de Ingrid.
+DISCARD_REASON_PROPERTY = os.environ.get("DISCARD_REASON_PROPERTY", "motivo_de_cierre_perdidos_2")
+
+# HubSpot guarda, para cada opción de una lista desplegable, un "valor interno"
+# que no siempre es idéntico al texto que ve Ingrid (puede quedar en minúsculas,
+# con guiones bajos, etc.). Este mapa traduce lo que sea que llegue de HubSpot
+# al texto exacto que usa el dashboard, para que nunca se pierda un dato por
+# una diferencia de mayúsculas o espacios.
+ESTADIO_LEAD_LABELS = {
+    "semilla": "Semilla",
+    "en_crecimiento": "En Crecimiento",
+    "consolidado": "Consolidado",
+    "alto_nivel": "Alto Nivel",
+}
+# "hs_priority" es un campo estándar de HubSpot: sus 3 opciones internas
+# siempre son low/medium/high, incluso si logras cambiarles la etiqueta
+# visible a Bajo/Medio/Alto en HubSpot (puede que esa parte esté bloqueada
+# por ser un campo del sistema). Por eso este mapa cubre ambos casos: pase lo
+# que pase en HubSpot, el dashboard siempre va a mostrar Bajo/Medio/Alto.
+NIVEL_URGENCIA_LABELS = {
+    "low": "Bajo",
+    "medium": "Medio",
+    "high": "Alto",
+    "bajo": "Bajo",
+    "medio": "Medio",
+    "alto": "Alto",
+}
+
+# ---- Envío "tibio" (correo a contactos de formulario para volver a
+# calentarlos) ----
+# Fabián decidió: el Estadio del Lead es lo que define si un contacto es
+# "potencial" (se le puede volver a escribir) o no; el Nivel de Urgencia no
+# se usa para incluir/excluir a nadie — se usa aparte, para decidir qué
+# variante de contenido mandarle a cada quien. Por eso acá solo se filtra
+# por Estadio.
+# Los que están en estos Estadios se EXCLUYEN del envío tibio (por defecto:
+# Semilla y En Crecimiento). Un contacto sin Negocio, o con Negocio pero sin
+# Estadio cargado, tampoco entra — no hay forma de saber si es potencial.
+WARM_AUDIENCE_EXCLUDE_ESTADIOS = {
+    v.strip() for v in os.environ.get("WARM_AUDIENCE_EXCLUDE_ESTADIOS", "Semilla,En Crecimiento").split(",")
+    if v.strip()
+}
+
+# ---- Campaña de WhatsApp (conversión de Meta) ----
+# Desde cuándo contar los contactos que Ingrid sube A MANO en HubSpot para
+# esta campaña (ver is_whatsapp_manual_lead). Ajustable sin tocar el código
+# si la campaña empezó antes o después de esta fecha.
+WHATSAPP_CAMPAIGN_START_DATE = os.environ.get("WHATSAPP_CAMPAIGN_START_DATE", "2026-09-01")
+
+# Palabras (sin tildes, minúsculas) que, si aparecen en el nombre del Negocio
+# de un contacto que por lo demás calza con el patrón de "WhatsApp manual"
+# (ver is_whatsapp_manual_lead), indican que en realidad es OTRA gestión del
+# equipo de ventas y no un lead de esta campaña — ej. "Mitsubishi - Whatsapp
+# SALIENTES Mitsubishi" (un WhatsApp que el equipo mandó, no uno que llegó) o
+# "Crosland PERFILAMIENTO de Leads" (trabajo interno de perfilamiento, no una
+# conversación de la campaña). Encontrado y verificado con Fabián, sep-2026,
+# al revisar por qué el dashboard mostraba más registros de los que Ingrid
+# contaba en su export de HubSpot.
+WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS = [
+    k.strip().lower()
+    for k in os.environ.get("WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS", "saliente,perfilamiento").split(",")
+    if k.strip()
+]
+
+# Campo "Canal" (desplegable que ya existía en HubSpot, con la opción
+# "Whatsapp" entre otras) — la idea es que Ingrid lo marque a mano en cada
+# contacto que crea por una conversación de WhatsApp de esta campaña. Es la
+# señal MÁS confiable de todas porque es explícita (ella la elige a
+# propósito), así que manda por encima de la regla técnica de abajo:
+#   - Si Ingrid marcó "Canal = Whatsapp", el contacto SIEMPRE cuenta como
+#     WhatsApp, aunque la regla técnica no lo hubiera detectado.
+#   - Si Ingrid marcó cualquier OTRO valor de Canal (ej. "Referido",
+#     "Facebook"), el contacto NUNCA cuenta como WhatsApp, aunque la regla
+#     técnica sí lo hubiera marcado.
+#   - Si el campo Canal está vacío (todavía no se lo han puesto), se usa la
+#     regla técnica de siempre como respaldo.
+CANAL_PROPERTY = "canal"
+CANAL_WHATSAPP_VALUE = "whatsapp"
+
+
+def normalize_enum(raw_value, label_map):
+    """Normaliza el valor crudo que devuelve HubSpot para una lista
+    desplegable al texto exacto que espera el dashboard. Si no reconoce el
+    valor (por ejemplo, alguien agregó una opción nueva en HubSpot que no está
+    en este mapa), lo deja tal cual en vez de perderlo — así se nota en el
+    dashboard que hay que agregarlo aquí."""
+    if not raw_value:
+        return None
+    key = raw_value.strip().lower().replace(" ", "_").replace("-", "_")
+    return label_map.get(key, raw_value)
+
+
+def strip_accents(text):
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text)
+        if unicodedata.category(c) != "Mn"
+    )
+
+HUBSPOT_TOKEN = os.environ.get("HUBSPOT_TOKEN")
+API_BASE = "https://api.hubapi.com"
+
+SOURCE_PROPERTIES = [
+    "createdate",
+    "email",
+    "firstname",
+    "lastname",
+    "company",
+    "phone",
+    "mobilephone",
+    "hs_analytics_source",
+    "hs_analytics_source_data_1",
+    "hs_analytics_source_data_2",
+    "hs_object_source_label",
+    CANAL_PROPERTY,
+]
+
+
+def hubspot_post(path, body):
+    req = urllib.request.Request(
+        API_BASE + path,
+        data=json.dumps(body).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {HUBSPOT_TOKEN}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def hubspot_get(path):
+    req = urllib.request.Request(
+        API_BASE + path,
+        headers={"Authorization": f"Bearer {HUBSPOT_TOKEN}"},
+        method="GET",
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def date_to_epoch_ms(date_str):
+    dt = datetime.datetime.strptime(date_str, "%Y-%m-%d").replace(
+        tzinfo=datetime.timezone.utc
+    )
+    return int(dt.timestamp() * 1000)
+
+
+def chunked(lst, size):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
+
+
+def fetch_all_contacts(since_date_str):
+    """Trae todos los contactos creados desde since_date_str (paginado)."""
+    contacts = []
+    after = None
+    since_epoch = date_to_epoch_ms(since_date_str)
+    while True:
+        body = {
+            "filterGroups": [
+                {
+                    "filters": [
+                        {
+                            "propertyName": "createdate",
+                            "operator": "GTE",
+                            "value": str(since_epoch),
+                        }
+                    ]
+                }
+            ],
+            "properties": SOURCE_PROPERTIES,
+            "limit": 100,
+            "sorts": [{"propertyName": "createdate", "direction": "ASCENDING"}],
+        }
+        if after:
+            body["after"] = after
+        data = hubspot_post("/crm/v3/objects/contacts/search", body)
+        contacts.extend(data.get("results", []))
+        after = data.get("paging", {}).get("next", {}).get("after")
+        if not after:
+            break
+    return contacts
+
+
+def is_meta_lead(contact):
+    """True si alguna de las propiedades de fuente contiene una de las
+    palabras clave configuradas (ej. 'facebook', 'prospectos b2b')."""
+    props = contact.get("properties", {})
+    haystack = " ".join(
+        str(props.get(p) or "").lower()
+        for p in ("hs_analytics_source", "hs_analytics_source_data_1", "hs_analytics_source_data_2")
+    )
+    return any(kw in haystack for kw in SOURCE_MATCH_KEYWORDS)
+
+
+def is_whatsapp_manual_lead(contact, since_date_str):
+    """True si el contacto es uno de los que Ingrid sube A MANO en HubSpot
+    para la campaña de WhatsApp con conversión de Meta.
+
+    Se reconocen por: 'Fuente original' (hs_analytics_source) = "OFFLINE"
+    ("Fuentes sin conexión" en el HubSpot en español) Y creados directamente
+    desde la interfaz de HubSpot, no por un formulario ni una integración
+    (hs_object_source_label = "CRM_UI").
+
+    AVISO: esto se verificó a mano, abriendo varios contactos reales en
+    HubSpot (setiembre 2026) — los que Ingrid crea manualmente para esta
+    campaña NO quedan con 'Redes sociales de pago' (PAID_SOCIAL) como podría
+    parecer lógico, sino con 'Fuentes sin conexión' (OFFLINE). Si en algún
+    momento Ingrid cambia cómo los crea, hay que volver a verificar esto."""
+    props = contact.get("properties", {})
+    if (props.get("hs_analytics_source") or "").upper() != "OFFLINE":
+        return False
+    if (props.get("hs_object_source_label") or "").upper() != "CRM_UI":
+        return False
+    createdate = props.get("createdate")
+    if not createdate:
+        return False
+    since_epoch = date_to_epoch_ms(since_date_str)
+    dt = datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
+    return int(dt.timestamp() * 1000) >= since_epoch
+
+
+def canal_value(contact):
+    return (contact.get("properties", {}).get(CANAL_PROPERTY) or "").strip()
+
+
+def canal_says_whatsapp(contact):
+    return canal_value(contact).lower() == CANAL_WHATSAPP_VALUE
+
+
+def canal_says_otro_canal(contact):
+    """True si Ingrid marcó el Canal a mano con algo que NO es Whatsapp
+    (ej. 'Referido'). Si está vacío, no dice nada todavía — no es esto."""
+    v = canal_value(contact)
+    return bool(v) and v.lower() != CANAL_WHATSAPP_VALUE
+
+
+def fetch_contact_deal_names(contact_ids):
+    """Trae, para cada contact_id, los nombres de los Negocios asociados.
+    Se usa SOLO para descartar falsos positivos de la campaña de WhatsApp
+    (ver WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS) antes de decidir el conteo
+    final — es una versión liviana de fetch_contact_deal_status (que trae
+    mucho más detalle y se usa más abajo para toda la tabla de 'Estado de
+    cada registro'). Best-effort: si falla, no se descarta a nadie por este
+    motivo en vez de romper el script."""
+    names_by_contact = {cid: [] for cid in contact_ids}
+    if not contact_ids:
+        return names_by_contact
+    try:
+        contact_to_deal_ids = {}
+        for batch in chunked(contact_ids, 100):
+            body = {"inputs": [{"id": cid} for cid in batch]}
+            resp = hubspot_post("/crm/v4/associations/contacts/deals/batch/read", body)
+            for row in resp.get("results", []):
+                from_id = row.get("from", {}).get("id")
+                deal_ids = [t.get("toObjectId") for t in row.get("to", [])]
+                if from_id and deal_ids:
+                    contact_to_deal_ids[from_id] = deal_ids
+
+        all_deal_ids = sorted({str(d) for ids in contact_to_deal_ids.values() for d in ids})
+        deal_names = {}
+        for batch in chunked(all_deal_ids, 100):
+            body = {"inputs": [{"id": did} for did in batch], "properties": ["dealname"]}
+            resp = hubspot_post("/crm/v3/objects/deals/batch/read", body)
+            for d in resp.get("results", []):
+                deal_names[d["id"]] = d.get("properties", {}).get("dealname") or ""
+
+        for cid, deal_ids in contact_to_deal_ids.items():
+            names_by_contact[cid] = [deal_names[str(d)] for d in deal_ids if str(d) in deal_names]
+    except Exception as e:
+        print(f"AVISO: no se pudo revisar nombres de negocio para filtrar falsos positivos de WhatsApp: {e}", file=sys.stderr)
+    return names_by_contact
+
+
+def has_excluded_dealname(deal_names):
+    haystack = strip_accents(" ".join(deal_names).lower())
+    return any(kw in haystack for kw in WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS)
+
+
+def fetch_closed_deals_count(since_date_str):
+    """Best-effort: cuenta negocios en la etapa 'cerrado ganado' desde since_date.
+    Si el pipeline no coincide o la cuenta no usa Negocios, no rompe el script."""
+    try:
+        since_epoch = date_to_epoch_ms(since_date_str)
+        body = {
+            "filterGroups": [
+                {
+                    "filters": [
+                        {
+                            "propertyName": "dealstage",
+                            "operator": "EQ",
+                            "value": CLOSEDWON_STAGE,
+                        },
+                        {
+                            "propertyName": "closedate",
+                            "operator": "GTE",
+                            "value": str(since_epoch),
+                        },
+                    ]
+                }
+            ],
+            "properties": ["dealstage", "closedate"],
+            "limit": 100,
+        }
+        data = hubspot_post("/crm/v3/objects/deals/search", body)
+        return {"count": len(data.get("results", [])), "available": True}
+    except Exception as e:
+        return {"count": None, "available": False, "error": str(e)}
+
+
+def build_whatsapp_manual_detail(leads_detail):
+    """Arma el detalle de leads de WhatsApp a partir de leads_detail — es
+    decir, el MISMO conjunto que ya se decidió en whatsapp_manual_ids (con
+    la señal del Canal y el descarte por nombre de Negocio ya aplicados),
+    en vez de volver a consultarlo aparte con su propio criterio.
+
+    ANTES esto se calculaba con una consulta independiente a HubSpot que
+    repetía la regla técnica vieja (sin Canal ni descarte por nombre de
+    Negocio) — por eso el número acá podía no coincidir con el resto del
+    dashboard, que es justo el problema que se revisó con Fabián en
+    setiembre 2026."""
+    detail = [
+        {
+            "name": r["name"],
+            "email": r["email"],
+            "phone": r["phone"],
+            "company": r["company"],
+            "created_date": r["created_date"],
+        }
+        for r in leads_detail
+        if r["lead_source"] == "WhatsApp (conversión)"
+    ]
+    detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
+    return {"count": len(detail), "detail": detail, "available": True}
+
+
+def fetch_deal_stage_labels():
+    """Devuelve {stage_id: label} juntando las etapas de todos los pipelines
+    de Negocios. Si falla, devuelve {} y en el dashboard se muestra el id tal cual."""
+    try:
+        data = hubspot_get("/crm/v3/pipelines/deals")
+        labels = {}
+        for pipeline in data.get("results", []):
+            for stage in pipeline.get("stages", []):
+                labels[stage.get("id")] = stage.get("label", stage.get("id"))
+        return labels
+    except Exception as e:
+        print(f"AVISO: no se pudieron traer las etapas de negocio: {e}", file=sys.stderr)
+        return {}
+
+
+def fetch_contact_deal_status(contact_ids, stage_labels):
+    """Para cada contact_id, revisa si tiene al menos un Negocio asociado y
+    en qué etapa está. Best-effort: si algo falla, todos quedan como
+    'sin dato' en vez de romper el script completo."""
+    status_by_contact = {cid: None for cid in contact_ids}
+    if not contact_ids:
+        return status_by_contact
+
+    try:
+        # 1) Asociaciones contacto -> negocio (por lotes de 100)
+        contact_to_deal_ids = {}
+        for batch in chunked(contact_ids, 100):
+            body = {"inputs": [{"id": cid} for cid in batch]}
+            resp = hubspot_post("/crm/v4/associations/contacts/deals/batch/read", body)
+            for row in resp.get("results", []):
+                from_id = row.get("from", {}).get("id")
+                deal_ids = [t.get("toObjectId") for t in row.get("to", [])]
+                if from_id and deal_ids:
+                    contact_to_deal_ids[from_id] = deal_ids
+
+        all_deal_ids = sorted({str(d) for ids in contact_to_deal_ids.values() for d in ids})
+
+        # 2) Detalle de cada negocio (etapa, nombre, fecha de creación, y la
+        # tipificación manual de Ingrid: Estadio del Lead y Nivel de Urgencia)
+        deal_info = {}
+        deal_properties = [
+            "dealname", "dealstage", "createdate",
+            ESTADIO_LEAD_PROPERTY, NIVEL_URGENCIA_PROPERTY, DISCARD_REASON_PROPERTY,
+        ]
+        for batch in chunked(all_deal_ids, 100):
+            body = {
+                "inputs": [{"id": did} for did in batch],
+                "properties": deal_properties,
+            }
+            resp = hubspot_post("/crm/v3/objects/deals/batch/read", body)
+            for d in resp.get("results", []):
+                deal_info[d["id"]] = d.get("properties", {})
+
+        # 3) Combina: para cada contacto, toma el negocio más reciente asociado
+        for cid, deal_ids in contact_to_deal_ids.items():
+            candidate_deals = [
+                (str(d), deal_info[str(d)]) for d in deal_ids if str(d) in deal_info
+            ]
+            if not candidate_deals:
+                continue
+            candidate_deals.sort(key=lambda pair: pair[1].get("createdate") or "", reverse=True)
+            best_id, best = candidate_deals[0]
+            stage_id = best.get("dealstage")
+            status_by_contact[cid] = {
+                "deal_id": best_id,
+                "deal_name": best.get("dealname"),
+                "stage_label": stage_labels.get(stage_id, stage_id),
+                "estadio_lead": normalize_enum(best.get(ESTADIO_LEAD_PROPERTY), ESTADIO_LEAD_LABELS),
+                "nivel_urgencia": normalize_enum(best.get(NIVEL_URGENCIA_PROPERTY), NIVEL_URGENCIA_LABELS),
+                "discard_reason": (best.get(DISCARD_REASON_PROPERTY) or "").strip() or None,
+            }
+    except Exception as e:
+        print(f"AVISO: no se pudo revisar el estado de negocios por lead: {e}", file=sys.stderr)
+
+    return status_by_contact
+
+
+def strip_note_html(body):
+    """Las notas de HubSpot vienen con HTML simple (<p>, <br>, etc.). Esto las
+    deja como texto plano, legible en el dashboard."""
+    if not body:
+        return ""
+    text = re.sub(r"<br\s*/?>", "\n", body, flags=re.IGNORECASE)
+    text = re.sub(r"</p\s*>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    return text.strip()
+
+
+def fetch_notes_for_deals(deal_ids):
+    """Para cada deal_id, trae la nota más reciente asociada al negocio (la
+    que Ingrid escribe al tipificar). Best-effort: si el token no tiene el
+    permiso de Notes o algo falla, todos quedan sin nota en vez de romper
+    el script completo."""
+    notes_by_deal = {did: None for did in deal_ids}
+    if not deal_ids:
+        return notes_by_deal
+
+    try:
+        # 1) Asociaciones negocio -> nota (por lotes de 100)
+        deal_to_note_ids = {}
+        for batch in chunked(deal_ids, 100):
+            body = {"inputs": [{"id": did} for did in batch]}
+            resp = hubspot_post("/crm/v4/associations/deals/notes/batch/read", body)
+            for row in resp.get("results", []):
+                from_id = row.get("from", {}).get("id")
+                note_ids = [t.get("toObjectId") for t in row.get("to", [])]
+                if from_id and note_ids:
+                    deal_to_note_ids[from_id] = note_ids
+
+        all_note_ids = sorted({str(n) for ids in deal_to_note_ids.values() for n in ids})
+
+        # 2) Detalle de cada nota (texto y fecha)
+        note_info = {}
+        for batch in chunked(all_note_ids, 100):
+            body = {
+                "inputs": [{"id": nid} for nid in batch],
+                "properties": ["hs_note_body", "hs_timestamp"],
+            }
+            resp = hubspot_post("/crm/v3/objects/notes/batch/read", body)
+            for n in resp.get("results", []):
+                note_info[n["id"]] = n.get("properties", {})
+
+        # 3) Combina: para cada negocio, toma la nota más reciente
+        for did, note_ids in deal_to_note_ids.items():
+            candidate_notes = [note_info[str(n)] for n in note_ids if str(n) in note_info]
+            if not candidate_notes:
+                continue
+            candidate_notes.sort(key=lambda p: p.get("hs_timestamp") or "", reverse=True)
+            notes_by_deal[did] = strip_note_html(candidate_notes[0].get("hs_note_body"))
+    except Exception as e:
+        print(f"AVISO: no se pudieron traer las notas de los negocios: {e}", file=sys.stderr)
+
+    return notes_by_deal
+
+
+def build_leads_by_day(contacts):
+    counts = {}
+    for c in contacts:
+        createdate = c.get("properties", {}).get("createdate")
+        if not createdate:
+            continue
+        dt = datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
+        day = dt.astimezone(LIMA_TZ).date().isoformat()
+        counts[day] = counts.get(day, 0) + 1
+    return [{"date": d, "count": counts[d]} for d in sorted(counts)]
+
+
+def build_leads_by_month(leads_by_day, campaign_start_str):
+    """Agrupa los leads por mes calendario, y calcula la meta de cada mes
+    (prorrateada para el primer mes, si la campaña empezó a mitad de mes)."""
+    campaign_start = datetime.date.fromisoformat(campaign_start_str)
+    month_counts = {}
+    for row in leads_by_day:
+        month_key = row["date"][:7]  # "YYYY-MM"
+        month_counts[month_key] = month_counts.get(month_key, 0) + row["count"]
+
+    months = []
+    for month_key in sorted(month_counts):
+        year, month = (int(x) for x in month_key.split("-"))
+        first_day = datetime.date(year, month, 1)
+        if month == 12:
+            next_month_first = datetime.date(year + 1, 1, 1)
+        else:
+            next_month_first = datetime.date(year, month + 1, 1)
+        days_in_month = (next_month_first - first_day).days
+
+        is_partial = first_day < campaign_start < next_month_first
+        active_days = days_in_month
+        if is_partial:
+            active_days = (next_month_first - campaign_start).days
+
+        goal = round(MONTHLY_GOAL * active_days / days_in_month, 1)
+
+        months.append({
+            "month": month_key,
+            "label": first_day.strftime("%B %Y").capitalize(),
+            "leads": month_counts[month_key],
+            "goal": goal,
+            "is_partial": is_partial,
+        })
+    return months
+
+
+def build_week_ranges(campaign_start_str, today):
+    """Semanas de lunes a domingo, desde la semana de inicio de campaña
+    hasta la semana actual (incluida, aunque esté en curso)."""
+    campaign_start = datetime.date.fromisoformat(campaign_start_str)
+    first_monday = campaign_start - datetime.timedelta(days=campaign_start.weekday())
+    weeks = []
+    cursor = first_monday
+    while cursor <= today:
+        week_end = cursor + datetime.timedelta(days=6)
+        weeks.append({"week_start": cursor.isoformat(), "week_end": week_end.isoformat()})
+        cursor += datetime.timedelta(days=7)
+    return weeks
+
+
+def build_leads_by_week(leads_by_day, weeks):
+    by_week = []
+    for w in weeks:
+        leads = sum(
+            r["count"] for r in leads_by_day
+            if w["week_start"] <= r["date"] <= w["week_end"]
+        )
+        by_week.append({**w, "leads": leads, "goal": WEEKLY_GOAL})
+    return by_week
+
+
+def main():
+    if not HUBSPOT_TOKEN:
+        print("ERROR: falta la variable de entorno HUBSPOT_TOKEN", file=sys.stderr)
+        sys.exit(1)
+
+    now = datetime.datetime.now(datetime.timezone.utc)
+    today = now.astimezone(LIMA_TZ).date()
+    month_start = today.replace(day=1).isoformat()
+
+    try:
+        all_contacts = fetch_all_contacts(CAMPAIGN_START_DATE)
+    except urllib.error.HTTPError as e:
+        print(f"ERROR al llamar a HubSpot: {e.code} {e.read().decode()}", file=sys.stderr)
+        sys.exit(1)
+
+    # ---- Leads del formulario de Meta Ads + leads manuales de la campaña de
+    # WhatsApp (los que Ingrid sube a mano) — Fabián decidió que ambos cuenten
+    # juntos en el total de "Registros" del dashboard. ----
+    #
+    # El conteo de WhatsApp se arma en 3 pasos (revisado con Fabián, sep-2026,
+    # después de encontrar que el dashboard mostraba más registros de los que
+    # Ingrid contaba en su export de HubSpot):
+    #   1) Candidatos: la regla técnica de siempre (creado a mano, sin
+    #      formulario, desde WHATSAPP_CAMPAIGN_START_DATE) MÁS cualquier
+    #      contacto donde Ingrid ya marcó el Canal como "Whatsapp" a mano
+    #      (aunque la regla técnica no lo hubiera agarrado).
+    #   2) Se saca a quien Ingrid marcó el Canal con otro valor (ella ya dijo
+    #      de dónde vino, no hay que adivinar).
+    #   3) De los que quedan, se saca a quien tiene un Negocio con nombre que
+    #      indica que es OTRA gestión de ventas y no de esta campaña (ej.
+    #      "... Whatsapp SALIENTES ..." o "... PERFILAMIENTO de Leads ...") —
+    #      salvo que Ingrid ya lo haya marcado a mano como Whatsapp en el
+    #      Canal, en cuyo caso se respeta su palabra por encima del nombre
+    #      del Negocio.
+    technical_candidate_ids = {
+        c["id"] for c in all_contacts
+        if is_whatsapp_manual_lead(c, WHATSAPP_CAMPAIGN_START_DATE) or canal_says_whatsapp(c)
+    }
+    canal_whatsapp_ids = {c["id"] for c in all_contacts if canal_says_whatsapp(c)}
+    canal_otro_ids = {c["id"] for c in all_contacts if canal_says_otro_canal(c)}
+    technical_candidate_ids -= canal_otro_ids
+
+    deal_names_by_contact = fetch_contact_deal_names(sorted(technical_candidate_ids))
+    excluded_by_dealname_ids = {
+        cid for cid in technical_candidate_ids
+        if cid not in canal_whatsapp_ids
+        and has_excluded_dealname(deal_names_by_contact.get(cid, []))
+    }
+    if excluded_by_dealname_ids:
+        print(
+            f"AVISO: se descartaron {len(excluded_by_dealname_ids)} contacto(s) de la campaña de "
+            f"WhatsApp por tener un Negocio de otra gestión (ver WHATSAPP_EXCLUDE_DEALNAME_KEYWORDS): "
+            f"{sorted(excluded_by_dealname_ids)}"
+        )
+    whatsapp_manual_ids = technical_candidate_ids - excluded_by_dealname_ids
+
+    contacts = [
+        c for c in all_contacts
+        if is_meta_lead(c) or c["id"] in whatsapp_manual_ids
+    ]
+    excluded = len(all_contacts) - len(contacts)
+    print(
+        f"Contactos totales en el rango: {len(all_contacts)} · de Meta (formulario): "
+        f"{len(contacts) - len(whatsapp_manual_ids)} · manuales de WhatsApp: {len(whatsapp_manual_ids)} · "
+        f"excluidos: {excluded}"
+    )
+
+    leads_by_day = build_leads_by_day(contacts)
+    total_leads = len(contacts)
+
+    current_month_leads = sum(
+        d["count"] for d in leads_by_day if d["date"] >= month_start
+    )
+
+    # Semana actual: lunes a domingo, en curso
+    week_start = (today - datetime.timedelta(days=today.weekday())).isoformat()
+    current_week_leads = sum(
+        d["count"] for d in leads_by_day if d["date"] >= week_start
+    )
+
+    closed_deals = fetch_closed_deals_count(month_start)
+
+    # ---- Estado de negocio por lead (nombre/correo visibles a propósito — ver aviso arriba) ----
+    stage_labels = fetch_deal_stage_labels()
+    contact_ids = [c["id"] for c in contacts]
+    deal_status_by_contact = fetch_contact_deal_status(contact_ids, stage_labels)
+
+    # ---- Nota que Ingrid deja en el negocio al tipificar ----
+    deal_ids_with_status = sorted({
+        status["deal_id"] for status in deal_status_by_contact.values()
+        if status and status.get("deal_id")
+    })
+    notes_by_deal = fetch_notes_for_deals(deal_ids_with_status)
+
+    leads_detail = []
+    for c in contacts:
+        props = c.get("properties", {})
+        full_name = " ".join(x for x in [props.get("firstname"), props.get("lastname")] if x).strip()
+        status = deal_status_by_contact.get(c["id"])
+        createdate = props.get("createdate")
+        created_date_lima = (
+            datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
+            .astimezone(LIMA_TZ).date().isoformat()
+            if createdate else None
+        )
+        leads_detail.append({
+            "name": full_name or "(sin nombre)",
+            "email": props.get("email") or "(sin correo)",
+            "phone": props.get("phone") or props.get("mobilephone") or None,
+            "company": props.get("company") or "(sin empresa)",
+            "lead_source": "WhatsApp (conversión)" if c["id"] in whatsapp_manual_ids else "Formulario (Meta Ads)",
+            "created_date": created_date_lima,
+            "has_deal": status is not None,
+            "deal_stage": status.get("stage_label") if status else None,
+            "deal_name": status.get("deal_name") if status else None,
+            "deal_note": notes_by_deal.get(status.get("deal_id")) if status else None,
+            "estadio_lead": status.get("estadio_lead") if status else None,
+            "nivel_urgencia": status.get("nivel_urgencia") if status else None,
+            "discard_reason": status.get("discard_reason") if status else None,
+        })
+    # Más recientes primero
+    leads_detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
+    leads_with_deal = sum(1 for r in leads_detail if r["has_deal"])
+
+    # ---- Reuniones automáticas, según la tipificación (etapa del negocio) que pone Ingrid ----
+    reuniones_auto = sum(
+        1 for r in leads_detail
+        if r["has_deal"] and any(
+            kw in strip_accents((r["deal_stage"] or "").lower())
+            for kw in REUNION_MATCH_KEYWORDS
+        )
+    )
+
+    # ---- Distribución de estado de leads (para la barra/torta de estado) ----
+    status_counts = {}
+    for r in leads_detail:
+        label = r["deal_stage"] if r["has_deal"] and r["deal_stage"] else "Sin negocio"
+        status_counts[label] = status_counts.get(label, 0) + 1
+    leads_status_breakdown = [
+        {"label": label, "count": count}
+        for label, count in sorted(status_counts.items(), key=lambda kv: -kv[1])
+    ]
+
+    # ---- Progreso mensual y semanal ----
+    leads_by_month = build_leads_by_month(leads_by_day, CAMPAIGN_START_DATE)
+    weeks = build_week_ranges(CAMPAIGN_START_DATE, today)
+    leads_by_week = build_leads_by_week(leads_by_day, weeks)
+
+    # ---- Audiencia disponible para el envío "tibio" (ver comentario junto a
+    # WARM_AUDIENCE_EXCLUDE_ESTADIOS). Se excluyen también los leads de la
+    # campaña de WhatsApp: ese envío tibio es para reenganchar por correo a
+    # quien llegó por el formulario de Meta Ads, no tiene que ver con la
+    # campaña de conversión a WhatsApp. ----
+    warm_audience_detail = [
+        {
+            "name": r["name"],
+            "email": r["email"],
+            "company": r["company"],
+            "estadio_lead": r["estadio_lead"],
+            "nivel_urgencia": r["nivel_urgencia"],
+        }
+        for r in leads_detail
+        if r["estadio_lead"]
+        and r["estadio_lead"] not in WARM_AUDIENCE_EXCLUDE_ESTADIOS
+        and r["lead_source"] != "WhatsApp (conversión)"
+    ]
+
+    # ---- Campaña de WhatsApp: contactos que Ingrid ya subió a mano ----
+    whatsapp_manual = build_whatsapp_manual_detail(leads_detail)
+
+    data = {
+        "updated_at": now.isoformat(),
+        "campaign_start": CAMPAIGN_START_DATE,
+        "monthly_goal": MONTHLY_GOAL,
+        "weekly_goal": WEEKLY_GOAL,
+        "closed_deals_goal": CLOSED_DEALS_GOAL,
+        "total_leads": total_leads,
+        "leads_whatsapp_count": len(whatsapp_manual_ids),
+        "leads_by_day": leads_by_day,
+        "leads_by_month": leads_by_month,
+        "leads_by_week": leads_by_week,
+        "current_month_leads": current_month_leads,
+        "current_month_label": today.strftime("%B %Y").capitalize(),
+        "current_week_leads": current_week_leads,
+        "closed_deals": closed_deals,
+        "leads_with_deal": leads_with_deal,
+        "leads_detail": leads_detail,
+        "reuniones_auto": reuniones_auto,
+        "leads_status_breakdown": leads_status_breakdown,
+        "warm_audience_exclude_estadios": sorted(WARM_AUDIENCE_EXCLUDE_ESTADIOS),
+        "warm_audience_count": len(warm_audience_detail),
+        "warm_audience_detail": warm_audience_detail,
+        "whatsapp_manual_start_date": WHATSAPP_CAMPAIGN_START_DATE,
+        "whatsapp_manual_contacts": whatsapp_manual,
+    }
+
+    with open("data.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    print(
+        f"OK: {total_leads} leads totales, {current_month_leads} este mes, "
+        f"{current_week_leads} esta semana, {leads_with_deal} con negocio creado, "
+        f"{reuniones_auto} con reunión (automático). "
+        f"Audiencia tibia disponible: {len(warm_audience_detail)}. "
+        f"Contactos manuales de WhatsApp: {whatsapp_manual.get('count')}."
+    )
+
+
+if __name__ == "__main__":
+    main()
