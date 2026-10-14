@@ -217,6 +217,42 @@
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 
   /* ---- Pestaña principal (rediseño oct-2026) ---- */
+.cv-filters{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px;padding:12px 16px}
+.cv-filters select{max-width:100%;background:var(--surface-2);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:6px 8px}
+.cv-group-title{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 8px}
+.cv-kpi-row{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;display:grid;gap:10px}
+.tile-value.cv-bad{color:var(--critical)}.tile-value.cv-good{color:var(--good)}
+.cv-compare{width:100%;border-collapse:collapse;font-size:13px}
+.cv-compare th,.cv-compare td{padding:7px 10px;border-bottom:1px solid var(--border);text-align:left}
+.cv-compare td:not(:first-child),.cv-compare th:not(:first-child){text-align:right}
+.cv-groups{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--text-muted);margin-bottom:10px}
+.cv-tree-wrap{max-height:560px;overflow:auto}
+.cv-tree{border-collapse:separate;border-spacing:0;font-size:12.5px;white-space:nowrap}
+.cv-tree th,.cv-tree td{padding:7px 10px;border-bottom:1px solid var(--border);text-align:right}
+.cv-tree th{position:sticky;top:0;background:var(--surface);z-index:2}
+.cv-tree .cv-sticky{position:sticky;left:0;background:var(--surface);text-align:left;z-index:1;max-width:340px;overflow:hidden;text-overflow:ellipsis}
+.cv-tree th.cv-sticky{z-index:3}
+.cv-tree tr.cv-l0 td{font-weight:700}
+.cv-tree tr.cv-l1 td.cv-sticky,.cv-tree tr.cv-l1 td{background:#1a1229}
+.cv-tree tr.cv-l2 td.cv-sticky,.cv-tree tr.cv-l2 td{background:var(--surface-2)}
+.cv-sort{cursor:pointer}.cv-sort:hover{color:var(--orange)}
+.cv-tog{background:none;border:0;color:var(--orange);cursor:pointer;width:20px;font-size:12px}.cv-tog-sp{display:inline-block;width:20px}
+.cv-adlink{background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline dotted;padding:0}
+.cv-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--text-muted);margin-bottom:12px}
+.cv-q-row{display:grid;grid-template-columns:minmax(140px,280px) 1fr 72px;gap:10px;align-items:center;margin-bottom:8px}
+.cv-q-name{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cv-q-bar{display:flex;gap:2px;height:22px;border-radius:6px;overflow:hidden}
+.cv-q-bar span{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#120c1f;min-width:2px}
+.cv-q-lead{font-size:12px;color:var(--good);text-align:right}
+.cv-ad-top{display:grid;grid-template-columns:180px 1fr;gap:14px;margin-bottom:6px}
+.cv-ad-img{width:180px;height:180px;object-fit:cover;border-radius:10px;background:var(--surface-2)}
+.cv-ad-noimg{display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:12px}
+.cv-ad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.cv-ad-m{background:var(--surface-2);border-radius:8px;padding:7px 9px;display:flex;flex-direction:column;font-size:11px;color:var(--text-muted)}
+.cv-ad-m strong{font-size:14px;color:var(--text-primary)}
+.cv-note{font-size:12px;margin-top:6px;white-space:normal;max-width:320px}
+@media (max-width:760px){#cvCampaign{max-width:calc(100vw - 110px)}.cv-filters .date-filter-inputs{flex-wrap:wrap}.cv-q-row{grid-template-columns:1fr;gap:4px}.cv-q-lead{text-align:left}.cv-ad-top{grid-template-columns:1fr}.cv-filters{position:static}}
+
 .cal-toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}
 .cal-nav{display:flex;align-items:center;gap:8px}.cal-nav h3{margin:0;min-width:170px;text-align:center;font-size:18px}
 .cal-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -268,6 +304,7 @@
 .note-btn{font:inherit;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--purple-2,#7c4dff);background:transparent;color:inherit;cursor:pointer;white-space:nowrap}
 .note-btn:hover{background:rgba(124,77,255,.15)}
 .note-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.cv-filters{z-index:20}
 .note-modal[hidden]{display:none}
 .note-modal-card{background:var(--surface);border:1px solid var(--border);color:var(--text-primary);border-radius:14px;max-width:560px;width:100%;max-height:80vh;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.4)}
 .note-modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(127,127,127,.2)}
@@ -521,124 +558,61 @@
   </div>
 
   <div class="tab-panel" id="tab-campaign">
+  <div class="cv-filters chart-card">
+    <div class="date-filter-presets" id="cvPresets">
+      <button type="button" class="filter-btn" data-preset="7">Últimos 7 días</button>
+      <button type="button" class="filter-btn" data-preset="30">Últimos 30 días</button>
+      <button type="button" class="filter-btn" data-preset="month">Este mes</button>
+      <button type="button" class="filter-btn active" data-preset="all">Todo el período</button>
+    </div>
+    <div class="date-filter-inputs">
+      <label>Desde <input type="date" id="cvFrom"></label>
+      <label>Hasta <input type="date" id="cvTo"></label>
+      <label>Canal
+        <select id="cvChannel"><option value="cap">Captación (Formulario + WhatsApp)</option><option value="form">Formulario</option><option value="wa">WhatsApp</option><option value="all">Todo (incluye Awareness)</option></select>
+      </label>
+      <label>Campaña <select id="cvCampaign"><option value="__all__">Todas</option></select></label>
+    </div>
+  </div>
 
   <section>
-    <div class="section-head">
-      <h2>Análisis de campaña</h2>
-      <span class="hint">CPL, CTR, impresiones, inversión, frecuencia, alcance y CPM · elige el nivel, la campaña y el rango de fechas</span>
-    </div>
+    <div class="section-head"><h2>Resumen del rango</h2><span class="hint" id="cvSummaryHint"></span></div>
+    <div id="cvKpis"></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Formulario vs WhatsApp</h2><span class="hint">Las mismas métricas para los dos canales, en el rango elegido</span></div>
+    <div class="chart-card"><div class="table-wrap"><table class="cv-compare" id="cvCompare"></table></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Detalle por campaña, conjunto y anuncio</h2><span class="hint">Clic en ▸ para abrir los conjuntos y anuncios · clic en un encabezado para ordenar · clic en un anuncio para ver su ficha</span></div>
     <div class="chart-card">
-      <div class="date-filter-bar" style="margin-bottom:14px;">
-        <div class="date-filter-presets" id="campaignDatePresets">
-          <button type="button" class="filter-btn active" data-preset="all">Todo el período</button>
-          <button type="button" class="filter-btn" data-preset="7">Últimos 7 días</button>
-          <button type="button" class="filter-btn" data-preset="30">Últimos 30 días</button>
-          <button type="button" class="filter-btn" data-preset="month">Este mes</button>
-        </div>
-        <div class="date-filter-inputs">
-          <label>Desde <input type="date" id="campaignDateFrom"></label>
-          <label>Hasta <input type="date" id="campaignDateTo"></label>
-          <label>Campaña
-            <select id="campaignFilterSelect">
-              <option value="__all__">Todas las campañas</option>
-            </select>
-          </label>
-        </div>
-      </div>
-      <div class="date-filter-presets" id="campaignLevelToggle" style="margin-bottom:14px;">
-        <button type="button" class="filter-btn active" data-level="campaign">Campaña</button>
-        <button type="button" class="filter-btn" data-level="adset">Conjunto de anuncios</button>
-        <button type="button" class="filter-btn" data-level="ad">Anuncio</button>
-      </div>
-      <div class="table-wrap scroll-y">
-        <table id="campaignAnalysisTable">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Estado</th>
-              <th class="col-campaign-name">Campaña</th>
-              <th>Inversión</th>
-              <th>Impresiones</th>
-              <th>Alcance</th>
-              <th>Frecuencia</th>
-              <th>CPM</th>
-              <th>Clics</th>
-              <th>CTR</th>
-              <th>Registros</th>
-              <th>CPL</th>
-              <th title="Clics en el enlace: cada uno abre el formulario instantáneo">Abrieron formulario</th>
-              <th title="Abrieron el formulario y no lo enviaron">Abandono</th>
-            </tr>
-          </thead>
-          <tbody id="campaignAnalysisTableBody"></tbody>
-        </table>
-      </div>
-      <p class="hint" id="campaignAnalysisHint" style="margin-top:10px;"></p>
+      <div class="cv-groups" id="cvGroups"></div>
+      <div class="table-wrap cv-tree-wrap"><table class="cv-tree" id="cvTree"></table></div>
+      <p class="hint" id="cvTreeHint" style="margin-top:8px;"></p>
     </div>
   </section>
 
   <section>
-    <div class="section-head">
-      <h2>Tipificación por conjunto de anuncios</h2>
-      <span class="hint">De qué conjunto de anuncios salió cada registro Descartado, Contactado o con Reunión Agendada — según la tipificación de HubSpot · respeta el mismo rango de fechas y campaña elegidos arriba</span>
-    </div>
-    <div class="chart-card">
-      <div class="table-wrap scroll-y">
-        <table id="adsetStatusTable">
-          <thead><tr id="adsetStatusTableHead"></tr></thead>
-          <tbody id="adsetStatusTableBody"></tbody>
-        </table>
-      </div>
-      <p class="hint" id="adsetStatusHint" style="margin-top:10px;"></p>
-    </div>
+    <div class="section-head"><h2>Calidad por conjunto de anuncios</h2><span class="hint">Qué pasó con los registros de cada conjunto según HubSpot · pasa el mouse para ver los motivos</span></div>
+    <div class="chart-card"><div id="cvQuality"></div></div>
   </section>
 
   <section>
-    <div class="section-head">
-      <h2>Rendimiento de cada anuncio</h2>
-      <span class="hint">Haz clic en ▸ para ver el título, texto y descripción de cada pieza · ordenado por gasto</span>
-    </div>
+    <div class="section-head"><h2>Tendencia día a día</h2><span class="hint">Una métrica a la vez</span></div>
     <div class="chart-card">
-      <div class="table-wrap scroll-y">
-        <table>
-          <thead><tr><th></th><th>Anuncio</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Registros</th><th>Costo/registro</th></tr></thead>
-          <tbody id="adsPerformanceTableBody"></tbody>
-        </table>
-      </div>
+      <div class="date-filter-presets" id="cvTrendMetric" style="margin-bottom:12px;"></div>
+      <div id="cvTrend"></div>
     </div>
   </section>
 
-  <section>
-    <div class="section-head">
-      <h2>Campaña de Formulario (Meta)</h2>
-      <span class="hint">Números reales de Meta Ads para la campaña de formulario — comparados con los registros que sí llegaron a crearse en HubSpot</span>
+  <div class="note-modal" id="cvAdModal" hidden>
+    <div class="note-modal-card cal-modal-wide" role="dialog" aria-modal="true" aria-labelledby="cvAdTitle">
+      <div class="note-modal-head"><strong id="cvAdTitle">Anuncio</strong><button type="button" class="note-modal-close" data-cvclose="1" aria-label="Cerrar">×</button></div>
+      <div class="note-modal-body" id="cvAdBody"></div>
     </div>
-    <div class="kpi-row" id="formCampaignKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="formCampaignCallout"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Campaña WhatsApp (Meta)</h2>
-      <span class="hint">Números reales de Meta Ads para la campaña de conversión a WhatsApp — comparados con los contactos que Ingrid ya subió a mano en HubSpot</span>
-    </div>
-    <div class="kpi-row" id="whatsappKpiRow"></div>
-    <div class="chart-card">
-      <div class="callout" id="whatsappCallout" style="margin-bottom:14px;"></div>
-      <button class="tagdist-toggle" type="button" id="whatsappClientsToggle" aria-expanded="false">▸ Ver contactos subidos por Ingrid</button>
-      <div class="tagdist-clients" id="whatsappClientsList" style="display:none;">
-        <div class="table-wrap scroll-y">
-          <table>
-            <thead><tr><th>Fecha</th><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Empresa</th></tr></thead>
-            <tbody id="whatsappTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
   </div>
 
   <div class="tab-panel" id="tab-organic">
@@ -994,7 +968,6 @@
   [
     ['estadioClientsToggle', 'estadioClientsList'],
     ['urgenciaClientsToggle', 'urgenciaClientsList'],
-    ['whatsappClientsToggle', 'whatsappClientsList'],
   ].forEach(([btnId, panelId]) => {
     const btn = document.getElementById(btnId);
     const panel = document.getElementById(panelId);
@@ -1024,8 +997,6 @@
     render(leadsData, metaData, funnelCfg || {});
     renderOrganic(organicData);
     drawStoryTab(leadsData, metaData, storyData);
-    renderFormCampaign(leadsData, metaData);
-    renderWhatsappCampaign(leadsData, metaData);
     renderEmail(emailData);
   });
 
@@ -1232,12 +1203,11 @@
 
     // ---- Rendimiento de cada anuncio + análisis: viven en "Análisis de campaña" ----
     if (hasMeta){
-      drawAdsPerformanceTable(meta.ads_performance_available ? (meta.ads_performance || []) : [], meta.ads_performance_available);
-      initCampaignAnalysis(meta, data);
+      window.__cvPending = [meta, data];
     } else {
-      drawAdsPerformanceTable([], false);
-      initCampaignAnalysis(null, data);
+      window.__cvPending = [null, data];
     }
+    if (window.XsellCampaignV2) window.XsellCampaignV2(window.__cvPending[0], window.__cvPending[1]);
 
     // ---- Mapa de calor del mes (no depende del rango) ----
     initHeatmap(data);
@@ -1396,7 +1366,7 @@
         <div><span class="fa-num">${fmt(sent)}</span><span class="fa-lbl">lo enviaron · ${pctTxt(sent, open)}</span></div>
         <div><span class="fa-num fa-bad">${open ? pctTxt(aband, open) : '—'}</span><span class="fa-lbl">lo abandonaron (${fmt(aband)})</span></div>
       </div>
-      ${list.length > 1 ? `<table class="fa-table"><thead><tr><th>Anuncio</th><th>Abrieron</th><th>Enviaron</th><th>Abandono</th></tr></thead><tbody>${list.map(([n, a]) => `<tr><td>${escapeHtml(n)}</td><td>${fmt(a.open)}</td><td>${fmt(a.sent)}</td><td>${pctTxt(Math.max(0, a.open - a.sent), a.open)}</td></tr>`).join('')}</tbody></table>` : ''}
+      ${list.length > 1 ? `<div class="table-wrap"><table class="fa-table"><thead><tr><th>Anuncio</th><th>Abrieron</th><th>Enviaron</th><th>Abandono</th></tr></thead><tbody>${list.map(([n, a]) => `<tr><td>${escapeHtml(n)}</td><td>${fmt(a.open)}</td><td>${fmt(a.sent)}</td><td>${pctTxt(Math.max(0, a.open - a.sent), a.open)}</td></tr>`).join('')}</tbody></table></div>` : ''}
       <p class="hint" style="margin-top:8px;">"Abrieron" = clics en el enlace que reporta Meta (cada uno abre el formulario). "Enviaron" = formularios recibidos según Meta.</p>`;
   }
 
@@ -3890,6 +3860,302 @@
     $('calDelete').onclick = () => { if (!editingId || !window.confirm('¿Eliminar esta pieza del calendario?')) return; $('calEditModal').hidden = true; deleteItem(editingId); };
   }
   wire(); load();
+})();
+</script>
+
+<script>
+// ===== Análisis de campaña v2 (oct-2026): todos los KPI, del total al anuncio =====
+(function(){
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const nf = new Intl.NumberFormat('es-PE');
+  const fmt = n => (n == null || !isFinite(n)) ? '—' : nf.format(Math.round(n));
+  const money = n => (n == null || !isFinite(n)) ? '—' : 'S/ ' + new Intl.NumberFormat('es-PE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n);
+  const pct = n => (n == null || !isFinite(n)) ? '—' : (n * 100).toFixed(n < 0.1 ? 2 : 1) + '%';
+  const dec = n => (n == null || !isFinite(n)) ? '—' : n.toFixed(2);
+  const div = (a, b) => b ? a / b : null;
+  const norm = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const limaToday = () => new Date(Date.now() - 5 * 3600 * 1000).toISOString().slice(0, 10);
+  const $ = id => document.getElementById(id);
+
+  const LADDER = ['prospectos contactados','reunion agendadas','propuesta en elaboracion','propuesta enviada/en revision','propuesta aceptada','en implementacion','implementada'];
+  function state(l){
+    if (!l.has_deal || !l.deal_stage) return 'sin';
+    const st = norm(l.deal_stage).trim();
+    if (st.includes('descart')) return 'desc';
+    if (st.includes('stand')) return 'stand';
+    return LADDER.indexOf(st) >= 1 ? 'lead' : 'cont';
+  }
+  const stageIdx = l => LADDER.indexOf(norm(l.deal_stage).trim());
+  function motive(l){
+    if (l.discard_reason) return l.discard_reason;
+    return /respond|contest/.test(norm(l.deal_note)) ? 'No respondió (llamada ni WhatsApp)' : 'Sin motivo registrado';
+  }
+  const isNoResp = l => /^no respondi/.test(norm(motive(l)));
+
+  let S = { meta: null, data: null, from: '', to: '', channel: 'all', campaign: '__all__', sort: { key: 'spend', dir: -1 }, open: new Set(), groups: new Set(['alc', 'int', 'conv', 'res']), trend: 'spend' };
+  S.channel = 'cap';
+  const isWaName = n => norm(n).includes(norm((S.meta && S.meta.whatsapp_campaign_match) || 'whatsapp'));
+  const isFormName = n => /formulario/.test(norm(n));
+
+  // ---------- agregados ----------
+  function sumRows(rows){
+    const a = { spend: 0, impressions: 0, reach: 0, clicks: 0, link_clicks: 0, leads: 0, engagement: 0, conversations: 0, formOpen: 0, formSent: 0 };
+    rows.forEach(r => {
+      a.spend += +r.spend || 0; a.impressions += +r.impressions || 0; a.reach += +r.reach || 0; a.clicks += +r.clicks || 0;
+      a.link_clicks += +r.link_clicks || 0; a.leads += +r.leads || 0; a.engagement += +r.engagement || 0; a.conversations += +r.conversations || 0;
+      if (isFormName(r.campaign_name || r.name)){ a.formOpen += +r.link_clicks || 0; a.formSent += +r.leads || 0; }
+    });
+    return a;
+  }
+  function hubStats(regs){
+    const h = { reg: regs.length, lead: 0, cont: 0, desc: 0, stand: 0, sin: 0, noResp: 0, prop: 0 };
+    regs.forEach(l => { const s = state(l); h[s]++; if (s === 'desc' && isNoResp(l)) h.noResp++; if (stageIdx(l) >= 2) h.prop++; });
+    h.noCal = h.desc - h.noResp;
+    return h;
+  }
+  function kpis(a, h){
+    return {
+      ...a, ...h,
+      freq: div(a.impressions, a.reach), cpm: div(a.spend * 1000, a.impressions),
+      ctr: div(a.clicks, a.impressions), ctrLink: div(a.link_clicks, a.impressions), cpc: div(a.spend, a.link_clicks),
+      engRate: div(a.engagement, a.impressions),
+      sendRate: div(a.formSent, a.formOpen), abandon: a.formOpen ? 1 - a.formSent / a.formOpen : null,
+      cpConv: div(a.spend, a.conversations), cplMeta: div(a.spend, a.leads),
+      cpr: div(a.spend, h.reg), cpl: div(a.spend, h.lead), toLead: div(h.lead, h.reg),
+      noRespRate: div(h.noResp, h.reg), noCalRate: div(h.noCal, h.reg), toProp: div(h.prop, h.reg)
+    };
+  }
+
+  // ---------- filtros ----------
+  function inRange(d){ return d && d >= S.from && d <= S.to; }
+  function channelOk(campName){
+    if (S.channel === 'form') return isFormName(campName);
+    if (S.channel === 'wa') return isWaName(campName);
+    if (S.channel === 'cap') return isFormName(campName) || isWaName(campName);
+    return true;
+  }
+  function dailyRows(level){
+    const d = S.meta && S.meta.campaign_analysis_daily;
+    const rows = (d && d[level]) || [];
+    return rows.filter(r => inRange(r.date) && channelOk(r.campaign_name || r.name) && (S.campaign === '__all__' || (r.campaign_name || r.name) === S.campaign));
+  }
+  function regsAll(){
+    return ((S.data && S.data.leads_detail) || []).filter(l => {
+      if (!inRange((l.created_date || '').slice(0, 10))) return false;
+      const wa = /whatsapp/i.test(l.lead_source || '');
+      if (S.channel === 'form' && wa) return false;
+      if (S.channel === 'wa' && !wa) return false;
+      if (S.campaign !== '__all__'){
+        if (wa) return isWaName(S.campaign);
+        return l.attr_campaign_name === S.campaign;
+      }
+      return true;
+    });
+  }
+  const regsFor = (regs, level, row) => regs.filter(l => {
+    const wa = /whatsapp/i.test(l.lead_source || '');
+    if (level === 'campaigns') return wa ? isWaName(row.name) : l.attr_campaign_name === row.name;
+    if (wa) return false; // WhatsApp no identifica conjunto ni anuncio
+    if (level === 'adsets') return l.adset_name === row.name && l.attr_campaign_name === row.campaign_name;
+    return l.ad_name === row.name && l.adset_name === row.adset_name;
+  });
+
+  // ---------- 1. resumen ----------
+  function tile(label, value, sub, cls){ return `<div class="tile"><p class="tile-label">${label}</p><p class="tile-value ${cls || ''}">${value}</p>${sub ? `<p class="tile-sub">${sub}</p>` : ''}</div>`; }
+  function drawKpis(k){
+    const g = (title, tiles) => `<p class="cv-group-title">${title}</p><div class="kpi-row cv-kpi-row">${tiles.join('')}</div>`;
+    $('cvKpis').innerHTML =
+      g('Inversión y alcance', [tile('Inversión', money(k.spend)), tile('Impresiones', fmt(k.impressions)), tile('Alcance', fmt(k.reach), 'suma diaria (aprox.)'), tile('Frecuencia', dec(k.freq)), tile('CPM', money(k.cpm), 'costo por 1,000 impresiones')]) +
+      g('Interés', [tile('Clics (todos)', fmt(k.clicks)), tile('CTR (todos)', pct(k.ctr)), tile('Clics en el enlace', fmt(k.link_clicks)), tile('CTR del enlace', pct(k.ctrLink)), tile('Costo por clic en enlace', money(k.cpc)), tile('Interacciones', fmt(k.engagement), pct(k.engRate) + ' de las impresiones')]) +
+      g('Conversión en Meta', [tile('Abrieron el formulario', fmt(k.formOpen)), tile('Enviaron el formulario', fmt(k.formSent), pct(k.sendRate) + ' de los que lo abrieron'), tile('Abandono del formulario', pct(k.abandon), fmt(k.formOpen - k.formSent) + ' personas', 'cv-bad'), tile('Conversaciones de WhatsApp', fmt(k.conversations), 'Costo: ' + money(k.cpConv)), tile('Costo por resultado en Meta', money(k.cplMeta), 'inversión ÷ formularios enviados')]) +
+      g('Resultado real en HubSpot', [tile('Registros', fmt(k.reg), 'Costo por registro: ' + money(k.cpr)), tile('Leads (reunión agendada o más)', fmt(k.lead), pct(k.toLead) + ' de los registros', 'cv-good'), tile('Costo por lead', money(k.cpl), 'inversión ÷ leads', 'cv-good'), tile('Propuesta o más', fmt(k.prop), pct(k.toProp) + ' de los registros'), tile('En gestión', fmt(k.cont + k.stand), 'contactados o en stand by'), tile('Descartados', fmt(k.desc), pct(div(k.desc, k.reg)) + ' de los registros'), tile('No respondió', pct(k.noRespRate), fmt(k.noResp) + ' registros', 'cv-bad'), tile('No califica', pct(k.noCalRate), fmt(k.noCal) + ' registros'), tile('Sin gestionar', fmt(k.sin), 'sin negocio en HubSpot')]);
+    const lost = k.formSent - (k.reg - regsAll().filter(l => /whatsapp/i.test(l.lead_source || '')).length);
+    $('cvSummaryHint').textContent = `${S.from} al ${S.to}` + (k.formSent ? ` · Meta reporta ${fmt(k.formSent)} formularios y HubSpot tiene ${fmt(k.formSent - lost)} registros de formulario` : '');
+  }
+
+  // ---------- 2. comparativo ----------
+  function drawCompare(){
+    const camps = (S.meta && S.meta.campaign_analysis_daily && S.meta.campaign_analysis_daily.campaigns) || [];
+    const regs = ((S.data && S.data.leads_detail) || []).filter(l => inRange((l.created_date || '').slice(0, 10)));
+    const mk = (fn, rfn) => kpis(sumRows(camps.filter(r => inRange(r.date) && fn(r.name))), hubStats(regs.filter(rfn)));
+    const F = mk(isFormName, l => !/whatsapp/i.test(l.lead_source || ''));
+    const W = mk(isWaName, l => /whatsapp/i.test(l.lead_source || ''));
+    const T = mk(n => isFormName(n) || isWaName(n), () => true);
+    const rows = [
+      ['Inversión', 'spend', money], ['Impresiones', 'impressions', fmt], ['CPM', 'cpm', money], ['CTR del enlace', 'ctrLink', pct], ['Costo por clic en enlace', 'cpc', money],
+      ['Formularios enviados / conversaciones', null, (_, k) => k === F ? fmt(F.formSent) : k === W ? fmt(W.conversations) : fmt(T.formSent + T.conversations)],
+      ['Abandono del formulario', 'abandon', pct], ['Registros en HubSpot', 'reg', fmt], ['Costo por registro', 'cpr', money], ['Leads (reunión agendada o más)', 'lead', fmt],
+      ['% de registros que pasan a lead', 'toLead', pct], ['Costo por lead', 'cpl', money], ['% que no respondió', 'noRespRate', pct], ['% que no califica', 'noCalRate', pct], ['En gestión', null, (_, k) => fmt(k.cont + k.stand)]
+    ];
+    const cell = (r, k) => r[1] ? r[2](k[r[1]]) : r[2](null, k);
+    $('cvCompare').innerHTML = `<thead><tr><th>Métrica</th><th><span class="cal-dot cal-video"></span>Formulario</th><th><span class="cal-dot cal-static"></span>WhatsApp</th><th>Total captación</th></tr></thead><tbody>` +
+      rows.map(r => `<tr><td>${r[0]}</td><td>${cell(r, F)}</td><td>${cell(r, W)}</td><td>${cell(r, T)}</td></tr>`).join('') + '</tbody>';
+  }
+
+  // ---------- 3. árbol ----------
+  const COLS = [
+    { g: 'alc', k: 'spend', l: 'Inversión', f: money }, { g: 'alc', k: 'impressions', l: 'Impresiones', f: fmt }, { g: 'alc', k: 'reach', l: 'Alcance*', f: fmt }, { g: 'alc', k: 'freq', l: 'Frecuencia*', f: dec }, { g: 'alc', k: 'cpm', l: 'CPM', f: money },
+    { g: 'int', k: 'clicks', l: 'Clics', f: fmt }, { g: 'int', k: 'ctr', l: 'CTR', f: pct }, { g: 'int', k: 'link_clicks', l: 'Clics enlace', f: fmt }, { g: 'int', k: 'ctrLink', l: 'CTR enlace', f: pct }, { g: 'int', k: 'cpc', l: 'CPC enlace', f: money }, { g: 'int', k: 'engagement', l: 'Interacciones', f: fmt }, { g: 'int', k: 'engRate', l: 'Tasa interacción', f: pct },
+    { g: 'conv', k: 'formOpen', l: 'Abrieron form.', f: fmt }, { g: 'conv', k: 'formSent', l: 'Enviaron form.', f: fmt }, { g: 'conv', k: 'abandon', l: 'Abandono', f: pct }, { g: 'conv', k: 'conversations', l: 'Conversaciones', f: fmt }, { g: 'conv', k: 'cpConv', l: 'Costo/conv.', f: money }, { g: 'conv', k: 'cplMeta', l: 'Costo/result. Meta', f: money },
+    { g: 'res', k: 'reg', l: 'Registros', f: fmt }, { g: 'res', k: 'cpr', l: 'Costo/registro', f: money }, { g: 'res', k: 'lead', l: 'Leads', f: fmt }, { g: 'res', k: 'toLead', l: '% a lead', f: pct }, { g: 'res', k: 'cpl', l: 'Costo/lead', f: money }, { g: 'res', k: 'cont', l: 'En gestión', f: fmt }, { g: 'res', k: 'desc', l: 'Descartados', f: fmt }, { g: 'res', k: 'noRespRate', l: '% no responde', f: pct }, { g: 'res', k: 'noCalRate', l: '% no califica', f: pct }
+  ];
+  const GROUPS = [['alc', 'Inversión y alcance'], ['int', 'Interés'], ['conv', 'Conversión en Meta'], ['res', 'Resultado en HubSpot']];
+  function build(level, rows, regs, key){
+    const map = new Map();
+    rows.forEach(r => { const id = r.id || r.name; if (!map.has(id)) map.set(id, { id, name: r.name, campaign_name: r.campaign_name, adset_id: r.adset_id, adset_name: r.adset_name, rows: [] }); map.get(id).rows.push(r); });
+    return [...map.values()].map(e => ({ ...e, level, k: kpis(sumRows(e.rows), hubStats(regsFor(regs, level, e))) }));
+  }
+  function statusOf(id){
+    const m = S.meta || {};
+    const f = (m.campaigns_performance || []).concat(m.adsets_performance || []).find(x => x.id === id) || (m.ads_performance || []).find(x => x.ad_id === id);
+    return f ? f.status : null;
+  }
+  const badge = st => !st ? '' : `<span class="status-pill ${st === 'ACTIVE' ? 'on' : 'off'}">${st === 'ACTIVE' ? 'Activo' : 'Apagado'}</span>`;
+  function sorter(a, b){ const x = a.k[S.sort.key], y = b.k[S.sort.key]; return ((x == null ? -Infinity : x) - (y == null ? -Infinity : y)) * S.sort.dir; }
+  function drawTree(){
+    const regs = regsAll();
+    const camps = build('campaigns', dailyRows('campaigns'), regs).sort(sorter);
+    const adsets = build('adsets', dailyRows('adsets'), regs);
+    const ads = build('ads', dailyRows('ads'), regs);
+    const cols = COLS.filter(c => S.groups.has(c.g));
+    $('cvGroups').innerHTML = 'Columnas: ' + GROUPS.map(([g, l]) => `<button type="button" class="filter-btn${S.groups.has(g) ? ' active' : ''}" data-group="${g}">${l}</button>`).join('');
+    const head = `<thead><tr><th class="cv-sticky">Nombre</th><th>Estado</th>${cols.map(c => `<th class="cv-sort" data-sort="${c.k}">${c.l}${S.sort.key === c.k ? (S.sort.dir < 0 ? ' ▾' : ' ▴') : ''}</th>`).join('')}</tr></thead>`;
+    const row = (e, depth, hasKids) => {
+      const open = S.open.has(e.level + e.id);
+      const name = e.level === 'ads' ? `<button type="button" class="cv-adlink" data-ad="${esc(e.id)}">${esc(e.name)}</button>` : esc(e.name);
+      return `<tr class="cv-l${depth}"><td class="cv-sticky"><span style="padding-left:${depth * 18}px"></span>${hasKids ? `<button type="button" class="cv-tog" data-open="${esc(e.level + e.id)}">${open ? '▾' : '▸'}</button>` : '<span class="cv-tog-sp"></span>'}${name}</td><td>${badge(statusOf(e.id))}</td>${cols.map(c => `<td>${c.f(e.k[c.k])}</td>`).join('')}</tr>`;
+    };
+    let body = '';
+    camps.forEach(c => {
+      const cAd = adsets.filter(a => a.campaign_name === c.name).sort(sorter);
+      body += row(c, 0, cAd.length);
+      if (!S.open.has('campaigns' + c.id)) return;
+      cAd.forEach(a => {
+        const aAds = ads.filter(x => x.adset_id ? x.adset_id === a.id : x.adset_name === a.name).sort(sorter);
+        body += row(a, 1, aAds.length);
+        if (S.open.has('adsets' + a.id)) aAds.forEach(x => { body += row(x, 2, 0); });
+      });
+    });
+    const unat = regs.filter(l => !/whatsapp/i.test(l.lead_source || '') && !l.attr_campaign_name).length;
+    $('cvTree').innerHTML = head + '<tbody>' + (body || `<tr><td colspan="${cols.length + 2}" class="table-sub">Sin datos de Meta en este rango.</td></tr>`) + '</tbody>';
+    $('cvTreeHint').textContent = '* Alcance y frecuencia se suman día a día, así que en rangos largos son aproximados. WhatsApp no identifica de qué conjunto o anuncio viene cada contacto: sus registros se ven solo a nivel de campaña.' + (unat ? ` ${unat} registros de formulario no tienen anuncio identificado y solo cuentan en el resumen.` : '');
+    S._ads = ads;
+  }
+
+  // ---------- 4. calidad ----------
+  function drawQuality(){
+    const regs = regsAll();
+    const groups = new Map();
+    regs.forEach(l => {
+      const k = /whatsapp/i.test(l.lead_source || '') ? 'WhatsApp · no identificado' : (l.adset_name || 'Formulario · sin conjunto identificado');
+      if (!groups.has(k)) groups.set(k, []); groups.get(k).push(l);
+    });
+    const SEG = [['lead', 'Lead', 'var(--good)'], ['gest', 'En gestión', 'var(--purple-2)'], ['noresp', 'No respondió', 'var(--critical)'], ['nocal', 'No califica', 'var(--warning)'], ['sin', 'Sin gestionar', 'var(--text-muted)']];
+    const seg = l => { const s = state(l); if (s === 'lead') return 'lead'; if (s === 'cont' || s === 'stand') return 'gest'; if (s === 'sin') return 'sin'; return isNoResp(l) ? 'noresp' : 'nocal'; };
+    const list = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+    if (!list.length){ $('cvQuality').innerHTML = '<p class="table-sub">No hay registros en este rango.</p>'; return; }
+    $('cvQuality').innerHTML = `<div class="cv-legend">${SEG.map(s => `<span><span class="cal-dot" style="background:${s[2]}"></span>${s[1]}</span>`).join('')}</div>` +
+      list.map(([name, ls]) => {
+        const c = {}; ls.forEach(l => { const s = seg(l); c[s] = (c[s] || 0) + 1; });
+        const mot = {}; ls.filter(l => state(l) === 'desc').forEach(l => { const m = motive(l); mot[m] = (mot[m] || 0) + 1; });
+        const tip = Object.entries(mot).sort((a, b) => b[1] - a[1]).map(([m, n]) => `${m}: ${n}`).join('\n');
+        return `<div class="cv-q-row"><div class="cv-q-name" title="${esc(name)}">${esc(name)} <span class="table-sub">· ${ls.length}</span></div>
+          <div class="cv-q-bar" title="${esc(tip || 'Sin descartes')}">${SEG.filter(s => c[s[0]]).map(s => `<span style="flex:${c[s[0]]};background:${s[2]}" title="${s[1]}: ${c[s[0]]} (${pct(c[s[0]] / ls.length)})${s[0] === 'nocal' || s[0] === 'noresp' ? '\n' + esc(tip) : ''}">${c[s[0]] / ls.length >= 0.08 ? c[s[0]] : ''}</span>`).join('')}</div>
+          <div class="cv-q-lead">${pct((c.lead || 0) / ls.length)} lead</div></div>`;
+      }).join('');
+  }
+
+  // ---------- 5. tendencia ----------
+  const TRENDS = [['spend', 'Inversión', money, 'bar'], ['reg', 'Registros', fmt, 'bar'], ['lead', 'Leads', fmt, 'bar'], ['cpr', 'Costo por registro', money, 'line'], ['formSent', 'Formularios enviados', fmt, 'bar'], ['abandon', 'Abandono', pct, 'line'], ['ctrLink', 'CTR del enlace', pct, 'line'], ['cpm', 'CPM', money, 'line']];
+  function drawTrend(){
+    $('cvTrendMetric').innerHTML = TRENDS.map(t => `<button type="button" class="filter-btn${S.trend === t[0] ? ' active' : ''}" data-trend="${t[0]}">${t[1]}</button>`).join('');
+    const rows = dailyRows('campaigns'), regs = regsAll();
+    const days = []; for (let d = new Date(S.from + 'T00:00:00Z'); d.toISOString().slice(0, 10) <= S.to; d.setUTCDate(d.getUTCDate() + 1)) days.push(d.toISOString().slice(0, 10));
+    if (days.length > 120) days.splice(0, days.length - 120);
+    const T = TRENDS.find(t => t[0] === S.trend);
+    const vals = days.map(d => kpis(sumRows(rows.filter(r => r.date === d)), hubStats(regs.filter(l => (l.created_date || '').slice(0, 10) === d)))[T[0]]);
+    const W = 900, H = 240, P = { l: 56, r: 12, t: 12, b: 28 }, iw = W - P.l - P.r, ih = H - P.t - P.b;
+    const max = Math.max(...vals.map(v => v || 0), 0) || 1;
+    const x = i => P.l + (days.length === 1 ? iw / 2 : i * iw / (days.length - 1));
+    const bw = Math.max(2, iw / days.length - 2);
+    const y = v => P.t + ih - (v || 0) / max * ih;
+    let marks = '';
+    if (T[3] === 'bar'){
+      marks = days.map((d, i) => `<g><rect x="${P.l + i * iw / days.length + 1}" y="${y(vals[i])}" width="${bw}" height="${P.t + ih - y(vals[i])}" rx="2" fill="var(--purple-2)"/><rect x="${P.l + i * iw / days.length}" y="${P.t}" width="${iw / days.length}" height="${ih}" fill="transparent"><title>${d}: ${T[2](vals[i])}</title></rect></g>`).join('');
+    } else {
+      const pts = days.map((d, i) => vals[i] == null ? null : `${x(i)},${y(vals[i])}`).filter(Boolean).join(' ');
+      marks = `<polyline points="${pts}" fill="none" stroke="var(--orange)" stroke-width="2"/>` + days.map((d, i) => vals[i] == null ? '' : `<g><circle cx="${x(i)}" cy="${y(vals[i])}" r="3" fill="var(--orange)"/><rect x="${x(i) - iw / days.length / 2}" y="${P.t}" width="${iw / days.length}" height="${ih}" fill="transparent"><title>${d}: ${T[2](vals[i])}</title></rect></g>`).join('');
+    }
+    const ticks = [0, 0.5, 1].map(f => `<line x1="${P.l}" x2="${W - P.r}" y1="${P.t + ih - f * ih}" y2="${P.t + ih - f * ih}" stroke="var(--border)"/><text x="${P.l - 6}" y="${P.t + ih - f * ih + 4}" text-anchor="end" font-size="11" fill="var(--text-muted)">${T[2](max * f)}</text>`).join('');
+    const step = Math.ceil(days.length / 8);
+    const xl = days.map((d, i) => i % step ? '' : `<text x="${T[3] === 'bar' ? P.l + (i + 0.5) * iw / days.length : x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="var(--text-muted)">${d.slice(5)}</text>`).join('');
+    const total = T[3] === 'bar' ? ` · total del rango: ${T[2](vals.reduce((t, v) => t + (v || 0), 0))}` : '';
+    $('cvTrend').innerHTML = `<p class="tile-label" style="margin:0 0 6px">${T[1]} por día${total}</p><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${T[1]} por día">${ticks}${marks}${xl}</svg>`;
+  }
+
+  // ---------- 6. ficha del anuncio ----------
+  function openAd(id){
+    const e = (S._ads || []).find(a => a.id === id); if (!e) return;
+    const perf = ((S.meta && S.meta.ads_performance) || []).find(a => a.ad_id === id) || {};
+    const k = e.k, regs = regsFor(regsAll(), 'ads', e);
+    const m = (l, v) => `<div class="cv-ad-m"><span>${l}</span><strong>${v}</strong></div>`;
+    $('cvAdTitle').textContent = e.name;
+    $('cvAdBody').innerHTML = `
+      <div class="cv-ad-top">
+        ${perf.image_url ? `<img src="${esc(perf.image_url)}" alt="" class="cv-ad-img" onerror="this.outerHTML='<div class=&quot;cv-ad-img cv-ad-noimg&quot;>Sin vista previa</div>'">` : '<div class="cv-ad-img cv-ad-noimg">Sin vista previa</div>'}
+        <div><p class="cal-sp-meta">${esc(e.campaign_name)} · ${esc(e.adset_name || '')} · ${badge(perf.status)}</p>
+        ${perf.title ? `<p><strong>${esc(perf.title)}</strong></p>` : ''}${perf.body ? `<p style="white-space:pre-line">${esc(perf.body)}</p>` : ''}${perf.description ? `<p class="table-sub">${esc(perf.description)}</p>` : ''}</div>
+      </div>
+      <p class="cv-group-title">Métricas en el rango (${S.from} al ${S.to})</p>
+      <div class="cv-ad-grid">${COLS.map(c => m(c.l.replace('*', ''), c.f(k[c.k]))).join('')}</div>
+      <p class="cv-group-title">Registros que trajo (${regs.length})</p>
+      ${regs.length ? `<table class="cv-compare"><thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Estado</th><th>Motivo</th><th>Nota</th></tr></thead><tbody>${regs.map(l => `<tr><td>${esc((l.created_date || '').slice(0, 10))}</td><td>${esc(l.name)}</td><td>${esc((l.deal_name && !/^si[n]? *datos/i.test(l.deal_name)) ? l.deal_name : (l.company || '—'))}</td><td>${esc(l.deal_stage || 'Sin negocio')}</td><td>${state(l) === 'desc' ? esc(motive(l)) : '—'}</td><td>${l.deal_note ? `<details><summary class="note-btn">Leer nota</summary><div class="cv-note">${esc(l.deal_note).replace(/\n/g, '<br>')}</div></details>` : '—'}</td></tr>`).join('')}</tbody></table>` : '<p class="table-sub">Ningún registro de HubSpot identificado con este anuncio en el rango.</p>'}`;
+    $('cvAdModal').hidden = false;
+  }
+
+  // ---------- render + eventos ----------
+  function render(){
+    if (!S.meta) { $('cvKpis').innerHTML = '<p class="table-sub">Esperando datos de Meta Ads.</p>'; return; }
+    const k = kpis(sumRows(dailyRows('campaigns')), hubStats(regsAll()));
+    drawKpis(k); drawCompare(); drawTree(); drawQuality(); drawTrend();
+  }
+  function setPreset(p){
+    const t = limaToday(), start = (S.meta && S.meta.campaign_start) || (S.data && S.data.campaign_start) || '2026-07-25';
+    let f = start;
+    if (p === '7'){ const d = new Date(t + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() - 6); f = d.toISOString().slice(0, 10); }
+    else if (p === '30'){ const d = new Date(t + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() - 29); f = d.toISOString().slice(0, 10); }
+    else if (p === 'month') f = t.slice(0, 8) + '01';
+    S.from = f < start ? start : f; S.to = t;
+    $('cvFrom').value = S.from; $('cvTo').value = S.to;
+    document.querySelectorAll('#cvPresets .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.preset === p));
+  }
+  let wired = false;
+  function wire(){
+    if (wired) return; wired = true;
+    $('cvPresets').addEventListener('click', e => { const b = e.target.closest('[data-preset]'); if (b){ setPreset(b.dataset.preset); render(); } });
+    ['cvFrom', 'cvTo'].forEach(id => $(id).addEventListener('change', () => { S.from = $('cvFrom').value; S.to = $('cvTo').value; document.querySelectorAll('#cvPresets .filter-btn').forEach(b => b.classList.remove('active')); render(); }));
+    $('cvChannel').addEventListener('change', e => { S.channel = e.target.value; render(); });
+    $('cvCampaign').addEventListener('change', e => { S.campaign = e.target.value; render(); });
+    $('tab-campaign').addEventListener('click', e => {
+      const g = e.target.closest('[data-group]'); if (g){ S.groups.has(g.dataset.group) ? S.groups.delete(g.dataset.group) : S.groups.add(g.dataset.group); if (!S.groups.size) S.groups.add(g.dataset.group); drawTree(); return; }
+      const o = e.target.closest('[data-open]'); if (o){ S.open.has(o.dataset.open) ? S.open.delete(o.dataset.open) : S.open.add(o.dataset.open); drawTree(); return; }
+      const s = e.target.closest('[data-sort]'); if (s){ S.sort = { key: s.dataset.sort, dir: S.sort.key === s.dataset.sort ? -S.sort.dir : -1 }; drawTree(); return; }
+      const t = e.target.closest('[data-trend]'); if (t){ S.trend = t.dataset.trend; drawTrend(); return; }
+      const a = e.target.closest('[data-ad]'); if (a){ openAd(a.dataset.ad); return; }
+      if (e.target.closest('[data-cvclose]') || e.target.id === 'cvAdModal') $('cvAdModal').hidden = true;
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('cvAdModal')) $('cvAdModal').hidden = true; });
+  }
+  window.XsellCampaignV2 = function(meta, data){
+    S.meta = meta && meta.updated_at ? meta : null; S.data = data;
+    wire();
+    const names = [...new Set((((meta || {}).campaign_analysis_daily || {}).campaigns || []).map(r => r.name))].sort();
+    const sel = $('cvCampaign'), cur = sel.value;
+    sel.innerHTML = '<option value="__all__">Todas</option>' + names.map(n => `<option${n === cur ? ' selected' : ''}>${esc(n)}</option>`).join('');
+    if (!S.from){ setPreset('all'); }
+    render();
+  };
+  if (window.__cvPending) window.XsellCampaignV2(window.__cvPending[0], window.__cvPending[1]);
 })();
 </script>
 
