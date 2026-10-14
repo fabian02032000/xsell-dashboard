@@ -431,6 +431,19 @@ def fetch_level_performance(level, since_date, until_date, name_field, id_field,
     return result, True
 
 
+def extract_action_value(actions, action_type):
+    """Valor de una acción puntual dentro de 'actions' (p. ej. 'post_engagement':
+    reacciones, comentarios, compartidos, guardados y clics en la publicación).
+    Devuelve 0 si Meta no la reporta para esa fila."""
+    for a in actions or []:
+        if (a.get("action_type") or "") == action_type:
+            try:
+                return int(float(a.get("value", 0)))
+            except (TypeError, ValueError):
+                return 0
+    return 0
+
+
 def fetch_level_performance_daily(level, since_date, until_date, name_field, id_field, extra_fields=""):
     """
     Igual que fetch_level_performance, pero día a día (time_increment=1), sin
@@ -476,6 +489,9 @@ def fetch_level_performance_daily(level, since_date, until_date, name_field, id_
             "reach": int(float(row.get("reach", 0))),
             "clicks": int(float(row.get("clicks", 0))),
             "leads": extract_leads(row.get("actions")),
+            # Para las tarjetas de anuncios del dashboard (oct-2026):
+            "engagement": extract_action_value(row.get("actions"), "post_engagement"),
+            "conversations": extract_conversations_started(row.get("actions")),
         }
         if level == "ad":
             entry["adset_id"] = row.get("adset_id")
