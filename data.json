@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T20:04:43.947003+00:00",
+  "updated_at": "2026-10-14T22:23:34.376584+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -831,13 +831,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-09",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Motorgas",
       "deal_id": "65740034858",
-      "deal_note": null,
+      "deal_note": "Si respondió segunda llamada. Venta de vehículos provincia Chincha -Dejaron de operar 8 meses y recien volveran a activar la empresa. No cuentan con flujo de leads.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": null
+      "discard_reason": "Negocio muy pequeño o pocos leads"
     },
     {
       "name": "Renato Carrera",
@@ -4028,11 +4028,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 196
+      "count": 197
     },
     {
       "label": "Prospectos Contactados",
-      "count": 21
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
