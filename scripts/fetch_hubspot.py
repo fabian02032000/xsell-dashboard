@@ -758,6 +758,7 @@ def main():
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
             "deal_name": status.get("deal_name") if status else None,
+            "deal_id": status.get("deal_id") if status else None,
             "deal_note": notes_by_deal.get(status.get("deal_id")) if status else None,
             "estadio_lead": status.get("estadio_lead") if status else None,
             "nivel_urgencia": status.get("nivel_urgencia") if status else None,
