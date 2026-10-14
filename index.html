@@ -217,6 +217,11 @@
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 
   /* ---- Pestaña principal (rediseño oct-2026) ---- */
+.rs-det summary{list-style:none;cursor:pointer}.rs-det summary::-webkit-details-marker{display:none}
+.rs-det[open] summary .rs-name{font-weight:700}
+.rs-list{margin:2px 0 10px;padding:8px 10px;list-style:none;background:rgba(127,127,127,.08);border-radius:8px;font-size:12px;max-height:180px;overflow:auto}
+.rs-list li{padding:3px 0;border-bottom:1px solid rgba(127,127,127,.15)}.rs-list li:last-child{border:0}.rs-list span{opacity:.65}
+
   .adc-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:16px;}
   .adc{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;}
   .adc-head{padding:10px 16px; font-size:11.5px; font-weight:700; letter-spacing:.3px; color:#fff; display:flex; justify-content:space-between; gap:8px;}
@@ -1125,12 +1130,16 @@
   // Motivo de descarte: se lee de la nota que Ingrid deja en el Negocio (los
   // leads de la campaña no tienen el campo "Motivo de descarte" lleno). El
   // orden importa: la primera regla que calza es la que se usa.
+  const NO_RESP = 'No respondió (llamada ni WhatsApp)';
   const DISCARD_RULES = [
-    ['No respondió', /(nunca respond|no respond|no contest|sin respuesta|no responde|silencio|no llego al boton|veces no|no volvio a responder|no hubo respuesta)/],
+    [NO_RESP, /(nunca respond|no respond|no contest|sin respuesta|no responde|silencio|no llego al boton|veces no|no volvio a responder|no hubo respuesta)/],
     ['No asistió a la reunión', /no asisti/],
-    ['Buscaba otra cosa (empleo, alquiler, marketing)', /(postulaci|busca trabajo|laboral|empleo|mkt|marketing|crm|no aplica|alquiler|por error|marco mal|busca una tienda|buscando una tienda|no busca ningun servicio|talleres para su equipo)/],
+    ['Llenó el formulario por error', /(por error|marco mal)/],
+    ['Busca solo marketing o CRM', /(mkt|marketing|crm)/],
+    ['Buscaba otra cosa (empleo, alquiler, compra)', /(postulaci|busca trabajo|laboral|empleo|no aplica|alquiler|busca una tienda|buscando una tienda|no busca ningun servicio|talleres para su equipo)/],
     ['Negocio muy pequeño o pocos leads', /(volumen insuficiente|muy pequeno|pocos leads|solo \d+ leads|menos de \d+ al mes)/],
     ['Independiente / sin empresa', /(independiente|sin empresa|no tiene empresa|informal|sin ruc|persona natural|titulo personal)/],
+    ['No se llegó al decisor', /(decisor|no decide|gerente no|jefe no)/],
     ['Aún no invierte en pauta', /(no invierte|nunca ha invertido|aun no|recien|empezar|evaluando)/],
     ['No le interesa por ahora', /(no esta interesad|no requiere|no le interesa|por ahora no|no necesita|no interesad|no lo molesten)/],
   ];
@@ -1186,19 +1195,25 @@
     const counts = {};
     desc.forEach(l => { const r = discardReason(l); counts[r] = (counts[r] || 0) + 1; });
     const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-    const noResp = counts['No respondió'] || 0;
+    const noResp = counts[NO_RESP] || 0;
+    const byReason = {};
+    desc.forEach(l => { const r = discardReason(l); (byReason[r] = byReason[r] || []).push(l); });
     const fromField = fmt(desc.filter(l => l.discard_reason).length);
     const max = rows[0][1];
     el.innerHTML = `
       <div class="dp-head"><span class="dp-big">${fmt(desc.length)}</span><span class="dp-sub">descartados · ${pctTxt(desc.length, n)} de los registros</span></div>
       <div class="dp-alert"><strong>${pctTxt(noResp, n)}</strong> de los registros nunca respondió (${fmt(noResp)} de ${fmt(n)}).</div>
       <p class="tile-label" style="margin:0 0 6px;">Por qué se descartaron</p>
-      ${rows.map(([label, v]) => `<div class="rs-row" title="${escapeHtml(label)}: ${v}">
+      ${rows.map(([label, v]) => `<details class="rs-det">
+        <summary class="rs-row" title="Clic para ver quiénes">
           <span class="rs-name">${escapeHtml(label)}</span>
           <span class="rs-track"><span class="rs-fill" style="width:${v / max * 100}%"></span></span>
           <span class="rs-val">${fmt(v)} · ${pctTxt(v, desc.length)}</span>
-        </div>`).join('')}
-      <p class="hint" style="margin-top:10px;">${fromField} de ${fmt(desc.length)} con el campo "Motivo de descarte" lleno en HubSpot; en el resto, el motivo se lee de la nota de Ingrid.</p>`;
+        </summary>
+        <ul class="rs-list">${byReason[label].map(l => `<li><strong>${escapeHtml(l.name || l.email || 'Sin nombre')}</strong>${l.company ? ' · ' + escapeHtml(l.company) : ''} <span>${escapeHtml((l.created_date || '').slice(0, 10))}${l.discard_reason ? '' : ' · según nota'}</span></li>`).join('')}</ul>
+      </details>`).join('')}
+      <p class="hint" style="margin-top:6px;">Haz clic en un motivo para ver quiénes son.</p>
+      <p class="hint" style="margin-top:10px;">${fromField} de ${fmt(desc.length)} con el campo "Motivo de descarte (campaña)" lleno en HubSpot; en el resto, el motivo se lee de la nota de Ingrid.</p>`;
   }
 
   function drawAdCards(leads, meta, from, to){
