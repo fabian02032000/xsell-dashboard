@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T01:28:36.693167+00:00",
+  "updated_at": "2026-10-14T02:01:09.541662+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -415,7 +415,8 @@
       "deal_name": "Sin datos - Amparo García Huapaya",
       "deal_note": "Agente inmobiliario independiente. Busca CRM",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Anyela Asesora inmobiliaria",
@@ -429,7 +430,8 @@
       "deal_name": "Sin datos - Anyela Asesora inmobiliaria",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Rouss",
@@ -443,7 +445,8 @@
       "deal_name": "Sin datos - Rouss",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Silvana  Grillo Gallardo",
@@ -457,7 +460,8 @@
       "deal_name": "Sin datos - Silvana Grillo Gallardo",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Bryan  Oropeza Vasquez",
@@ -471,7 +475,8 @@
       "deal_name": "Si datos  - Bryan Oropeza Vasquez",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Leslie",
@@ -485,7 +490,8 @@
       "deal_name": "Sin datos  - Leslie",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "ctecsolucionestecnologicas",
@@ -499,7 +505,8 @@
       "deal_name": "Sin datos  - ctecsolucionestecnologicas",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eduardo",
@@ -513,7 +520,8 @@
       "deal_name": "GP Business Call ",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Katerin nilda alcahua rossell",
@@ -527,7 +535,8 @@
       "deal_name": "auto ya Automotriz",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "WALTER EDGARDO RUIZ CASTRO",
@@ -541,7 +550,8 @@
       "deal_name": "Feria De Carros los Brothers",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Karla Sarmiento",
@@ -555,7 +565,8 @@
       "deal_name": "Kamasa Service",
       "deal_note": "Realiza servicio técnico de electrodomésticos.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Carlos Saavedra",
@@ -569,7 +580,8 @@
       "deal_name": "SAM Taller Automotriz",
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Taller multimarca en San Miguel (una sede, capacidad de 10 autos al día). Recibe unos 300 leads al mes desde hace 5 años, con inversión en pauta de S/1,000 y ticket promedio de S/800. Indica que llegan pocos leads, que pocos se convierten (en parte por la gestión propia del taller) y que muchos son de mala calidad. Busca mejorar la calidad o la cantidad de leads. Se le explicó la metodología y el diagnóstico gratuito, y quedó su contacto guardado para retomar cuando escale.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Alberto Huaman",
@@ -583,7 +595,8 @@
       "deal_name": "Remarc",
       "deal_note": null,
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Omar Castro Salazar",
@@ -597,7 +610,8 @@
       "deal_name": "Independiente - Parque del Recuerdo",
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Trabaja como vendedor independiente de parque del recuerdo, sin empresa constituida. Busca vender más a título personal, no un servicio de perfilamiento y cierre para una empresa con flujo de leads.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Angel Solorzano",
@@ -611,7 +625,8 @@
       "deal_name": "S&S MEGATEK ",
       "deal_note": "Descartado. Si respondió llamada. Aún no no invierten en Pauta. Están buscando empezar con ello. Venden maquinas industriales.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos",
@@ -625,7 +640,8 @@
       "deal_name": "Sin datos - Independiente",
       "deal_note": "Vendedor inmobiliario Independiente. No tiene empresa",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Lourdes",
@@ -639,7 +655,8 @@
       "deal_name": "Sin datos - Lourdes",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Respondió al contacto por WhatsApp indicando que por ahora no requiere el servicio. No respondió llamada previa.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos",
@@ -653,7 +670,8 @@
       "deal_name": "Sin datos  - 945 282 654",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carmen  Chacón ramirez",
@@ -667,7 +685,8 @@
       "deal_name": "Sin datos - Carmen Chacón ramirez",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Pastelería con unos 6 meses de operación, sin RUC ni empresa constituida (negocio informal). Se cerró la atención dejando la puerta abierta para cuando esté formalizada y consolidada.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Rouss Real",
@@ -681,7 +700,8 @@
       "deal_name": "Sin datos - Rouss Real",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Agente inmobiliaria independiente, sin empresa constituida. Busca marketing para generar clientes, no perfilamiento ni cierre de leads. Se le aclaró el alcance de Xsell y se cerró la atención.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Alejandra  Navarro",
@@ -695,7 +715,8 @@
       "deal_name": "Sin datos -  Alejandra Navarro ",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Arturo Laguna",
@@ -709,7 +730,8 @@
       "deal_name": "Sin datos - 930 931 702",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Nunca ha invertido en pauta, brinda asesoría empresarial y recién está evaluando empezar, sin leads que perfilar ni cerrar. Se le aclaró el alcance de Xsell y se cerró la atención dejando la puerta abierta.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Roxana",
@@ -723,7 +745,8 @@
       "deal_name": "Sin datos  - Roxana",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Valentino",
@@ -737,7 +760,8 @@
       "deal_name": "Sin datos - Valentino",
       "deal_note": "Descartado\nEstá buscando departamentos en alquiler. 3 habitaciones.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Chabu",
@@ -751,7 +775,8 @@
       "deal_name": "Sin datos  - Chabu",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Buscaba departamento en alquiler de 2 habitaciones. Dió clic al anuncio por confusión. Se cerró la atención.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Hugo Fernando Vasquez Matias",
@@ -765,7 +790,8 @@
       "deal_name": "Motorgas",
       "deal_note": null,
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Renato Carrera",
@@ -779,7 +805,8 @@
       "deal_name": "Pegsa Industrial ",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eleazar Tapia Tarrillo",
@@ -793,7 +820,8 @@
       "deal_name": "Panorama Hogar ",
       "deal_note": null,
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "@cecibelia73",
@@ -807,7 +835,8 @@
       "deal_name": "@cecibelia73",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Claudio  Saavedra",
@@ -821,7 +850,8 @@
       "deal_name": "Claudio Saavedra ",
       "deal_note": "Sí respondió llamada. Indica que dio clic al formulario por error. \nDescatado: No interesado",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos - @kkikw159 Adelavera I",
@@ -835,7 +865,8 @@
       "deal_name": "Sin datos - @kkikw159 Adelavera I",
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "yuyo72",
@@ -849,7 +880,8 @@
       "deal_name": "Sin datos - yuyo72",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Anderson Romero",
@@ -863,7 +895,8 @@
       "deal_name": "Inmobiliaria Alterra Perú",
       "deal_note": "Si respondió su agente de IA. No nos pasó con el titular. Descartado no responde wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ulises",
@@ -877,7 +910,8 @@
       "deal_name": "Sin datos  - Ulises Textil",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Johon",
@@ -891,7 +925,8 @@
       "deal_name": "Sin datos  - Johon Textil",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Elteva",
@@ -905,7 +940,8 @@
       "deal_name": "Sin datos  - Elteva Textil ",
       "deal_note": "No responde. Respondió primera llamada, indica que está ocupada. Se realiza seguimiento no responde.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "@Sune9329",
@@ -919,7 +955,8 @@
       "deal_name": "Sin datos  - @Sune9329 Textil",
       "deal_note": "Si respondió. Busca trabajo para señorita para la carrera de ingeniería ambiental",
       "estadio_lead": null,
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Carlos  Perez",
@@ -933,7 +970,8 @@
       "deal_name": "Sin datos @capeza ",
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Tiene campañas en Meta para público masivo y quiere reorientar el servicio a público corporativo, pero aún no tiene marketing ni leads de ese segmento. Busca apoyo para generar la demanda (marketing), no para perfilar y cerrar leads existentes.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Gloria Torres",
@@ -947,7 +985,8 @@
       "deal_name": "Sin datos - Gloria Torres ",
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada y confirmó que completó el formulario por error. No busca ningún servicio.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ciro  Falcón",
@@ -961,7 +1000,8 @@
       "deal_name": "Sin datos - Ciro Falcon ",
       "deal_note": "Indica que no lo molesten",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Omar Medina",
@@ -975,7 +1015,8 @@
       "deal_name": "PA BUS Y TRUCKS",
       "deal_note": "Se llamó no responde. Tampoco responde mensaje de seguimiento por wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Junior Quintana",
@@ -989,7 +1030,8 @@
       "deal_name": "Quintana & Quinde Abogados",
       "deal_note": "Nunca respondio llamada ni wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Denis",
@@ -1003,7 +1045,8 @@
       "deal_name": "La Benita Alimentos SAC",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "𝐺𝑒𝑟𝑎𝑙𝑑𝑖𝑛𝑒 𝐿𝑎ℎ𝑢𝑟𝑎",
@@ -1017,7 +1060,8 @@
       "deal_name": "Mars Maquinarias",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Yeni PV",
@@ -1031,7 +1075,8 @@
       "deal_name": "BIMDEC",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Arturo",
@@ -1045,7 +1090,8 @@
       "deal_name": "Sin datos - Arturo",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos",
@@ -1059,7 +1105,8 @@
       "deal_name": "Sin datos - 970 486 405",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos - Foryou",
@@ -1073,7 +1120,8 @@
       "deal_name": "Sin datos - Foryou",
       "deal_note": "Respondió llamada. Descartada. Indica que no está interesada",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Danny Calua Cotrina",
@@ -1087,7 +1135,8 @@
       "deal_name": "Representaciones Danny",
       "deal_note": "Descartada. Sí respondió llamada.\nMotivo de descarte: Aún no invierte en pauta.\n\nIndicó que aún no invierte en pauta y que recién empezarán a hacerlo. Se le explicó que trabajamos con empresas que ya tienen inversión en pauta y flujo de leads. Se descarta por el momento, dejando abierta la posibilidad de retomar el contacto cuando ya esté recibiendo leads.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "REMASA Yolanda T.",
@@ -1101,7 +1150,8 @@
       "deal_name": "REMASA Yolanda T.",
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Aquino",
@@ -1115,7 +1165,8 @@
       "deal_name": "Aquino",
       "deal_note": "Motivo de descarte: No interesado. \n indicó en la llamada que se confundió que por el momento no. Se le dejó mensaje de cierre de atención.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Vanessa Melgarejo",
@@ -1129,7 +1180,8 @@
       "deal_name": "Vanessa ",
       "deal_note": "Motivo de descarte: No cumple con el perfil de cliente: trabaja de manera independiente.\nNota: Prospecto dedicada al cierre de ventas para una inmobiliaria en Huaral. No cuenta con empresa propia trabaja independiente e invierte aproximadamente S/500 mensuales en pauta. \nSe explicó el alcance del servicio y que está dirigido a empresas (B2B). Se descarta por el momento, dejando abierta la posibilidad de retomar el contacto más adelante.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos Wsp",
@@ -1143,7 +1195,8 @@
       "deal_name": "Sin datos - Wsp ",
       "deal_note": "Sí respondió llamada. Indicó que estaba ocupado y que lo llamemos 4:30. Se le llamó no respondió. Se le dejó mensaje a wsp tampoco respondio. Se le dejó wsp de seguimiento sin respuesta.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Susana Galvez Arce",
@@ -1157,7 +1210,8 @@
       "deal_name": "Susana Galvez Arce",
       "deal_note": "Sí respondió llamada. \nMotivo de descarte: No tiene empresa, vende de manera independiente. (Lotes).",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "René",
@@ -1171,7 +1225,8 @@
       "deal_name": "SmartPlaza",
       "deal_note": "Sí respondió llamada. \nMotivo de descarte: Busca potenciar su marketing.\nProspecto lleva pocos meses invirtiendo en publicidad en redes y aún no cuenta con históricos de leads. Su prioridad actual es medir y potenciar sus campañas de marketing. Se podrá retomar el contacto más adelante para evaluar una posible alianza comercial.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jorge Izquierdo",
@@ -1185,7 +1240,8 @@
       "deal_name": "Pintaza",
       "deal_note": null,
       "estadio_lead": "Alto Nivel",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Karl vasquez",
@@ -1199,7 +1255,8 @@
       "deal_name": "Proser-group",
       "deal_note": "Descalificado por fit: busca MKT, no conversión\nPerfil del prospecto\nRubro: inmobiliario corporativo, administración de bienes inmuebles, servicios de limpieza y afines.\nClientes: empresas administradoras, inmobiliarias y personas naturales.\nNecesidad\nBusca generar nuevos clientes. Hoy no tiene un flujo de leads propio; busca Mkt o base de datos para generar demanda.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "@negociosindustriales331",
@@ -1213,7 +1270,8 @@
       "deal_name": "Sin datos - @negociosindustriales331",
       "deal_note": "Descartado: postulante laboral, no es prospecto comercial",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Violeta  Navarro moscoso",
@@ -1227,7 +1285,8 @@
       "deal_name": "Sin datos - Violeta Navarro moscoso",
       "deal_note": "Nunca respondio llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Esaú Ur",
@@ -1241,7 +1300,8 @@
       "deal_name": "Sin datos - Esaú Ur",
       "deal_note": "Nunca respondió llamada si wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luisa  Paucar Rojas",
@@ -1255,7 +1315,8 @@
       "deal_name": "Sin datos - Luisa Paucar Rojas",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "TPD",
@@ -1269,7 +1330,8 @@
       "deal_name": "Sin datos - Tpd",
       "deal_note": "Número suspendido. Nunca respondió Wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos - aduva6",
@@ -1283,7 +1345,8 @@
       "deal_name": "Sin datos - aduva6",
       "deal_note": "Nunca respondió",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eric  Torres",
@@ -1297,7 +1360,8 @@
       "deal_name": "Claro Perú ",
       "deal_note": "Sí respondio llamada pero indicó que estaba ocupado. No volvió a responder llamada de seguimiento ni wsp.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Mariana",
@@ -1311,7 +1375,8 @@
       "deal_name": "Mariana",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Mariangelica López Castañeda",
@@ -1325,7 +1390,8 @@
       "deal_name": "IRON GROUP SAC",
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Javier Salmon",
@@ -1339,7 +1405,8 @@
       "deal_name": "JS INDUSTRIAL",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Johan Flores Ramos",
@@ -1353,7 +1420,8 @@
       "deal_name": "Johan Flores Ramos",
       "deal_note": "Contacto con tercero, sin acceso al decisor\nContestó una persona distinta a quien dejó el registro. No quiso dar el número del titular. Le ofrecí escribirle por WhatsApp y me dijo que no le llegaría, porque el número es de trabajo. Quedó en avisarle y el titular decidirá si nos contacta.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Cristian Mestanza Ortiz",
@@ -1367,7 +1435,8 @@
       "deal_name": "Loops",
       "deal_note": "Descalificado por fit (por ahora): prospecto muy pequeño\nPerfil del prospecto\nRubro: Desarrollo de software\nAntigüedad: inició operaciones a comienzos de 2026\nSituación comercial actual\nInversión en pauta: S/ 100 mensuales, solo en Meta\nVolumen: ~130 leads al mes\nCierres: entre 3 y 5 clientes al mes (conversión aprox. 2.3% a 3.8%)\nTicket promedio de venta: S/ 100\nIngreso mensual estimado por esta vía: S/ 300 a S/ 500",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Pedro Romero",
@@ -1381,7 +1450,8 @@
       "deal_name": "New house",
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Xiomi Peru",
@@ -1395,7 +1465,8 @@
       "deal_name": "Xiomi Perú",
       "deal_note": "No respondió llamada. Pido por wsp que la contacten a una hora. Se le llamó no respondió. Se le dejó wsp de seguimiento no respondió.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Renato Sánchez",
@@ -1409,7 +1480,8 @@
       "deal_name": "Reasam Corredor de Seguros",
       "deal_note": "Busca MKT. Sí respondió llamada. No tiene inversión en pauta.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ricardo Callenes Palacios",
@@ -1423,7 +1495,8 @@
       "deal_name": "CCprojects SAC",
       "deal_note": "Descartado: Volumen insuficiente de leads ( menos de 130 al mes).  Sí respondió llamada.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jose Melendez Quesada",
@@ -1437,7 +1510,8 @@
       "deal_name": "Geonet Import Sac",
       "deal_note": "Nunca respondió. Solo mensaje de BOT",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "luis tenorio",
@@ -1451,7 +1525,8 @@
       "deal_name": "Corporación Logística & TransporteDeal",
       "deal_note": null,
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "(sin nombre)",
@@ -1465,7 +1540,8 @@
       "deal_name": "Jopesa Inmobiliaria",
       "deal_note": "Más de 30 entregados. Proyecto de referencia: Hatuey 205, San Miguel. Sector: Real Estate. Fuente: https://www.jopesa.pe/. Correo público no encontrado (solo formulario web).",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "(sin nombre)",
@@ -1479,7 +1555,8 @@
       "deal_name": "Armonhy Inmobiliaria",
       "deal_note": "Más de 10 entregados. Proyecto de referencia: Flora Tristán. Sector: Real Estate. Fuente: https://armonhy.com.pe/. Correo protegido por Cloudflare, no accesible públicamente.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos",
@@ -1493,7 +1570,8 @@
       "deal_name": "Sin datos - 958 282 830",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Perez",
@@ -1507,7 +1585,8 @@
       "deal_name": "Sin datos - Perez",
       "deal_note": null,
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "JORGE LUIS TRAGODARA ACOSTA",
@@ -1521,7 +1600,8 @@
       "deal_name": "Trarmar SAC",
       "deal_note": "No respondió llamada. Sí respondió wsp. Indicó que lo llamaramos el viernes y no respondió. Se le dejó nuevamente mensaje por wsp de recordatorio y no responde.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Zulma Rosario",
@@ -1535,7 +1615,8 @@
       "deal_name": "Expo Group Librerías Multilibros ",
       "deal_note": "No respondió  llamada. se le dejó mensaje por wsp respondió solamente 15 minutos. Se le volvió a llamar, nunca respondió.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eugenio Basilio Davila Paca",
@@ -1549,7 +1630,8 @@
       "deal_name": "Academia Braineer ",
       "deal_note": "Sí respondió llamada. Motivo de descarte, busca potenciar MKT recién 2 meses en el mercado invirtiendo en pauta. Academia pre univarsitaria en Arequipa.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Micaela",
@@ -1563,7 +1645,8 @@
       "deal_name": "Sin datos registrados  ",
       "deal_note": "Indica que marco mal. Está buscando una tienda.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jean Pierre",
@@ -1577,7 +1660,8 @@
       "deal_name": "Sin datos - Hotel ",
       "deal_note": "No respondió seguimiento. No respondió llamada., se le dejó mensaje por wsp pregunto si somos un chat bot, no respondió seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sin datos - Liliana padilla",
@@ -1591,7 +1675,8 @@
       "deal_name": "Sin datos - Liliana padilla",
       "deal_note": "Nunca respondió llamada ni wsp.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Miguel Galvez",
@@ -1605,7 +1690,8 @@
       "deal_name": "SGS SERVICE EIRL",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Thony",
@@ -1619,7 +1705,8 @@
       "deal_name": "Sin datos - Thony",
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Miguel Angel Cayo Veit",
@@ -1633,7 +1720,8 @@
       "deal_name": "Privateacher International ",
       "deal_note": "Si respondió llamada. Empresa que vende cursos de idiomas. Indica que le escriba por wsp para coordinar horario de reunión.",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Chiara Cruz Hernandez",
@@ -1647,7 +1735,8 @@
       "deal_name": "Rimac Seguros",
       "deal_note": "Nunca respondió llamada. Solo respondió con Hola al mensaje de seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis Alvarez Caro",
@@ -1661,7 +1750,8 @@
       "deal_name": "e-Robot",
       "deal_note": "Motivo de descarte: No es nuestro core\nDetalle: Recibe solo 30 leads al mes (Estadio Semilla) — volumen insuficiente para el modelo de perfilamiento y cierre dedicado.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Paul Gamarra",
@@ -1675,7 +1765,8 @@
       "deal_name": "Mural ",
       "deal_note": "Nunca respondió",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Cristian",
@@ -1689,7 +1780,8 @@
       "deal_name": "Inversiones ",
       "deal_note": "Quería precio directamente. No respondió llamada en el horario acordado.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Paolo Gaspar",
@@ -1703,7 +1795,8 @@
       "deal_name": "Manufactura Emisa",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Raquel Alvarado",
@@ -1717,7 +1810,8 @@
       "deal_name": "Ascensores Eurolive",
       "deal_note": "No tienen inversión en pauta. Recién empezarán con ello.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jim Brayan uceda Pisfil",
@@ -1731,7 +1825,8 @@
       "deal_name": "Metal Import Sac",
       "deal_note": "Está buscando solo CRM",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Victor Vigo Paredes",
@@ -1745,7 +1840,8 @@
       "deal_name": "CORPORACIÓN INVISA S.A.C",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Paqui Ramírez Olaya",
@@ -1759,7 +1855,8 @@
       "deal_name": "Tiens",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Dardent Alejandría Alarcón",
@@ -1773,7 +1870,8 @@
       "deal_name": "Drsusse",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jordan  Trujillo tito",
@@ -1787,7 +1885,8 @@
       "deal_name": "Calzado GRUPO Leonex S.A.C",
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carmen Rosa Zare Uribe",
@@ -1801,7 +1900,8 @@
       "deal_name": "Zí Vital",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jhohan Kitaro Belito",
@@ -1815,7 +1915,8 @@
       "deal_name": "kitaro",
       "deal_note": "Nunca respondió. No tiene wsp y no responde llamada",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jeiner Huamán Gormas",
@@ -1829,7 +1930,8 @@
       "deal_name": "Jeiner",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jorge Barco Fenco",
@@ -1843,7 +1945,8 @@
       "deal_name": "Creative Focus ",
       "deal_note": "No responde wsp de seguimiento",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Lucila Edith Vereau Luján",
@@ -1857,7 +1960,8 @@
       "deal_name": "OLYSAN LOVE EIRL",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Mayerlin Melo Delgado",
@@ -1871,7 +1975,8 @@
       "deal_name": "TU DISTI SAC",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "José Maximo Humberto Trillo",
@@ -1885,7 +1990,8 @@
       "deal_name": "David Jose Trillo Uculmana",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis Vasquez Medina",
@@ -1899,7 +2005,8 @@
       "deal_name": "Northside",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Alina Ricsi",
@@ -1913,7 +2020,8 @@
       "deal_name": "Syscopy Perú ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Medicita Sua",
@@ -1927,7 +2035,8 @@
       "deal_name": "Solucionastack",
       "deal_note": "Busca MKT",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Raul Martinez",
@@ -1941,7 +2050,8 @@
       "deal_name": "Aquyra moda",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Carles Ortiz Urquiaga",
@@ -1955,7 +2065,8 @@
       "deal_name": "Ortiz proveedores peru",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Chávez rivera Willian edu",
@@ -1969,7 +2080,8 @@
       "deal_name": "Rivera Brand corp.",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Julio Centeno",
@@ -1983,7 +2095,8 @@
       "deal_name": "Antys Uniformes ",
       "deal_note": "Sin cartera mayorista. Recién quiere empezar a invertir en pauta",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Wilder Vasquez Chavez",
@@ -1997,7 +2110,8 @@
       "deal_name": "Independiente",
       "deal_note": "Nunca respondio. Se registro como indepemdiente",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Fernando Arias Rebolledo",
@@ -2011,7 +2125,8 @@
       "deal_name": "Alvcom - Sef solution sac",
       "deal_note": "Nunca respondió",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Pedro Valdez",
@@ -2025,7 +2140,8 @@
       "deal_name": "VClean",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Christian Diaz",
@@ -2039,7 +2155,8 @@
       "deal_name": "Marxo",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Hans Kevin",
@@ -2053,7 +2170,8 @@
       "deal_name": "Emprendedor Global",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Daniela Mori Bertetti",
@@ -2067,7 +2185,8 @@
       "deal_name": "Iseia Swim",
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": "Alto Nivel",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Gonzalo Car",
@@ -2081,7 +2200,8 @@
       "deal_name": "AUTOMOTORES MOPAL S.A.",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Isaac Herrera Villafuerte",
@@ -2095,7 +2215,8 @@
       "deal_name": "EQUIPOS MAQUINARIAS INDUSTRIALES IM KA EIRL",
       "deal_note": "No respondió tras seguimiento. De frente solicito portafolio y costos. No llegó por botón de wsp.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Edward Roberto Serrano Milla",
@@ -2109,7 +2230,8 @@
       "deal_name": "Edward Roberto Serrano Milla",
       "deal_note": "Nunca respondió wsp y no llegó al botón de wsp en la pauta",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ruben Molina barraza",
@@ -2123,7 +2245,8 @@
       "deal_name": "Oro azul",
       "deal_note": "Quiere talleres para su equipo.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Jacob Galarza Morales",
@@ -2137,7 +2260,8 @@
       "deal_name": "Jasumy ",
       "deal_note": "No es nuestro core, empresa informal, desea asesoria para la formalización.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Sara Nahir Alonzo Ortiz",
@@ -2151,7 +2275,8 @@
       "deal_name": "LikeMundos",
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Pedro",
@@ -2165,7 +2290,8 @@
       "deal_name": "NVG",
       "deal_note": "No responde tras seguimiento. Venta de productos naturales a consumidor final. No brindó mayor detalle de volumen de leads",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Carlos López",
@@ -2179,7 +2305,8 @@
       "deal_name": "Adheplast envases",
       "deal_note": "Nunca respondió el Wsp . No llegó al botón de wsp.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Amdres Reyes",
@@ -2193,7 +2320,8 @@
       "deal_name": "Domcar",
       "deal_note": "Contrataron a un personal de confianza",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Medio"
+      "nivel_urgencia": "Medio",
+      "discard_reason": null
     },
     {
       "name": "Rodolfo Enrique Montoya Miniza",
@@ -2207,7 +2335,8 @@
       "deal_name": "O&M SERVICIOS COMERCIALES SAC",
       "deal_note": "Nunca respondió. No llegó al botón de wsp. Es una empresa de tercerización de servicios comerciales y captación de clientes (confirmado por fuentes públicas)",
       "estadio_lead": "Alto Nivel",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "karen Arrivasplata Vasquez",
@@ -2221,7 +2350,8 @@
       "deal_name": "Karen Arrivasplata - Entel ",
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta y se registro con marca Entel",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carlos Peramás",
@@ -2235,7 +2365,8 @@
       "deal_name": "Automotores Inka ",
       "deal_note": "Respuesta mínima solo indicó cerrar venta. Luego silencio total, sin respuesta al seguimiento.",
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "kenny GS",
@@ -2249,7 +2380,8 @@
       "deal_name": "Umbrella",
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Wilfredo Castro",
@@ -2263,7 +2395,8 @@
       "deal_name": "Serproce SAC ",
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Moises Fabian Acosta Talavera",
@@ -2277,7 +2410,8 @@
       "deal_name": "Inversiones y Distribuciones MARSUR SAC",
       "deal_note": "Nunca respondió. No llegó al botón de wsp en la pauta",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Bryan",
@@ -2291,7 +2425,8 @@
       "deal_name": "R&F Contact Center SAC",
       "deal_note": "Nunca respondió Wsp. Su WhatsApp Business aparece con logo de  WIN. No llegó al botón de wsp en la pauta.",
       "estadio_lead": "En Crecimiento",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Fernando OE",
@@ -2305,7 +2440,8 @@
       "deal_name": "Castilian",
       "deal_note": "No asistió a reunión. Tras seguimiento ya no responde. No llegó al botón de wsp en la pauta",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": "Bajo"
+      "nivel_urgencia": "Bajo",
+      "discard_reason": null
     },
     {
       "name": "Giardel R. Gervasi",
@@ -2319,7 +2455,8 @@
       "deal_name": "Inmater",
       "deal_note": "Se realizó seguimiento. No respondió tras propuesta de reunión.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Christian Christian",
@@ -2333,7 +2470,8 @@
       "deal_name": "Christian ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Viviana Serrano Vega",
@@ -2347,7 +2485,8 @@
       "deal_name": "Viviana Fisioterapeuta ",
       "deal_note": "No califica. Indica que llegan sus clientes a través de referidos. Publico adulto mayor",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "JDaniel",
@@ -2361,7 +2500,8 @@
       "deal_name": "Cyber Tecnology Solutions ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Daniel Parb",
@@ -2375,7 +2515,8 @@
       "deal_name": "Delivery Goo ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Fabricio Castro",
@@ -2389,7 +2530,8 @@
       "deal_name": "Perupack ",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Paul Saavedra Colmenares",
@@ -2403,7 +2545,8 @@
       "deal_name": "UGI ",
       "deal_note": "Nunca respondió wsp.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis",
@@ -2417,7 +2560,8 @@
       "deal_name": "Luis - Gerente General ",
       "deal_note": "Nunca respondió",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Mario Llirod",
@@ -2431,7 +2575,8 @@
       "deal_name": "Alfa Nevado ",
       "deal_note": "No responde wsp, no brinda mayor detalle. Solo indicó que vende terrenos.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Lucia Jimenez",
@@ -2445,7 +2590,8 @@
       "deal_name": "Lucía Jiménez ",
       "deal_note": "No calificable, solo se tiene respuesta automatizada de su asistente de IA",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Roberto",
@@ -2459,7 +2605,8 @@
       "deal_name": "Roberto Emprendiendo",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Gladys Dávalos",
@@ -2473,7 +2620,8 @@
       "deal_name": "Gladys Dávalos ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Gianina elizabeth Tirado Gonzales",
@@ -2487,7 +2635,8 @@
       "deal_name": "Corporación Capsursac",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Fabian meza",
@@ -2501,7 +2650,8 @@
       "deal_name": "Estudiante Fabian Meza",
       "deal_note": "Nunca respondió wsp. Indicó en el formulario que era estudiante.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "María vela",
@@ -2515,7 +2665,8 @@
       "deal_name": "Camara internacional de comercio",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "cristofer correa",
@@ -2529,7 +2680,8 @@
       "deal_name": "Grupo Levi",
       "deal_note": "Nunca respondió WhatsApp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Josue Marin",
@@ -2543,7 +2695,8 @@
       "deal_name": "FFVV EVERSIM",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Rolando Irvin Romero Villanueva",
@@ -2557,7 +2710,8 @@
       "deal_name": "Orquesta Digital Destello de Oro",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ivan Borjas Hilario",
@@ -2571,7 +2725,8 @@
       "deal_name": "Soluciones Digitales de Punchay ",
       "deal_note": "Nunca respondió Wsp. No lleno datos de negocio en el formulario.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "yogamed",
@@ -2585,7 +2740,8 @@
       "deal_name": "Inversiones Casa Grande",
       "deal_note": "Es un dealer/canal de reventa de WOW (proveedor de internet)",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "José Palomino",
@@ -2599,7 +2755,8 @@
       "deal_name": "Eurolavadoras",
       "deal_note": "No responde wsp de seguimiento. Solo respondió que preparan toda clase de lavadoras y refrigeradoras en Huancayo",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jose Zapata",
@@ -2613,7 +2770,8 @@
       "deal_name": "Grupo Zetus",
       "deal_note": "call center/BPO para público español, Busca generación de leads",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Johana Ardiles Escarza",
@@ -2627,7 +2785,8 @@
       "deal_name": "Taller mecánico",
       "deal_note": "Nunca respondió Wsp. No llenó datos de negocio en el formulario.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Angel RS",
@@ -2641,7 +2800,8 @@
       "deal_name": "D Bamninos",
       "deal_note": "No responde wsp de seguimiento",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
@@ -2655,7 +2815,8 @@
       "deal_name": "Eduardo baldeon",
       "deal_note": "No brinda mayor detalle",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Oskar Kastro",
@@ -2669,7 +2830,8 @@
       "deal_name": "Grupo Cipsur",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sandro Vasquez",
@@ -2683,7 +2845,8 @@
       "deal_name": "Bunn Roasters Coffee ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Karina Puente de la Vega",
@@ -2697,7 +2860,8 @@
       "deal_name": "BeitGroup ",
       "deal_note": "No tiene cartera de clientes. Actualmente cuenta únicamente con una persona comercial que trabaja bajo un esquema 100% variable (comisión), sin sueldo fijo. Su necesidad está orientada principalmente a desarrollar una cartera mayorista desde cero mediante prospección presencial en provincias, por lo que no presenta actualmente un encaje adecuado con nuestro modelo de servicios.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eugenio Basilio Davila Paca",
@@ -2711,7 +2875,8 @@
       "deal_name": "Averatech",
       "deal_note": "Se propuso horario de reunió no responde. Solo indicó por chat que los leads le ingresan por meta y 1 persona le ayuda con el cierre.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Franco B",
@@ -2725,7 +2890,8 @@
       "deal_name": "Agroinvest Perú",
       "deal_note": null,
       "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Medio"
+      "nivel_urgencia": "Medio",
+      "discard_reason": null
     },
     {
       "name": "JA Fre",
@@ -2739,7 +2905,8 @@
       "deal_name": "Mercal Ca",
       "deal_note": "Busca MKT",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis Suazo",
@@ -2753,7 +2920,8 @@
       "deal_name": "Andes Seguridad S.A.C. -",
       "deal_note": "Nunca respondió mensajes",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Bruno Rivera coello",
@@ -2767,7 +2935,8 @@
       "deal_name": "B Agro ",
       "deal_note": "Requiere netamente MKT",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Pio Rondon Vera",
@@ -2781,7 +2950,8 @@
       "deal_name": "Pio Rondon Vera",
       "deal_note": "Descartado. Busca trabajo",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Eddy Fuño Becerril",
@@ -2795,7 +2965,8 @@
       "deal_name": "Tu Podcaste ",
       "deal_note": "Registró formulario por segunda vez. Sí respondió la llamada esta vez. Se agendó reunión.",
       "estadio_lead": "Semilla",
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Tu Casa Con Luis Valladares",
@@ -2809,7 +2980,8 @@
       "deal_name": "PANDERO S.A. EAFC",
       "deal_note": "Busca que le realicen el MKT. Descartado",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carlos Felipe Arauco",
@@ -2823,7 +2995,8 @@
       "deal_name": "MaravIA",
       "deal_note": "No brinda mayor información",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Axel.Morales",
@@ -2837,7 +3010,8 @@
       "deal_name": "Axel Morales",
       "deal_note": "Solo respondió CRM. No brindó más respuesta a los mensajes de seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Aprendo Comodo",
@@ -2851,7 +3025,8 @@
       "deal_name": "Aprendo Comodo",
       "deal_note": "No responde. Después de 2 wsp de seguimiento",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jose Luis Piñella Marquez",
@@ -2865,7 +3040,8 @@
       "deal_name": "José Luis Pinella",
       "deal_note": "No calificado, sin base de datos",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Mario Augusto Garcės Fiol",
@@ -2879,7 +3055,8 @@
       "deal_name": "Mario Augusto ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Zupa Pao",
@@ -2893,7 +3070,8 @@
       "deal_name": "Seiger ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Cesar Abraham Bocanegra Benites",
@@ -2907,7 +3085,8 @@
       "deal_name": "Cesar Bocanegra ",
       "deal_note": "Indica ser negocio pequeño aún sin mucha presencia en redes y quiere enfocarse a publicitar por redes. No aplica.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "marco barrantes bay",
@@ -2921,7 +3100,8 @@
       "deal_name": "Marco Barrantes - MAPLASAC",
       "deal_note": "Busca que le realicen el MKT digital",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Andrés Jiménez",
@@ -2935,7 +3115,8 @@
       "deal_name": "DATEA - Andrés Jimenez",
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Dilmer Junior",
@@ -2949,7 +3130,8 @@
       "deal_name": "Dilmer Junior Informal ",
       "deal_note": "Sin negocio formal",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Edgar Choquecahua Aguilar",
@@ -2963,7 +3145,8 @@
       "deal_name": "Echos Perú -",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Anthony Reyes",
@@ -2977,7 +3160,8 @@
       "deal_name": "Misitio  Poligruas",
       "deal_note": "Contacto no responde",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "jorge.noa.95@gmail.com",
@@ -2991,7 +3175,8 @@
       "deal_name": "Jorge Noa ",
       "deal_note": "Nunca respondió Wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis Muñoz",
@@ -3005,7 +3190,8 @@
       "deal_name": "Luis Muñoz",
       "deal_note": "No aplica. Busca solo realizar una venta puntual de botellas de vino",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ricardo Giraldo",
@@ -3019,7 +3205,8 @@
       "deal_name": "Korval",
       "deal_note": "De frente Solicitó reunión. No asistió a la reunió acordada. Indica que avisará fecha y hora disponible para la reprogramación. Se realiza seguimiento indica que revisará agenda. Se volvió hacer seguimiento y no respondió más.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ricardo Gonzalez",
@@ -3033,7 +3220,8 @@
       "deal_name": "Smartway ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Antony Chinchay",
@@ -3047,7 +3235,8 @@
       "deal_name": "Antony Chinchay ",
       "deal_note": "No responde despues de 2 intentos.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Fredy Garay",
@@ -3061,7 +3250,8 @@
       "deal_name": "3P Seguridad Industrial",
       "deal_note": "No responde. Indicó que lo contacten después del 20 porque estará de viaje en provincia. Se le realizó seguimiento después de esa fecha y nunca más volvió a responder.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Cacao Peruano",
@@ -3075,7 +3265,8 @@
       "deal_name": "Cacao Peruano",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Robert Alva",
@@ -3089,7 +3280,8 @@
       "deal_name": "Robert Alva",
       "deal_note": "No responde despues de 2 wsp de seguimiento",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Pablo",
@@ -3103,7 +3295,8 @@
       "deal_name": "Agroinversiones Premium",
       "deal_note": "Proyecto aún sin canales de Leads. Están buscando MKT y consideran que podrian tener 100 leads mensuales.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Juan carlos Urquizo",
@@ -3117,7 +3310,8 @@
       "deal_name": "Universo virtual de negocios mineros SAC",
       "deal_note": "Ya no brinda mayor respuesta.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Joao Riega",
@@ -3131,7 +3325,8 @@
       "deal_name": "Mohrroce - Joao Riega",
       "deal_note": "Busca que le brindemos cartera de clientes.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Cristhian Vega Pastor",
@@ -3145,7 +3340,8 @@
       "deal_name": "Pastor Cristhian Vega CrisTech Solutions",
       "deal_note": "No calificado – dealer/canal de operadora",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "hector jimenez",
@@ -3159,7 +3355,8 @@
       "deal_name": "The Magic - ",
       "deal_note": "No brinda información",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carlos Segura",
@@ -3173,7 +3370,8 @@
       "deal_name": "Core BPO Solution - Terceros de On Negocios",
       "deal_note": "\"No calificado – dealer/canal de operadora\"",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Manuel Huaman",
@@ -3187,7 +3385,8 @@
       "deal_name": "Tres Directo Perú",
       "deal_note": "Se ha reprogramado 2 veces la reunión. Indica que el Jueves 12  me confirmará horarios disponibles. Se le realiza seguimiento pero ya no responde.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carlos Medina",
@@ -3201,7 +3400,8 @@
       "deal_name": "Carlos Medina",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Enrique Ramírez",
@@ -3215,7 +3415,8 @@
       "deal_name": "Constructora Ramher SAC",
       "deal_note": "No responde - Se envió 2 wsp de seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Dante Favarato",
@@ -3229,7 +3430,8 @@
       "deal_name": "Dante Favarato",
       "deal_note": "No aplica / Postulación laboral",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Antony Soto",
@@ -3243,7 +3445,8 @@
       "deal_name": "Maderera El Amigo -",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Paolo Gabriel Nuñez Sotelo",
@@ -3257,7 +3460,8 @@
       "deal_name": "Paolo Gabriel ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Cesar Vicente Ore Tarqui",
@@ -3271,7 +3475,8 @@
       "deal_name": "Grupo Inmobiliario sin Fronteras sac",
       "deal_note": "Asistió a la reunión (tras reprogramar). El motivo real de descarte: pedía que XSell generara la cartera de clientes desde cero (sin leads propios, sin pauta), pagando solo por venta realizada",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Efrain Arellano Solano",
@@ -3285,7 +3490,8 @@
       "deal_name": "INSUMASTER SAC",
       "deal_note": "Se agendo primera reunión no asistió, Se escribió para reporgramar no responde.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Carlos alva",
@@ -3299,7 +3505,8 @@
       "deal_name": "ABSISA ",
       "deal_note": "No responde después de 2 wsp de seguimiento",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Fabian.",
@@ -3313,7 +3520,8 @@
       "deal_name": null,
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Mayra Arias",
@@ -3327,7 +3535,8 @@
       "deal_name": "Consultorio Dental - Mayra Arias ",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "melissa perez",
@@ -3341,7 +3550,8 @@
       "deal_name": "Melissa Perez",
       "deal_note": "No responde wsp. Buscaba cartera de clientes.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Elizabeth Vizcarra Pacchioni",
@@ -3355,7 +3565,8 @@
       "deal_name": "Elizabeth Vizcarra Pacchioni",
       "deal_note": "Se le contactó 2 veces no responde",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "German Jesus Corra Flores",
@@ -3369,7 +3580,8 @@
       "deal_name": "Tu Hogar Constructora",
       "deal_note": "No responde Wsp. Se realizó seguimiento 2 veces",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Manolo Ríos",
@@ -3383,7 +3595,8 @@
       "deal_name": "Manolo Ríos",
       "deal_note": "No responde. Se realizó seguimiento 2 veces",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Jorge Salas Rojas",
@@ -3397,7 +3610,8 @@
       "deal_name": "Jorge Salas Rojas",
       "deal_note": null,
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Leonidas Bances Damián",
@@ -3411,7 +3625,8 @@
       "deal_name": "Bances Damián",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Roque Hipolito Saavedra Quino",
@@ -3425,7 +3640,8 @@
       "deal_name": "Persona sin Negocio",
       "deal_note": "Persona natural sin negocio. Tampoco escribe a nombre de ninguna empresa. No aplica para perfil de nuestros clientes.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Juan Jose Mayaute Cordova",
@@ -3439,7 +3655,8 @@
       "deal_name": "Jose Mayaute Cordova",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis Alberto Castillo Leon",
@@ -3453,7 +3670,8 @@
       "deal_name": "HOM ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Alfonso De La Cruz Rivera",
@@ -3467,7 +3685,8 @@
       "deal_name": "Alfonso De La Cruz Rivera",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Paulino Llanque Cutipa",
@@ -3481,7 +3700,8 @@
       "deal_name": "Paulino Llanque Cutipa",
       "deal_note": "No responde wsp. Seguimiento 2 veces. No lleno nombre de empresa en  formulario.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Albino Marcial Rodriguez Abarca",
@@ -3495,7 +3715,8 @@
       "deal_name": "Alfonso De La Cruz Rivera",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Alfredo Fuentes Bolivar",
@@ -3509,7 +3730,8 @@
       "deal_name": "Alfredo Fuentes Bolivar",
       "deal_note": "No responde despues de 2 wsp de seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Sofonias Montoya Cajalean",
@@ -3523,7 +3745,8 @@
       "deal_name": "Sofonías Montoya ",
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Luis Angel Carrasco Garcia",
@@ -3537,7 +3760,8 @@
       "deal_name": "Luis Angel Carrasco Garcia",
       "deal_note": "No responde después de 2 wsp de seguimiento.",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Ruben Huaman Pineda",
@@ -3551,7 +3775,8 @@
       "deal_name": "Rubén Huamán",
       "deal_note": "Nunca respondió Wsp",
       "estadio_lead": null,
-      "nivel_urgencia": null
+      "nivel_urgencia": null,
+      "discard_reason": null
     }
   ],
   "reuniones_auto": 8,
