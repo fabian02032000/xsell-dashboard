@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T19:18:37.716005+00:00",
+  "updated_at": "2026-10-14T20:04:43.947003+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -703,13 +703,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-09",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - 945 282 654",
       "deal_id": "65739907498",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null,
-      "discard_reason": null
+      "deal_note": "Descartado. Inmobiliaria Fernasur - 3 meses - Yuli Anaga huamani Alvaro. Invierte Mil soles en el mes - recibe solo 150 leads. - Activos 4 proyectos - Arequipa Lotización.",
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo",
+      "discard_reason": "Negocio muy pequeño o pocos leads"
     },
     {
       "name": "Carmen  Chacón ramirez",
@@ -719,13 +719,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-09",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Carmen Chacón ramirez",
       "deal_id": "65791373695",
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Pastelería con unos 6 meses de operación, sin RUC ni empresa constituida (negocio informal). Se cerró la atención dejando la puerta abierta para cuando esté formalizada y consolidada.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Independiente / sin empresa"
     },
     {
       "name": "Rouss Real",
@@ -879,13 +879,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-07",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "@cecibelia73",
       "deal_id": "65717810741",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": "Bajo",
-      "discard_reason": null
+      "discard_reason": "Independiente / sin empresa"
     },
     {
       "name": "Claudio  Saavedra",
@@ -4028,11 +4028,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 193
+      "count": 196
     },
     {
       "label": "Prospectos Contactados",
-      "count": 24
+      "count": 21
     },
     {
       "label": "Reunión Agendadas",
