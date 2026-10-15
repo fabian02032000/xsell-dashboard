@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-15T19:27:12.313513+00:00",
+  "updated_at": "2026-10-15T21:50:46.392649+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 227,
+  "total_leads": 228,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -290,6 +290,10 @@
     {
       "date": "2026-10-14",
       "count": 1
+    },
+    {
+      "date": "2026-10-15",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -317,7 +321,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 51,
+      "leads": 52,
       "goal": 74.0,
       "is_partial": false
     }
@@ -398,19 +402,35 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 12,
+      "leads": 13,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 51,
+  "current_month_leads": 52,
   "current_month_label": "October 2026",
-  "current_week_leads": 12,
+  "current_week_leads": 13,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 226,
   "leads_detail": [
+    {
+      "name": "Isaias Apolinario Uscamayta",
+      "email": "juanjecorjauregui4@gmal.com",
+      "phone": "+51932048927",
+      "company": "ETtoday寵物雲",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-15",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
+    },
     {
       "name": "Lizbeth  Taboada",
       "email": "lizbeth_taboada@hotmail.com",
@@ -4060,7 +4080,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
