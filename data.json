@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T21:50:46.392649+00:00",
+  "updated_at": "2026-10-15T22:34:58.398071+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -413,7 +413,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 226,
+  "leads_with_deal": 227,
   "leads_detail": [
     {
       "name": "Isaias Apolinario Uscamayta",
@@ -422,10 +422,10 @@
       "company": "ETtoday寵物雲",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-15",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "ETtoday",
+      "deal_id": "66021773227",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -4072,7 +4072,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 21
+      "count": 22
     },
     {
       "label": "Reunión Agendadas",
@@ -4080,7 +4080,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
