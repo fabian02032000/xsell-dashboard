@@ -3709,6 +3709,15 @@
   const nl = s => esc(s).replace(/\n/g, '<br>');
   const lsGet = () => { try { return JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (e) { return null; } };
   const lsSet = v => { try { localStorage.setItem(LS_KEY, JSON.stringify(v)); } catch (e) {} };
+  const DEL_KEY = 'xsell_calendar_deleted';
+  const delGet = () => { try { return JSON.parse(localStorage.getItem(DEL_KEY) || '[]'); } catch (e) { return []; } };
+  const delAdd = id => { try { const d = delGet(); if (!d.includes(id)) { d.push(id); localStorage.setItem(DEL_KEY, JSON.stringify(d)); } } catch (e) {} };
+  // Agrega las piezas nuevas del seed (por id) sin pisar lo que ya se editó ni revivir lo borrado.
+  function mergeSeed(list, seed){
+    const have = new Set(list.map(x => x.id)), gone = new Set(delGet());
+    const extra = seed.filter(x => x && x.id && !have.has(x.id) && !gone.has(x.id));
+    return { merged: extra.length ? list.concat(extra) : list, extra };
+  }
 
   let items = [], apiUrl = '', view = null, editingId = null;
   const $ = id => document.getElementById(id);
@@ -3730,13 +3739,16 @@
         const j = await fetch(apiUrl + (apiUrl.includes('?') ? '&' : '?') + 't=' + Date.now()).then(r => r.json());
         items = j.items || [];
         if (!items.length && seed.length){ await api({ action: 'bulk', items: seed }); items = seed.slice(); }
+        else { const m = mergeSeed(items, seed); if (m.extra.length){ items = m.merged; try { await api({ action: 'bulk', items: m.extra }); } catch (e) {} } }
         lsSet(items);
         hint('Guardado en línea: lo que cambies aquí lo ve todo el equipo.');
       } catch (e) {
         items = lsGet() || seed; hint('No se pudo conectar con la hoja de Google; mostrando la última copia de este navegador.');
       }
     } else {
-      items = lsGet() || seed;
+      const saved = lsGet();
+      items = saved ? mergeSeed(saved, seed).merged : seed;
+      if (saved) lsSet(items);
       hint('Por ahora los cambios se guardan solo en este navegador (falta conectar la hoja de Google).');
     }
     const t = limaToday(); view = { y: +t.slice(0, 4), m: +t.slice(5, 7) - 1 };
@@ -3750,7 +3762,7 @@
     if (apiUrl){ try { await api({ action: 'upsert', item: it }); hint('Guardado en línea · ' + new Date().toLocaleTimeString('es-PE')); } catch (e) { hint('No se pudo guardar en línea; quedó guardado en este navegador.'); } }
   }
   async function deleteItem(id){
-    items = items.filter(x => x.id !== id); lsSet(items); render();
+    items = items.filter(x => x.id !== id); delAdd(id); lsSet(items); render();
     if (apiUrl){ try { await api({ action: 'delete', id }); } catch (e) { hint('No se pudo borrar en línea.'); } }
   }
 

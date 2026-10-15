@@ -34,7 +34,7 @@
     ],
     [
      "Exclusiones",
-     "Ninguna por ahora"
+     "Ninguna aplicada. Ya existe el público \"Formulario Xsell enviado 90 días\" para excluir."
     ],
     [
      "Ubicaciones",
@@ -42,7 +42,7 @@
     ],
     [
      "Presupuesto",
-     "De la campaña (Advantage+), con un mínimo de 33% para este conjunto"
+     "De la campaña (S/ 50 al día): mínimo 30% (S/ 15) y máximo 33% (S/ 16.50) para este conjunto"
     ],
     [
      "Anuncios",
@@ -56,7 +56,8 @@
     "Se quitó Administradores de páginas de negocios (65 millones) por ser demasiado amplio y traer negocios pequeños sin pauta.",
     "Edad 28 a 60: rango probable de quien tiene poder de decisión."
    ],
-   "como_juzgarlo": "Con 30 registros desde el cambio: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos."
+   "como_juzgarlo": "Con 30 registros desde el cambio: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos.",
+   "estado": "Publicado el 15 oct a las 12:20 a. m., pero Meta lo detuvo: el objetivo \"clientes potenciales calificados\" ahora pide un CRM conectado. No entrega desde entonces."
   },
   {
    "adset_id": "120251925475080597",
@@ -65,7 +66,7 @@
     "PE | AMBOS | TEXTIL | SIMILAR"
    ],
    "segmento": "Textil",
-   "estado": "Propuesto: falta aplicarlo en Meta",
+   "estado": "Sin aplicar a propósito: si se edita este conjunto, Meta le pediría un CRM y lo detendría como pasó con Automotriz. Hoy es el único conjunto que entrega.",
    "cambio_desde": null,
    "antes": "Público similar a una lista de clientes ideales de textil.",
    "objetivo": "Maximizar el número de clientes potenciales calificados (el mismo de la campaña; Meta no permite mezclar objetivos).",
@@ -92,7 +93,7 @@
     ],
     [
      "Exclusiones",
-     "Ninguna por ahora"
+     "Público \"Formulario Xsell enviado 90 días\" (ya creado, falta aplicarlo)"
     ],
     [
      "Ubicaciones",
@@ -120,7 +121,7 @@
    "nombre": "INMO | CARGOS | PE | 28-60",
    "alias": [],
    "segmento": "Inmobiliaria",
-   "estado": "Propuesto: el conjunto aún no existe en la campaña de formulario",
+   "estado": "Sin crear: en esta campaña todo conjunto nuevo debe usar el objetivo \"calificados\", que exige un CRM. Se armará en una campaña nueva o tras conectar el CRM.",
    "cambio_desde": null,
    "antes": "No había conjunto de inmobiliaria en la campaña de formulario (solo uno pausado en la de WhatsApp).",
    "objetivo": "Maximizar el número de clientes potenciales calificados (el mismo de la campaña; Meta no permite mezclar objetivos).",
@@ -147,7 +148,7 @@
     ],
     [
      "Exclusiones",
-     "Ninguna por ahora"
+     "Público \"Formulario Xsell enviado 90 días\" (ya creado, falta aplicarlo)"
     ],
     [
      "Ubicaciones",
