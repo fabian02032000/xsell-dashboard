@@ -1,0 +1,174 @@
+{
+ "updated_at": "2026-10-15",
+ "segments": [
+  {
+   "adset_id": "120251821265250597",
+   "nombre": "AUTO | CARGOS+INTERESES | PE | 28-60",
+   "alias": [
+    "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+   ],
+   "segmento": "Automotriz",
+   "cambio_desde": "2026-10-15",
+   "antes": "Público similar al 1% de una lista de clientes ideales de automotriz (Advantage+ con sugerencia de público similar).",
+   "objetivo": "Maximizar el número de clientes potenciales calificados (fijado desde que se publicó; Meta no permite cambiarlo).",
+   "configuracion": [
+    [
+     "Ubicación",
+     "Perú"
+    ],
+    [
+     "Edad mínima (control)",
+     "25 años"
+    ],
+    [
+     "Edad sugerida",
+     "28 a 60 años"
+    ],
+    [
+     "Segmentación detallada",
+     "Cargos: Gerente comercial, Director general, Gerente general, Gerente propietario"
+    ],
+    [
+     "Públicos personalizados",
+     "Ninguno (se quitó el público similar al 1%)"
+    ],
+    [
+     "Exclusiones",
+     "Ninguna por ahora"
+    ],
+    [
+     "Ubicaciones",
+     "Advantage+ (Meta ya no permite excluir ubicaciones por conjunto)"
+    ],
+    [
+     "Presupuesto",
+     "De la campaña (Advantage+), con un mínimo de 33% para este conjunto"
+    ],
+    [
+     "Anuncios",
+     "Los mismos anuncios y formulario de automotriz"
+    ]
+   ],
+   "por_que": [
+    "Le hablamos a quien decide en el concesionario (gerentes y dueños), no a vendedores ni a compradores de autos.",
+    "Solo 4 cargos: con Advantage+ la segmentación es una pista y cada dato agregado suma gente, no la filtra.",
+    "No se agregó el interés Automotor (386 millones de personas en el mundo) porque atrae a compradores de autos; el anuncio de concesionarios hace ese filtro.",
+    "Se quitó Administradores de páginas de negocios (65 millones) por ser demasiado amplio y traer negocios pequeños sin pauta.",
+    "Edad 28 a 60: rango probable de quien tiene poder de decisión."
+   ],
+   "como_juzgarlo": "Con 30 registros desde el cambio: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos."
+  },
+  {
+   "adset_id": "120251925475080597",
+   "nombre": "TEXTIL | CARGOS | PE | 28-60",
+   "alias": [
+    "PE | AMBOS | TEXTIL | SIMILAR"
+   ],
+   "segmento": "Textil",
+   "estado": "Propuesto: falta aplicarlo en Meta",
+   "cambio_desde": null,
+   "antes": "Público similar a una lista de clientes ideales de textil.",
+   "objetivo": "Maximizar el número de clientes potenciales calificados (el mismo de la campaña; Meta no permite mezclar objetivos).",
+   "configuracion": [
+    [
+     "Ubicación",
+     "Perú"
+    ],
+    [
+     "Edad mínima (control)",
+     "25 años"
+    ],
+    [
+     "Edad sugerida",
+     "28 a 60 años"
+    ],
+    [
+     "Segmentación detallada",
+     "Cargos: Gerente comercial, Director general, Gerente general, Gerente propietario"
+    ],
+    [
+     "Públicos personalizados",
+     "Ninguno"
+    ],
+    [
+     "Exclusiones",
+     "Ninguna por ahora"
+    ],
+    [
+     "Ubicaciones",
+     "Advantage+ (Meta ya no permite excluir ubicaciones por conjunto)"
+    ],
+    [
+     "Presupuesto",
+     "De la campaña (Advantage+), con un mínimo por conjunto"
+    ],
+    [
+     "Anuncios",
+     "Los mismos anuncios y formulario de textil (videos del 30 oct y 20 nov en el calendario)"
+    ]
+   ],
+   "por_que": [
+    "Le hablamos a dueños y gerentes de marcas y talleres con venta por mayor, no a vendedores ni a compradores de ropa.",
+    "Mismos 4 cargos que Automotriz: pocas pistas y de decisión; con Advantage+ cada dato agregado suma gente.",
+    "Sin intereses como Moda o Industria textil: abren el público a consumidores finales.",
+    "Es el segmento con más riesgo: el conjunto anterior dio 35 registros, 0 leads y 71% sin respuesta, y aún no hay investigación propia del sector."
+   ],
+   "como_juzgarlo": "Corte estricto: con 30 registros, apagar si no hay leads o contesta menos del 40%."
+  },
+  {
+   "adset_id": "",
+   "nombre": "INMO | CARGOS | PE | 28-60",
+   "alias": [],
+   "segmento": "Inmobiliaria",
+   "estado": "Propuesto: el conjunto aún no existe en la campaña de formulario",
+   "cambio_desde": null,
+   "antes": "No había conjunto de inmobiliaria en la campaña de formulario (solo uno pausado en la de WhatsApp).",
+   "objetivo": "Maximizar el número de clientes potenciales calificados (el mismo de la campaña; Meta no permite mezclar objetivos).",
+   "configuracion": [
+    [
+     "Ubicación",
+     "Perú"
+    ],
+    [
+     "Edad mínima (control)",
+     "25 años"
+    ],
+    [
+     "Edad sugerida",
+     "28 a 60 años"
+    ],
+    [
+     "Segmentación detallada",
+     "Cargos: Gerente comercial, Director general, Gerente general, Gerente propietario"
+    ],
+    [
+     "Públicos personalizados",
+     "Ninguno"
+    ],
+    [
+     "Exclusiones",
+     "Ninguna por ahora"
+    ],
+    [
+     "Ubicaciones",
+     "Advantage+ (Meta ya no permite excluir ubicaciones por conjunto)"
+    ],
+    [
+     "Presupuesto",
+     "De la campaña (Advantage+), con un mínimo por conjunto"
+    ],
+    [
+     "Anuncios",
+     "Anuncios de inmobiliaria (videos del 23 oct y 13 nov en el calendario)"
+    ]
+   ],
+   "por_que": [
+    "Le hablamos a gerentes comerciales y dueños de inmobiliarias y constructoras de vivienda, no a quien busca departamento.",
+    "Mismos 4 cargos de decisión: pocas pistas, con Advantage+ cada dato agregado suma gente.",
+    "Sin el interés Bienes raíces: lo tiene sobre todo quien quiere comprar o alquilar, que es el mayor riesgo de este segmento.",
+    "Mensaje de la investigación: 8 de cada 10 interesados no vuelven a saber del asesor; nosotros los llevamos hasta la visita."
+   ],
+   "como_juzgarlo": "Con 30 registros: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos."
+  }
+ ]
+}

@@ -217,6 +217,15 @@
   .platform-pill.instagram{color:#FF6BAA; background:rgba(255,107,170,0.12); border:1px solid rgba(255,107,170,0.4);}
 
   /* ---- Pestaña principal (rediseño oct-2026) ---- */
+.cv-seg{margin-bottom:16px}
+.cv-seg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+.cv-seg-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}
+.cv-seg-conf td:first-child{color:var(--text-muted);white-space:nowrap;width:38%}
+.cv-seg-conf td{text-align:left!important}
+.cv-seg-why{margin:0;padding-left:18px;font-size:13px;line-height:1.55}.cv-seg-why li{margin-bottom:6px}
+.cv-seg-rule{font-size:13px;background:var(--surface-2);border-radius:8px;padding:10px 12px;margin-top:10px}
+@media (max-width:760px){.cv-seg-grid{grid-template-columns:1fr}}
+
 .cv-filters{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px;padding:12px 16px}
 .cv-filters select{max-width:100%;background:var(--surface-2);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:6px 8px}
 .cv-group-title{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 8px}
@@ -592,6 +601,11 @@
       <div class="table-wrap cv-tree-wrap"><table class="cv-tree" id="cvTree"></table></div>
       <p class="hint" id="cvTreeHint" style="margin-top:8px;"></p>
     </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Segmentos: qué configuramos y por qué</h2><span class="hint">Una ficha por conjunto de anuncios · métricas desde el último cambio de público frente a lo anterior</span></div>
+    <div id="cvSegments"></div>
   </section>
 
   <section>
@@ -3892,6 +3906,9 @@
   }
   const isNoResp = l => /^no respondi/.test(norm(motive(l)));
 
+  let SEGMENTS = [];
+  const segOf = id => SEGMENTS.find(g => g.adset_id === id);
+  const segAliases = id => { const g = segOf(id); return g ? [g.nombre].concat(g.alias || []) : []; };
   let S = { meta: null, data: null, from: '', to: '', channel: 'all', campaign: '__all__', sort: { key: 'spend', dir: -1 }, open: new Set(), groups: new Set(['alc', 'int', 'conv', 'res']), trend: 'spend' };
   S.channel = 'cap';
   const isWaName = n => norm(n).includes(norm((S.meta && S.meta.whatsapp_campaign_match) || 'whatsapp'));
@@ -3956,7 +3973,7 @@
     const wa = /whatsapp/i.test(l.lead_source || '');
     if (level === 'campaigns') return wa ? isWaName(row.name) : l.attr_campaign_name === row.name;
     if (wa) return false; // WhatsApp no identifica conjunto ni anuncio
-    if (level === 'adsets') return l.adset_name === row.name && l.attr_campaign_name === row.campaign_name;
+    if (level === 'adsets'){ const al = segAliases(row.id); return (l.adset_name === row.name || al.includes(l.adset_name)) && l.attr_campaign_name === row.campaign_name; }
     return l.ad_name === row.name && l.adset_name === row.adset_name;
   });
 
@@ -4023,7 +4040,8 @@
     const row = (e, depth, hasKids) => {
       const open = S.open.has(e.level + e.id);
       const name = e.level === 'ads' ? `<button type="button" class="cv-adlink" data-ad="${esc(e.id)}">${esc(e.name)}</button>` : esc(e.name);
-      return `<tr class="cv-l${depth}"><td class="cv-sticky"><span style="padding-left:${depth * 18}px"></span>${hasKids ? `<button type="button" class="cv-tog" data-open="${esc(e.level + e.id)}">${open ? '▾' : '▸'}</button>` : '<span class="cv-tog-sp"></span>'}${name}</td><td>${badge(statusOf(e.id))}</td>${cols.map(c => `<td>${c.f(e.k[c.k])}</td>`).join('')}</tr>`;
+      const segBtn = e.level === 'adsets' && segOf(e.id) ? ` <button type="button" class="note-btn" data-seg="${esc(e.id)}">Ver ficha</button>` : '';
+      return `<tr class="cv-l${depth}"><td class="cv-sticky"><span style="padding-left:${depth * 18}px"></span>${hasKids ? `<button type="button" class="cv-tog" data-open="${esc(e.level + e.id)}">${open ? '▾' : '▸'}</button>` : '<span class="cv-tog-sp"></span>'}${name}${segBtn}</td><td>${badge(statusOf(e.id))}</td>${cols.map(c => `<td>${c.f(e.k[c.k])}</td>`).join('')}</tr>`;
     };
     let body = '';
     camps.forEach(c => {
@@ -4093,6 +4111,43 @@
     $('cvTrend').innerHTML = `<p class="tile-label" style="margin:0 0 6px">${T[1]} por día${total}</p><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${T[1]} por día">${ticks}${marks}${xl}</svg>`;
   }
 
+
+  // ---------- fichas de segmento ----------
+  function drawSegments(){
+    const el = $('cvSegments'); if (!el) return;
+    if (!SEGMENTS.length){ el.innerHTML = '<div class="chart-card"><p class="table-sub">Aún no hay segmentos documentados.</p></div>'; return; }
+    const daily = ((S.meta && S.meta.campaign_analysis_daily && S.meta.campaign_analysis_daily.adsets) || []);
+    const allRegs = (S.data && S.data.leads_detail) || [];
+    el.innerHTML = SEGMENTS.map(g => {
+      const names = [g.nombre].concat(g.alias || []);
+      const rows = daily.filter(r => (g.adset_id && r.id === g.adset_id) || names.includes(r.name));
+      const regs = allRegs.filter(l => names.includes(l.adset_name));
+      const d0 = g.cambio_desde || '9999';
+      const after = kpis(sumRows(rows.filter(r => r.date >= d0)), hubStats(regs.filter(l => (l.created_date || '').slice(0, 10) >= d0)));
+      const before = kpis(sumRows(rows.filter(r => r.date < d0)), hubStats(regs.filter(l => (l.created_date || '').slice(0, 10) < d0)));
+      const M = [['Inversión', 'spend', money], ['Impresiones', 'impressions', fmt], ['CPM', 'cpm', money], ['CTR del enlace', 'ctrLink', pct], ['Abandono del formulario', 'abandon', pct], ['Registros', 'reg', fmt], ['Costo por registro', 'cpr', money], ['% que no respondió', 'noRespRate', pct], ['% que no califica', 'noCalRate', pct], ['Leads (reunión o más)', 'lead', fmt], ['Costo por lead', 'cpl', money]];
+      const st = statusOf(g.adset_id);
+      return `<div class="chart-card cv-seg" id="seg-${esc(g.adset_id)}">
+        <div class="cv-seg-head"><div><p class="cv-group-title" style="margin:0 0 4px">${esc(g.segmento)}</p><h3 style="margin:0">${esc(g.nombre)}</h3>${g.estado ? `<p class="hint" style="margin:4px 0 0;color:var(--warning)">${esc(g.estado)}</p>` : ''}</div>${g.cambio_desde ? badge(st) : ''}</div>
+        <div class="cv-seg-grid">
+          <div>
+            <p class="cv-group-title">Qué configuramos</p>
+            <table class="cv-compare cv-seg-conf"><tbody>${(g.configuracion || []).map(c => `<tr><td>${esc(c[0])}</td><td>${esc(c[1])}</td></tr>`).join('')}<tr><td>Objetivo de rendimiento</td><td>${esc(g.objetivo || '')}</td></tr></tbody></table>
+            ${g.antes ? `<p class="hint" style="margin-top:8px">${g.cambio_desde ? 'Antes del ' + esc(d0) : 'Hoy'}: ${esc(g.antes)}</p>` : ''}
+          </div>
+          <div>
+            <p class="cv-group-title">Por qué</p>
+            <ul class="cv-seg-why">${(g.por_que || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+            ${g.como_juzgarlo ? `<p class="cv-seg-rule"><strong>Cómo juzgarlo:</strong> ${esc(g.como_juzgarlo)}</p>` : ''}
+          </div>
+        </div>
+        <p class="cv-group-title">${g.cambio_desde ? `Métricas: desde el cambio (${esc(d0)}) frente a antes` : 'Métricas hasta hoy (antes del cambio)'}</p>
+        <div class="table-wrap"><table class="cv-compare"><thead><tr><th>Métrica</th>${g.cambio_desde ? '<th>Desde el cambio</th>' : ''}<th>${g.cambio_desde ? 'Antes' : 'Hasta hoy'}</th></tr></thead><tbody>${M.map(m => `<tr><td>${m[0]}</td>${g.cambio_desde ? `<td>${m[2](after[m[1]])}</td>` : ''}<td>${m[2](before[m[1]])}</td></tr>`).join('')}</tbody></table></div>
+        ${g.cambio_desde && after.reg < 30 ? `<p class="hint" style="margin-top:8px">Lleva ${fmt(after.reg)} registros desde el cambio: todavía es pronto para juzgarlo (la regla pide 30).</p>` : ''}
+      </div>`;
+    }).join('');
+  }
+
   // ---------- 6. ficha del anuncio ----------
   function openAd(id){
     const e = (S._ads || []).find(a => a.id === id); if (!e) return;
@@ -4117,7 +4172,7 @@
   function render(){
     if (!S.meta) { $('cvKpis').innerHTML = '<p class="table-sub">Esperando datos de Meta Ads.</p>'; return; }
     const k = kpis(sumRows(dailyRows('campaigns')), hubStats(regsAll()));
-    drawKpis(k); drawCompare(); drawTree(); drawQuality(); drawTrend();
+    drawKpis(k); drawCompare(); drawTree(); drawSegments(); drawQuality(); drawTrend();
   }
   function setPreset(p){
     const t = limaToday(), start = (S.meta && S.meta.campaign_start) || (S.data && S.data.campaign_start) || '2026-07-25';
@@ -4141,6 +4196,7 @@
       const o = e.target.closest('[data-open]'); if (o){ S.open.has(o.dataset.open) ? S.open.delete(o.dataset.open) : S.open.add(o.dataset.open); drawTree(); return; }
       const s = e.target.closest('[data-sort]'); if (s){ S.sort = { key: s.dataset.sort, dir: S.sort.key === s.dataset.sort ? -S.sort.dir : -1 }; drawTree(); return; }
       const t = e.target.closest('[data-trend]'); if (t){ S.trend = t.dataset.trend; drawTrend(); return; }
+      const sg = e.target.closest('[data-seg]'); if (sg){ const c = document.getElementById('seg-' + sg.dataset.seg); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
       const a = e.target.closest('[data-ad]'); if (a){ openAd(a.dataset.ad); return; }
       if (e.target.closest('[data-cvclose]') || e.target.id === 'cvAdModal') $('cvAdModal').hidden = true;
     });
@@ -4154,6 +4210,7 @@
     sel.innerHTML = '<option value="__all__">Todas</option>' + names.map(n => `<option${n === cur ? ' selected' : ''}>${esc(n)}</option>`).join('');
     if (!S.from){ setPreset('all'); }
     render();
+    if (!S._segLoaded){ S._segLoaded = true; fetch('segments.json?t=' + Date.now()).then(r => r.ok ? r.json() : {segments: []}).then(j => { SEGMENTS = j.segments || []; render(); }).catch(() => {}); }
   };
   if (window.__cvPending) window.XsellCampaignV2(window.__cvPending[0], window.__cvPending[1]);
 })();
