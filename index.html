@@ -557,8 +557,8 @@
 
   <section>
     <div class="section-head">
-      <h2>Anuncios activos</h2>
-      <span class="hint">Ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
+      <h2>Anuncios</h2>
+      <span class="hint">Todos los anuncios de la pauta, ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
     </div>
     <div class="adc-grid" id="adCards"></div>
     <p class="hint" style="margin-top:10px;">El alcance de varios días se suma día a día, así que es aproximado (y la frecuencia también). Meta no indica qué anuncio trajo a cada contacto de WhatsApp: esos registros aparecen en "No identificado".</p>
@@ -963,9 +963,7 @@
   // estado (PAUSED, CAMPAIGN_PAUSED, ADSET_PAUSED, ARCHIVED, DELETED, etc.) se muestra como
   // "Desactivado" (rojo). Sin dato de estado (p.ej. filas muy antiguas) muestra "—".
   function statusBadge(status){
-    if (!status) return '<span class="status-pill no">—</span>';
-    const isActive = status === 'ACTIVE';
-    return `<span class="status-pill ${isActive ? 'on' : 'off'}">${isActive ? 'Activo' : 'Desactivado'}</span>`;
+    return ''; // no se muestra si está encendido o apagado
   }
 
   // ---- Pestañas ----
@@ -1392,8 +1390,8 @@
     const isWa = c => (c || '').toLowerCase().includes(waMatch);
     const imgByAd = {};
     (meta.leads_creatives || []).forEach(a => { if (a.ad_name && a.image_url) imgByAd[a.ad_name] = a.image_url; });
-    // Anuncios activos ahora mismo
-    const active = (meta.ads_performance || []).filter(a => a.status === 'ACTIVE');
+    // Todos los anuncios con actividad en el rango (sin importar si hoy están encendidos)
+    const active = (meta.ads_performance || []);
     // Métricas de Meta, sumadas día a día dentro del rango
     const daily = (meta.campaign_analysis_daily && meta.campaign_analysis_daily.ads) || [];
     const agg = {};
@@ -1414,13 +1412,13 @@
       byName[l.ad_name].reg++;
       if (leadState(l) === 'lead') byName[l.ad_name].lead++;
     });
-    const cards = active.map(a => {
+    const cards = active.filter(a => (a.spend || 0) > 0 || (agg[a.ad_id] && agg[a.ad_id].impressions > 0)).map(a => {
       const m = agg[a.ad_id] || { spend: 0, impressions: 0, reach: 0, clicks: 0, engagement: 0, conversations: 0, hasEng: false };
       const wa = isWa(a.campaign_name);
       const h = byName[a.ad_name] || { reg: 0, lead: 0 };
       return { a, m, wa, reg: wa ? null : h.reg, lead: wa ? null : h.lead, img: a.image_url || imgByAd[a.ad_name] || null };
     });
-    cards.sort((x, y) => ((y.reg || 0) - (x.reg || 0)) || (y.m.conversations - x.m.conversations) || (y.m.impressions - x.m.impressions));
+    cards.sort((x, y) => ((y.reg || 0) - (x.reg || 0)) || (y.m.conversations - x.m.conversations) || (y.m.impressions - x.m.impressions) || ((y.a.spend || 0) - (x.a.spend || 0)));
     // Tarjeta "No identificado" con los registros de WhatsApp del rango
     const waLeads = leads.filter(l => /whatsapp/i.test(l.lead_source || ''));
     const money = v => fmtMoney(v);
@@ -1466,7 +1464,7 @@
           <div class="adc-hero"><div><span>Registros</span><strong>${fmt(waLeads.length)}</strong></div><div><span>Leads</span><strong>${fmt(waLeads.filter(l => leadState(l) === 'lead').length)}</strong></div></div>
         </div>
       </article>` : '';
-    el.innerHTML = (html + waCard) || '<p class="table-sub">No hay anuncios activos ahora mismo.</p>';
+    el.innerHTML = (html + waCard) || '<p class="table-sub">Todavía no hay anuncios con inversión.</p>';
   }
 
   function drawGoalSimple(data){
@@ -2352,9 +2350,9 @@
 
     heroWrap.innerHTML = `
       <div class="creative-hero">
-        <img src="${hero.image_url}" alt="${hero.ad_name || 'Creatividad activa'}">
+        <img src="${hero.image_url}" alt="${hero.ad_name || 'Creatividad'}">
         <div class="creative-hero-body">
-          <h3>${hero.ad_name || 'Anuncio activo'}</h3>
+          <h3>${hero.ad_name || 'Anuncio'}</h3>
           <p>Esta es la pieza activa generando registros ahora mismo — vía el formulario de Meta Lead Ads de la campaña "${hero.campaign_name}". La imagen se trae en vivo desde tu cuenta de Meta Ads, así que si cambias el anuncio, se actualiza sola.</p>
           ${heroCopyHtml}
           <div class="creative-stats">
@@ -4048,12 +4046,12 @@
     const ads = build('ads', dailyRows('ads'), regs);
     const cols = COLS.filter(c => S.groups.has(c.g));
     $('cvGroups').innerHTML = 'Columnas: ' + GROUPS.map(([g, l]) => `<button type="button" class="filter-btn${S.groups.has(g) ? ' active' : ''}" data-group="${g}">${l}</button>`).join('');
-    const head = `<thead><tr><th class="cv-sticky">Nombre</th><th>Estado</th>${cols.map(c => `<th class="cv-sort" data-sort="${c.k}">${c.l}${S.sort.key === c.k ? (S.sort.dir < 0 ? ' ▾' : ' ▴') : ''}</th>`).join('')}</tr></thead>`;
+    const head = `<thead><tr><th class="cv-sticky">Nombre</th>${cols.map(c => `<th class="cv-sort" data-sort="${c.k}">${c.l}${S.sort.key === c.k ? (S.sort.dir < 0 ? ' ▾' : ' ▴') : ''}</th>`).join('')}</tr></thead>`;
     const row = (e, depth, hasKids) => {
       const open = S.open.has(e.level + e.id);
       const name = e.level === 'ads' ? `<button type="button" class="cv-adlink" data-ad="${esc(e.id)}">${esc(e.name)}</button>` : esc(e.name);
       const segBtn = e.level === 'adsets' && segOf(e.id) ? ` <button type="button" class="note-btn" data-seg="${esc(e.id)}">Ver ficha</button>` : '';
-      return `<tr class="cv-l${depth}"><td class="cv-sticky"><span style="padding-left:${depth * 18}px"></span>${hasKids ? `<button type="button" class="cv-tog" data-open="${esc(e.level + e.id)}">${open ? '▾' : '▸'}</button>` : '<span class="cv-tog-sp"></span>'}${name}${segBtn}</td><td>${badge(statusOf(e.id))}</td>${cols.map(c => `<td>${c.f(e.k[c.k])}</td>`).join('')}</tr>`;
+      return `<tr class="cv-l${depth}"><td class="cv-sticky"><span style="padding-left:${depth * 18}px"></span>${hasKids ? `<button type="button" class="cv-tog" data-open="${esc(e.level + e.id)}">${open ? '▾' : '▸'}</button>` : '<span class="cv-tog-sp"></span>'}${name}${segBtn}</td>${cols.map(c => `<td>${c.f(e.k[c.k])}</td>`).join('')}</tr>`;
     };
     let body = '';
     camps.forEach(c => {
@@ -4140,20 +4138,21 @@
       const M = [['Inversión', 'spend', money], ['Impresiones', 'impressions', fmt], ['CPM', 'cpm', money], ['CTR del enlace', 'ctrLink', pct], ['Abandono del formulario', 'abandon', pct], ['Registros', 'reg', fmt], ['Costo por registro', 'cpr', money], ['% que no respondió', 'noRespRate', pct], ['% que no califica', 'noCalRate', pct], ['Leads (reunión o más)', 'lead', fmt], ['Costo por lead', 'cpl', money]];
       const st = statusOf(g.adset_id);
       return `<div class="chart-card cv-seg" id="seg-${esc(g.adset_id)}">
-        <div class="cv-seg-head"><div><p class="cv-group-title" style="margin:0 0 4px">${esc(g.segmento)}</p><h3 style="margin:0">${esc(g.nombre)}</h3>${g.estado ? `<p class="hint" style="margin:4px 0 0;color:var(--warning)">${esc(g.estado)}</p>` : ''}</div>${g.cambio_desde ? badge(st) : ''}</div>
+        <div class="cv-seg-head"><div><p class="cv-group-title" style="margin:0 0 4px">${esc(g.segmento)}</p><h3 style="margin:0">${esc(g.nombre)}</h3>${g.estado ? `<p class="hint" style="margin:4px 0 0;color:${g.estado_tono === 'ok' ? 'var(--good)' : g.estado_tono === 'off' ? 'var(--text-muted)' : 'var(--warning)'}">${esc(g.estado)}</p>` : ''}</div></div>
         <div class="cv-seg-grid">
           <div>
-            <p class="cv-group-title">Qué configuramos</p>
+            <p class="cv-group-title">${esc(g.titulo_config || 'Qué configuramos')}</p>
             <table class="cv-compare cv-seg-conf"><tbody>${(g.configuracion || []).map(c => `<tr><td>${esc(c[0])}</td><td>${esc(c[1])}</td></tr>`).join('')}<tr><td>Objetivo de rendimiento</td><td>${esc(g.objetivo || '')}</td></tr></tbody></table>
-            ${g.antes ? `<p class="hint" style="margin-top:8px">${g.cambio_desde ? 'Antes del ' + esc(d0) : 'Hoy'}: ${esc(g.antes)}</p>` : ''}
+            ${g.antes ? `<p class="hint" style="margin-top:8px">${g.cambio_desde ? 'Antes del ' + esc(d0) : 'Antes'}: ${esc(g.antes)}</p>` : ''}
           </div>
           <div>
-            <p class="cv-group-title">Por qué</p>
+            <p class="cv-group-title">${esc(g.titulo_porque || 'Por qué')}</p>
             <ul class="cv-seg-why">${(g.por_que || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>
             ${g.como_juzgarlo ? `<p class="cv-seg-rule"><strong>Cómo juzgarlo:</strong> ${esc(g.como_juzgarlo)}</p>` : ''}
           </div>
         </div>
-        <p class="cv-group-title">${g.cambio_desde ? `Métricas: desde el cambio (${esc(d0)}) frente a antes` : 'Métricas hasta hoy (antes del cambio)'}</p>
+        ${g.nota_metricas ? `<p class="cv-seg-rule" style="margin-bottom:10px">${esc(g.nota_metricas)}</p>` : ''}
+        <p class="cv-group-title">${g.cambio_desde ? `Métricas: desde el cambio (${esc(d0)}) frente a antes` : esc(g.titulo_metricas || 'Métricas hasta hoy (antes del cambio)')}</p>
         <div class="table-wrap"><table class="cv-compare"><thead><tr><th>Métrica</th>${g.cambio_desde ? '<th>Desde el cambio</th>' : ''}<th>${g.cambio_desde ? 'Antes' : 'Hasta hoy'}</th></tr></thead><tbody>${M.map(m => `<tr><td>${m[0]}</td>${g.cambio_desde ? `<td>${m[2](after[m[1]])}</td>` : ''}<td>${m[2](before[m[1]])}</td></tr>`).join('')}</tbody></table></div>
         ${g.cambio_desde && after.reg < 30 ? `<p class="hint" style="margin-top:8px">Lleva ${fmt(after.reg)} registros desde el cambio: todavía es pronto para juzgarlo (la regla pide 30).</p>` : ''}
       </div>`;
@@ -4170,7 +4169,7 @@
     $('cvAdBody').innerHTML = `
       <div class="cv-ad-top">
         ${perf.image_url ? `<img src="${esc(perf.image_url)}" alt="" class="cv-ad-img" onerror="this.outerHTML='<div class=&quot;cv-ad-img cv-ad-noimg&quot;>Sin vista previa</div>'">` : '<div class="cv-ad-img cv-ad-noimg">Sin vista previa</div>'}
-        <div><p class="cal-sp-meta">${esc(e.campaign_name)} · ${esc(e.adset_name || '')} · ${badge(perf.status)}</p>
+        <div><p class="cal-sp-meta">${esc(e.campaign_name)} · ${esc(e.adset_name || '')}</p>
         ${perf.title ? `<p><strong>${esc(perf.title)}</strong></p>` : ''}${perf.body ? `<p style="white-space:pre-line">${esc(perf.body)}</p>` : ''}${perf.description ? `<p class="table-sub">${esc(perf.description)}</p>` : ''}</div>
       </div>
       <p class="cv-group-title">Métricas en el rango (${S.from} al ${S.to})</p>
