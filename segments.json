@@ -8,9 +8,9 @@
     "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
    ],
    "segmento": "Automotriz",
-   "cambio_desde": "2026-10-15",
+   "cambio_desde": null,
    "antes": "Público similar al 1% de una lista de clientes ideales de automotriz (Advantage+ con sugerencia de público similar).",
-   "objetivo": "Maximizar el número de clientes potenciales calificados (fijado desde que se publicó; Meta no permite cambiarlo).",
+   "objetivo": "Maximizar el número de clientes potenciales calificados, optimizando a la etapa \"Contactado\" de HubSpot.",
    "configuracion": [
     [
      "Ubicación",
@@ -34,7 +34,7 @@
     ],
     [
      "Exclusiones",
-     "Ninguna aplicada. Ya existe el público \"Formulario Xsell enviado 90 días\" para excluir."
+     "Público \"Formulario Xsell enviado 90 días\": no se le vuelve a mostrar a quien ya se registró."
     ],
     [
      "Ubicaciones",
@@ -42,7 +42,7 @@
     ],
     [
      "Presupuesto",
-     "De la campaña (S/ 50 al día): mínimo 30% (S/ 15) y máximo 33% (S/ 16.50) para este conjunto"
+     "De la campaña V.2 (Advantage+), repartido entre los tres segmentos."
     ],
     [
      "Anuncios",
@@ -57,7 +57,10 @@
     "Edad 28 a 60: rango probable de quien tiene poder de decisión."
    ],
    "como_juzgarlo": "Con 30 registros desde el cambio: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos.",
-   "estado": "Publicado el 15 oct a las 12:20 a. m., pero Meta lo detuvo: el objetivo \"clientes potenciales calificados\" ahora pide un CRM conectado. No entrega desde entonces."
+   "estado": "Configuración nueva lista. Se lanza en la campaña V.2 con el objetivo de clientes potenciales calificados (CRM conectado a Meta el 15 oct).",
+   "estado_tono": "ok",
+   "nota_metricas": "Aún no hay datos de la nueva configuración: empieza a medir cuando se publique la campaña V.2. Las cifras de abajo son de la configuración anterior.",
+   "titulo_metricas": "Métricas de la configuración anterior (público similar al 1%)"
   },
   {
    "adset_id": "120251925475080597",
@@ -66,10 +69,10 @@
     "PE | AMBOS | TEXTIL | SIMILAR"
    ],
    "segmento": "Textil",
-   "estado": "Sin aplicar a propósito: si se edita este conjunto, Meta le pediría un CRM y lo detendría como pasó con Automotriz. Hoy es el único conjunto que entrega.",
+   "estado": "Configuración nueva lista. Se lanza en la campaña V.2 junto con Automotriz.",
    "cambio_desde": null,
    "antes": "Público similar a una lista de clientes ideales de textil.",
-   "objetivo": "Maximizar el número de clientes potenciales calificados (el mismo de la campaña; Meta no permite mezclar objetivos).",
+   "objetivo": "Maximizar el número de clientes potenciales calificados, optimizando a la etapa \"Contactado\" de HubSpot.",
    "configuracion": [
     [
      "Ubicación",
@@ -93,7 +96,7 @@
     ],
     [
      "Exclusiones",
-     "Público \"Formulario Xsell enviado 90 días\" (ya creado, falta aplicarlo)"
+     "Público \"Formulario Xsell enviado 90 días\": no se le vuelve a mostrar a quien ya se registró."
     ],
     [
      "Ubicaciones",
@@ -101,7 +104,7 @@
     ],
     [
      "Presupuesto",
-     "De la campaña (Advantage+), con un mínimo por conjunto"
+     "De la campaña V.2 (Advantage+), repartido entre los tres segmentos."
     ],
     [
      "Anuncios",
@@ -114,17 +117,20 @@
     "Sin intereses como Moda o Industria textil: abren el público a consumidores finales.",
     "Es el segmento con más riesgo: el conjunto anterior dio 35 registros, 0 leads y 71% sin respuesta, y aún no hay investigación propia del sector."
    ],
-   "como_juzgarlo": "Corte estricto: con 30 registros, apagar si no hay leads o contesta menos del 40%."
+   "como_juzgarlo": "Corte estricto: con 30 registros, apagar si no hay leads o contesta menos del 40%.",
+   "estado_tono": "ok",
+   "nota_metricas": "Aún no hay datos de la nueva configuración: empieza a medir cuando se publique la campaña V.2. Las cifras de abajo son de la configuración anterior.",
+   "titulo_metricas": "Métricas de la configuración anterior (público similar)"
   },
   {
    "adset_id": "",
    "nombre": "INMO | CARGOS | PE | 28-60",
    "alias": [],
    "segmento": "Inmobiliaria",
-   "estado": "Sin crear: en esta campaña todo conjunto nuevo debe usar el objetivo \"calificados\", que exige un CRM. Se armará en una campaña nueva o tras conectar el CRM.",
+   "estado": "Configuración nueva lista. Se lanza en la campaña V.2 junto con Automotriz.",
    "cambio_desde": null,
    "antes": "No había conjunto de inmobiliaria en la campaña de formulario (solo uno pausado en la de WhatsApp).",
-   "objetivo": "Maximizar el número de clientes potenciales calificados (el mismo de la campaña; Meta no permite mezclar objetivos).",
+   "objetivo": "Maximizar el número de clientes potenciales calificados, optimizando a la etapa \"Contactado\" de HubSpot.",
    "configuracion": [
     [
      "Ubicación",
@@ -148,7 +154,7 @@
     ],
     [
      "Exclusiones",
-     "Público \"Formulario Xsell enviado 90 días\" (ya creado, falta aplicarlo)"
+     "Público \"Formulario Xsell enviado 90 días\": no se le vuelve a mostrar a quien ya se registró."
     ],
     [
      "Ubicaciones",
@@ -156,7 +162,7 @@
     ],
     [
      "Presupuesto",
-     "De la campaña (Advantage+), con un mínimo por conjunto"
+     "De la campaña V.2 (Advantage+), repartido entre los tres segmentos."
     ],
     [
      "Anuncios",
@@ -169,7 +175,46 @@
     "Sin el interés Bienes raíces: lo tiene sobre todo quien quiere comprar o alquilar, que es el mayor riesgo de este segmento.",
     "Mensaje de la investigación: 8 de cada 10 interesados no vuelven a saber del asesor; nosotros los llevamos hasta la visita."
    ],
-   "como_juzgarlo": "Con 30 registros: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos."
+   "como_juzgarlo": "Con 30 registros: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos.",
+   "estado_tono": "ok",
+   "nota_metricas": "Aún no hay datos de la nueva configuración: empieza a medir cuando se publique la campaña V.2.",
+   "titulo_metricas": "Métricas de la configuración anterior (público similar al 1%)"
+  },
+  {
+   "adset_id": "120251097501900597",
+   "nombre": "PE | AMBOS | ADVANTAGE",
+   "alias": [],
+   "segmento": "General (Advantage+)",
+   "estado": "Dado de baja: su presupuesto pasa a los tres segmentos.",
+   "estado_tono": "off",
+   "cambio_desde": null,
+   "titulo_config": "Cómo estaba configurado",
+   "titulo_porque": "Por qué se dio de baja",
+   "titulo_metricas": "Resultados de todo el período",
+   "antes": "Público abierto: Meta decidía a quién mostrar los anuncios, sin filtro de cargo ni de sector.",
+   "objetivo": "Maximizar el número de clientes potenciales calificados (sin CRM conectado en ese momento).",
+   "configuracion": [
+    [
+     "Ubicación",
+     "Perú"
+    ],
+    [
+     "Público",
+     "Advantage+ abierto, sin cargos ni sectores"
+    ],
+    [
+     "Anuncios",
+     "Estáticos generales (VENDE MÁS, ABASTO DE LEADS, LEADS FRÍOS) y un reel"
+    ]
+   ],
+   "por_que": [
+    "Fue el conjunto con más inversión: S/ 2,284, casi la mitad de la campaña de formulario.",
+    "Trajo volumen (90 registros), pero 2 de cada 3 nunca contestaron: solo el 32% habló con Ingrid.",
+    "Cada registro que sí contestó costó S/ 79, frente a S/ 52 en el segmento de Automotriz.",
+    "Al no filtrar por cargo ni sector, llegaban independientes y personas que buscaban marketing o CRM.",
+    "Lo que funcionó se conserva: el estático VENDE MÁS, que trajo la mayoría de sus reuniones, sigue como referencia para los nuevos anuncios."
+   ],
+   "como_juzgarlo": "Se compara contra los tres segmentos de la V.2: si estos superan el 32% de contacto a menor costo, la decisión queda validada."
   }
  ]
 }
