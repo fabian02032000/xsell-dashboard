@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-10-15T05:14:57.940530+00:00",
+  "updated_at": "2026-10-15T05:22:26.474297+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 5694.46,
-  "month_spend": 1272.92,
-  "leads_campaign_spend_total": 5504.77,
-  "leads_campaign_spend_month": 1272.92,
+  "total_spend": 5694.6,
+  "month_spend": 1273.06,
+  "leads_campaign_spend_total": 5504.91,
+  "leads_campaign_spend_month": 1273.06,
   "leads_campaign_match": "prospectos b2b",
   "campaigns": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 4629.56
+      "spend": 4629.7
     },
     {
       "name": "CAMPAÑA | AWARENESS",
@@ -24,7 +24,7 @@
   "campaigns_month": [
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "spend": 714.93
+      "spend": 715.07
     },
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | WHATSAPP",
@@ -358,11 +358,11 @@
     },
     {
       "date": "2026-10-14",
-      "spend": 41.91
+      "spend": 41.92
     },
     {
       "date": "2026-10-15",
-      "spend": 0.19
+      "spend": 0.26
     }
   ],
   "spend_by_week": [
@@ -465,42 +465,18 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "spend": 175.39,
-      "impressions": 7501,
-      "reach": 4380,
+      "spend": 175.47,
+      "impressions": 7506,
+      "reach": 4392,
       "frequency": 1.71
     }
   ],
   "creatives_available": true,
   "leads_creatives": [
     {
-      "ad_name": "REEL | AUTOMOTRIZ | INGRID",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-iad6-1.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=99W9L9ewSZcQ7kNvwEJBASY&_nc_oc=Adq-iT9gx-f4PAMCgY-0sM_h02il5v9yE7NScUlDt9uB2LSQMiW5O_3slsZbNmx7k78&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=gvJvx6txdtFnkJwQeBcQzw&_nc_tpa=Q5bMBQLkzHJm5dQHA_-HoHnu-9iPNI7ma8y3iDXCudG3bvFQCzM6wbAAw8jmCDciPH19cUp70gWW_lOnVg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOCCqnMLILHoJIMDtEWqUaiioXa859JeEzHOEbVzTJn0g&oe=6AD638E2",
-      "title": "Tus asesores atienden clientes en el showroom… y los leads de redes y web se quedan esperando. 📱\nCada hora sin respuesta es un cliente que se enfría.\nXsell se encarga de contactarlos por ti, para que tu equipo se enfoque en cerrar.\n👉 Completa el formulario.",
-      "body": "¿Cuántos leads que pidieron cotización este mes todavía no reciben una llamada? 🚗\nMientras tus asesores atienden el piso de ventas, esos clientes ya están cotizando en otra concesionaria.\nEn Xsell somos tu fuerza de ventas externa: llamamos, damos seguimiento y agendamos visitas.\n👇 Déjanos tus datos y conversemos.",
-      "description": ""
-    },
-    {
-      "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=1U_h77NRC6YQ7kNvwFmf_K1&_nc_oc=AdoJnRMEOdej8yIame-I2ecc8OsHrrc863was40UknKpZP_DjIduSY9na7UFSTIY8m8&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=gvJvx6txdtFnkJwQeBcQzw&_nc_tpa=Q5bMBQJZs4MgTSbQ4JQ7w4BJkMIqzRh4MtPFo-DjKbQlobjTO2Ucf5SLwvkg3ElZU_fmO-nUQ9fRej6Nxg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMpUh7pkIJvbJRxODzcdc1gXMWusO_SirhTX6FLlIBoZA&oe=6AD63E28",
-      "title": "Más ventas, sin aumentar tu planilla 📈",
-      "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
-      "description": ""
-    },
-    {
-      "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=uCQ55cWFY1oQ7kNvwHMBsHs&_nc_oc=AdpzCcqNIBTeU0QnUNlyo77m3-bXWjZRWyYDEpUpUSNlA5t6rqFe-zFisKQnIzICcqQ&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=gvJvx6txdtFnkJwQeBcQzw&_nc_tpa=Q5bMBQJ6JD4EgVIY6zYKSd38IZMYRDy-yUBVzVmMK1dpAYFIn0g1UzgbeITyCDQ62X2a37bsU2cB_NPPiw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNmMsTN7nUAhL6WQTangHTYAWUqswS5g0lEUKoqk3wSzQ&oe=6AD648E7",
-      "title": "¿Tus leads se están enfriando?",
-      "body": "¿Inviertes en publicidad y te llegan cientos de leads al mes? 🚗\nLa pregunta es: ¿cuántos reciben una llamada a tiempo?\nEn Xsell somos tu fuerza de ventas externa. Llamamos a los leads que tu equipo no alcanza, damos seguimiento y agendamos visitas a tu concesionaria.\n👇 Déjanos tus datos y conversemos.",
-      "description": ""
-    },
-    {
       "ad_name": "EST | PROBLEMAS CIERRE DE VENTAS | CTA FORMULARIO",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=U8OhiUZS0FYQ7kNvwFNRhbE&_nc_oc=AdpWbC5_s5YM28UOgSvMrQ-BnnF5wkVACaLJnH6nIf9SfPbgBd8ve-pj16bbU9PVmRc&_nc_zt=1&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=gvJvx6txdtFnkJwQeBcQzw&_nc_tpa=Q5bMBQJtQ0pJ2Q5QalQ3cyl7J_6W7Bl2OzCscd55qgrPasTGhNhDD3FSQfACutQnTp99HLQlEtU2lKTm7A&oh=00_AQMHBeOAfI6tBhi7BQirkXEYBTP1BeBT5jc9co4iuuBQ5A&oe=6AD62D4A",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=U8OhiUZS0FYQ7kNvwHAEnpz&_nc_oc=AdrMpIvhDHzXwNt7Xw9ddNwinZcGggSFDCSQA_bSVOVEwOaanOFLPhOAhj_dyvRMy_w&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=syxHmtNgxy_Sar7XIQ_bqw&_nc_tpa=Q5bMBQJYntC5oXtKz3PTCm4HDIZitJCYfLXBPTof_60hBVw4z5zRYZp2hSFa71T9-7isn0fN1OtwyP36tQ&oh=00_AQPF0smoqAUZ9HF1ScfCjqNK6ZRXyH2TRGHjQYmOBqX5qg&oe=6AD62D4A",
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Completa el formulario y te ayudamos a hacer crecer tus ventas",
       "description": ""
@@ -508,7 +484,7 @@
     {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=nPBirQis3hkQ7kNvwHhrdBG&_nc_oc=AdqkISaZ4aXVZVj_ixDpPioWVAarAUVCRcIN3Edgk8F_fulwNQ2dKzd7ZEZg5csBbbc&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=gvJvx6txdtFnkJwQeBcQzw&_nc_tpa=Q5bMBQKNlJ9_Vk_G20PR_Z5wDQcyyJPS23X4gSZr8NCYxYVXg0DpLTEgRZ4z38YwJRUIgHFbqpFju2jkPQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNyJPXJWIJ0S1XQYL74K948KenRCG46J8as31Ijm2gqWw&oe=6AD633EB",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=nPBirQis3hkQ7kNvwFkoEFB&_nc_oc=AdqG9nW1FBHAbzyAZcXxwHOJLY4novw8XlnAZldNcPaXFHTiuhHWE_CFwuXihpRb1l0&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=syxHmtNgxy_Sar7XIQ_bqw&_nc_tpa=Q5bMBQKz8w5imkqOhBivb0gIzMD9x3O3XSPJGQbMW8VTr7Kz7o6SyT97TFrg82-H46LP9duZkTMae6saeQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPi8joy5F9yS9ncDTnb8UVM45A3wwQ5qLT476-93J7tbg&oe=6AD633EB",
       "title": "Vende más textil sin contratar",
       "body": "¿Cuántas cotizaciones se te enfrían por no responder a tiempo? Nosotros las cerramos por ti. Agenda una reunión gratis hoy.",
       "description": ""
@@ -517,6 +493,22 @@
   "other_creatives": [],
   "milestones_available": true,
   "milestones": [
+    {
+      "date": "2026-10-15",
+      "label": "Estado del conjunto de anuncios actualizado"
+    },
+    {
+      "date": "2026-10-15",
+      "label": "Segmentación del conjunto de anuncios actualizada"
+    },
+    {
+      "date": "2026-10-15",
+      "label": "Nombre del conjunto de anuncios actualizado"
+    },
+    {
+      "date": "2026-10-15",
+      "label": "Estado del conjunto de anuncios actualizado"
+    },
     {
       "date": "2026-10-15",
       "label": "Estado de anuncio actualizado"
@@ -900,22 +892,6 @@
     {
       "date": "2026-09-21",
       "label": "Imagen editada en la biblioteca"
-    },
-    {
-      "date": "2026-09-21",
-      "label": "Imagen editada en la biblioteca"
-    },
-    {
-      "date": "2026-09-21",
-      "label": "Imagen añadida a la biblioteca"
-    },
-    {
-      "date": "2026-09-21",
-      "label": "Imagen añadida a la biblioteca"
-    },
-    {
-      "date": "2026-09-21",
-      "label": "Imagen editada en la biblioteca"
     }
   ],
   "ads_performance_available": true,
@@ -931,7 +907,7 @@
       "title": "",
       "body": "",
       "description": "",
-      "image_url": "https://scontent-iad6-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=pQB069OfZqwQ7kNvwELyYx6&_nc_oc=AdoRcbFNQQZx_rNXGZRvtsrhIfiGUQ-MEUXuqm9OJ5S6iQNqIAmfXmXiA7CjHJBd1zk&_nc_zt=1&_nc_ht=scontent-iad6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQKujynLrjtulUgoaJNsC3ByMxc9SBg3ZvTrnd24Mgbr7thHbw9nfgRwkVP2xjzAt6ycCwv_NjEb4Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQOR0ixT4-Ao8wzh3Qn_vIZ0fMzCLOmwOS7kgttKBcAXdw&oe=6AD6331B",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=pQB069OfZqwQ7kNvwF_Dbzr&_nc_oc=Adr53Fadr9GNjDlYSkY5Eprm7RJHVVE1beFKpFw0ApGU9cp7YPkCxHvi9xI3bxWEXFw&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQIVzAEBgBQVhEsGnMiUvP_a43wCSoVsGVxCdWgk3EN9z-h4Jn5J3V07gmw03dc7i-jwgMBQgHW8EQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQPsZsnU2b5W755oDYv3HRFmaNx53SMabV2WfNaWLXSByA&oe=6AD6331B",
       "spend": 1276.92,
       "impressions": 55306,
       "reach": 20882,
@@ -946,14 +922,14 @@
       "ad_id": "120252139690380597",
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_id": "120251821265250597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_id": "120251097501910597",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "status": "ACTIVE",
+      "status": "IN_PROCESS",
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": "",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=1U_h77NRC6YQ7kNvwFmf_K1&_nc_oc=AdoJnRMEOdej8yIame-I2ecc8OsHrrc863was40UknKpZP_DjIduSY9na7UFSTIY8m8&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQLNY2t72PaeNGG3PI-fjFkMFb94tAJCw2pQoSVSYWNS05REmuk10Mp3qPV70e81jauKRMLMzyrgeQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPKqVnFCdxgvaYL7SRjvSbhqxpubdnMP7kUHot2wCx-OQ&oe=6AD63E28",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=1U_h77NRC6YQ7kNvwF6qk5Y&_nc_oc=AdruIrs0p5pDbBuaS9Fl6Iaq_Z5VuPGo0V1k-AV1VBqc8dzgnhd9El1hQ9tL878tmgI&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQLxwg4SR8SVww8r0GsmF2n7M1mt-itlt2tW1f-Flb0KxQut_KGXT90rKZXLLRhj1lXKLVZnWr_Q-A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNDAxzPaul8qvbBEzZuUPT3Q5JK-TIkKKbM3x8SGMDw0A&oe=6AD63E28",
       "spend": 706.34,
       "impressions": 17884,
       "reach": 7227,
@@ -975,7 +951,7 @@
       "title": "📈 Tu negocio tiene un techo",
       "body": "📈 Tu negocio no puede crecer más si cada venta depende de ti. Nosotros cerramos la venta por ti, con una estrategia y medición real de resultados, para que tu crecimiento no dependa de tu tiempo.",
       "description": "",
-      "image_url": "https://external-iad3-1.xx.fbcdn.net/emg1/v/t13/7210789227175194364?url=https%3A%2F%2Fwww.facebook.com%2Fimages%2Fshare_options%2Fshare_arrow.gif&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-iad3-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLA_YcSkeEiObxN7qNXurTJhklH4g6oPa8XQL289Lx3W4TLOCs7DDlaToFavurYJGCShNPywrAtWg&oh=06_Q3_EAa26jNZo-VCqPf3LbEkES2mUor5-wdpMaEzoRTMAekyk&oe=6AD25A35",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/7210789227175194364?url=https%3A%2F%2Fwww.facebook.com%2Fimages%2Fshare_options%2Fshare_arrow.gif&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLCQyemVGEXTKla6oc_QjZ4efd5iLJB6_ry0JGYpRF1k2xYUjNOVwCRkjp7TNDhqn-IeUL8odDMEw&oh=06_Q3_EAcpIrDgf9C3rdWn7A_5gW4ITUfYQHwbC-ma1RVT06AkE&oe=6AD25A35",
       "spend": 660.02,
       "impressions": 21431,
       "reach": 9349,
@@ -997,7 +973,7 @@
       "title": "",
       "body": "",
       "description": "",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/808977407_122264272064105281_182066957268921081_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=VX7BCyBahtgQ7kNvwHZipcV&_nc_oc=AdowMv2tuE3Hay9uz7zImW2u-9DHZzeyYftJcpB8ap86SC52UJsxnLBLduFak90NdPk&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQIbrj2HsfQcxSNT7ER6kitnaAIRWHtdKWTwbBi-r14VQwtHMdPEX09PJTCa__afiunuqaICt-GMBg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQOBvkDNn4k_ha1sBCQxWN5gUAK3pXyi3PmrZyPiXrybkA&oe=6AD64F67",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/808977407_122264272064105281_182066957268921081_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=VX7BCyBahtgQ7kNvwFnDa0i&_nc_oc=AdplwPZp-5LRY3eFil6KwHfL1IL3o36rfNONpoKKXYLoj-f8kOFDq93rWgwEHiWhDIE&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQL5_YmL_7sHMnHa9H12fcvaekaHoJwiSaIOJT81rm40c5BwWyWbCiNnbxi6ax_tQfoceolRvUM5aA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQMlfNFr08q40T1r_5n_2PvaTme9xmmVdX-4K015rcCeLg&oe=6AD64F67",
       "spend": 650.33,
       "impressions": 28825,
       "reach": 14887,
@@ -1019,7 +995,7 @@
       "title": "📈 ¿Muchos leads, poco equipo?",
       "body": "📈 ¿Tu equipo de ventas ya no da abasto con tantos leads? Sumamos el equipo extra para que cada contacto reciba respuesta a tiempo, sin perder oportunidades por el camino.",
       "description": "",
-      "image_url": "https://scontent-iad6-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=lCWsPJIWf_wQ7kNvwHWwbwQ&_nc_oc=Adrv065v3eq2gEnJ3oA9tVytzRPt1ytH9HA_UIiePYuUi9_YzCgKBiSBbi_im3RtuP8&_nc_zt=1&_nc_ht=scontent-iad6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQIKsw43wY8yCbn5-cOlONx0cdUSVTwq8MDlg_XdNqmoxtc9VT3bW4Tz4DgFPF2qUy0t56R8trUiRA&oh=00_AQNyGnZXFsidV052LmFo4sEGR3XljTeSle30sFhO_k0DUQ&oe=6AD61B7F",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=lCWsPJIWf_wQ7kNvwHUqTVr&_nc_oc=Adrl9qWtsq_aWVn6nOMVJZHx7HzMz8f-AN7JoIJEcn5ffxhBReVEVqyxLdkQu_Mi1JM&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQLGHllmNcb7yS25bqG2mB1XibqK-T4qyFZ82t4lzECqEPIckeU5HgQW0n8m7bDRhAp5wjS6f73ZbQ&oh=00_AQMveiIc9mtYwO7mQjXh5mG-9M0AOOKU8Qe_rj9PMepWTQ&oe=6AD61B7F",
       "spend": 570.3,
       "impressions": 12388,
       "reach": 5276,
@@ -1041,7 +1017,7 @@
       "title": "💬 ¿Cuántos chats sin responder tienes?",
       "body": "💬 ¿Cuántos chats de clientes se te quedaron sin responder esta semana? No es falta de tiempo, es falta de un equipo comercial detrás. En Xsell ponemos la estrategia y el equipo para que ninguna venta se enfríe.",
       "description": "",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=0qQVuvLg40EQ7kNvwF1lX8z&_nc_oc=AdpmMmsq-5mI4WOnUGkfKN_KLAvG_j8taOiAjuQZUZDMMzNBvSgjqXOTzRJeQnAF0ZA&_nc_zt=1&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQJLjV5tTs9PuaqiNXL8wIr190mVfLs2MSRr9q-jqphOPj7dQaqB6KXGt6e2TeAKjZGIoTyddElQew&oh=00_AQNR2FwQSWfcqrFB20liWPGZ7DCFaHgghHtkwR-ur2pdLA&oe=6AD6230F",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=0qQVuvLg40EQ7kNvwHk048V&_nc_oc=AdpuNhslOfs4e9o7bV6vE3uwa7tAw9LvYBV75sO-vBrkias0nd3Xz5tmppsVC6ebftY&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQJVNOqsssqi8GUsgSieaZ8yzY3ml-e4vDSQnOqRfyFynEnS0R49hH-vtpgPZF3DqzZtiE6YoUTcVQ&oh=00_AQO5u4WWmzNde_osoO1Mzo_eyKDfldtAw9gRlSIO39Q_YA&oe=6AD6230F",
       "spend": 408.29,
       "impressions": 8680,
       "reach": 4067,
@@ -1056,14 +1032,14 @@
       "ad_id": "120251910846650597",
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_id": "120251821265250597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_id": "120251097501910597",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "status": "PAUSED",
+      "status": "IN_PROCESS",
       "title": "🎯 No todos los leads son iguales",
       "body": "🎯 No todos los leads valen lo mismo, pero tu equipo los trata igual. Te ayudamos a convertir esos leads en ventas con un proceso de priorización real.",
       "description": "",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t45.1600-4/779976512_122262096662105281_3750831697722198775_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=ToNend8q73wQ7kNvwGvYpNE&_nc_oc=Adov234p_nJ3SFhGvNnP4rg3i7dpY2HOd6YU_TrpHosaVtVg9IIcHHTBLfH6mzocllc&_nc_zt=1&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQLppozyKi2tE_n5iE7kY_Rm-SESWvhjquUWkvWxqYJvRqVtPsul04XcCVcc4yzjaupXAKogCx3Lpg&oh=00_AQPV3R5U1gHl6etLZbtUwEOsy1o6ZLK2IDKP6cwjtXXE-w&oe=6AD636BF",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/779976512_122262096662105281_3750831697722198775_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=ToNend8q73wQ7kNvwG8RDyO&_nc_oc=AdqWu5_Vd7U-8ywRPNkgQgLQr8oXTqvTzDO3TMdmZ_eXilTq3NVK5J-rQyZCUi3z0K4&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQLexpW4erKpG0m-iGN12ADvjhOT8tYcUIhFxcYR1HSfStmpREmQhEr072lqxpxGg3bjPDYMlqqSoA&oh=00_AQPRPIhAr3Q3DAqAa3coGn0yLGVXM0KaArUJkCJWqSf6PQ&oe=6AD636BF",
       "spend": 315.15,
       "impressions": 9458,
       "reach": 3717,
@@ -1085,7 +1061,7 @@
       "title": "Vende más textil sin contratar",
       "body": "¿Cuántas cotizaciones se te enfrían por no responder a tiempo? Nosotros las cerramos por ti. Agenda una reunión gratis hoy.",
       "description": "",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=nPBirQis3hkQ7kNvwHhrdBG&_nc_oc=AdqkISaZ4aXVZVj_ixDpPioWVAarAUVCRcIN3Edgk8F_fulwNQ2dKzd7ZEZg5csBbbc&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQIYc2BXafv_MLSCkjirVw7WOmSlZyp_f1iwZpfhQjJNxK72xqzvFdKbGcRUcgIraUPc7S3IbOkGLg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNSb0uP_LFZB8vzeMpDs_L5YRWkmc9HGLFYgF3wOLOVTA&oe=6AD633EB",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=nPBirQis3hkQ7kNvwFkoEFB&_nc_oc=AdqG9nW1FBHAbzyAZcXxwHOJLY4novw8XlnAZldNcPaXFHTiuhHWE_CFwuXihpRb1l0&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQKj71pVUyVeLmLuX29u-i2ambpQfMo9iY-tMRk420Ge_nLREOm-7uLW9OlmAp2z7UEQM1qICf33Wg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNnLkWAi9EPDwDqyaCRntDhkICT-XGYfw5Ztc0nMDVDcQ&oe=6AD633EB",
       "spend": 305.36,
       "impressions": 6234,
       "reach": 3121,
@@ -1107,7 +1083,7 @@
       "title": "🔥 No dejes que tu lead se enfríe",
       "body": "🔥 Mientras tu equipo saturado tarda en responder, ese lead se enfría  y termina comprando con la competencia. Nosotros lo perfilamos y contactamos al instante, para que llegue caliente a tu asesor.",
       "description": "",
-      "image_url": "https://scontent-iad6-1.xx.fbcdn.net/v/t15.5256-10/831137195_1600010785255797_7505605581782862567_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=mqiVRpYQQLMQ7kNvwEMJxiI&_nc_oc=Ado-yow1c8kvyeLdrYCdlyBbbqnbWoaUWroF9FLg3XjJTKjWSupTBqR-Ixd1r5iVky0&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQKRr36WJdgPkV7g0Sn1Woe4SzojXiDcEngA6zIFibPipbu_1n6HAwJ95k2oNXjGIed82tAdpXTI2A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQPdCfG7SfZfvUuNtTSU7gUz77lHpld7L6b8IatBS94ICw&oe=6AD62FBF",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/831137195_1600010785255797_7505605581782862567_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=mqiVRpYQQLMQ7kNvwH2GAl7&_nc_oc=Adqfs5vmBQfveW3hd22SxcT_nwQ_xQcXSpmiSJrfA0PEMUL7sqCQgtknWlMQyv6wRs8&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQLOCLyMcQEQxLh2z0GJ-9NQ24IbKSNCzD6MHMiA0zb1seZfTC79gxXAjtPE4zIKQb4GKgBctDJ5fg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQOhQbSRiIuY6tfWXjUDwelN6U-AaqSVgEOoesR4KBuwXA&oe=6AD62FBF",
       "spend": 221.69,
       "impressions": 8506,
       "reach": 6151,
@@ -1129,7 +1105,7 @@
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Completa el formulario y te ayudamos a hacer crecer tus ventas",
       "description": "",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=U8OhiUZS0FYQ7kNvwFNRhbE&_nc_oc=AdpWbC5_s5YM28UOgSvMrQ-BnnF5wkVACaLJnH6nIf9SfPbgBd8ve-pj16bbU9PVmRc&_nc_zt=1&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQJzi0krxttrOUqXjcbXwL7ozQT2n9CJ29z0Arn30HN3S-A9X2fr_OB1UjIoilkrrYgYEQeqMkgaEg&oh=00_AQPx_uCUIdEPk03n9j-AhKgTA516CZAtWtlF_wBhRdgqgQ&oe=6AD62D4A",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=U8OhiUZS0FYQ7kNvwHAEnpz&_nc_oc=AdrMpIvhDHzXwNt7Xw9ddNwinZcGggSFDCSQA_bSVOVEwOaanOFLPhOAhj_dyvRMy_w&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQKejmRdCU7HeRzELEyBRlax52adkZR06lJxX2DPXNDx-5EPRCVB3ByBC28xCxcXBVEbi2re6Frw2A&oh=00_AQNTRX8-m1cwWeb7HWjm5rEhSqtyfxrWHSFGe9dAlYhf9Q&oe=6AD62D4A",
       "spend": 135.15,
       "impressions": 1967,
       "reach": 716,
@@ -1151,7 +1127,7 @@
       "title": "Xsell",
       "body": "Durante 14 años nos llamamos \"contact center\".\nProbamos de todo: distintos rubros, distintos intentos, distintas formas de explicar lo que hacíamos.\n\nHasta que entendimos algo simple, lo que mejor sabemos hacer es vender.\n\nHoy lo decimos con claridad: somos Xsell, una agencia de ventas.\n\nMejores y distintos.\n\nDesliza para ver la historia completa 👉\n\n#Xsell #AgenciaDeVentas #Ventas #MejoresYDistintos #B2B",
       "description": "",
-      "image_url": "https://external-iad3-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-iad3-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLq-KquxelroBk5Hxt9w42l99yNWaxfJaO8t1a0ijKw94641WFtZ1T6l6hTZUtvF7gUZZPNtIHb2g&oh=06_Q3_EAViHv7rf47c6qz-J-NRekGq1QIhH0t0omffxL0CrsEtT&oe=6AD22ECB",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJScqLVe_fPDxaY9_le4hIFqFQKZ7qKXhf9eufzpxaTMrM2bnZ_xVc9Bb7e3BMUzxD7fpITfEJ2BA&oh=06_Q3_EAZCXIaKs0K_9xCXyh_BI2XcXfFQEbQ--gf9FueFiiFo7&oe=6AD22ECB",
       "spend": 93.72,
       "impressions": 130671,
       "reach": 101665,
@@ -1166,36 +1142,36 @@
       "ad_id": "120252585583990597",
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
       "adset_id": "120251821265250597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_id": "120251097501910597",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "status": "ACTIVE",
+      "status": "IN_PROCESS",
       "title": "Tus asesores atienden clientes en el showroom… y los leads de redes y web se quedan esperando. 📱\nCada hora sin respuesta es un cliente que se enfría.\nXsell se encarga de contactarlos por ti, para que tu equipo se enfoque en cerrar.\n👉 Completa el formulario.",
       "body": "¿Cuántos leads que pidieron cotización este mes todavía no reciben una llamada? 🚗\nMientras tus asesores atienden el piso de ventas, esos clientes ya están cotizando en otra concesionaria.\nEn Xsell somos tu fuerza de ventas externa: llamamos, damos seguimiento y agendamos visitas.\n👇 Déjanos tus datos y conversemos.",
       "description": "",
-      "image_url": "https://scontent-iad6-1.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=99W9L9ewSZcQ7kNvwEJBASY&_nc_oc=Adq-iT9gx-f4PAMCgY-0sM_h02il5v9yE7NScUlDt9uB2LSQMiW5O_3slsZbNmx7k78&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQK6JjQeMISPGUZF_6AJL6rZEIJwd3M6v-I6lX_NeZUSgQXYl-a5NOcHvVuAnCehASGevn96wDkmVQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMJK1nWAGgvi0HxSrBItAebpVoqFN44fpCG5APkFeRrrQ&oe=6AD638E2",
-      "spend": 88.68,
-      "impressions": 5122,
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=99W9L9ewSZcQ7kNvwGMaaiR&_nc_oc=AdrQvJ_48310Z3eBKInC-GuttX4I3bVy6HO7PXQB-HGUhuhjOw5wnTP54rG4L02WmdM&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQJKQ0wlA9EPLN0lv7xJ18F8LjuYaQFJjytpWcNS7rsKhoKUNvmJwJ-4-NHEC44w2VqavTX2c6806w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNuLEnX4Kej2cTPAe9GtC1QzuCl690h6utd4HxXAoIAOw&oe=6AD638E2",
+      "spend": 88.76,
+      "impressions": 5127,
       "reach": 3145,
       "frequency": 1.63,
       "cpm": 17.31,
       "clicks": 135,
-      "ctr": 2.64,
+      "ctr": 2.63,
       "leads": 3,
-      "cost_per_lead": 29.56
+      "cost_per_lead": 29.59
     },
     {
       "ad_id": "120252548907500597",
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
       "adset_id": "120251821265250597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_id": "120251097501910597",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "status": "ACTIVE",
+      "status": "IN_PROCESS",
       "title": "¿Tus leads se están enfriando?",
       "body": "¿Inviertes en publicidad y te llegan cientos de leads al mes? 🚗\nLa pregunta es: ¿cuántos reciben una llamada a tiempo?\nEn Xsell somos tu fuerza de ventas externa. Llamamos a los leads que tu equipo no alcanza, damos seguimiento y agendamos visitas a tu concesionaria.\n👇 Déjanos tus datos y conversemos.",
       "description": "",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=uCQ55cWFY1oQ7kNvwHMBsHs&_nc_oc=AdpzCcqNIBTeU0QnUNlyo77m3-bXWjZRWyYDEpUpUSNlA5t6rqFe-zFisKQnIzICcqQ&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQLCcuQniXnAnPG6darEA6o3dKVrPeXtv3s910tLzZ7Z0VFYNrxrq7bl8A_WM_VeZQgsXmL7Qjyzkg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQM1msIukMlK7zeW-XGjxQBg41Abo6bs_o7n89b_cH47SQ&oe=6AD648E7",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=uCQ55cWFY1oQ7kNvwF5TbbK&_nc_oc=AdoGVc7ilRvjCAvcn0W0aevnXoNF1jS96fEPnALfXTB6k0V6CEy6Jiml6GU-1G6STIU&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQKtCxnA0MHJeKtpQ0zrN-tmCX19wT_2pmEcMIY7uEdFIc9Aj9nmDioo7s07oxcq8faMTE9d_Qu-CA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMTHqHxSUbfcPn-umMLD4nOXctGDE5dW1gJsojSmazhCQ&oe=6AD648E7",
       "spend": 76.64,
       "impressions": 3573,
       "reach": 2053,
@@ -1217,7 +1193,7 @@
       "title": "",
       "body": "¿Sabes por qué se te caen propuestas que iban bien encaminadas? No es el precio. Es lo que dices (o no dices) después de enviarla.\n\nHay frases de seguimiento que matan la venta sin que te des cuenta, y otras que la mantienen viva. Te dejamos 4 cambios directos: qué no decir y qué decir en su lugar.\n\nGuárdalo antes de tu próximo seguimiento. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #SeguimientoComercial #TécnicasDeVenta #CierreDeVentas #EquipoComercial #Perú",
       "description": "",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=UJLPNCGw_T0Q7kNvwE55mFz&_nc_oc=Adrbi8Txojr0L8f87N9Nge52zY-W9uVO7i_er0Tqi6JTyeOgotnitPB2P13TEHwHVKE&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQKUKtStfo6Sh4b7zw6o3aLKQVAIRteubw0EnAzX6WeZlOyrAdsPDyq8a1cGvj7ruXSdxB2ZbnV-kQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQONqvxKp_6jotKZi_rWTI7isg3qbRx3m5y46TOzW6nhvw&oe=6AD62C3F",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=UJLPNCGw_T0Q7kNvwGsDPM-&_nc_oc=AdqEKzr5uaYJUzWz-pWU4crgYDIYr6jZ2o1dvCqPRb92iar4MRhAoLpZdbM9qHu8Je0&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQJp__VBwok-KbzKUcxxGvX2X_zunQBR98zqHTfZiIBIgHEfcmUsuxCSs8kB4qdBsNzgoovy7yBDHw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQMf3XVqOTvMwmsZSewbeOpWDz9dLscwEsGzc3mmgumyaQ&oe=6AD62C3F",
       "spend": 65.7,
       "impressions": 112114,
       "reach": 98676,
@@ -1232,7 +1208,7 @@
       "ad_id": "120251821265260597",
       "ad_name": "EST | LEADS SIN RESPUESTA",
       "adset_id": "120251821265250597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_id": "120251097501910597",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "status": null,
@@ -1261,7 +1237,7 @@
       "title": "⏱️ El tiempo cierra ventas",
       "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
       "description": "",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=fuE2cqdB5UAQ7kNvwEHcsES&_nc_oc=AdrnDwlz64HmfYnG9QhUZg06GMAiFzIAfxEsaRHWbAux1OwTVBc6Exr0yG2sGDZbnmI&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQK0QJXsjMsK-wBPFogSeUIJjK6ywBOztma72dC1h2CeTfrWDMf_LK_jMqox8gRvWlCbzxBuproDxw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMtDbLZdu2MVqf-Yxgr_LD8RPl24UKWjBg8YgDknb_baw&oe=6AD645B4",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=fuE2cqdB5UAQ7kNvwFViJOw&_nc_oc=AdolaWYXUcPFbgemTGldcjFlNrW895a04YrMj8SjfA3Cp662TXZM21nc0MaQmaZ-JfI&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQJvYgxA8UkHnsaqzncooOvV48cLIEi8l7gVO13f5XIbGdPWSgTs5WG4TPa-PXkGEmxL_Fhrd6b3PQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNAGVyG9xa6KwR0QqezQ-SbkfvNEvkp6-E8JB72RxCfgA&oe=6AD645B4",
       "spend": 28.62,
       "impressions": 693,
       "reach": 538,
@@ -1283,7 +1259,7 @@
       "title": "",
       "body": "¿Sabes qué significa tu CAC, tu LTV o tu Pipeline? Muchos negocios manejan estos números en sus reportes sin entender realmente qué significan ni qué decisión deberían tomar con ellos.\n\nEn este carrusel te explicamos términos clave de venta B2B de forma simple, sin tecnicismos, para que sepas qué está pasando de verdad con tus números comerciales.\n\nGuárdalo y comparte con tu equipo. 👉\n#VentasB2B #Xsell",
       "description": "",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=WR1QPMiqs1wQ7kNvwEl9vg9&_nc_oc=AdqgvPERx2-IOT_v9oyNPnJetkT_7QAs8KvuCvNE3KeF2bcPbg0jffMvkvWRwuddZ-E&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQKqJvrHVWtPv-XdHwgF7FQ7IiyhLbHJ2EnlvOm2ulqOdqvK_GQXjLshflysYDCowOwj-d9nCbO6wA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQOPEX1YlI4FX-ZC9m0-nsncfvbRda2hJvO5AI5G4giYiw&oe=6AD62707",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=WR1QPMiqs1wQ7kNvwG_Ucy8&_nc_oc=AdpXjwWStjCYM8Ax8Dt9bErRR69z7nv3kXRxV0aDCRndcu-WbPYJlot9nkx3xK1yoMo&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQJDPG-yksqhfq-WPXG6oqjul5bOVpdbuNniAzMBXMdnwCA7r3VtBroadFqNj4pJlzrTT_BEKoQLnw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQM5zFoa8bJsCzXJ13YOFY2l6FJ6Si12e9lAcr7okzOwQw&oe=6AD62707",
       "spend": 27.51,
       "impressions": 48550,
       "reach": 43784,
@@ -1298,14 +1274,14 @@
       "ad_id": "120251884229930597",
       "ad_name": "EST | ABASTO DE LEADS | DEALER AUTOS",
       "adset_id": "120251821265250597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_id": "120251097501910597",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "status": "PAUSED",
+      "status": "IN_PROCESS",
       "title": "📊 Tu equipo no da abasto",
       "body": "📊 Más leads no significa más ventas si tu equipo no da abasto. En Xsell te ayudamos a cerrar esas ventas con la estrategia y el equipo comercial que te falta.",
       "description": "",
-      "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/779976724_122262032528105281_6589079236808904190_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=LJ5YNsiylyAQ7kNvwFpODaB&_nc_oc=Ado-I5OqVuHG721-qPYIVYXEsMpF9rOZaNDrs8AE3xqEAdtb4Yd6TC6y3LSo7nvy7-E&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQIEPyfslBrUiL9H5SNMdCGVz2vUZYSRvil8bOLWEsOHwK9ztKU-xvglnCPxqKFM2eNiq4m_ijnZFg&oh=00_AQPzaJKKfYXJiX9I7DQaaOSo7Pc5ZBmZZXFK_n5Wfhj_gA&oe=6AD6262A",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/779976724_122262032528105281_6589079236808904190_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=LJ5YNsiylyAQ7kNvwFZ8RlP&_nc_oc=Adozk9wlHeTyGdqHf39BepD5eYaWcxFh-Q09nWnJxc4w6PS5rOrtorVft-CxAFWarxE&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQKS4ytIBCWRbLCV2nTbJIzMtq5zCL0XpImW2hw1ypv3ewTzKPORVITJxm1B-NRYx8uTOGS2XNSGbQ&oh=00_AQMIMdzIKlcyUW3j066ziQQJVWoD_8HLhIv5w42aCBvCOg&oe=6AD6262A",
       "spend": 24.18,
       "impressions": 645,
       "reach": 386,
@@ -1327,7 +1303,7 @@
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": "",
-      "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/832593202_1479121920935163_4404340123173592418_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=U4vycAzU_hQQ7kNvwHynh_i&_nc_oc=Adp9ub5swXqId-4RZiqkt-U3PwbcuiJFzmWAmIAT3d7fk-p3CjQDNfY1wat9kpgGB64&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&_nc_tpa=Q5bMBQIs4P6GT3qlwkHoY72wYMYkxd0t6CwnvlViUSp0GGq7pJn0DOraFa8m7OczdSbTSTJVGphOmSaxMw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQMId5F0jm8iMnECOjA75wbeOJRpSr-qQ2bIVZb6h6nzKg&oe=6AD62255",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/832593202_1479121920935163_4404340123173592418_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=U4vycAzU_hQQ7kNvwF5xQCg&_nc_oc=AdpZo11C5RcM9YnYSjQHMJSYM95ubHOlLKVWlsynaEhb42ehcDKxQrNsskWLO9QzSlI&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&_nc_tpa=Q5bMBQKibKkAX2bWbQZ5kaz3bOtYPe_nTQlfUxVn35ev_uvAikNeJcbCk8umHXtkhJFj12ndsP9MZKyUzQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQN8patKLWdpUuY8wPIS19bixsu-cpfrYeHU6idv4NPCWQ&oe=6AD62255",
       "spend": 3.19,
       "impressions": 102,
       "reach": 93,
@@ -1349,7 +1325,7 @@
       "title": "Xsell",
       "body": "No le des solo las gracias. Dale la razón. \n\nDespués de comprar, tu cliente necesita sentir que:\n\n✅ Eligió correctamente.\n✅ Su inversión tiene sentido.\n✅ Tomó una decisión inteligente.\n\nLa venta termina cuando cobras. La fidelización comienza cuando confirmas su elección.\n\n¿Tu comunicación genera esa seguridad?\n\n#AgenciaDeVentas #Clientes #Fidelización #ExperienciaDelCliente #EstrategiaDeVentas #Xsell",
       "description": "",
-      "image_url": "https://external-iad3-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-iad3-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIaytoJ_sdXokuwMtRUeuYjtIsty32vZP4q5Pf1Z6j6E2BgE4qwB7Jdq1gKNvgVmBUbq1l8rM88_A&oh=06_Q3_EAb_ZQXy3fPqQa1llkoEYXqZhM8tS5h4B4z8yXu4XD3R3&oe=6AD24471",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKGRkbXAVl8HcS0nKKSBDT5IGV_fJIt_xuM3XiUxQu2G6YQrTgdMEHJkQpirubgb2dSrgbQ98woYA&oh=06_Q3_EAY1ZewjMupDAcZrZp1QcQqaCDHoso_1eRePgbEOGjuIP&oe=6AD24471",
       "spend": 1.97,
       "impressions": 3080,
       "reach": 2988,
@@ -1371,7 +1347,7 @@
       "title": "Xsell",
       "body": "¿Le hablas igual a un Boomer que a un Gen Z? Ahí está el problema.\n\nCada generación decide distinto: unos necesitan confianza, otros necesitan velocidad, otros necesitan que seas real. Si tu discurso de venta es el mismo para todos, le estás fallando a la mayoría.\n\nTe dejamos qué valora cada generación y cómo venderle \nSin genéricos, sin adivinar.\n\nGuárdalo, te va a servir más de una vez. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #EstrategiaComercial #MarketingGeneracional #GenX #GenZ #Millennials #EquipoDeVentas #Perú",
       "description": "",
-      "image_url": "https://external-iad3-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-iad3-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=Q079uOuv0JKGHW2Q4WObtg&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQL4zEJyxo4f7Dgwu9m73yRw0aTFSi4UXzz5u6p6HU78rcB9LW299cPQTwzf7cdlN8TYfxLnIbl3Ew&oh=06_Q3_EAZin2JimyquAcHjde6fo0Op7YJh_o_ZHLo2S8don063f&oe=6AD223FC",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=rIxq-nqNu_eXRyIKRGP4tw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIS5eBfF9Sae3wC0MPx7v3ylFDBgmR6I4UelYQYBHQNZ3I_tXfrAzakopd3u208slwezDtzfHRWPg&oh=06_Q3_EAe6_WT3ufGDxgc2bkFIErquu0WzvuMcJU6-4zEDG7g5g&oe=6AD25C3C",
       "spend": 0.79,
       "impressions": 1333,
       "reach": 1307,
@@ -1390,8 +1366,8 @@
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
       "status": "ACTIVE",
-      "spend": 4629.62,
-      "impressions": 143910,
+      "spend": 4629.7,
+      "impressions": 143915,
       "reach": 41113,
       "frequency": 3.5,
       "cpm": 32.17,
@@ -1450,14 +1426,14 @@
     },
     {
       "id": "120251821265250597",
-      "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
-      "status": "ACTIVE",
-      "spend": 1244.96,
-      "impressions": 37211,
+      "status": "WITH_ISSUES",
+      "spend": 1245.04,
+      "impressions": 37216,
       "reach": 11584,
       "frequency": 3.21,
-      "cpm": 33.46,
+      "cpm": 33.45,
       "clicks": 685,
       "ctr": 1.84,
       "leads": 49,
@@ -3129,13 +3105,13 @@
         "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-14",
-        "spend": 41.91,
-        "impressions": 1807,
+        "spend": 41.92,
+        "impressions": 1808,
         "reach": 1422,
         "clicks": 55,
         "link_clicks": 29,
         "leads": 1,
-        "engagement": 430,
+        "engagement": 432,
         "conversations": 1
       },
       {
@@ -3143,9 +3119,9 @@
         "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-15",
-        "spend": 0.19,
-        "impressions": 11,
-        "reach": 3,
+        "spend": 0.26,
+        "impressions": 15,
+        "reach": 7,
         "clicks": 0,
         "link_clicks": 0,
         "leads": 0,
@@ -3744,7 +3720,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-25",
         "spend": 2.52,
@@ -3772,7 +3748,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-26",
         "spend": 3.84,
@@ -3800,7 +3776,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-27",
         "spend": 4.27,
@@ -3828,7 +3804,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-28",
         "spend": 4.88,
@@ -3856,7 +3832,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-29",
         "spend": 4.18,
@@ -3884,7 +3860,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-30",
         "spend": 3.33,
@@ -3912,7 +3888,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-08-31",
         "spend": 10.29,
@@ -3940,7 +3916,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-01",
         "spend": 39.2,
@@ -3982,7 +3958,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-02",
         "spend": 31.83,
@@ -4024,7 +4000,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-03",
         "spend": 24.64,
@@ -4066,7 +4042,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-04",
         "spend": 17.22,
@@ -4108,7 +4084,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-05",
         "spend": 17.74,
@@ -4150,7 +4126,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-06",
         "spend": 26.0,
@@ -4192,7 +4168,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-07",
         "spend": 22.91,
@@ -4234,7 +4210,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-08",
         "spend": 23.71,
@@ -4276,7 +4252,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-09",
         "spend": 22.52,
@@ -4318,7 +4294,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-10",
         "spend": 24.57,
@@ -4360,7 +4336,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-11",
         "spend": 27.75,
@@ -4402,7 +4378,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-12",
         "spend": 20.75,
@@ -4444,7 +4420,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-13",
         "spend": 25.18,
@@ -4486,7 +4462,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-14",
         "spend": 27.63,
@@ -4528,7 +4504,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-15",
         "spend": 47.34,
@@ -4570,7 +4546,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-16",
         "spend": 36.4,
@@ -4598,7 +4574,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-17",
         "spend": 26.91,
@@ -4640,7 +4616,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-18",
         "spend": 22.89,
@@ -4682,7 +4658,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-19",
         "spend": 15.25,
@@ -4724,7 +4700,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-20",
         "spend": 17.71,
@@ -4766,7 +4742,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-21",
         "spend": 33.17,
@@ -4822,7 +4798,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-22",
         "spend": 31.21,
@@ -4878,7 +4854,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-23",
         "spend": 31.98,
@@ -4934,7 +4910,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-24",
         "spend": 29.78,
@@ -4990,7 +4966,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-25",
         "spend": 31.56,
@@ -5046,7 +5022,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-26",
         "spend": 22.33,
@@ -5102,7 +5078,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-27",
         "spend": 34.69,
@@ -5158,7 +5134,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-28",
         "spend": 28.57,
@@ -5214,7 +5190,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-29",
         "spend": 27.26,
@@ -5270,7 +5246,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-09-30",
         "spend": 29.37,
@@ -5354,7 +5330,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-01",
         "spend": 21.67,
@@ -5424,7 +5400,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-02",
         "spend": 30.8,
@@ -5480,7 +5456,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-03",
         "spend": 19.63,
@@ -5536,7 +5512,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-04",
         "spend": 32.62,
@@ -5592,7 +5568,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-05",
         "spend": 25.37,
@@ -5648,7 +5624,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-06",
         "spend": 27.3,
@@ -5704,7 +5680,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-07",
         "spend": 21.19,
@@ -5788,7 +5764,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-08",
         "spend": 18.54,
@@ -5872,7 +5848,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-09",
         "spend": 27.59,
@@ -5956,7 +5932,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-10",
         "spend": 28.07,
@@ -6026,7 +6002,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-11",
         "spend": 28.97,
@@ -6082,7 +6058,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-12",
         "spend": 52.49,
@@ -6138,7 +6114,7 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-13",
         "spend": 32.65,
@@ -6180,16 +6156,16 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-14",
-        "spend": 26.62,
-        "impressions": 1548,
+        "spend": 26.63,
+        "impressions": 1549,
         "reach": 1221,
         "clicks": 48,
         "link_clicks": 26,
         "leads": 0,
-        "engagement": 382,
+        "engagement": 384,
         "conversations": 0
       },
       {
@@ -6208,12 +6184,12 @@
       },
       {
         "id": "120251821265250597",
-        "name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-15",
-        "spend": 0.07,
-        "impressions": 8,
-        "reach": 2,
+        "spend": 0.14,
+        "impressions": 12,
+        "reach": 5,
         "clicks": 0,
         "link_clicks": 0,
         "leads": 0,
@@ -6227,7 +6203,7 @@
         "date": "2026-10-15",
         "spend": 0.12,
         "impressions": 3,
-        "reach": 1,
+        "reach": 2,
         "clicks": 0,
         "link_clicks": 0,
         "leads": 0,
@@ -7354,7 +7330,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7402,7 +7378,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7450,7 +7426,7 @@
         "engagement": 1,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7498,7 +7474,7 @@
         "engagement": 3,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7546,7 +7522,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7594,7 +7570,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7642,7 +7618,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -7658,7 +7634,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -7690,7 +7666,7 @@
         "engagement": 3,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -7738,7 +7714,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -7754,7 +7730,7 @@
         "engagement": 2,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -7786,7 +7762,7 @@
         "engagement": 13,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -7850,7 +7826,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -7866,7 +7842,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -7898,7 +7874,7 @@
         "engagement": 13,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -7946,7 +7922,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -7962,7 +7938,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -7978,7 +7954,7 @@
         "engagement": 10,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8042,7 +8018,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8058,7 +8034,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8074,7 +8050,7 @@
         "engagement": 7,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8138,7 +8114,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8154,7 +8130,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8170,7 +8146,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8234,7 +8210,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8250,7 +8226,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -8282,7 +8258,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8346,7 +8322,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8362,7 +8338,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8378,7 +8354,7 @@
         "engagement": 5,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8442,7 +8418,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8458,7 +8434,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8474,7 +8450,7 @@
         "engagement": 6,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8538,7 +8514,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8554,7 +8530,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -8586,7 +8562,7 @@
         "engagement": 4,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8650,7 +8626,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8666,7 +8642,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8682,7 +8658,7 @@
         "engagement": 10,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8746,7 +8722,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8762,7 +8738,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -8794,7 +8770,7 @@
         "engagement": 3,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8858,7 +8834,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8874,7 +8850,7 @@
         "engagement": 1,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8890,7 +8866,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -8954,7 +8930,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -8970,7 +8946,7 @@
         "engagement": 1,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910846650597",
@@ -8986,7 +8962,7 @@
         "engagement": 2,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -9050,7 +9026,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251884229930597",
@@ -9066,7 +9042,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251910724980597",
@@ -9098,7 +9074,7 @@
         "engagement": 4,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251925475090597",
@@ -9130,7 +9106,7 @@
         "engagement": 57,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -9194,7 +9170,7 @@
         "engagement": 263,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -9258,7 +9234,7 @@
         "engagement": 188,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -9322,7 +9298,7 @@
         "engagement": 128,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9402,7 +9378,7 @@
         "engagement": 109,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9482,7 +9458,7 @@
         "engagement": 79,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9562,7 +9538,7 @@
         "engagement": 110,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9642,7 +9618,7 @@
         "engagement": 221,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9754,7 +9730,7 @@
         "engagement": 245,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9850,7 +9826,7 @@
         "engagement": 244,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -9962,7 +9938,7 @@
         "engagement": 236,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10058,7 +10034,7 @@
         "engagement": 255,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10154,7 +10130,7 @@
         "engagement": 164,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10266,7 +10242,7 @@
         "engagement": 253,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10362,7 +10338,7 @@
         "engagement": 230,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10474,7 +10450,7 @@
         "engagement": 228,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10570,7 +10546,7 @@
         "engagement": 183,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10714,7 +10690,7 @@
         "engagement": 170,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10842,7 +10818,7 @@
         "engagement": 235,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -10954,7 +10930,7 @@
         "engagement": 113,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11066,7 +11042,7 @@
         "engagement": 201,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11178,7 +11154,7 @@
         "engagement": 249,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11274,7 +11250,7 @@
         "engagement": 232,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11370,7 +11346,7 @@
         "engagement": 151,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11514,7 +11490,7 @@
         "engagement": 154,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11658,7 +11634,7 @@
         "engagement": 67,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11754,7 +11730,7 @@
         "engagement": 206,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -11802,7 +11778,7 @@
         "engagement": 60,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -11882,7 +11858,7 @@
         "engagement": 264,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -11946,7 +11922,7 @@
         "engagement": 60,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -12010,7 +11986,7 @@
         "engagement": 243,
         "conversations": 2,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -12058,7 +12034,7 @@
         "engagement": 50,
         "conversations": 1,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -12122,7 +12098,7 @@
         "engagement": 156,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252585583990597",
@@ -12138,7 +12114,7 @@
         "engagement": 506,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -12186,7 +12162,7 @@
         "engagement": 10,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -12234,7 +12210,7 @@
         "engagement": 17,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252585583990597",
@@ -12250,7 +12226,7 @@
         "engagement": 423,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120251698210730597",
@@ -12298,7 +12274,7 @@
         "engagement": 10,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252145540340597",
@@ -12346,23 +12322,39 @@
         "engagement": 28,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       },
       {
         "id": "120252585583990597",
         "name": "REEL | AUTOMOTRIZ | INGRID",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-14",
-        "spend": 22.56,
-        "impressions": 1373,
+        "spend": 22.57,
+        "impressions": 1374,
         "reach": 1143,
         "clicks": 46,
         "link_clicks": 26,
         "leads": 0,
-        "engagement": 344,
+        "engagement": 346,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
+      },
+      {
+        "id": "120252145540340597",
+        "name": "REEL | TEXTIL | CTA REUNIÓN",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+        "date": "2026-10-15",
+        "spend": 0.12,
+        "impressions": 2,
+        "reach": 0,
+        "clicks": 0,
+        "link_clicks": 0,
+        "leads": 0,
+        "engagement": 0,
+        "conversations": 0,
+        "adset_id": "120251925475080597",
+        "adset_name": "PE | AMBOS | TEXTIL | SIMILAR"
       },
       {
         "id": "120252245485950597",
@@ -12385,8 +12377,8 @@
         "name": "REEL | AUTOMOTRIZ | INGRID",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
         "date": "2026-10-15",
-        "spend": 0.07,
-        "impressions": 8,
+        "spend": 0.14,
+        "impressions": 12,
         "reach": 2,
         "clicks": 0,
         "link_clicks": 0,
@@ -12394,7 +12386,7 @@
         "engagement": 0,
         "conversations": 0,
         "adset_id": "120251821265250597",
-        "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
       }
     ]
   },
@@ -12407,27 +12399,27 @@
     },
     "lcoronel@steviacoronel.net": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "crosswalter1206@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "katty23ar@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "gary.priale@gpbusinesscall.com": {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "albertohd1991@gmail.com": {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "csaavedra@cassa.pe": {
@@ -12437,17 +12429,17 @@
     },
     "karla.sarmiento.trujillo@gmail.com": {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "omarcastrosalazarpr@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "motorgasimport2014@gmail.com": {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "asolorzano@megatekperu.com": {
@@ -12467,12 +12459,12 @@
     },
     "romeroguillermoanderson@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "ventas@pabus.com.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "falcon.denisgerman@gmail.com": {
@@ -12482,7 +12474,7 @@
     },
     "quintanaquindeabogados@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "paredes151218@gmail.com": {
@@ -12492,7 +12484,7 @@
     },
     "melania.lc21@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "johancotrina012@gmail.com": {
@@ -12502,17 +12494,17 @@
     },
     "adm.smartplaza@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "mariangelica.lop@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "karl.vasquez.u@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "jorgeizquierdocobos@gmail.com": {
@@ -12522,27 +12514,27 @@
     },
     "cristianmestanzaortiz870@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "johan_f_20@hotmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "jsalmon@jsindustrial.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "renanpromero@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "eric.torres.p@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "comercial@tupodcaste.pe": {
@@ -12552,37 +12544,37 @@
     },
     "callenesricardo@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "corredor@renatosanchez-seguros.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "luis.tenorio@cltsac.com.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "gerencia@geonet.top": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "mr.galvezm@hotmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "edavila@academiasbraineer.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "zpalomino@eventosmultilibros.com.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "ventas@abmagre.com": {
@@ -12592,12 +12584,12 @@
     },
     "dimajo2024@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "administracion@privateacher.edu.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "soypaulgamarra@gmail.com": {
@@ -12607,12 +12599,12 @@
     },
     "luis.alvarez@e-robot.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "gerencia@ascensoresmesac.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "pgaspar@manufacturasemisa.com": {
@@ -12622,7 +12614,7 @@
     },
     "cristaco.t@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "metalimportsac@gmail.com": {
@@ -12637,7 +12629,7 @@
     },
     "jorgebarcofenco@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "jeiner2809@gmail.com": {
@@ -12672,7 +12664,7 @@
     },
     "grupoleonex@hotmail.com": {
       "ad_name": "EST | ABASTO DE LEADS | DEALER AUTOS",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "gerencia@tudisti.pe": {
@@ -12697,7 +12689,7 @@
     },
     "alina.ricsi@syscopyperu.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "ingraul294@gmail.com": {
@@ -12717,7 +12709,7 @@
     },
     "farias@alvcom.com.pe": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "wildervasquezchavez1509@gmail.com": {
@@ -12747,7 +12739,7 @@
     },
     "gcarrion@mopal.com.pe": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "danielamori2015@gmail.com": {
@@ -12767,7 +12759,7 @@
     },
     "molinabarrazaruben@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "edsemill69@gmail.com": {
@@ -12782,7 +12774,7 @@
     },
     "rodolfo.montoya@oymgroup.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "victorandresrecaldereyes8@gmail.com": {
@@ -12807,12 +12799,12 @@
     },
     "fer9918orbegoso@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "ryfcontactcenter@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "axel.moralesvas@gmail.com": {
@@ -12827,27 +12819,27 @@
     },
     "castropw@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "kenny.grandez.1292@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "carlos.peramas@automotoresinka.com": {
       "ad_name": "EST | ABASTO DE LEADS | DEALER AUTOS",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "karrivasplata30@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "christiaanjbb@gmail.com": {
       "ad_name": "120251821265260597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "giardel.riega@inmater.pe": {
@@ -12892,7 +12884,7 @@
     },
     "info@robertoemprendiendo.com": {
       "ad_name": "120251821265260597",
-      "adset_name": "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%",
+      "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
     },
     "akirelucky001@gmail.com": {
