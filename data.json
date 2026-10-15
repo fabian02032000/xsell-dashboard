@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-15T01:27:00.053033+00:00",
+  "updated_at": "2026-10-15T05:14:30.891778+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 226,
+  "total_leads": 227,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -286,6 +286,10 @@
     {
       "date": "2026-10-13",
       "count": 1
+    },
+    {
+      "date": "2026-10-14",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -313,7 +317,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 50,
+      "leads": 51,
       "goal": 74.0,
       "is_partial": false
     }
@@ -394,19 +398,35 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 11,
+      "leads": 12,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 50,
+  "current_month_leads": 51,
   "current_month_label": "October 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 12,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 225,
   "leads_detail": [
+    {
+      "name": "981243589",
+      "email": "lizbeth_taboada@hotmail.com",
+      "phone": "+51981243589",
+      "company": "Lizbeth",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-14",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
+    },
     {
       "name": "Kare",
       "email": "lcoronel@steviacoronel.net",
@@ -4040,7 +4060,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
