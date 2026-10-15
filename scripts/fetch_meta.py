@@ -706,9 +706,30 @@ def fetch_leads_attribution_raw():
                 "ad_id": lead.get("ad_id"),
                 "adset_id": lead.get("adset_id"),
                 "campaign_id": lead.get("campaign_id"),
+                # Para la API de conversiones (clientes potenciales calificados):
+                # no se publica en meta_data.json, solo se guarda en meta_lead_ids.json.
+                "lead_id": lead.get("id"),
+                "created_time": lead.get("created_time"),
             }
 
     return attribution, any_ok
+
+
+LEAD_IDS_FILE = os.path.join(os.path.dirname(__file__), "..", "meta_lead_ids.json")
+
+
+def save_lead_ids(attribution_raw):
+    """Guarda {email: {lead_id, created_time}} en un archivo local que NO se sube
+    al repositorio (está en .gitignore). Lo usa send_meta_offline_events.py, que
+    corre después en el mismo proceso de GitHub Actions, para mandar a Meta el
+    identificador del formulario junto con cada cambio de etapa en HubSpot."""
+    ids = {e: {"lead_id": a.get("lead_id"), "created_time": a.get("created_time")}
+           for e, a in (attribution_raw or {}).items() if a.get("lead_id")}
+    try:
+        with open(LEAD_IDS_FILE, "w", encoding="utf-8") as f:
+            json.dump(ids, f)
+    except Exception as e:
+        print(f"AVISO: no se pudo guardar meta_lead_ids.json: {e}", file=sys.stderr)
 
 
 def build_leads_attribution(attribution_raw, adset_names, ad_names, campaign_names):
@@ -773,6 +794,7 @@ def main():
 
     # ---- Atribución: de qué anuncio/conjunto de anuncios salió cada registro (opcional) ----
     attribution_raw, attribution_available = fetch_leads_attribution_raw()
+    save_lead_ids(attribution_raw)
     if attribution_available:
         adset_names = fetch_id_name_map("adsets")
         ad_names = fetch_id_name_map("ads")
