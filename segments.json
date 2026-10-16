@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-15",
+ "updated_at": "2026-10-16",
  "segments": [
   {
-   "adset_id": "120251821265250597",
+   "adset_id": "120252633480950597",
    "nombre": "AUTO | CARGOS+INTERESES | PE | 28-60",
    "alias": [
     "PE | AMBOS | AUTOMOTRIZ | SIMILAR 1%"
    ],
    "segmento": "Automotriz",
-   "cambio_desde": null,
+   "cambio_desde": "2026-10-16",
    "antes": "Público similar al 1% de una lista de clientes ideales de automotriz (Advantage+ con sugerencia de público similar).",
-   "objetivo": "Maximizar el número de clientes potenciales calificados, optimizando a la etapa \"Contactado\" de HubSpot.",
+   "objetivo": "Maximizar el número de clientes potenciales. Se pasará a \"clientes potenciales calificados\" cuando Meta termine de analizar la conexión con el CRM.",
    "configuracion": [
     [
      "Ubicación",
@@ -42,11 +42,11 @@
     ],
     [
      "Presupuesto",
-     "De la campaña V.2 (Advantage+), repartido entre los tres segmentos."
+     "De la campaña FORMULARIO V.2, repartido entre los conjuntos."
     ],
     [
      "Anuncios",
-     "Los mismos anuncios y formulario de automotriz"
+     "REEL | AUTOMOTRIZ | CTA REUNIÓN"
     ]
    ],
    "por_que": [
@@ -57,10 +57,8 @@
     "Edad 28 a 60: rango probable de quien tiene poder de decisión."
    ],
    "como_juzgarlo": "Con 30 registros desde el cambio: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos.",
-   "estado": "Configuración nueva lista. Se lanza en la campaña V.2 con el objetivo de clientes potenciales calificados (CRM conectado a Meta el 15 oct).",
-   "estado_tono": "ok",
-   "nota_metricas": "Aún no hay datos de la nueva configuración: empieza a medir cuando se publique la campaña V.2. Las cifras de abajo son de la configuración anterior.",
-   "titulo_metricas": "Métricas de la configuración anterior (público similar al 1%)"
+   "estado": "Publicado el 16 oct en la campaña nueva (FORMULARIO V.2).",
+   "estado_tono": "ok"
   },
   {
    "adset_id": "120251925475080597",
@@ -69,7 +67,7 @@
     "PE | AMBOS | TEXTIL | SIMILAR"
    ],
    "segmento": "Textil",
-   "estado": "Configuración nueva lista. Se lanza en la campaña V.2 junto con Automotriz.",
+   "estado": "Dado de baja el 16 oct: no pasa a la campaña nueva.",
    "cambio_desde": null,
    "antes": "Público similar a una lista de clientes ideales de textil.",
    "objetivo": "Maximizar el número de clientes potenciales calificados, optimizando a la etapa \"Contactado\" de HubSpot.",
@@ -118,19 +116,21 @@
     "Es el segmento con más riesgo: el conjunto anterior dio 35 registros, 0 leads y 71% sin respuesta, y aún no hay investigación propia del sector."
    ],
    "como_juzgarlo": "Corte estricto: con 30 registros, apagar si no hay leads o contesta menos del 40%.",
-   "estado_tono": "ok",
-   "nota_metricas": "Aún no hay datos de la nueva configuración: empieza a medir cuando se publique la campaña V.2. Las cifras de abajo son de la configuración anterior.",
-   "titulo_metricas": "Métricas de la configuración anterior (público similar)"
+   "estado_tono": "off",
+   "titulo_metricas": "Resultados de todo el período",
+   "titulo_config": "Configuración propuesta (no se lanzó)"
   },
   {
-   "adset_id": "",
+   "adset_id": "120252640540910597",
    "nombre": "INMO | CARGOS | PE | 28-60",
-   "alias": [],
+   "alias": [
+    "PE | AMBOS | INMO | SIMILAR 1%"
+   ],
    "segmento": "Inmobiliaria",
-   "estado": "Configuración nueva lista. Se lanza en la campaña V.2 junto con Automotriz.",
-   "cambio_desde": null,
-   "antes": "No había conjunto de inmobiliaria en la campaña de formulario (solo uno pausado en la de WhatsApp).",
-   "objetivo": "Maximizar el número de clientes potenciales calificados, optimizando a la etapa \"Contactado\" de HubSpot.",
+   "estado": "Publicado el 16 oct en la campaña nueva (FORMULARIO V.2).",
+   "cambio_desde": "2026-10-16",
+   "antes": "Público similar al 1% de una lista de clientes ideales de inmobiliaria.",
+   "objetivo": "Maximizar el número de clientes potenciales. Se pasará a \"clientes potenciales calificados\" cuando Meta termine de analizar la conexión con el CRM.",
    "configuracion": [
     [
      "Ubicación",
@@ -162,11 +162,11 @@
     ],
     [
      "Presupuesto",
-     "De la campaña V.2 (Advantage+), repartido entre los tres segmentos."
+     "De la campaña FORMULARIO V.2, repartido entre los conjuntos."
     ],
     [
      "Anuncios",
-     "Anuncios de inmobiliaria (videos del 23 oct y 13 nov en el calendario)"
+     "REEL | INMO | INGRID"
     ]
    ],
    "por_que": [
@@ -176,16 +176,14 @@
     "Mensaje de la investigación: 8 de cada 10 interesados no vuelven a saber del asesor; nosotros los llevamos hasta la visita."
    ],
    "como_juzgarlo": "Con 30 registros: apagar si contesta menos del 40% o no hay leads; subir presupuesto si el lead cuesta S/ 400 o menos.",
-   "estado_tono": "ok",
-   "nota_metricas": "Aún no hay datos de la nueva configuración: empieza a medir cuando se publique la campaña V.2.",
-   "titulo_metricas": "Métricas de la configuración anterior (público similar al 1%)"
+   "estado_tono": "ok"
   },
   {
    "adset_id": "120251097501900597",
    "nombre": "PE | AMBOS | ADVANTAGE",
    "alias": [],
    "segmento": "General (Advantage+)",
-   "estado": "Dado de baja: su presupuesto pasa a los tres segmentos.",
+   "estado": "Dado de baja: su presupuesto pasa a la campaña nueva (Automotriz, Inmobiliaria y General por cargos).",
    "estado_tono": "off",
    "cambio_desde": null,
    "titulo_config": "Cómo estaba configurado",
@@ -214,7 +212,7 @@
     "Al no filtrar por cargo ni sector, llegaban independientes y personas que buscaban marketing o CRM.",
     "Lo que funcionó se conserva: el estático VENDE MÁS, que trajo la mayoría de sus reuniones, sigue como referencia para los nuevos anuncios."
    ],
-   "como_juzgarlo": "Se compara contra los tres segmentos de la V.2: si estos superan el 32% de contacto a menor costo, la decisión queda validada."
+   "como_juzgarlo": "Se compara contra los conjuntos de la campaña V.2: si estos superan el 32% de contacto a menor costo, la decisión queda validada."
   }
  ]
 }
