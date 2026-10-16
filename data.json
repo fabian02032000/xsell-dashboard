@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-16T22:47:01.912328+00:00",
+  "updated_at": "2026-10-16T23:40:01.947629+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 229,
+  "total_leads": 230,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -297,7 +297,7 @@
     },
     {
       "date": "2026-10-16",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -325,7 +325,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 53,
+      "leads": 54,
       "goal": 74.0,
       "is_partial": false
     }
@@ -406,18 +406,18 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 14,
+      "leads": 15,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 53,
+  "current_month_leads": 54,
   "current_month_label": "October 2026",
-  "current_week_leads": 14,
+  "current_week_leads": 15,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 228,
+  "leads_with_deal": 229,
   "leads_detail": [
     {
       "name": "Irving Chunga",
@@ -434,6 +434,22 @@
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
       "discard_reason": "Negocio muy pequeño o pocos leads"
+    },
+    {
+      "name": "andres alejandro",
+      "email": "sanchezchihuan@gmail.com",
+      "phone": "+51919199143",
+      "company": "Colegio Militar \"Leoncio Prado\" CMLP-Callao",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-16",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Colegio Militar \"Leoncio Prado\" CMLP-Callao",
+      "deal_id": "66138336683",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
     },
     {
       "name": "Isaias Apolinario Uscamayta",
@@ -4092,7 +4108,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 22
+      "count": 23
     },
     {
       "label": "Reunión Agendadas",
