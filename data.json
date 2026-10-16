@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T14:33:30.311050+00:00",
+  "updated_at": "2026-10-16T17:39:10.264398+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -427,13 +427,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-16",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Grupo Atlas",
       "deal_id": "66137582476",
-      "deal_note": null,
-      "estadio_lead": null,
+      "deal_note": "Invierte en Pauta solo 500 soles y su promedio de leads son solo 80.\nDe esos 80 leads les responde aprox la mitad y cierran 4 ventas.\nSon de Piura.\nSolo tienen 1 sede y 1 solo asesor comercial.",
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Negocio muy pequeño o pocos leads"
     },
     {
       "name": "Isaias Apolinario Uscamayta",
@@ -4088,11 +4088,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 197
+      "count": 198
     },
     {
       "label": "Prospectos Contactados",
-      "count": 23
+      "count": 22
     },
     {
       "label": "Reunión Agendadas",
