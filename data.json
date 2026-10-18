@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-18T05:50:44.772970+00:00",
+  "updated_at": "2026-10-18T09:32:52.378480+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 230,
+  "total_leads": 231,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -298,6 +298,10 @@
     {
       "date": "2026-10-16",
       "count": 2
+    },
+    {
+      "date": "2026-10-18",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -325,7 +329,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 54,
+      "leads": 55,
       "goal": 74.0,
       "is_partial": false
     }
@@ -406,19 +410,35 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "leads": 15,
+      "leads": 16,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 54,
+  "current_month_leads": 55,
   "current_month_label": "October 2026",
-  "current_week_leads": 15,
+  "current_week_leads": 16,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 229,
   "leads_detail": [
+    {
+      "name": "Luis",
+      "email": "limacharli@gmail.com",
+      "phone": "+51946592506",
+      "company": "ja&l house and services",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-18",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
+    },
     {
       "name": "Irving Chunga",
       "email": "informes@grupoatlasperu.com",
@@ -4116,7 +4136,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
