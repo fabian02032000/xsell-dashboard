@@ -1207,6 +1207,9 @@
       l.adset_name = attr ? attr.adset_name : null;
       l.ad_name = attr ? attr.ad_name : null;
       l.attr_campaign_name = attr ? attr.campaign_name : null;
+      // Descarte automático por las respuestas del formulario (solo si HubSpot aún no tiene etapa)
+      l.form_respuestas = attr ? (attr.respuestas || {}) : {};
+      l.form_no_califica = (attr && attr.no_califica && !(l.has_deal && l.deal_stage)) ? attr.no_califica : null;
     });
 
     // ---- Meta de registros (simple) y detalle semanal (compacto) ----
@@ -1250,7 +1253,7 @@
   //   standby     = etapa "Stand By"
   //   sin_gestion = todavía no tiene Negocio
   function leadState(l){
-    if (!l.has_deal || !l.deal_stage) return 'sin_gestion';
+    if (!l.has_deal || !l.deal_stage) return l.form_no_califica ? 'descartado' : 'sin_gestion';
     const st = normTxt(l.deal_stage);
     if (st.includes('descart')) return 'descartado';
     if (st.includes('stand by') || st.includes('standby')) return 'standby';
@@ -1282,6 +1285,7 @@
   ];
   function discardReason(l){
     if (l.discard_reason) return l.discard_reason;   // campo "Motivo de descarte" de HubSpot
+    if (l.form_no_califica) return l.form_no_califica; // descartado por sus respuestas al formulario
     const t = normTxt(l.deal_note);
     if (!t.trim()) return 'Sin detalle';
     for (const [label, re] of DISCARD_RULES){ if (re.test(t)) return label; }
@@ -1347,7 +1351,7 @@
           <span class="rs-track"><span class="rs-fill" style="width:${v / max * 100}%"></span></span>
           <span class="rs-val">${fmt(v)} · ${pctTxt(v, desc.length)}</span>
         </summary>
-        <ul class="rs-list">${byReason[label].map(l => `<li><strong>${escapeHtml(l.name || l.email || 'Sin nombre')}</strong>${' · ' + escapeHtml(companyOf(l))} <span>${escapeHtml((l.created_date || '').slice(0, 10))}${l.discard_reason ? '' : ' · según nota'}</span></li>`).join('')}</ul>
+        <ul class="rs-list">${byReason[label].map(l => `<li><strong>${escapeHtml(l.name || l.email || 'Sin nombre')}</strong>${' · ' + escapeHtml(companyOf(l))} <span>${escapeHtml((l.created_date || '').slice(0, 10))}${l.discard_reason ? '' : l.form_no_califica ? ' · formulario' : ' · según nota'}</span></li>`).join('')}</ul>
       </details>`).join('')}
       <p class="hint" style="margin-top:6px;">Haz clic en un motivo para ver quiénes son.</p>
       <p class="hint" style="margin-top:10px;">${fromField} de ${fmt(desc.length)} con el campo "Motivo de descarte (campaña)" lleno en HubSpot; en el resto, el motivo se lee de la nota de Ingrid.</p>`;
@@ -2266,7 +2270,7 @@
       let motivoHtml = '<span class="table-sub">—</span>';
       if (leadState(l) === 'descartado'){
         const r = discardReason(l);
-        motivoHtml = escapeHtml(r) + (l.discard_reason ? '' : ' <span class="table-sub">(según nota)</span>');
+        motivoHtml = escapeHtml(r) + (l.discard_reason ? '' : l.form_no_califica ? ' <span class="table-sub">(formulario)</span>' : ' <span class="table-sub">(según nota)</span>');
       }
       const estadioHtml = tagPillHtml(l.estadio_lead, ESTADIO_COLORS);
       const urgenciaHtml = tagPillHtml(l.nivel_urgencia, URGENCIA_COLORS);
@@ -3903,7 +3907,7 @@
 
   const LADDER = ['prospectos contactados','reunion agendadas','propuesta en elaboracion','propuesta enviada/en revision','propuesta aceptada','en implementacion','implementada'];
   function state(l){
-    if (!l.has_deal || !l.deal_stage) return 'sin';
+    if (!l.has_deal || !l.deal_stage) return l.form_no_califica ? 'desc' : 'sin';
     const st = norm(l.deal_stage).trim();
     if (st.includes('descart')) return 'desc';
     if (st.includes('stand')) return 'stand';
@@ -3912,6 +3916,7 @@
   const stageIdx = l => LADDER.indexOf(norm(l.deal_stage).trim());
   function motive(l){
     if (l.discard_reason) return l.discard_reason;
+    if (l.form_no_califica) return l.form_no_califica;
     return /respond|contest/.test(norm(l.deal_note)) ? 'No respondió (llamada ni WhatsApp)' : 'Sin motivo registrado';
   }
   const isNoResp = l => /^no respondi/.test(norm(motive(l)));
