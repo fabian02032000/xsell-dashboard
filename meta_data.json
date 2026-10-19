@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-19T01:34:59.744210+00:00",
+  "updated_at": "2026-10-19T06:18:54.935386+00:00",
   "campaign_start": "2026-07-25",
   "monthly_budget_goal": 1500.0,
-  "total_spend": 5929.6,
-  "month_spend": 1508.06,
-  "leads_campaign_spend_total": 5739.91,
-  "leads_campaign_spend_month": 1508.06,
+  "total_spend": 5957.03,
+  "month_spend": 1535.49,
+  "leads_campaign_spend_total": 5767.34,
+  "leads_campaign_spend_month": 1535.49,
   "leads_campaign_match": "prospectos b2b",
   "campaigns": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "spend": 223.1
+      "spend": 250.53
     }
   ],
   "campaigns_month": [
@@ -36,7 +36,7 @@
     },
     {
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "spend": 223.1
+      "spend": 250.53
     }
   ],
   "daily_spend": [
@@ -382,7 +382,11 @@
     },
     {
       "date": "2026-10-18",
-      "spend": 68.12
+      "spend": 90.27
+    },
+    {
+      "date": "2026-10-19",
+      "spend": 5.28
     }
   ],
   "spend_by_week": [
@@ -485,18 +489,18 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "spend": 410.47,
-      "impressions": 11411,
-      "reach": 6615,
-      "frequency": 1.73
+      "spend": 432.62,
+      "impressions": 11785,
+      "reach": 6784,
+      "frequency": 1.74
     },
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "spend": 0.0,
-      "impressions": 0,
-      "reach": 0,
-      "frequency": 0.0
+      "spend": 5.28,
+      "impressions": 88,
+      "reach": 82,
+      "frequency": 1.07
     }
   ],
   "creatives_available": true,
@@ -504,7 +508,7 @@
     {
       "ad_name": "REEL | INMO | INGRID",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/851723640_1793831841941907_6626987950914092682_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=AdlBUADInKMQ7kNvwET_3IW&_nc_oc=Adql9RYymBdFRsz4ltxqIfTk80MeTWqhCSkA9MUf2XVFiUKGBmXCgMEnzsBCM7eW4Oo&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=n3ngFd35RV4FSSyMPv2b5Q&_nc_tpa=Q5bMBQJkE_y2oGRi3bZO6mYQqM-cZhe-XSXUWQZ3zp_7GCVM8qLrnUaETAg3Gsuk7Iw6bY8Dz4cTEIq3ag&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOCY7acU8Xi2lTT-j1OO2g4-XkwFV_IkOHBMCn8qwVKZg&oe=6ADB4F07",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/851723640_1793831841941907_6626987950914092682_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=AdlBUADInKMQ7kNvwHx4y7O&_nc_oc=Ado5nz0pcY9pT90t3NKzHp71oBvry-cpylOS2rd4ykI0ZexvIaP7LkV0Sk6p-iGiZRo&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=wBbRP5QP_JgFfXTDR1cQXA&_nc_tpa=Q5bMBQJY_dbFMDHksX193wb3xuTZadyl4x4Aka5HgOY_A0pAjq0-ag-H6fLRiSDgNz1lJ8MoFVMZDOwPTA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNvL5UQslaJlErm2U0kEYOH3oeNxuOMycZbPeesqFQ4qw&oe=6ADB8747",
       "title": "¿Tus leads siguen sin llamada?",
       "body": "¿Cuántos interesados en tu proyecto dejaron sus datos este mes… y todavía nadie los ha llamado? 🏢\nMientras tus asesores atienden visitas, esos clientes ya están viendo el proyecto de la competencia.\nEn Xsell somos tu fuerza de ventas externa: llamamos, damos seguimiento y agendamos visitas a tu piloto.\n👇 Déjanos tus datos y conversemos.",
       "description": ""
@@ -512,7 +516,7 @@
     {
       "ad_name": "REEL | LEAD FRIOS - FABIAN",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=l0vDDFTAyKsQ7kNvwG2I-ff&_nc_oc=AdrqzUCV6QS1Ps7DwVUVUkRKOSJpUAQjvHqBd3sqn3UkUluQ1ZaNI-lGWGKtJQdENE4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=n3ngFd35RV4FSSyMPv2b5Q&_nc_tpa=Q5bMBQJb71X1txqrY9ws0CDb6sNeDbHCTqphdxFxxknelD0pTDjRCom_Fn2-UkPc9nhcFXx_f8CRUiU5OQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOGew-ueUQG9i5o1jFCbIyMJaIpQGxDgpJGG7KNnu4W9Q&oe=6ADB5374",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=l0vDDFTAyKsQ7kNvwGs-DYi&_nc_oc=AdrlwzTHg_O0WzE7qxoaom9ONrLwLNY4VAusJ5vjQN_Gjrdb88IgoIVGTPXM1u8qvFA&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=wBbRP5QP_JgFfXTDR1cQXA&_nc_tpa=Q5bMBQKsWR1fLe9A_AluzHc9AUB-E8L6OVw5fJtQyZ_rjYcmXvVx9b1uEauAjgBliJsXTYxnuDUV3fVTTg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNROdfOOHQbJNQU2-pF4C_SR1QAcVKNVHpIHQmDwcmj_A&oe=6ADB8BB4",
       "title": "⏱️ El tiempo cierra ventas",
       "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
       "description": ""
@@ -520,7 +524,7 @@
     {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=ykseZmohc4wQ7kNvwFx-kZC&_nc_oc=AdpSzcG7TRVt8SoQs70oFhtrzypHu2e1SCADT4Hn6iGvMKGjJMwInjOvz-rUkAoEU7w&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=n3ngFd35RV4FSSyMPv2b5Q&_nc_tpa=Q5bMBQLsKuZnk5BisLU4UujMreTOdlgHttaTdgSW3Jp77sgO2gh0YnTJ5lE1RRzXT3OsK47XDbJ_t27P9g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQM-BB8YJDV2ck3VySwKOkzwFNUElI7Prrf7j2Umf0TONw&oe=6ADB4BE8",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=ykseZmohc4wQ7kNvwHT4fVI&_nc_oc=AdrZHCQcKUwM_p6a2oNvgrC69QXYZ4ppBgDoseqyXvO0Dgxm7VVe_Q7HnmsxlpWrXno&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=wBbRP5QP_JgFfXTDR1cQXA&_nc_tpa=Q5bMBQKjI01LYjKWYS6INzkPCZ_SP02iSuj2W2kFfd3iCBRc4gRn8xUdMkWsFR54L-QI2_QNE4sT8dY0WA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOmkgXAeNVpWY6dRBpaOW_GRXCRErWioJUY0JAr1MRJbQ&oe=6ADB8428",
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": ""
@@ -528,7 +532,7 @@
     {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=2iFiJec9z5oQ7kNvwFDZAPA&_nc_oc=AdplUTYAMYaz0a0zJuoDS0WFeGmeXOSUmGM-4Dn1jwKrG13s_AvF5CGVu7g33eei8pw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=n3ngFd35RV4FSSyMPv2b5Q&_nc_tpa=Q5bMBQIqm071oRvKF6n2RVVpBSJ2JE2QCEynBMJb8L9hjbtOEWZHYKEvAY7if2XIs2Z14tKeSCMPUQGBmQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPYdqqkbunY8zfWWijz0K2qUfHj7MF2b39JcvYUdKYSCg&oe=6ADB46A2",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=2iFiJec9z5oQ7kNvwHXVqLy&_nc_oc=AdqGjnkg5UDkebh0_V5wgMF7ondfD7oP7HMLkxZB-x-aV6tZMsF7MAEFPqW5BKm6TyI&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=wBbRP5QP_JgFfXTDR1cQXA&_nc_tpa=Q5bMBQKbilxvM0F_C2uQWOl5rLRC2Ez6nxMtGgGMCLvBewO4M_BODn9zZMpfSLkbq8nsQpG7CrrINdupBQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNT61PKJ_YWuxtgDCtf9pBZhN2YEoO-EAVRAQEcRETfJg&oe=6ADB7EE2",
       "title": "¿Tus leads siguen sin llamada?",
       "body": "¿Cuántos leads que pidieron cotización este mes todavía no reciben una llamada? 🚗\nMientras tus asesores atienden el piso de ventas, esos clientes ya están cotizando en otra concesionaria.\nEn Xsell somos tu fuerza de ventas externa: llamamos, damos seguimiento y agendamos visitas.\n👇 Déjanos tus datos y conversemos.",
       "description": ""
@@ -536,7 +540,7 @@
     {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=woshIK-ywBUQ7kNvwGRudfC&_nc_oc=AdoLHvUOSw42Vuor-pfkHsgi8hdtAjU2LOV6TiWiBDep_aTFsduDoipKBmdDzu9Nu6s&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=n3ngFd35RV4FSSyMPv2b5Q&_nc_tpa=Q5bMBQIGOOrUSBiRCgPN2WttykERvMiOUXgn3mJX97kAqetMf32lr4OofUtL28ILPGRVlvY5vw3svSg5kA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOUKkD5dl6aEZdyZbbwGPtV_sYCBpV7iXv2uxvm8mvgYg&oe=6ADB56A7",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=woshIK-ywBUQ7kNvwGDs_sn&_nc_oc=Adql2tw5JxfVMT1k-3AV108GmqqzUy9a4sOLCdb9_A1LYFzPpfL6Y8FzOmzwaeKq694&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=wBbRP5QP_JgFfXTDR1cQXA&_nc_tpa=Q5bMBQLzvEtKPLyCZ9BMgJIZI0bJBJGRxpnaxqdX0EJoUYONW8EB3OR8DABiWzXK0w5KOEd7hRXnlwhRLA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOfzBf-vm3Vxh5fnBFK8cYopdKHm8XlDCJBLoX6QxAveg&oe=6ADB8EE7",
       "title": "¿Tus leads se están enfriando?",
       "body": "¿Inviertes en publicidad y te llegan cientos de leads al mes? 🚗\nLa pregunta es: ¿cuántos reciben una llamada a tiempo?\nEn Xsell somos tu fuerza de ventas externa. Llamamos a los leads que tu equipo no alcanza, damos seguimiento y agendamos visitas a tu concesionaria.\n👇 Déjanos tus datos y conversemos.",
       "description": ""
@@ -959,7 +963,7 @@
       "title": "",
       "body": "",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=rStFP4szSicQ7kNvwHuVL00&_nc_oc=Adofm4LAPn9wv_K3D5qsOHz_jJbTY7fHDglESozZ156N6DRYNA7PatiPzyNE51sXi7A&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQJifCR5908M1u2Br_rBBa66_sPCSA266WDStfZQvnKlgTRtOS0ucvOg-lI8KNx9lAWRlbKkmZTO3g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQPB6G2Qf3Wk3yu1el2c887_TWVbwikmBf_ClGMKYMOrcA&oe=6ADB40DB",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/755350094_122258329790105281_5804672527078490300_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=rStFP4szSicQ7kNvwHU0o6u&_nc_oc=Adrl-j_dn0pmsC_ZT8D-c0ch4OU2WbWZKmggnKA158kDH_DamIEbZ2djlrvpKZLOX2s&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJyRuC_Rwq8tOgrL3dUSjEBqTxJI93TuK6ZQcqwMp-vCir7RRfUkd6YkRwxZMO_JvYlzto1ATUmkg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQOIMCUJw7gW_q66tnMxdYSNgi-0xpH4ZpL8lUgYnVNrWg&oe=6ADB791B",
       "spend": 1276.92,
       "impressions": 55306,
       "reach": 20882,
@@ -981,7 +985,7 @@
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=ykseZmohc4wQ7kNvwFx-kZC&_nc_oc=AdpSzcG7TRVt8SoQs70oFhtrzypHu2e1SCADT4Hn6iGvMKGjJMwInjOvz-rUkAoEU7w&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQLJiAgcBVd2Gk4_dwLWIo2Irn6coBOIkwvOakCIEEswG82IjsTDnLMgbxpfJDa25jcILApZ7muc-A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNzQ9L7JrCawXb88d5N5D9O8t0sl3ZyKCEyGiS1Gdk_4Q&oe=6ADB4BE8",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=ykseZmohc4wQ7kNvwHT4fVI&_nc_oc=AdrZHCQcKUwM_p6a2oNvgrC69QXYZ4ppBgDoseqyXvO0Dgxm7VVe_Q7HnmsxlpWrXno&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQLnzqefh7f1XqEyeCQAykYZNwFHiGgMvfZmEGARfBFZzKek6fH74N9niXRr7Ng3rXy9gdsxWkGS7g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPfzzSWwCsvjqItt0ArhFIQAg4vtTzvI6FRbL4YQnaqmQ&oe=6ADB8428",
       "spend": 706.34,
       "impressions": 17884,
       "reach": 7227,
@@ -1003,7 +1007,7 @@
       "title": "📈 Tu negocio tiene un techo",
       "body": "📈 Tu negocio no puede crecer más si cada venta depende de ti. Nosotros cerramos la venta por ti, con una estrategia y medición real de resultados, para que tu crecimiento no dependa de tu tiempo.",
       "description": "",
-      "image_url": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/7210789227175194364?url=https%3A%2F%2Fwww.facebook.com%2Fimages%2Fshare_options%2Fshare_arrow.gif&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=JLN9duuXO9WO7EycWbk2uw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJH2cWbrQhB0Yfi8Jz4Fx_pyLnWTKjsVbPRWzyYJggFfO_4f6bNViBfvLnadpT3_vSkyVLgN0CqjA&oh=06_Q3_EAbX5lDvviYva8cU5KgbWP5uhtgeGAx1CofU_3tHQqti3&oe=6AD767F5",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/7210789227175194364?url=https%3A%2F%2Fwww.facebook.com%2Fimages%2Fshare_options%2Fshare_arrow.gif&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=hl7m4ONJphkAdwozNUwyIw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLgpxpw8kw5FQ59skdxxPq28Th24mmxjjTohGfIjhX4O1pX-9eHCiXQO5vu_dBFR-9FThLlxu5-sg&oh=06_Q3_EAZWL7pGvCzzFHCmmw4V8ld4c1R7knuKnrN22bm60wK-X&oe=6AD7A035",
       "spend": 660.02,
       "impressions": 21431,
       "reach": 9349,
@@ -1025,7 +1029,7 @@
       "title": "",
       "body": "",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/808977407_122264272064105281_182066957268921081_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=kvv0fWYrfIEQ7kNvwEQWDAf&_nc_oc=Adq6XCNSSyDFEHudodA44tr8xaahve4UJTtUtKQ_FglgPliUSRKIzIyoKLmgp_tcpJs&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQIs0tVo84s6GaQrUEtYNh5HJ5LKAg7vzrl4-4tfDuAR6u8BJ3XDiMJCak3Be3LbF2Z5UJr7jfSm1w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQP7dnLq0EK5BcMt33FbSjgKJ5bZA4kT7VRGA-E5R7EifQ&oe=6ADB5D27",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/808977407_122264272064105281_182066957268921081_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=kvv0fWYrfIEQ7kNvwEHXx8h&_nc_oc=Adr_rtNmfHSQSquXkjYXFCG-D9wYINH1Cl3EYqJohgrlszMCAW6EPKloxgmOldpMFsw&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJPkgOGi3D8aeMzoBWbwd6T76285IKkBSQhS7on57O2CJcVlbgJK0jmpxevxNvAXVP7H7Cywe6fNg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AQNKOh3_5GwOS1v2aWqLOwpfSytDXC7oWiLri2PWKQXOgg&oe=6ADB9567",
       "spend": 650.33,
       "impressions": 28825,
       "reach": 14887,
@@ -1047,7 +1051,7 @@
       "title": "📈 ¿Muchos leads, poco equipo?",
       "body": "📈 ¿Tu equipo de ventas ya no da abasto con tantos leads? Sumamos el equipo extra para que cada contacto reciba respuesta a tiempo, sin perder oportunidades por el camino.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=M-xiP6MRwsUQ7kNvwHbOfQr&_nc_oc=AdptAzxFEmOPU6f7RlA3bM2M4LaY9G18RZuXiBifG5k8dkowGGVqmi-xBkVoMHVQqFM&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQLPegEg5LUt3coH5hXh7ztCB_-yDibYMGYVOivxNBxGkmipT0Cf1IdUNeS4TXiPpRgj_jt4ikBYcA&oh=00_AQPtYZgWmX9WSsoO9-MyHSUto3X9BczXGGT1PqmkahhpRQ&oe=6ADB617F",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/777801248_122260815878105281_7983192160618765068_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=M-xiP6MRwsUQ7kNvwGrX_BH&_nc_oc=AdrcQbb8KWrjT9c6hMiWFLXzYb63BiShO50EGO06B7mYgCFxFrMvlFkQBxmh-wf4pKk&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJWOLpHrrbyn8Cz_eVSI7cIxZfRKfaWjVoTyidN2tyBeYgexHS3nkjCNWcDvrZ4WW6uG4RzAofasQ&oh=00_AQP9fPWzZHcV9YgP9I5cBBUjKlyvXPWer6x0iuR3FotqYw&oe=6ADB99BF",
       "spend": 570.3,
       "impressions": 12388,
       "reach": 5276,
@@ -1069,7 +1073,7 @@
       "title": "💬 ¿Cuántos chats sin responder tienes?",
       "body": "💬 ¿Cuántos chats de clientes se te quedaron sin responder esta semana? No es falta de tiempo, es falta de un equipo comercial detrás. En Xsell ponemos la estrategia y el equipo para que ninguna venta se enfríe.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=FBMg43UBwwcQ7kNvwFZLhpq&_nc_oc=AdpvpEYgDEzvrMHNafp6L02bWrf8jMzunxLG3sY-HiUuVpcjbuvNKaSFged8AKWWdho&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQKeR1ov7050T42ht6E8uibnB6Xy_NlMyBAoSIRBlaNI_5-f-tkUfr4e6qeA87Db_kSLDhd0hlyWwQ&oh=00_AQMl5WxaYNdVCDLNTEcJDltOPj_8PjxsEwHHdqd9snl5ow&oe=6ADB30CF",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/777767962_122260729898105281_4616349035187828290_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=FBMg43UBwwcQ7kNvwHOY4EW&_nc_oc=AdrU3M8VMcZ01Qm0eTeHwsgll_h0cCK5EPlw7lYU-MSbFhfpIAYZZzXe_1qWN-Em--0&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQKKhaFkp_h8VAuqPLxpr4UqboOQG0bFgYdXYaf5FxMRf5Eug0HICL3knprDu0e9v1cnAPURweIicQ&oh=00_AQOIzQQVI0RtpTJd9hm1PfdS0DcHn56bRvOlOaxXjwP9Zg&oe=6ADBA14F",
       "spend": 408.29,
       "impressions": 8680,
       "reach": 4067,
@@ -1091,7 +1095,7 @@
       "title": "🎯 No todos los leads son iguales",
       "body": "🎯 No todos los leads valen lo mismo, pero tu equipo los trata igual. Te ayudamos a convertir esos leads en ventas con un proceso de priorización real.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/779976512_122262096662105281_3750831697722198775_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=zZB60glYJ4sQ7kNvwGgGcUy&_nc_oc=Adqc-1fQ26FgTWLt4iIrB1NstKZfGzF-DSKQUMTUy25cMQi9XJ4RZNk_S9Pkv30eRD8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQL2VKFtYwdiEG_iZ_kYhDe99WdhrbZJRsDneHaGv463frwhSa6fyWkFdw0WlKUDzuuUOARdYdhcoA&oh=00_AQN05lRaD_bu4gxYqHqHt3d7osLljI_HZRYhVA4vGZVKZA&oe=6ADB447F",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/779976512_122262096662105281_3750831697722198775_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=zZB60glYJ4sQ7kNvwEjCaCv&_nc_oc=Adpq9mYzC__dJ1idgTtNOSok1h6YbvhStHM84oUGu0D865mnzK9dTh5Ti-E9IReZq4c&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQK4zTs6G71rUgLdV0N-m5j-y4DPRY7GYaOi8xvXhFzW01UwBKEalz1-oAa6jeEazkkMkkmqLg0d0Q&oh=00_AQNojhJsXpdv-bXqDEWmML6e7qR60l5cF9Gvv27cBhCx0Q&oe=6ADB7CBF",
       "spend": 315.15,
       "impressions": 9458,
       "reach": 3717,
@@ -1113,7 +1117,7 @@
       "title": "Vende más textil sin contratar",
       "body": "¿Cuántas cotizaciones se te enfrían por no responder a tiempo? Nosotros las cerramos por ti. Agenda una reunión gratis hoy.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=_acL4C4n2XcQ7kNvwEpAx_T&_nc_oc=Adr8K6UrPHmxcgVMz0N7RlU4LNuqEh33OEREN1Tm3Z-R0rSuI9HO4pLdSaBMh6BcG9g&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQIczJP8nQa2fEb7RvnLbZ8hEM7VrwCRUufDF8pyw0sWNzbZetSwnOEZsKIQfC270LznOpnfy9VHxg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNIrmhbGLE5GAQddBPx0h2KgFv1VXY-3v10xCwX0T2M5A&oe=6ADB41AB",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/813901148_1396333751968702_199935644606417697_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=_acL4C4n2XcQ7kNvwGUwcxc&_nc_oc=AdrftUZEZyouE3Nbts8afgoTTEnkh1pN03VpXkzxbFtAwAScjYPGG4ez_x42JukFztw&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJmuwyS-WJDZQSe9drVGuDsd9MxQwjUmQzYCpc2BMdqoNboV9ULAjYZ3_xRmh0sE39EwlrL4RuY_g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPkkxFToWBAsVGsuYBacnL1WvYDOxbvomu7OihIgD-kvg&oe=6ADB79EB",
       "spend": 312.32,
       "impressions": 6368,
       "reach": 3202,
@@ -1135,7 +1139,7 @@
       "title": "🔥 No dejes que tu lead se enfríe",
       "body": "🔥 Mientras tu equipo saturado tarda en responder, ese lead se enfría  y termina comprando con la competencia. Nosotros lo perfilamos y contactamos al instante, para que llegue caliente a tu asesor.",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/831137195_1600010785255797_7505605581782862567_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=QDGjf9PcouwQ7kNvwFLIV1E&_nc_oc=AdrWC8XR2zesKihyktAKBi7PnTPE3nGOhum-WJw6a2eZR_5wLazOuEz2-jslHQfEXzY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQI2_UKecE24Y5RI_HHXe7ir9MJe6jPN0639lUzfX6p4Zt0Q_A89sHk2xQERDApxJlNjCUwlvzV-hw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQNU2LuD3ZyzsOO2k_-ulKVxImLUvtshDsnuDnTkTNl5sA&oe=6ADB3D7F",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/831137195_1600010785255797_7505605581782862567_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=QDGjf9PcouwQ7kNvwFRaHw9&_nc_oc=Adry8EYR_y-v1tzsdZSTf5-EYijw5yY8upAkx2BazS6bBSDYcXKcQyQFw8ig-J1rTdI&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQL4V2PTmej31yKLC_CNxnyV3t5aOWYW_haKDvs6FqZDc109YeECSGs9MU8clEUWooJEJOFgoeEMFA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQMbADzoQrmp9bZgResCY9OC2KUggrEnpNBBlB8FF0O0Xg&oe=6ADB75BF",
       "spend": 221.69,
       "impressions": 8506,
       "reach": 6151,
@@ -1157,7 +1161,7 @@
       "title": "📦 No hacemos campañas, cerramos ventas",
       "body": "📦 Cada pedido corporativo que no cierras a tiempo, lo cierra otro proveedor. En Xsell no hacemos marketing, cerramos ventas por ti. Completa el formulario y te ayudamos a hacer crecer tus ventas",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=nrI68TZ8vygQ7kNvwHInDy8&_nc_oc=AdqE6UB7SHwlbg_7N6G-ZIKsZV13kRaoCrNxwt2kwFYiPJ_nQuvf5uTUL8SCbPupRrw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQLjQezdWLzK3cEFCu9crNYc8rj4yUn1RJnlmrEmnKXs9WkNIJ-4LLvyLy_MUxdCZtiGb4Fay45w4g&oh=00_AQMf_ZipxwwsCAV8leISTOh8qnqAiJy4L0RCNlr2s74Y2w&oe=6ADB3B0A",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t45.1600-4/806310597_122264287352105281_1448877568801280484_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=nrI68TZ8vygQ7kNvwHSO_ut&_nc_oc=AdryoeF3dLp06RTezM1eA0hfJwSJUPC-maRjmb4Gb-zxhSK23W-yLSoZ7bs32QknnhA&_nc_zt=1&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQIhn_toR_aLQ68IcApWY7zm2iKS6IRRZTYcCv0TcIr6LrNq3KJO3ytr8EfyKmuwlllMfr9EacsDIw&oh=00_AQP2h45CxZhn0OH_vq1ymQLuI5UR8zG26XUjafYXsEW7Tw&oe=6ADB734A",
       "spend": 139.33,
       "impressions": 2027,
       "reach": 731,
@@ -1167,6 +1171,28 @@
       "ctr": 1.87,
       "leads": 0,
       "cost_per_lead": null
+    },
+    {
+      "ad_id": "120252641177100597",
+      "ad_name": "REEL | LEAD FRIOS - FABIAN",
+      "adset_id": "120252641177090597",
+      "adset_name": "GENERAL | CARGOS | PE | 28-60",
+      "campaign_id": "120252633480900597",
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+      "status": "ACTIVE",
+      "title": "⏱️ El tiempo cierra ventas",
+      "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
+      "description": "",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=l0vDDFTAyKsQ7kNvwGs-DYi&_nc_oc=AdrlwzTHg_O0WzE7qxoaom9ONrLwLNY4VAusJ5vjQN_Gjrdb88IgoIVGTPXM1u8qvFA&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQIs4jJfGKDXt9Y77v17h51wDX4q1LeKMW_4TBvp1hXRmWtHfXFEEFrzyK3XPXCTNY59W2mO8WS7wA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOUxomIKEadzRrd2__YDubh6B7l2Apg5X7ZlOLCHClp6A&oe=6ADB8BB4",
+      "spend": 103.51,
+      "impressions": 1425,
+      "reach": 1049,
+      "frequency": 1.36,
+      "cpm": 72.64,
+      "clicks": 35,
+      "ctr": 2.46,
+      "leads": 4,
+      "cost_per_lead": 25.88
     },
     {
       "ad_id": "120251103077310597",
@@ -1179,7 +1205,7 @@
       "title": "Xsell",
       "body": "Durante 14 años nos llamamos \"contact center\".\nProbamos de todo: distintos rubros, distintos intentos, distintas formas de explicar lo que hacíamos.\n\nHasta que entendimos algo simple, lo que mejor sabemos hacer es vender.\n\nHoy lo decimos con claridad: somos Xsell, una agencia de ventas.\n\nMejores y distintos.\n\nDesliza para ver la historia completa 👉\n\n#Xsell #AgenciaDeVentas #Ventas #MejoresYDistintos #B2B",
       "description": "",
-      "image_url": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=JLN9duuXO9WO7EycWbk2uw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQL_44bsVPyuSCOaibI5smuEB2W0ujZWYgV6JpGIH4B55Maf95mJjctwOdRKK7VWLHVC_qx04-yllA&oh=06_Q3_EAWKXKuTjqUYRJ1rUWtzmeH67_W6XaW6S4JvmA8eCI7uV&oe=6AD73C8B",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/854061608485742757?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0Ond9kXh7RuhBharEOaSAa8QkfpLeOd1HljGo_eg7DTp3EpjgU_fU8JaRitYBRWVROP967W6k4Pv3puFXP-Y0pUQdyX0K9QxQtnJAxVApE-_a5PYmoXQhCgUDljCON0DYCxzDNpmlIgFbNpeIt0KO&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=hl7m4ONJphkAdwozNUwyIw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJ1X2ZfV1ZsQnN-PTL7w2HMpWUXsjkTe2CXOvCic-jO4oZC3X8hmKZJodHjoVnJFW-jCWkt1g2s-w&oh=06_Q3_EAdeFllqU2lUujvKGGAFX65bZFhMhHI9aXlRlegYSgkpm&oe=6AD7AD0B",
       "spend": 93.72,
       "impressions": 130671,
       "reach": 101665,
@@ -1201,7 +1227,7 @@
       "title": "Tus asesores atienden clientes en el showroom… y los leads de redes y web se quedan esperando. 📱\nCada hora sin respuesta es un cliente que se enfría.\nXsell se encarga de contactarlos por ti, para que tu equipo se enfoque en cerrar.\n👉 Completa el formulario.",
       "body": "¿Cuántos leads que pidieron cotización este mes todavía no reciben una llamada? 🚗\nMientras tus asesores atienden el piso de ventas, esos clientes ya están cotizando en otra concesionaria.\nEn Xsell somos tu fuerza de ventas externa: llamamos, damos seguimiento y agendamos visitas.\n👇 Déjanos tus datos y conversemos.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=2iFiJec9z5oQ7kNvwFDZAPA&_nc_oc=AdplUTYAMYaz0a0zJuoDS0WFeGmeXOSUmGM-4Dn1jwKrG13s_AvF5CGVu7g33eei8pw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQKcSV_pNW7BlJpgHXKn_SIW33CrzZDnLVwnErqhjwwY4uUZQsvPGbKQ4vHmj-gj33pb7433yhnvvg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOAtfUF4cg7di1R4FROo3kwILMqrlof2dH9ghxCRSmjnA&oe=6ADB46A2",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/845822565_2155826034971037_1409832953518788008_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=2iFiJec9z5oQ7kNvwHXVqLy&_nc_oc=AdqGjnkg5UDkebh0_V5wgMF7ondfD7oP7HMLkxZB-x-aV6tZMsF7MAEFPqW5BKm6TyI&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJnzu8HZl46tLcb-0YtNnHce2czawV4oYulW8bzotJ1ZHL8fFRKxW3f4V5VND9Ru_WUdHVjBvNe5A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPay6l4xXr53AKUU2QOMJHAOKGPk5YAiXiRgSjBEtPPAg&oe=6ADB7EE2",
       "spend": 89.44,
       "impressions": 5155,
       "reach": 3161,
@@ -1211,28 +1237,6 @@
       "ctr": 2.64,
       "leads": 3,
       "cost_per_lead": 29.81
-    },
-    {
-      "ad_id": "120252641177100597",
-      "ad_name": "REEL | LEAD FRIOS - FABIAN",
-      "adset_id": "120252641177090597",
-      "adset_name": "GENERAL | CARGOS | PE | 28-60",
-      "campaign_id": "120252633480900597",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
-      "status": "ACTIVE",
-      "title": "⏱️ El tiempo cierra ventas",
-      "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
-      "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=l0vDDFTAyKsQ7kNvwG2I-ff&_nc_oc=AdrqzUCV6QS1Ps7DwVUVUkRKOSJpUAQjvHqBd3sqn3UkUluQ1ZaNI-lGWGKtJQdENE4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQJS8Xzj-tEoIEmkL17JksYnBOBlerB1MPJv4AG04f0lFtPRCOSQQ-x76_OzD80wV6AQ20yUpjaIRQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNxL5JzKaX2zEgSBlcBbKfjzZzSntSlqVQE3j3vWlOBBA&oe=6ADB5374",
-      "spend": 87.37,
-      "impressions": 1174,
-      "reach": 886,
-      "frequency": 1.33,
-      "cpm": 74.42,
-      "clicks": 30,
-      "ctr": 2.56,
-      "leads": 4,
-      "cost_per_lead": 21.84
     },
     {
       "ad_id": "120252548907500597",
@@ -1245,7 +1249,7 @@
       "title": "¿Tus leads se están enfriando?",
       "body": "¿Inviertes en publicidad y te llegan cientos de leads al mes? 🚗\nLa pregunta es: ¿cuántos reciben una llamada a tiempo?\nEn Xsell somos tu fuerza de ventas externa. Llamamos a los leads que tu equipo no alcanza, damos seguimiento y agendamos visitas a tu concesionaria.\n👇 Déjanos tus datos y conversemos.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=woshIK-ywBUQ7kNvwGRudfC&_nc_oc=AdoLHvUOSw42Vuor-pfkHsgi8hdtAjU2LOV6TiWiBDep_aTFsduDoipKBmdDzu9Nu6s&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQJIuFNBIylU8snsWp00CR4DXgcO6mcQTVbrrtfGiABFLEsbna93V5XAvt0tgrdAv_aawWc3Pr4vvg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQNGyLewX2Kag-1SC-z77s4A0WMoXO-TY5Pzoxbgdx8PUw&oe=6ADB56A7",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/843407580_3062635153942349_8108910943578448474_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=woshIK-ywBUQ7kNvwGDs_sn&_nc_oc=Adql2tw5JxfVMT1k-3AV108GmqqzUy9a4sOLCdb9_A1LYFzPpfL6Y8FzOmzwaeKq694&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQI62lVVRkmn-2fNAwclPbPmjt1SAEQLO9ZDj4iBaoJ4XiBIiiXyblGy2e97KqIAXfOgjTuwHHHL2g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMXFgiG-2djYG0JtCbsNgFBihNz2XN1KV5VwxV8BQqXmg&oe=6ADB8EE7",
       "spend": 76.72,
       "impressions": 3576,
       "reach": 2055,
@@ -1267,16 +1271,16 @@
       "title": "¿Tus leads siguen sin llamada?",
       "body": "¿Cuántos interesados en tu proyecto dejaron sus datos este mes… y todavía nadie los ha llamado? 🏢\nMientras tus asesores atienden visitas, esos clientes ya están viendo el proyecto de la competencia.\nEn Xsell somos tu fuerza de ventas externa: llamamos, damos seguimiento y agendamos visitas a tu piloto.\n👇 Déjanos tus datos y conversemos.",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/851723640_1793831841941907_6626987950914092682_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=AdlBUADInKMQ7kNvwET_3IW&_nc_oc=Adql9RYymBdFRsz4ltxqIfTk80MeTWqhCSkA9MUf2XVFiUKGBmXCgMEnzsBCM7eW4Oo&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQLcBhxOpawPKCcpPdIRgXZD1JhI0fbWlqmShB0DLQqSEuM3XxO8Hm8IkMrjl_mF0hOqGzQRlYITHg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQO6HpTucp23jKGr9U-gfBe3Y1SxIZR-2YzB--XfLI56aA&oe=6ADB4F07",
-      "spend": 69.46,
-      "impressions": 1382,
-      "reach": 1098,
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/851723640_1793831841941907_6626987950914092682_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=AdlBUADInKMQ7kNvwHx4y7O&_nc_oc=Ado5nz0pcY9pT90t3NKzHp71oBvry-cpylOS2rd4ykI0ZexvIaP7LkV0Sk6p-iGiZRo&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJdgg1dBnOED6jH_DvAp4lf3rmp8gD3RE_IE2KOo72uE-USaCQxNOq0TANZG9PEJhl12A7eJNYYxQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOuorETewTdw-nari3_cSMdQTCbzNVXoBDBGJfVZXptyg&oe=6ADB8747",
+      "spend": 74.93,
+      "impressions": 1496,
+      "reach": 1189,
       "frequency": 1.26,
-      "cpm": 50.26,
-      "clicks": 41,
-      "ctr": 2.97,
+      "cpm": 50.09,
+      "clicks": 44,
+      "ctr": 2.94,
       "leads": 2,
-      "cost_per_lead": 34.73
+      "cost_per_lead": 37.47
     },
     {
       "ad_id": "120252633480940597",
@@ -1289,16 +1293,16 @@
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=ykseZmohc4wQ7kNvwFx-kZC&_nc_oc=AdpSzcG7TRVt8SoQs70oFhtrzypHu2e1SCADT4Hn6iGvMKGjJMwInjOvz-rUkAoEU7w&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQIsuvJbAW01qmN2OCOgnpj-ejynKCE3mOVhM1UARdgH91Kd8R4ZgAtCIlF5mNrF5XhuLDCFQMyiCg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMwxUb0A1qkXzt03uryYROLMtzKcMm3SYqgPhEDUC1KmQ&oe=6ADB4BE8",
-      "spend": 66.27,
-      "impressions": 1124,
-      "reach": 823,
-      "frequency": 1.37,
-      "cpm": 58.96,
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/810813511_1614792896854026_6664731444143501546_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=ykseZmohc4wQ7kNvwHT4fVI&_nc_oc=AdrZHCQcKUwM_p6a2oNvgrC69QXYZ4ppBgDoseqyXvO0Dgxm7VVe_Q7HnmsxlpWrXno&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQLd9YeB1Rmmx44aRPkz0R0SBnkiX0jtEnQ_Pyg8GTuMid5k9sLL7TmgkI26ueIUgCcGMs6GMbolKw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQMXWqyQT9PxI3iQYGoStOUl1n8Y_L1kjvIGTMRGpif1RA&oe=6ADB8428",
+      "spend": 72.09,
+      "impressions": 1221,
+      "reach": 898,
+      "frequency": 1.36,
+      "cpm": 59.04,
       "clicks": 21,
-      "ctr": 1.87,
+      "ctr": 1.72,
       "leads": 1,
-      "cost_per_lead": 66.27
+      "cost_per_lead": 72.09
     },
     {
       "ad_id": "120251220482420597",
@@ -1311,7 +1315,7 @@
       "title": "",
       "body": "¿Sabes por qué se te caen propuestas que iban bien encaminadas? No es el precio. Es lo que dices (o no dices) después de enviarla.\n\nHay frases de seguimiento que matan la venta sin que te des cuenta, y otras que la mantienen viva. Te dejamos 4 cambios directos: qué no decir y qué decir en su lugar.\n\nGuárdalo antes de tu próximo seguimiento. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #SeguimientoComercial #TécnicasDeVenta #CierreDeVentas #EquipoComercial #Perú",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=IQzGyT-IEYgQ7kNvwHDS_eM&_nc_oc=AdqL55kEFuba9HSDwYWulQ8BVHldGbN6dJdcvFxxfSB2KqMv8_CEtubsdUR7nMGMbL4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQLqgqg5Nw5OGgvRnDik9F9A4Io2fwLvm_h3FUuAATt8eZfmvW2VU0cz7z6HgQNzuCoBCclEf7T0sw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQOshmr5ofyb3ntRjmCezoL3xcmCIpddbRsmilLT10ZhmA&oe=6ADB39FF",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/749269003_122112086025384130_3786240226744273439_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=IQzGyT-IEYgQ7kNvwE43Ik_&_nc_oc=Adq0U4FhPOzfTn3DP5Xw5zlVvaLMNGKyU_ZOoFc7XaBlE37HJGEBiPfJaRFAVjmmDxI&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQLT0PHVs00O4CaKpjfLD_ItNtu2BaPF5ageyk7MhEzNa-2pxBUibQfkK7HVmofLYW1BnwwNjMFpOw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQPI9gxmuTKo_HQ5icG_xTVvoIhg-XuHgjnzoL3aR5dK8g&oe=6ADB723F",
       "spend": 65.7,
       "impressions": 112114,
       "reach": 98676,
@@ -1355,7 +1359,7 @@
       "title": "⏱️ El tiempo cierra ventas",
       "body": "⏱️ Cada minuto sin responder a un lead reduce tu probabilidad de cerrarlo. En Xsell te ayudamos a cerrar esos leads antes de que se enfríen.",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=l0vDDFTAyKsQ7kNvwG2I-ff&_nc_oc=AdrqzUCV6QS1Ps7DwVUVUkRKOSJpUAQjvHqBd3sqn3UkUluQ1ZaNI-lGWGKtJQdENE4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQIeF91uOtjYR1mmJbum-x0swDlaNIQOByB9cfp0PU63lW7ZKx2tcvEAQ7ip1Mls04iUDfQW8JQV5Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQPWTZNBtzdR1R8YHWLoGAucYXP03ycRYVuh9aLyYpvXuA&oe=6ADB5374",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t15.5256-10/792089336_1940479473298012_3135761201395180416_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=l0vDDFTAyKsQ7kNvwGs-DYi&_nc_oc=AdrlwzTHg_O0WzE7qxoaom9ONrLwLNY4VAusJ5vjQN_Gjrdb88IgoIVGTPXM1u8qvFA&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQJD-rcQJT4WjnkIHCjs9aXBhClW25HYMsvQk4KG3FY6_t1iyb-au4dNzEF5brTPA3Ex0SvMF0ugWA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQOmVNI-uGFoNq82QJsxBgEZd-6resfFv0hdntMNkrA0Og&oe=6ADB8BB4",
       "spend": 28.62,
       "impressions": 693,
       "reach": 538,
@@ -1377,7 +1381,7 @@
       "title": "",
       "body": "¿Sabes qué significa tu CAC, tu LTV o tu Pipeline? Muchos negocios manejan estos números en sus reportes sin entender realmente qué significan ni qué decisión deberían tomar con ellos.\n\nEn este carrusel te explicamos términos clave de venta B2B de forma simple, sin tecnicismos, para que sepas qué está pasando de verdad con tus números comerciales.\n\nGuárdalo y comparte con tu equipo. 👉\n#VentasB2B #Xsell",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=ap74i67_r2sQ7kNvwEqIa9g&_nc_oc=AdrQirHmelfg92vhDOaGXVdRh2j_VvW-x-8uxabm--VvBss4T7Zlep6N95S3T3ech3Q&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQLCA6HNLyoYBqfshGNaejcG9hyd4qLX4FpnaIhWTvPV6rbFCAxW0UvyP7sPbU4YeS-u77WBGJL4ug&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQMgfr-m792QZ1ibVy5WzHdskio-PoqGHvyGdely6jEC0A&oe=6ADB34C7",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/758554244_122116253883384130_7209445518710716707_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=ap74i67_r2sQ7kNvwEfJ5nY&_nc_oc=Adp7zCxDfE7_NXQfJbadGiEQQL9QMMh3zA4vhPEs_5w-_MCXEmPt_lGQAFWEeeIDuqM&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQKwo8EJl6G6n-4RVLq7K67stdVS3sDXWtracndACb-rPZZ8lq_ghbRaVONIeAAIQI80Wl4k9KpGRg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=8c4ec0&_nc_sid=58080a&oh=00_AQOTVSf2lX2hpjYXkru2mpbFww40XWQKlYzhCPKJmloHqg&oe=6ADB6D07",
       "spend": 27.51,
       "impressions": 48550,
       "reach": 43784,
@@ -1399,7 +1403,7 @@
       "title": "📊 Tu equipo no da abasto",
       "body": "📊 Más leads no significa más ventas si tu equipo no da abasto. En Xsell te ayudamos a cerrar esas ventas con la estrategia y el equipo comercial que te falta.",
       "description": "",
-      "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/779976724_122262032528105281_6589079236808904190_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=7lvyjm8rc1AQ7kNvwGfoW3y&_nc_oc=AdrH7-sm20XXhYmOUq_vg6oCSSX83XFtIKK8jIkrbOTI63fFJ-2FMEA7HpEXeFgFKsU&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQINkIPDBzam__4ZlA5uNRt6SogVdjpM1_b0KV_ulucBwYZKOqbuqBRinA5JKoF8xEJQPPiqg8wqMg&oh=00_AQN10EcJkf1F_HQIUf0xrMlwnSZHqudoZEGmEZuoW6TRKw&oe=6ADB33EA",
+      "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/779976724_122262032528105281_6589079236808904190_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=7lvyjm8rc1AQ7kNvwHyvzqY&_nc_oc=AdoJ6OVN1UmV7qEJM5g7FdRMQIt3-O_QdWjyxNlLKn7eyZVxKydIcbTv9lZBAiL-fOE&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQK0c-MltfapwZ17echJoc7U9UWqAjQIB9iInI65uBrno45d-12JGNw02LjsSd3bD78SjW9_VnDEnQ&oh=00_AQNmUY50W0fA18qcmAhRMTxw1jSzEipIxJwj7HOa57bYdg&oe=6ADBA46A",
       "spend": 24.18,
       "impressions": 645,
       "reach": 386,
@@ -1421,7 +1425,7 @@
       "title": "Más ventas, sin aumentar tu planilla 📈",
       "body": "¿Tu concesionaria recibe más leads de los que puede atender? Nosotros los contactamos, los calificamos y hasta cerramos la venta por ti. Sin aumentar tu planilla. 🚗",
       "description": "",
-      "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/832593202_1479121920935163_4404340123173592418_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=gsh6KxPnX14Q7kNvwFX8jtq&_nc_oc=Adp7Y950ps-2JqHl8k8iO90_G4pctFSRc0L-6YNVMEk_M1Ifmp6D5kznGxR5Ribz0Eg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=JLN9duuXO9WO7EycWbk2uw&_nc_tpa=Q5bMBQKD3udijwOAt39Zx9NdD-qkwAfsMR6CXSoNG5FfsLavAvFPxcc1LzcjpuFSeQKnc_QF6ER9I1yp7w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQNnY7B-Cx5Nv3rQHOqmuD6H8d0iGVIXMM9YagtXYViSlQ&oe=6ADB3015",
+      "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/832593202_1479121920935163_4404340123173592418_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=gsh6KxPnX14Q7kNvwHm5d29&_nc_oc=AdrDF95yrCMuIi-S72IqR3HO3YrT0HuXsS_IV29vrhNqmDDbN1LSo_7EPc2sMx6eP2o&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=hl7m4ONJphkAdwozNUwyIw&_nc_tpa=Q5bMBQKEhRDRDMaJcdzasDoAJJ-l4jOHbOGASbcK55b2h3FYTJ4h06kE9fHQFy4CO5sx39Ri6OMuinpx7A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQPPopKUXHRWtOnOoDk3hGzTLA0v5iTWQ6rL6ktztwxPtw&oe=6ADBA095",
       "spend": 3.19,
       "impressions": 102,
       "reach": 93,
@@ -1443,7 +1447,7 @@
       "title": "Xsell",
       "body": "No le des solo las gracias. Dale la razón. \n\nDespués de comprar, tu cliente necesita sentir que:\n\n✅ Eligió correctamente.\n✅ Su inversión tiene sentido.\n✅ Tomó una decisión inteligente.\n\nLa venta termina cuando cobras. La fidelización comienza cuando confirmas su elección.\n\n¿Tu comunicación genera esa seguridad?\n\n#AgenciaDeVentas #Clientes #Fidelización #ExperienciaDelCliente #EstrategiaDeVentas #Xsell",
       "description": "",
-      "image_url": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=JLN9duuXO9WO7EycWbk2uw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLswK1dm5Em_KajMystSg18BsooksYvu5jfBvzbUPfaKZxUf2NE0gWHzN8pptStgu_JTaUWM7HZHg&oh=06_Q3_EAVi_0VuuNQn8CU5EpFEl9hv6GFkpivCDPF_nLBZXtBCc&oe=6AD75231",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/11845454420777736397?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK6CdJvGSDvK9jWp2VG4nhrjhqIcvmD61HuljKM2Y_HOenWjYvTycup053glW9-vGtczpSnbogs1vVSziat4DAv6I75FIBWd2apCxb3-w-I91X4WS5t4BlunuiA35v9D1ax8qZL5KmeUV3Ov2fGoKJz&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=hl7m4ONJphkAdwozNUwyIw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKToFnsTfOJH9Q1AAQN99T4uS2NseVunPe_eQdJdY9bwffe1vy_w5O_XQGok_3W5LJ3EdLwiB7apg&oh=06_Q3_EAVJvPktXJtKG4LyzKUWBtCXjDn-mgaVEJE2RJwhRcCp3&oe=6AD78A71",
       "spend": 1.97,
       "impressions": 3080,
       "reach": 2988,
@@ -1465,7 +1469,7 @@
       "title": "Xsell",
       "body": "¿Le hablas igual a un Boomer que a un Gen Z? Ahí está el problema.\n\nCada generación decide distinto: unos necesitan confianza, otros necesitan velocidad, otros necesitan que seas real. Si tu discurso de venta es el mismo para todos, le estás fallando a la mayoría.\n\nTe dejamos qué valora cada generación y cómo venderle \nSin genéricos, sin adivinar.\n\nGuárdalo, te va a servir más de una vez. 👉 Desliza.\n\n📌 Guarda este post · 🔁 Compártelo con tu equipo comercial\n\n#VentasB2B #Xsell #EstrategiaComercial #MarketingGeneracional #GenX #GenZ #Millennials #EquipoDeVentas #Perú",
       "description": "",
-      "image_url": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=JLN9duuXO9WO7EycWbk2uw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKO1Qlb_y0ocqoxdrJaF82Z5qy6iguhMbnn_041DYWUCcLUD4eArZgjqlu6XYPWGNikzn5iXkOe5A&oh=06_Q3_EAd_ElQfqYQ1t3ykaWmGjhCgoEVgifFDluCs7vu7VYa2A&oe=6AD769FC",
+      "image_url": "https://external-sjc6-1.xx.fbcdn.net/emg1/v/t13/5581154552171249857?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLKZtf5XWNv3ROlXcFW7HGFITz8clh_Vigir0qVQww8oXBR7VRhgzhDTZTV19JztmloG9Tr_9BQ9Rbub8ccIyq8hNSKdlSB6bYPEcLLJASterQcsU8n2GeQYDIibBVINOXur7RTBBOievCVTck1h_HP&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-sjc6-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=hl7m4ONJphkAdwozNUwyIw&edm=AOgd6ZUEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQK2wL7pkOwa1U8akiTOory35sCAGH1SCI5ppLbgjMm5Q-HeQXucO_Ug3XQ_Jb0pRRD40nwHovdmGw&oh=06_Q3_EAa41tdIMZbdDm9AeOJCl_v8Oh-IdUWpSxUvYrYWQGFZY&oe=6AD7A23C",
       "spend": 0.79,
       "impressions": 1333,
       "reach": 1307,
@@ -1514,15 +1518,15 @@
       "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
       "status": "ACTIVE",
-      "spend": 223.1,
-      "impressions": 3680,
-      "reach": 2420,
-      "frequency": 1.52,
-      "cpm": 60.62,
-      "clicks": 92,
-      "ctr": 2.5,
+      "spend": 250.53,
+      "impressions": 4142,
+      "reach": 2691,
+      "frequency": 1.54,
+      "cpm": 60.49,
+      "clicks": 100,
+      "ctr": 2.41,
       "leads": 7,
-      "cost_per_lead": 31.87
+      "cost_per_lead": 35.79
     },
     {
       "id": "120251103077290597",
@@ -1637,45 +1641,45 @@
       "name": "GENERAL | CARGOS | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
       "status": "ACTIVE",
-      "spend": 87.37,
-      "impressions": 1174,
-      "reach": 886,
-      "frequency": 1.33,
-      "cpm": 74.42,
-      "clicks": 30,
-      "ctr": 2.56,
+      "spend": 103.51,
+      "impressions": 1425,
+      "reach": 1049,
+      "frequency": 1.36,
+      "cpm": 72.64,
+      "clicks": 35,
+      "ctr": 2.46,
       "leads": 4,
-      "cost_per_lead": 21.84
+      "cost_per_lead": 25.88
     },
     {
       "id": "120252640540910597",
       "name": "INMO | CARGOS | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
       "status": "ACTIVE",
-      "spend": 69.46,
-      "impressions": 1382,
-      "reach": 1098,
+      "spend": 74.93,
+      "impressions": 1496,
+      "reach": 1189,
       "frequency": 1.26,
-      "cpm": 50.26,
-      "clicks": 41,
-      "ctr": 2.97,
+      "cpm": 50.09,
+      "clicks": 44,
+      "ctr": 2.94,
       "leads": 2,
-      "cost_per_lead": 34.73
+      "cost_per_lead": 37.47
     },
     {
       "id": "120252633480950597",
       "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
       "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
       "status": "ACTIVE",
-      "spend": 66.27,
-      "impressions": 1124,
-      "reach": 820,
-      "frequency": 1.37,
-      "cpm": 58.96,
+      "spend": 72.09,
+      "impressions": 1221,
+      "reach": 898,
+      "frequency": 1.36,
+      "cpm": 59.04,
       "clicks": 21,
-      "ctr": 1.87,
+      "ctr": 1.72,
       "leads": 1,
-      "cost_per_lead": 66.27
+      "cost_per_lead": 72.09
     },
     {
       "id": "120252370771490597",
@@ -3367,14 +3371,28 @@
         "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 68.12,
-        "impressions": 941,
-        "reach": 792,
-        "clicks": 25,
-        "link_clicks": 12,
+        "spend": 90.27,
+        "impressions": 1315,
+        "reach": 1053,
+        "clicks": 31,
+        "link_clicks": 15,
         "leads": 2,
-        "engagement": 226,
+        "engagement": 315,
         "conversations": 2
+      },
+      {
+        "id": "120252633480900597",
+        "name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 5.28,
+        "impressions": 88,
+        "reach": 82,
+        "clicks": 2,
+        "link_clicks": 1,
+        "leads": 0,
+        "engagement": 17,
+        "conversations": 0
       }
     ],
     "adsets": [
@@ -6589,13 +6607,13 @@
         "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 18.88,
-        "impressions": 189,
-        "reach": 164,
+        "spend": 23.31,
+        "impressions": 279,
+        "reach": 246,
         "clicks": 3,
         "link_clicks": 2,
         "leads": 0,
-        "engagement": 51,
+        "engagement": 66,
         "conversations": 0
       },
       {
@@ -6603,13 +6621,13 @@
         "name": "INMO | CARGOS | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 20.51,
-        "impressions": 367,
-        "reach": 333,
-        "clicks": 10,
+        "spend": 25.82,
+        "impressions": 472,
+        "reach": 420,
+        "clicks": 12,
         "link_clicks": 5,
         "leads": 0,
-        "engagement": 78,
+        "engagement": 101,
         "conversations": 0
       },
       {
@@ -6617,14 +6635,56 @@
         "name": "GENERAL | CARGOS | PE | 28-60",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 28.73,
-        "impressions": 385,
-        "reach": 330,
-        "clicks": 12,
-        "link_clicks": 5,
+        "spend": 41.14,
+        "impressions": 564,
+        "reach": 471,
+        "clicks": 16,
+        "link_clicks": 8,
         "leads": 2,
-        "engagement": 97,
+        "engagement": 148,
         "conversations": 2
+      },
+      {
+        "id": "120252633480950597",
+        "name": "AUTO | CARGOS+INTERESES | PE | 28-60",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 1.39,
+        "impressions": 7,
+        "reach": 6,
+        "clicks": 0,
+        "link_clicks": 0,
+        "leads": 0,
+        "engagement": 2,
+        "conversations": 0
+      },
+      {
+        "id": "120252640540910597",
+        "name": "INMO | CARGOS | PE | 28-60",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 0.16,
+        "impressions": 9,
+        "reach": 8,
+        "clicks": 1,
+        "link_clicks": 0,
+        "leads": 0,
+        "engagement": 2,
+        "conversations": 0
+      },
+      {
+        "id": "120252641177090597",
+        "name": "GENERAL | CARGOS | PE | 28-60",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 3.73,
+        "impressions": 72,
+        "reach": 66,
+        "clicks": 1,
+        "link_clicks": 1,
+        "leads": 0,
+        "engagement": 12,
+        "conversations": 0
       }
     ],
     "ads": [
@@ -12969,13 +13029,13 @@
         "name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 18.96,
-        "impressions": 190,
-        "reach": 167,
+        "spend": 23.31,
+        "impressions": 279,
+        "reach": 246,
         "clicks": 3,
         "link_clicks": 2,
         "leads": 0,
-        "engagement": 51,
+        "engagement": 66,
         "conversations": 0,
         "adset_id": "120252633480950597",
         "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
@@ -12985,13 +13045,13 @@
         "name": "REEL | INMO | INGRID",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 20.51,
-        "impressions": 367,
-        "reach": 333,
-        "clicks": 10,
+        "spend": 25.82,
+        "impressions": 472,
+        "reach": 420,
+        "clicks": 12,
         "link_clicks": 5,
         "leads": 0,
-        "engagement": 78,
+        "engagement": 101,
         "conversations": 0,
         "adset_id": "120252640540910597",
         "adset_name": "INMO | CARGOS | PE | 28-60"
@@ -13001,14 +13061,62 @@
         "name": "REEL | LEAD FRIOS - FABIAN",
         "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
         "date": "2026-10-18",
-        "spend": 28.73,
-        "impressions": 385,
-        "reach": 330,
-        "clicks": 12,
-        "link_clicks": 5,
+        "spend": 41.14,
+        "impressions": 564,
+        "reach": 471,
+        "clicks": 16,
+        "link_clicks": 8,
         "leads": 2,
-        "engagement": 97,
+        "engagement": 148,
         "conversations": 2,
+        "adset_id": "120252641177090597",
+        "adset_name": "GENERAL | CARGOS | PE | 28-60"
+      },
+      {
+        "id": "120252633480940597",
+        "name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 1.39,
+        "impressions": 7,
+        "reach": 6,
+        "clicks": 0,
+        "link_clicks": 0,
+        "leads": 0,
+        "engagement": 2,
+        "conversations": 0,
+        "adset_id": "120252633480950597",
+        "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60"
+      },
+      {
+        "id": "120252640540920597",
+        "name": "REEL | INMO | INGRID",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 0.16,
+        "impressions": 9,
+        "reach": 8,
+        "clicks": 1,
+        "link_clicks": 0,
+        "leads": 0,
+        "engagement": 2,
+        "conversations": 0,
+        "adset_id": "120252640540910597",
+        "adset_name": "INMO | CARGOS | PE | 28-60"
+      },
+      {
+        "id": "120252641177100597",
+        "name": "REEL | LEAD FRIOS - FABIAN",
+        "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+        "date": "2026-10-19",
+        "spend": 3.73,
+        "impressions": 72,
+        "reach": 66,
+        "clicks": 1,
+        "link_clicks": 1,
+        "leads": 0,
+        "engagement": 13,
+        "conversations": 0,
         "adset_id": "120252641177090597",
         "adset_name": "GENERAL | CARGOS | PE | 28-60"
       }
@@ -13019,907 +13127,1715 @@
     "ysamilarodbazanmathias@gmail.com": {
       "ad_name": "REEL | LEAD FRIOS - FABIAN",
       "adset_name": "GENERAL | CARGOS | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos",
+        "¿cuántas_consultas_o_leads_recibe_tu_empresa_al_mes?": "aún_no_invertimos_en_publicidad"
+      },
+      "no_califica": "Aún no invierte en pauta"
     },
     "limacharli@gmail.com": {
       "ad_name": "REEL | LEAD FRIOS - FABIAN",
       "adset_name": "GENERAL | CARGOS | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántas_consultas_o_leads_recibe_tu_empresa_al_mes?": "aún_no_invertimos_en_publicidad"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "asolorzano@megatekperu.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "renanpromero@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "sanchezchihuan@gmail.com": {
       "ad_name": "REEL | INMO | INGRID",
       "adset_name": "INMO | CARGOS | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántas_consultas_o_leads_recibe_tu_empresa_al_mes?": "entre_1,000_y_3,000_"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "informes@grupoatlasperu.com": {
       "ad_name": "REEL | INMO | INGRID",
       "adset_name": "INMO | CARGOS | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.2",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing",
+        "¿cuántas_consultas_o_leads_recibe_tu_empresa_al_mes?": "menos_de_1,000"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "cristaco.t@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "juanjecorjauregui4@gmal.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "lizbeth_taboada@hotmail.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "lcoronel@steviacoronel.net": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "crosswalter1206@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "katty23ar@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "gary.priale@gpbusinesscall.com": {
       "ad_name": "REEL | AUTOMOTRIZ | INGRID",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "albertohd1991@gmail.com": {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "csaavedra@cassa.pe": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "karla.sarmiento.trujillo@gmail.com": {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "omarcastrosalazarpr@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "motorgasimport2014@gmail.com": {
       "ad_name": "REEL | CONCESIONARIA AVATAR IA | CTA FORM",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "rcarrera@pegsaindustrial.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "eleazar.tapia@panoramahogar.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "romeroguillermoanderson@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "ventas@pabus.com.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "falcon.denisgerman@gmail.com": {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "quintanaquindeabogados@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "paredes151218@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "melania.lc21@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "johancotrina012@gmail.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "adm.smartplaza@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "mariangelica.lop@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "karl.vasquez.u@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "jorgeizquierdocobos@gmail.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "cristianmestanzaortiz870@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "johan_f_20@hotmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "jsalmon@jsindustrial.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "eric.torres.p@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "comercial@tupodcaste.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "callenesricardo@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "corredor@renatosanchez-seguros.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "luis.tenorio@cltsac.com.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "gerencia@geonet.top": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "mr.galvezm@hotmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "edavila@academiasbraineer.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "zpalomino@eventosmultilibros.com.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "ventas@abmagre.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "dimajo2024@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "administracion@privateacher.edu.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "soypaulgamarra@gmail.com": {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "luis.alvarez@e-robot.pe": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "gerencia@ascensoresmesac.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "pgaspar@manufacturasemisa.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "metalimportsac@gmail.com": {
       "ad_name": "REEL | TEXTIL | CTA REUNIÓN",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "victorvigo@corporacioninvisa.com.pe": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "jorgebarcofenco@gmail.com": {
       "ad_name": "REEL | AUTOMOTRIZ | CTA REUNIÓN",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "jeiner2809@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "zte5jho@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "carmenzare@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "dardent_86@outlook.es": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "paqui0920@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "jhtrillo4@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "grupoleonex@hotmail.com": {
       "ad_name": "EST | ABASTO DE LEADS | DEALER AUTOS",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "gerencia@tudisti.pe": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "lucilavl_64@hotmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "pazupa.19@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Necesito incrementar mis ventas"
+      },
+      "no_califica": null
     },
     "levm88123@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "alina.ricsi@syscopyperu.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "ingraul294@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "gustavoapk2017@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "innovacion360.info@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "farias@alvcom.com.pe": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "wildervasquezchavez1509@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "ventas@antys-uniformes.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "manufacturas.brayan73@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "christian.diaz448@hotmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "pvaldezcabrera@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "gcarrion@mopal.com.pe": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "danielamori2015@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "jusjs@whdj.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "jacobgalarzamorales18@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "molinabarrazaruben@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "edsemill69@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "equipos.naquinarias.imka@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "rodolfo.montoya@oymgroup.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "victorandresrecaldereyes8@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "adheplastgerencia@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "pmaq75@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "saraalonzoortiz25@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "fer9918orbegoso@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "ryfcontactcenter@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "axel.moralesvas@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Vender más y con mejores costos de conversión"
+      },
+      "no_califica": null
     },
     "matsursg@gmail.com": {
       "ad_name": "EST | LIMITE DE CRECIMIENTO",
       "adset_name": "PE | AMBOS | TEXTIL | SIMILAR",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "castropw@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "kenny.grandez.1292@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "carlos.peramas@automotoresinka.com": {
       "ad_name": "EST | ABASTO DE LEADS | DEALER AUTOS",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "karrivasplata30@gmail.com": {
       "ad_name": "EST | QUE LEAD ATENDER PRIMERO",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "christiaanjbb@gmail.com": {
       "ad_name": "120251821265260597",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "giardel.riega@inmater.pe": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "d.reyes@cybertec.com.pe": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "vsvphysio@hotmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "carlomontoyac3018@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "rrhh@ugi.org.pe": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "fcastro@perupack.biz": {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "ernestodanielpampaarbanil@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "gladys.davalos.gutierrez@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_ambos"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "info@robertoemprendiendo.com": {
       "ad_name": "120251821265260597",
       "adset_name": "AUTO | CARGOS+INTERESES | PE | 28-60",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "akirelucky001@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "mariollirod@hotmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "duberfabianmezageronimo@gmail.com": {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "comercial01.capsur@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "irvinvirgo18@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "eversimclaro@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "cristofer.correa@levigrouplogistics.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing",
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "presidencia@camarainternacionaldecomercio.org": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_marketing"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "comercial@punchay.dev": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "quispe.work@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "menos_de_10",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "josezapata_31@hotmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "hugoxz100@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_25_y_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "johanaae111@gmail.com": {
       "ad_name": "EST | \"ABASTO DE LEADS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "entre_10_y_25",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "sí,_tenemos_equipo_de_ventas"
+      },
+      "no_califica": "Recibe menos de 3,000 consultas al mes"
     },
     "edu@gmail.com": {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "dbambinosperu@gmail.com": {
       "ad_name": "EST | \"LEADS FRIOS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "¿cuántos_leads_reciben_al_día_aproximadamente?": "más_de_50",
+        "¿ya_cuentan_con_equipo_de_marketing_o_ventas_interno?": "no,_todavía_no_tenemos_equipo_dedicado"
+      },
+      "no_califica": "Sin equipo comercial dedicado"
     },
     "fabian.aguila@3eriza.pe": {
       "ad_name": "",
       "adset_name": "",
-      "campaign_name": ""
+      "campaign_name": "",
+      "respuestas": {},
+      "no_califica": null
     },
     "sandro.vasquez@bunnroasters.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Equipo de ventas B2B pra mi empresa de cafe"
+      },
+      "no_califica": null
     },
     "ocastro@grupocipsur.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Quiero vender mas y mejor"
+      },
+      "no_califica": null
     },
     "luis.suazo@andesseguridad.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Necesito conseguir más prospectos calificados"
+      },
+      "no_califica": null
     },
     "fjulio16218501@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "vender más"
+      },
+      "no_califica": null
     },
     "frankren.18@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "edavila@averatech.net": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Soluciones de transformacion digital, digitalizacion, automatizacion, bussines intelligence y analitica de datos."
+      },
+      "no_califica": null
     },
     "kpuentedelavega@beitgroup.cl": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Aumentar ventas"
+      },
+      "no_califica": null
     },
     "riverabruno457@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "marketing"
+      },
+      "no_califica": null
     },
     "roversac@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "ventas"
+      },
+      "no_califica": null
     },
     "lvalladares@pandero.com.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Público y no me llegan leds , no atraigo al cliente ideal"
+      },
+      "no_califica": null
     },
     "cafe@maravia.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Vender mas"
+      },
+      "no_califica": null
     },
     "fiol08@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "vender más"
+      },
+      "no_califica": null
     },
     "joseluispinella@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "de ventas"
+      },
+      "no_califica": null
     },
     "danyvalverde7070@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Quiero vender más"
+      },
+      "no_califica": null
     },
     "goicocheadilmer4@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Me llegan clientes pero no genero la confianza necesaria para que compren mi producto"
+      },
+      "no_califica": null
     },
     "andresjp.mrk@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Quiero clientes para mí empresa de investigación de mercados"
+      },
+      "no_califica": null
     },
     "maplasac44@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "No tengo clientes"
+      },
+      "no_califica": null
     },
     "bocanegrac877@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "necesito equipo de ventas"
+      },
+      "no_califica": null
     },
     "lumimuam0501@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "vender más s"
+      },
+      "no_califica": null
     },
     "jorge.noa.95@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Marketing"
+      },
+      "no_califica": null
     },
     "a.reyes@poligruas.com.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Carte de Clientes"
+      },
+      "no_califica": null
     },
     "servicios@echosperu.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "rgonzalez@smartway.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "aumentar las ventas"
+      },
+      "no_califica": null
     },
     "ricardo.giraldo@korval.com.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Mejorar mus ventas"
+      },
+      "no_califica": null
     },
     "roaries.1995@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "yover_rubio28@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "fgaray@3p.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Mi equipo de ventas no es proactivo"
+      },
+      "no_califica": null
     },
     "antony.digital.1@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "pablo.hashimoto@cip.org.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Automatizar procesos y obtener leads de calidad"
+      },
+      "no_califica": null
     },
     "corrafloresgermanjesus@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "crigivepa@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Equipo eficiente"
+      },
+      "no_califica": null
     },
     "administracion@mohrroce.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "No sé cuenta con un área de venta y fidelización. A la fecha contamos con solo 1 cliente fijo y 2 rotativos. Necesitamos ayuda para crear una cartera de clientes que requieran nuestros servicios y productos"
+      },
+      "no_califica": null
     },
     "jcurquizoa@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "ciudadrealmarketing@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "mhuaman@tresdirectoperu.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "generar leads y concretar ventas"
+      },
+      "no_califica": null
     },
     "corebposolution@outlook.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "mejorar los resultados de ventas"
+      },
+      "no_califica": null
     },
     "hector@tmopp.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Ventas"
+      },
+      "no_califica": null
     },
     "nuso46@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Cerrar ventas"
+      },
+      "no_califica": null
     },
     "sotoantony@madereraelamigo.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Estructurar el area"
+      },
+      "no_califica": null
     },
     "dante.favarato@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "quieto unirme a tu equipo"
+      },
+      "no_califica": null
     },
     "constructora.ramhersac@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "tener mas clientes"
+      },
+      "no_califica": null
     },
     "carlos.alva@absisa.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Mas ventas"
+      },
+      "no_califica": null
     },
     "insumastersac@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Aumentar ventas"
+      },
+      "no_califica": null
     },
     "inversiones_ore_bienesraices@hotmaiel.con": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "busco a empresas promuban mi proyecto"
+      },
+      "no_califica": null
     },
     "andre260120@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "vender"
+      },
+      "no_califica": null
     },
     "mayra.arias89@gmaim.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Entrenamiento a mi equipo de ventas"
+      },
+      "no_califica": null
     },
     "fabian02032000@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {
+        "en_pocas_palabras,_¿qué_problema_comercial_quieres_resolver?": "Test"
+      },
+      "no_califica": null
     },
     "manoloirv777@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "marianella_1968@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "luiscastillo_leon@hom.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "juan_mayaute@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "roquesaavedralkino@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "leobadan06@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "jsalasroj6674@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "alfonsodelacruzrivera14@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "paulinollanque2@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "ventas@icmesur.com.pe": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "langel27591@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "sofoniasmontoya@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "alfred12_89@hotmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     },
     "albino.rodriguez.a@gmail.com": {
       "ad_name": "EST |  \"VENDE MÁS\"",
       "adset_name": "PE | AMBOS | ADVANTAGE",
-      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1"
+      "campaign_name": "CAMPAÑA | PROSPECTOS B2B | FORMULARIO V.1",
+      "respuestas": {},
+      "no_califica": null
     }
   },
   "whatsapp_campaign_match": "whatsapp",
