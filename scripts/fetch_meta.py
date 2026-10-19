@@ -687,6 +687,10 @@ def form_disqualify_reason(answers):
         an = _norm_answer(a)
         if "masde3" in an:
             return None
+        # Formularios antiguos preguntaban "¿cuántos leads reciben al día?": "más de 50"
+        # al día no permite saber si llegan a 3,000 al mes, así que no se descarta.
+        if "aldia" in qn and "masde50" in an:
+            return None
         if "noinvert" in an or "aunno" in an:
             return "Aún no invierte en pauta"
         return "Recibe menos de 3,000 consultas al mes"
