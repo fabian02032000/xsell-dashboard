@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T14:27:55.957849+00:00",
+  "updated_at": "2026-10-19T19:49:06.145609+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -441,13 +441,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-19",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Elisa Driver",
       "deal_id": "66277910075",
       "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null,
-      "discard_reason": null
+      "estadio_lead": "Semilla",
+      "nivel_urgencia": "Bajo",
+      "discard_reason": "Aún no invierte en pauta"
     },
     {
       "name": "Luis",
@@ -585,13 +585,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Anyela Asesora inmobiliaria",
       "deal_id": "65887361328",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Independiente / sin empresa"
     },
     {
       "name": "Rouss",
@@ -601,13 +601,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Rouss",
       "deal_id": "65740031277",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No le interesa por ahora"
     },
     {
       "name": "Silvana  Grillo Gallardo",
@@ -889,13 +889,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-09",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos -  Alejandra Navarro ",
       "deal_id": "65739808895",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No le interesa por ahora"
     },
     {
       "name": "Arturo Laguna",
@@ -921,13 +921,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-09",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - Roxana",
       "deal_id": "65739924997",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No se llegó al decisor"
     },
     {
       "name": "Valentino",
@@ -985,13 +985,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-08",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Pegsa Industrial ",
       "deal_id": "65739896609",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "Eleazar Tapia Tarrillo",
@@ -1001,13 +1001,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-07",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Panorama Hogar ",
       "deal_id": "65717810545",
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "@cecibelia73",
@@ -4166,11 +4166,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 200
+      "count": 207
     },
     {
       "label": "Prospectos Contactados",
-      "count": 24
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
