@@ -645,6 +645,54 @@ def extract_field(field_data, hints):
     return None
 
 
+# Campos de contacto: no son "preguntas" del formulario, no se publican.
+CONTACT_FIELD_HINTS = ("email", "correo", "phone", "telefono", "fullname", "nombre", "name",
+                       "company", "empresa", "jobtitle", "puesto", "cargo", "city", "ciudad")
+
+
+def _norm_answer(value):
+    v = unicodedata.normalize("NFKD", str(value or ""))
+    v = "".join(c for c in v if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]", "", v.lower())
+
+
+def form_answers(field_data):
+    """Respuestas a las preguntas del formulario (sin los datos de contacto)."""
+    out = {}
+    for f in field_data or []:
+        name = f.get("name") or ""
+        # Las preguntas propias llevan "?" en el nombre; los datos de contacto de
+        # Meta usan claves fijas (email, phone_number, full_name, company_name…).
+        if "?" not in name and any(h in _normalize_field_name(name) for h in CONTACT_FIELD_HINTS):
+            continue
+        values = f.get("values") or []
+        if values:
+            out[name] = str(values[0])
+    return out
+
+
+def form_disqualify_reason(answers):
+    """Devuelve el motivo si las respuestas descartan al registro; None si califica
+    o si el formulario no tiene la pregunta. Regla acordada (oct 2026): el cliente
+    ideal recibe más de 3,000 consultas o leads al mes y ya tiene equipo de marketing
+    o ventas (quien todavía no tiene equipo dedicado no califica)."""
+    for q, a in (answers or {}).items():
+        qn = _normalize_field_name(q)
+        if "equipo" in qn and "noto" in _norm_answer(a):  # "No, todavía no tenemos equipo dedicado"
+            return "Sin equipo comercial dedicado"
+    for q, a in (answers or {}).items():
+        qn = _normalize_field_name(q)
+        if "consultas" not in qn and "leadsrecibe" not in qn:
+            continue
+        an = _norm_answer(a)
+        if "masde3" in an:
+            return None
+        if "noinvert" in an or "aunno" in an:
+            return "Aún no invierte en pauta"
+        return "Recibe menos de 3,000 consultas al mes"
+    return None
+
+
 def fetch_leads_attribution_raw():
     """
     Trae, para cada lead recibido en los formularios de la Página, el
@@ -710,7 +758,9 @@ def fetch_leads_attribution_raw():
                 # no se publica en meta_data.json, solo se guarda en meta_lead_ids.json.
                 "lead_id": lead.get("id"),
                 "created_time": lead.get("created_time"),
+                "respuestas": form_answers(lead.get("field_data")),
             }
+            attribution[email]["no_califica"] = form_disqualify_reason(attribution[email]["respuestas"])
 
     return attribution, any_ok
 
@@ -723,7 +773,8 @@ def save_lead_ids(attribution_raw):
     al repositorio (está en .gitignore). Lo usa send_meta_offline_events.py, que
     corre después en el mismo proceso de GitHub Actions, para mandar a Meta el
     identificador del formulario junto con cada cambio de etapa en HubSpot."""
-    ids = {e: {"lead_id": a.get("lead_id"), "created_time": a.get("created_time")}
+    ids = {e: {"lead_id": a.get("lead_id"), "created_time": a.get("created_time"),
+               "no_califica": a.get("no_califica")}
            for e, a in (attribution_raw or {}).items() if a.get("lead_id")}
     try:
         with open(LEAD_IDS_FILE, "w", encoding="utf-8") as f:
@@ -741,6 +792,8 @@ def build_leads_attribution(attribution_raw, adset_names, ad_names, campaign_nam
             "ad_name": ad_names.get(attr.get("ad_id"), attr.get("ad_id") or ""),
             "adset_name": adset_names.get(attr.get("adset_id"), attr.get("adset_id") or ""),
             "campaign_name": campaign_names.get(attr.get("campaign_id"), attr.get("campaign_id") or ""),
+            "respuestas": attr.get("respuestas") or {},
+            "no_califica": attr.get("no_califica"),
         }
     return resolved
 

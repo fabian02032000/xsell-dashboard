@@ -166,6 +166,10 @@ def build_events(leads, lead_ids, state, now):
 
         # Etapa actual en HubSpot, si cambió desde el último envío.
         stage = map_event_name(lead.get("deal_stage")) if lead.get("has_deal") else None
+        # Descarte automático: si el formulario lo descarta y en HubSpot aún no tiene
+        # etapa, se avisa a Meta de inmediato (sin esperar la llamada de Ingrid).
+        if not stage and info.get("no_califica"):
+            stage = "Descartada"
         if stage and rec.get("stage") != stage:
             to_send.append(make_event(stage, now, user_data))
             rec["stage"] = stage
@@ -181,8 +185,12 @@ def build_events(leads, lead_ids, state, now):
             continue
         lead_time = parse_time(info.get("created_time"))
         when = min(max(lead_time or oldest_ok, oldest_ok), now)
-        to_send.append(make_event("Registro", when, build_user_data(email, None, info.get("lead_id"))))
+        ud = build_user_data(email, None, info.get("lead_id"))
+        to_send.append(make_event("Registro", when, ud))
         seen[email] = {"registro": True}
+        if info.get("no_califica"):
+            to_send.append(make_event("Descartada", now, ud))
+            seen[email]["stage"] = "Descartada"
 
     return to_send, new_state
 
