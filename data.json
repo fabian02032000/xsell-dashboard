@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-19T14:02:45.918991+00:00",
+  "updated_at": "2026-10-19T14:27:55.957849+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 232,
+  "total_leads": 233,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -302,6 +302,10 @@
     {
       "date": "2026-10-18",
       "count": 2
+    },
+    {
+      "date": "2026-10-19",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -329,7 +333,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 56,
+      "leads": 57,
       "goal": 74.0,
       "is_partial": false
     }
@@ -416,19 +420,35 @@
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "leads": 0,
+      "leads": 1,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 56,
+  "current_month_leads": 57,
   "current_month_label": "October 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 1,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 229,
+  "leads_with_deal": 232,
   "leads_detail": [
+    {
+      "name": "Elisa YJ",
+      "email": "escuelaelisadriver@gmail.com",
+      "phone": "+51963865001",
+      "company": "Elisa Driver",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-19",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Elisa Driver",
+      "deal_id": "66277910075",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
+    },
     {
       "name": "Luis",
       "email": "limacharli@gmail.com",
@@ -436,14 +456,14 @@
       "company": "ja&l house and services",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-18",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "ja&l house and services",
+      "deal_id": "66277290119",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Aún no invierte en pauta"
     },
     {
       "name": "Ysabel Rodriguez Bazan",
@@ -452,14 +472,14 @@
       "company": "Caja Tacna",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-18",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Caja Tacna",
+      "deal_id": "66277909899",
       "deal_note": null,
-      "estadio_lead": null,
+      "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Aún no invierte en pauta"
     },
     {
       "name": "Irving Chunga",
@@ -4146,11 +4166,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 198
+      "count": 200
     },
     {
       "label": "Prospectos Contactados",
-      "count": 23
+      "count": 24
     },
     {
       "label": "Reunión Agendadas",
@@ -4158,7 +4178,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
