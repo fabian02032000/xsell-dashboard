@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T19:49:06.145609+00:00",
+  "updated_at": "2026-10-19T20:06:13.089125+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -729,13 +729,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Kamasa Service",
       "deal_id": "65740031881",
       "deal_note": "Realiza servicio técnico de electrodomésticos.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "Carlos Saavedra",
@@ -4166,11 +4166,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 207
+      "count": 208
     },
     {
       "label": "Prospectos Contactados",
-      "count": 17
+      "count": 16
     },
     {
       "label": "Reunión Agendadas",
