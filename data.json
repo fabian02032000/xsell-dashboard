@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:06:13.089125+00:00",
+  "updated_at": "2026-10-19T23:08:51.306150+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -617,13 +617,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos - Silvana Grillo Gallardo",
       "deal_id": "65887363922",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "Bryan  Oropeza Vasquez",
@@ -633,13 +633,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Si datos  - Bryan Oropeza Vasquez",
       "deal_id": "65740032148",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Llenó el formulario por error"
     },
     {
       "name": "Leslie",
@@ -649,13 +649,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - Leslie",
       "deal_id": "65739840565",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "ctecsolucionestecnologicas",
@@ -665,13 +665,13 @@
       "lead_source": "WhatsApp (conversión)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sin datos  - ctecsolucionestecnologicas",
       "deal_id": "65887964796",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Negocio muy pequeño o pocos leads"
     },
     {
       "name": "Eduardo",
@@ -681,13 +681,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "GP Business Call ",
       "deal_id": "65739850881",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "Katerin nilda alcahua rossell",
@@ -697,13 +697,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "auto ya Automotriz",
       "deal_id": "65740082214",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No respondió (llamada ni WhatsApp)"
     },
     {
       "name": "WALTER EDGARDO RUIZ CASTRO",
@@ -761,13 +761,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-11",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Remarc",
       "deal_id": "65887964015",
       "deal_note": null,
-      "estadio_lead": "Consolidado",
+      "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": null
+      "discard_reason": "Negocio muy pequeño o pocos leads"
     },
     {
       "name": "Omar Castro Salazar",
@@ -4166,11 +4166,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 208
+      "count": 215
     },
     {
       "label": "Prospectos Contactados",
-      "count": 16
+      "count": 9
     },
     {
       "label": "Reunión Agendadas",
@@ -4185,15 +4185,8 @@
     "En Crecimiento",
     "Semilla"
   ],
-  "warm_audience_count": 14,
+  "warm_audience_count": 13,
   "warm_audience_detail": [
-    {
-      "name": "Alberto Huaman",
-      "email": "albertohd1991@gmail.com",
-      "company": "Remarc",
-      "estadio_lead": "Consolidado",
-      "nivel_urgencia": "Bajo"
-    },
     {
       "name": "Jorge Izquierdo",
       "email": "jorgeizquierdocobos@gmail.com",
