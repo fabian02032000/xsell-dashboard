@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-20T20:54:10.877828+00:00",
+  "updated_at": "2026-10-20T23:26:16.518498+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 235,
+  "total_leads": 236,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -309,7 +309,7 @@
     },
     {
       "date": "2026-10-20",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -337,7 +337,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 59,
+      "leads": 60,
       "goal": 74.0,
       "is_partial": false
     }
@@ -424,13 +424,13 @@
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "leads": 3,
+      "leads": 4,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 59,
+  "current_month_leads": 60,
   "current_month_label": "October 2026",
-  "current_week_leads": 3,
+  "current_week_leads": 4,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -464,6 +464,22 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Concreat",
       "deal_id": "66400848916",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
+    },
+    {
+      "name": "Melisa Ortega Moya",
+      "email": "mortega@autocamiones.com.pe",
+      "phone": "+51994032491",
+      "company": "Autocamiones del Centro SAC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-20",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -4214,7 +4230,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
