@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T12:51:30.765381+00:00",
+  "updated_at": "2026-10-20T17:18:49.309293+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -435,23 +435,23 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 232,
+  "leads_with_deal": 234,
   "leads_detail": [
     {
       "name": "Erick Maldonado",
       "email": "erick.maldonadochavez.2025@gmail.com",
       "phone": "+51906104750",
-      "company": "Maquisistema",
+      "company": "Asesor Independiente",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-20",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Erick Maldonado ",
+      "deal_id": "66407329028",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "Independiente / sin empresa"
     },
     {
       "name": "Yoni S",
@@ -460,10 +460,10 @@
       "company": "Concreart",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-20",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Concreat",
+      "deal_id": "66400848916",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -4202,11 +4202,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 215
+      "count": 216
     },
     {
       "label": "Prospectos Contactados",
-      "count": 9
+      "count": 10
     },
     {
       "label": "Reunión Agendadas",
@@ -4214,7 +4214,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
