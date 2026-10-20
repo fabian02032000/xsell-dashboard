@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-20T07:26:24.897596+00:00",
+  "updated_at": "2026-10-20T12:16:31.892100+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 234,
+  "total_leads": 235,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -309,7 +309,7 @@
     },
     {
       "date": "2026-10-20",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -337,7 +337,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 58,
+      "leads": 59,
       "goal": 74.0,
       "is_partial": false
     }
@@ -424,13 +424,13 @@
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "leads": 2,
+      "leads": 3,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 58,
+  "current_month_leads": 59,
   "current_month_label": "October 2026",
-  "current_week_leads": 2,
+  "current_week_leads": 3,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -442,6 +442,22 @@
       "email": "erick.maldonadochavez.2025@gmail.com",
       "phone": "+51906104750",
       "company": "Maquisistema",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-20",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null
+    },
+    {
+      "name": "Yoni S",
+      "email": "administracion@concreartperu.com",
+      "phone": "+51906923306",
+      "company": "Concreart",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-20",
       "has_deal": false,
@@ -4198,7 +4214,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 3
     }
   ],
   "warm_audience_exclude_estadios": [
