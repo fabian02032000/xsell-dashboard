@@ -291,7 +291,7 @@ def fetch_ad_creatives_map():
         data = meta_get(
             f"/{AD_ACCOUNT_ID}/ads",
             {
-                "fields": "id,name,effective_status,campaign{name},creative{title,body,image_url,thumbnail_url,object_story_spec}",
+                "fields": "id,name,effective_status,adset{name},campaign{name},creative{title,body,image_url,thumbnail_url,object_story_spec}",
                 "limit": 500,
             },
         )
@@ -305,6 +305,7 @@ def fetch_ad_creatives_map():
         creatives_map[ad.get("id")] = {
             "ad_name": ad.get("name"),
             "campaign_name": (ad.get("campaign") or {}).get("name", ""),
+            "adset_name": (ad.get("adset") or {}).get("name", ""),
             "effective_status": ad.get("effective_status"),
             "title": creative.get("title") or "",
             "body": creative.get("body") or "",
@@ -371,6 +372,29 @@ def fetch_ads_performance(since_date, until_date):
             "ctr": round(float(row.get("ctr", 0)), 2),
             "leads": leads,
             "cost_per_lead": cpl,
+        })
+
+    # Anuncios que están en revisión (p. ej. una campaña nueva recién enviada) todavía no tienen
+    # filas de rendimiento en Meta: se agregan con cifras en cero para que el dashboard los muestre.
+    ESTADOS_EN_REVISION = ("PENDING_REVIEW", "IN_PROCESS", "PREAPPROVED")
+    vistos = {r["ad_id"] for r in result}
+    for ad_id, extra in creatives_map.items():
+        if ad_id in vistos or extra.get("effective_status") not in ESTADOS_EN_REVISION:
+            continue
+        result.append({
+            "ad_id": ad_id,
+            "ad_name": extra.get("ad_name") or "(sin nombre)",
+            "adset_id": None,
+            "adset_name": extra.get("adset_name") or "",
+            "campaign_id": None,
+            "campaign_name": extra.get("campaign_name") or "",
+            "status": extra.get("effective_status"),
+            "title": extra.get("title", ""),
+            "body": extra.get("body", ""),
+            "description": extra.get("description", ""),
+            "image_url": extra.get("image_url", ""),
+            "spend": 0.0, "impressions": 0, "reach": 0, "frequency": 0.0, "cpm": 0.0,
+            "clicks": 0, "ctr": 0.0, "leads": 0, "cost_per_lead": None,
         })
 
     result.sort(key=lambda r: r["spend"], reverse=True)
