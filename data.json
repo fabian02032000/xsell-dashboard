@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:03:15.157379+00:00",
+  "updated_at": "2026-10-21T15:38:02.686874+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -435,7 +435,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 234,
+  "leads_with_deal": 235,
   "leads_detail": [
     {
       "name": "Erick Maldonado",
@@ -476,14 +476,14 @@
       "company": "Autocamiones del Centro SAC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-20",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "AUTOCAMIONES DEL CENTRO",
+      "deal_id": "66440423941",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": "No se llegó al decisor"
     },
     {
       "name": "Elisa YJ",
@@ -4218,7 +4218,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 216
+      "count": 217
     },
     {
       "label": "Prospectos Contactados",
@@ -4230,7 +4230,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
