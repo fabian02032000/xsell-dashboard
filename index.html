@@ -4097,7 +4097,8 @@
   }
   function fxStats(rows, regs){
     const a = sumRows(rows);
-    return { spend: a.spend, impressions: a.impressions, open: a.formOpen, sent: a.formSent, aband: Math.max(0, a.formOpen - a.formSent), reg: regs.length, qual: regs.filter(isQuality).length };
+    // "Enviaron el formulario" = registros que llegaron a HubSpot (así coincide con HubSpot); lo que cuenta Meta queda en metaSent
+    return { spend: a.spend, impressions: a.impressions, open: a.formOpen, metaSent: a.formSent, sent: regs.length, aband: Math.max(0, a.formOpen - regs.length), reg: regs.length, qual: regs.filter(isQuality).length };
   }
   function fxEntries(level){
     const rows = fxRows(level), regs = fxRegs(), map = new Map();
@@ -4136,8 +4137,7 @@
       const steps = [
         { l: 'Impresiones', sub: 'veces que se mostró el anuncio', v: st.impressions, c: 'linear-gradient(90deg,#5D17A0,#7B2BC9)' },
         { l: 'Abrieron el formulario', sub: 'clics en el enlace', v: st.open, c: 'linear-gradient(90deg,#5D17A0,#7B2BC9)' },
-        { l: 'Enviaron el formulario', sub: 'según Meta', v: st.sent, c: 'linear-gradient(90deg,#7B2BC9,#9a4fe0)' },
-        { l: 'Registros en HubSpot', sub: 'quedaron como contacto', v: st.reg, c: 'linear-gradient(90deg,#FF6B13,#FFA366)' },
+        { l: 'Enviaron el formulario', sub: 'registros en HubSpot', v: st.sent, c: 'linear-gradient(90deg,#FF6B13,#FFA366)' },
         { l: 'Leads de calidad', sub: 'registros que Ingrid no descartó', v: st.qual, c: 'var(--good)' }
       ];
       const max = Math.max(1, steps[0].v);
@@ -4146,14 +4146,14 @@
         const prev = i ? steps[i - 1].v : null;
         const w = Math.max(3, Math.sqrt(s2.v / max) * 100);
         html += `<div class="fx-step"><div class="fx-label">${s2.l}<small>${s2.sub}</small></div>
-          <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 4 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
+          <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 3 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
           <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}</div></div>`;
         if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.</div></div>`;
       });
       f.innerHTML = html;
     }
-    const diff = st.sent - st.reg;
-    $('fxNote').textContent = (diff > 0 ? `Meta contó ${fmt(st.sent)} formularios enviados y HubSpot tiene ${fmt(st.reg)} registros: ${fmt(diff)} no llegaron a HubSpot o no se pudieron atribuir. ` : '') +
+    const diff = st.metaSent - st.sent;
+    $('fxNote').textContent = (diff !== 0 ? `Enviaron el formulario = registros que están en HubSpot. Meta cuenta ${fmt(st.metaSent)} formularios; la diferencia (${fmt(Math.abs(diff))}) son formularios que Meta cuenta y no figuran en HubSpot, o registros sin anuncio identificado. ` : '') +
       'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Lead de calidad = registro que Ingrid no ha descartado en HubSpot (los que solo descartó el formulario, sin gestión, tampoco cuentan).' +
       (S.fx.level !== 'all' ? ' Los registros sin anuncio identificado solo cuentan en la vista General.' : '');
     // ---- comparativo ----
@@ -4168,9 +4168,9 @@
     } else {
       list = fxEntries(by).sort((a, b) => b.st.spend - a.st.spend).map(e => ({ name: e.name + (by === 'ads' ? ' · ' + (e.adset_name || '') : ''), st: e.st }));
     }
-    const th = ['', 'Inversión', 'Impresiones', 'Abrieron form.', 'Enviaron form.', 'Abandonaron', '% abandono', 'Registros', 'Leads de calidad', '% calidad', 'Costo por lead de calidad'];
+    const th = ['', 'Inversión', 'Impresiones', 'Abrieron form.', 'Enviaron form. (HubSpot)', 'Abandonaron', '% abandono', 'Leads de calidad', '% calidad', 'Costo por lead de calidad'];
     const tot = fxStats(sc.rows, sc.regs);
-    const row = (n, x, b) => `<tr${b ? ' style="font-weight:700"' : ''}><td>${esc(n)}</td><td>${money(x.spend)}</td><td>${fmt(x.impressions)}</td><td>${fmt(x.open)}</td><td>${fmt(x.sent)}</td><td>${fmt(x.aband)}</td><td>${fxPct(x.aband, x.open)}</td><td>${fmt(x.reg)}</td><td>${fmt(x.qual)}</td><td>${fxPct(x.qual, x.reg)}</td><td>${x.qual ? money(x.spend / x.qual) : '—'}</td></tr>`;
+    const row = (n, x, b) => `<tr${b ? ' style="font-weight:700"' : ''}><td>${esc(n)}</td><td>${money(x.spend)}</td><td>${fmt(x.impressions)}</td><td>${fmt(x.open)}</td><td>${fmt(x.sent)}</td><td>${fmt(x.aband)}</td><td>${fxPct(x.aband, x.open)}</td><td>${fmt(x.qual)}</td><td>${fxPct(x.qual, x.sent)}</td><td>${x.qual ? money(x.spend / x.qual) : '—'}</td></tr>`;
     th[0] = { day: 'Día', week: 'Semana', adsets: 'Conjunto de anuncios', ads: 'Anuncio' }[by];
     $('fxTable').innerHTML = `<thead><tr>${th.map(t => `<th>${t}</th>`).join('')}</tr></thead><tbody>${list.length ? list.map(x => row(x.name, x.st)).join('') + (by === 'adsets' || by === 'ads' ? '' : row('Total del rango', tot, true)) : `<tr><td colspan="${th.length}" class="table-sub">Sin datos de formulario en este rango.</td></tr>`}</tbody>`;
   }
