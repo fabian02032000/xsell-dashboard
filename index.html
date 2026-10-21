@@ -273,6 +273,12 @@
   .fx-out{position:absolute; top:50%; transform:translateY(-50%); font-weight:800; font-size:13px; color:var(--text-primary); white-space:nowrap;}
   .fx-nums{font-size:12px; color:var(--text-muted); line-height:1.35;}
   .fx-nums b{color:var(--text-primary);}
+  .fx-channel{display:flex; flex-wrap:wrap; gap:10px; margin:0 0 12px;}
+  .fx-channel .fx-ch{flex:1 1 150px; border:1px solid var(--border,rgba(255,255,255,.12)); background:var(--surface-2,rgba(255,255,255,.04)); border-radius:8px; padding:8px 12px; font-size:12px; color:var(--text-muted);}
+  .fx-channel .fx-ch b{display:block; font-size:20px; color:var(--text-primary); line-height:1.2;}
+  .fx-bench{font-size:11.5px; color:var(--text-muted);}
+  .fx-bench .ok{color:var(--good); font-weight:700;}
+  .fx-bench .bad{color:var(--critical); font-weight:700;}
   .fx-aband{display:grid; grid-template-columns:190px 1fr 230px; gap:12px; margin:2px 0 10px;}
   .fx-aband div{grid-column:2 / 4; border:1px solid var(--critical); background:rgba(255,92,92,.10); border-radius:8px; padding:7px 12px; font-size:12.5px; color:var(--text-primary);}
   .fx-aband strong{color:var(--critical);}
@@ -515,6 +521,7 @@
         </div>
         <select id="fxItem" hidden></select>
       </div>
+      <div id="fxChannel" class="fx-channel"></div>
       <div id="fxFunnel"></div>
       <p class="hint" id="fxNote" style="margin-top:10px;"></p>
     </div>
@@ -4114,6 +4121,14 @@
     return { label: (S.fx.level === 'ads' ? 'Anuncio · ' : 'Conjunto · ') + e.name, rows: e.rows, regs: e.regs, entries: es };
   }
   const fxPct = (a, b) => b ? pct(a / b) : '—';
+  // Referencias de mercado (ver nota del embudo): CTR al enlace mediana Meta 1,18 % (Databox 2026) y
+  // conversión promedio de campañas de lead 7,72 % (WordStream 2025) -> abandono de referencia 92,3 %.
+  const BENCH_CTR = 1.2, BENCH_ABAND = 92.3;
+  const fxVs = (val, bench, higherIsBetter) => {
+    if (val == null || isNaN(val)) return '';
+    const good = higherIsBetter ? val >= bench : val <= bench;
+    return `<span class="${good ? 'ok' : 'bad'}">${good ? 'mejor' : 'peor'} que la referencia</span>`;
+  };
   function drawFx(){
     const f = $('fxFunnel'); if (!f) return;
     document.querySelectorAll('#fxLevel .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.fxlevel === S.fx.level));
@@ -4125,6 +4140,17 @@
       if (!es.find(x => x.id === S.fx.item)) S.fx.item = es[0] ? es[0].id : '';
       sel.hidden = false;
       sel.innerHTML = es.map(e => `<option value="${esc(e.id)}"${e.id === S.fx.item ? ' selected' : ''}>${esc(S.fx.level === 'ads' ? (e.name + '  ·  ' + (e.adset_name || '')) : (e.name + '  ·  ' + (e.campaign_name || '')))}</option>`).join('');
+    }
+    const chEl = $('fxChannel');
+    if (chEl){
+      if (S.fx.level === 'all'){
+        const inR = ((S.data && S.data.leads_detail) || []).filter(l => fxIn((l.created_date || '').slice(0, 10)));
+        const wa = inR.filter(l => /whatsapp/i.test(l.lead_source || '')).length, fo = inR.length - wa;
+        chEl.innerHTML = `<div class="fx-ch">Leads del rango<b>${fmt(inR.length)}</b>formulario + WhatsApp</div>` +
+          `<div class="fx-ch">Por formulario<b>${fmt(fo)}</b>${fxPct(fo, inR.length)} del total</div>` +
+          `<div class="fx-ch">Por WhatsApp<b>${fmt(wa)}</b>${fxPct(wa, inR.length)} del total</div>`;
+        chEl.hidden = false;
+      } else { chEl.innerHTML = ''; chEl.hidden = true; }
     }
     const sc = fxScope();
     if (!sc){ f.innerHTML = '<p class="fx-empty">Sin datos de formulario en este rango.</p>'; $('fxNote').textContent = ''; $('fxTable').innerHTML = ''; $('fxHint').textContent = ''; return; }
@@ -4145,14 +4171,14 @@
         const w = Math.max(3, Math.sqrt(s2.v / max) * 100);
         html += `<div class="fx-step"><div class="fx-label">${s2.l}<small>${s2.sub}</small></div>
           <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 3 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
-          <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}</div></div>`;
-        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.</div></div>`;
+          <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}${i === 1 ? `<br><span class="fx-bench">Referencia: ${BENCH_CTR.toLocaleString('es-PE', { minimumFractionDigits: 1 })}% · ${fxVs(st.impressions ? st.open / st.impressions * 100 : null, BENCH_CTR, true)}</span>` : ''}</div></div>`;
+        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.<br><span class="fx-bench">Referencia de mercado: ${BENCH_ABAND.toLocaleString('es-PE', { minimumFractionDigits: 1 })}% · ${fxVs(st.open ? st.aband / st.open * 100 : null, BENCH_ABAND, false)}</span></div></div>`;
       });
       f.innerHTML = html;
     }
     const diff = st.metaSent - st.sent;
     $('fxNote').textContent = (diff !== 0 ? `Enviaron el formulario = registros que están en HubSpot. Meta cuenta ${fmt(st.metaSent)} formularios; la diferencia (${fmt(Math.abs(diff))}) son formularios que Meta cuenta y no figuran en HubSpot, o registros sin anuncio identificado. ` : '') +
-      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Lead de calidad = negocio que Ingrid marca como "Lead de calidad" en el campo Calidad del lead de HubSpot.' +
+      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Referencias: CTR al enlace 1,2 % (mediana de Meta, Databox 2026; B2B/software entre 1,0 y 1,4 %). Abandono 92 %: no hay un dato público oficial de abandono del formulario instantáneo de Meta; se toma como aproximación la conversión promedio de campañas de lead, 7,7 % (WordStream 2025), es decir, ~92 % no completa. Lead de calidad = negocio que Ingrid marca como "Lead de calidad" en el campo Calidad del lead de HubSpot.' +
       (S.fx.level !== 'all' ? ' Los registros sin anuncio identificado solo cuentan en la vista General.' : '');
     // ---- comparativo ----
     const by = S.fx.by;
