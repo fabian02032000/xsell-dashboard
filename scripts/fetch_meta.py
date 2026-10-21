@@ -501,7 +501,70 @@ def fetch_level_performance_daily(level, since_date, until_date, name_field, id_
             entry["adset_id"] = row.get("adset_id")
             entry["adset_name"] = row.get("adset_name") or ""
         result.append(entry)
+    result = _reparar_metricas_diarias(result, level, since_date, until_date, name_field, id_field, extra_fields)
     return result, True
+
+
+def _fila_incoherente(r):
+    """Una fila con clics en el enlace, registros o interacciones pero cero
+    impresiones es imposible: Meta no devolvió gasto/impresiones en esa consulta."""
+    return (r.get("impressions", 0) == 0 and r.get("spend", 0) == 0
+            and (r.get("link_clicks", 0) > 0 or r.get("leads", 0) > 0 or r.get("engagement", 0) > 0))
+
+
+def _reparar_metricas_diarias(result, level, since_date, until_date, name_field, id_field, extra_fields):
+    """Meta a veces devuelve el detalle diario sin gasto, impresiones, alcance ni
+    clics cuando se piden junto con 'actions' (oct-2026: el dashboard mostró S/ 0
+    de inversión en Análisis de campaña). Se repara en dos pasos y se avisa:
+    1) pedir esas métricas en una consulta aparte y mezclarlas por día e id;
+    2) si siguen en cero, conservar los valores del meta_data.json anterior,
+       para no pisar datos buenos con ceros."""
+    malas = [r for r in result if _fila_incoherente(r)]
+    if not malas:
+        return result
+    print(f"AVISO: {len(malas)} de {len(result)} filas diarias por {level} llegaron sin gasto ni impresiones; se intenta repararlas.", file=sys.stderr)
+    try:
+        extra_name = "" if name_field == "campaign_name" else "campaign_name,"
+        rows2 = meta_get_paginated(
+            f"/{AD_ACCOUNT_ID}/insights",
+            {
+                "level": level,
+                "fields": f"{id_field},{name_field},{extra_name}{extra_fields}spend,impressions,clicks,reach",
+                "time_increment": 1,
+                "time_range": json.dumps({"since": since_date, "until": until_date}),
+                "limit": 500,
+            },
+            max_pages=60,
+        )
+        nuevas = {(x.get("date_start"), x.get(id_field)): x for x in rows2}
+        for r in malas:
+            x = nuevas.get((r["date"], r["id"]))
+            if x and float(x.get("impressions", 0) or 0) > 0:
+                r["spend"] = round(float(x.get("spend", 0) or 0), 2)
+                r["impressions"] = int(float(x.get("impressions", 0) or 0))
+                r["reach"] = int(float(x.get("reach", 0) or 0))
+                r["clicks"] = int(float(x.get("clicks", 0) or 0))
+    except Exception as e:
+        print(f"AVISO: la consulta aparte de gasto e impresiones por {level} falló: {e}", file=sys.stderr)
+    malas = [r for r in result if _fila_incoherente(r)]
+    if malas:
+        try:
+            with open("meta_data.json", encoding="utf-8") as f:
+                previas = {(x.get("date"), x.get("id")): x
+                           for x in (json.load(f).get("campaign_analysis_daily", {}).get(level + "s", []))}
+        except Exception:
+            previas = {}
+        for r in malas:
+            x = previas.get((r["date"], r["id"]))
+            if x and x.get("impressions", 0) > 0:
+                for k in ("spend", "impressions", "reach", "clicks"):
+                    r[k] = x[k]
+        malas = [r for r in result if _fila_incoherente(r)]
+    if malas:
+        print(f"AVISO: {len(malas)} filas por {level} siguen sin gasto ni impresiones (días nuevos que Meta aún no entrega).", file=sys.stderr)
+    else:
+        print(f"OK: filas diarias por {level} reparadas.", file=sys.stderr)
+    return result
 
 
 def fetch_active_creatives():
