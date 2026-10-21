@@ -605,7 +605,7 @@
   <section>
     <div class="section-head">
       <h2>Anuncios</h2>
-      <span class="hint">Todos los anuncios de la pauta, ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
+      <span class="hint">Solo los anuncios activos ahora, ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
     </div>
     <div class="adc-grid" id="adCards"></div>
     <p class="hint" style="margin-top:10px;">El alcance de varios días se suma día a día, así que es aproximado (y la frecuencia también). Meta no indica qué anuncio trajo a cada contacto de WhatsApp: esos registros aparecen en "No identificado".</p>
@@ -1444,8 +1444,8 @@
     const isWa = c => (c || '').toLowerCase().includes(waMatch);
     const imgByAd = {};
     (meta.leads_creatives || []).forEach(a => { if (a.ad_name && a.image_url) imgByAd[a.ad_name] = a.image_url; });
-    // Todos los anuncios con actividad en el rango (sin importar si hoy están encendidos)
-    const active = (meta.ads_performance || []);
+    // Solo los anuncios que hoy están activos en Meta (effective_status === 'ACTIVE')
+    const active = (meta.ads_performance || []).filter(a => a.status === 'ACTIVE');
     // Métricas de Meta, sumadas día a día dentro del rango
     const daily = (meta.campaign_analysis_daily && meta.campaign_analysis_daily.ads) || [];
     const agg = {};
