@@ -612,7 +612,7 @@
   <section>
     <div class="section-head">
       <h2>Anuncios</h2>
-      <span class="hint">Solo los anuncios activos ahora, ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
+      <span class="hint">Anuncios activos ahora (y los de la campaña nueva mientras Meta los revisa), ordenados por registros del rango · registros y leads salen de HubSpot; el resto de métricas, de Meta en el mismo rango</span>
     </div>
     <div class="adc-grid" id="adCards"></div>
     <p class="hint" style="margin-top:10px;">El alcance de varios días se suma día a día, así que es aproximado (y la frecuencia también). Meta no indica qué anuncio trajo a cada contacto de WhatsApp: esos registros aparecen en "No identificado".</p>
@@ -1046,6 +1046,78 @@
     });
   });
 
+  // ---- V.2 sumada a V.3 ----
+  // Decisión de Fabián (oct-2026): la campaña "FORMULARIO V.2" se pausó y se reemplazó por "FORMULARIO V.3".
+  // En el dashboard se ven como UNA sola campaña (V.3): los conjuntos y anuncios con el mismo nombre se unen en una
+  // fila con las cifras sumadas. El id que se conserva es el de V.2 (así los segmentos documentados siguen funcionando);
+  // el estado, el texto y la imagen se toman de V.3 cuando existe.
+  const CAMPAIGN_MERGE = [{ from: /FORMULARIO V\.2(?!\d)/i, to: 'FORMULARIO V.3' }];
+  const isOldCampaign = n => typeof n === 'string' && CAMPAIGN_MERGE.some(m => m.from.test(n));
+  const mergeName = n => { if (typeof n !== 'string') return n; let o = n; CAMPAIGN_MERGE.forEach(m => { o = o.replace(m.from, m.to); }); return o; };
+  function unifyCampaigns(meta){
+    if (!meta || meta._unified) return meta;
+    meta._unified = true;
+    const SUM = ['spend', 'impressions', 'reach', 'clicks', 'leads', 'link_clicks', 'engagement', 'conversations'];
+    const idMap = { campaign: new Map(), adset: new Map(), ad: new Map() };
+    const nm = (r, k1, k2) => r[k1] != null ? r[k1] : r[k2];
+    const keyOf = {
+      campaign: r => mergeName(nm(r, 'name', 'campaign_name')),
+      adset: r => mergeName(r.campaign_name) + '||' + nm(r, 'name', 'adset_name'),
+      ad: r => mergeName(r.campaign_name) + '||' + (r.adset_name || '') + '||' + nm(r, 'ad_name', 'name')
+    };
+    const idField = { campaign: 'id', adset: 'id', ad: 'ad_id' };
+    function mergePerf(rows, level){
+      if (!Array.isArray(rows) || !rows.length) return rows;
+      const groups = new Map(), order = [];
+      rows.forEach(r => {
+        const k = keyOf[level](r);
+        if (!groups.has(k)){ groups.set(k, []); order.push(k); }
+        groups.get(k).push(r);
+      });
+      return order.map(k => {
+        const g = groups.get(k);
+        const old = g.filter(r => isOldCampaign(r.campaign_name)), neu = g.filter(r => !isOldCampaign(r.campaign_name));
+        const idKeep = (old[0] || g[0])[idField[level]];
+        const base = Object.assign({}, neu[0] || g[0]);
+        const out = Object.assign(base, { [idField[level]]: idKeep });
+        g.forEach(r => idMap[level].set(r[idField[level]], idKeep));
+        if (level === 'campaign'){ out.name = k; out.campaign_name = k; } else { out.campaign_name = mergeName(out.campaign_name); }
+        if (g.length > 1){
+          SUM.forEach(f => { if (g.some(r => r[f] != null)) out[f] = g.reduce((t, r) => t + (r[f] || 0), 0); });
+          out.ctr = out.impressions ? Math.round(out.clicks / out.impressions * 10000) / 100 : 0;
+          out.cpm = out.impressions ? Math.round(out.spend / out.impressions * 100000) / 100 : 0;
+          out.frequency = out.reach ? Math.round(out.impressions / out.reach * 100) / 100 : 0;
+          out.cost_per_lead = out.leads ? Math.round(out.spend / out.leads * 100) / 100 : null;
+        }
+        return out;
+      });
+    }
+    meta.campaigns_performance = mergePerf(meta.campaigns_performance, 'campaign');
+    meta.adsets_performance = mergePerf(meta.adsets_performance, 'adset');
+    meta.ads_performance = mergePerf(meta.ads_performance, 'ad');
+    // totales de gasto por campaña
+    ['campaigns', 'campaigns_month'].forEach(f => {
+      if (!Array.isArray(meta[f])) return;
+      const m = new Map();
+      meta[f].forEach(c => { const k = mergeName(c.name); if (m.has(k)) m.get(k).spend += c.spend || 0; else m.set(k, Object.assign({}, c, { name: k })); });
+      meta[f] = [...m.values()];
+    });
+    // filas diarias: nombres y ids unificados (las sumas por id ya juntan V.2 y V.3)
+    const d = meta.campaign_analysis_daily;
+    if (d){
+      const fix = (rows, level) => (rows || []).forEach(r => {
+        r.campaign_name = mergeName(r.campaign_name);
+        if (level === 'campaign') r.name = mergeName(r.name);
+        if (idMap[level].has(r.id)) r.id = idMap[level].get(r.id);
+        if (level === 'ad' && idMap.adset.has(r.adset_id)) r.adset_id = idMap.adset.get(r.adset_id);
+      });
+      fix(d.campaigns, 'campaign'); fix(d.adsets, 'adset'); fix(d.ads, 'ad');
+    }
+    (meta.leads_creatives || []).concat(meta.other_creatives || []).forEach(c => { c.campaign_name = mergeName(c.campaign_name); });
+    Object.values(meta.leads_attribution || {}).forEach(a => { if (a) a.campaign_name = mergeName(a.campaign_name); });
+    return meta;
+  }
+
   Promise.all([
     fetch('./data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./meta_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
@@ -1060,6 +1132,7 @@
       document.getElementById('updatedAt').textContent = 'Aún no se ha ejecutado la primera actualización.';
       return;
     }
+    unifyCampaigns(metaData);
     render(leadsData, metaData, funnelCfg || {});
     renderOrganic(organicData);
     drawStoryTab(leadsData, metaData, storyData);
@@ -1451,8 +1524,9 @@
     const isWa = c => (c || '').toLowerCase().includes(waMatch);
     const imgByAd = {};
     (meta.leads_creatives || []).forEach(a => { if (a.ad_name && a.image_url) imgByAd[a.ad_name] = a.image_url; });
-    // Solo los anuncios que hoy están activos en Meta (effective_status === 'ACTIVE')
-    const active = (meta.ads_performance || []).filter(a => a.status === 'ACTIVE');
+    // Solo los anuncios que hoy están activos en Meta, más los que están en revisión (p. ej. V.3 recién enviada)
+    const IN_REVIEW = ['PENDING_REVIEW', 'IN_PROCESS', 'PREAPPROVED'];
+    const active = (meta.ads_performance || []).filter(a => a.status === 'ACTIVE' || IN_REVIEW.includes(a.status));
     // Métricas de Meta, sumadas día a día dentro del rango
     const daily = (meta.campaign_analysis_daily && meta.campaign_analysis_daily.ads) || [];
     const agg = {};
@@ -1473,7 +1547,7 @@
       byName[l.ad_name].reg++;
       if (leadState(l) === 'lead') byName[l.ad_name].lead++;
     });
-    const cards = active.filter(a => (a.spend || 0) > 0 || (agg[a.ad_id] && agg[a.ad_id].impressions > 0)).map(a => {
+    const cards = active.filter(a => IN_REVIEW.includes(a.status) || (a.spend || 0) > 0 || (agg[a.ad_id] && agg[a.ad_id].impressions > 0)).map(a => {
       const m = agg[a.ad_id] || { spend: 0, impressions: 0, reach: 0, clicks: 0, engagement: 0, conversations: 0, hasEng: false };
       // Meta dejó de entregar el alcance diario: si el rango es todo el período, se usa el alcance total del anuncio
       if (!m.reach && m.impressions > 0 && from <= (meta.campaign_start || '2026-07-25') && a.reach) m.reach = a.reach;
@@ -1498,7 +1572,7 @@
         ? `<div><span>Registros</span><strong style="font-size:13px;">No identificado</strong></div><div><span>Conversaciones</span><strong>${fmt(m.conversations)}</strong></div>`
         : `<div><span>Registros</span><strong>${fmt(c.reg)}</strong></div><div><span>Leads</span><strong>${fmt(c.lead)}</strong></div>`;
       return `<article class="adc">
-        <div class="adc-head ${c.wa ? 'wa' : 'form'}"><span>${c.wa ? 'WHATSAPP' : 'FORMULARIO'}</span><span class="adc-rank">#${i + 1}</span></div>
+        <div class="adc-head ${c.wa ? 'wa' : 'form'}"><span>${c.wa ? 'WHATSAPP' : 'FORMULARIO'}${IN_REVIEW.includes(c.a.status) ? ' <span class="badge warn" style="margin-left:6px">En revisión</span>' : ''}</span><span class="adc-rank">#${i + 1}</span></div>
         <div class="adc-media">${c.img
           ? `<img src="${escapeHtml(c.img)}" alt="Miniatura del anuncio ${escapeHtml(c.a.ad_name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'), {className: 'adc-ph', textContent: 'Sin vista previa'}))">`
           : `<span class="adc-ph">Sin vista previa</span>`}</div>
