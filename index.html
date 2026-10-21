@@ -439,7 +439,7 @@
     <div>
       <p class="wordmark">XSELL</p>
       <h1>Dashboard de registros y pauta en tiempo real</h1>
-      <p class="subtitle">Registros desde HubSpot · Inversión desde Meta Ads · se actualiza automáticamente cada hora</p>
+      <p class="subtitle">Registros desde HubSpot · Inversión desde Meta Ads · se actualiza automáticamente cada 5 minutos</p>
     </div>
     <div class="updated">
       <span class="badge good" id="statusBadge">● Cargando…</span><br>
@@ -1138,6 +1138,28 @@
     drawStoryTab(leadsData, metaData, storyData);
     renderEmail(emailData);
   });
+
+  // ---- Refresco automático cada 5 minutos ----
+  // Consulta si los datos publicados cambiaron; si es así recarga la página,
+  // pero solo cuando no estás interactuando (sin actividad en el último minuto).
+  (function autoRefresh(){
+    let loaded = null, lastAct = Date.now();
+    ['click','keydown','scroll','touchstart','input'].forEach(ev => window.addEventListener(ev, () => { lastAct = Date.now(); }, { passive:true }));
+    const stamp = async () => {
+      try {
+        const [a, b] = await Promise.all([
+          fetch('./data.json?_=' + Date.now()).then(r => r.json()),
+          fetch('./meta_data.json?_=' + Date.now()).then(r => r.json())
+        ]);
+        return (a.updated_at || '') + '|' + (b.updated_at || '');
+      } catch (e) { return null; }
+    };
+    stamp().then(v => { loaded = v; });
+    setInterval(async () => {
+      const now = await stamp();
+      if (loaded && now && now !== loaded && Date.now() - lastAct > 60000) location.reload();
+    }, 5 * 60 * 1000);
+  })();
 
   // ---- Email marketing (reenganche) ----
   // Lee email_data.json, que arma scripts/fetch_email.py desde HubSpot con los
