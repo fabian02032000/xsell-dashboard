@@ -278,10 +278,10 @@
   .fx-channel .fx-ch b{display:block; font-size:20px; color:var(--text-primary); line-height:1.2;}
   .fx-bench{font-size:11.5px; color:var(--text-muted);}
   .fx-bench .ok{color:var(--good); font-weight:700;}
-  .fx-bench .bad{color:var(--critical); font-weight:700;}
+  .fx-bench .bad{color:var(--warning); font-weight:700;}
   .fx-aband{display:grid; grid-template-columns:190px 1fr 230px; gap:12px; margin:2px 0 10px;}
-  .fx-aband div{grid-column:2 / 4; border:1px solid var(--critical); background:rgba(255,92,92,.10); border-radius:8px; padding:7px 12px; font-size:12.5px; color:var(--text-primary);}
-  .fx-aband strong{color:var(--critical);}
+  .fx-aband div{grid-column:2 / 4; border:1px solid var(--warning); background:rgba(250,178,25,.10); border-radius:8px; padding:7px 12px; font-size:12.5px; color:var(--text-primary);}
+  .fx-aband strong{color:var(--warning);}
   .fx-empty{color:var(--text-muted); font-size:13px; padding:14px 0;}
   @media (max-width:760px){.fx-step{grid-template-columns:1fr; gap:4px}.fx-aband{grid-template-columns:1fr}.fx-aband div{grid-column:1}}
 @media (max-width:760px){#cvCampaign{max-width:calc(100vw - 110px)}.cv-filters .date-filter-inputs{flex-wrap:wrap}.cv-q-row{grid-template-columns:1fr;gap:4px}.cv-q-lead{text-align:left}.cv-ad-top{grid-template-columns:1fr}.cv-filters{position:static}}
@@ -4124,10 +4124,12 @@
   // Referencias de mercado (ver nota del embudo): CTR al enlace mediana Meta 1,18 % (Databox 2026) y
   // conversión promedio de campañas de lead 7,72 % (WordStream 2025) -> ~92 % de abandono en el mercado. La meta de Xsell es 70 % (objetivo interno).
   const BENCH_CTR = 1.2, BENCH_ABAND = 70;
-  const fxVs = (val, bench, higherIsBetter) => {
+  // Texto neutro: solo dice si el valor está por encima o por debajo (y si cumple o no la meta), sin calificativos.
+  const fxVs = (val, bench, higherIsBetter, what) => {
     if (val == null || isNaN(val)) return '';
-    const good = higherIsBetter ? val >= bench : val <= bench;
-    return `<span class="${good ? 'ok' : 'bad'}">${good ? 'mejor' : 'peor'} que la referencia</span>`;
+    const ok = higherIsBetter ? val >= bench : val <= bench;
+    const dir = val >= bench ? 'por encima' : 'por debajo';
+    return `<span class="${ok ? 'ok' : 'bad'}">${ok ? 'cumple' : dir} ${ok ? 'la ' + what : 'de la ' + what}</span>`;
   };
   function drawFx(){
     const f = $('fxFunnel'); if (!f) return;
@@ -4171,8 +4173,8 @@
         const w = Math.max(3, Math.sqrt(s2.v / max) * 100);
         html += `<div class="fx-step"><div class="fx-label">${s2.l}<small>${s2.sub}</small></div>
           <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 3 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
-          <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}${i === 1 ? `<br><span class="fx-bench">Referencia: ${BENCH_CTR.toLocaleString('es-PE', { minimumFractionDigits: 1 })}% · ${fxVs(st.impressions ? st.open / st.impressions * 100 : null, BENCH_CTR, true)}</span>` : ''}</div></div>`;
-        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.<br><span class="fx-bench">Meta de abandono: ${BENCH_ABAND}% · ${fxVs(st.open ? st.aband / st.open * 100 : null, BENCH_ABAND, false).replace('que la referencia', 'que la meta')}</span></div></div>`;
+          <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}${i === 1 ? `<br><span class="fx-bench">Referencia: ${BENCH_CTR.toLocaleString('es-PE', { minimumFractionDigits: 1 })}% · ${fxVs(st.impressions ? st.open / st.impressions * 100 : null, BENCH_CTR, true, 'referencia')}</span>` : ''}</div></div>`;
+        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.<br><span class="fx-bench">Meta de abandono: ${BENCH_ABAND}% · ${fxVs(st.open ? st.aband / st.open * 100 : null, BENCH_ABAND, false, 'meta')}</span></div></div>`;
       });
       f.innerHTML = html;
     }
