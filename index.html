@@ -4122,8 +4122,8 @@
   }
   const fxPct = (a, b) => b ? pct(a / b) : '—';
   // Referencias de mercado (ver nota del embudo): CTR al enlace mediana Meta 1,18 % (Databox 2026) y
-  // conversión promedio de campañas de lead 7,72 % (WordStream 2025) -> abandono de referencia 92,3 %.
-  const BENCH_CTR = 1.2, BENCH_ABAND = 92.3;
+  // conversión promedio de campañas de lead 7,72 % (WordStream 2025) -> ~92 % de abandono en el mercado. La meta de Xsell es 70 % (objetivo interno).
+  const BENCH_CTR = 1.2, BENCH_ABAND = 70;
   const fxVs = (val, bench, higherIsBetter) => {
     if (val == null || isNaN(val)) return '';
     const good = higherIsBetter ? val >= bench : val <= bench;
@@ -4172,13 +4172,13 @@
         html += `<div class="fx-step"><div class="fx-label">${s2.l}<small>${s2.sub}</small></div>
           <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 3 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
           <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}${i === 1 ? `<br><span class="fx-bench">Referencia: ${BENCH_CTR.toLocaleString('es-PE', { minimumFractionDigits: 1 })}% · ${fxVs(st.impressions ? st.open / st.impressions * 100 : null, BENCH_CTR, true)}</span>` : ''}</div></div>`;
-        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.<br><span class="fx-bench">Referencia de mercado: ${BENCH_ABAND.toLocaleString('es-PE', { minimumFractionDigits: 1 })}% · ${fxVs(st.open ? st.aband / st.open * 100 : null, BENCH_ABAND, false)}</span></div></div>`;
+        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.<br><span class="fx-bench">Meta de abandono: ${BENCH_ABAND}% · ${fxVs(st.open ? st.aband / st.open * 100 : null, BENCH_ABAND, false).replace('que la referencia', 'que la meta')}</span></div></div>`;
       });
       f.innerHTML = html;
     }
     const diff = st.metaSent - st.sent;
     $('fxNote').textContent = (diff !== 0 ? `Enviaron el formulario = registros que están en HubSpot. Meta cuenta ${fmt(st.metaSent)} formularios; la diferencia (${fmt(Math.abs(diff))}) son formularios que Meta cuenta y no figuran en HubSpot, o registros sin anuncio identificado. ` : '') +
-      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Referencias: CTR al enlace 1,2 % (mediana de Meta, Databox 2026; B2B/software entre 1,0 y 1,4 %). Abandono 92 %: no hay un dato público oficial de abandono del formulario instantáneo de Meta; se toma como aproximación la conversión promedio de campañas de lead, 7,7 % (WordStream 2025), es decir, ~92 % no completa. Lead de calidad = negocio que Ingrid marca como "Lead de calidad" en el campo Calidad del lead de HubSpot.' +
+      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Referencias: CTR al enlace 1,2 % (mediana de Meta, Databox 2026; B2B/software entre 1,0 y 1,4 %). Meta de abandono 70 %: objetivo interno de Xsell. Como contexto, no hay un dato público oficial de abandono del formulario instantáneo de Meta; la conversión promedio de campañas de lead es 7,7 % (WordStream 2025), es decir, ~92 % no completa. Lead de calidad = negocio que Ingrid marca como "Lead de calidad" en el campo Calidad del lead de HubSpot.' +
       (S.fx.level !== 'all' ? ' Los registros sin anuncio identificado solo cuentan en la vista General.' : '');
     // ---- comparativo ----
     const by = S.fx.by;
