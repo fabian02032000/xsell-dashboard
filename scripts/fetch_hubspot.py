@@ -99,6 +99,21 @@ NIVEL_URGENCIA_PROPERTY = os.environ.get("NIVEL_URGENCIA_PROPERTY", "hs_priority
 # oct-2026: el dashboard usa este campo para explicar por qué se descartó cada
 # registro. Si está vacío, el dashboard cae a leer la nota de Ingrid.
 DISCARD_REASON_PROPERTY = os.environ.get("DISCARD_REASON_PROPERTY", "motivo_de_descarte_campana")
+# Campo "Calidad del lead" del Negocio (desplegable: "Lead de calidad" / "No calificado").
+# Lo marca Ingrid al gestionar el lead; el embudo del dashboard cuenta los "Lead de calidad".
+CALIDAD_LEAD_PROPERTY = os.environ.get("CALIDAD_LEAD_PROPERTY", "calidad_del_lead")
+
+def calidad_lead_normalizada(valor):
+    """'Lead de calidad' -> 'calidad'; 'No calificado' -> 'no_calificado'; vacío -> None."""
+    v = (valor or "").strip().lower()
+    if not v:
+        return None
+    if "no calificado" in v or v.startswith("no_"):
+        return "no_calificado"
+    if "calidad" in v:
+        return "calidad"
+    return None
+
 
 # HubSpot guarda, para cada opción de una lista desplegable, un "valor interno"
 # que no siempre es idéntico al texto que ve Ingrid (puede quedar en minúsculas,
@@ -477,6 +492,7 @@ def fetch_contact_deal_status(contact_ids, stage_labels):
         deal_properties = [
             "dealname", "dealstage", "createdate",
             ESTADIO_LEAD_PROPERTY, NIVEL_URGENCIA_PROPERTY, DISCARD_REASON_PROPERTY,
+            CALIDAD_LEAD_PROPERTY,
         ]
         for batch in chunked(all_deal_ids, 100):
             body = {
@@ -504,6 +520,7 @@ def fetch_contact_deal_status(contact_ids, stage_labels):
                 "estadio_lead": normalize_enum(best.get(ESTADIO_LEAD_PROPERTY), ESTADIO_LEAD_LABELS),
                 "nivel_urgencia": normalize_enum(best.get(NIVEL_URGENCIA_PROPERTY), NIVEL_URGENCIA_LABELS),
                 "discard_reason": (best.get(DISCARD_REASON_PROPERTY) or "").strip() or None,
+                "lead_quality": calidad_lead_normalizada(best.get(CALIDAD_LEAD_PROPERTY)),
             }
     except Exception as e:
         print(f"AVISO: no se pudo revisar el estado de negocios por lead: {e}", file=sys.stderr)
@@ -763,6 +780,7 @@ def main():
             "estadio_lead": status.get("estadio_lead") if status else None,
             "nivel_urgencia": status.get("nivel_urgencia") if status else None,
             "discard_reason": status.get("discard_reason") if status else None,
+            "lead_quality": status.get("lead_quality") if status else None,
         })
     # Más recientes primero
     leads_detail.sort(key=lambda r: r["created_date"] or "", reverse=True)
