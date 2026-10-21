@@ -262,7 +262,7 @@
 .cv-note{font-size:12px;margin-top:6px;white-space:normal;max-width:320px}
   /* Embudo completo (pestaña Análisis de campaña) */
   .fx-controls{display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-bottom:14px;}
-  .fx-controls select{max-width:100%;}
+  .fx-controls select{max-width:100%; background:var(--surface-2); color:var(--text-primary); border:1px solid var(--border, rgba(255,255,255,.14)); border-radius:8px; padding:8px 10px; font-size:13px;}
   .fx-title{font-size:13px; color:var(--text-muted); margin:0 0 12px;}
   .fx-title strong{color:var(--text-primary);}
   .fx-step{display:grid; grid-template-columns:190px 1fr 230px; align-items:center; gap:12px; margin-bottom:8px;}
@@ -504,6 +504,35 @@
   </section>
 
   <section>
+    <div class="section-head"><h2>Embudo: de la impresión al lead de calidad</h2><span class="hint" id="fxHint">Sigue el rango de fechas de arriba</span></div>
+    <div class="chart-card">
+      <div class="fx-controls">
+        <span class="tile-label" style="margin:0;">Ver</span>
+        <div class="date-filter-presets" id="fxLevel">
+          <button type="button" class="filter-btn active" data-fxlevel="all">General</button>
+          <button type="button" class="filter-btn" data-fxlevel="adsets">Por conjunto de anuncios</button>
+          <button type="button" class="filter-btn" data-fxlevel="ads">Por anuncio</button>
+        </div>
+        <select id="fxItem" hidden></select>
+      </div>
+      <div id="fxFunnel"></div>
+      <p class="hint" id="fxNote" style="margin-top:10px;"></p>
+    </div>
+    <div class="chart-card" style="margin-top:16px;">
+      <div class="fx-controls">
+        <span class="tile-label" style="margin:0;">Comparar por</span>
+        <div class="date-filter-presets" id="fxBy">
+          <button type="button" class="filter-btn active" data-fxby="day">Día</button>
+          <button type="button" class="filter-btn" data-fxby="week">Semana</button>
+          <button type="button" class="filter-btn" data-fxby="adsets">Conjunto</button>
+          <button type="button" class="filter-btn" data-fxby="ads">Anuncio</button>
+        </div>
+      </div>
+      <div class="table-wrap"><table class="cv-compare" id="fxTable"></table></div>
+    </div>
+  </section>
+
+  <section>
     <div class="section-head">
       <h2>Embudo: de registro a lead</h2>
       <span class="hint">Cuántos registros pasaron a ser lead, cuántos se descartaron y por qué · según lo que tipifica Ingrid en HubSpot</span>
@@ -605,35 +634,6 @@
   <section>
     <div class="section-head"><h2>Resumen del rango</h2><span class="hint" id="cvSummaryHint"></span></div>
     <div id="cvKpis"></div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Embudo: de la impresión al lead de calidad</h2><span class="hint" id="fxHint"></span></div>
-    <div class="chart-card">
-      <div class="fx-controls">
-        <span class="tile-label" style="margin:0;">Ver</span>
-        <div class="date-filter-presets" id="fxLevel">
-          <button type="button" class="filter-btn active" data-fxlevel="all">General</button>
-          <button type="button" class="filter-btn" data-fxlevel="adsets">Por conjunto de anuncios</button>
-          <button type="button" class="filter-btn" data-fxlevel="ads">Por anuncio</button>
-        </div>
-        <select id="fxItem" hidden></select>
-      </div>
-      <div id="fxFunnel"></div>
-      <p class="hint" id="fxNote" style="margin-top:10px;"></p>
-    </div>
-    <div class="chart-card" style="margin-top:16px;">
-      <div class="fx-controls">
-        <span class="tile-label" style="margin:0;">Comparar por</span>
-        <div class="date-filter-presets" id="fxBy">
-          <button type="button" class="filter-btn active" data-fxby="day">Día</button>
-          <button type="button" class="filter-btn" data-fxby="week">Semana</button>
-          <button type="button" class="filter-btn" data-fxby="adsets">Conjunto</button>
-          <button type="button" class="filter-btn" data-fxby="ads">Anuncio</button>
-        </div>
-      </div>
-      <div class="table-wrap"><table class="cv-compare" id="fxTable"></table></div>
-    </div>
   </section>
 
   <section>
@@ -1468,6 +1468,8 @@
     });
     const cards = active.filter(a => (a.spend || 0) > 0 || (agg[a.ad_id] && agg[a.ad_id].impressions > 0)).map(a => {
       const m = agg[a.ad_id] || { spend: 0, impressions: 0, reach: 0, clicks: 0, engagement: 0, conversations: 0, hasEng: false };
+      // Meta dejó de entregar el alcance diario: si el rango es todo el período, se usa el alcance total del anuncio
+      if (!m.reach && m.impressions > 0 && from <= (meta.campaign_start || '2026-07-25') && a.reach) m.reach = a.reach;
       const wa = isWa(a.campaign_name);
       const h = byName[a.ad_name] || { reg: 0, lead: 0 };
       return { a, m, wa, reg: wa ? null : h.reg, lead: wa ? null : h.lead, img: a.image_url || imgByAd[a.ad_name] || null };
@@ -1497,7 +1499,7 @@
           <div class="adc-name">${escapeHtml(c.a.ad_name || 'Sin nombre')}</div>
           <div class="adc-sub" title="${escapeHtml(c.a.adset_name || '')}">Conjunto: ${escapeHtml(c.a.adset_name || '—')}</div>
           <div class="adc-hero">${hero}</div>
-          ${row('Alcance', fmt(m.reach))}
+          ${row('Alcance', m.reach ? fmt(m.reach) : '—')}
           ${row('Impresiones', fmt(m.impressions))}
           ${row('CTR', ctr)}
           ${row('CPM', cpm)}
@@ -1763,6 +1765,7 @@
     drawDiscardPanel(filteredLeads);
     drawAdCards(filteredLeads, meta, from, to);
     drawFormAbandon(meta, from, to);
+    window.__fxRange = [from, to]; if (window.XsellFx) window.XsellFx(from, to);
     drawLeadsTable(filteredLeads, filteredLeads.filter(l => l.has_deal).length, filteredLeads.length, !!(hasMeta && meta.leads_attribution_available));
 
     // Estadio del Lead / Nivel de Urgencia, recalculados sobre el mismo rango
@@ -2055,7 +2058,7 @@
           <td class="col-campaign-name">${escapeHtml(r.campaign_name) || '—'}</td>
           <td>${fmtMoney(r.spend)}</td>
           <td>${fmt(r.impressions)}</td>
-          <td>${fmt(r.reach)}</td>
+          <td>${r.reach ? fmt(r.reach) : '—'}</td>
           <td>${(r.frequency || 0).toFixed(2)}</td>
           <td>${fmtMoney(r.cpm)}</td>
           <td>${fmt(r.clicks)}</td>
@@ -3999,7 +4002,7 @@
   function kpis(a, h){
     return {
       ...a, ...h,
-      freq: div(a.impressions, a.reach), cpm: div(a.spend * 1000, a.impressions),
+      reach: a.reach > 0 ? a.reach : null, freq: div(a.impressions, a.reach), cpm: div(a.spend * 1000, a.impressions),
       ctr: div(a.clicks, a.impressions), ctrLink: div(a.link_clicks, a.impressions), cpc: div(a.spend, a.link_clicks),
       engRate: div(a.engagement, a.impressions),
       sendRate: div(a.formSent, a.formOpen), abandon: a.formOpen ? 1 - a.formSent / a.formOpen : null,
@@ -4079,12 +4082,14 @@
   // Solo campañas de formulario (el abandono solo existe en el formulario instantáneo).
   // Lead de calidad = registro que Ingrid no ha descartado en HubSpot.
   S.fx = { level: 'all', item: '', by: 'day' };
+  const fxRange = () => S.fxRange || { from: S.from, to: S.to };
+  const fxIn = d => { const r = fxRange(); return !!d && d >= r.from && d <= r.to; };
   function fxRows(level){
     const rows = (((S.meta && S.meta.campaign_analysis_daily) || {})[level]) || [];
-    return rows.filter(r => inRange(r.date) && isFormName(r.campaign_name || r.name) && (S.campaign === '__all__' || (r.campaign_name || r.name) === S.campaign));
+    return rows.filter(r => fxIn(r.date) && isFormName(r.campaign_name || r.name));
   }
   function fxRegs(){
-    return ((S.data && S.data.leads_detail) || []).filter(l => inRange((l.created_date || '').slice(0, 10)) && !/whatsapp/i.test(l.lead_source || '') && (S.campaign === '__all__' || l.attr_campaign_name === S.campaign));
+    return ((S.data && S.data.leads_detail) || []).filter(l => fxIn((l.created_date || '').slice(0, 10)) && !/whatsapp/i.test(l.lead_source || ''));
   }
   function isQuality(l){
     // Es lead de calidad mientras Ingrid no lo descarte (lo que descarta solo el formulario, sin que nadie lo haya gestionado, tampoco cuenta)
@@ -4125,7 +4130,7 @@
     const sc = fxScope();
     if (!sc){ f.innerHTML = '<p class="fx-empty">Sin datos de formulario en este rango.</p>'; $('fxNote').textContent = ''; $('fxTable').innerHTML = ''; $('fxHint').textContent = ''; return; }
     const st = fxStats(sc.rows, sc.regs);
-    $('fxHint').textContent = `${S.from} al ${S.to} · solo campañas de formulario`;
+    $('fxHint').textContent = `${fxRange().from} al ${fxRange().to} · sigue el rango de arriba · solo campañas de formulario`;
     if (!st.impressions && !st.reg){ f.innerHTML = '<p class="fx-empty">Sin datos de formulario en este rango.</p>'; }
     else {
       const steps = [
@@ -4367,6 +4372,8 @@
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('cvAdModal')) $('cvAdModal').hidden = true; });
   }
+  window.XsellFx = function(from, to){ S.fxRange = { from, to }; if (S.meta && S.data) drawFx(); };
+  if (window.__fxRange) S.fxRange = { from: window.__fxRange[0], to: window.__fxRange[1] };
   window.XsellCampaignV2 = function(meta, data){
     S.meta = meta && meta.updated_at ? meta : null; S.data = data;
     wire();
