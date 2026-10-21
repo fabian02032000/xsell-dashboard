@@ -260,6 +260,24 @@
 .cv-ad-m{background:var(--surface-2);border-radius:8px;padding:7px 9px;display:flex;flex-direction:column;font-size:11px;color:var(--text-muted)}
 .cv-ad-m strong{font-size:14px;color:var(--text-primary)}
 .cv-note{font-size:12px;margin-top:6px;white-space:normal;max-width:320px}
+  /* Embudo completo (pestaña Análisis de campaña) */
+  .fx-controls{display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-bottom:14px;}
+  .fx-controls select{max-width:100%;}
+  .fx-title{font-size:13px; color:var(--text-muted); margin:0 0 12px;}
+  .fx-title strong{color:var(--text-primary);}
+  .fx-step{display:grid; grid-template-columns:190px 1fr 230px; align-items:center; gap:12px; margin-bottom:8px;}
+  .fx-label{font-size:13px; font-weight:600; color:var(--text-primary); line-height:1.25;}
+  .fx-label small{display:block; font-weight:400; color:var(--text-muted); font-size:11px;}
+  .fx-track{background:var(--surface-2); border-radius:8px; height:34px; position:relative;}
+  .fx-fill{height:100%; border-radius:8px; min-width:8px; display:flex; align-items:center; justify-content:flex-end; padding:0 10px; color:#fff; font-weight:800; font-size:13px; transition:width .3s; white-space:nowrap;}
+  .fx-out{position:absolute; top:50%; transform:translateY(-50%); font-weight:800; font-size:13px; color:var(--text-primary); white-space:nowrap;}
+  .fx-nums{font-size:12px; color:var(--text-muted); line-height:1.35;}
+  .fx-nums b{color:var(--text-primary);}
+  .fx-aband{display:grid; grid-template-columns:190px 1fr 230px; gap:12px; margin:2px 0 10px;}
+  .fx-aband div{grid-column:2 / 4; border:1px solid var(--critical); background:rgba(255,92,92,.10); border-radius:8px; padding:7px 12px; font-size:12.5px; color:var(--text-primary);}
+  .fx-aband strong{color:var(--critical);}
+  .fx-empty{color:var(--text-muted); font-size:13px; padding:14px 0;}
+  @media (max-width:760px){.fx-step{grid-template-columns:1fr; gap:4px}.fx-aband{grid-template-columns:1fr}.fx-aband div{grid-column:1}}
 @media (max-width:760px){#cvCampaign{max-width:calc(100vw - 110px)}.cv-filters .date-filter-inputs{flex-wrap:wrap}.cv-q-row{grid-template-columns:1fr;gap:4px}.cv-q-lead{text-align:left}.cv-ad-top{grid-template-columns:1fr}.cv-filters{position:static}}
 
 .cal-toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}
@@ -587,6 +605,35 @@
   <section>
     <div class="section-head"><h2>Resumen del rango</h2><span class="hint" id="cvSummaryHint"></span></div>
     <div id="cvKpis"></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Embudo: de la impresión al lead de calidad</h2><span class="hint" id="fxHint"></span></div>
+    <div class="chart-card">
+      <div class="fx-controls">
+        <span class="tile-label" style="margin:0;">Ver</span>
+        <div class="date-filter-presets" id="fxLevel">
+          <button type="button" class="filter-btn active" data-fxlevel="all">General</button>
+          <button type="button" class="filter-btn" data-fxlevel="adsets">Por conjunto de anuncios</button>
+          <button type="button" class="filter-btn" data-fxlevel="ads">Por anuncio</button>
+        </div>
+        <select id="fxItem" hidden></select>
+      </div>
+      <div id="fxFunnel"></div>
+      <p class="hint" id="fxNote" style="margin-top:10px;"></p>
+    </div>
+    <div class="chart-card" style="margin-top:16px;">
+      <div class="fx-controls">
+        <span class="tile-label" style="margin:0;">Comparar por</span>
+        <div class="date-filter-presets" id="fxBy">
+          <button type="button" class="filter-btn active" data-fxby="day">Día</button>
+          <button type="button" class="filter-btn" data-fxby="week">Semana</button>
+          <button type="button" class="filter-btn" data-fxby="adsets">Conjunto</button>
+          <button type="button" class="filter-btn" data-fxby="ads">Anuncio</button>
+        </div>
+      </div>
+      <div class="table-wrap"><table class="cv-compare" id="fxTable"></table></div>
+    </div>
   </section>
 
   <section>
@@ -1271,8 +1318,11 @@
   // leads de la campaña no tienen el campo "Motivo de descarte" lleno). El
   // orden importa: la primera regla que calza es la que se usa.
   const NO_RESP = 'No respondió (llamada ni WhatsApp)';
+  const NO_RESP_ALT = 'Nunca respondió llamada y WhatsApp';   // nueva tipificación de HubSpot
+  const NO_RESP_SEG = 'No responde seguimiento';                // nueva tipificación de HubSpot (respondió antes, luego se silenció)
   const DISCARD_RULES = [
-    [NO_RESP, /(nunca respond|no respond|no contest|sin respuesta|no responde|silencio|no llego al boton|veces no|no volvio a responder|no hubo respuesta)/],
+    [NO_RESP_SEG, /(no responde seguimiento|no volvio a responder|dejo de responder|no responde el seguimiento)/],
+    [NO_RESP, /(nunca respond|no respond|no contest|sin respuesta|no responde|silencio|no llego al boton|veces no|no hubo respuesta)/],
     ['No asistió a la reunión', /no asisti/],
     ['Llenó el formulario por error', /(por error|marco mal)/],
     ['Busca solo marketing o CRM', /(mkt|marketing|crm)/],
@@ -1336,7 +1386,7 @@
     const counts = {};
     desc.forEach(l => { const r = discardReason(l); counts[r] = (counts[r] || 0) + 1; });
     const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-    const noResp = counts[NO_RESP] || 0;
+    const noResp = (counts[NO_RESP] || 0) + (counts[NO_RESP_ALT] || 0);
     const byReason = {};
     desc.forEach(l => { const r = discardReason(l); (byReason[r] = byReason[r] || []).push(l); });
     const fromField = fmt(desc.filter(l => l.discard_reason).length);
@@ -3919,7 +3969,8 @@
     if (l.form_no_califica) return l.form_no_califica;
     return /respond|contest/.test(norm(l.deal_note)) ? 'No respondió (llamada ni WhatsApp)' : 'Sin motivo registrado';
   }
-  const isNoResp = l => /^no respondi/.test(norm(motive(l)));
+  const isNoResp = l => /^(no respondi|nunca respondi)/.test(norm(motive(l)));   // nunca contestó
+  const isNoSeg = l => /^no responde seguimiento/.test(norm(motive(l)));          // contestó antes y se silenció
 
   let SEGMENTS = [];
   const segOf = id => SEGMENTS.find(g => g.adset_id === id);
@@ -3940,9 +3991,9 @@
     return a;
   }
   function hubStats(regs){
-    const h = { reg: regs.length, lead: 0, cont: 0, desc: 0, stand: 0, sin: 0, noResp: 0, prop: 0 };
-    regs.forEach(l => { const s = state(l); h[s]++; if (s === 'desc' && isNoResp(l)) h.noResp++; if (stageIdx(l) >= 2) h.prop++; });
-    h.noCal = h.desc - h.noResp;
+    const h = { reg: regs.length, lead: 0, cont: 0, desc: 0, stand: 0, sin: 0, noResp: 0, noSeg: 0, prop: 0 };
+    regs.forEach(l => { const s = state(l); h[s]++; if (s === 'desc' && isNoResp(l)) h.noResp++; if (s === 'desc' && isNoSeg(l)) h.noSeg++; if (stageIdx(l) >= 2) h.prop++; });
+    h.noCal = h.desc - h.noResp - h.noSeg;
     return h;
   }
   function kpis(a, h){
@@ -4024,6 +4075,101 @@
       rows.map(r => `<tr><td>${r[0]}</td><td>${cell(r, F)}</td><td>${cell(r, W)}</td><td>${cell(r, T)}</td></tr>`).join('') + '</tbody>';
   }
 
+  // ---------- embudo completo: impresión -> formulario -> registro -> lead de calidad ----------
+  // Solo campañas de formulario (el abandono solo existe en el formulario instantáneo).
+  // Lead de calidad = registro que Ingrid no ha descartado en HubSpot.
+  S.fx = { level: 'all', item: '', by: 'day' };
+  function fxRows(level){
+    const rows = (((S.meta && S.meta.campaign_analysis_daily) || {})[level]) || [];
+    return rows.filter(r => inRange(r.date) && isFormName(r.campaign_name || r.name) && (S.campaign === '__all__' || (r.campaign_name || r.name) === S.campaign));
+  }
+  function fxRegs(){
+    return ((S.data && S.data.leads_detail) || []).filter(l => inRange((l.created_date || '').slice(0, 10)) && !/whatsapp/i.test(l.lead_source || '') && (S.campaign === '__all__' || l.attr_campaign_name === S.campaign));
+  }
+  function isQuality(l){
+    // Es lead de calidad mientras Ingrid no lo descarte (lo que descarta solo el formulario, sin que nadie lo haya gestionado, tampoco cuenta)
+    return state(l) !== 'desc';
+  }
+  function fxStats(rows, regs){
+    const a = sumRows(rows);
+    return { spend: a.spend, impressions: a.impressions, open: a.formOpen, sent: a.formSent, aband: Math.max(0, a.formOpen - a.formSent), reg: regs.length, qual: regs.filter(isQuality).length };
+  }
+  function fxEntries(level){
+    const rows = fxRows(level), regs = fxRegs(), map = new Map();
+    rows.forEach(r => { const id = r.id || r.name; if (!map.has(id)) map.set(id, { id, name: r.name, campaign_name: r.campaign_name, adset_id: r.adset_id, adset_name: r.adset_name, rows: [] }); map.get(id).rows.push(r); });
+    return [...map.values()].map(e => { const rg = regsFor(regs, level, e); return { ...e, level, regs: rg, st: fxStats(e.rows, rg) }; });
+  }
+  const fxWeek = d => { const t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() - ((t.getUTCDay() + 6) % 7)); return t.toISOString().slice(0, 10); };
+  const fxDay = d => { const [y, m, dd] = d.split('-'); return dd + '/' + m; };
+  function fxScope(){
+    if (S.fx.level === 'all') return { label: 'General · todas las campañas de formulario', rows: fxRows('campaigns'), regs: fxRegs() };
+    const es = fxEntries(S.fx.level).sort((a, b) => b.st.spend - a.st.spend);
+    const e = es.find(x => x.id === S.fx.item) || es[0];
+    if (!e) return null;
+    S.fx.item = e.id;
+    return { label: (S.fx.level === 'ads' ? 'Anuncio · ' : 'Conjunto · ') + e.name, rows: e.rows, regs: e.regs, entries: es };
+  }
+  const fxPct = (a, b) => b ? pct(a / b) : '—';
+  function drawFx(){
+    const f = $('fxFunnel'); if (!f) return;
+    document.querySelectorAll('#fxLevel .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.fxlevel === S.fx.level));
+    document.querySelectorAll('#fxBy .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.fxby === S.fx.by));
+    const sel = $('fxItem');
+    if (S.fx.level === 'all'){ sel.hidden = true; }
+    else {
+      const es = fxEntries(S.fx.level).sort((a, b) => b.st.spend - a.st.spend);
+      if (!es.find(x => x.id === S.fx.item)) S.fx.item = es[0] ? es[0].id : '';
+      sel.hidden = false;
+      sel.innerHTML = es.map(e => `<option value="${esc(e.id)}"${e.id === S.fx.item ? ' selected' : ''}>${esc(S.fx.level === 'ads' ? (e.name + '  ·  ' + (e.adset_name || '')) : (e.name + '  ·  ' + (e.campaign_name || '')))}</option>`).join('');
+    }
+    const sc = fxScope();
+    if (!sc){ f.innerHTML = '<p class="fx-empty">Sin datos de formulario en este rango.</p>'; $('fxNote').textContent = ''; $('fxTable').innerHTML = ''; $('fxHint').textContent = ''; return; }
+    const st = fxStats(sc.rows, sc.regs);
+    $('fxHint').textContent = `${S.from} al ${S.to} · solo campañas de formulario`;
+    if (!st.impressions && !st.reg){ f.innerHTML = '<p class="fx-empty">Sin datos de formulario en este rango.</p>'; }
+    else {
+      const steps = [
+        { l: 'Impresiones', sub: 'veces que se mostró el anuncio', v: st.impressions, c: 'linear-gradient(90deg,#5D17A0,#7B2BC9)' },
+        { l: 'Abrieron el formulario', sub: 'clics en el enlace', v: st.open, c: 'linear-gradient(90deg,#5D17A0,#7B2BC9)' },
+        { l: 'Enviaron el formulario', sub: 'según Meta', v: st.sent, c: 'linear-gradient(90deg,#7B2BC9,#9a4fe0)' },
+        { l: 'Registros en HubSpot', sub: 'quedaron como contacto', v: st.reg, c: 'linear-gradient(90deg,#FF6B13,#FFA366)' },
+        { l: 'Leads de calidad', sub: 'registros que Ingrid no descartó', v: st.qual, c: 'var(--good)' }
+      ];
+      const max = Math.max(1, steps[0].v);
+      let html = `<p class="fx-title"><strong>${esc(sc.label)}</strong> · inversión ${money(st.spend)}${st.qual ? ' · costo por lead de calidad ' + money(st.spend / st.qual) : ''}</p>`;
+      steps.forEach((s2, i) => {
+        const prev = i ? steps[i - 1].v : null;
+        const w = Math.max(3, Math.sqrt(s2.v / max) * 100);
+        html += `<div class="fx-step"><div class="fx-label">${s2.l}<small>${s2.sub}</small></div>
+          <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 4 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
+          <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}</div></div>`;
+        if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.</div></div>`;
+      });
+      f.innerHTML = html;
+    }
+    const diff = st.sent - st.reg;
+    $('fxNote').textContent = (diff > 0 ? `Meta contó ${fmt(st.sent)} formularios enviados y HubSpot tiene ${fmt(st.reg)} registros: ${fmt(diff)} no llegaron a HubSpot o no se pudieron atribuir. ` : '') +
+      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Lead de calidad = registro que Ingrid no ha descartado en HubSpot (los que solo descartó el formulario, sin gestión, tampoco cuentan).' +
+      (S.fx.level !== 'all' ? ' Los registros sin anuncio identificado solo cuentan en la vista General.' : '');
+    // ---- comparativo ----
+    const by = S.fx.by;
+    let list = [];
+    if (by === 'day' || by === 'week'){
+      const key = d => by === 'day' ? d : fxWeek(d), groups = new Map();
+      const g = k => { if (!groups.has(k)) groups.set(k, { k, rows: [], regs: [] }); return groups.get(k); };
+      sc.rows.forEach(r => g(key(r.date)).rows.push(r));
+      sc.regs.forEach(l => { const d = (l.created_date || '').slice(0, 10); if (d) g(key(d)).regs.push(l); });
+      list = [...groups.values()].sort((a, b) => b.k.localeCompare(a.k)).map(x => ({ name: by === 'day' ? fxDay(x.k) : 'Sem. del ' + fxDay(x.k), st: fxStats(x.rows, x.regs) }));
+    } else {
+      list = fxEntries(by).sort((a, b) => b.st.spend - a.st.spend).map(e => ({ name: e.name + (by === 'ads' ? ' · ' + (e.adset_name || '') : ''), st: e.st }));
+    }
+    const th = ['', 'Inversión', 'Impresiones', 'Abrieron form.', 'Enviaron form.', 'Abandonaron', '% abandono', 'Registros', 'Leads de calidad', '% calidad', 'Costo por lead de calidad'];
+    const tot = fxStats(sc.rows, sc.regs);
+    const row = (n, x, b) => `<tr${b ? ' style="font-weight:700"' : ''}><td>${esc(n)}</td><td>${money(x.spend)}</td><td>${fmt(x.impressions)}</td><td>${fmt(x.open)}</td><td>${fmt(x.sent)}</td><td>${fmt(x.aband)}</td><td>${fxPct(x.aband, x.open)}</td><td>${fmt(x.reg)}</td><td>${fmt(x.qual)}</td><td>${fxPct(x.qual, x.reg)}</td><td>${x.qual ? money(x.spend / x.qual) : '—'}</td></tr>`;
+    th[0] = { day: 'Día', week: 'Semana', adsets: 'Conjunto de anuncios', ads: 'Anuncio' }[by];
+    $('fxTable').innerHTML = `<thead><tr>${th.map(t => `<th>${t}</th>`).join('')}</tr></thead><tbody>${list.length ? list.map(x => row(x.name, x.st)).join('') + (by === 'adsets' || by === 'ads' ? '' : row('Total del rango', tot, true)) : `<tr><td colspan="${th.length}" class="table-sub">Sin datos de formulario en este rango.</td></tr>`}</tbody>`;
+  }
+
   // ---------- 3. árbol ----------
   const COLS = [
     { g: 'alc', k: 'spend', l: 'Inversión', f: money }, { g: 'alc', k: 'impressions', l: 'Impresiones', f: fmt }, { g: 'alc', k: 'reach', l: 'Alcance*', f: fmt }, { g: 'alc', k: 'freq', l: 'Frecuencia*', f: dec }, { g: 'alc', k: 'cpm', l: 'CPM', f: money },
@@ -4083,8 +4229,8 @@
       const k = /whatsapp/i.test(l.lead_source || '') ? 'WhatsApp · no identificado' : (l.adset_name || 'Formulario · sin conjunto identificado');
       if (!groups.has(k)) groups.set(k, []); groups.get(k).push(l);
     });
-    const SEG = [['lead', 'Lead', 'var(--good)'], ['gest', 'En gestión', 'var(--purple-2)'], ['noresp', 'No respondió', 'var(--critical)'], ['nocal', 'No califica', 'var(--warning)'], ['sin', 'Sin gestionar', 'var(--text-muted)']];
-    const seg = l => { const s = state(l); if (s === 'lead') return 'lead'; if (s === 'cont' || s === 'stand') return 'gest'; if (s === 'sin') return 'sin'; return isNoResp(l) ? 'noresp' : 'nocal'; };
+    const SEG = [['lead', 'Lead', 'var(--good)'], ['gest', 'En gestión', 'var(--purple-2)'], ['noresp', 'No respondió', 'var(--critical)'], ['noseg', 'No responde seguimiento', '#e0803a'], ['nocal', 'No califica', 'var(--warning)'], ['sin', 'Sin gestionar', 'var(--text-muted)']];
+    const seg = l => { const s = state(l); if (s === 'lead') return 'lead'; if (s === 'cont' || s === 'stand') return 'gest'; if (s === 'sin') return 'sin'; return isNoResp(l) ? 'noresp' : isNoSeg(l) ? 'noseg' : 'nocal'; };
     const list = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
     if (!list.length){ $('cvQuality').innerHTML = '<p class="table-sub">No hay registros en este rango.</p>'; return; }
     $('cvQuality').innerHTML = `<div class="cv-legend">${SEG.map(s => `<span><span class="cal-dot" style="background:${s[2]}"></span>${s[1]}</span>`).join('')}</div>` +
@@ -4188,7 +4334,7 @@
   function render(){
     if (!S.meta) { $('cvKpis').innerHTML = '<p class="table-sub">Esperando datos de Meta Ads.</p>'; return; }
     const k = kpis(sumRows(dailyRows('campaigns')), hubStats(regsAll()));
-    drawKpis(k); drawCompare(); drawTree(); drawSegments(); drawQuality(); drawTrend();
+    drawKpis(k); drawFx(); drawCompare(); drawTree(); drawSegments(); drawQuality(); drawTrend();
   }
   function setPreset(p){
     const t = limaToday(), start = (S.meta && S.meta.campaign_start) || (S.data && S.data.campaign_start) || '2026-07-25';
@@ -4205,6 +4351,9 @@
     if (wired) return; wired = true;
     $('cvPresets').addEventListener('click', e => { const b = e.target.closest('[data-preset]'); if (b){ setPreset(b.dataset.preset); render(); } });
     ['cvFrom', 'cvTo'].forEach(id => $(id).addEventListener('change', () => { S.from = $('cvFrom').value; S.to = $('cvTo').value; document.querySelectorAll('#cvPresets .filter-btn').forEach(b => b.classList.remove('active')); render(); }));
+    $('fxLevel').addEventListener('click', e => { const b = e.target.closest('[data-fxlevel]'); if (b){ S.fx.level = b.dataset.fxlevel; S.fx.item = ''; drawFx(); } });
+    $('fxBy').addEventListener('click', e => { const b = e.target.closest('[data-fxby]'); if (b){ S.fx.by = b.dataset.fxby; drawFx(); } });
+    $('fxItem').addEventListener('change', e => { S.fx.item = e.target.value; drawFx(); });
     $('cvChannel').addEventListener('change', e => { S.channel = e.target.value; render(); });
     $('cvCampaign').addEventListener('change', e => { S.campaign = e.target.value; render(); });
     $('tab-campaign').addEventListener('click', e => {
