@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T16:30:54.812563+00:00",
+  "updated_at": "2026-10-21T16:35:53.399659+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -451,7 +451,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Yoni S",
@@ -467,7 +468,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Melisa Ortega Moya",
@@ -483,7 +485,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No se llegó al decisor"
+      "discard_reason": "No se llegó al decisor",
+      "lead_quality": null
     },
     {
       "name": "Elisa YJ",
@@ -499,7 +502,8 @@
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Luis",
@@ -515,7 +519,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Ysabel Rodriguez Bazan",
@@ -531,7 +536,8 @@
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Irving Chunga",
@@ -547,7 +553,8 @@
       "deal_note": "Invierte en Pauta solo 500 soles y su promedio de leads son solo 80.\nDe esos 80 leads les responde aprox la mitad y cierran 4 ventas.\nSon de Piura.\nSolo tienen 1 sede y 1 solo asesor comercial.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "andres alejandro",
@@ -563,7 +570,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Isaias Apolinario Uscamayta",
@@ -579,7 +587,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Lizbeth  Taboada",
@@ -595,7 +604,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Kare",
@@ -611,7 +621,8 @@
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Amparo  García Huapaya",
@@ -627,7 +638,8 @@
       "deal_note": "Agente inmobiliario independiente. Busca CRM",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Anyela Asesora inmobiliaria",
@@ -643,7 +655,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Rouss",
@@ -659,7 +672,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Silvana  Grillo Gallardo",
@@ -675,7 +689,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Bryan  Oropeza Vasquez",
@@ -691,7 +706,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Llenó el formulario por error"
+      "discard_reason": "Llenó el formulario por error",
+      "lead_quality": null
     },
     {
       "name": "Leslie",
@@ -707,7 +723,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "ctecsolucionestecnologicas",
@@ -723,7 +740,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Eduardo",
@@ -739,7 +757,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Katerin nilda alcahua rossell",
@@ -755,7 +774,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "WALTER EDGARDO RUIZ CASTRO",
@@ -771,7 +791,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Karla Sarmiento",
@@ -787,7 +808,8 @@
       "deal_note": "Realiza servicio técnico de electrodomésticos.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carlos Saavedra",
@@ -803,7 +825,8 @@
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Taller multimarca en San Miguel (una sede, capacidad de 10 autos al día). Recibe unos 300 leads al mes desde hace 5 años, con inversión en pauta de S/1,000 y ticket promedio de S/800. Indica que llegan pocos leads, que pocos se convierten (en parte por la gestión propia del taller) y que muchos son de mala calidad. Busca mejorar la calidad o la cantidad de leads. Se le explicó la metodología y el diagnóstico gratuito, y quedó su contacto guardado para retomar cuando escale.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Alberto Huaman",
@@ -819,7 +842,8 @@
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Omar Castro Salazar",
@@ -835,7 +859,8 @@
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Trabaja como vendedor independiente de parque del recuerdo, sin empresa constituida. Busca vender más a título personal, no un servicio de perfilamiento y cierre para una empresa con flujo de leads.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Angel Solorzano",
@@ -851,7 +876,8 @@
       "deal_note": "Descartado. Si respondió llamada. Aún no no invierten en Pauta. Están buscando empezar con ello. Venden maquinas industriales.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Sin datos",
@@ -867,7 +893,8 @@
       "deal_note": "Vendedor inmobiliario Independiente. No tiene empresa",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Lourdes",
@@ -883,7 +910,8 @@
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Respondió al contacto por WhatsApp indicando que por ahora no requiere el servicio. No respondió llamada previa.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Sin datos",
@@ -899,7 +927,8 @@
       "deal_note": "Descartado. Inmobiliaria Fernasur - 3 meses - Yuli Anaga huamani Alvaro. Invierte Mil soles en el mes - recibe solo 150 leads. - Activos 4 proyectos - Arequipa Lotización.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Carmen  Chacón ramirez",
@@ -915,7 +944,8 @@
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Pastelería con unos 6 meses de operación, sin RUC ni empresa constituida (negocio informal). Se cerró la atención dejando la puerta abierta para cuando esté formalizada y consolidada.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Rouss Real",
@@ -931,7 +961,8 @@
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Agente inmobiliaria independiente, sin empresa constituida. Busca marketing para generar clientes, no perfilamiento ni cierre de leads. Se le aclaró el alcance de Xsell y se cerró la atención.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Alejandra  Navarro",
@@ -947,7 +978,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Arturo Laguna",
@@ -963,7 +995,8 @@
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Nunca ha invertido en pauta, brinda asesoría empresarial y recién está evaluando empezar, sin leads que perfilar ni cerrar. Se le aclaró el alcance de Xsell y se cerró la atención dejando la puerta abierta.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Roxana",
@@ -979,7 +1012,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No se llegó al decisor"
+      "discard_reason": "No se llegó al decisor",
+      "lead_quality": null
     },
     {
       "name": "Valentino",
@@ -995,7 +1029,8 @@
       "deal_note": "Descartado\nEstá buscando departamentos en alquiler. 3 habitaciones.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Chabu",
@@ -1011,7 +1046,8 @@
       "deal_note": "Etiqueta: Descartado\nDetalle del descarte: Contestó la llamada. Buscaba departamento en alquiler de 2 habitaciones. Dió clic al anuncio por confusión. Se cerró la atención.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Hugo Fernando Vasquez Matias",
@@ -1027,7 +1063,8 @@
       "deal_note": "Si respondió segunda llamada. Venta de vehículos provincia Chincha -Dejaron de operar 8 meses y recien volveran a activar la empresa. No cuentan con flujo de leads.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Renato Carrera",
@@ -1043,7 +1080,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Eleazar Tapia Tarrillo",
@@ -1059,7 +1097,8 @@
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "@cecibelia73",
@@ -1075,7 +1114,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Claudio  Saavedra",
@@ -1091,7 +1131,8 @@
       "deal_note": "Sí respondió llamada. Indica que dio clic al formulario por error. \nDescatado: No interesado",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Llenó el formulario por error"
+      "discard_reason": "Llenó el formulario por error",
+      "lead_quality": null
     },
     {
       "name": "Sin datos - @kkikw159 Adelavera I",
@@ -1107,7 +1148,8 @@
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "yuyo72",
@@ -1123,7 +1165,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Anderson Romero",
@@ -1139,7 +1182,8 @@
       "deal_note": "Si respondió su agente de IA. No nos pasó con el titular. Descartado no responde wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Ulises",
@@ -1155,7 +1199,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Johon",
@@ -1171,7 +1216,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Elteva",
@@ -1187,7 +1233,8 @@
       "deal_note": "No responde. Respondió primera llamada, indica que está ocupada. Se realiza seguimiento no responde.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "@Sune9329",
@@ -1203,7 +1250,8 @@
       "deal_note": "Si respondió. Busca trabajo para señorita para la carrera de ingeniería ambiental",
       "estadio_lead": null,
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Carlos  Perez",
@@ -1219,7 +1267,8 @@
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada. Tiene campañas en Meta para público masivo y quiere reorientar el servicio a público corporativo, pero aún no tiene marketing ni leads de ese segmento. Busca apoyo para generar la demanda (marketing), no para perfilar y cerrar leads existentes.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Gloria Torres",
@@ -1235,7 +1284,8 @@
       "deal_note": "Descartado\nDetalle del descarte: Contestó la llamada y confirmó que completó el formulario por error. No busca ningún servicio.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Llenó el formulario por error"
+      "discard_reason": "Llenó el formulario por error",
+      "lead_quality": null
     },
     {
       "name": "Ciro  Falcón",
@@ -1251,7 +1301,8 @@
       "deal_note": "Indica que no lo molesten",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Omar Medina",
@@ -1267,7 +1318,8 @@
       "deal_note": "Se llamó no responde. Tampoco responde mensaje de seguimiento por wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Junior Quintana",
@@ -1283,7 +1335,8 @@
       "deal_note": "Nunca respondio llamada ni wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Denis",
@@ -1299,7 +1352,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "𝐺𝑒𝑟𝑎𝑙𝑑𝑖𝑛𝑒 𝐿𝑎ℎ𝑢𝑟𝑎",
@@ -1315,7 +1369,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Yeni PV",
@@ -1331,7 +1386,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Arturo",
@@ -1347,7 +1403,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Sin datos",
@@ -1363,7 +1420,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Sin datos - Foryou",
@@ -1379,7 +1437,8 @@
       "deal_note": "Respondió llamada. Descartada. Indica que no está interesada",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Danny Calua Cotrina",
@@ -1395,7 +1454,8 @@
       "deal_note": "Descartada. Sí respondió llamada.\nMotivo de descarte: Aún no invierte en pauta.\n\nIndicó que aún no invierte en pauta y que recién empezarán a hacerlo. Se le explicó que trabajamos con empresas que ya tienen inversión en pauta y flujo de leads. Se descarta por el momento, dejando abierta la posibilidad de retomar el contacto cuando ya esté recibiendo leads.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "REMASA Yolanda T.",
@@ -1411,7 +1471,8 @@
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Aquino",
@@ -1427,7 +1488,8 @@
       "deal_note": "Motivo de descarte: No interesado. \n indicó en la llamada que se confundió que por el momento no. Se le dejó mensaje de cierre de atención.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Vanessa Melgarejo",
@@ -1443,7 +1505,8 @@
       "deal_note": "Motivo de descarte: No cumple con el perfil de cliente: trabaja de manera independiente.\nNota: Prospecto dedicada al cierre de ventas para una inmobiliaria en Huaral. No cuenta con empresa propia trabaja independiente e invierte aproximadamente S/500 mensuales en pauta. \nSe explicó el alcance del servicio y que está dirigido a empresas (B2B). Se descarta por el momento, dejando abierta la posibilidad de retomar el contacto más adelante.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Sin datos Wsp",
@@ -1459,7 +1522,8 @@
       "deal_note": "Sí respondió llamada. Indicó que estaba ocupado y que lo llamemos 4:30. Se le llamó no respondió. Se le dejó mensaje a wsp tampoco respondio. Se le dejó wsp de seguimiento sin respuesta.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Susana Galvez Arce",
@@ -1475,7 +1539,8 @@
       "deal_note": "Sí respondió llamada. \nMotivo de descarte: No tiene empresa, vende de manera independiente. (Lotes).",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "René",
@@ -1491,7 +1556,8 @@
       "deal_note": "Sí respondió llamada. \nMotivo de descarte: Busca potenciar su marketing.\nProspecto lleva pocos meses invirtiendo en publicidad en redes y aún no cuenta con históricos de leads. Su prioridad actual es medir y potenciar sus campañas de marketing. Se podrá retomar el contacto más adelante para evaluar una posible alianza comercial.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Jorge Izquierdo",
@@ -1507,7 +1573,8 @@
       "deal_note": null,
       "estadio_lead": "Alto Nivel",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Karl vasquez",
@@ -1523,7 +1590,8 @@
       "deal_note": "Descalificado por fit: busca MKT, no conversión\nPerfil del prospecto\nRubro: inmobiliario corporativo, administración de bienes inmuebles, servicios de limpieza y afines.\nClientes: empresas administradoras, inmobiliarias y personas naturales.\nNecesidad\nBusca generar nuevos clientes. Hoy no tiene un flujo de leads propio; busca Mkt o base de datos para generar demanda.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "@negociosindustriales331",
@@ -1539,7 +1607,8 @@
       "deal_note": "Descartado: postulante laboral, no es prospecto comercial",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Violeta  Navarro moscoso",
@@ -1555,7 +1624,8 @@
       "deal_note": "Nunca respondio llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Esaú Ur",
@@ -1571,7 +1641,8 @@
       "deal_note": "Nunca respondió llamada si wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luisa  Paucar Rojas",
@@ -1587,7 +1658,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "TPD",
@@ -1603,7 +1675,8 @@
       "deal_note": "Número suspendido. Nunca respondió Wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Sin datos - aduva6",
@@ -1619,7 +1692,8 @@
       "deal_note": "Nunca respondió",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Eric  Torres",
@@ -1635,7 +1709,8 @@
       "deal_note": "Sí respondio llamada pero indicó que estaba ocupado. No volvió a responder llamada de seguimiento ni wsp.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Mariana",
@@ -1651,7 +1726,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Mariangelica López Castañeda",
@@ -1667,7 +1743,8 @@
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Javier Salmon",
@@ -1683,7 +1760,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Johan Flores Ramos",
@@ -1699,7 +1777,8 @@
       "deal_note": "Contacto con tercero, sin acceso al decisor\nContestó una persona distinta a quien dejó el registro. No quiso dar el número del titular. Le ofrecí escribirle por WhatsApp y me dijo que no le llegaría, porque el número es de trabajo. Quedó en avisarle y el titular decidirá si nos contacta.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No se llegó al decisor"
+      "discard_reason": "No se llegó al decisor",
+      "lead_quality": null
     },
     {
       "name": "Cristian Mestanza Ortiz",
@@ -1715,7 +1794,8 @@
       "deal_note": "Descalificado por fit (por ahora): prospecto muy pequeño\nPerfil del prospecto\nRubro: Desarrollo de software\nAntigüedad: inició operaciones a comienzos de 2026\nSituación comercial actual\nInversión en pauta: S/ 100 mensuales, solo en Meta\nVolumen: ~130 leads al mes\nCierres: entre 3 y 5 clientes al mes (conversión aprox. 2.3% a 3.8%)\nTicket promedio de venta: S/ 100\nIngreso mensual estimado por esta vía: S/ 300 a S/ 500",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Pedro Romero",
@@ -1731,7 +1811,8 @@
       "deal_note": "Nunca respondió llamada ni wsp de seguimiento",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Xiomi Peru",
@@ -1747,7 +1828,8 @@
       "deal_note": "No respondió llamada. Pido por wsp que la contacten a una hora. Se le llamó no respondió. Se le dejó wsp de seguimiento no respondió.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Renato Sánchez",
@@ -1763,7 +1845,8 @@
       "deal_note": "Busca MKT. Sí respondió llamada. No tiene inversión en pauta.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Ricardo Callenes Palacios",
@@ -1779,7 +1862,8 @@
       "deal_note": "Descartado: Volumen insuficiente de leads ( menos de 130 al mes).  Sí respondió llamada.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Jose Melendez Quesada",
@@ -1795,7 +1879,8 @@
       "deal_note": "Nunca respondió. Solo mensaje de BOT",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "luis tenorio",
@@ -1811,7 +1896,8 @@
       "deal_note": null,
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "(sin nombre)",
@@ -1827,7 +1913,8 @@
       "deal_note": "Más de 30 entregados. Proyecto de referencia: Hatuey 205, San Miguel. Sector: Real Estate. Fuente: https://www.jopesa.pe/. Correo público no encontrado (solo formulario web).",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "(sin nombre)",
@@ -1843,7 +1930,8 @@
       "deal_note": "Más de 10 entregados. Proyecto de referencia: Flora Tristán. Sector: Real Estate. Fuente: https://armonhy.com.pe/. Correo protegido por Cloudflare, no accesible públicamente.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Sin datos",
@@ -1859,7 +1947,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Perez",
@@ -1875,7 +1964,8 @@
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "JORGE LUIS TRAGODARA ACOSTA",
@@ -1891,7 +1981,8 @@
       "deal_note": "No respondió llamada. Sí respondió wsp. Indicó que lo llamaramos el viernes y no respondió. Se le dejó nuevamente mensaje por wsp de recordatorio y no responde.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Zulma Rosario",
@@ -1907,7 +1998,8 @@
       "deal_note": "No respondió  llamada. se le dejó mensaje por wsp respondió solamente 15 minutos. Se le volvió a llamar, nunca respondió.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Eugenio Basilio Davila Paca",
@@ -1923,7 +2015,8 @@
       "deal_note": "Sí respondió llamada. Motivo de descarte, busca potenciar MKT recién 2 meses en el mercado invirtiendo en pauta. Academia pre univarsitaria en Arequipa.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Micaela",
@@ -1939,7 +2032,8 @@
       "deal_note": "Indica que marco mal. Está buscando una tienda.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Llenó el formulario por error"
+      "discard_reason": "Llenó el formulario por error",
+      "lead_quality": null
     },
     {
       "name": "Jean Pierre",
@@ -1955,7 +2049,8 @@
       "deal_note": "No respondió seguimiento. No respondió llamada., se le dejó mensaje por wsp pregunto si somos un chat bot, no respondió seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Sin datos - Liliana padilla",
@@ -1971,7 +2066,8 @@
       "deal_note": "Nunca respondió llamada ni wsp.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Miguel Galvez",
@@ -1987,7 +2083,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Thony",
@@ -2003,7 +2100,8 @@
       "deal_note": "Nunca respondió llamada ni wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Miguel Angel Cayo Veit",
@@ -2019,7 +2117,8 @@
       "deal_note": "Si respondió llamada. Empresa que vende cursos de idiomas. Indica que le escriba por wsp para coordinar horario de reunión.",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Chiara Cruz Hernandez",
@@ -2035,7 +2134,8 @@
       "deal_note": "Nunca respondió llamada. Solo respondió con Hola al mensaje de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luis Alvarez Caro",
@@ -2051,7 +2151,8 @@
       "deal_note": "Motivo de descarte: No es nuestro core\nDetalle: Recibe solo 30 leads al mes (Estadio Semilla) — volumen insuficiente para el modelo de perfilamiento y cierre dedicado.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "Negocio muy pequeño o pocos leads"
+      "discard_reason": "Negocio muy pequeño o pocos leads",
+      "lead_quality": null
     },
     {
       "name": "Paul Gamarra",
@@ -2067,7 +2168,8 @@
       "deal_note": "Nunca respondió",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Cristian",
@@ -2083,7 +2185,8 @@
       "deal_note": "Quería precio directamente. No respondió llamada en el horario acordado.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Paolo Gaspar",
@@ -2099,7 +2202,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Raquel Alvarado",
@@ -2115,7 +2219,8 @@
       "deal_note": "No tienen inversión en pauta. Recién empezarán con ello.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Jim Brayan uceda Pisfil",
@@ -2131,7 +2236,8 @@
       "deal_note": "Está buscando solo CRM",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Victor Vigo Paredes",
@@ -2147,7 +2253,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Paqui Ramírez Olaya",
@@ -2163,7 +2270,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Dardent Alejandría Alarcón",
@@ -2179,7 +2287,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jordan  Trujillo tito",
@@ -2195,7 +2304,8 @@
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carmen Rosa Zare Uribe",
@@ -2211,7 +2321,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jhohan Kitaro Belito",
@@ -2227,7 +2338,8 @@
       "deal_note": "Nunca respondió. No tiene wsp y no responde llamada",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jeiner Huamán Gormas",
@@ -2243,7 +2355,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jorge Barco Fenco",
@@ -2259,7 +2372,8 @@
       "deal_note": "No responde wsp de seguimiento",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Lucila Edith Vereau Luján",
@@ -2275,7 +2389,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Mayerlin Melo Delgado",
@@ -2291,7 +2406,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "José Maximo Humberto Trillo",
@@ -2307,7 +2423,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luis Vasquez Medina",
@@ -2323,7 +2440,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Alina Ricsi",
@@ -2339,7 +2457,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Medicita Sua",
@@ -2355,7 +2474,8 @@
       "deal_note": "Busca MKT",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Raul Martinez",
@@ -2371,7 +2491,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carles Ortiz Urquiaga",
@@ -2387,7 +2508,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Chávez rivera Willian edu",
@@ -2403,7 +2525,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Julio Centeno",
@@ -2419,7 +2542,8 @@
       "deal_note": "Sin cartera mayorista. Recién quiere empezar a invertir en pauta",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Wilder Vasquez Chavez",
@@ -2435,7 +2559,8 @@
       "deal_note": "Nunca respondio. Se registro como indepemdiente",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Fernando Arias Rebolledo",
@@ -2451,7 +2576,8 @@
       "deal_note": "Nunca respondió",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Pedro Valdez",
@@ -2467,7 +2593,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Christian Diaz",
@@ -2483,7 +2610,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Hans Kevin",
@@ -2499,7 +2627,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Daniela Mori Bertetti",
@@ -2515,7 +2644,8 @@
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": "Alto Nivel",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Gonzalo Car",
@@ -2531,7 +2661,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Isaac Herrera Villafuerte",
@@ -2547,7 +2678,8 @@
       "deal_note": "No respondió tras seguimiento. De frente solicito portafolio y costos. No llegó por botón de wsp.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Edward Roberto Serrano Milla",
@@ -2563,7 +2695,8 @@
       "deal_note": "Nunca respondió wsp y no llegó al botón de wsp en la pauta",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Ruben Molina barraza",
@@ -2579,7 +2712,8 @@
       "deal_note": "Quiere talleres para su equipo.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Jacob Galarza Morales",
@@ -2595,7 +2729,8 @@
       "deal_note": "No es nuestro core, empresa informal, desea asesoria para la formalización.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Sara Nahir Alonzo Ortiz",
@@ -2611,7 +2746,8 @@
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Pedro",
@@ -2627,7 +2763,8 @@
       "deal_note": "No responde tras seguimiento. Venta de productos naturales a consumidor final. No brindó mayor detalle de volumen de leads",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carlos López",
@@ -2643,7 +2780,8 @@
       "deal_note": "Nunca respondió el Wsp . No llegó al botón de wsp.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Amdres Reyes",
@@ -2659,7 +2797,8 @@
       "deal_note": "Contrataron a un personal de confianza",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Medio",
-      "discard_reason": "No le interesa por ahora"
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
     },
     {
       "name": "Rodolfo Enrique Montoya Miniza",
@@ -2675,7 +2814,8 @@
       "deal_note": "Nunca respondió. No llegó al botón de wsp. Es una empresa de tercerización de servicios comerciales y captación de clientes (confirmado por fuentes públicas)",
       "estadio_lead": "Alto Nivel",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "karen Arrivasplata Vasquez",
@@ -2691,7 +2831,8 @@
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta y se registro con marca Entel",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carlos Peramás",
@@ -2707,7 +2848,8 @@
       "deal_note": "Respuesta mínima solo indicó cerrar venta. Luego silencio total, sin respuesta al seguimiento.",
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "kenny GS",
@@ -2723,7 +2865,8 @@
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Wilfredo Castro",
@@ -2739,7 +2882,8 @@
       "deal_note": "Nunca respondió wsp. No llegó al botón de wsp en la pauta.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Moises Fabian Acosta Talavera",
@@ -2755,7 +2899,8 @@
       "deal_note": "Nunca respondió. No llegó al botón de wsp en la pauta",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Bryan",
@@ -2771,7 +2916,8 @@
       "deal_note": "Nunca respondió Wsp. Su WhatsApp Business aparece con logo de  WIN. No llegó al botón de wsp en la pauta.",
       "estadio_lead": "En Crecimiento",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Fernando OE",
@@ -2787,7 +2933,8 @@
       "deal_note": "No asistió a reunión. Tras seguimiento ya no responde. No llegó al botón de wsp en la pauta",
       "estadio_lead": "Semilla",
       "nivel_urgencia": "Bajo",
-      "discard_reason": "No asistió a la reunión"
+      "discard_reason": "No asistió a la reunión",
+      "lead_quality": null
     },
     {
       "name": "Giardel R. Gervasi",
@@ -2803,7 +2950,8 @@
       "deal_note": "Se realizó seguimiento. No respondió tras propuesta de reunión.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Christian Christian",
@@ -2819,7 +2967,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Viviana Serrano Vega",
@@ -2835,7 +2984,8 @@
       "deal_note": "No califica. Indica que llegan sus clientes a través de referidos. Publico adulto mayor",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "JDaniel",
@@ -2851,7 +3001,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Daniel Parb",
@@ -2867,7 +3018,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Fabricio Castro",
@@ -2883,7 +3035,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Paul Saavedra Colmenares",
@@ -2899,7 +3052,8 @@
       "deal_note": "Nunca respondió wsp.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luis",
@@ -2915,7 +3069,8 @@
       "deal_note": "Nunca respondió",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Mario Llirod",
@@ -2931,7 +3086,8 @@
       "deal_note": "No responde wsp, no brinda mayor detalle. Solo indicó que vende terrenos.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Lucia Jimenez",
@@ -2947,7 +3103,8 @@
       "deal_note": "No calificable, solo se tiene respuesta automatizada de su asistente de IA",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Roberto",
@@ -2963,7 +3120,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Gladys Dávalos",
@@ -2979,7 +3137,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Gianina elizabeth Tirado Gonzales",
@@ -2995,7 +3154,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Fabian meza",
@@ -3011,7 +3171,8 @@
       "deal_note": "Nunca respondió wsp. Indicó en el formulario que era estudiante.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "María vela",
@@ -3027,7 +3188,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "cristofer correa",
@@ -3043,7 +3205,8 @@
       "deal_note": "Nunca respondió WhatsApp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Josue Marin",
@@ -3059,7 +3222,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Rolando Irvin Romero Villanueva",
@@ -3075,7 +3239,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Ivan Borjas Hilario",
@@ -3091,7 +3256,8 @@
       "deal_note": "Nunca respondió Wsp. No lleno datos de negocio en el formulario.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "yogamed",
@@ -3107,7 +3273,8 @@
       "deal_note": "Es un dealer/canal de reventa de WOW (proveedor de internet)",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "José Palomino",
@@ -3123,7 +3290,8 @@
       "deal_note": "No responde wsp de seguimiento. Solo respondió que preparan toda clase de lavadoras y refrigeradoras en Huancayo",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jose Zapata",
@@ -3139,7 +3307,8 @@
       "deal_note": "call center/BPO para público español, Busca generación de leads",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Johana Ardiles Escarza",
@@ -3155,7 +3324,8 @@
       "deal_note": "Nunca respondió Wsp. No llenó datos de negocio en el formulario.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Angel RS",
@@ -3171,7 +3341,8 @@
       "deal_note": "No responde wsp de seguimiento",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Eduardo Baldeón | IA + Hotmart + Ventas",
@@ -3187,7 +3358,8 @@
       "deal_note": "No brinda mayor detalle",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Oskar Kastro",
@@ -3203,7 +3375,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Sandro Vasquez",
@@ -3219,7 +3392,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Karina Puente de la Vega",
@@ -3235,7 +3409,8 @@
       "deal_note": "No tiene cartera de clientes. Actualmente cuenta únicamente con una persona comercial que trabaja bajo un esquema 100% variable (comisión), sin sueldo fijo. Su necesidad está orientada principalmente a desarrollar una cartera mayorista desde cero mediante prospección presencial en provincias, por lo que no presenta actualmente un encaje adecuado con nuestro modelo de servicios.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Eugenio Basilio Davila Paca",
@@ -3251,7 +3426,8 @@
       "deal_note": "Se propuso horario de reunió no responde. Solo indicó por chat que los leads le ingresan por meta y 1 persona le ayuda con el cierre.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Franco B",
@@ -3267,7 +3443,8 @@
       "deal_note": null,
       "estadio_lead": "Consolidado",
       "nivel_urgencia": "Medio",
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "JA Fre",
@@ -3283,7 +3460,8 @@
       "deal_note": "Busca MKT",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Luis Suazo",
@@ -3299,7 +3477,8 @@
       "deal_note": "Nunca respondió mensajes",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Bruno Rivera coello",
@@ -3315,7 +3494,8 @@
       "deal_note": "Requiere netamente MKT",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Pio Rondon Vera",
@@ -3331,7 +3511,8 @@
       "deal_note": "Descartado. Busca trabajo",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Eddy Fuño Becerril",
@@ -3347,7 +3528,8 @@
       "deal_note": "Registró formulario por segunda vez. Sí respondió la llamada esta vez. Se agendó reunión.",
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Tu Casa Con Luis Valladares",
@@ -3363,7 +3545,8 @@
       "deal_note": "Busca que le realicen el MKT. Descartado",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Carlos Felipe Arauco",
@@ -3379,7 +3562,8 @@
       "deal_note": "No brinda mayor información",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Axel.Morales",
@@ -3395,7 +3579,8 @@
       "deal_note": "Solo respondió CRM. No brindó más respuesta a los mensajes de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Aprendo Comodo",
@@ -3411,7 +3596,8 @@
       "deal_note": "No responde. Después de 2 wsp de seguimiento",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jose Luis Piñella Marquez",
@@ -3427,7 +3613,8 @@
       "deal_note": "No calificado, sin base de datos",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Mario Augusto Garcės Fiol",
@@ -3443,7 +3630,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Zupa Pao",
@@ -3459,7 +3647,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Cesar Abraham Bocanegra Benites",
@@ -3475,7 +3664,8 @@
       "deal_note": "Indica ser negocio pequeño aún sin mucha presencia en redes y quiere enfocarse a publicitar por redes. No aplica.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "marco barrantes bay",
@@ -3491,7 +3681,8 @@
       "deal_note": "Busca que le realicen el MKT digital",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Andrés Jiménez",
@@ -3507,7 +3698,8 @@
       "deal_note": "Nunca respondio wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Dilmer Junior",
@@ -3523,7 +3715,8 @@
       "deal_note": "Sin negocio formal",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Edgar Choquecahua Aguilar",
@@ -3539,7 +3732,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Anthony Reyes",
@@ -3555,7 +3749,8 @@
       "deal_note": "Contacto no responde",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "jorge.noa.95@gmail.com",
@@ -3571,7 +3766,8 @@
       "deal_note": "Nunca respondió Wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luis Muñoz",
@@ -3587,7 +3783,8 @@
       "deal_note": "No aplica. Busca solo realizar una venta puntual de botellas de vino",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Ricardo Giraldo",
@@ -3603,7 +3800,8 @@
       "deal_note": "De frente Solicitó reunión. No asistió a la reunió acordada. Indica que avisará fecha y hora disponible para la reprogramación. Se realiza seguimiento indica que revisará agenda. Se volvió hacer seguimiento y no respondió más.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No asistió a la reunión"
+      "discard_reason": "No asistió a la reunión",
+      "lead_quality": null
     },
     {
       "name": "Ricardo Gonzalez",
@@ -3619,7 +3817,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Antony Chinchay",
@@ -3635,7 +3834,8 @@
       "deal_note": "No responde despues de 2 intentos.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Fredy Garay",
@@ -3651,7 +3851,8 @@
       "deal_note": "No responde. Indicó que lo contacten después del 20 porque estará de viaje en provincia. Se le realizó seguimiento después de esa fecha y nunca más volvió a responder.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Cacao Peruano",
@@ -3667,7 +3868,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Robert Alva",
@@ -3683,7 +3885,8 @@
       "deal_note": "No responde despues de 2 wsp de seguimiento",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Pablo",
@@ -3699,7 +3902,8 @@
       "deal_note": "Proyecto aún sin canales de Leads. Están buscando MKT y consideran que podrian tener 100 leads mensuales.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Busca solo marketing o CRM"
+      "discard_reason": "Busca solo marketing o CRM",
+      "lead_quality": null
     },
     {
       "name": "Juan carlos Urquizo",
@@ -3715,7 +3919,8 @@
       "deal_note": "Ya no brinda mayor respuesta.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Joao Riega",
@@ -3731,7 +3936,8 @@
       "deal_note": "Busca que le brindemos cartera de clientes.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Cristhian Vega Pastor",
@@ -3747,7 +3953,8 @@
       "deal_note": "No calificado – dealer/canal de operadora",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "hector jimenez",
@@ -3763,7 +3970,8 @@
       "deal_note": "No brinda información",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carlos Segura",
@@ -3779,7 +3987,8 @@
       "deal_note": "\"No calificado – dealer/canal de operadora\"",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Manuel Huaman",
@@ -3795,7 +4004,8 @@
       "deal_note": "Se ha reprogramado 2 veces la reunión. Indica que el Jueves 12  me confirmará horarios disponibles. Se le realiza seguimiento pero ya no responde.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Carlos Medina",
@@ -3811,7 +4021,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Enrique Ramírez",
@@ -3827,7 +4038,8 @@
       "deal_note": "No responde - Se envió 2 wsp de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Dante Favarato",
@@ -3843,7 +4055,8 @@
       "deal_note": "No aplica / Postulación laboral",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)"
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
     },
     {
       "name": "Antony Soto",
@@ -3859,7 +4072,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Paolo Gabriel Nuñez Sotelo",
@@ -3875,7 +4089,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Cesar Vicente Ore Tarqui",
@@ -3891,7 +4106,8 @@
       "deal_note": "Asistió a la reunión (tras reprogramar). El motivo real de descarte: pedía que XSell generara la cartera de clientes desde cero (sin leads propios, sin pauta), pagando solo por venta realizada",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Aún no invierte en pauta"
+      "discard_reason": "Aún no invierte en pauta",
+      "lead_quality": null
     },
     {
       "name": "Efrain Arellano Solano",
@@ -3907,7 +4123,8 @@
       "deal_note": "Se agendo primera reunión no asistió, Se escribió para reporgramar no responde.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No asistió a la reunión"
+      "discard_reason": "No asistió a la reunión",
+      "lead_quality": null
     },
     {
       "name": "Carlos alva",
@@ -3923,7 +4140,8 @@
       "deal_note": "No responde después de 2 wsp de seguimiento",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Fabian.",
@@ -3939,7 +4157,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Mayra Arias",
@@ -3955,7 +4174,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "melissa perez",
@@ -3971,7 +4191,8 @@
       "deal_note": "No responde wsp. Buscaba cartera de clientes.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Elizabeth Vizcarra Pacchioni",
@@ -3987,7 +4208,8 @@
       "deal_note": "Se le contactó 2 veces no responde",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "German Jesus Corra Flores",
@@ -4003,7 +4225,8 @@
       "deal_note": "No responde Wsp. Se realizó seguimiento 2 veces",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Manolo Ríos",
@@ -4019,7 +4242,8 @@
       "deal_note": "No responde. Se realizó seguimiento 2 veces",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Jorge Salas Rojas",
@@ -4035,7 +4259,8 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null
+      "discard_reason": null,
+      "lead_quality": null
     },
     {
       "name": "Leonidas Bances Damián",
@@ -4051,7 +4276,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Roque Hipolito Saavedra Quino",
@@ -4067,7 +4293,8 @@
       "deal_note": "Persona natural sin negocio. Tampoco escribe a nombre de ninguna empresa. No aplica para perfil de nuestros clientes.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Independiente / sin empresa"
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
     },
     {
       "name": "Juan Jose Mayaute Cordova",
@@ -4083,7 +4310,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luis Alberto Castillo Leon",
@@ -4099,7 +4327,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Alfonso De La Cruz Rivera",
@@ -4115,7 +4344,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Paulino Llanque Cutipa",
@@ -4131,7 +4361,8 @@
       "deal_note": "No responde wsp. Seguimiento 2 veces. No lleno nombre de empresa en  formulario.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Albino Marcial Rodriguez Abarca",
@@ -4147,7 +4378,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Alfredo Fuentes Bolivar",
@@ -4163,7 +4395,8 @@
       "deal_note": "No responde despues de 2 wsp de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Sofonias Montoya Cajalean",
@@ -4179,7 +4412,8 @@
       "deal_note": "Nunca respondió wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Luis Angel Carrasco Garcia",
@@ -4195,7 +4429,8 @@
       "deal_note": "No responde después de 2 wsp de seguimiento.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     },
     {
       "name": "Ruben Huaman Pineda",
@@ -4211,7 +4446,8 @@
       "deal_note": "Nunca respondió Wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "No respondió (llamada ni WhatsApp)"
+      "discard_reason": "No respondió (llamada ni WhatsApp)",
+      "lead_quality": null
     }
   ],
   "reuniones_auto": 8,
