@@ -504,7 +504,7 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Embudo: de la impresión al registro</h2><span class="hint" id="fxHint">Sigue el rango de fechas de arriba</span></div>
+    <div class="section-head"><h2>Embudo: de la impresión al lead de calidad</h2><span class="hint" id="fxHint">Sigue el rango de fechas de arriba</span></div>
     <div class="chart-card">
       <div class="fx-controls">
         <span class="tile-label" style="margin:0;">Ver</span>
@@ -4091,8 +4091,7 @@
     return ((S.data && S.data.leads_detail) || []).filter(l => fxIn((l.created_date || '').slice(0, 10)) && !/whatsapp/i.test(l.lead_source || ''));
   }
   function isQuality(l){
-    // Es lead de calidad mientras Ingrid no lo descarte (lo que descarta solo el formulario, sin que nadie lo haya gestionado, tampoco cuenta)
-    return state(l) !== 'desc';
+    return l.lead_quality === 'calidad';
   }
   function fxStats(rows, regs){
     const a = sumRows(rows);
@@ -4136,15 +4135,16 @@
       const steps = [
         { l: 'Impresiones', sub: 'veces que se mostró el anuncio', v: st.impressions, c: 'linear-gradient(90deg,#5D17A0,#7B2BC9)' },
         { l: 'Abrieron el formulario', sub: 'clics en el enlace', v: st.open, c: 'linear-gradient(90deg,#5D17A0,#7B2BC9)' },
-        { l: 'Enviaron el formulario', sub: 'registros en HubSpot', v: st.sent, c: 'linear-gradient(90deg,#FF6B13,#FFA366)' }
+        { l: 'Enviaron el formulario', sub: 'registros en HubSpot', v: st.sent, c: 'linear-gradient(90deg,#FF6B13,#FFA366)' },
+        { l: 'Leads de calidad', sub: 'marcados en HubSpot (Calidad del lead)', v: st.qual, c: 'var(--good)' }
       ];
       const max = Math.max(1, steps[0].v);
-      let html = `<p class="fx-title"><strong>${esc(sc.label)}</strong> · inversión ${money(st.spend)}${st.sent ? ' · costo por registro ' + money(st.spend / st.sent) : ''}</p>`;
+      let html = `<p class="fx-title"><strong>${esc(sc.label)}</strong> · inversión ${money(st.spend)}</p>`;
       steps.forEach((s2, i) => {
         const prev = i ? steps[i - 1].v : null;
         const w = Math.max(3, Math.sqrt(s2.v / max) * 100);
         html += `<div class="fx-step"><div class="fx-label">${s2.l}<small>${s2.sub}</small></div>
-          <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
+          <div class="fx-track"><div class="fx-fill" style="width:${w}%;background:${s2.c}${i === 3 ? ';color:#06210f' : ''}">${w >= 14 ? fmt(s2.v) : ''}</div>${w >= 14 ? '' : `<span class="fx-out" style="left:calc(${w}% + 8px)">${fmt(s2.v)}</span>`}</div>
           <div class="fx-nums">${i ? `<b>${fxPct(s2.v, prev)}</b> del paso anterior<br>` : ''}${i ? `${fxPct(s2.v, st.impressions)} de las impresiones` : '&nbsp;'}</div></div>`;
         if (i === 1) html += `<div class="fx-aband"><div><strong>Abandonaron el formulario: ${fmt(st.aband)}</strong> (${fxPct(st.aband, st.open)} de los que lo abrieron). Lo abrieron ${fmt(st.open)} y lo enviaron ${fmt(st.sent)}.</div></div>`;
       });
@@ -4152,7 +4152,7 @@
     }
     const diff = st.metaSent - st.sent;
     $('fxNote').textContent = (diff !== 0 ? `Enviaron el formulario = registros que están en HubSpot. Meta cuenta ${fmt(st.metaSent)} formularios; la diferencia (${fmt(Math.abs(diff))}) son formularios que Meta cuenta y no figuran en HubSpot, o registros sin anuncio identificado. ` : '') +
-      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos.' +
+      'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Lead de calidad = negocio que Ingrid marca como "Lead de calidad" en el campo Calidad del lead de HubSpot.' +
       (S.fx.level !== 'all' ? ' Los registros sin anuncio identificado solo cuentan en la vista General.' : '');
     // ---- comparativo ----
     const by = S.fx.by;
@@ -4166,9 +4166,9 @@
     } else {
       list = fxEntries(by).sort((a, b) => b.st.spend - a.st.spend).map(e => ({ name: e.name + (by === 'ads' ? ' · ' + (e.adset_name || '') : ''), st: e.st }));
     }
-    const th = ['', 'Inversión', 'Impresiones', 'Abrieron form.', 'Enviaron form. (HubSpot)', 'Abandonaron', '% abandono', 'Costo por registro'];
+    const th = ['', 'Inversión', 'Impresiones', 'Abrieron form.', 'Enviaron form. (HubSpot)', 'Abandonaron', '% abandono', 'Leads de calidad', '% calidad'];
     const tot = fxStats(sc.rows, sc.regs);
-    const row = (n, x, b) => `<tr${b ? ' style="font-weight:700"' : ''}><td>${esc(n)}</td><td>${money(x.spend)}</td><td>${fmt(x.impressions)}</td><td>${fmt(x.open)}</td><td>${fmt(x.sent)}</td><td>${fmt(x.aband)}</td><td>${fxPct(x.aband, x.open)}</td><td>${x.sent ? money(x.spend / x.sent) : '—'}</td></tr>`;
+    const row = (n, x, b) => `<tr${b ? ' style="font-weight:700"' : ''}><td>${esc(n)}</td><td>${money(x.spend)}</td><td>${fmt(x.impressions)}</td><td>${fmt(x.open)}</td><td>${fmt(x.sent)}</td><td>${fmt(x.aband)}</td><td>${fxPct(x.aband, x.open)}</td><td>${fmt(x.qual)}</td><td>${fxPct(x.qual, x.sent)}</td></tr>`;
     th[0] = { day: 'Día', week: 'Semana', adsets: 'Conjunto de anuncios', ads: 'Anuncio' }[by];
     $('fxTable').innerHTML = `<thead><tr>${th.map(t => `<th>${t}</th>`).join('')}</tr></thead><tbody>${list.length ? list.map(x => row(x.name, x.st)).join('') + (by === 'adsets' || by === 'ads' ? '' : row('Total del rango', tot, true)) : `<tr><td colspan="${th.length}" class="table-sub">Sin datos de formulario en este rango.</td></tr>`}</tbody>`;
   }
