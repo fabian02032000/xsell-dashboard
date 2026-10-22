@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-22T13:05:08.742769+00:00",
+  "updated_at": "2026-10-22T14:50:33.156221+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 239,
+  "total_leads": 240,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -317,7 +317,7 @@
     },
     {
       "date": "2026-10-22",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -345,7 +345,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 63,
+      "leads": 64,
       "goal": 74.0,
       "is_partial": false
     }
@@ -432,18 +432,18 @@
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 63,
+  "current_month_leads": 64,
   "current_month_label": "October 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 235,
+  "leads_with_deal": 239,
   "leads_detail": [
     {
       "name": "Pedro villa",
@@ -452,10 +452,27 @@
       "company": "As",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-22",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "As",
+      "deal_id": "66544376944",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Jairo Santos",
+      "email": "jairosantos@jobisa.pe",
+      "phone": "+51969147532",
+      "company": "Importaciones Textil London",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-22",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Importaciones Textil London",
+      "deal_id": "66544377099",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -469,10 +486,10 @@
       "company": "Caras bonitas",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Caras bonitas",
+      "deal_id": "66544748290",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -486,10 +503,10 @@
       "company": "AutoPlan Financiamiento Vehicular",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-21",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "AutoPlan Financiamiento Vehicular",
+      "deal_id": "66544686394",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -4517,7 +4534,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 10
+      "count": 14
     },
     {
       "label": "Reunión Agendadas",
@@ -4525,7 +4542,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
