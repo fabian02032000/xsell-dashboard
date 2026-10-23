@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-23T00:01:46.602529+00:00",
+  "updated_at": "2026-10-23T00:42:48.739794+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 241,
+  "total_leads": 242,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -317,7 +317,7 @@
     },
     {
       "date": "2026-10-22",
-      "count": 3
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -345,7 +345,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 65,
+      "leads": 66,
       "goal": 74.0,
       "is_partial": false
     }
@@ -432,13 +432,13 @@
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "leads": 9,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 65,
+  "current_month_leads": 66,
   "current_month_label": "October 2026",
-  "current_week_leads": 9,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -490,6 +490,23 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "LM Servicios comerciales",
       "deal_id": "66642453089",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Richard Palomino Romano",
+      "email": "ropr1969@gmail.com",
+      "phone": "+51966302588",
+      "company": "Asociate Perú",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-22",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -4559,7 +4576,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
