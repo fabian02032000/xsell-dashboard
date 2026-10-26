@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-26T14:09:52.150744+00:00",
+  "updated_at": "2026-10-26T15:35:45.529412+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 246,
+  "total_leads": 249,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -326,6 +326,10 @@
     {
       "date": "2026-10-24",
       "count": 2
+    },
+    {
+      "date": "2026-10-26",
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -353,7 +357,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 70,
+      "leads": 73,
       "goal": 74.0,
       "is_partial": false
     }
@@ -446,19 +450,70 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 0,
+      "leads": 3,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 70,
+  "current_month_leads": 73,
   "current_month_label": "October 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 3,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 242,
+  "leads_with_deal": 247,
   "leads_detail": [
+    {
+      "name": "Koky Kanano Junior",
+      "email": "jaec_28@hotmail.com",
+      "phone": "+51986729789",
+      "company": "Jorge Effio Agente Inmobiliario",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-26",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Koky Kanano Junior",
+      "deal_id": "66730561282",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
+    },
+    {
+      "name": "Eduardo Javier Quispe Cortés",
+      "email": "ejquispecortes@gmail.com",
+      "phone": "+51931770593",
+      "company": "MiFibra",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-26",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "E Y B Celulares ",
+      "deal_id": "66730747230",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Renato Zavala",
+      "email": "renato.zavala@terragest.pe",
+      "phone": "+51978959303",
+      "company": "Terragest",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-26",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Arturo Fonseca",
       "email": "afonseca@automovilestoyota.com.pe",
@@ -466,10 +521,10 @@
       "company": "Arturo Company",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-24",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Arturo Company",
+      "deal_id": "66730870575",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -483,10 +538,10 @@
       "company": "Grupo Onnesta",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-24",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Onnesta ",
+      "deal_id": "66730808845",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -517,14 +572,14 @@
       "company": "Inmobiliaria V de vendeta",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-23",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Inmobiliaria V de vendeta",
+      "deal_id": "66730622573",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Llenó el formulario por error",
       "lead_quality": null
     },
     {
@@ -4646,11 +4701,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 217
+      "count": 219
     },
     {
       "label": "Prospectos Contactados",
-      "count": 17
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
@@ -4658,7 +4713,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
