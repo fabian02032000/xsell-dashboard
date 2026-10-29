@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-29T00:13:25.524701+00:00",
+  "updated_at": "2026-10-29T05:49:44.274628+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 249,
+  "total_leads": 252,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -330,6 +330,14 @@
     {
       "date": "2026-10-26",
       "count": 3
+    },
+    {
+      "date": "2026-10-28",
+      "count": 2
+    },
+    {
+      "date": "2026-10-29",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -357,7 +365,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 73,
+      "leads": 76,
       "goal": 74.0,
       "is_partial": false
     }
@@ -450,19 +458,70 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 3,
+      "leads": 6,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 73,
+  "current_month_leads": 76,
   "current_month_label": "October 2026",
-  "current_week_leads": 3,
+  "current_week_leads": 6,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 248,
   "leads_detail": [
+    {
+      "name": "Piero Marini Romero",
+      "email": "cocorolero@gmail.com",
+      "phone": "+51944474570",
+      "company": "Grupo Romero",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Yeferson Carrion",
+      "email": "yeferson.carrion@gacsa.pe",
+      "phone": "+51965446459",
+      "company": "Wigo motors",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-28",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "ysaac Rodriguez",
+      "email": "saki_rodriguez@hotmail.com",
+      "phone": "+34923546459",
+      "company": "Ambacar",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-28",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Koky Kanano Junior",
       "email": "jaec_28@hotmail.com",
@@ -4713,7 +4772,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 4
     }
   ],
   "warm_audience_exclude_estadios": [
