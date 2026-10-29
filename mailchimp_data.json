@@ -1,17 +1,8 @@
 {
-  "updated_at": "2026-10-29T11:49:47.081659+00:00",
-  "available": true,
-  "error": null,
-  "summary": {
-    "total_campaigns": 0,
-    "total_recipients_all": 0,
-    "avg_open_rate": null,
-    "avg_click_rate": null,
-    "total_bounces": 0,
-    "total_unsubscribes": 0,
-    "industry_avg_open_rate": null,
-    "industry_avg_click_rate": null
-  },
+  "updated_at": "2026-10-29T17:37:52.901351+00:00",
+  "available": false,
+  "error": "Mailchimp devolvió un error al pedir la lista de campañas (403). Revisa que el API Key siga siendo válido.",
+  "summary": {},
   "campaigns": [],
   "latest_campaign_html": null
 }

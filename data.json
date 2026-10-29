@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T12:12:42.203990+00:00",
+  "updated_at": "2026-10-29T17:36:55.729003+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -469,7 +469,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 248,
+  "leads_with_deal": 251,
   "leads_detail": [
     {
       "name": "Piero Marini Romero",
@@ -478,10 +478,10 @@
       "company": "Grupo Romero",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Grupo Romero",
+      "deal_id": "66966150540",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -495,10 +495,10 @@
       "company": "Wigo motors",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-28",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "GACSA ",
+      "deal_id": "66949337730",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -512,14 +512,14 @@
       "company": "Ambacar",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-28",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Ambacar",
+      "deal_id": "66966032453",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Número equivocado",
       "lead_quality": null
     },
     {
@@ -4760,11 +4760,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 220
+      "count": 221
     },
     {
       "label": "Prospectos Contactados",
-      "count": 20
+      "count": 22
     },
     {
       "label": "Reunión Agendadas",
@@ -4772,7 +4772,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
