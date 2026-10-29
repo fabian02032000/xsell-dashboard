@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-29T18:30:51.535770+00:00",
+  "updated_at": "2026-10-29T22:00:05.257201+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 252,
+  "total_leads": 253,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -337,7 +337,7 @@
     },
     {
       "date": "2026-10-29",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -365,7 +365,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 76,
+      "leads": 77,
       "goal": 74.0,
       "is_partial": false
     }
@@ -458,13 +458,13 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 6,
+      "leads": 7,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 76,
+  "current_month_leads": 77,
   "current_month_label": "October 2026",
-  "current_week_leads": 6,
+  "current_week_leads": 7,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -482,6 +482,23 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Grupo Romero",
       "deal_id": "66966150540",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Madeleine Emilia Pomaceno",
+      "email": "madeleinepomaceno@gmail.com",
+      "phone": "+51994663563",
+      "company": "madeleine pomaceno leon",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -4772,7 +4789,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
