@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-30T02:25:53.494039+00:00",
+  "updated_at": "2026-10-30T07:50:43.989821+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 253,
+  "total_leads": 254,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -337,7 +337,7 @@
     },
     {
       "date": "2026-10-29",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -365,7 +365,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 77,
+      "leads": 78,
       "goal": 74.0,
       "is_partial": false
     }
@@ -458,13 +458,13 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 7,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 77,
+  "current_month_leads": 78,
   "current_month_label": "October 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -493,6 +493,23 @@
       "email": "madeleinepomaceno@gmail.com",
       "phone": "+51994663563",
       "company": "madeleine pomaceno leon",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-29",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Mauro de la Barra",
+      "email": "mdelabarra@pandero.com.pe",
+      "phone": "+51991755604",
+      "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-29",
       "has_deal": false,
@@ -4789,7 +4806,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 3
     }
   ],
   "warm_audience_exclude_estadios": [
