@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T14:36:29.854677+00:00",
+  "updated_at": "2026-10-30T15:29:30.781496+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -473,7 +473,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 251,
+  "leads_with_deal": 254,
   "leads_detail": [
     {
       "name": "Carlos Torres Cabrera",
@@ -482,14 +482,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-30",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Carlos  Torres Cabrera",
+      "deal_id": "67153371544",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -499,10 +499,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-30",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "David Guevara Falla",
+      "deal_id": "67167659889",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -550,10 +550,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-29",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Mauro de la Barra",
+      "deal_id": "67153433245",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -721,13 +721,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "As",
       "deal_id": "66544376944",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Número equivocado",
       "lead_quality": null
     },
     {
@@ -741,7 +741,7 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Importaciones Textil London",
       "deal_id": "66544377099",
-      "deal_note": null,
+      "deal_note": "Se encuentra de vacaciones. Regresa la segunda semana de noviembre.",
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": null,
@@ -755,13 +755,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-22",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "LM Servicios comerciales",
       "deal_id": "66642453089",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Aún no invierte en pauta",
       "lead_quality": null
     },
     {
@@ -789,13 +789,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Caras bonitas",
       "deal_id": "66544748290",
-      "deal_note": null,
+      "deal_note": "Nos responde su IA y no nos deriva",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No se llegó al decisor",
       "lead_quality": null
     },
     {
@@ -806,13 +806,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-21",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "AutoPlan Financiamiento Vehicular",
       "deal_id": "66544686394",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -840,13 +840,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-20",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Concreat",
       "deal_id": "66400848916",
-      "deal_note": null,
+      "deal_note": "No está buscando servicios. Está buscando socio capitalista",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
       "lead_quality": null
     },
     {
@@ -942,13 +942,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-16",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Colegio Militar \"Leoncio Prado\" CMLP-Callao",
       "deal_id": "66138336683",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -959,13 +959,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-15",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "ETtoday",
       "deal_id": "66021773227",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No le interesa por ahora",
       "lead_quality": null
     },
     {
@@ -976,13 +976,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-14",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Lizbeth Taboada ",
       "deal_id": "66021702176",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -1163,13 +1163,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-12",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Feria De Carros los Brothers",
       "deal_id": "65902544663",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -4832,11 +4832,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 224
+      "count": 234
     },
     {
       "label": "Prospectos Contactados",
-      "count": 19
+      "count": 12
     },
     {
       "label": "Reunión Agendadas",
@@ -4844,7 +4844,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
