@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-30T08:51:21.268782+00:00",
+  "updated_at": "2026-10-30T14:36:29.854677+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 254,
+  "total_leads": 256,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -338,6 +338,10 @@
     {
       "date": "2026-10-29",
       "count": 3
+    },
+    {
+      "date": "2026-10-30",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -365,7 +369,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 78,
+      "leads": 80,
       "goal": 74.0,
       "is_partial": false
     }
@@ -458,19 +462,53 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 8,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 78,
+  "current_month_leads": 80,
   "current_month_label": "October 2026",
-  "current_week_leads": 8,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 251,
   "leads_detail": [
+    {
+      "name": "Carlos Torres Cabrera",
+      "email": "carwill061@gmail.com",
+      "phone": "+51979740880",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-30",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "David Guevara Falla",
+      "email": "extrategiadavid@yahoo.es",
+      "phone": "+51949880522",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-30",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Piero Marini Romero",
       "email": "cocorolero@gmail.com",
@@ -955,13 +993,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-13",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Stevia Coronel ",
       "deal_id": "65949567052",
       "deal_note": null,
       "estadio_lead": "Semilla",
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -1907,13 +1945,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-28",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Pintaza",
       "deal_id": "65309347341",
       "deal_note": null,
       "estadio_lead": "Alto Nivel",
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Negocio muy pequeño o pocos leads",
       "lead_quality": null
     },
     {
@@ -2094,13 +2132,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-09-27",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "JS INDUSTRIAL",
       "deal_id": "65309286032",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -4794,11 +4832,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 221
+      "count": 224
     },
     {
       "label": "Prospectos Contactados",
-      "count": 22
+      "count": 19
     },
     {
       "label": "Reunión Agendadas",
@@ -4806,7 +4844,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 5
     }
   ],
   "warm_audience_exclude_estadios": [
