@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-31T08:56:20.393057+00:00",
+  "updated_at": "2026-10-31T14:49:59.431118+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 257,
+  "total_leads": 258,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -345,7 +345,7 @@
     },
     {
       "date": "2026-10-31",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -373,7 +373,7 @@
     {
       "month": "2026-10",
       "label": "October 2026",
-      "leads": 81,
+      "leads": 82,
       "goal": 74.0,
       "is_partial": false
     }
@@ -466,13 +466,13 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 11,
+      "leads": 12,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 81,
+  "current_month_leads": 82,
   "current_month_label": "October 2026",
-  "current_week_leads": 11,
+  "current_week_leads": 12,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -484,6 +484,23 @@
       "email": "hilmatimper@gmail.com",
       "phone": "+51986353974",
       "company": "Vendo edificio frente al mar",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-10-31",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Fredy Rafael Moreno Chavez",
+      "email": "fredylibra2017@hotmail.com",
+      "phone": "+51982094156",
+      "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-31",
       "has_deal": false,
@@ -4865,7 +4882,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 4
     }
   ],
   "warm_audience_exclude_estadios": [
