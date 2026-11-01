@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-01T14:41:53.516822+00:00",
+  "updated_at": "2026-11-01T19:02:24.182412+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 259,
+  "total_leads": 262,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -349,7 +349,7 @@
     },
     {
       "date": "2026-11-01",
-      "count": 1
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -384,7 +384,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 1,
+      "leads": 4,
       "goal": 74.0,
       "is_partial": false
     }
@@ -477,13 +477,13 @@
     {
       "week_start": "2026-10-26",
       "week_end": "2026-11-01",
-      "leads": 13,
+      "leads": 16,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 1,
+  "current_month_leads": 4,
   "current_month_label": "November 2026",
-  "current_week_leads": 13,
+  "current_week_leads": 16,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -495,6 +495,57 @@
       "email": "(sin correo)",
       "phone": "+51987826023",
       "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-01",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Javier Rafael Ramírez Ocas",
+      "email": "rafaelocas806@gmail.com",
+      "phone": "+51948815564",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-01",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Araceli Mejia Ramos",
+      "email": "aracelimejiaramos@gmail.com",
+      "phone": "+51999065269",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-01",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Santiago Elescano",
+      "email": "gerencia@ciacontinental.com",
+      "phone": "+51996211150",
+      "company": "CORPORACION ELESCANO SAC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
       "has_deal": false,
@@ -4905,12 +4956,12 @@
       "count": 12
     },
     {
-      "label": "Reunión Agendadas",
+      "label": "Sin negocio",
       "count": 8
     },
     {
-      "label": "Sin negocio",
-      "count": 5
+      "label": "Reunión Agendadas",
+      "count": 8
     }
   ],
   "warm_audience_exclude_estadios": [
