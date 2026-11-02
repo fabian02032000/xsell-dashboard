@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T15:54:31.080225Z",
+  "generated_at": "2026-11-02T19:00:31.035593Z",
   "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
@@ -39,7 +39,7 @@
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-10-26",
+      "last_checked_ok": "2026-11-02",
       "status": "ok",
       "history": [
         {
@@ -77,6 +77,10 @@
         {
           "date": "2026-10-26",
           "active_ads_count": 21
+        },
+        {
+          "date": "2026-11-02",
+          "active_ads_count": 21
         }
       ]
     },
@@ -86,38 +90,38 @@
       "country": "CO",
       "country_label": "Colombia (alcance regional)",
       "profile": "Agencia de prospección B2B: agenda reuniones calificadas para empresas de tecnología/software.",
-      "active_ads_count": 9,
-      "search_match_count": 9,
+      "active_ads_count": 6,
+      "search_match_count": 8,
       "oldest_active_since": "2026-09-29",
-      "newest_active_since": "2026-10-23",
+      "newest_active_since": "2026-10-29",
       "sample_ads": [
         {
           "since": "2026-09-29",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         },
         {
-          "since": "2026-10-08",
-          "text": "¿Tu empresa de software sigue consiguiendo proyectos únicamente por referidos?"
-        },
-        {
           "since": "2026-10-13",
           "text": "Solo para Software Factories o partners de Odoo"
         },
         {
-          "since": "2026-10-13",
-          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+          "since": "2026-10-29",
+          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
         },
         {
-          "since": "2026-10-13",
-          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+          "since": "2026-10-29",
+          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
         },
         {
-          "since": "2026-10-23",
+          "since": "2026-10-29",
+          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-10-29",
           "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-10-26",
+      "last_checked_ok": "2026-11-02",
       "status": "ok",
       "history": [
         {
@@ -155,6 +159,10 @@
         {
           "date": "2026-10-26",
           "active_ads_count": 9
+        },
+        {
+          "date": "2026-11-02",
+          "active_ads_count": 6
         }
       ]
     },
