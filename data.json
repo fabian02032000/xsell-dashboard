@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-02T09:22:02.226311+00:00",
+  "updated_at": "2026-11-02T18:47:43.281245+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 265,
+  "total_leads": 267,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -353,7 +353,7 @@
     },
     {
       "date": "2026-11-02",
-      "count": 1
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -388,7 +388,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 7,
+      "leads": 9,
       "goal": 74.0,
       "is_partial": false
     }
@@ -487,18 +487,18 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 1,
+      "leads": 3,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 7,
+  "current_month_leads": 9,
   "current_month_label": "November 2026",
-  "current_week_leads": 1,
+  "current_week_leads": 3,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 254,
+  "leads_with_deal": 265,
   "leads_detail": [
     {
       "name": "Carolyn Rendon",
@@ -507,14 +507,48 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-02",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Carolyn Rendon",
+      "deal_id": "67153476679",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Luis Peralta Ramirez",
+      "email": "luisbeto_peralta@yahoo.com",
+      "phone": "+51998117351",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Luis Peralta Ramirez",
+      "deal_id": "67307177300",
+      "deal_note": "Persona mayor. Indica que seguro le dio clic al formulario por error. No está interesado en ningún servicio.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Llenó el formulario por error",
+      "lead_quality": null
+    },
+    {
+      "name": "Alicia Vergara Zavala",
+      "email": "alivanza30@gmail.com",
+      "phone": "+51949305515",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-02",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Alicia Vergara Zavala",
+      "deal_id": "67307297079",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
       "lead_quality": null
     },
     {
@@ -524,14 +558,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Cesar Augusto Florez Castro",
+      "deal_id": "67167578757",
+      "deal_note": "Pintor, persona independiente sin empresa.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -541,10 +575,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Javier Rafael Ramírez Ocas",
+      "deal_id": "67153476002",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -558,10 +592,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Araceli Mejia Ramos",
+      "deal_id": "67167702666",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -575,14 +609,14 @@
       "company": "CORPORACION ELESCANO SAC",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "CORPORACION ELESCANO SAC",
+      "deal_id": "67307235255",
+      "deal_note": "Detalle del descarte: Completó el formulario, pero busca contratar asesores para un servicio in-house y no quiere tercerizar.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
       "lead_quality": null
     },
     {
@@ -592,10 +626,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Augusto Vargas Cabanillas",
+      "deal_id": "67167702928",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -609,14 +643,14 @@
       "company": "inmobiliaria",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-01",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "inmobiliaria",
+      "deal_id": "67153602152",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Aún no invierte en pauta",
       "lead_quality": null
     },
     {
@@ -626,10 +660,10 @@
       "company": "Vendo edificio frente al mar",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-31",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Vendo edificio frente al mar",
+      "deal_id": "67153601171",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -643,14 +677,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-10-31",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Fredy Rafael Moreno Chavez",
+      "deal_id": "67307234642",
+      "deal_note": "Vende ropa en el mercado de SJM. No invierte en pauta",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Aún no invierte en pauta",
       "lead_quality": null
     },
     {
@@ -5010,19 +5044,19 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 234
+      "count": 240
     },
     {
       "label": "Prospectos Contactados",
-      "count": 12
-    },
-    {
-      "label": "Sin negocio",
-      "count": 11
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
       "count": 8
+    },
+    {
+      "label": "Sin negocio",
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
