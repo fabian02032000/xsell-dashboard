@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T16:48:29.628432+00:00",
+  "updated_at": "2026-11-04T21:54:20.712752+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -584,13 +584,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-03",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Edgar Garay Callalli",
       "deal_id": "67368725079",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Aún no invierte en pauta",
       "lead_quality": null
     },
     {
@@ -5154,11 +5154,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 242
+      "count": 243
     },
     {
       "label": "Prospectos Contactados",
-      "count": 21
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
