@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-04T08:50:20.492643+00:00",
+  "updated_at": "2026-11-04T16:12:38.696882+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 272,
+  "total_leads": 273,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -361,7 +361,7 @@
     },
     {
       "date": "2026-11-04",
-      "count": 1
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -396,7 +396,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 14,
+      "leads": 15,
       "goal": 74.0,
       "is_partial": false
     }
@@ -495,18 +495,18 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 8,
+      "leads": 9,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 14,
+  "current_month_leads": 15,
   "current_month_label": "November 2026",
-  "current_week_leads": 8,
+  "current_week_leads": 9,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 267,
+  "leads_with_deal": 271,
   "leads_detail": [
     {
       "name": "Diego Alonso Ortiz Rodriguez",
@@ -515,14 +515,31 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-04",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Diego Alonso Ortiz Rodríguez",
+      "deal_id": "67368846387",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Carlos Alberto Ballico",
+      "email": "ballicocarlos@gmail.com",
+      "phone": "+51976692202",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-04",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Carlos Alberto Ballico",
+      "deal_id": "67368846445",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Llenó el formulario por error",
       "lead_quality": null
     },
     {
@@ -566,10 +583,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Edgar Garay Callalli",
+      "deal_id": "67368725079",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -583,11 +600,11 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-03",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Elba Maria Mónica Mujica Oviedo",
+      "deal_id": "67368303117",
+      "deal_note": "Instituto Esdit - Carrera de gastronomía. \n20 años - 1500 - 1000.\nIndica que me devolverá la llamada.",
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": null,
@@ -5137,11 +5154,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 241
+      "count": 242
     },
     {
       "label": "Prospectos Contactados",
-      "count": 18
+      "count": 21
     },
     {
       "label": "Reunión Agendadas",
@@ -5149,7 +5166,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
