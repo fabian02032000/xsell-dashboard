@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-04T01:58:22.564157+00:00",
+  "updated_at": "2026-11-04T08:03:29.928852+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 269,
+  "total_leads": 272,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -357,7 +357,11 @@
     },
     {
       "date": "2026-11-03",
-      "count": 2
+      "count": 4
+    },
+    {
+      "date": "2026-11-04",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -392,7 +396,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 11,
+      "leads": 14,
       "goal": 74.0,
       "is_partial": false
     }
@@ -491,19 +495,36 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 5,
+      "leads": 8,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 11,
+  "current_month_leads": 14,
   "current_month_label": "November 2026",
-  "current_week_leads": 5,
+  "current_week_leads": 8,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 267,
   "leads_detail": [
+    {
+      "name": "Diego Alonso Ortiz Rodriguez",
+      "email": "densitycapilar@gmail.com",
+      "phone": "+51947573692",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-04",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Rony Campos",
       "email": "ronycampos.contacto@gmail.com",
@@ -532,6 +553,40 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Karina Berrocal Mendoza",
       "deal_id": "67365385647",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Edgar Garay Callalli",
+      "email": "edgargaray37@hotmail.com",
+      "phone": "+51995744690",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-03",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Elba Maria Mónica Mujica Oviedo",
+      "email": "elbamujica@esdit.edu.pe",
+      "phone": "+51958312498",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-03",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -5094,7 +5149,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 2
+      "count": 5
     }
   ],
   "warm_audience_exclude_estadios": [
