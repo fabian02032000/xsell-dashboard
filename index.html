@@ -45,7 +45,7 @@
   .mf-pct{font-size:12px; color:var(--text-secondary); text-align:right;}
   .mf-segs{display:grid; grid-template-columns:repeat(4,1fr); gap:8px;}
   .mf-seg .mf-track{height:10px;}
-  .mf-cap{font-size:11px; color:var(--text-secondary); margin-top:4px; white-space:nowrap;}
+  .mf-cap{font-size:11px; color:var(--text-secondary); margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .mf-cap b{color:var(--text-primary);}
   .mf-seg.future .mf-cap{opacity:.55;}
   .mf-sub{font-size:12px; color:var(--text-secondary); margin:2px 0 8px;}
@@ -1730,7 +1730,7 @@
         mark = `<div class="mf-mark" style="left:${Math.min(100, el * 100)}%" title="Esperado a hoy: ${mfG(ex)}"></div>`;
       }
       return `<div class="mf-seg${started ? '' : ' future'}"><div class="mf-track"><div class="mf-fill" style="width:${started ? Math.min(100, sp) : 0}%; background:${mfTone(ref)};"></div>${mark}</div>
-        <div class="mf-cap">S${i + 1} · <b>${started ? fmt(a) : '—'}</b> / ${mfG(wg)}</div></div>`;
+        <div class="mf-cap">S${i + 1} · <b>${started ? fmt(a) : '—'}</b> / ${mfG(wg)}${started ? ` · <b>${Math.round(sp)}%</b>` : ''}</div></div>`;
     }).join('');
     return `<div class="mf-line"><span class="mf-name">${name}</span><div class="mf-segs">${segs}</div>
       <span class="mf-val">${fmt(total)} / ${fmt(goal)}</span><span class="mf-pct">${Math.round(p)}%</span></div>`;
