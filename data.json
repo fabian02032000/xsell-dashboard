@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-05T15:18:53.649709+00:00",
+  "updated_at": "2026-11-05T17:28:37.621407+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 274,
+  "total_leads": 275,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -362,6 +362,10 @@
     {
       "date": "2026-11-04",
       "count": 3
+    },
+    {
+      "date": "2026-11-05",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -396,7 +400,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 16,
+      "leads": 17,
       "goal": 74.0,
       "is_partial": false
     }
@@ -495,19 +499,36 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 10,
+      "leads": 11,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 16,
+  "current_month_leads": 17,
   "current_month_label": "November 2026",
-  "current_week_leads": 10,
+  "current_week_leads": 11,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 271,
   "leads_detail": [
+    {
+      "name": "Smith Velasquez",
+      "email": "contaauyoya@gmail.com",
+      "phone": "+51939236913",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-05",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Diego Alonso Ortiz Rodriguez",
       "email": "densitycapilar@gmail.com",
@@ -5183,7 +5204,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 4
     }
   ],
   "warm_audience_exclude_estadios": [
