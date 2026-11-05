@@ -43,8 +43,13 @@
   .mf-mark{position:absolute; top:-3px; width:2px; height:16px; background:var(--text-primary); opacity:.65;}
   .mf-val{font-size:14px; font-weight:600; color:var(--text-primary); text-align:right; white-space:nowrap;}
   .mf-pct{font-size:12px; color:var(--text-secondary); text-align:right;}
+  .mf-segs{display:grid; grid-template-columns:repeat(4,1fr); gap:8px;}
+  .mf-seg .mf-track{height:10px;}
+  .mf-cap{font-size:11px; color:var(--text-secondary); margin-top:4px; white-space:nowrap;}
+  .mf-cap b{color:var(--text-primary);}
+  .mf-seg.future .mf-cap{opacity:.55;}
   .mf-sub{font-size:12px; color:var(--text-secondary); margin:2px 0 8px;}
-  @media (max-width:640px){ .mf-line{grid-template-columns:1fr 70px 38px;} .mf-name{grid-column:1 / -1;} }
+  @media (max-width:640px){ .mf-line{grid-template-columns:1fr 70px 38px;} .mf-name{grid-column:1 / -1;} .mf-segs{gap:5px;} .mf-cap{font-size:10px;} }
   .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;}
   h2{font-size:18px; margin:0;}
   .hint{font-size:12px; color:var(--text-muted);}
@@ -1693,16 +1698,11 @@
   let mfIdx = null, mfData = null, mfWeekOpen = false;
   const mfG = x => x >= 10 ? fmt(x) : (Math.round(x * 10) / 10).toString().replace('.', ',');
   function mfWeeks(ym){
+    // 4 semanas por mes: 1–7, 8–14, 15–21 y 22–fin de mes (la última puede tener 7 a 10 días)
     const [y, m] = ym.split('-').map(Number);
     const dim = new Date(Date.UTC(y, m, 0)).getUTCDate();
     const iso = d => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-    const weeks = []; let s = 1;
-    while (s <= dim){
-      const dow = new Date(Date.UTC(y, m - 1, s)).getUTCDay();
-      const e = Math.min(dim, s + (7 - dow) % 7);
-      weeks.push({ start: iso(s), end: iso(e), days: e - s + 1 });
-      s = e + 1;
-    }
+    const weeks = [[1, 7], [8, 14], [15, 21], [22, dim]].map(([a, b]) => ({ start: iso(a), end: iso(b), days: b - a + 1 }));
     return { weeks, dim, from: iso(1), to: iso(dim) };
   }
   const mfTone = p => p >= 100 ? 'var(--good)' : (p >= 70 ? 'var(--warning)' : 'var(--critical)');
@@ -1717,6 +1717,23 @@
     return `<div class="mf-line"><span class="mf-name">${name}</span>
       <div class="mf-track"><div class="mf-fill" style="width:${Math.min(100, p)}%; background:${mfTone(ref)};"></div>${mark}</div>
       <span class="mf-val">${fmt(actual)} / ${goalLabel || fmt(goal)}</span><span class="mf-pct">${Math.round(p)}%</span></div>`;
+  }
+  // Una barra por cada semana del mes; cada una con su meta semanal (meta del mes / 4).
+  function mfSegLine(name, vals, goal, today, weeks){
+    const wg = goal / 4, total = vals.reduce((a, b) => a + b, 0), p = goal ? total / goal * 100 : 0;
+    const segs = weeks.map((w, i) => {
+      const started = w.start <= today, done = w.end < today, a = vals[i], sp = wg ? a / wg * 100 : 0;
+      let mark = '', ref = sp;
+      if (started && !done){
+        const el = (Number(today.slice(8, 10)) - Number(w.start.slice(8, 10)) + 1) / w.days, ex = wg * el;
+        ref = ex > 0 ? a / ex * 100 : sp;
+        mark = `<div class="mf-mark" style="left:${Math.min(100, el * 100)}%" title="Esperado a hoy: ${mfG(ex)}"></div>`;
+      }
+      return `<div class="mf-seg${started ? '' : ' future'}"><div class="mf-track"><div class="mf-fill" style="width:${started ? Math.min(100, sp) : 0}%; background:${mfTone(ref)};"></div>${mark}</div>
+        <div class="mf-cap">S${i + 1} · <b>${started ? fmt(a) : '—'}</b> / ${mfG(wg)}</div></div>`;
+    }).join('');
+    return `<div class="mf-line"><span class="mf-name">${name}</span><div class="mf-segs">${segs}</div>
+      <span class="mf-val">${fmt(total)} / ${fmt(goal)}</span><span class="mf-pct">${Math.round(p)}%</span></div>`;
   }
   function drawMonthGoals(data){
     if (!document.getElementById('mfRows')) return;
@@ -1734,34 +1751,34 @@
     prev.onclick = () => { if (mfIdx > 0){ mfIdx--; drawMonthGoals(mfData); } };
     next.onclick = () => { if (mfIdx < months.length - 1){ mfIdx++; drawMonthGoals(mfData); } };
 
-    const tot = mfCount(detail, from, to);
+    const tot = mfCount(detail, from, to), wk = weeks.map(w => mfCount(detail, w.start, w.end));
     const frac = isCur ? Number(today.slice(8, 10)) / dim : null;
     const exp = g => frac == null ? null : g * frac;
     const ventas = isCur && data.closed_deals && data.closed_deals.available ? (data.closed_deals.count || 0) : null;
     const vTone = ventas != null && ventas >= M.ventas_min ? 'var(--good)' : 'var(--warning)';
     document.getElementById('mfRows').innerHTML =
-      mfLine('Registros', tot.reg, M.registros, exp(M.registros)) +
-      mfLine('Leads de calidad', tot.cal, M.leads_calidad, exp(M.leads_calidad)) +
-      mfLine('Reuniones', tot.reu, M.reuniones, exp(M.reuniones)) +
+      mfSegLine('Registros', wk.map(c => c.reg), M.registros, today, weeks) +
+      mfSegLine('Leads de calidad', wk.map(c => c.cal), M.leads_calidad, today, weeks) +
+      mfSegLine('Reuniones', wk.map(c => c.reu), M.reuniones, today, weeks) +
       `<div class="mf-line"><span class="mf-name">Ventas</span>
         <div class="mf-track"><div class="mf-fill" style="width:${ventas ? Math.min(100, ventas / M.ventas_max * 100) : 0}%; background:${vTone};"></div></div>
         <span class="mf-val">${ventas == null ? '—' : fmt(ventas)} / ${M.ventas_min}–${M.ventas_max}</span><span class="mf-pct"></span></div>`;
     document.getElementById('mfFoot').textContent = isCur
-      ? `La marca vertical indica lo esperado a hoy (${mfG(M.registros * frac)} registros). Meta de abandono del formulario: ${M.abandono}%.`
-      : `Meta de abandono del formulario: ${M.abandono}%.`;
+      ? `Cada barra es una semana del mes (S1: 1–7, S2: 8–14, S3: 15–21, S4: 22–${dim}). Meta semanal: ${mfG(M.registros / 4)} registros. La marca vertical indica lo esperado a hoy en la semana actual. Meta de abandono del formulario: ${M.abandono}%.`
+      : `Cada barra es una semana del mes (S1: 1–7, S2: 8–14, S3: 15–21, S4: 22–${dim}). Meta semanal: ${mfG(M.registros / 4)} registros. Meta de abandono del formulario: ${M.abandono}%.`;
 
     const o = { day: 'numeric', month: 'short' };
     const cell = (a, g, started) => started ? `${fmt(a)} <span class="table-sub">/ ${mfG(g)} · ${g ? Math.round(a / g * 100) : 0}%</span>` : '—';
     const rows = weeks.map(w => {
-      const started = w.start <= today, c = mfCount(detail, w.start, w.end), sh = w.days / dim;
+      const started = w.start <= today, c = wk[weeks.indexOf(w)], sh = 1 / 4;
       const da = new Date(w.start + 'T00:00:00'), db = new Date(w.end + 'T00:00:00');
       const lbl = w.days === 1 ? da.toLocaleDateString('es-PE', o) : (da.getMonth() === db.getMonth() ? `${da.getDate()}–${db.toLocaleDateString('es-PE', o)}` : `${da.toLocaleDateString('es-PE', o)} – ${db.toLocaleDateString('es-PE', o)}`);
-      return `<tr><td class="table-name">${lbl}</td><td>${cell(c.reg, M.registros * sh, started)}</td><td>${cell(c.cal, M.leads_calidad * sh, started)}</td><td>${cell(c.reu, M.reuniones * sh, started)}</td></tr>`;
+      return `<tr><td class="table-name">S${weeks.indexOf(w) + 1} · ${lbl}</td><td>${cell(c.reg, M.registros * sh, started)}</td><td>${cell(c.cal, M.leads_calidad * sh, started)}</td><td>${cell(c.reu, M.reuniones * sh, started)}</td></tr>`;
     });
     rows.push(`<tr style="font-weight:600;"><td class="table-name">Mes</td><td>${cell(tot.reg, M.registros, true)}</td><td>${cell(tot.cal, M.leads_calidad, true)}</td><td>${cell(tot.reu, M.reuniones, true)}</td></tr>`);
     document.getElementById('mfWeekBody').innerHTML = rows.join('');
     const wrap = document.getElementById('mfWeek'), tg = document.getElementById('mfToggle');
-    tg.title = 'Meta semanal = meta del mes repartida por los días de cada semana dentro del mes. Cada lead cuenta en la semana en que se registró. Leads de calidad: marcados en HubSpot. Reuniones: negocio en "Reunión agendada" o posterior.';
+    tg.title = 'Meta semanal = meta del mes dividida en 4 semanas (S1: días 1–7, S2: 8–14, S3: 15–21, S4: 22 al fin de mes). Cada lead cuenta en la semana en que se registró. Leads de calidad: marcados en HubSpot. Reuniones: negocio en "Reunión agendada" o posterior.';
     wrap.hidden = !mfWeekOpen;
     tg.textContent = mfWeekOpen ? '▾ Ocultar semanas' : '▸ Ver por semana';
     tg.setAttribute('aria-expanded', mfWeekOpen ? 'true' : 'false');
