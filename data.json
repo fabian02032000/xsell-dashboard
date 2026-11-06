@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T10:44:20.627076+00:00",
+  "updated_at": "2026-11-06T14:19:14.687275+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -510,7 +510,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 271,
+  "leads_with_deal": 274,
   "leads_detail": [
     {
       "name": "Smith Velasquez",
@@ -519,10 +519,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-05",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Smith Velasquez",
+      "deal_id": "67602060879",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -536,10 +536,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-05",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Ramiro Montes Rivera",
+      "deal_id": "67602187100",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -587,10 +587,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-04",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "jean piturri dijuber",
+      "deal_id": "67609881447",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -5213,7 +5213,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 20
+      "count": 23
     },
     {
       "label": "Reunión Agendadas",
@@ -5221,7 +5221,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 5
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
