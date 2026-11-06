@@ -19,7 +19,9 @@
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
     padding:32px 24px 64px;
   }
-  .wrap{max-width:1140px; margin:0 auto;}
+  .wrap{max-width:1140px; margin:0 auto; position:relative; z-index:1;}
+  /* Fondo interactivo sutil: puntos que se encienden y un resplandor que sigue al cursor */
+  #bgfx{position:fixed; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;}
   header{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:28px;}
   .wordmark{color:var(--purple-2); font-weight:800; letter-spacing:1px; margin:0 0 4px; font-size:13px;}
   h1{margin:0 0 4px; font-size:26px;}
@@ -301,6 +303,7 @@
   .fx-empty{color:var(--text-muted); font-size:13px; padding:14px 0;}
   .fx-cmpbtn{margin-left:auto;}
   .fx-cmpbar{display:flex; flex-wrap:wrap; gap:10px 28px; align-items:center; border:1px dashed var(--border, rgba(255,255,255,.18)); border-radius:10px; padding:10px 14px; margin:0 0 14px;}
+  .fx-cmpbar[hidden],.fx-channel[hidden]{display:none;}
   .fx-cmprow{display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px;}
   .fx-chip{display:inline-block; font-size:11px; font-weight:800; border-radius:999px; padding:3px 10px; color:#fff; letter-spacing:.3px;}
   .fx-chip.a{background:#7B2BC9;} .fx-chip.b{background:#FF6B13;}
@@ -466,9 +469,58 @@
     .heat-cell{min-height:40px; padding:4px 5px;}
     .heat-cell .c{font-size:13px;}
   }
+  .tile,.chart-card{background:rgba(23,16,37,.80);}
 </style>
 </head>
 <body>
+<canvas id="bgfx" aria-hidden="true"></canvas>
+<script>
+(function(){
+  var c = document.getElementById('bgfx'); if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d'), W = 0, H = 0, dpr = 1, GAP = 36, R = 190;
+  var still = window.matchMedia && (matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(pointer: coarse)').matches);
+  var mx = -9999, my = -9999, gx = -9999, gy = -9999, raf = 0, active = false, idle = 0;
+  function size(){
+    dpr = Math.min(2, window.devicePixelRatio || 1); W = window.innerWidth; H = window.innerHeight;
+    c.width = Math.round(W * dpr); c.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw(0);
+  }
+  function draw(t){
+    ctx.clearRect(0, 0, W, H);
+    // resplandor suave que sigue al cursor (con inercia)
+    if (!still && gx > -999){
+      var g = ctx.createRadialGradient(gx, gy, 0, gx, gy, 320);
+      g.addColorStop(0, 'rgba(123,43,201,0.16)'); g.addColorStop(0.55, 'rgba(255,107,19,0.04)'); g.addColorStop(1, 'rgba(14,10,26,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    }
+    // puntos: tenues y fijos; los cercanos al cursor crecen y se tiñen de morado a naranja
+    
+    for (var y = GAP / 2; y < H + GAP; y += GAP){
+      for (var x = GAP / 2; x < W + GAP; x += GAP){
+        var px = x, d = Math.hypot(px - gx, y - gy), k = d < R ? 1 - d / R : 0;
+        if (!k){ ctx.fillStyle = 'rgba(156,147,181,0.10)'; ctx.fillRect(px - 0.75, y - 0.75, 1.5, 1.5); continue; }
+        var e = k * k * (3 - 2 * k), r = 0.9 + e * 2.2;
+        ctx.fillStyle = k > 0.55 ? 'rgba(255,163,102,' + (0.22 + e * 0.5) + ')' : 'rgba(155,92,230,' + (0.16 + e * 0.6) + ')';
+        ctx.beginPath(); ctx.arc(px, y, r, 0, 6.2832); ctx.fill();
+      }
+    }
+  }
+  function loop(ts){
+    raf = 0; if (document.hidden) return;
+    gx += (mx - gx) * 0.12; gy += (my - gy) * 0.12;
+    draw(ts);
+    var moving = Math.abs(mx - gx) > 0.5 || Math.abs(my - gy) > 0.5;
+    if (moving || active) raf = requestAnimationFrame(loop);
+  }
+  function kick(){ if (!raf) raf = requestAnimationFrame(loop); }
+  window.addEventListener('resize', size);
+  if (!still){
+    window.addEventListener('mousemove', function(e){ if (gx < -999){ gx = e.clientX; gy = e.clientY; } mx = e.clientX; my = e.clientY; active = true; clearTimeout(idle); idle = setTimeout(function(){ active = false; }, 1200); kick(); }, { passive: true });
+    document.addEventListener('mouseleave', function(){ active = false; mx = -9999; my = -9999; gx = -9999; gy = -9999; draw(0); });
+    document.addEventListener('visibilitychange', function(){ if (!document.hidden) kick(); });
+  }
+  size();
+})();
+</script>
 <div class="wrap">
 
   <header>
@@ -485,11 +537,8 @@
 
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
-    <button class="tab-btn" data-tab="campaign">📈 Análisis de campaña</button>
     <button class="tab-btn" data-tab="calendar">🗓️ Calendario de creación</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
-    <button class="tab-btn" data-tab="email">✉️ Email marketing</button>
-    <button class="tab-btn" data-tab="story">🕒 Historia de la cuenta</button>
   </div>
 
   <div class="tab-panel active" id="tab-leads">
@@ -648,69 +697,6 @@
 
   </div>
 
-  <div class="tab-panel" id="tab-campaign">
-  <div class="cv-filters chart-card">
-    <div class="date-filter-presets" id="cvPresets">
-      <button type="button" class="filter-btn" data-preset="7">Últimos 7 días</button>
-      <button type="button" class="filter-btn" data-preset="30">Últimos 30 días</button>
-      <button type="button" class="filter-btn" data-preset="month">Este mes</button>
-      <button type="button" class="filter-btn active" data-preset="all">Todo el período</button>
-    </div>
-    <div class="date-filter-inputs">
-      <label>Desde <input type="date" id="cvFrom"></label>
-      <label>Hasta <input type="date" id="cvTo"></label>
-      <label>Canal
-        <select id="cvChannel"><option value="cap">Captación (Formulario + WhatsApp)</option><option value="form">Formulario</option><option value="wa">WhatsApp</option><option value="all">Todo (incluye Awareness)</option></select>
-      </label>
-      <label>Campaña <select id="cvCampaign"><option value="__all__">Todas</option></select></label>
-    </div>
-  </div>
-
-  <section>
-    <div class="section-head"><h2>Resumen del rango</h2><span class="hint" id="cvSummaryHint"></span></div>
-    <div id="cvKpis"></div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Formulario vs WhatsApp</h2><span class="hint">Las mismas métricas para los dos canales, en el rango elegido</span></div>
-    <div class="chart-card"><div class="table-wrap"><table class="cv-compare" id="cvCompare"></table></div></div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Detalle por campaña, conjunto y anuncio</h2><span class="hint">Clic en ▸ para abrir los conjuntos y anuncios · clic en un encabezado para ordenar · clic en un anuncio para ver su ficha</span></div>
-    <div class="chart-card">
-      <div class="cv-groups" id="cvGroups"></div>
-      <div class="table-wrap cv-tree-wrap"><table class="cv-tree" id="cvTree"></table></div>
-      <p class="hint" id="cvTreeHint" style="margin-top:8px;"></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Segmentos: qué configuramos y por qué</h2><span class="hint">Una ficha por conjunto de anuncios · métricas desde el último cambio de público frente a lo anterior</span></div>
-    <div id="cvSegments"></div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Calidad por conjunto de anuncios</h2><span class="hint">Qué pasó con los registros de cada conjunto según HubSpot · pasa el mouse para ver los motivos</span></div>
-    <div class="chart-card"><div id="cvQuality"></div></div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Tendencia día a día</h2><span class="hint">Una métrica a la vez</span></div>
-    <div class="chart-card">
-      <div class="date-filter-presets" id="cvTrendMetric" style="margin-bottom:12px;"></div>
-      <div id="cvTrend"></div>
-    </div>
-  </section>
-
-  <div class="note-modal" id="cvAdModal" hidden>
-    <div class="note-modal-card cal-modal-wide" role="dialog" aria-modal="true" aria-labelledby="cvAdTitle">
-      <div class="note-modal-head"><strong id="cvAdTitle">Anuncio</strong><button type="button" class="note-modal-close" data-cvclose="1" aria-label="Cerrar">×</button></div>
-      <div class="note-modal-body" id="cvAdBody"></div>
-    </div>
-  </div>
-  </div>
-
   <div class="tab-panel" id="tab-organic">
 
   <section>
@@ -797,137 +783,6 @@
 
   </div>
 
-  </div>
-
-  <div class="tab-panel" id="tab-story">
-
-  <section>
-    <div class="section-head">
-      <h2>Historia de la cuenta</h2>
-      <span class="hint">Cómo evolucionó la pauta desde el lanzamiento — cambios, hallazgos, decisiones y qué sigue · datos reales desde julio</span>
-    </div>
-
-    <div class="kpi-row">
-      <div class="tile">
-        <p class="tile-label">Campaña activa desde</p>
-        <p class="tile-value" id="storyStartDate">—</p>
-        <p class="tile-sub">Registros: HubSpot · Pauta: Meta Ads</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Registros totales</p>
-        <p class="tile-value" id="storyTotalLeads">—</p>
-        <p class="tile-sub" id="storyGoalSub"></p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">CPL — campaña de registros</p>
-        <p class="tile-value" id="storyCPL">—</p>
-        <p class="tile-sub">Campaña "PROSPECTOS B2B | FORMULARIO V.1"</p>
-      </div>
-      <div class="tile">
-        <p class="tile-label">Negocios cerrados</p>
-        <p class="tile-value" id="storyClosedDeals">—</p>
-        <p class="tile-sub" id="storyClosedSub"></p>
-      </div>
-    </div>
-
-    <div class="callout"><span>💡</span><div id="storyHeadline">Cargando resumen…</div></div>
-
-    <div class="chart-card" style="margin-top:18px;">
-      <div class="section-head" style="margin-bottom:6px;">
-        <h2 style="font-size:15px;">Registros por semana vs. meta</h2>
-        <span class="hint">Cada punto es una semana real desde el lanzamiento (25 jul)</span>
-      </div>
-      <div class="chart-wrap">
-        <svg id="storyWeeklyChart" viewBox="0 0 960 220" preserveAspectRatio="none"></svg>
-        <div class="tooltip" id="storyWeeklyTooltip"></div>
-      </div>
-    </div>
-
-    <div class="chart-card" style="margin-top:18px;">
-      <div class="section-head" style="margin-bottom:6px;">
-        <h2 style="font-size:15px;">En qué terminaron los registros</h2>
-        <span class="hint">Distribución de los 88 registros según su estado en HubSpot</span>
-      </div>
-      <div class="status-dist-bar" id="storyStatusBar"></div>
-      <div class="status-dist-legend" id="storyStatusLegend"></div>
-    </div>
-
-    <div class="section-head" style="margin-top:24px;">
-      <h2>Línea de tiempo</h2>
-      <span class="hint" id="storyEditHint">Cargando…</span>
-    </div>
-
-    <div class="story-gh-bar">
-      <span id="storyGhStatus" class="story-gh-status">⚙️ Sin conectar a GitHub — los cambios solo se guardan en este navegador</span>
-      <button type="button" class="filter-btn" id="storyGhConfigBtn">⚙️ Conectar con GitHub</button>
-    </div>
-    <div class="story-gh-panel" id="storyGhPanel" hidden>
-      <p class="hint" style="margin:0 0 10px;">Esto conecta el dashboard directamente a tu repositorio de GitHub para que, al guardar, el cambio se vea para cualquiera que abra el link — no solo en tu navegador. El token que pegues aquí se queda únicamente guardado en este navegador; nunca se envía a Claude ni a nadie más, solo a GitHub.</p>
-      <div class="story-form-row">
-        <label>Usuario/organización de GitHub
-          <input type="text" id="storyGhOwner" placeholder="fabian02032000">
-        </label>
-        <label>Nombre del repositorio
-          <input type="text" id="storyGhRepo" placeholder="xsell-dashboard">
-        </label>
-        <label>Rama
-          <input type="text" id="storyGhBranch" placeholder="main">
-        </label>
-      </div>
-      <label>Token de acceso personal de GitHub (fine-grained, con permiso de escritura solo sobre este repo)
-        <input type="password" id="storyGhToken" placeholder="github_pat_...">
-      </label>
-      <p class="hint" id="storyGhHelp" style="margin:2px 0 0;"></p>
-      <div class="story-form-actions" style="justify-content:space-between;">
-        <button type="button" class="filter-btn danger-outline" id="storyGhDisconnectBtn">Desconectar</button>
-        <div style="display:flex; gap:8px;">
-          <button type="button" class="filter-btn" id="storyGhCancelBtn">Cancelar</button>
-          <button type="button" class="filter-btn story-btn-save" id="storyGhSaveBtn">Guardar conexión</button>
-        </div>
-      </div>
-    </div>
-    <p class="hint story-gh-msg" id="storyGhMsg"></p>
-
-    <div class="story-toolbar">
-      <button type="button" class="filter-btn" id="storyAddBtn">➕ Agregar hito</button>
-      <button type="button" class="filter-btn story-btn-publish" id="storyPublishBtn" hidden>☁️ Guardar en GitHub (visible para todos)</button>
-      <button type="button" class="filter-btn" id="storyExportBtn">⬇️ Descargar JSON con mis cambios</button>
-      <button type="button" class="filter-btn" id="storyResetBtn">↺ Descartar cambios locales</button>
-    </div>
-    <div class="story-timeline" id="storyTimeline"></div>
-
-    <div class="section-head" style="margin-top:8px;">
-      <h2>Próximos pasos</h2>
-    </div>
-    <div class="story-toolbar">
-      <button type="button" class="filter-btn" id="storyNextAddBtn">➕ Agregar paso</button>
-    </div>
-    <div class="story-timeline story-next" id="storyNextSteps"></div>
-  </section>
-
-  </div>
-
-  <!-- ==================== PESTAÑA: EMAIL MARKETING ==================== -->
-  <div class="tab-panel" id="tab-email">
-    <div class="section-head">
-      <h2>Reenganche por correo</h2>
-      <span class="hint">Correos a contactos de Meta que quedaron en "no contacto", descartados por comunicación o sin avanzar. Se actualiza solo desde HubSpot junto con el resto del dashboard.</span>
-    </div>
-    <div class="kpi-row" id="emailKpiRow"></div>
-    <div class="card" id="emailCallout" style="margin:16px 0;"></div>
-    <div class="section-head" style="margin-top:8px;">
-      <h2>Cada envío</h2>
-      <span class="hint">Un correo (campaña) por cada envío que hagas desde HubSpot. Las tasas son sobre los correos entregados.</span>
-    </div>
-    <div class="table-wrap scroll-y">
-      <table>
-        <thead><tr>
-          <th>Correo</th><th>Fecha</th><th>Enviados</th><th>Entregados</th>
-          <th>Rebotados</th><th>Aperturas</th><th>Tasa apertura</th><th>Clics</th><th>Tasa clics</th><th>Bajas</th>
-        </tr></thead>
-        <tbody id="emailTableBody"></tbody>
-      </table>
-    </div>
   </div>
 
   <div class="tab-panel" id="tab-calendar">
@@ -1151,9 +1006,7 @@
     fetch('./meta_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
     fetch('./funnel_config.json?_=' + Date.now()).then(r => r.json()).catch(() => ({reuniones: null})),
     fetch('./organic_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-    fetch('./storytelling_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-    fetch('./email_data.json?_=' + Date.now()).then(r => r.json()).catch(() => null),
-  ]).then(([leadsData, metaData, funnelCfg, organicData, storyData, emailData]) => {
+  ]).then(([leadsData, metaData, funnelCfg, organicData]) => {
     if (!leadsData){
       document.getElementById('statusBadge').textContent = '● Sin datos aún';
       document.getElementById('statusBadge').className = 'badge warn';
@@ -1166,8 +1019,6 @@
     leadsData.closed_deals_goal = window.__METAS.ventas_max;
     render(leadsData, metaData, funnelCfg || {});
     renderOrganic(organicData);
-    drawStoryTab(leadsData, metaData, storyData);
-    renderEmail(emailData);
   });
 
   // ---- Refresco automático cada 5 minutos ----
@@ -4645,27 +4496,11 @@
     $('cvAdModal').hidden = false;
   }
 
-  // ---------- render + eventos ----------
-  function render(){
-    if (!S.meta) { $('cvKpis').innerHTML = '<p class="table-sub">Esperando datos de Meta Ads.</p>'; return; }
-    const k = kpis(sumRows(dailyRows('campaigns')), hubStats(regsAll()));
-    drawKpis(k); drawFx(); drawCompare(); drawTree(); drawSegments(); drawQuality(); drawTrend();
-  }
-  function setPreset(p){
-    const t = limaToday(), start = (S.meta && S.meta.campaign_start) || (S.data && S.data.campaign_start) || '2026-07-25';
-    let f = start;
-    if (p === '7'){ const d = new Date(t + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() - 6); f = d.toISOString().slice(0, 10); }
-    else if (p === '30'){ const d = new Date(t + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() - 29); f = d.toISOString().slice(0, 10); }
-    else if (p === 'month') f = t.slice(0, 8) + '01';
-    S.from = f < start ? start : f; S.to = t;
-    $('cvFrom').value = S.from; $('cvTo').value = S.to;
-    document.querySelectorAll('#cvPresets .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.preset === p));
-  }
+  // ---------- render + eventos (solo queda el embudo de la pestaña Registros y ventas) ----------
+  function render(){ if (S.meta) drawFx(); }
   let wired = false;
   function wire(){
     if (wired) return; wired = true;
-    $('cvPresets').addEventListener('click', e => { const b = e.target.closest('[data-preset]'); if (b){ setPreset(b.dataset.preset); render(); } });
-    ['cvFrom', 'cvTo'].forEach(id => $(id).addEventListener('change', () => { S.from = $('cvFrom').value; S.to = $('cvTo').value; document.querySelectorAll('#cvPresets .filter-btn').forEach(b => b.classList.remove('active')); render(); }));
     $('fxLevel').addEventListener('click', e => { const b = e.target.closest('[data-fxlevel]'); if (b){ S.fx.level = b.dataset.fxlevel; S.fx.item = ''; drawFx(); } });
     $('fxItem').addEventListener('change', e => { S.fx.item = e.target.value; drawFx(); });
     $('fxCmpBtn').addEventListener('click', () => { S.cmp.on = !S.cmp.on; if (S.cmp.on){ S.cmp.A = null; S.cmp.B = null; } drawFx(); });
@@ -4674,30 +4509,14 @@
     ['fxBFrom', 'fxBTo'].forEach(id => $(id).addEventListener('change', () => fxSet('B', 'fxBFrom', 'fxBTo')));
     $('fxAReset').addEventListener('click', () => { S.cmp.A = null; drawFx(); });
     $('fxBPrev').addEventListener('click', () => { S.cmp.B = null; drawFx(); });
-    $('cvChannel').addEventListener('change', e => { S.channel = e.target.value; render(); });
-    $('cvCampaign').addEventListener('change', e => { S.campaign = e.target.value; render(); });
-    $('tab-campaign').addEventListener('click', e => {
-      const g = e.target.closest('[data-group]'); if (g){ S.groups.has(g.dataset.group) ? S.groups.delete(g.dataset.group) : S.groups.add(g.dataset.group); if (!S.groups.size) S.groups.add(g.dataset.group); drawTree(); return; }
-      const o = e.target.closest('[data-open]'); if (o){ S.open.has(o.dataset.open) ? S.open.delete(o.dataset.open) : S.open.add(o.dataset.open); drawTree(); return; }
-      const s = e.target.closest('[data-sort]'); if (s){ S.sort = { key: s.dataset.sort, dir: S.sort.key === s.dataset.sort ? -S.sort.dir : -1 }; drawTree(); return; }
-      const t = e.target.closest('[data-trend]'); if (t){ S.trend = t.dataset.trend; drawTrend(); return; }
-      const sg = e.target.closest('[data-seg]'); if (sg){ const c = document.getElementById('seg-' + sg.dataset.seg); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
-      const a = e.target.closest('[data-ad]'); if (a){ openAd(a.dataset.ad); return; }
-      if (e.target.closest('[data-cvclose]') || e.target.id === 'cvAdModal') $('cvAdModal').hidden = true;
-    });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('cvAdModal')) $('cvAdModal').hidden = true; });
   }
   window.XsellFx = function(from, to){ S.fxRange = { from, to }; if (S.meta && S.data) drawFx(); };
   if (window.__fxRange) S.fxRange = { from: window.__fxRange[0], to: window.__fxRange[1] };
   window.XsellCampaignV2 = function(meta, data){
     S.meta = meta && meta.updated_at ? meta : null; S.data = data;
     wire();
-    const names = [...new Set((((meta || {}).campaign_analysis_daily || {}).campaigns || []).map(r => r.name))].sort();
-    const sel = $('cvCampaign'), cur = sel.value;
-    sel.innerHTML = '<option value="__all__">Todas</option>' + names.map(n => `<option${n === cur ? ' selected' : ''}>${esc(n)}</option>`).join('');
-    if (!S.from){ setPreset('all'); }
+    if (!S.from){ S.from = (S.meta && S.meta.campaign_start) || (data && data.campaign_start) || '2026-07-25'; S.to = limaToday(); }
     render();
-    if (!S._segLoaded){ S._segLoaded = true; fetch('segments.json?t=' + Date.now()).then(r => r.ok ? r.json() : {segments: []}).then(j => { SEGMENTS = j.segments || []; render(); }).catch(() => {}); }
   };
   if (window.__cvPending) window.XsellCampaignV2(window.__cvPending[0], window.__cvPending[1]);
 })();
