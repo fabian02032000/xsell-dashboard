@@ -4361,6 +4361,7 @@
     if (val == null || isNaN(val)) return '';
     const ok = higherIsBetter ? val >= bench : val <= bench;
     const dir = val >= bench ? 'por encima' : 'por debajo';
+    if (!higherIsBetter && !ok) return `<span class="bad">no cumple la ${what}</span>`;
     return `<span class="${ok ? 'ok' : 'bad'}">${ok ? 'cumple' : dir} ${ok ? 'la ' + what : 'de la ' + what}</span>`;
   };
   function fxChannelHtml(){
@@ -4427,18 +4428,18 @@
       (S.fx.level !== 'all' ? ' Los registros sin anuncio identificado solo cuentan en la vista General.' : '');
   }
   function fxDeltaHtml(a, b){
-    // cambio de B respecto a A (B es el periodo que se compara)
-    const rel = (x, y) => x ? ((y - x) / x * 100) : null;
+    // cambio del periodo A frente al B (B es la base de comparación)
+    const A = a.st, B = b.st;
+    const rel = (x, y) => y ? ((x - y) / y * 100) : null;   // x = A, y = B
     const relTxt = (x, y) => { const r = rel(x, y); return r == null ? '—' : (r > 0 ? '+' : '') + r.toFixed(0) + '%'; };
     const cls = (r, higherBetter) => r == null || Math.abs(r) < 0.05 ? '' : ((r > 0) === higherBetter ? 'up' : 'down');
     const ra = (n, d) => d ? n / d * 100 : null;
-    const pp = (x, y) => (x == null || y == null) ? '—' : (y - x > 0 ? '+' : '') + (y - x).toFixed(1).replace('.', ',') + ' pts';
-    const ppc = (x, y, higherBetter) => (x == null || y == null || Math.abs(y - x) < 0.05) ? '' : (((y - x) > 0) === higherBetter ? 'up' : 'down');
+    const pp = (x, y) => (x == null || y == null) ? '—' : (x - y > 0 ? '+' : '') + (x - y).toFixed(1).replace('.', ',') + ' pts';
+    const ppc = (x, y, higherBetter) => (x == null || y == null || Math.abs(x - y) < 0.05) ? '' : (((x - y) > 0) === higherBetter ? 'up' : 'down');
     const pf = v => v == null ? '—' : v.toFixed(1).replace('.', ',') + '%';
-    const A = a.st, B = b.st;
     const cnt = (l, x, y) => `<tr><td>${l}</td><td>${fmt(x)}</td><td>${fmt(y)}</td><td class="${cls(rel(x, y), true)}">${relTxt(x, y)}</td></tr>`;
     const per = (l, x, y, hb) => `<tr><td>${l}</td><td>${pf(x)}</td><td>${pf(y)}</td><td class="${ppc(x, y, hb)}">${pp(x, y)}</td></tr>`;
-    return `<p class="fx-title" style="margin-top:16px;"><strong>Cambio del periodo B frente al A</strong></p><div class="table-wrap"><table class="cv-compare fx-delta"><thead><tr><th>Métrica</th><th><span class="fx-chip a">A</span></th><th><span class="fx-chip b">B</span></th><th>Cambio</th></tr></thead><tbody>` +
+    return `<p class="fx-title" style="margin-top:16px;"><strong>Cambio del periodo A frente al B</strong></p><div class="table-wrap"><table class="cv-compare fx-delta"><thead><tr><th>Métrica</th><th><span class="fx-chip a">A</span></th><th><span class="fx-chip b">B</span></th><th>Cambio (A vs B)</th></tr></thead><tbody>` +
       cnt('Impresiones', A.impressions, B.impressions) + cnt('Abrieron el formulario', A.open, B.open) + cnt('Enviaron el formulario (HubSpot)', A.sent, B.sent) +
       per('% de abandono', ra(A.aband, A.open), ra(B.aband, B.open), false) +
       cnt('Leads de calidad', A.qual, B.qual) + per('% de calidad', ra(A.qual, A.sent), ra(B.qual, B.sent), true) +
