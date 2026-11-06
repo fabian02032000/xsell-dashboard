@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T14:51:34.103334+00:00",
+  "updated_at": "2026-11-06T17:28:08.875061+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -514,7 +514,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 274,
+  "leads_with_deal": 275,
   "leads_detail": [
     {
       "name": "David Rios Cabrera",
@@ -523,14 +523,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-06",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "David Ríos ",
+      "deal_id": "67602248377",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Aún no invierte en pauta",
       "lead_quality": null
     },
     {
@@ -5230,7 +5230,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 243
+      "count": 244
     },
     {
       "label": "Prospectos Contactados",
@@ -5242,7 +5242,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
