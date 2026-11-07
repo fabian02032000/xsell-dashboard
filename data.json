@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-07T19:28:38.881962+00:00",
+  "updated_at": "2026-11-07T22:53:05.005596+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 282,
+  "total_leads": 284,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -373,7 +373,7 @@
     },
     {
       "date": "2026-11-07",
-      "count": 5
+      "count": 7
     }
   ],
   "leads_by_month": [
@@ -408,7 +408,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 24,
+      "leads": 26,
       "goal": 74.0,
       "is_partial": false
     }
@@ -507,13 +507,13 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 18,
+      "leads": 20,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 24,
+  "current_month_leads": 26,
   "current_month_label": "November 2026",
-  "current_week_leads": 18,
+  "current_week_leads": 20,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -592,6 +592,40 @@
       "name": "Cesar Andia Yañac",
       "email": "cesarandia046@gmail.com",
       "phone": "+51983531250",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-07",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Kate M",
+      "email": "k.maticorena.a@gmail.com",
+      "phone": "+51940015244",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-07",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "José Amable Medina Oblitas",
+      "email": "jose.medinao@minedu.edu.pe",
+      "phone": "+51927025145",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-07",
@@ -5326,12 +5360,12 @@
       "count": 23
     },
     {
-      "label": "Reunión Agendadas",
-      "count": 8
+      "label": "Sin negocio",
+      "count": 9
     },
     {
-      "label": "Sin negocio",
-      "count": 7
+      "label": "Reunión Agendadas",
+      "count": 8
     }
   ],
   "warm_audience_exclude_estadios": [
