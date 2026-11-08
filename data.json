@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-08T08:54:15.159453+00:00",
+  "updated_at": "2026-11-08T15:37:09.230170+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 286,
+  "total_leads": 289,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -374,6 +374,10 @@
     {
       "date": "2026-11-07",
       "count": 9
+    },
+    {
+      "date": "2026-11-08",
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -408,7 +412,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 28,
+      "leads": 31,
       "goal": 74.0,
       "is_partial": false
     }
@@ -507,19 +511,70 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 22,
+      "leads": 25,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 28,
+  "current_month_leads": 31,
   "current_month_label": "November 2026",
-  "current_week_leads": 22,
+  "current_week_leads": 25,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 275,
   "leads_detail": [
+    {
+      "name": "Willie Sanchez",
+      "email": "contacto@castellocorp.com",
+      "phone": "+51997852260",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Roger Rolando Alvarado Vásquez",
+      "email": "betaproyectosinmobiliarios@gmail.com",
+      "phone": "+51942898427",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Javier Sirlopu Mendoza",
+      "email": "jsirlopum@gmail.com",
+      "phone": "+51990354232",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Luis Miguel Herrera Andreu",
       "email": "lherrera@grupopana.com.pe",
@@ -5395,7 +5450,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 11
+      "count": 14
     },
     {
       "label": "Reunión Agendadas",
