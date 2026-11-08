@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-08T02:01:42.423308+00:00",
+  "updated_at": "2026-11-08T08:47:26.798447+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 284,
+  "total_leads": 286,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -373,7 +373,7 @@
     },
     {
       "date": "2026-11-07",
-      "count": 7
+      "count": 9
     }
   ],
   "leads_by_month": [
@@ -408,7 +408,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 26,
+      "leads": 28,
       "goal": 74.0,
       "is_partial": false
     }
@@ -507,13 +507,13 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 20,
+      "leads": 22,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 26,
+  "current_month_leads": 28,
   "current_month_label": "November 2026",
-  "current_week_leads": 20,
+  "current_week_leads": 22,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -626,6 +626,40 @@
       "name": "José Amable Medina Oblitas",
       "email": "jose.medinao@minedu.edu.pe",
       "phone": "+51927025145",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-07",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Luis Tafur Zapata | El Trafficker💻de la MYPE",
+      "email": "aryunabpo@gmail.com",
+      "phone": "+51986858872",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-07",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Renzo Caballero Valdivia",
+      "email": "renzocv777@gmail.com",
+      "phone": "+51932399402",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-07",
@@ -5361,7 +5395,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 9
+      "count": 11
     },
     {
       "label": "Reunión Agendadas",
