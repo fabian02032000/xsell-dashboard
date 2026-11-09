@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-09T02:56:43.877703+00:00",
+  "updated_at": "2026-11-09T10:52:25.722003+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 296,
+  "total_leads": 300,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -377,7 +377,11 @@
     },
     {
       "date": "2026-11-08",
-      "count": 10
+      "count": 12
+    },
+    {
+      "date": "2026-11-09",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -412,7 +416,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 38,
+      "leads": 42,
       "goal": 74.0,
       "is_partial": false
     }
@@ -511,19 +515,59 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 32,
+      "leads": 34,
+      "goal": 17.3
+    },
+    {
+      "week_start": "2026-11-09",
+      "week_end": "2026-11-15",
+      "leads": 2,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 38,
+  "current_month_leads": 42,
   "current_month_label": "November 2026",
-  "current_week_leads": 32,
+  "current_week_leads": 2,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 275,
   "leads_detail": [
+    {
+      "name": "Luis Corman Bartolo",
+      "email": "lcormanbartolo@gmail.com",
+      "phone": "+51943784277",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Aracely Franco Alayo",
+      "email": "a.franco@wolver.pe",
+      "phone": "+51949048377",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Willie Sanchez",
       "email": "contacto@castellocorp.com",
@@ -681,6 +725,40 @@
       "name": "Jack Medina Mntaño",
       "email": "jackmedina1607@gmail.com",
       "phone": "+51973059061",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Christiam La Rosa",
+      "email": "christiamlr@gmail.com",
+      "phone": "+51915143902",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Renzo Sara Lafosse González",
+      "email": "saralafosserenzo09@gmail.com",
+      "phone": "+51933228491",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-08",
@@ -5564,12 +5642,12 @@
       "count": 244
     },
     {
-      "label": "Prospectos Contactados",
-      "count": 23
+      "label": "Sin negocio",
+      "count": 25
     },
     {
-      "label": "Sin negocio",
-      "count": 21
+      "label": "Prospectos Contactados",
+      "count": 23
     },
     {
       "label": "Reunión Agendadas",
