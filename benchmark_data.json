@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T19:00:31.035593Z",
+  "generated_at": "2026-11-09T19:23:37.618798Z",
   "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
@@ -8,22 +8,14 @@
       "country": "AR",
       "country_label": "Argentina",
       "profile": "Ayuda a empresas B2B a conseguir reuniones y cerrar más ventas, con un método propio (\"anti-ghosting\", seguimiento, manejo de objeciones).",
-      "active_ads_count": 21,
-      "search_match_count": 22,
+      "active_ads_count": 17,
+      "search_match_count": 51,
       "oldest_active_since": "2026-01-27",
-      "newest_active_since": "2026-10-19",
+      "newest_active_since": "2026-11-03",
       "sample_ads": [
-        {
-          "since": "2026-03-19",
-          "text": "La n1 táctica Anti-Ghosting."
-        },
         {
           "since": "2026-03-20",
           "text": "La n1 táctica Anti-Ghosting."
-        },
-        {
-          "since": "2026-06-03",
-          "text": "Do your F#@! Follow up"
         },
         {
           "since": "2026-01-27",
@@ -34,12 +26,20 @@
           "text": "Un aliento para los que sufrimos las ventas..."
         },
         {
-          "since": "2026-09-29",
-          "text": "Conoce el método de 8 pasos para aumentar tus reuniones con marcas grandes, sin hacer spam 🔥"
+          "since": "2026-11-03",
+          "text": "La n1 táctica Anti-Ghosting."
+        },
+        {
+          "since": "2026-01-27",
+          "text": "Emprender es para locos."
+        },
+        {
+          "since": "2026-11-03",
+          "text": "Do your F#@! Follow up"
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-11-02",
+      "last_checked_ok": "2026-11-09",
       "status": "ok",
       "history": [
         {
@@ -81,6 +81,10 @@
         {
           "date": "2026-11-02",
           "active_ads_count": 21
+        },
+        {
+          "date": "2026-11-09",
+          "active_ads_count": 17
         }
       ]
     },
@@ -90,38 +94,22 @@
       "country": "CO",
       "country_label": "Colombia (alcance regional)",
       "profile": "Agencia de prospección B2B: agenda reuniones calificadas para empresas de tecnología/software.",
-      "active_ads_count": 6,
-      "search_match_count": 8,
-      "oldest_active_since": "2026-09-29",
-      "newest_active_since": "2026-10-29",
+      "active_ads_count": 2,
+      "search_match_count": 2,
+      "oldest_active_since": "2026-11-09",
+      "newest_active_since": "2026-11-09",
       "sample_ads": [
         {
-          "since": "2026-09-29",
+          "since": "2026-11-09",
+          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-11-09",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
-        },
-        {
-          "since": "2026-10-13",
-          "text": "Solo para Software Factories o partners de Odoo"
-        },
-        {
-          "since": "2026-10-29",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
-        },
-        {
-          "since": "2026-10-29",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
-        },
-        {
-          "since": "2026-10-29",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
-        },
-        {
-          "since": "2026-10-29",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-11-02",
+      "last_checked_ok": "2026-11-09",
       "status": "ok",
       "history": [
         {
@@ -163,6 +151,10 @@
         {
           "date": "2026-11-02",
           "active_ads_count": 6
+        },
+        {
+          "date": "2026-11-09",
+          "active_ads_count": 2
         }
       ]
     },
@@ -183,8 +175,8 @@
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&q=Aurum%20Sales&search_type=keyword_unordered",
-      "last_checked_ok": "2026-10-19",
-      "status": "stale",
+      "last_checked_ok": "2026-11-09",
+      "status": "ok",
       "history": [
         {
           "date": "2026-09-01",
@@ -208,6 +200,10 @@
         },
         {
           "date": "2026-10-19",
+          "active_ads_count": 1
+        },
+        {
+          "date": "2026-11-09",
           "active_ads_count": 1
         }
       ]
