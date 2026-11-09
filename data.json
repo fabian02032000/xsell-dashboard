@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-09T17:33:38.811721+00:00",
+  "updated_at": "2026-11-09T21:12:05.314427+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 302,
-  "leads_whatsapp_count": 53,
+  "total_leads": 304,
+  "leads_whatsapp_count": 55,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -381,7 +381,7 @@
     },
     {
       "date": "2026-11-09",
-      "count": 4
+      "count": 6
     }
   ],
   "leads_by_month": [
@@ -416,7 +416,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 44,
+      "leads": 46,
       "goal": 74.0,
       "is_partial": false
     }
@@ -521,18 +521,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 4,
+      "leads": 6,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 44,
+  "current_month_leads": 46,
   "current_month_label": "November 2026",
-  "current_week_leads": 4,
+  "current_week_leads": 6,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 299,
+  "leads_with_deal": 303,
   "leads_detail": [
     {
       "name": "Luis Corman Bartolo",
@@ -592,10 +592,44 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Darwin  castellanos",
+      "deal_id": "67661538057",
+      "deal_note": "Indica número equivocado. Que sí conoce a la persona pero este no es su numero y no me lo puede brindar.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Número equivocado",
+      "lead_quality": null
+    },
+    {
+      "name": "Edson  Pinto",
+      "email": "epinto@ontario.com.pe",
+      "phone": "51 982 229 972",
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-11-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Ontario Inmobiliaria",
+      "deal_id": "67661724844",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Diego  Paredes",
+      "email": "dparedes@ontario.com.pe",
+      "phone": null,
+      "company": "(sin empresa)",
+      "lead_source": "WhatsApp (conversión)",
+      "created_date": "2026-11-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Ontario Inmobiliaria",
+      "deal_id": "67661724844",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -711,10 +745,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-08",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Roosevelt Quispe Saldaña",
+      "deal_id": "67661723148",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -5673,11 +5707,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 262
+      "count": 263
     },
     {
       "label": "Prospectos Contactados",
-      "count": 29
+      "count": 32
     },
     {
       "label": "Reunión Agendadas",
@@ -5685,7 +5719,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
@@ -5788,8 +5822,22 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 53,
+    "count": 55,
     "detail": [
+      {
+        "name": "Edson  Pinto",
+        "email": "epinto@ontario.com.pe",
+        "phone": "51 982 229 972",
+        "company": "(sin empresa)",
+        "created_date": "2026-11-09"
+      },
+      {
+        "name": "Diego  Paredes",
+        "email": "dparedes@ontario.com.pe",
+        "phone": null,
+        "company": "(sin empresa)",
+        "created_date": "2026-11-09"
+      },
       {
         "name": "Amparo  García Huapaya",
         "email": "(sin correo)",
