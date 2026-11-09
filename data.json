@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-08T23:35:21.710567+00:00",
+  "updated_at": "2026-11-09T02:54:41.391452+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 293,
+  "total_leads": 296,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -377,7 +377,7 @@
     },
     {
       "date": "2026-11-08",
-      "count": 7
+      "count": 10
     }
   ],
   "leads_by_month": [
@@ -412,7 +412,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 35,
+      "leads": 38,
       "goal": 74.0,
       "is_partial": false
     }
@@ -511,13 +511,13 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "leads": 29,
+      "leads": 32,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 35,
+  "current_month_leads": 38,
   "current_month_label": "November 2026",
-  "current_week_leads": 29,
+  "current_week_leads": 32,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -630,6 +630,57 @@
       "name": "Roosevelt Quispe Saldaña",
       "email": "rusvel_1993@hotmail.com",
       "phone": "+51942456113",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Canaza Apaza Orlando",
+      "email": "orl.canaza@gmail.com",
+      "phone": "+51929270707",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Richard",
+      "email": "gerente@hyb.pe",
+      "phone": "+51990005200",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-08",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Jack Medina Mntaño",
+      "email": "jackmedina1607@gmail.com",
+      "phone": "+51973059061",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-08",
@@ -5518,7 +5569,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 18
+      "count": 21
     },
     {
       "label": "Reunión Agendadas",
