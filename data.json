@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-09T21:20:28.870386+00:00",
+  "updated_at": "2026-11-10T03:35:12.079376+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 304,
+  "total_leads": 311,
   "leads_whatsapp_count": 55,
   "leads_by_day": [
     {
@@ -381,7 +381,7 @@
     },
     {
       "date": "2026-11-09",
-      "count": 6
+      "count": 13
     }
   ],
   "leads_by_month": [
@@ -416,7 +416,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 46,
+      "leads": 53,
       "goal": 74.0,
       "is_partial": false
     }
@@ -521,18 +521,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 6,
+      "leads": 13,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 46,
+  "current_month_leads": 53,
   "current_month_label": "November 2026",
-  "current_week_leads": 6,
+  "current_week_leads": 13,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 303,
+  "leads_with_deal": 304,
   "leads_detail": [
     {
       "name": "Luis Corman Bartolo",
@@ -630,6 +630,125 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Ontario Inmobiliaria",
       "deal_id": "67661724844",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Godoy Jaime",
+      "email": "jaime.godoy@gopersa.com",
+      "phone": "+51986968759",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Godoy Jaime",
+      "deal_id": "67677329297",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Gian Flores",
+      "email": "gfloresinga8@gmail.com",
+      "phone": "+51976509385",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Eduardo Figueroa",
+      "email": "edwardsinn@yahoo.com",
+      "phone": "+51943113413",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "cynthia López  collazos",
+      "email": "cynthialopezcollazos28@gmail.com",
+      "phone": "+51997563346",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Irvin Silva Chafio",
+      "email": "irvin.silva.chafio@gmail.com",
+      "phone": "+51924882018",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Gabriel Vargas Pazos",
+      "email": "gabrielvpazos19@gmail.com",
+      "phone": "+51942480228",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Alexander Tito Caballero",
+      "email": "alexandertito2910@gmail.com",
+      "phone": "+51940423967",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-09",
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -5711,7 +5830,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 32
+      "count": 33
     },
     {
       "label": "Reunión Agendadas",
@@ -5719,7 +5838,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 7
     }
   ],
   "warm_audience_exclude_estadios": [
