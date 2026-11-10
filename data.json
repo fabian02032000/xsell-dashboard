@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-10T11:49:49.310470+00:00",
+  "updated_at": "2026-11-10T15:18:49.616740+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 314,
-  "leads_whatsapp_count": 55,
+  "total_leads": 313,
+  "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
       "date": "2026-07-25",
@@ -381,11 +381,11 @@
     },
     {
       "date": "2026-11-09",
-      "count": 14
+      "count": 12
     },
     {
       "date": "2026-11-10",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -420,7 +420,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 56,
+      "leads": 55,
       "goal": 74.0,
       "is_partial": false
     }
@@ -525,18 +525,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 16,
+      "leads": 15,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 56,
+  "current_month_leads": 55,
   "current_month_label": "November 2026",
-  "current_week_leads": 16,
+  "current_week_leads": 15,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 304,
+  "leads_with_deal": 312,
   "leads_detail": [
     {
       "name": "Oscar Vasquez Samame",
@@ -545,10 +545,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Oscar Vasquez Samame",
+      "deal_id": "67661118838",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -562,10 +562,27 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Luis Marin",
+      "deal_id": "67661155225",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "oswaldo Andre Sanchez Ascencio",
+      "email": "itaandree@gmail.com",
+      "phone": "+51902556440",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-10",
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "oswaldo Andre Sanchez Ascencio",
+      "deal_id": "67677345154",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -641,40 +658,6 @@
       "lead_quality": null
     },
     {
-      "name": "Edson  Pinto",
-      "email": "epinto@ontario.com.pe",
-      "phone": "51 982 229 972",
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-11-09",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Ontario Inmobiliaria",
-      "deal_id": "67661724844",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null,
-      "discard_reason": null,
-      "lead_quality": null
-    },
-    {
-      "name": "Diego  Paredes",
-      "email": "dparedes@ontario.com.pe",
-      "phone": null,
-      "company": "(sin empresa)",
-      "lead_source": "WhatsApp (conversión)",
-      "created_date": "2026-11-09",
-      "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
-      "deal_name": "Ontario Inmobiliaria",
-      "deal_id": "67661724844",
-      "deal_note": null,
-      "estadio_lead": null,
-      "nivel_urgencia": null,
-      "discard_reason": null,
-      "lead_quality": null
-    },
-    {
       "name": "Godoy Jaime",
       "email": "jaime.godoy@gopersa.com",
       "phone": "+51986968759",
@@ -698,10 +681,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Gian  Flores",
+      "deal_id": "67661117999",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -715,14 +698,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Eduardo Figueroa",
+      "deal_id": "67661151818",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -732,14 +715,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "cynthia López collazos",
+      "deal_id": "67677436218",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No le interesa por ahora",
       "lead_quality": null
     },
     {
@@ -749,10 +732,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Irvin Silva Chafio",
+      "deal_id": "67661118332",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -766,14 +749,14 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Gabriel Vargas Pazos",
+      "deal_id": "67661153144",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No le interesa por ahora",
       "lead_quality": null
     },
     {
@@ -783,10 +766,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Alexander Tito Caballero",
+      "deal_id": "67677434645",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -800,10 +783,10 @@
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-09",
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Diana Ar",
+      "deal_id": "67677344873",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -1470,7 +1453,7 @@
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Nunca respondió llamada y WhatsApp",
+      "discard_reason": "Llenó el formulario por error",
       "lead_quality": null
     },
     {
@@ -2213,12 +2196,12 @@
       "created_date": "2026-10-12",
       "has_deal": true,
       "deal_stage": "Descartada",
-      "deal_name": "Feria De Carros los Brothers",
+      "deal_name": "Walter Edgardo Ruiz Castro",
       "deal_id": "65902544663",
-      "deal_note": null,
+      "deal_note": "No tiene empresa. Es vendedor independiente y el quiere una herramienta para su wsp",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": "Nunca respondió llamada y WhatsApp",
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -5881,19 +5864,19 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 263
+      "count": 266
     },
     {
       "label": "Prospectos Contactados",
-      "count": 33
-    },
-    {
-      "label": "Sin negocio",
-      "count": 10
+      "count": 38
     },
     {
       "label": "Reunión Agendadas",
       "count": 8
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
@@ -5996,22 +5979,8 @@
   ],
   "whatsapp_manual_start_date": "2026-09-01",
   "whatsapp_manual_contacts": {
-    "count": 55,
+    "count": 53,
     "detail": [
-      {
-        "name": "Edson  Pinto",
-        "email": "epinto@ontario.com.pe",
-        "phone": "51 982 229 972",
-        "company": "(sin empresa)",
-        "created_date": "2026-11-09"
-      },
-      {
-        "name": "Diego  Paredes",
-        "email": "dparedes@ontario.com.pe",
-        "phone": null,
-        "company": "(sin empresa)",
-        "created_date": "2026-11-09"
-      },
       {
         "name": "Amparo  García Huapaya",
         "email": "(sin correo)",
