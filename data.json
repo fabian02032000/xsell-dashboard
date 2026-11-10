@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:18:49.616740+00:00",
+  "updated_at": "2026-11-10T15:23:46.602632+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -563,13 +563,13 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Luis Marin",
       "deal_id": "67661155225",
-      "deal_note": null,
+      "deal_note": "Es asesor de venta. No tiene empresa y estaba buscando mejora para el con sus clientes pero de manera independiente.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -5864,11 +5864,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 266
+      "count": 267
     },
     {
       "label": "Prospectos Contactados",
-      "count": 38
+      "count": 37
     },
     {
       "label": "Reunión Agendadas",
