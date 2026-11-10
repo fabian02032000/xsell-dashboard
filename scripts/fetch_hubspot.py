@@ -161,6 +161,13 @@ WARM_AUDIENCE_EXCLUDE_ESTADIOS = {
 # si la campaña empezó antes o después de esta fecha.
 WHATSAPP_CAMPAIGN_START_DATE = os.environ.get("WHATSAPP_CAMPAIGN_START_DATE", "2026-09-01")
 
+# Desde cuándo DEJAR de contar los leads de WhatsApp (decisión de Fabián,
+# noviembre 2026: "ya no contabilicemos este mes los leads de WhatsApp").
+# Los contactos de WhatsApp creados desde esta fecha ya no suman en Registros
+# ni en ninguna vista del dashboard. Para volver a contarlos, deja esta
+# variable vacía (WHATSAPP_CAMPAIGN_END_DATE="") o pon una fecha posterior.
+WHATSAPP_CAMPAIGN_END_DATE = os.environ.get("WHATSAPP_CAMPAIGN_END_DATE", "2026-11-01")
+
 # Palabras (sin tildes, minúsculas) que, si aparecen en el nombre del Negocio
 # de un contacto que por lo demás calza con el patrón de "WhatsApp manual"
 # (ver is_whatsapp_manual_lead), indican que en realidad es OTRA gestión del
@@ -715,6 +722,17 @@ def main():
             f"{sorted(excluded_by_dealname_ids)}"
         )
     whatsapp_manual_ids = technical_candidate_ids - excluded_by_dealname_ids
+
+    # Pausa del conteo de WhatsApp: se sacan los creados desde WHATSAPP_CAMPAIGN_END_DATE
+    if WHATSAPP_CAMPAIGN_END_DATE:
+        end_epoch = date_to_epoch_ms(WHATSAPP_CAMPAIGN_END_DATE) + 5 * 3600 * 1000  # medianoche en Lima
+        def _created_ms(c):
+            cd = c.get("properties", {}).get("createdate")
+            return int(datetime.datetime.fromisoformat(cd.replace("Z", "+00:00")).timestamp() * 1000) if cd else 0
+        paused_ids = {c["id"] for c in all_contacts if c["id"] in whatsapp_manual_ids and _created_ms(c) >= end_epoch}
+        if paused_ids:
+            print(f"AVISO: {len(paused_ids)} lead(s) de WhatsApp no se cuentan (creados desde {WHATSAPP_CAMPAIGN_END_DATE}).")
+        whatsapp_manual_ids -= paused_ids
 
     contacts = [
         c for c in all_contacts
