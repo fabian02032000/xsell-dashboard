@@ -778,11 +778,12 @@ def main():
         full_name = " ".join(x for x in [props.get("firstname"), props.get("lastname")] if x).strip()
         status = deal_status_by_contact.get(c["id"])
         createdate = props.get("createdate")
-        created_date_lima = (
-            datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00"))
-            .astimezone(LIMA_TZ).date().isoformat()
+        _dt_lima = (
+            datetime.datetime.fromisoformat(createdate.replace("Z", "+00:00")).astimezone(LIMA_TZ)
             if createdate else None
         )
+        created_date_lima = _dt_lima.date().isoformat() if _dt_lima else None
+        created_hour_lima = _dt_lima.hour if _dt_lima else None
         leads_detail.append({
             "name": full_name or "(sin nombre)",
             "email": props.get("email") or "(sin correo)",
@@ -790,6 +791,7 @@ def main():
             "company": props.get("company") or "(sin empresa)",
             "lead_source": "WhatsApp (conversión)" if c["id"] in whatsapp_manual_ids else "Formulario (Meta Ads)",
             "created_date": created_date_lima,
+            "created_hour": created_hour_lima,
             "has_deal": status is not None,
             "deal_stage": status.get("stage_label") if status else None,
             "deal_name": status.get("deal_name") if status else None,
