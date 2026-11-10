@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-10T15:23:46.602632+00:00",
+  "updated_at": "2026-11-10T18:52:18.208624+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 313,
+  "total_leads": 314,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -385,7 +385,7 @@
     },
     {
       "date": "2026-11-10",
-      "count": 3
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -420,7 +420,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 55,
+      "leads": 56,
       "goal": 74.0,
       "is_partial": false
     }
@@ -525,18 +525,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 15,
+      "leads": 16,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 55,
+  "current_month_leads": 56,
   "current_month_label": "November 2026",
-  "current_week_leads": 15,
+  "current_week_leads": 16,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 312,
+  "leads_with_deal": 313,
   "leads_detail": [
     {
       "name": "Oscar Vasquez Samame",
@@ -587,6 +587,23 @@
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Daniel Saavedra",
+      "email": "nestor.saavedra@gsa.com.pe",
+      "phone": "+51991277187",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-10",
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Daniel  Saavedra",
+      "deal_id": "67794267973",
+      "deal_note": "Si respondió llamada. Es asesor de ventas, no cuenta con empresa. Indica que pensó que la publicidad era para ayudar a vender más a los asesores.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -5864,7 +5881,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 267
+      "count": 268
     },
     {
       "label": "Prospectos Contactados",
