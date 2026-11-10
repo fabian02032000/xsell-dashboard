@@ -461,6 +461,15 @@
   .heat-cell.empty{background:transparent; cursor:default;}
   .heat-cell.today{outline:2px solid var(--purple-2); outline-offset:1px;}
   .heat-cell:not(.empty):not(:disabled):hover{outline:2px solid var(--orange-2);}
+  .hh-wrap{margin-top:16px; padding-top:14px; border-top:1px solid var(--border, rgba(255,255,255,.08));}
+  .hh-title{font-size:12px; color:var(--text-muted); margin-bottom:8px; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap;}
+  .hh-title strong{color:var(--text-primary); font-size:12.5px;}
+  .hh{display:grid; grid-template-columns:28px repeat(24,minmax(0,1fr)); gap:2px; max-width:560px;}
+  .hh-h{font-size:9px; color:var(--text-muted); text-align:center; height:12px; line-height:12px;}
+  .hh-d{font-size:10px; color:var(--text-muted); line-height:14px;}
+  .hh-c{height:14px; border-radius:3px; background:var(--surface-2);}
+  .hh-c:hover{outline:1.5px solid var(--orange-2);}
+  .hh-note{font-size:11px; color:var(--text-muted); margin-top:8px;}
   .heat-legend{display:flex; align-items:center; gap:6px; margin-top:12px; font-size:11.5px; color:var(--text-muted);}
   .heat-legend i{width:16px; height:12px; border-radius:3px; display:inline-block;}
   @media (max-width:720px){
@@ -668,6 +677,11 @@
       </div>
       <div class="heatmap" id="heatmap"></div>
       <div class="heat-legend" id="heatLegend"></div>
+      <div class="hh-wrap" id="hourHeatWrap" hidden>
+        <div class="hh-title"><strong>Horas de ingreso</strong><span id="hourHeatInfo"></span></div>
+        <div class="hh" id="hourHeat"></div>
+        <div class="hh-note" id="hourHeatNote"></div>
+      </div>
     </div>
   </section>
 
@@ -1664,7 +1678,7 @@
     }
   }
 
-  let heatCtx = { counts: {}, months: [], idx: 0, today: '' };
+  let heatCtx = { counts: {}, months: [], idx: 0, today: '', leads: [] };
   function initHeatmap(data){
     const counts = {};
     (data.leads_detail || []).forEach(l => { if (l.created_date) counts[l.created_date] = (counts[l.created_date] || 0) + 1; });
@@ -1678,7 +1692,7 @@
       months.push(`${y}-${String(m).padStart(2, '0')}`);
       m++; if (m > 12){ m = 1; y++; }
     }
-    heatCtx = { counts, months, idx: months.length - 1, today };
+    heatCtx = { counts, months, idx: months.length - 1, today, leads: data.leads_detail || [] };
     document.getElementById('heatPrev').onclick = () => { if (heatCtx.idx > 0){ heatCtx.idx--; drawHeatmap(); } };
     document.getElementById('heatNext').onclick = () => { if (heatCtx.idx < heatCtx.months.length - 1){ heatCtx.idx++; drawHeatmap(); } };
     drawHeatmap();
@@ -1721,9 +1735,48 @@
       applyDateRange(dt, dt);
       document.getElementById('tab-leads').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }));
+    drawHourHeat(ym);
     document.getElementById('heatLegend').innerHTML =
       `<span>${fmt(total)} registros en el mes</span><span style="margin-left:auto;">Menos</span>` +
       [0, 1, 2, 3, 4].map(lv => `<i style="background:${bg(lv)}"></i>`).join('') + '<span>Más</span>';
+  }
+
+  function drawHourHeat(ym){
+    const wrap = document.getElementById('hourHeatWrap'), el = document.getElementById('hourHeat');
+    if (!wrap || !el) return;
+    const rows = Array.from({ length: 7 }, () => new Array(24).fill(0));
+    let n = 0, noHour = 0;
+    (heatCtx.leads || []).forEach(l => {
+      if (!l.created_date || l.created_date.slice(0, 7) !== ym) return;
+      if (typeof l.created_hour !== 'number'){ noHour++; return; }
+      const [y, m, d] = l.created_date.split('-').map(Number);
+      const dow = (new Date(y, m - 1, d).getDay() + 6) % 7; // lunes = 0
+      rows[dow][l.created_hour]++; n++;
+    });
+    if (!n){ wrap.hidden = true; return; }
+    wrap.hidden = false;
+    let max = 0; rows.forEach(r => r.forEach(v => { if (v > max) max = v; }));
+    const ALPHA = [0, 0.22, 0.42, 0.68, 1];
+    const lvl = c => !c ? 0 : (max <= 1 ? 4 : Math.max(1, Math.min(4, Math.ceil(c / max * 4))));
+    const DOW = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+    let html = '<div></div>';
+    for (let h = 0; h < 24; h++) html += `<div class="hh-h">${h % 3 === 0 ? h : ''}</div>`;
+    rows.forEach((r, i) => {
+      html += `<div class="hh-d">${DOW[i]}</div>`;
+      r.forEach((c, h) => {
+        const lv = lvl(c);
+        const hh = String(h).padStart(2, '0');
+        const t = `${DOW[i]} ${hh}:00–${hh}:59: ${c} registro${c === 1 ? '' : 's'}`;
+        html += `<div class="hh-c" title="${t}" aria-label="${t}" style="background:${lv ? `rgba(255,107,19,${ALPHA[lv]})` : 'var(--surface-2)'}"></div>`;
+      });
+    });
+    el.innerHTML = html;
+    // hora pico
+    const byHour = new Array(24).fill(0); rows.forEach(r => r.forEach((c, h) => { byHour[h] += c; }));
+    const peak = byHour.indexOf(Math.max(...byHour));
+    const p2 = String(peak).padStart(2, '0');
+    document.getElementById('hourHeatInfo').textContent = `Hora de Lima · pico: ${p2}:00–${p2}:59 (${byHour[peak]} de ${n})`;
+    document.getElementById('hourHeatNote').textContent = noHour ? `${noHour} registro(s) sin hora disponible no se incluyen.` : '';
   }
 
   let filterCtx = { data: null, meta: null };
