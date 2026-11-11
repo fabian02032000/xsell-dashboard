@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-11T12:04:09.263189+00:00",
+  "updated_at": "2026-11-11T18:34:37.874498+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 325,
+  "total_leads": 330,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -389,7 +389,7 @@
     },
     {
       "date": "2026-11-11",
-      "count": 2
+      "count": 7
     }
   ],
   "leads_by_month": [
@@ -424,7 +424,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 67,
+      "leads": 72,
       "goal": 74.0,
       "is_partial": false
     }
@@ -529,18 +529,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 27,
+      "leads": 32,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 67,
+  "current_month_leads": 72,
   "current_month_label": "November 2026",
-  "current_week_leads": 27,
+  "current_week_leads": 32,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 316,
+  "leads_with_deal": 329,
   "leads_detail": [
     {
       "name": "Frank Soto",
@@ -550,14 +550,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 0,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Frank Soto",
+      "deal_id": "67796970079",
+      "deal_note": "No tiene empresa. Marcó por error",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Llenó el formulario por error",
       "lead_quality": null
     },
     {
@@ -568,14 +568,104 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 1,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Luis Arturo Calderón Morales",
+      "deal_id": "67796970362",
+      "deal_note": "Responde despectivamente, no me interesa y corta llamada.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
+    },
+    {
+      "name": "Fernando Marcelo Contreras Cárdenas",
+      "email": "fcontreras@outlook.com.pe",
+      "phone": "+51910714366",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 7,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Fernando Marcelo Contreras Cárdenas",
+      "deal_id": "67796970545",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Dayana Susset Fernández Yépez",
+      "email": "dasufer25@gmail.com",
+      "phone": "+51982360504",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 10,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Dayana Susset Fernández Yépez",
+      "deal_id": "67797655737",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Christian Canta Delacruz",
+      "email": "ccantadecr7@limaeste.ucvvirtual.edu.pe",
+      "phone": "+51922968338",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 11,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Christian Canta Delacruz",
+      "deal_id": "67797036142",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Yuri vera",
+      "email": "cyberfoxxx2023@gmail.com",
+      "phone": "+51918012529",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 12,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Yuri vera",
+      "deal_id": "67797537299",
+      "deal_note": "Asesor de ventas. No genera pauta ni tiene empresa.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
+    },
+    {
+      "name": "Jheyson kevin",
+      "email": "jheysonkevinkun7@gmail.com",
+      "phone": "+51974554995",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 13,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jheyson kevin",
+      "deal_id": "67797105926",
+      "deal_note": "Asesor busca CRM. No tiene empresa.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Busca solo marketing o CRM",
       "lead_quality": null
     },
     {
@@ -712,10 +802,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "created_hour": 22,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Liber Oblitas Araujo",
+      "deal_id": "67797593254",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -730,10 +820,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "created_hour": 22,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Carlos Del Valle Suarez",
+      "deal_id": "67797654317",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -748,14 +838,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "created_hour": 23,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Martin Lenyn",
+      "deal_id": "67797593448",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -766,10 +856,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "created_hour": 23,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Adriana Pizarro",
+      "deal_id": "67797033728",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -784,10 +874,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "created_hour": 23,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Tatiana V. Gallegos",
+      "deal_id": "67797654909",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -802,10 +892,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
       "created_hour": 23,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Jorge Coello",
+      "deal_id": "67797160585",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -6397,19 +6487,19 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 270
+      "count": 275
     },
     {
       "label": "Prospectos Contactados",
-      "count": 38
-    },
-    {
-      "label": "Sin negocio",
-      "count": 9
+      "count": 46
     },
     {
       "label": "Reunión Agendadas",
       "count": 8
+    },
+    {
+      "label": "Sin negocio",
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
