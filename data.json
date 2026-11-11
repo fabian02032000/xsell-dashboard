@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-11T04:29:21.148212+00:00",
+  "updated_at": "2026-11-11T10:59:39.361743+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 320,
+  "total_leads": 325,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -385,7 +385,11 @@
     },
     {
       "date": "2026-11-10",
-      "count": 10
+      "count": 13
+    },
+    {
+      "date": "2026-11-11",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -420,7 +424,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 62,
+      "leads": 67,
       "goal": 74.0,
       "is_partial": false
     }
@@ -525,19 +529,55 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 22,
+      "leads": 27,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 62,
+  "current_month_leads": 67,
   "current_month_label": "November 2026",
-  "current_week_leads": 22,
+  "current_week_leads": 27,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 316,
   "leads_detail": [
+    {
+      "name": "Frank Soto",
+      "email": "franksoto.1@hotmail.com",
+      "phone": "+51910950700",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 0,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Luis Arturo Calderón Morales",
+      "email": "lcalderonmo2@gmail.com",
+      "phone": "+51934841214",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 1,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Oscar Vasquez Samame",
       "email": "vasquezsam.oscar1990@gmail.com",
@@ -704,6 +744,60 @@
       "name": "Martin Lenyn",
       "email": "mespinozas@utp.edu.pe",
       "phone": "+51934618058",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-10",
+      "created_hour": 23,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Adriana Pizarro",
+      "email": "ipizarror79@gmail.com",
+      "phone": "+51963551401",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-10",
+      "created_hour": 23,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Tatiana V. Gallegos",
+      "email": "tatiana.vgallegos0711@gmail.com",
+      "phone": "+51966392236",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-10",
+      "created_hour": 23,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Jorge Coello",
+      "email": "ramsetmktdigital@gmail.com",
+      "phone": "+51915235773",
       "company": "(sin empresa)",
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-10",
@@ -6310,12 +6404,12 @@
       "count": 38
     },
     {
-      "label": "Reunión Agendadas",
-      "count": 8
+      "label": "Sin negocio",
+      "count": 9
     },
     {
-      "label": "Sin negocio",
-      "count": 4
+      "label": "Reunión Agendadas",
+      "count": 8
     }
   ],
   "warm_audience_exclude_estadios": [
