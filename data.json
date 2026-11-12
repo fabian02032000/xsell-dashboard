@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12T17:18:26.305425+00:00",
+  "updated_at": "2026-11-12T22:27:52.563280+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 337,
+  "total_leads": 338,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -393,7 +393,7 @@
     },
     {
       "date": "2026-11-12",
-      "count": 2
+      "count": 3
     }
   ],
   "leads_by_month": [
@@ -428,7 +428,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 79,
+      "leads": 80,
       "goal": 74.0,
       "is_partial": false
     }
@@ -533,18 +533,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 39,
+      "leads": 40,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 79,
+  "current_month_leads": 80,
   "current_month_label": "November 2026",
-  "current_week_leads": 39,
+  "current_week_leads": 40,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 331,
+  "leads_with_deal": 336,
   "leads_detail": [
     {
       "name": "Patrick Valladares Palomino",
@@ -554,14 +554,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-12",
       "created_hour": 0,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Patrick Valladares Palomino",
+      "deal_id": "67886668105",
+      "deal_note": "Indica que no está buscando",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Llenó el formulario por error",
       "lead_quality": null
     },
     {
@@ -572,6 +572,24 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-12",
       "created_hour": 7,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Jc Cruz",
+      "deal_id": "67924968840",
+      "deal_note": "No tiene empresa.  No interesado",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
+    },
+    {
+      "name": "Keilla Milagros Caso Villalobos",
+      "email": "keillacaso@ucayalimotors.com",
+      "phone": "+51916010410",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-12",
+      "created_hour": 15,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -738,7 +756,7 @@
       "deal_stage": "Descartada",
       "deal_name": "Sergio Angulo",
       "deal_id": "67797551205",
-      "deal_note": null,
+      "deal_note": "No tiene negocio. Es abogado, no sabe quién lo registró.",
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": "Independiente / sin empresa",
@@ -752,10 +770,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 21,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Diciembre cambió la conversación",
+      "deal_id": "67925076847",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -770,10 +788,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 22,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Miguel Pachón Iparraguirre",
+      "deal_id": "67884687391",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -788,10 +806,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 22,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Nicole Quispe",
+      "deal_id": "67924968581",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -6617,11 +6635,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 277
+      "count": 279
     },
     {
       "label": "Prospectos Contactados",
-      "count": 46
+      "count": 49
     },
     {
       "label": "Reunión Agendadas",
@@ -6629,7 +6647,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 6
+      "count": 2
     }
   ],
   "warm_audience_exclude_estadios": [
