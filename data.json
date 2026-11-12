@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T00:58:18.794128+00:00",
+  "updated_at": "2026-11-12T01:39:50.353499+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -540,7 +540,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 329,
+  "leads_with_deal": 331,
   "leads_detail": [
     {
       "name": "Frank Soto",
@@ -676,14 +676,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 14,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Olga",
+      "deal_id": "67797730076",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -694,14 +694,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-11",
       "created_hour": 17,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Sergio Angulo",
+      "deal_id": "67797551205",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -6523,7 +6523,7 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 275
+      "count": 277
     },
     {
       "label": "Prospectos Contactados",
@@ -6535,7 +6535,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
