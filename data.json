@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12T01:39:50.353499+00:00",
+  "updated_at": "2026-11-12T08:08:26.228220+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 332,
+  "total_leads": 336,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -389,7 +389,11 @@
     },
     {
       "date": "2026-11-11",
-      "count": 9
+      "count": 12
+    },
+    {
+      "date": "2026-11-12",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -424,7 +428,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 74,
+      "leads": 78,
       "goal": 74.0,
       "is_partial": false
     }
@@ -529,19 +533,37 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 34,
+      "leads": 38,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 74,
+  "current_month_leads": 78,
   "current_month_label": "November 2026",
-  "current_week_leads": 34,
+  "current_week_leads": 38,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 331,
   "leads_detail": [
+    {
+      "name": "Patrick Valladares Palomino",
+      "email": "epvalladares27@gmail.com",
+      "phone": "+51956361453",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-12",
+      "created_hour": 0,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Frank Soto",
       "email": "franksoto.1@hotmail.com",
@@ -702,6 +724,60 @@
       "estadio_lead": null,
       "nivel_urgencia": null,
       "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
+    },
+    {
+      "name": "Diego Martin sanchez roman",
+      "email": "diegomar211997@gmail.com",
+      "phone": "+51972355566",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 21,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Miguel Pachón Iparraguirre",
+      "email": "mpachon@incamak.pe",
+      "phone": "+51928336530",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 22,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Nicole Quispe",
+      "email": "nicolequispesalcedo.09@gmail.com",
+      "phone": "+51922541606",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-11",
+      "created_hour": 22,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
       "lead_quality": null
     },
     {
@@ -6535,7 +6611,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 5
     }
   ],
   "warm_audience_exclude_estadios": [
