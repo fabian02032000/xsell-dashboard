@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-13T02:57:48.354745+00:00",
+  "updated_at": "2026-11-13T10:07:17.131002+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 339,
+  "total_leads": 340,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -394,6 +394,10 @@
     {
       "date": "2026-11-12",
       "count": 4
+    },
+    {
+      "date": "2026-11-13",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -428,7 +432,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 81,
+      "leads": 82,
       "goal": 74.0,
       "is_partial": false
     }
@@ -533,19 +537,37 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 41,
+      "leads": 42,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 81,
+  "current_month_leads": 82,
   "current_month_label": "November 2026",
-  "current_week_leads": 41,
+  "current_week_leads": 42,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 336,
   "leads_detail": [
+    {
+      "name": "Juan Zentner Carrillo",
+      "email": "zentnercarrillo@gmail.com",
+      "phone": "+51901541044",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 0,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Patrick Valladares Palomino",
       "email": "epvalladares27@gmail.com",
@@ -6665,7 +6687,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 4
     }
   ],
   "warm_audience_exclude_estadios": [
