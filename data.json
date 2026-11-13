@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-13T10:42:01.615045+00:00",
+  "updated_at": "2026-11-13T17:41:16.274240+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 340,
+  "total_leads": 345,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -397,7 +397,7 @@
     },
     {
       "date": "2026-11-13",
-      "count": 1
+      "count": 6
     }
   ],
   "leads_by_month": [
@@ -432,7 +432,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 82,
+      "leads": 87,
       "goal": 74.0,
       "is_partial": false
     }
@@ -537,18 +537,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 42,
+      "leads": 47,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 82,
+  "current_month_leads": 87,
   "current_month_label": "November 2026",
-  "current_week_leads": 42,
+  "current_week_leads": 47,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 336,
+  "leads_with_deal": 344,
   "leads_detail": [
     {
       "name": "Juan Zentner Carrillo",
@@ -558,10 +558,100 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-13",
       "created_hour": 0,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Juan Zentner Carrillo",
+      "deal_id": "67969875884",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Veronica Mocarro Palacios",
+      "email": "mocarropalaciosveronicadelmila@gmail.com",
+      "phone": "+51958658858",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 7,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Veronica Mocarro Palacios",
+      "deal_id": "67884765956",
+      "deal_note": "Indica que por el momento no, ya que no tiene empresa. Y corta llamada.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
+    },
+    {
+      "name": "marcos poma",
+      "email": "mpomatrelles@gmail.com",
+      "phone": "+51959709235",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 9,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "marcos poma",
+      "deal_id": "67984651565",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Oscar Rojas",
+      "email": "orojaslongoria2@gmail.com",
+      "phone": "+51947491187",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 9,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Oscar Rojas",
+      "deal_id": "67884766307",
+      "deal_note": "No es empresa. Estaba consultado quería saber de que se trata.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Independiente / sin empresa",
+      "lead_quality": null
+    },
+    {
+      "name": "Ronny Maxwell Caqui Chavez",
+      "email": "construmax2186@gmail.com",
+      "phone": "+51987680078",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 9,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Ronny Maxwell Caqui Chavez",
+      "deal_id": "67884710534",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "Buscaba otra cosa (empleo, alquiler, compra)",
+      "lead_quality": null
+    },
+    {
+      "name": "Jackson Martin Vasquez Urbina",
+      "email": "jack_s09@hotmail.com",
+      "phone": "+51990733250",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 10,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Jackson Martin Vasquez Urbina",
+      "deal_id": "67969936231",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -612,14 +702,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-12",
       "created_hour": 15,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
-      "deal_note": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Keilla Milagros Caso Villalobos",
+      "deal_id": "67884709258",
+      "deal_note": "Indica que no está interesada. Cualquier cosa ella se comunica.",
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No le interesa por ahora",
       "lead_quality": null
     },
     {
@@ -630,10 +720,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-12",
       "created_hour": 21,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Diego Enrrique Espejo Suarez",
+      "deal_id": "67884709426",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -6675,11 +6765,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 279
+      "count": 283
     },
     {
       "label": "Prospectos Contactados",
-      "count": 49
+      "count": 53
     },
     {
       "label": "Reunión Agendadas",
@@ -6687,7 +6777,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
