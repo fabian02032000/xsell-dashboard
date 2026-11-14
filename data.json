@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-13T23:29:16.994677+00:00",
+  "updated_at": "2026-11-14T02:52:02.058845+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 346,
+  "total_leads": 349,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -397,7 +397,7 @@
     },
     {
       "date": "2026-11-13",
-      "count": 7
+      "count": 10
     }
   ],
   "leads_by_month": [
@@ -432,7 +432,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 88,
+      "leads": 91,
       "goal": 74.0,
       "is_partial": false
     }
@@ -537,18 +537,18 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 48,
+      "leads": 51,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 88,
+  "current_month_leads": 91,
   "current_month_label": "November 2026",
-  "current_week_leads": 48,
+  "current_week_leads": 51,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 344,
+  "leads_with_deal": 347,
   "leads_detail": [
     {
       "name": "Juan Zentner Carrillo",
@@ -666,6 +666,60 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-13",
       "created_hour": 14,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Ramon Orrego Serran",
+      "deal_id": "67984671406",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Zoraida Maruja Villaverde Escarrache",
+      "email": "zoraidave13@gmail.com",
+      "phone": "+51912815544",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 18,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Zoraida Maruja Villaverde Escarrache",
+      "deal_id": "67925117279",
+      "deal_note": "Responde llamada, indica no me interesa y corta llamada.",
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": "No le interesa por ahora",
+      "lead_quality": null
+    },
+    {
+      "name": "Néstor Ruíz Zegarra",
+      "email": "nrznews@gmail.com",
+      "phone": "+51979903663",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 19,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Néstor Ruíz Zegarra",
+      "deal_id": "67984671531",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Delio Yucra taipe",
+      "email": "delioyucra704@gmail.cam",
+      "phone": "+51972578858",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-13",
+      "created_hour": 20,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -6783,11 +6837,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 283
+      "count": 284
     },
     {
       "label": "Prospectos Contactados",
-      "count": 53
+      "count": 55
     },
     {
       "label": "Reunión Agendadas",
