@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-15T20:07:36.891593+00:00",
+  "updated_at": "2026-11-15T23:39:32.160217+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 359,
+  "total_leads": 360,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -405,7 +405,7 @@
     },
     {
       "date": "2026-11-15",
-      "count": 6
+      "count": 7
     }
   ],
   "leads_by_month": [
@@ -440,7 +440,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 101,
+      "leads": 102,
       "goal": 74.0,
       "is_partial": false
     }
@@ -545,13 +545,13 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 61,
+      "leads": 62,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 101,
+  "current_month_leads": 102,
   "current_month_label": "November 2026",
-  "current_week_leads": 61,
+  "current_week_leads": 62,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -656,6 +656,24 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-15",
       "created_hour": 12,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Edgar Anibal Perez Olaguivel",
+      "email": "ragdeanibalperez@gmail.com",
+      "phone": "+51917656205",
+      "company": "UNAMBA",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-15",
+      "created_hour": 16,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -7033,7 +7051,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 12
+      "count": 13
     },
     {
       "label": "Reunión Agendadas",
