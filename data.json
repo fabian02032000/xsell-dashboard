@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-15T00:52:21.845003+00:00",
+  "updated_at": "2026-11-15T06:49:58.669463+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 350,
+  "total_leads": 354,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -401,6 +401,10 @@
     },
     {
       "date": "2026-11-14",
+      "count": 4
+    },
+    {
+      "date": "2026-11-15",
       "count": 1
     }
   ],
@@ -436,7 +440,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 92,
+      "leads": 96,
       "goal": 74.0,
       "is_partial": false
     }
@@ -541,19 +545,37 @@
     {
       "week_start": "2026-11-09",
       "week_end": "2026-11-15",
-      "leads": 52,
+      "leads": 56,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 92,
+  "current_month_leads": 96,
   "current_month_label": "November 2026",
-  "current_week_leads": 52,
+  "current_week_leads": 56,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 347,
   "leads_detail": [
+    {
+      "name": "Rolando Chumbimune Gonzales",
+      "email": "chumbimune07334275@gmail.com",
+      "phone": "+51980842874",
+      "company": "Claro",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-15",
+      "created_hour": 1,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Ricardo Enrique Montejo Castro",
       "email": "rmontejo677@gmail.com",
@@ -562,6 +584,60 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-14",
       "created_hour": 6,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Jose Martin Villarreyes Manriquez",
+      "email": "josemartinvillarreyes26@gmail.com",
+      "phone": "+51939443901",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-14",
+      "created_hour": 19,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Reynaldo Atoche",
+      "email": "reynaldoatoche2@gmail.com",
+      "phone": "+51934166550",
+      "company": "(sin empresa)",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-14",
+      "created_hour": 20,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Luz Irene Veintimilla Cornejo",
+      "email": "luzveintimilla@mifondo.com",
+      "phone": "+51942064201",
+      "company": "Mi Fondo",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-14",
+      "created_hour": 21,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -6871,7 +6947,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 7
     }
   ],
   "warm_audience_exclude_estadios": [
