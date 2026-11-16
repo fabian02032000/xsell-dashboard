@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-16T21:01:17.806201+00:00",
+  "updated_at": "2026-11-16T23:00:04.627610+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 369,
+  "total_leads": 370,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -409,7 +409,7 @@
     },
     {
       "date": "2026-11-16",
-      "count": 6
+      "count": 7
     }
   ],
   "leads_by_month": [
@@ -444,7 +444,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 111,
+      "leads": 112,
       "goal": 74.0,
       "is_partial": false
     }
@@ -555,13 +555,13 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 6,
+      "leads": 7,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 111,
+  "current_month_leads": 112,
   "current_month_label": "November 2026",
-  "current_week_leads": 6,
+  "current_week_leads": 7,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -666,6 +666,24 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-16",
       "created_hour": 15,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Rosmery Guizado",
+      "email": "(sin correo)",
+      "phone": "+51982151033",
+      "company": "EL PERFIL",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 17,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -7227,7 +7245,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 3
+      "count": 4
     }
   ],
   "warm_audience_exclude_estadios": [
