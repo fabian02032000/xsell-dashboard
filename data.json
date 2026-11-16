@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-16T05:08:25.778442+00:00",
+  "updated_at": "2026-11-16T11:09:54.825802+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 363,
+  "total_leads": 364,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -406,6 +406,10 @@
     {
       "date": "2026-11-15",
       "count": 10
+    },
+    {
+      "date": "2026-11-16",
+      "count": 1
     }
   ],
   "leads_by_month": [
@@ -440,7 +444,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 105,
+      "leads": 106,
       "goal": 74.0,
       "is_partial": false
     }
@@ -551,19 +555,37 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 0,
+      "leads": 1,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 105,
+  "current_month_leads": 106,
   "current_month_label": "November 2026",
-  "current_week_leads": 0,
+  "current_week_leads": 1,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 347,
   "leads_detail": [
+    {
+      "name": "Amancio Ramirez Garcia",
+      "email": "amancio090@gmail.com",
+      "phone": "+51962695922",
+      "company": "FUNDO SANTA ROSA",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 1,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Rolando Chumbimune Gonzales",
       "email": "chumbimune07334275@gmail.com",
@@ -7111,7 +7133,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 16
+      "count": 17
     },
     {
       "label": "Reunión Agendadas",
