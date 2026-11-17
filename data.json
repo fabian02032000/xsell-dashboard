@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-17T03:42:05.169238+00:00",
+  "updated_at": "2026-11-17T05:01:10.545343+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 373,
+  "total_leads": 375,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -409,7 +409,7 @@
     },
     {
       "date": "2026-11-16",
-      "count": 10
+      "count": 12
     }
   ],
   "leads_by_month": [
@@ -444,7 +444,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 115,
+      "leads": 117,
       "goal": 74.0,
       "is_partial": false
     }
@@ -555,13 +555,13 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 10,
+      "leads": 12,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 115,
+  "current_month_leads": 117,
   "current_month_label": "November 2026",
-  "current_week_leads": 10,
+  "current_week_leads": 12,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -738,6 +738,42 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-16",
       "created_hour": 22,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Racacha Diego",
+      "email": "diegoarmando_10_11@hotmail.com",
+      "phone": "+51962250729",
+      "company": "bodega lina",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 23,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Jonathan Vasquez",
+      "email": "jonathanvasquezflores2017@gmail.com",
+      "phone": "+51917773956",
+      "company": "NAVAS inmobiliaria",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 23,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -7299,7 +7335,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 6
     }
   ],
   "warm_audience_exclude_estadios": [
