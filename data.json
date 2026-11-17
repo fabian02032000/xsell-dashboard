@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-17T05:01:10.545343+00:00",
+  "updated_at": "2026-11-17T12:30:26.147460+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 375,
+  "total_leads": 379,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -410,6 +410,10 @@
     {
       "date": "2026-11-16",
       "count": 12
+    },
+    {
+      "date": "2026-11-17",
+      "count": 4
     }
   ],
   "leads_by_month": [
@@ -444,7 +448,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 117,
+      "leads": 121,
       "goal": 74.0,
       "is_partial": false
     }
@@ -555,19 +559,91 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 12,
+      "leads": 16,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 117,
+  "current_month_leads": 121,
   "current_month_label": "November 2026",
-  "current_week_leads": 12,
+  "current_week_leads": 16,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 369,
   "leads_detail": [
+    {
+      "name": "Miguel Ángel Rodriguez eza",
+      "email": "miguel@kuadante.com",
+      "phone": "+51925026109",
+      "company": "Kuadrante",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-17",
+      "created_hour": 1,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "alexander yllescas",
+      "email": "alexanderyllesc@gmail.com",
+      "phone": "+51944756302",
+      "company": "Independiente",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-17",
+      "created_hour": 1,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Antonio Orihuela",
+      "email": "aorihuela@almajer.com.pe",
+      "phone": "+51940832511",
+      "company": "almajer global sac",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-17",
+      "created_hour": 6,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Julio Cesar Vera Garcia",
+      "email": "julio.vera@automotoresinka.com",
+      "phone": "+51981091550",
+      "company": "MITSUBISHI",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-17",
+      "created_hour": 6,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Amancio Ramirez Garcia",
       "email": "amancio090@gmail.com",
@@ -7330,12 +7406,12 @@
       "count": 37
     },
     {
-      "label": "Reunión Agendadas",
-      "count": 8
+      "label": "Sin negocio",
+      "count": 10
     },
     {
-      "label": "Sin negocio",
-      "count": 6
+      "label": "Reunión Agendadas",
+      "count": 8
     }
   ],
   "warm_audience_exclude_estadios": [
