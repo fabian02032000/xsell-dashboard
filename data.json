@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-16T23:00:04.627610+00:00",
+  "updated_at": "2026-11-17T03:42:05.169238+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 370,
+  "total_leads": 373,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -409,7 +409,7 @@
     },
     {
       "date": "2026-11-16",
-      "count": 7
+      "count": 10
     }
   ],
   "leads_by_month": [
@@ -444,7 +444,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 112,
+      "leads": 115,
       "goal": 74.0,
       "is_partial": false
     }
@@ -555,18 +555,18 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 7,
+      "leads": 10,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 112,
+  "current_month_leads": 115,
   "current_month_label": "November 2026",
-  "current_week_leads": 7,
+  "current_week_leads": 10,
   "closed_deals": {
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 366,
+  "leads_with_deal": 369,
   "leads_detail": [
     {
       "name": "Amancio Ramirez Garcia",
@@ -648,10 +648,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-16",
       "created_hour": 14,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "MIXIONG S.A.C.",
+      "deal_id": "67997155411",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -666,10 +666,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-16",
       "created_hour": 15,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Javier Carrillo",
+      "deal_id": "68033944999",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -684,6 +684,60 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-16",
       "created_hour": 17,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "EL PERFIL",
+      "deal_id": "68035790984",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "LukiCat",
+      "email": "leemayckol@gmail.com",
+      "phone": "+51901330832",
+      "company": ".",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 20,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Edgardo Valer Pinto",
+      "email": "edvapi62@gmail.com",
+      "phone": "+51983615327",
+      "company": "edvapi eirl",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 21,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Luis Alberto Pineda Llerena",
+      "email": "(sin correo)",
+      "phone": "+51922180852",
+      "company": "Pineda Automotriz sac",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-16",
+      "created_hour": 22,
       "has_deal": false,
       "deal_stage": null,
       "deal_name": null,
@@ -7237,7 +7291,7 @@
     },
     {
       "label": "Prospectos Contactados",
-      "count": 34
+      "count": 37
     },
     {
       "label": "Reunión Agendadas",
