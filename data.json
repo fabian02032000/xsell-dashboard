@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-18T03:48:31.779484+00:00",
+  "updated_at": "2026-11-18T11:21:06.242404+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 382,
+  "total_leads": 384,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -414,6 +414,10 @@
     {
       "date": "2026-11-17",
       "count": 7
+    },
+    {
+      "date": "2026-11-18",
+      "count": 2
     }
   ],
   "leads_by_month": [
@@ -448,7 +452,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 124,
+      "leads": 126,
       "goal": 74.0,
       "is_partial": false
     }
@@ -559,19 +563,55 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 19,
+      "leads": 21,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 124,
+  "current_month_leads": 126,
   "current_month_label": "November 2026",
-  "current_week_leads": 19,
+  "current_week_leads": 21,
   "closed_deals": {
     "count": 0,
     "available": true
   },
   "leads_with_deal": 378,
   "leads_detail": [
+    {
+      "name": "Anthony Diaz Vega",
+      "email": "adiazv@fonbienes.com.pe",
+      "phone": "+51982190305",
+      "company": "Marketing E.S Perú",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-18",
+      "created_hour": 0,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Jessica Pineda Llerena",
+      "email": "jessica.pineda@pinedautomotriz.com",
+      "phone": "+51998322730",
+      "company": "PINEDA AUTOMOTRIZ SAC",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-18",
+      "created_hour": 4,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
     {
       "name": "Miguel Ángel Rodriguez eza",
       "email": "miguel@kuadante.com",
@@ -7465,7 +7505,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 4
+      "count": 6
     }
   ],
   "warm_audience_exclude_estadios": [
