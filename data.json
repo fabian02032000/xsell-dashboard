@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T12:19:50.513650+00:00",
+  "updated_at": "2026-11-18T19:26:48.590706+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -574,7 +574,7 @@
     "count": 0,
     "available": true
   },
-  "leads_with_deal": 378,
+  "leads_with_deal": 383,
   "leads_detail": [
     {
       "name": "Anthony Diaz Vega",
@@ -584,14 +584,14 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-18",
       "created_hour": 0,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Descartada",
+      "deal_name": "Marketing E.S Perú",
+      "deal_id": "68147740467",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -602,10 +602,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-18",
       "created_hour": 4,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "PINEDA AUTOMOTRIZ SAC",
+      "deal_id": "68148112015",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -639,13 +639,13 @@
       "created_date": "2026-11-17",
       "created_hour": 1,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Independiente",
       "deal_id": "67997174449",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Negocio muy pequeño o pocos leads",
       "lead_quality": null
     },
     {
@@ -692,10 +692,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-17",
       "created_hour": 19,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Indianorg ",
+      "deal_id": "68156697717",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -710,10 +710,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-17",
       "created_hour": 21,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Neuma Perú ",
+      "deal_id": "68147677856",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -728,10 +728,10 @@
       "lead_source": "Formulario (Meta Ads)",
       "created_date": "2026-11-17",
       "created_hour": 22,
-      "has_deal": false,
-      "deal_stage": null,
-      "deal_name": null,
-      "deal_id": null,
+      "has_deal": true,
+      "deal_stage": "Prospectos Contactados",
+      "deal_name": "Inversiones Yomaro",
+      "deal_id": "68147740306",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -7493,11 +7493,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 324
+      "count": 326
     },
     {
       "label": "Prospectos Contactados",
-      "count": 46
+      "count": 49
     },
     {
       "label": "Reunión Agendadas",
@@ -7505,7 +7505,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 6
+      "count": 1
     }
   ],
   "warm_audience_exclude_estadios": [
