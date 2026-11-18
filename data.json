@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-17T22:28:51.100212+00:00",
+  "updated_at": "2026-11-18T02:57:22.473919+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
   "closed_deals_goal": 3,
-  "total_leads": 379,
+  "total_leads": 381,
   "leads_whatsapp_count": 53,
   "leads_by_day": [
     {
@@ -413,7 +413,7 @@
     },
     {
       "date": "2026-11-17",
-      "count": 4
+      "count": 6
     }
   ],
   "leads_by_month": [
@@ -448,7 +448,7 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "leads": 121,
+      "leads": 123,
       "goal": 74.0,
       "is_partial": false
     }
@@ -559,13 +559,13 @@
     {
       "week_start": "2026-11-16",
       "week_end": "2026-11-22",
-      "leads": 16,
+      "leads": 18,
       "goal": 17.3
     }
   ],
-  "current_month_leads": 121,
+  "current_month_leads": 123,
   "current_month_label": "November 2026",
-  "current_week_leads": 16,
+  "current_week_leads": 18,
   "closed_deals": {
     "count": 0,
     "available": true
@@ -638,6 +638,42 @@
       "deal_stage": "Prospectos Contactados",
       "deal_name": "Automotoresinka ",
       "deal_id": "68034134554",
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Marco Paul Garcia Galdo",
+      "email": "mgarcia@indianorg.com",
+      "phone": "+51934825238",
+      "company": "Indian",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-17",
+      "created_hour": 19,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
+      "deal_note": null,
+      "estadio_lead": null,
+      "nivel_urgencia": null,
+      "discard_reason": null,
+      "lead_quality": null
+    },
+    {
+      "name": "Freddy Saravia",
+      "email": "fsaravia@neumaperu.com.pe",
+      "phone": "+51936800358",
+      "company": "neuma peru",
+      "lead_source": "Formulario (Meta Ads)",
+      "created_date": "2026-11-17",
+      "created_hour": 21,
+      "has_deal": false,
+      "deal_stage": null,
+      "deal_name": null,
+      "deal_id": null,
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
@@ -7411,7 +7447,7 @@
     },
     {
       "label": "Sin negocio",
-      "count": 1
+      "count": 3
     }
   ],
   "warm_audience_exclude_estadios": [
