@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T19:07:48.499540Z",
+  "generated_at": "2026-11-23T20:45:51.910126Z",
   "note": "Conteo de anuncios activos y fecha de inicio de cada anuncio, leídos de la Biblioteca de Anuncios de Meta (público y gratis). No incluye gasto ni resultados de estos competidores: eso es privado de cada cuenta y no existe forma de verlo desde afuera.",
   "competitors": {
     "pacs": {
@@ -9,9 +9,9 @@
       "country_label": "Argentina",
       "profile": "Ayuda a empresas B2B a conseguir reuniones y cerrar más ventas, con un método propio (\"anti-ghosting\", seguimiento, manejo de objeciones).",
       "active_ads_count": 20,
-      "search_match_count": 40,
+      "search_match_count": 34,
       "oldest_active_since": "2026-01-27",
-      "newest_active_since": "2026-11-10",
+      "newest_active_since": "2026-11-19",
       "sample_ads": [
         {
           "since": "2026-03-20",
@@ -34,12 +34,12 @@
           "text": "Conoce el método de 8 pasos para aumentar tus reuniones con marcas grandes, sin hacer spam 🔥"
         },
         {
-          "since": "2026-11-10",
-          "text": "Conoce el método de 4 pasos para aumentar tus reuniones con marcas grandes, sin hacer spam 🔥"
+          "since": "2026-11-19",
+          "text": "Conoce el método de 8 pasos para aumentar tus reuniones con marcas grandes, sin hacer spam 🔥"
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AR&is_targeted_country=false&media_type=all&q=PACS%20La%20Aceleradora%20B2B&search_type=keyword_unordered",
-      "last_checked_ok": "2026-11-16",
+      "last_checked_ok": "2026-11-23",
       "status": "ok",
       "history": [
         {
@@ -89,6 +89,10 @@
         {
           "date": "2026-11-16",
           "active_ads_count": 20
+        },
+        {
+          "date": "2026-11-23",
+          "active_ads_count": 20
         }
       ]
     },
@@ -98,38 +102,38 @@
       "country": "CO",
       "country_label": "Colombia (alcance regional)",
       "profile": "Agencia de prospección B2B: agenda reuniones calificadas para empresas de tecnología/software.",
-      "active_ads_count": 7,
-      "search_match_count": 10,
-      "oldest_active_since": "2026-11-07",
-      "newest_active_since": "2026-11-16",
+      "active_ads_count": 13,
+      "search_match_count": 13,
+      "oldest_active_since": "2026-11-15",
+      "newest_active_since": "2026-11-22",
       "sample_ads": [
         {
-          "since": "2026-11-07",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
-        },
-        {
-          "since": "2026-11-15",
-          "text": "Solo para Software Factories o partners de Odoo"
-        },
-        {
-          "since": "2026-11-15",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
-        },
-        {
           "since": "2026-11-16",
-          "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
-        },
-        {
-          "since": "2026-11-15",
           "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         },
         {
-          "since": "2026-11-16",
+          "since": "2026-11-15",
+          "text": "Solo para empresas de software"
+        },
+        {
+          "since": "2026-11-18",
+          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+        },
+        {
+          "since": "2026-11-22",
+          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
+        },
+        {
+          "since": "2026-11-21",
           "text": "La mayoría de los Software factories consiguen nuevos proyectos gracias a referidos o recomendaciones."
+        },
+        {
+          "since": "2026-11-21",
+          "text": "¿Tu empresa de tecnología sigue consiguiendo proyectos únicamente por referidos?"
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CO&is_targeted_country=false&media_type=all&q=ENBI%20Consulting&search_type=keyword_unordered",
-      "last_checked_ok": "2026-11-16",
+      "last_checked_ok": "2026-11-23",
       "status": "ok",
       "history": [
         {
@@ -179,6 +183,10 @@
         {
           "date": "2026-11-16",
           "active_ads_count": 7
+        },
+        {
+          "date": "2026-11-23",
+          "active_ads_count": 13
         }
       ]
     },
@@ -188,18 +196,22 @@
       "country": "BR",
       "country_label": "Brasil",
       "profile": "Equipo comercial tercerizado (\"time comercial terceirizado\") para acelerar resultados de venta B2B.",
-      "active_ads_count": 1,
-      "search_match_count": 8,
+      "active_ads_count": 2,
+      "search_match_count": 5,
       "oldest_active_since": "2026-03-05",
-      "newest_active_since": "2026-03-05",
+      "newest_active_since": "2026-11-21",
       "sample_ads": [
         {
           "since": "2026-03-05",
           "text": "Seu negócio pode vender mais sem dor de cabeça. Conte com nosso time comercial terceirizado especializado em acelerar resultados."
+        },
+        {
+          "since": "2026-11-21",
+          "text": "Sua empresa precisa vender mais, mas montar uma equipe comercial está sendo um desafio?"
         }
       ],
       "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&q=Aurum%20Sales&search_type=keyword_unordered",
-      "last_checked_ok": "2026-11-16",
+      "last_checked_ok": "2026-11-23",
       "status": "ok",
       "history": [
         {
@@ -233,6 +245,10 @@
         {
           "date": "2026-11-16",
           "active_ads_count": 1
+        },
+        {
+          "date": "2026-11-23",
+          "active_ads_count": 2
         }
       ]
     }
