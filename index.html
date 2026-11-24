@@ -545,7 +545,8 @@
   </header>
 
   <div class="tab-nav">
-    <button class="tab-btn active" data-tab="leads">📊 Registros y ventas</button>
+    <button class="tab-btn active" data-tab="leads">📘 Meta Ads</button>
+    <button class="tab-btn" data-tab="google">🔎 Google Ads</button>
     <button class="tab-btn" data-tab="calendar">🗓️ Calendario de creación</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
   </div>
@@ -710,6 +711,69 @@
   </section>
 
   </div>
+
+  <!-- #region google-ads-panel -->
+  <div class="tab-panel" id="tab-google">
+  <section>
+    <div class="section-head">
+      <h2>Google Ads · Rango de fechas</h2>
+      <span class="hint" id="gaUpdated">Esperando la primera actualización de Google Ads.</span>
+    </div>
+    <div class="chart-card">
+      <div class="date-filter-bar">
+        <div class="date-filter-presets" id="gaPresets">
+          <button type="button" class="filter-btn active" data-gapreset="7">Últimos 7 días</button>
+          <button type="button" class="filter-btn" data-gapreset="30">Últimos 30 días</button>
+          <button type="button" class="filter-btn" data-gapreset="month">Este mes</button>
+          <button type="button" class="filter-btn" data-gapreset="all">Todo el período</button>
+        </div>
+        <div class="date-filter-inputs">
+          <label>Desde <input type="date" id="gaFrom"></label>
+          <label>Hasta <input type="date" id="gaTo"></label>
+        </div>
+      </div>
+      <div class="kpi-row" id="gaKpis" style="margin-top:16px;"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Gasto y leads por día</h2><span class="hint">Barras: gasto · puntos: leads (formularios de la Fotografía Comercial)</span></div>
+    <div class="chart-card"><div id="gaChart"></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Por sector</h2><span class="hint">Cada grupo de anuncios es un sector</span></div>
+    <div class="chart-card"><div class="table-wrap"><table>
+      <thead><tr><th>Sector</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Gasto</th><th>Leads</th><th>Costo por lead</th></tr></thead>
+      <tbody id="gaGroups"></tbody></table></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Campañas</h2><span class="hint">Estado y presupuesto de hoy · números del rango elegido</span></div>
+    <div class="chart-card"><div class="table-wrap"><table>
+      <thead><tr><th>Campaña</th><th>Estado</th><th>Presupuesto diario</th><th>Gasto</th><th>Clics</th><th>Leads</th><th>Costo por lead</th></tr></thead>
+      <tbody id="gaCampaigns"></tbody></table></div></div>
+  </section>
+
+  <section>
+    <div class="grid-2">
+      <div>
+        <div class="section-head"><h2>Palabras clave</h2><span class="hint">Las 15 con más clics</span></div>
+        <div class="chart-card"><div class="table-wrap"><table class="compact">
+          <thead><tr><th>Palabra clave</th><th>Clics</th><th>Gasto</th><th>Leads</th></tr></thead>
+          <tbody id="gaKeywords"></tbody></table></div></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>Lo que buscó la gente</h2><span class="hint">Búsquedas reales que mostraron tu anuncio</span></div>
+        <div class="chart-card"><div class="table-wrap scroll-y"><table class="compact">
+          <thead><tr><th>Búsqueda</th><th>Impr.</th><th>Clics</th><th>Gasto</th><th>Leads</th></tr></thead>
+          <tbody id="gaSearches"></tbody></table></div></div>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:10px;">Los leads son los que Google Ads cuenta cuando alguien que llegó por un anuncio envía el formulario de la web. La calidad de cada lead se ve en la pestaña de Meta Ads (registros de HubSpot).</p>
+  </section>
+  </div>
+  <!-- #endregion google-ads-panel -->
 
   <div class="tab-panel" id="tab-organic">
 
@@ -4575,5 +4639,107 @@
 })();
 </script>
 
+<!-- #region google-ads-script -->
+<style>
+  .ga-chart svg{width:100%; height:auto; display:block;}
+  .ga-empty{color:var(--text-muted); font-size:13px; margin:0;}
+  .ga-pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700;}
+  .ga-on{color:var(--good); background:rgba(46,204,113,.12);} .ga-off{color:var(--text-muted); background:rgba(156,147,181,.12);}
+</style>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const nf = new Intl.NumberFormat('es-PE');
+  const n0 = v => nf.format(Math.round(v || 0));
+  const money = v => 'S/ ' + new Intl.NumberFormat('es-PE', {minimumFractionDigits:2, maximumFractionDigits:2}).format(v || 0);
+  const pct = (a, b) => b ? (a / b * 100).toFixed(1) + '%' : '—';
+  const cpl = (c, l) => l ? money(c / l) : '—';
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  let D = null;
+
+  function setRange(p){
+    const today = new Date(); let from;
+    if (p === 'month') from = new Date(today.getFullYear(), today.getMonth(), 1);
+    else if (p === 'all') from = new Date((D && D.campanas_dia.reduce((m, r) => r[0] < m ? r[0] : m, iso(today))) + 'T00:00:00');
+    else from = new Date(today.getTime() - (Number(p) - 1) * 86400000);
+    $('gaFrom').value = iso(from); $('gaTo').value = iso(today);
+    document.querySelectorAll('[data-gapreset]').forEach(b => b.classList.toggle('active', b.dataset.gapreset === p));
+    render();
+  }
+
+  // Suma filas por las columnas de 'keys'; las métricas (impr, clics, gasto, conv) empiezan en la columna o. La columna 0 es la fecha.
+  function group(rows, keys, o, from, to){
+    const m = new Map();
+    rows.forEach(r => {
+      if (r[0] < from || r[0] > to) return;
+      const key = keys.map(i => r[i]), k = key.join('\u0001');
+      const a = m.get(k) || {key, imp:0, clk:0, cost:0, conv:0};
+      a.imp += +r[o] || 0; a.clk += +r[o+1] || 0; a.cost += +r[o+2] || 0; a.conv += +r[o+3] || 0;
+      m.set(k, a);
+    });
+    return [...m.values()];
+  }
+
+  function kpi(label, value, sub){ return `<div class="tile"><p class="tile-label">${label}</p><p class="tile-value">${value}</p>${sub ? `<p class="tile-sub">${sub}</p>` : ''}</div>`; }
+  function empty(id, cols, txt){ $(id).innerHTML = `<tr><td colspan="${cols}" class="table-sub">${txt}</td></tr>`; }
+
+  function render(){
+    if (!D) return;
+    const from = $('gaFrom').value, to = $('gaTo').value;
+    const t = group(D.campanas_dia, [], 2, from, to)[0] || {imp:0, clk:0, cost:0, conv:0};
+    $('gaKpis').innerHTML =
+      kpi('Gasto', money(t.cost)) + kpi('Clics', n0(t.clk), 'CPC promedio ' + (t.clk ? money(t.cost / t.clk) : '—')) +
+      kpi('Impresiones', n0(t.imp), 'CTR ' + pct(t.clk, t.imp)) + kpi('Leads', n0(t.conv), 'Formularios enviados') +
+      kpi('Costo por lead', cpl(t.cost, t.conv));
+
+    // Gráfico diario
+    const days = []; for (let d = new Date(from + 'T00:00:00'); iso(d) <= to; d = new Date(d.getTime() + 86400000)) days.push(iso(d));
+    const byDay = new Map(group(D.campanas_dia, [0], 2, from, to).map(a => [a.key[0], a]));
+    if (!days.length || !byDay.size){ $('gaChart').innerHTML = '<p class="ga-empty">Todavía no hay gasto en este rango.</p>'; }
+    else {
+      const W = 900, H = 220, P = 30, bw = (W - P * 2) / days.length;
+      const maxC = Math.max(...days.map(d => (byDay.get(d) || {}).cost || 0), 1), maxL = Math.max(...days.map(d => (byDay.get(d) || {}).conv || 0), 1);
+      let s = `<svg viewBox="0 0 ${W} ${H + 24}" class="ga-chart" role="img" aria-label="Gasto y leads por día">`;
+      days.forEach((d, i) => {
+        const a = byDay.get(d) || {cost:0, conv:0}, h = a.cost / maxC * (H - P), x = P + i * bw;
+        s += `<rect x="${x + bw * .15}" y="${H - h}" width="${bw * .7}" height="${h}" rx="3" fill="var(--purple-2)"><title>${d}: ${money(a.cost)} · ${n0(a.conv)} leads</title></rect>`;
+        if (a.conv) s += `<circle cx="${x + bw / 2}" cy="${H - a.conv / maxL * (H - P)}" r="5" fill="var(--orange)"><title>${d}: ${n0(a.conv)} leads</title></circle>`;
+        if (days.length <= 31 && (i % Math.ceil(days.length / 10) === 0)) s += `<text x="${x + bw / 2}" y="${H + 16}" fill="var(--text-muted)" font-size="11" text-anchor="middle">${d.slice(8)}/${d.slice(5,7)}</text>`;
+      });
+      $('gaChart').innerHTML = s + '</svg>';
+    }
+
+    // Sectores
+    const g = group(D.grupos_dia, [2], 3, from, to).sort((a, b) => b.cost - a.cost);
+    g.length ? $('gaGroups').innerHTML = g.map(a => `<tr><td class="table-name">${esc(a.key[0])}</td><td>${n0(a.imp)}</td><td>${n0(a.clk)}</td><td>${pct(a.clk, a.imp)}</td><td>${money(a.cost)}</td><td>${n0(a.conv)}</td><td>${cpl(a.cost, a.conv)}</td></tr>`).join('') : empty('gaGroups', 7, 'Sin datos en este rango.');
+
+    // Campañas
+    const cm = new Map(group(D.campanas_dia, [1], 2, from, to).map(a => [a.key[0], a]));
+    const camps = (D.campanas || []).map(c => ({name:c[0], status:c[1], budget:c[3], m: cm.get(c[0]) || {cost:0, clk:0, conv:0}}));
+    camps.length ? $('gaCampaigns').innerHTML = camps.map(c => `<tr><td class="table-name">${esc(c.name)}</td><td><span class="ga-pill ${c.status === 'ENABLED' ? 'ga-on' : 'ga-off'}">${c.status === 'ENABLED' ? 'Activa' : 'En pausa'}</span></td><td>${money(c.budget)}</td><td>${money(c.m.cost)}</td><td>${n0(c.m.clk)}</td><td>${n0(c.m.conv)}</td><td>${cpl(c.m.cost, c.m.conv)}</td></tr>`).join('') : empty('gaCampaigns', 7, 'Sin campañas.');
+
+    // Palabras clave
+    const kw = group(D.palabras_dia, [1, 2, 3], 4, from, to).sort((a, b) => b.clk - a.clk || b.imp - a.imp).slice(0, 15);
+    const mt = {EXACT:'exacta', PHRASE:'frase', BROAD:'amplia'};
+    kw.length ? $('gaKeywords').innerHTML = kw.map(a => `<tr><td class="table-name">${esc(a.key[1])} <span class="table-sub">· ${mt[a.key[2]] || esc(a.key[2])}</span></td><td>${n0(a.clk)}</td><td>${money(a.cost)}</td><td>${n0(a.conv)}</td></tr>`).join('') : empty('gaKeywords', 4, 'Sin datos en este rango.');
+
+    // Búsquedas
+    const st = group(D.busquedas_dia, [1], 3, from, to).sort((a, b) => b.imp - a.imp).slice(0, 50);
+    st.length ? $('gaSearches').innerHTML = st.map(a => `<tr><td class="table-name">${esc(a.key[0])}</td><td>${n0(a.imp)}</td><td>${n0(a.clk)}</td><td>${money(a.cost)}</td><td>${n0(a.conv)}</td></tr>`).join('') : empty('gaSearches', 5, 'Sin búsquedas en este rango.');
+  }
+
+  document.querySelectorAll('[data-gapreset]').forEach(b => b.addEventListener('click', () => setRange(b.dataset.gapreset)));
+  ['gaFrom', 'gaTo'].forEach(id => $(id).addEventListener('change', () => { document.querySelectorAll('[data-gapreset]').forEach(b => b.classList.remove('active')); render(); }));
+
+  fetch('./google_ads_data.json?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(j => {
+    if (!j || !j.updated_at){ $('gaKpis').innerHTML = '<p class="ga-empty">Esperando la primera actualización de Google Ads (se actualiza cada hora).</p>'; return; }
+    D = j; ['campanas_dia','grupos_dia','palabras_dia','busquedas_dia','campanas'].forEach(k => D[k] = D[k] || []);
+    $('gaUpdated').textContent = 'Actualizado: ' + new Date(j.updated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'}) + ' · se actualiza cada hora';
+    setRange('7');
+  });
+})();
+</script>
+<!-- #endregion google-ads-script -->
 </body>
 </html>
