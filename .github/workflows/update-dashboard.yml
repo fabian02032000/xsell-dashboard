@@ -54,11 +54,18 @@ jobs:
           MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
         run: python scripts/fetch_mailchimp.py
 
+      - name: Traer gasto de Google Ads (desde la hoja que llena el script de Google Ads)
+        continue-on-error: true
+        env:
+          GOOGLE_ADS_SHEET_ID: "1_iAUygyIwG1wsvjxcdsqMlJJXP01fANvSLRQXZzeidc"
+        run: python scripts/fetch_google_ads.py
+
       - name: Guardar los datos actualizados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json meta_data.json organic_data.json mailchimp_data.json
           if [ -f meta_events_state.json ]; then git add meta_events_state.json; fi
+          if [ -f google_ads_data.json ]; then git add google_ads_data.json; fi
           git diff --staged --quiet || git commit -m "Actualiza datos del dashboard"
           git push
