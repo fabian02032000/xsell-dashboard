@@ -801,6 +801,11 @@
   </section>
 
   <section>
+    <div class="section-head"><h2>Embudo completo: del anuncio al registro</h2><span class="hint">Google Ads + Meta (campañas de tráfico a la web) + la web</span></div>
+    <div class="chart-card"><div id="wbEmbudo"></div><div class="kpi-row" id="wbEmbKpis" style="margin-top:14px;"></div></div>
+  </section>
+
+  <section>
     <div class="section-head"><h2>Visitas por día</h2><span class="hint">Barras: visitas · puntos: formularios enviados</span></div>
     <div class="chart-card"><div id="wbChart"></div></div>
   </section>
@@ -808,6 +813,18 @@
   <section>
     <div class="section-head"><h2>Formulario del diagnóstico, paso a paso</h2><span class="hint">Cuántos llegan a cada paso y dónde se van</span></div>
     <div class="chart-card"><div id="wbFunnel"></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Registros de la web</h2><span class="hint" id="wbRegHint">Personas que dejaron sus datos en la web (HubSpot)</span></div>
+    <div class="chart-card">
+      <div class="kpi-row" id="wbRegKpis"></div>
+      <div class="grid-2" style="margin-top:14px;"><div id="wbRegPorOrigen"></div><div id="wbRegPorSector"></div></div>
+      <div class="table-wrap scroll-y" style="margin-top:14px;"><table class="compact">
+        <thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Sector</th><th>Qué hizo</th><th>De dónde vino</th><th>Vende hoy</th><th>Podría vender</th></tr></thead>
+        <tbody id="wbRegs"></tbody></table></div>
+      <p class="hint" style="margin-top:8px;">Por ser un dashboard público no se muestran correos ni teléfonos; están en HubSpot.</p>
+    </div>
   </section>
 
   <section>
@@ -837,10 +854,11 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Mapas de calor y grabaciones</h2><span class="hint">Microsoft Clarity · gratis</span></div>
+    <div class="section-head"><h2>Mapas de calor y comportamiento</h2><span class="hint" id="wbClHint">Microsoft Clarity · gratis</span></div>
     <div class="chart-card">
-      <p class="table-sub" style="margin:0 0 12px;">Clarity muestra dónde hacen clic las personas, hasta dónde bajan en la página y grabaciones de cada visita (sin datos personales).</p>
-      <a class="filter-btn active" style="display:inline-block;text-decoration:none;margin-right:8px;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/heatmaps" target="_blank" rel="noopener">Ver mapas de calor</a>
+      <div class="kpi-row" id="wbClarity"></div>
+      <p class="table-sub" style="margin:12px 0 12px;">El mapa de calor (dónde hacen clic y hasta dónde bajan) y las grabaciones de cada visita se ven en Clarity; Clarity no deja mostrarlos dentro de otra página.</p>
+      <a class="filter-btn active" style="display:inline-block;text-decoration:none;margin-right:8px;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/heatmaps" target="_blank" rel="noopener">Ver mapa de calor</a>
       <a class="filter-btn" style="display:inline-block;text-decoration:none;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/impressions" target="_blank" rel="noopener">Ver grabaciones</a>
     </div>
   </section>
@@ -4840,7 +4858,7 @@
   const tiempo = s => { s = Math.round(s || 0); return s < 60 ? s + ' s' : Math.floor(s / 60) + ' min ' + String(s % 60).padStart(2, '0') + ' s'; };
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-  let D = null;
+  let D = null, X = {};
 
   // Suma filas por las columnas 'keys'; las métricas empiezan en la columna o (la columna 0 es la fecha).
   function group(rows, keys, o, from, to, nm){
@@ -4864,6 +4882,73 @@
     if (/linkedin|lnkd/.test(src)) return 'LinkedIn';
     if (/whatsapp|wa\.me/.test(src)) return 'WhatsApp';
     return 'Otros sitios';
+  }
+
+  const money = v => 'S/ ' + new Intl.NumberFormat('es-PE', {minimumFractionDigits:2, maximumFractionDigits:2}).format(v || 0);
+  const esWeb = n => /tr[aá]fico|web/i.test(n || '');
+  function chips(titulo, mapa){
+    const arr = [...mapa.entries()].sort((a, b) => b[1] - a[1]);
+    if (!arr.length) return '';
+    return `<p class="tile-label" style="margin:0 0 6px;">${titulo}</p>` + arr.map(([k, v]) => `<span class="ga-pill ga-off" style="margin:0 6px 6px 0;color:var(--text);">${esc(k)} · <b>${n0(v)}</b></span>`).join('');
+  }
+  function renderExtra(from, to, t, ev){
+    // Anuncios: Google Ads + campañas de Meta de tráfico a la web
+    const g = {imp:0, clk:0, cost:0};
+    ((X.gads && X.gads.campanas_dia) || []).forEach(r => { if (r[0] >= from && r[0] <= to){ g.imp += +r[2] || 0; g.clk += +r[3] || 0; g.cost += +r[4] || 0; } });
+    const m = {imp:0, reach:0, clk:0, cost:0, n:new Set()};
+    (((X.meta && X.meta.campaign_analysis_daily) || {}).campaigns || []).forEach(r => { if (esWeb(r.name) && r.date >= from && r.date <= to){ m.imp += r.impressions || 0; m.reach += r.reach || 0; m.clk += r.link_clicks || 0; m.cost += r.spend || 0; m.n.add(r.name); } });
+    const regs = ((X.leads && X.leads.registros) || []).filter(r => r.fecha >= from && r.fecha <= to);
+    const foto = regs.filter(r => /Fotograf/.test(r.accion)).length;
+    const pasos = [
+      ['Impresiones de anuncios', g.imp + m.imp, `Google ${n0(g.imp)} · Meta ${n0(m.imp)}${m.reach ? ' (alcance ' + n0(m.reach) + ' personas)' : ''}`],
+      ['Clics hacia la web', g.clk + m.clk, `Google ${n0(g.clk)} · Meta ${n0(m.clk)}`],
+      ['Visitas a la web', t[0], 'todas las fuentes (Analytics)'],
+      ['Abrieron el diagnóstico', ev.get('diagnostico_abierto') || 0, ''],
+      ['Vieron su resultado', ev.get('diag_paso_4_resultado') || 0, ''],
+      ['Registros (dejaron sus datos)', regs.length, 'personas en HubSpot'],
+      ['Pidieron la Fotografía Comercial', foto, 'la conversión principal']
+    ];
+    const top = Math.max(...pasos.map(p => p[1]), 1);
+    let prev = null;
+    $('wbEmbudo').innerHTML = '<div class="wb-funnel">' + pasos.map(([lbl, v, sub]) => {
+      const w = Math.max(Math.sqrt(v / top) * 100, v ? 4 : 0);
+      const paso = prev != null && prev > 0 && v <= prev ? `${pct(v, prev)} del paso anterior` : '';
+      prev = v;
+      return `<div class="wb-row"><span>${lbl}${sub ? `<br><span class="table-sub">${sub}</span>` : ''}</span><div class="wb-bar"><div class="wb-fill" style="width:${w}%">${n0(v)}</div></div><span class="wb-drop">${paso}</span></div>`;
+    }).join('') + '</div><p class="hint" style="margin-top:10px;">El ancho de las barras está suavizado para que se vean los pasos pequeños. Para que Meta aparezca aquí, el nombre de la campaña de tráfico debe incluir la palabra TRÁFICO o WEB.</p>';
+    const gasto = g.cost + m.cost;
+    $('wbEmbKpis').innerHTML = kpi('Inversión en anuncios', money(gasto), `Google ${money(g.cost)} · Meta ${money(m.cost)}`) +
+      kpi('Costo por visita', (g.clk + m.clk) ? money(gasto / (g.clk + m.clk)) : '—', 'por clic a la web') +
+      kpi('Costo por registro', regs.length ? money(gasto / regs.length) : '—') +
+      kpi('Costo por Fotografía Comercial', foto ? money(gasto / foto) : '—');
+
+    // Registros
+    const porAcc = new Map(), porOri = new Map(), porSec = new Map();
+    regs.forEach(r => { porAcc.set(r.accion, (porAcc.get(r.accion) || 0) + 1); porOri.set(r.origen, (porOri.get(r.origen) || 0) + 1); porSec.set(r.sector || 'Sin sector', (porSec.get(r.sector || 'Sin sector') || 0) + 1); });
+    $('wbRegKpis').innerHTML = kpi('Registros', n0(regs.length), 'personas') + [...porAcc.entries()].sort((a, b) => b[1] - a[1]).map(([k, v]) => kpi(esc(k), n0(v), pct(v, regs.length))).join('');
+    $('wbRegPorOrigen').innerHTML = chips('Por origen', porOri);
+    $('wbRegPorSector').innerHTML = chips('Por sector', porSec);
+    if (!X.leads) empty('wbRegs', 8, 'Esperando la primera lectura de HubSpot.');
+    else if (!regs.length) empty('wbRegs', 8, 'Sin registros de la web en este rango.');
+    else $('wbRegs').innerHTML = regs.map(r => `<tr><td>${esc(r.fecha.slice(8))}/${esc(r.fecha.slice(5,7))} ${esc(r.hora || '')}</td><td class="table-name">${esc(r.nombre) || '—'}</td><td>${esc(r.empresa) || '—'}</td><td>${esc(r.sector) || '—'}</td><td>${esc(r.accion)}</td><td>${esc(r.origen)}</td><td>${esc(r.ventas_hoy) || '—'}</td><td>${esc(r.potencial) || '—'}</td></tr>`).join('');
+
+    // Clarity
+    const dias = ((X.cl && X.cl.dias) || {});
+    const sel = Object.keys(dias).filter(d => d >= from && d <= to);
+    if (!X.cl){ $('wbClarity').innerHTML = '<p class="ga-empty">Falta conectar Clarity al dashboard (un código que se crea en Clarity).</p>'; }
+    else if (!sel.length){ $('wbClarity').innerHTML = '<p class="ga-empty">Clarity todavía no tiene datos en este rango.</p>'; }
+    else {
+      const sum = (met, campo) => sel.reduce((a, d) => a + ((dias[d][met] || []).reduce((b, x) => b + (+x[campo] || 0), 0)), 0);
+      const avg = (met, campo) => { const v = sel.flatMap(d => (dias[d][met] || []).map(x => +x[campo]).filter(x => !isNaN(x))); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : 0; };
+      const ses = sum('Traffic', 'totalSessionCount');
+      $('wbClarity').innerHTML = kpi('Sesiones grabadas', n0(ses)) +
+        kpi('Hasta dónde bajan', avg('ScrollDepth', 'averageScrollDepth').toFixed(0) + '%', 'promedio de la página') +
+        kpi('Tiempo activo', tiempo(avg('EngagementTime', 'activeTime')), 'por sesión') +
+        kpi('Clics de frustración', avg('RageClickCount', 'sessionsWithMetricPercentage').toFixed(1) + '%', 'sesiones con clics repetidos') +
+        kpi('Clics sin respuesta', avg('DeadClickCount', 'sessionsWithMetricPercentage').toFixed(1) + '%', 'clic en algo que no hace nada') +
+        kpi('Regresan rápido', avg('QuickbackClick', 'sessionsWithMetricPercentage').toFixed(1) + '%', 'entran y vuelven atrás');
+      $('wbClHint').textContent = 'Microsoft Clarity · ' + sel.length + ' día(s) con datos';
+    }
   }
   function kpi(label, value, sub){ return `<div class="tile"><p class="tile-label">${label}</p><p class="tile-value">${value}</p>${sub ? `<p class="tile-sub">${sub}</p>` : ''}</div>`; }
   function empty(id, cols, txt){ $(id).innerHTML = `<tr><td colspan="${cols}" class="table-sub">${txt}</td></tr>`; }
@@ -4955,15 +5040,19 @@
     pg.length ? $('wbPaginas').innerHTML = pg.map(a => `<tr><td class="table-name">${esc(a.key[0] === '/' ? 'Inicio (/)' : a.key[0])}</td><td>${n0(a.v[0])}</td><td>${pct(a.v[1], a.v[0])}</td><td>${tiempo(a.v[0] ? a.v[2] / a.v[0] : 0)}</td></tr>`).join('') : empty('wbPaginas', 4, 'Sin datos en este rango.');
     const dn = {mobile:'Celular', desktop:'Computadora', tablet:'Tablet'};
     const dp = group(D.dispositivo, [1], 2, from, to, 2).sort((a, b) => b.v[0] - a.v[0]);
+    renderExtra(from, to, t, ev);
     $('wbDisp').innerHTML = dp.map(a => kpi(dn[a.key[0]] || esc(a.key[0]), n0(a.v[0]), pct(a.v[0], t[0]) + ' · ' + tiempo(a.v[0] ? a.v[1] / a.v[0] : 0))).join('');
   }
 
   document.querySelectorAll('[data-wbpreset]').forEach(b => b.addEventListener('click', () => setRange(b.dataset.wbpreset)));
   ['wbFrom', 'wbTo'].forEach(id => $(id).addEventListener('change', () => { document.querySelectorAll('[data-wbpreset]').forEach(b => b.classList.remove('active')); render(); }));
 
-  fetch('./web_data.json?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(j => {
-    if (!j || !j.updated_at){ $('wbKpis').innerHTML = '<p class="ga-empty">Esperando la primera actualización de Google Analytics (se actualiza cada hora).</p>'; return; }
+  const getJ = u => fetch(u + '?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+  Promise.all([getJ('./web_data.json'), getJ('./google_ads_data.json'), getJ('./meta_data.json'), getJ('./web_leads.json'), getJ('./clarity_data.json')]).then(([j, gads, meta, leads, cl]) => {
+    X = {gads, meta, leads, cl};
+    if (!j || !j.updated_at){ j = {updated_at: null}; }
     D = j; ['dia','origen','lugar','eventos','eventos_origen','paginas','dispositivo'].forEach(k => D[k] = D[k] || []);
+    if (!j.updated_at){ $('wbUpdated').textContent = 'Google Analytics todavía no entrega datos (tarda unas horas la primera vez).'; setRange('7'); return; }
     $('wbUpdated').textContent = 'Actualizado: ' + new Date(j.updated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'}) + ' · se actualiza cada hora';
     setRange('7');
   });
