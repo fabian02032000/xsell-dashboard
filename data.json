@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T01:57:25.692492+00:00",
+  "updated_at": "2026-11-26T04:16:12.980777+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -843,13 +843,13 @@
       "created_date": "2026-11-16",
       "created_hour": 15,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Javier Carrillo",
       "deal_id": "68033944999",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Aún no invierte en pauta",
       "lead_quality": null
     },
     {
@@ -1041,13 +1041,13 @@
       "created_date": "2026-11-15",
       "created_hour": 12,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Sergio Enrique Angulo Reátegui",
       "deal_id": "68026641004",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -1131,13 +1131,13 @@
       "created_date": "2026-11-15",
       "created_hour": 23,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "AVITARE",
       "deal_id": "67997140149",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -1257,13 +1257,13 @@
       "created_date": "2026-11-13",
       "created_hour": 9,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "marcos poma",
       "deal_id": "67984651565",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No le interesa por ahora",
       "lead_quality": null
     },
     {
@@ -7499,11 +7499,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 348
+      "count": 352
     },
     {
       "label": "Prospectos Contactados",
-      "count": 27
+      "count": 23
     },
     {
       "label": "Reunión Agendadas",
