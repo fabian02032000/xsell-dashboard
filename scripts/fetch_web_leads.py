@@ -118,11 +118,40 @@ def envios_contactos(token):
             d1 = (p.get("hs_analytics_source_data_1") or "").lower()
             if fuente in ("PAID_SOCIAL", "SOCIAL_MEDIA") and re.search(r"facebook|instagram", d1):
                 ori = "Meta (Facebook e Instagram)" + ("" if fuente == "PAID_SOCIAL" else " sin pagar")
+            p["_id"] = c.get("id")
             envios.append((ts, p, ori))
         after = (data.get("paging") or {}).get("next", {}).get("after")
         if not after:
             break
     return envios
+
+
+def tipificar(filas):
+    """Agrega lo que Ingrid tipifica en el Negocio de HubSpot (misma lógica que la
+    pestaña de Meta): calidad del lead, etapa, motivo de descarte, reunión y venta."""
+    ids = [f["_id"] for f in filas if f.get("_id")]
+    if not ids:
+        return
+    try:
+        import sys as _s
+        _s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import fetch_hubspot as fh
+        etapas = fh.fetch_deal_stage_labels()
+        estado = fh.fetch_contact_deal_status(ids, etapas)
+    except Exception as e:  # noqa: BLE001
+        print(f"No se pudo leer la tipificación de los negocios: {e}")
+        return
+    for f in filas:
+        st = estado.get(f.get("_id")) if f.get("_id") else None
+        etapa = ((st or {}).get("stage_label") or "")
+        e = fh.strip_accents(etapa.lower())
+        f["negocio"] = bool(st)
+        f["etapa_negocio"] = etapa
+        f["calidad"] = (st or {}).get("lead_quality")
+        f["estadio"] = (st or {}).get("estadio_lead")
+        f["motivo_descarte"] = (st or {}).get("discard_reason")
+        f["reunion"] = any(k in e for k in fh.REUNION_MATCH_KEYWORDS) or "ganad" in e
+        f["venta"] = "ganad" in e or "closedwon" in e
 
 
 def main():
@@ -157,6 +186,7 @@ def main():
                 "empresa": (v.get("company") or "").strip(),
                 "sector": "", "accion": t, "_nivel": nivel, "origen": ori,
                 "ventas_hoy": "", "potencial": "", "etapa": "", "envios": 0,
+                "_id": v.get("_id"),
             }
         p["envios"] += 1
         if nivel >= p["_nivel"]:
@@ -168,8 +198,10 @@ def main():
         if p["origen"].startswith("Sin dato"):
             p["origen"] = ori
     filas = sorted(personas.values(), key=lambda x: (x["fecha"], x["hora"]), reverse=True)
+    tipificar(filas)
     for f in filas:
         f.pop("_nivel", None)
+        f.pop("_id", None)
     out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "via": via,
            "registros": filas, "envios": len(envios)}
     with open(OUT, "w", encoding="utf-8") as fh:
