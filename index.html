@@ -547,6 +547,7 @@
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="leads">📘 Meta Ads</button>
     <button class="tab-btn" data-tab="google">🔎 Google Ads</button>
+    <button class="tab-btn" data-tab="web">🌐 Web</button>
     <button class="tab-btn" data-tab="calendar">🗓️ Calendario de creación</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
   </div>
@@ -774,6 +775,85 @@
   </section>
   </div>
   <!-- #endregion google-ads-panel -->
+
+  <!-- #region web-panel -->
+  <div class="tab-panel" id="tab-web">
+  <section>
+    <div class="section-head">
+      <h2>Web wexsell.co · Rango de fechas</h2>
+      <span class="hint" id="wbUpdated">Esperando la primera actualización de Google Analytics.</span>
+    </div>
+    <div class="chart-card">
+      <div class="date-filter-bar">
+        <div class="date-filter-presets">
+          <button type="button" class="filter-btn active" data-wbpreset="7">Últimos 7 días</button>
+          <button type="button" class="filter-btn" data-wbpreset="30">Últimos 30 días</button>
+          <button type="button" class="filter-btn" data-wbpreset="month">Este mes</button>
+          <button type="button" class="filter-btn" data-wbpreset="all">Todo el período</button>
+        </div>
+        <div class="date-filter-inputs">
+          <label>Desde <input type="date" id="wbFrom"></label>
+          <label>Hasta <input type="date" id="wbTo"></label>
+        </div>
+      </div>
+      <div class="kpi-row" id="wbKpis" style="margin-top:16px;"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Visitas por día</h2><span class="hint">Barras: visitas · puntos: formularios enviados</span></div>
+    <div class="chart-card"><div id="wbChart"></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Formulario del diagnóstico, paso a paso</h2><span class="hint">Cuántos llegan a cada paso y dónde se van</span></div>
+    <div class="chart-card"><div id="wbFunnel"></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>De dónde vienen</h2><span class="hint">Meta, Google Ads, Google sin pagar, directo y otros</span></div>
+    <div class="chart-card"><div class="table-wrap"><table>
+      <thead><tr><th>Origen</th><th>Visitas</th><th>Tiempo promedio</th><th>Abrieron diagnóstico</th><th>Formularios</th><th>Clics WhatsApp</th><th>% que deja sus datos</th></tr></thead>
+      <tbody id="wbOrigen"></tbody></table></div></div>
+  </section>
+
+  <section>
+    <div class="grid-2">
+      <div>
+        <div class="section-head"><h2>Lima o provincia</h2><span class="hint">Según la ubicación de la conexión</span></div>
+        <div class="chart-card"><div class="kpi-row" id="wbZona"></div>
+          <div class="table-wrap scroll-y" style="margin-top:12px;"><table class="compact">
+          <thead><tr><th>Ciudad</th><th>Región</th><th>Visitas</th><th>Tiempo prom.</th></tr></thead>
+          <tbody id="wbCiudades"></tbody></table></div></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>Páginas de entrada</h2><span class="hint">Por dónde entran a la web</span></div>
+        <div class="chart-card"><div class="table-wrap scroll-y"><table class="compact">
+          <thead><tr><th>Página</th><th>Visitas</th><th>Se quedaron</th><th>Tiempo prom.</th></tr></thead>
+          <tbody id="wbPaginas"></tbody></table></div>
+          <div class="kpi-row" id="wbDisp" style="margin-top:12px;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Mapas de calor y grabaciones</h2><span class="hint">Microsoft Clarity · gratis</span></div>
+    <div class="chart-card">
+      <p class="table-sub" style="margin:0 0 12px;">Clarity muestra dónde hacen clic las personas, hasta dónde bajan en la página y grabaciones de cada visita (sin datos personales).</p>
+      <a class="filter-btn active" style="display:inline-block;text-decoration:none;margin-right:8px;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/heatmaps" target="_blank" rel="noopener">Ver mapas de calor</a>
+      <a class="filter-btn" style="display:inline-block;text-decoration:none;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/impressions" target="_blank" rel="noopener">Ver grabaciones</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Palabras excluidas en Google Ads</h2><span class="hint" id="wbNegHint"></span></div>
+    <div class="chart-card"><div class="table-wrap scroll-y"><table class="compact">
+      <thead><tr><th>Palabra</th><th>Fecha</th><th>Motivo</th></tr></thead>
+      <tbody id="wbNeg"></tbody></table></div></div>
+  </section>
+  </div>
+  <!-- #endregion web-panel -->
+
 
   <div class="tab-panel" id="tab-organic">
 
@@ -4741,5 +4821,164 @@
 })();
 </script>
 <!-- #endregion google-ads-script -->
+<!-- #region web-script -->
+<style>
+  .wb-funnel{display:flex; flex-direction:column; gap:8px;}
+  .wb-row{display:grid; grid-template-columns:200px 1fr 150px; gap:12px; align-items:center; font-size:13px;}
+  .wb-bar{height:26px; border-radius:8px; background:rgba(156,147,181,.12); overflow:hidden;}
+  .wb-fill{height:100%; border-radius:8px; background:linear-gradient(90deg,var(--purple-2),var(--orange)); display:flex; align-items:center; padding-left:10px; color:#fff; font-weight:700; font-size:12px; white-space:nowrap;}
+  .wb-drop{color:var(--text-muted); font-size:12px;}
+  .wb-drop b{color:var(--orange);}
+  @media (max-width:700px){ .wb-row{grid-template-columns:1fr;} }
+</style>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const nf = new Intl.NumberFormat('es-PE');
+  const n0 = v => nf.format(Math.round(v || 0));
+  const pct = (a, b) => b ? (a / b * 100).toFixed(1) + '%' : '—';
+  const tiempo = s => { s = Math.round(s || 0); return s < 60 ? s + ' s' : Math.floor(s / 60) + ' min ' + String(s % 60).padStart(2, '0') + ' s'; };
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  let D = null;
+
+  // Suma filas por las columnas 'keys'; las métricas empiezan en la columna o (la columna 0 es la fecha).
+  function group(rows, keys, o, from, to, nm){
+    const m = new Map();
+    (rows || []).forEach(r => {
+      if (r[0] < from || r[0] > to) return;
+      const key = keys.map(i => r[i]), k = key.join('\u0001');
+      const a = m.get(k) || {key, v: new Array(nm).fill(0)};
+      for (let i = 0; i < nm; i++) a.v[i] += +r[o + i] || 0;
+      m.set(k, a);
+    });
+    return [...m.values()];
+  }
+  function canal(src, med){
+    src = String(src || '').toLowerCase(); med = String(med || '').toLowerCase();
+    if (/facebook|instagram|^fb$|^ig$|meta|^m\.facebook|l\.facebook|lm\.facebook/.test(src)) return 'Meta (Facebook e Instagram)';
+    if (src === 'google' && /cpc|paid|ppc/.test(med)) return 'Google Ads';
+    if (src === 'google' && med === 'organic') return 'Google (sin pagar)';
+    if (/bing|yahoo|duckduckgo|ecosia/.test(src)) return 'Otros buscadores';
+    if (src === '(direct)') return 'Directo (escribieron la web)';
+    if (/linkedin|lnkd/.test(src)) return 'LinkedIn';
+    if (/whatsapp|wa\.me/.test(src)) return 'WhatsApp';
+    return 'Otros sitios';
+  }
+  function kpi(label, value, sub){ return `<div class="tile"><p class="tile-label">${label}</p><p class="tile-value">${value}</p>${sub ? `<p class="tile-sub">${sub}</p>` : ''}</div>`; }
+  function empty(id, cols, txt){ $(id).innerHTML = `<tr><td colspan="${cols}" class="table-sub">${txt}</td></tr>`; }
+
+  function setRange(p){
+    const today = new Date(); let from;
+    if (p === 'month') from = new Date(today.getFullYear(), today.getMonth(), 1);
+    else if (p === 'all') from = new Date(((D && D.dia.length) ? D.dia.reduce((m, r) => r[0] < m ? r[0] : m, iso(today)) : iso(today)) + 'T00:00:00');
+    else from = new Date(today.getTime() - (Number(p) - 1) * 86400000);
+    $('wbFrom').value = iso(from); $('wbTo').value = iso(today);
+    document.querySelectorAll('[data-wbpreset]').forEach(b => b.classList.toggle('active', b.dataset.wbpreset === p));
+    render();
+  }
+
+  const PASOS = [
+    ['visitas', 'Entraron a la web'],
+    ['diagnostico_abierto', 'Abrieron el diagnóstico'],
+    ['diag_paso_1_tu_negocio', '1 · Tu negocio'],
+    ['diag_paso_2_tus_numeros', '2 · Tus números'],
+    ['diag_paso_3_tu_reto', '3 · Tu reto'],
+    ['diag_paso_4_resultado', 'Vieron su resultado'],
+    ['diag_paso_5_datos_contacto', 'Pantalla de datos de contacto'],
+    ['generate_lead', 'Enviaron el formulario']
+  ];
+
+  function render(){
+    if (!D) return;
+    const from = $('wbFrom').value, to = $('wbTo').value;
+    // dia: fecha | sesiones, usuarios, nuevos, sesiones con interacción, segundos de interacción, páginas vistas
+    const t = (group(D.dia, [], 1, from, to, 6)[0] || {v:[0,0,0,0,0,0]}).v;
+    const ev = new Map(group(D.eventos, [1], 2, from, to, 2).map(a => [a.key[0], a.v[0]]));
+    const leads = ev.get('generate_lead') || 0, wa = ev.get('clic_whatsapp') || 0, ab = ev.get('diagnostico_abierto') || 0;
+    $('wbKpis').innerHTML =
+      kpi('Visitas', n0(t[0]), n0(t[1]) + ' personas · ' + n0(t[2]) + ' nuevas') +
+      kpi('Tiempo promedio', tiempo(t[0] ? t[4] / t[0] : 0), 'por visita') +
+      kpi('Se quedaron', pct(t[3], t[0]), 'visitas de más de 10 s o con acción') +
+      kpi('Abrieron el diagnóstico', n0(ab), pct(ab, t[0]) + ' de las visitas') +
+      kpi('Formularios enviados', n0(leads), pct(leads, t[0]) + ' de las visitas') +
+      kpi('Clics en WhatsApp', n0(wa), pct(wa, t[0]) + ' de las visitas');
+
+    // Gráfico diario
+    const days = []; for (let d = new Date(from + 'T00:00:00'); iso(d) <= to; d = new Date(d.getTime() + 86400000)) days.push(iso(d));
+    const byDay = new Map(group(D.dia, [0], 1, from, to, 1).map(a => [a.key[0], a.v[0]]));
+    const ldDay = new Map(group((D.eventos || []).filter(r => r[1] === 'generate_lead'), [0], 2, from, to, 1).map(a => [a.key[0], a.v[0]]));
+    if (!days.length || !byDay.size){ $('wbChart').innerHTML = '<p class="ga-empty">Todavía no hay visitas en este rango.</p>'; }
+    else {
+      const W = 900, H = 220, P = 30, bw = (W - P * 2) / days.length;
+      const maxV = Math.max(...days.map(d => byDay.get(d) || 0), 1), maxL = Math.max(...days.map(d => ldDay.get(d) || 0), 1);
+      let s = `<svg viewBox="0 0 ${W} ${H + 24}" class="ga-chart" role="img" aria-label="Visitas por día">`;
+      days.forEach((d, i) => {
+        const v = byDay.get(d) || 0, l = ldDay.get(d) || 0, h = v / maxV * (H - P), x = P + i * bw;
+        s += `<rect x="${x + bw * .15}" y="${H - h}" width="${bw * .7}" height="${h}" rx="3" fill="var(--purple-2)"><title>${d}: ${n0(v)} visitas · ${n0(l)} formularios</title></rect>`;
+        if (l) s += `<circle cx="${x + bw / 2}" cy="${H - l / maxL * (H - P)}" r="5" fill="var(--orange)"><title>${d}: ${n0(l)} formularios</title></circle>`;
+        if (days.length <= 31 && (i % Math.ceil(days.length / 10) === 0)) s += `<text x="${x + bw / 2}" y="${H + 16}" fill="var(--text-muted)" font-size="11" text-anchor="middle">${d.slice(8)}/${d.slice(5,7)}</text>`;
+      });
+      $('wbChart').innerHTML = s + '</svg>';
+    }
+
+    // Embudo del formulario
+    const val = k => k === 'visitas' ? t[0] : (ev.get(k) || 0);
+    const top = Math.max(val('visitas'), 1);
+    let prev = null, fh = '';
+    PASOS.forEach(([k, label], i) => {
+      const v = val(k), w = Math.max(v / top * 100, v ? 4 : 0);
+      const drop = prev != null && prev > 0 ? `se fueron <b>${n0(Math.max(prev - v, 0))}</b> (${pct(Math.max(prev - v, 0), prev)})` : '';
+      fh += `<div class="wb-row"><span>${label}</span><div class="wb-bar"><div class="wb-fill" style="width:${w}%">${n0(v)}</div></div><span class="wb-drop">${drop}</span></div>`;
+      prev = v;
+    });
+    $('wbFunnel').innerHTML = `<div class="wb-funnel">${fh}</div><p class="hint" style="margin-top:10px;">"Se fueron" es cuántos ya no pasaron al siguiente paso. El paso con más salida es el que hay que mejorar primero.</p>`;
+
+    // Origen
+    const om = new Map();
+    group(D.origen, [1, 2], 4, from, to, 4).forEach(a => { const c = canal(a.key[0], a.key[1]); const o = om.get(c) || {s:0, sec:0, ab:0, ld:0, wa:0}; o.s += a.v[0]; o.sec += a.v[3]; om.set(c, o); });
+    group(D.eventos_origen, [1, 2, 3], 4, from, to, 1).forEach(a => { const c = canal(a.key[1], a.key[2]); const o = om.get(c) || {s:0, sec:0, ab:0, ld:0, wa:0}; if (a.key[0] === 'generate_lead') o.ld += a.v[0]; if (a.key[0] === 'clic_whatsapp') o.wa += a.v[0]; if (a.key[0] === 'diagnostico_abierto') o.ab += a.v[0]; om.set(c, o); });
+    const orr = [...om.entries()].sort((a, b) => b[1].s - a[1].s);
+    orr.length ? $('wbOrigen').innerHTML = orr.map(([c, o]) => `<tr><td class="table-name">${esc(c)}</td><td>${n0(o.s)}</td><td>${tiempo(o.s ? o.sec / o.s : 0)}</td><td>${n0(o.ab)}</td><td>${n0(o.ld)}</td><td>${n0(o.wa)}</td><td>${pct(o.ld, o.s)}</td></tr>`).join('') : empty('wbOrigen', 7, 'Sin visitas en este rango.');
+
+    // Lima o provincia
+    const lugares = group(D.lugar, [1, 2, 3], 4, from, to, 3);
+    let lima = 0, prov = 0, ext = 0, nd = 0;
+    lugares.forEach(a => { const [pais, reg] = a.key; if (pais !== 'Peru' && pais !== 'Perú'){ if (pais === '(not set)') nd += a.v[0]; else ext += a.v[0]; return; } if (/lima|callao/i.test(reg)) lima += a.v[0]; else if (reg === '(not set)') nd += a.v[0]; else prov += a.v[0]; });
+    const tz = lima + prov + ext + nd;
+    $('wbZona').innerHTML = kpi('Lima y Callao', n0(lima), pct(lima, tz)) + kpi('Provincias', n0(prov), pct(prov, tz)) + kpi('Otros países', n0(ext), pct(ext, tz));
+    const cs = lugares.filter(a => a.key[2] !== '(not set)').sort((a, b) => b.v[0] - a.v[0]).slice(0, 30);
+    cs.length ? $('wbCiudades').innerHTML = cs.map(a => `<tr><td class="table-name">${esc(a.key[2])}</td><td>${esc(a.key[1])}${a.key[0] !== 'Peru' ? ' · ' + esc(a.key[0]) : ''}</td><td>${n0(a.v[0])}</td><td>${tiempo(a.v[0] ? a.v[2] / a.v[0] : 0)}</td></tr>`).join('') : empty('wbCiudades', 4, 'Sin datos en este rango.');
+
+    // Páginas de entrada y dispositivos
+    const pg = group(D.paginas, [1], 2, from, to, 3).sort((a, b) => b.v[0] - a.v[0]).slice(0, 20);
+    pg.length ? $('wbPaginas').innerHTML = pg.map(a => `<tr><td class="table-name">${esc(a.key[0] === '/' ? 'Inicio (/)' : a.key[0])}</td><td>${n0(a.v[0])}</td><td>${pct(a.v[1], a.v[0])}</td><td>${tiempo(a.v[0] ? a.v[2] / a.v[0] : 0)}</td></tr>`).join('') : empty('wbPaginas', 4, 'Sin datos en este rango.');
+    const dn = {mobile:'Celular', desktop:'Computadora', tablet:'Tablet'};
+    const dp = group(D.dispositivo, [1], 2, from, to, 2).sort((a, b) => b.v[0] - a.v[0]);
+    $('wbDisp').innerHTML = dp.map(a => kpi(dn[a.key[0]] || esc(a.key[0]), n0(a.v[0]), pct(a.v[0], t[0]) + ' · ' + tiempo(a.v[0] ? a.v[1] / a.v[0] : 0))).join('');
+  }
+
+  document.querySelectorAll('[data-wbpreset]').forEach(b => b.addEventListener('click', () => setRange(b.dataset.wbpreset)));
+  ['wbFrom', 'wbTo'].forEach(id => $(id).addEventListener('change', () => { document.querySelectorAll('[data-wbpreset]').forEach(b => b.classList.remove('active')); render(); }));
+
+  fetch('./web_data.json?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(j => {
+    if (!j || !j.updated_at){ $('wbKpis').innerHTML = '<p class="ga-empty">Esperando la primera actualización de Google Analytics (se actualiza cada hora).</p>'; return; }
+    D = j; ['dia','origen','lugar','eventos','eventos_origen','paginas','dispositivo'].forEach(k => D[k] = D[k] || []);
+    $('wbUpdated').textContent = 'Actualizado: ' + new Date(j.updated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'}) + ' · se actualiza cada hora';
+    setRange('7');
+  });
+
+  // Palabras excluidas en Google Ads (con fecha)
+  fetch('./negativas.json?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(j => {
+    if (!j){ empty('wbNeg', 3, 'Sin lista todavía.'); return; }
+    const fmtF = f => new Date(f + 'T12:00:00').toLocaleDateString('es-PE', {day:'numeric', month:'short', year:'numeric'});
+    const rows = (j.palabras || []).slice().sort((a, b) => b.fecha.localeCompare(a.fecha) || a.palabra.localeCompare(b.palabra));
+    const q = (j.quitadas || []).map(x => `<tr><td class="table-name" style="text-decoration:line-through;">${esc(x.palabra)}</td><td>${fmtF(x.fecha)}</td><td>${esc(x.motivo)}</td></tr>`).join('');
+    $('wbNeg').innerHTML = rows.map(x => `<tr><td class="table-name">${esc(x.palabra)}</td><td>${fmtF(x.fecha)}</td><td>${esc(x.motivo)}</td></tr>`).join('') + q;
+    $('wbNegHint').textContent = rows.length + ' palabras bloqueadas' + ((j.quitadas || []).length ? ' · tachadas: las que volvimos a permitir' : '');
+  });
+})();
+</script>
+<!-- #endregion web-script -->
 </body>
 </html>
