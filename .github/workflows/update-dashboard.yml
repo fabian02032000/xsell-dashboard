@@ -60,6 +60,12 @@ jobs:
           GOOGLE_ADS_SHEET_ID: "1_iAUygyIwG1wsvjxcdsqMlJJXP01fANvSLRQXZzeidc"
         run: python scripts/fetch_google_ads.py
 
+      - name: Traer visitas de la web (desde la hoja que llena el script de Google Analytics)
+        continue-on-error: true
+        env:
+          WEB_SHEET_ID: "1xAj4t_Ea4GFsGWzMtwLr43q3SGIflkldrYdgT-CjmJg"
+        run: python scripts/fetch_web.py
+
       - name: Guardar los datos actualizados
         run: |
           git config user.name "github-actions[bot]"
@@ -67,5 +73,6 @@ jobs:
           git add data.json meta_data.json organic_data.json mailchimp_data.json
           if [ -f meta_events_state.json ]; then git add meta_events_state.json; fi
           if [ -f google_ads_data.json ]; then git add google_ads_data.json; fi
+          if [ -f web_data.json ]; then git add web_data.json; fi
           git diff --staged --quiet || git commit -m "Actualiza datos del dashboard"
           git push
