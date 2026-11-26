@@ -66,6 +66,18 @@ jobs:
           WEB_SHEET_ID: "1xAj4t_Ea4GFsGWzMtwLr43q3SGIflkldrYdgT-CjmJg"
         run: python scripts/fetch_web.py
 
+      - name: Traer registros del formulario de la web (HubSpot)
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: python scripts/fetch_web_leads.py
+
+      - name: Traer números de Clarity (mapas de calor)
+        continue-on-error: true
+        env:
+          CLARITY_TOKEN: ${{ secrets.CLARITY_TOKEN }}
+        run: python scripts/fetch_clarity.py
+
       - name: Guardar los datos actualizados
         run: |
           git config user.name "github-actions[bot]"
@@ -74,5 +86,7 @@ jobs:
           if [ -f meta_events_state.json ]; then git add meta_events_state.json; fi
           if [ -f google_ads_data.json ]; then git add google_ads_data.json; fi
           if [ -f web_data.json ]; then git add web_data.json; fi
+          if [ -f web_leads.json ]; then git add web_leads.json; fi
+          if [ -f clarity_data.json ]; then git add clarity_data.json; fi
           git diff --staged --quiet || git commit -m "Actualiza datos del dashboard"
           git push
