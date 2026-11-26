@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T04:16:12.980777+00:00",
+  "updated_at": "2026-11-26T04:22:09.791822+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -735,13 +735,13 @@
       "created_date": "2026-11-17",
       "created_hour": 22,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Inversiones Yomaro",
       "deal_id": "68147740306",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "No le interesa por ahora",
       "lead_quality": null
     },
     {
@@ -933,13 +933,13 @@
       "created_date": "2026-11-16",
       "created_hour": 23,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Bodega lina",
       "deal_id": "68034135966",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Negocio muy pequeño o pocos leads",
       "lead_quality": null
     },
     {
@@ -951,13 +951,13 @@
       "created_date": "2026-11-16",
       "created_hour": 23,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "NAVAS inmobiliaria",
       "deal_id": "67997174390",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Nunca respondió llamada y WhatsApp",
       "lead_quality": null
     },
     {
@@ -7499,11 +7499,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 352
+      "count": 355
     },
     {
       "label": "Prospectos Contactados",
-      "count": 23
+      "count": 20
     },
     {
       "label": "Reunión Agendadas",
