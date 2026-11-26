@@ -5066,7 +5066,7 @@
       h += `<span class="tot">${n0(tot)} / ${n0(meta)}</span><span class="pc">${meta ? Math.round(tot / meta * 100) : 0}%</span></div>`;
     });
     $('wbMetas').innerHTML = h;
-    $('wbMetaNota').textContent = `Cada barra es una semana del mes (S1: 1–7, S2: 8–14, S3: 15–21, S4: 22–${fin}). Meta mensual de la web: ${G.registros} registros, ${G.leads_calidad} leads de calidad, ${G.reuniones} reuniones y ${G.ventas} venta(s); se reparte igual en 4 semanas. La marca vertical indica lo esperado a hoy en la semana actual. Lead de calidad, reunión y venta salen de lo que Ingrid marca en el Negocio de HubSpot.`;
+    $('wbMetaNota').textContent = `Cada barra es una semana del mes (S1: 1–7, S2: 8–14, S3: 15–21, S4: 22–${fin}). Metas totales de Xsell del mes (las mismas de la pestaña de Meta, sin importar de dónde venga el registro); aquí se ve lo que aporta la web: ${G.registros} registros, ${G.leads_calidad} leads de calidad, ${G.reuniones} reuniones y ${G.ventas} venta(s); se reparte igual en 4 semanas. La marca vertical indica lo esperado a hoy en la semana actual. Lead de calidad, reunión y venta salen de lo que Ingrid marca en el Negocio de HubSpot.`;
     // Descartes
     const desc = regs.filter(r => r.calidad === 'no_calificado' || r.motivo_descarte);
     const mot = new Map(); desc.forEach(r => { const k = r.motivo_descarte || 'Sin motivo marcado'; mot.set(k, (mot.get(k) || 0) + 1); });
