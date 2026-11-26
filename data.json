@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T04:22:09.791822+00:00",
+  "updated_at": "2026-11-26T04:27:42.998847+00:00",
   "campaign_start": "2026-07-25",
   "monthly_goal": 74.0,
   "weekly_goal": 17.3,
@@ -577,8 +577,9 @@
   "current_month_label": "November 2026",
   "current_week_leads": 0,
   "closed_deals": {
-    "count": 0,
-    "available": true
+    "count": null,
+    "available": false,
+    "error": "HTTP Error 429: Too Many Requests"
   },
   "leads_with_deal": 383,
   "leads_detail": [
@@ -1311,13 +1312,13 @@
       "created_date": "2026-11-13",
       "created_hour": 10,
       "has_deal": true,
-      "deal_stage": "Prospectos Contactados",
+      "deal_stage": "Descartada",
       "deal_name": "Jackson Martin Vasquez Urbina",
       "deal_id": "67969936231",
       "deal_note": null,
       "estadio_lead": null,
       "nivel_urgencia": null,
-      "discard_reason": null,
+      "discard_reason": "Independiente / sin empresa",
       "lead_quality": null
     },
     {
@@ -7499,11 +7500,11 @@
   "leads_status_breakdown": [
     {
       "label": "Descartada",
-      "count": 355
+      "count": 356
     },
     {
       "label": "Prospectos Contactados",
-      "count": 20
+      "count": 19
     },
     {
       "label": "Reunión Agendadas",
