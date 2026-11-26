@@ -32,7 +32,8 @@ function actualizar() {
     eventos: reporte(prop, desde, hasta, ['date', 'eventName'], ['eventCount', 'totalUsers'], EVENTOS),
     eventos_origen: reporte(prop, desde, hasta, ['date', 'eventName', 'sessionSource', 'sessionMedium'], ['eventCount'], EVENTOS),
     paginas: reporte(prop, desde, hasta, ['date', 'landingPage'], ['sessions', 'engagedSessions', 'userEngagementDuration']),
-    dispositivo: reporte(prop, desde, hasta, ['date', 'deviceCategory'], ['sessions', 'userEngagementDuration'])
+    dispositivo: reporte(prop, desde, hasta, ['date', 'deviceCategory'], ['sessions', 'userEngagementDuration']),
+    hora: reporte(prop, desde, hasta, ['date', 'hour'], ['sessions'])
   };
   var ss = abrirHoja();
   var hoja = ss.getSheets()[0];
