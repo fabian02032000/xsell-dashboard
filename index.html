@@ -818,6 +818,21 @@
   </section>
 
   <section>
+    <div class="section-head"><h2>Embudo: de registro a lead</h2><span class="hint">Cuántos registros de la web pasaron a ser lead, cuántos se descartaron y por qué · según lo que tipifica Ingrid en HubSpot</span></div>
+    <div class="chart-card">
+      <div class="wb-meta-top"><span class="table-sub">Meta del mes</span><span style="flex:1"></span>
+        <button type="button" class="filter-btn" id="wbMetaPrev">‹</button><b id="wbMetaMes" style="min-width:150px;text-align:center;"></b><button type="button" class="filter-btn" id="wbMetaNext">›</button></div>
+      <div id="wbMetas"></div>
+      <p class="hint" id="wbMetaNota" style="margin-top:10px;"></p>
+      <div id="wbDescartes" style="margin-top:10px;"></div>
+      <button type="button" class="filter-btn" id="wbSemBtn" style="margin-top:12px;">▸ Ver semanas</button>
+      <div class="table-wrap" id="wbSemanas" hidden style="margin-top:10px;"><table>
+        <thead><tr><th>Semana</th><th>Registros</th><th>Leads de calidad</th><th>Reuniones</th><th>Ventas</th></tr></thead>
+        <tbody id="wbSemBody"></tbody></table></div>
+    </div>
+  </section>
+
+  <section>
     <div class="section-head"><h2>Mapa de calor del mes</h2><span class="hint">Haz clic en un día para ver solo ese día</span></div>
     <div class="chart-card">
       <div class="wb-cal-top">
@@ -4889,7 +4904,14 @@
   .wb-hours-head{border-top:1px solid var(--border); padding-top:14px; margin-bottom:10px;}
   .wb-hm{display:grid; grid-template-columns:38px repeat(24,1fr); gap:3px; font-size:11px; color:var(--text-muted);}
   .wb-hm div{height:20px; border-radius:4px;} .wb-hm .l{background:none; display:flex; align-items:center;} .wb-hm .t{background:none; height:auto; text-align:left;}
+  .wb-meta-top{display:flex; align-items:center; gap:8px; margin-bottom:10px;}
+  .wb-mrow{display:grid; grid-template-columns:150px repeat(4,1fr) 90px 50px; gap:14px; align-items:center; padding:8px 0;}
+  .wb-mrow .lb{font-size:14px;} .wb-mrow .tot{font-weight:800; text-align:right;} .wb-mrow .pc{color:var(--text-muted); font-size:13px;}
+  .wb-wk{position:relative;} .wb-wk .tr{height:10px; border-radius:999px; background:var(--surface-2); overflow:hidden;}
+  .wb-wk .fl{height:100%; border-radius:999px;} .wb-wk .tx{font-size:11px; color:var(--text-muted); margin-top:4px;} .wb-wk .tx b{color:var(--text-primary);}
+  .wb-wk .mk{position:absolute; top:-3px; width:2px; height:16px; background:#ddd;}
   @media (max-width:760px){ .wb-row{grid-template-columns:1fr;} .wb-alert{margin-left:0;} }
+  @media (max-width:760px){ .wb-mrow{grid-template-columns:1fr 1fr;} }
 </style>
 <script>
 (function(){
@@ -4956,6 +4978,7 @@
       kpi('Registros', n0(regsAll.length), pct(regsAll.length, t[0]) + ' de las visitas') +
       kpi('Clics en WhatsApp', n0(evAll.get('clic_whatsapp')), pct(evAll.get('clic_whatsapp') || 0, t[0]) + ' de las visitas');
     renderEmbudo(from, to);
+    renderMetas();
     renderCal(from, to);
     renderResto(from, to, t, regsAll);
   }
@@ -5010,6 +5033,51 @@
     $('wbEmbudo').innerHTML = html + '</div>';
     $('wbEmbHint').textContent = from + ' al ' + to + ' · sigue el rango de arriba';
     $('wbEmbNota').textContent = 'La barra usa escala de raíz cuadrada para que los últimos pasos se vean junto a las impresiones; los números y porcentajes son exactos. Registros = personas que llegaron a HubSpot desde el formulario o el chat de la web. Para que una campaña de Meta entre aquí, su nombre debe incluir TRÁFICO o WEB y sus enlaces llevar utm_source=facebook.' + (D.updated_at ? '' : ' Google Analytics todavía no entrega datos de visitas.');
+  }
+
+  let metaMonth = null;
+  function renderMetas(){
+    const G = X.goals || {registros:40, leads_calidad:12, reuniones:4, ventas:1};
+    const hoy = new Date(); if (!metaMonth) metaMonth = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+    const y = metaMonth.getFullYear(), mo = metaMonth.getMonth(), fin = new Date(y, mo + 1, 0).getDate();
+    $('wbMetaMes').textContent = MESES[mo] + ' de ' + y;
+    const sem = [[1,7],[8,14],[15,21],[22,fin]];
+    const regs = ((X.leads && X.leads.registros) || []).filter(r => { const d = new Date(r.fecha + 'T12:00:00'); return d.getFullYear() === y && d.getMonth() === mo; });
+    const wk = r => { const d = +r.fecha.slice(8); return d <= 7 ? 0 : d <= 14 ? 1 : d <= 21 ? 2 : 3; };
+    const filas = [
+      ['Registros', 'registros', r => true],
+      ['Leads de calidad', 'leads_calidad', r => r.calidad === 'calidad'],
+      ['Reuniones', 'reuniones', r => r.reunion],
+      ['Ventas', 'ventas', r => r.venta]
+    ];
+    const cuenta = filas.map(([, , f]) => { const c = [0,0,0,0]; regs.filter(f).forEach(r => c[wk(r)]++); return c; });
+    const esMesActual = y === hoy.getFullYear() && mo === hoy.getMonth();
+    const semHoy = esMesActual ? wk({fecha: iso(hoy)}) : -1;
+    let h = '';
+    filas.forEach(([lbl, key], i) => {
+      const meta = +G[key] || 0, ms = meta / 4, c = cuenta[i], tot = c.reduce((a, b) => a + b, 0);
+      h += `<div class="wb-mrow"><span class="lb">${lbl}</span>`;
+      c.forEach((v, k) => {
+        const p = ms ? Math.min(v / ms, 1) : 0, ok = ms && v >= ms;
+        let mk = '';
+        if (k === semHoy){ const dd = hoy.getDate() - sem[k][0] + 1, largo = sem[k][1] - sem[k][0] + 1; mk = `<span class="mk" style="left:${Math.min(dd / largo, 1) * 100}%" title="lo esperado a hoy"></span>`; }
+        h += `<div class="wb-wk"><div class="tr"><div class="fl" style="width:${p * 100}%;background:${ok ? 'var(--good)' : 'var(--critical)'}"></div></div>${mk}<div class="tx">S${k + 1} · <b>${n0(v)}</b> / ${ms % 1 ? ms.toFixed(1) : ms} · <b>${ms ? Math.round(v / ms * 100) : 0}%</b></div></div>`;
+      });
+      h += `<span class="tot">${n0(tot)} / ${n0(meta)}</span><span class="pc">${meta ? Math.round(tot / meta * 100) : 0}%</span></div>`;
+    });
+    $('wbMetas').innerHTML = h;
+    $('wbMetaNota').textContent = `Cada barra es una semana del mes (S1: 1–7, S2: 8–14, S3: 15–21, S4: 22–${fin}). Meta mensual de la web: ${G.registros} registros, ${G.leads_calidad} leads de calidad, ${G.reuniones} reuniones y ${G.ventas} venta(s); se reparte igual en 4 semanas. La marca vertical indica lo esperado a hoy en la semana actual. Lead de calidad, reunión y venta salen de lo que Ingrid marca en el Negocio de HubSpot.`;
+    // Descartes
+    const desc = regs.filter(r => r.calidad === 'no_calificado' || r.motivo_descarte);
+    const mot = new Map(); desc.forEach(r => { const k = r.motivo_descarte || 'Sin motivo marcado'; mot.set(k, (mot.get(k) || 0) + 1); });
+    const sinTip = regs.filter(r => !r.negocio).length;
+    $('wbDescartes').innerHTML = `<p class="tile-label" style="margin:0 0 6px;">Descartados: <b style="color:var(--text-primary)">${n0(desc.length)}</b> de ${n0(regs.length)} · sin tipificar todavía: <b style="color:var(--warning)">${n0(sinTip)}</b></p>` +
+      [...mot.entries()].sort((a, b) => b[1] - a[1]).map(([k, v]) => `<span class="ga-pill ga-off" style="margin:0 6px 6px 0;color:var(--text-primary);">${esc(k)} · <b>${n0(v)}</b></span>`).join('');
+    // Tabla por semana
+    const nomMes = MESES[mo].slice(0, 3).toLowerCase();
+    let tb = sem.map((w, k) => `<tr><td class="table-name">S${k + 1} · ${w[0]}–${w[1]} ${nomMes}.</td>${filas.map(([, key], i) => { const ms = (+G[key] || 0) / 4; return `<td>${n0(cuenta[i][k])} <span class="table-sub">/ ${ms % 1 ? ms.toFixed(1) : ms} · ${ms ? Math.round(cuenta[i][k] / ms * 100) : 0}%</span></td>`; }).join('')}</tr>`).join('');
+    tb += `<tr style="font-weight:700;"><td class="table-name">Mes</td>${filas.map(([, key], i) => { const t = cuenta[i].reduce((a, b) => a + b, 0), m = +G[key] || 0; return `<td>${n0(t)} <span class="table-sub">/ ${m} · ${m ? Math.round(t / m * 100) : 0}%</span></td>`; }).join('')}</tr>`;
+    $('wbSemBody').innerHTML = tb;
   }
 
   function porDia(metric){
@@ -5110,12 +5178,15 @@
   ['wbFrom', 'wbTo'].forEach(id => $(id).addEventListener('change', () => { document.querySelectorAll('[data-wbpreset]').forEach(b => b.classList.remove('active')); render(); }));
   document.querySelectorAll('[data-wbview]').forEach(b => b.addEventListener('click', () => { view = b.dataset.wbview; document.querySelectorAll('[data-wbview]').forEach(x => x.classList.toggle('active', x === b)); render(); }));
   document.querySelectorAll('[data-wbcal]').forEach(b => b.addEventListener('click', () => { calMetric = b.dataset.wbcal; document.querySelectorAll('[data-wbcal]').forEach(x => x.classList.toggle('active', x === b)); render(); }));
+  $('wbMetaPrev').addEventListener('click', () => { metaMonth = new Date(metaMonth.getFullYear(), metaMonth.getMonth() - 1, 1); renderMetas(); });
+  $('wbMetaNext').addEventListener('click', () => { metaMonth = new Date(metaMonth.getFullYear(), metaMonth.getMonth() + 1, 1); renderMetas(); });
+  $('wbSemBtn').addEventListener('click', () => { const t = $('wbSemanas'); t.hidden = !t.hidden; $('wbSemBtn').textContent = (t.hidden ? '▸ Ver' : '▾ Ocultar') + ' semanas'; });
   $('wbCalPrev').addEventListener('click', () => { calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() - 1, 1); render(); });
   $('wbCalNext').addEventListener('click', () => { calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() + 1, 1); render(); });
 
   const getJ = u => fetch(u + '?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
-  Promise.all([getJ('./web_data.json'), getJ('./google_ads_data.json'), getJ('./meta_data.json'), getJ('./web_leads.json'), getJ('./clarity_data.json')]).then(([j, gads, meta, leads, cl]) => {
-    X = {gads, meta, leads, cl};
+  Promise.all([getJ('./web_data.json'), getJ('./google_ads_data.json'), getJ('./meta_data.json'), getJ('./web_leads.json'), getJ('./clarity_data.json'), getJ('./web_goals.json')]).then(([j, gads, meta, leads, cl, goals]) => {
+    X = {gads, meta, leads, cl, goals};
     D = j || {}; ['dia','origen','lugar','eventos','eventos_origen','paginas','dispositivo','hora'].forEach(k => D[k] = D[k] || []);
     $('wbUpdated').textContent = D.updated_at && D.dia.length ? 'Actualizado: ' + new Date(D.updated_at).toLocaleString('es-PE', {dateStyle:'medium', timeStyle:'short'}) + ' · se actualiza cada hora' : 'Google Analytics todavía no entrega visitas (la primera vez tarda unas horas).';
     setRange('7');
