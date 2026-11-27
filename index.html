@@ -546,7 +546,8 @@
 
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="leads">📘 Meta Ads</button>
-    <button class="tab-btn" data-tab="google">🔎 Google Ads</button>
+    <button class="tab-btn" data-tab="google">🔎 SEM · Google Ads</button>
+    <button class="tab-btn" data-tab="seo">🌱 SEO · Google sin pagar</button>
     <button class="tab-btn" data-tab="web">🌐 Web</button>
     <button class="tab-btn" data-tab="calendar">🗓️ Calendario de creación</button>
     <button class="tab-btn" data-tab="organic">📱 Contenido orgánico</button>
@@ -717,7 +718,7 @@
   <div class="tab-panel" id="tab-google">
   <section>
     <div class="section-head">
-      <h2>Google Ads · Rango de fechas</h2>
+      <h2>SEM (Google Ads, pagado) · Rango de fechas</h2>
       <span class="hint" id="gaUpdated">Esperando la primera actualización de Google Ads.</span>
     </div>
     <div class="chart-card">
@@ -775,6 +776,65 @@
   </section>
   </div>
   <!-- #endregion google-ads-panel -->
+
+  <!-- #region seo-panel -->
+  <div class="tab-panel" id="tab-seo">
+  <section>
+    <div class="section-head">
+      <h2>SEO (Google sin pagar) · Rango de fechas</h2>
+      <span class="hint" id="soUpdated">Cargando…</span>
+    </div>
+    <div class="chart-card">
+      <div class="date-filter-bar">
+        <div class="date-filter-presets">
+          <button type="button" class="filter-btn active" data-sopreset="7">Últimos 7 días</button>
+          <button type="button" class="filter-btn" data-sopreset="28">Últimos 28 días</button>
+          <button type="button" class="filter-btn" data-sopreset="90">Últimos 90 días</button>
+          <button type="button" class="filter-btn" data-sopreset="all">Todo el período</button>
+        </div>
+        <div class="date-filter-inputs">
+          <label>Desde <input type="date" id="soFrom"></label>
+          <label>Hasta <input type="date" id="soTo"></label>
+        </div>
+      </div>
+      <p class="table-sub" id="soAviso" style="margin:14px 0 0;"></p>
+      <div class="kpi-row" id="soKpis" style="margin-top:16px;"></div>
+      <p class="table-sub" style="margin:12px 0 0;">Arriba: lo que pasa en Google (Search Console). Abajo: lo que hacen en la web los que llegan sin anuncio (Google Analytics). Lo pagado está en la pestaña SEM.</p>
+      <div class="kpi-row" id="soKpisWeb" style="margin-top:12px;"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Clics e impresiones por día</h2><span class="hint">Barras: veces que la web salió en Google · número: clics</span></div>
+    <div class="chart-card"><div id="soChart" class="so-chart"></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Palabras que buscan en Google</h2><span class="hint" id="soPalHint">Búsquedas en las que apareció wexsell.co (sin pagar)</span></div>
+    <div class="chart-card"><div class="table-wrap scroll-y"><table class="compact">
+      <thead><tr><th>Búsqueda</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>Posición</th></tr></thead>
+      <tbody id="soPalabras"></tbody></table></div>
+      <p class="table-sub" style="margin-top:10px;">Impresiones = veces que la web apareció en los resultados. Posición = lugar promedio en Google (1 es el primero; del 1 al 10 es la primera página).</p></div>
+  </section>
+
+  <section>
+    <div class="grid-2">
+      <div>
+        <div class="section-head"><h2>Páginas en Google</h2><span class="hint">Search Console</span></div>
+        <div class="chart-card"><div class="table-wrap scroll-y"><table class="compact">
+          <thead><tr><th>Página</th><th>Impr.</th><th>Clics</th><th>Posición</th></tr></thead>
+          <tbody id="soPaginas"></tbody></table></div></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>Qué hacen al entrar</h2><span class="hint">Visitas sin anuncio desde buscadores · Google Analytics</span></div>
+        <div class="chart-card"><div class="table-wrap scroll-y"><table class="compact">
+          <thead><tr><th>Página de entrada</th><th>Visitas</th><th>Se quedaron</th><th>Tiempo prom.</th></tr></thead>
+          <tbody id="soEntrada"></tbody></table></div></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <!-- #endregion seo-panel -->
 
   <!-- #region web-panel -->
   <div class="tab-panel" id="tab-web">
@@ -889,10 +949,22 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Mapa de calor de la página y comportamiento</h2><span class="hint" id="wbClHint">Microsoft Clarity · gratis</span></div>
+    <div class="section-head"><h2>Mapa de calor de la página</h2><span class="hint" id="wbSecHint">Inicio de wexsell.co · por secciones, de arriba hacia abajo</span></div>
+    <div class="chart-card">
+      <div class="wb-view" style="margin-bottom:14px;"><span class="table-sub">Equipo</span>
+        <button type="button" class="filter-btn active" data-wbsecdev="todo">Todos</button>
+        <button type="button" class="filter-btn" data-wbsecdev="mobile">Celular</button>
+        <button type="button" class="filter-btn" data-wbsecdev="desktop">Computadora</button></div>
+      <div id="wbSecMap" class="wb-secmap"></div>
+      <p class="table-sub" style="margin:12px 0 0;">Cada franja es una parte de la página, en el mismo orden en que se ve. El color muestra cuántos de los que entraron llegaron a verla (más naranja = más gente). A la derecha, los clics que hicieron en esa parte.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Comportamiento (Microsoft Clarity)</h2><span class="hint" id="wbClHint">Microsoft Clarity · gratis</span></div>
     <div class="chart-card">
       <div class="kpi-row" id="wbClarity"></div>
-      <p class="table-sub" style="margin:12px 0 12px;">El mapa de calor de la página (dónde hacen clic y hasta dónde bajan) y las grabaciones de cada visita se ven en Clarity; Clarity no deja mostrarlos dentro de otra página.</p>
+      <p class="table-sub" style="margin:12px 0 12px;">El mapa de clics exacto (punto por punto) y las grabaciones de cada visita se ven en Clarity: Clarity no deja mostrarlos dentro de otra página.</p>
       <a class="filter-btn active" style="display:inline-block;text-decoration:none;margin-right:8px;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/heatmaps" target="_blank" rel="noopener">Ver mapa de calor</a>
       <a class="filter-btn" style="display:inline-block;text-decoration:none;" href="https://clarity.microsoft.com/projects/view/zji53zcoox/impressions" target="_blank" rel="noopener">Ver grabaciones</a>
     </div>
@@ -4910,6 +4982,17 @@
   .wb-wk{position:relative;} .wb-wk .tr{height:10px; border-radius:999px; background:var(--surface-2); overflow:hidden;}
   .wb-wk .fl{height:100%; border-radius:999px;} .wb-wk .tx{font-size:11px; color:var(--text-muted); margin-top:4px;} .wb-wk .tx b{color:var(--text-primary);}
   .wb-wk .mk{position:absolute; top:-3px; width:2px; height:16px; background:#ddd;}
+  .wb-secmap{display:flex; flex-direction:column; gap:4px; max-width:760px;}
+  .wb-sec{display:grid; grid-template-columns:1fr 150px; gap:12px; align-items:stretch;}
+  .wb-sec .band{border-radius:8px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; color:#fff; min-height:30px;}
+  .wb-sec .band b{font-size:14px;} .wb-sec .band span{font-weight:900; font-size:16px;}
+  .wb-sec .clk{font-size:12px; color:var(--text-muted); display:flex; align-items:center; gap:8px;}
+  .wb-sec .clk i{display:inline-block; height:10px; border-radius:999px; background:var(--purple-2); min-width:3px;}
+  .so-chart{display:flex; align-items:flex-end; gap:4px; height:190px; padding-top:10px;}
+  .so-chart .c{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; min-width:6px;}
+  .so-chart .b{width:100%; border-radius:4px 4px 0 0; background:linear-gradient(180deg,var(--purple-2),var(--purple-1)); min-height:2px;}
+  .so-chart .k{font-size:11px; font-weight:800; color:var(--orange); margin-bottom:3px;}
+  .so-chart .d{font-size:10px; color:var(--text-muted); margin-top:4px; white-space:nowrap;}
   @media (max-width:760px){ .wb-row{grid-template-columns:1fr;} .wb-alert{margin-left:0;} }
   @media (max-width:760px){ .wb-mrow{grid-template-columns:1fr 1fr;} }
 </style>
@@ -5172,7 +5255,26 @@
         kpi('Regresan rápido', f1(avg('QuickbackClick', 'sessionsWithMetricPercentage')), 'entran y vuelven atrás');
       $('wbClHint').textContent = 'Microsoft Clarity · ' + sel.length + ' día(s) con datos';
     }
+    renderSecciones(from, to);
   }
+
+  // Mapa de calor por secciones (eventos sec_ver_<id> y sec_clic_<id> de Google Analytics)
+  const SECS = [['inicio','Portada'],['multiplicadores','Multiplicadores'],['caso','Casos'],['modelos','Modelos'],['proceso','Cómo trabajamos'],['sectores','Sectores'],['contacto','Contacto'],['pie','Pie de página']];
+  let secDev = 'todo';
+  function renderSecciones(from, to){
+    const rows = (D.secciones || []).filter(r => r[0] >= from && r[0] <= to && (secDev === 'todo' || r[2] === secDev));
+    const tot = {};
+    rows.forEach(r => { const k = r[1]; tot[k] = tot[k] || [0, 0]; tot[k][0] += +r[3] || 0; tot[k][1] += +r[4] || 0; });
+    const ver = id => (tot['sec_ver_' + id] || [0, 0])[1], clic = id => (tot['sec_clic_' + id] || [0, 0])[0];
+    const base = Math.max(ver('inicio'), ...SECS.map(s => ver(s[0])));
+    if (!base){ $('wbSecMap').innerHTML = '<p class="ga-empty">Todavía no hay datos de secciones en este rango. La medición por secciones empezó el 26 de noviembre de 2026 por la noche; los primeros datos llegan en unas horas.</p>'; return; }
+    const maxC = Math.max(1, ...SECS.map(s => clic(s[0])));
+    const color = p => { const t = Math.max(0, Math.min(1, p)); const a = [45, 26, 74], b = [255, 107, 19]; return 'rgb(' + a.map((x, i) => Math.round(x + (b[i] - x) * t)).join(',') + ')'; };
+    $('wbSecMap').innerHTML = SECS.map(([id, nm]) => { const p = ver(id) / base, c = clic(id);
+      return `<div class="wb-sec"><div class="band" style="background:${color(p)}"><b>${nm}</b><span>${(p * 100).toFixed(0)}%</span></div><div class="clk"><i style="width:${Math.round(c / maxC * 70)}px"></i>${n0(c)} clic${c === 1 ? '' : 's'}</div></div>`; }).join('');
+    $('wbSecHint').textContent = 'Inicio de wexsell.co · ' + n0(base) + ' personas en el rango · % que llegó a ver cada parte';
+  }
+  document.querySelectorAll('[data-wbsecdev]').forEach(b => b.addEventListener('click', () => { secDev = b.dataset.wbsecdev; document.querySelectorAll('[data-wbsecdev]').forEach(x => x.classList.toggle('active', x === b)); render(); }));
 
   document.querySelectorAll('[data-wbpreset]').forEach(b => b.addEventListener('click', () => setRange(b.dataset.wbpreset)));
   ['wbFrom', 'wbTo'].forEach(id => $(id).addEventListener('change', () => { document.querySelectorAll('[data-wbpreset]').forEach(b => b.classList.remove('active')); render(); }));
@@ -5204,5 +5306,88 @@
 })();
 </script>
 <!-- #endregion web-script -->
+
+<!-- #region seo-script -->
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const nf = new Intl.NumberFormat('es-PE');
+  const n0 = v => nf.format(Math.round(v || 0));
+  const pct = (a, b) => b ? (a / b * 100).toFixed(a / b < .1 ? 2 : 1) + '%' : '—';
+  const tiempo = s => { s = Math.round(s || 0); return s < 60 ? s + ' s' : Math.floor(s / 60) + ' min ' + String(s % 60).padStart(2, '0') + ' s'; };
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const kpi = (label, value, sub) => `<div class="tile"><p class="tile-label">${label}</p><p class="tile-value">${value}</p>${sub ? `<p class="tile-sub">${sub}</p>` : ''}</div>`;
+  const empty = (id, cols, txt) => { $(id).innerHTML = `<tr><td colspan="${cols}" class="table-sub">${txt}</td></tr>`; };
+  const posTxt = (pi, im) => im ? (pi / im).toFixed(1) : '—';
+  const buscador = (src, med) => /organic/.test(String(med).toLowerCase()) && /google|bing|yahoo|duckduckgo|ecosia/.test(String(src).toLowerCase());
+  let W = {}, L = null;
+
+  // Suma por clave: filas [fecha, ...claves, clics, impresiones, posición] → [clics, impresiones, posición×impresiones]
+  function sumSC(rows, nk, from, to){
+    const m = new Map();
+    (rows || []).forEach(r => {
+      if (r[0] < from || r[0] > to) return;
+      const k = r.slice(1, 1 + nk).join('\u0001'), c = +r[1 + nk] || 0, i = +r[2 + nk] || 0, p = +r[3 + nk] || 0;
+      const a = m.get(k) || {key: r.slice(1, 1 + nk), c: 0, i: 0, pi: 0};
+      a.c += c; a.i += i; a.pi += p * i; m.set(k, a);
+    });
+    return [...m.values()];
+  }
+
+  function setRange(p){
+    const today = new Date(); let from;
+    if (p === 'all') from = '2026-01-01';
+    else { const d = new Date(today); d.setDate(d.getDate() - (+p - 1)); from = iso(d); }
+    $('soFrom').value = from; $('soTo').value = iso(today);
+    document.querySelectorAll('[data-sopreset]').forEach(b => b.classList.toggle('active', b.dataset.sopreset === p));
+    render();
+  }
+
+  function render(){
+    const from = $('soFrom').value, to = $('soTo').value, sc = W.sc || {};
+    // Search Console
+    const dia = sumSC(sc.dia, 0, from, to), T = dia.reduce((a, x) => ({c: a.c + x.c, i: a.i + x.i, pi: a.pi + x.pi}), {c: 0, i: 0, pi: 0});
+    if (!W.sc) $('soAviso').textContent = 'Search Console se conectó el 26 de noviembre de 2026. Los datos empiezan a llegar en la próxima actualización.';
+    else if (sc.error) $('soAviso').textContent = 'Search Console todavía no responde (falta aceptar el permiso del script de Google). Detalle: ' + sc.error.slice(0, 120);
+    else if (!(sc.dia || []).length) $('soAviso').textContent = 'Search Console ya está conectado. Google tarda 2 o 3 días en mostrar las primeras búsquedas de un sitio nuevo.';
+    else $('soAviso').textContent = '';
+    $('soKpis').innerHTML = kpi('Clics desde Google', n0(T.c), 'sin pagar') + kpi('Impresiones', n0(T.i), 'veces que salió en Google') + kpi('CTR', pct(T.c, T.i), 'clics / impresiones') + kpi('Posición promedio', posTxt(T.pi, T.i), '1 = primer resultado');
+    // Google Analytics: visitas desde buscadores sin pagar
+    const org = (W.origen || []).filter(r => r[0] >= from && r[0] <= to && buscador(r[1], r[2]));
+    const ses = org.reduce((a, r) => a + (+r[4] || 0), 0), eng = org.reduce((a, r) => a + (+r[6] || 0), 0), dur = org.reduce((a, r) => a + (+r[7] || 0), 0);
+    const diag = (W.eventos_origen || []).filter(r => r[0] >= from && r[0] <= to && r[1] === 'diagnostico_abierto' && buscador(r[2], r[3])).reduce((a, r) => a + (+r[4] || 0), 0);
+    const regs = ((L && L.registros) || []).filter(r => r.fecha >= from && r.fecha <= to && /sin pagar/.test(r.origen || '') && /Google|buscador/i.test(r.origen || '')).length;
+    $('soKpisWeb').innerHTML = kpi('Visitas desde Google', n0(ses), 'sin anuncio · Google Analytics') + kpi('Tiempo promedio', tiempo(ses ? dur / ses : 0), 'por visita') + kpi('Se quedaron', pct(eng, ses), 'más de 10 s o con alguna acción') + kpi('Abrieron el diagnóstico', n0(diag), pct(diag, ses) + ' de las visitas') + kpi('Registros', n0(regs), 'dejaron sus datos');
+    // Gráfico diario
+    const porDia = new Map(dia.map(x => [x.key[0] || '', x]));
+    const dias = []; for (let d = new Date(from + 'T12:00:00'); iso(d) <= to && dias.length < 120; d.setDate(d.getDate() + 1)) dias.push(iso(d));
+    const ds = dias.map(f => (sc.dia || []).filter(r => r[0] === f).reduce((a, r) => ({c: a.c + (+r[1] || 0), i: a.i + (+r[2] || 0)}), {c: 0, i: 0}));
+    const mx = Math.max(1, ...ds.map(x => x.i));
+    $('soChart').innerHTML = (sc.dia || []).length ? dias.map((f, k) => `<div class="c" title="${f}: ${ds[k].i} impresiones, ${ds[k].c} clics">${ds[k].c ? `<span class="k">${ds[k].c}</span>` : ''}<div class="b" style="height:${Math.round(ds[k].i / mx * 150)}px"></div>${dias.length <= 31 && (k % Math.ceil(dias.length / 10) === 0) ? `<span class="d">${f.slice(8)}/${f.slice(5, 7)}</span>` : ''}</div>`).join('') : '<p class="ga-empty">Sin datos de Search Console todavía.</p>';
+    // Palabras
+    const pal = sumSC(sc.palabras, 1, from, to).sort((a, b) => b.i - a.i || b.c - a.c).slice(0, 100);
+    pal.length ? $('soPalabras').innerHTML = pal.map(a => `<tr><td class="table-name">${esc(a.key[0])}</td><td>${n0(a.i)}</td><td>${n0(a.c)}</td><td>${pct(a.c, a.i)}</td><td>${posTxt(a.pi, a.i)}</td></tr>`).join('') : empty('soPalabras', 5, 'Todavía no hay búsquedas en este rango.');
+    $('soPalHint').textContent = pal.length ? pal.length + ' búsquedas en las que apareció wexsell.co (sin pagar)' : 'Búsquedas en las que apareció wexsell.co (sin pagar)';
+    // Páginas
+    const pag = sumSC(sc.paginas, 1, from, to).sort((a, b) => b.i - a.i).slice(0, 30);
+    pag.length ? $('soPaginas').innerHTML = pag.map(a => `<tr><td class="table-name">${esc(String(a.key[0]).replace(/^https?:\/\/[^/]+/, '') || '/')}</td><td>${n0(a.i)}</td><td>${n0(a.c)}</td><td>${posTxt(a.pi, a.i)}</td></tr>`).join('') : empty('soPaginas', 4, 'Sin datos en este rango.');
+    const m = new Map();
+    (W.organico_paginas || []).forEach(r => { if (r[0] < from || r[0] > to) return; const a = m.get(r[1]) || [0, 0, 0]; a[0] += +r[2] || 0; a[1] += +r[3] || 0; a[2] += +r[4] || 0; m.set(r[1], a); });
+    const ent = [...m.entries()].sort((a, b) => b[1][0] - a[1][0]).slice(0, 20);
+    ent.length ? $('soEntrada').innerHTML = ent.map(([p, v]) => `<tr><td class="table-name">${esc(p === '/' ? 'Inicio (/)' : p)}</td><td>${n0(v[0])}</td><td>${pct(v[1], v[0])}</td><td>${tiempo(v[0] ? v[2] / v[0] : 0)}</td></tr>`).join('') : empty('soEntrada', 4, 'Sin visitas desde buscadores en este rango.');
+  }
+
+  document.querySelectorAll('[data-sopreset]').forEach(b => b.addEventListener('click', () => setRange(b.dataset.sopreset)));
+  ['soFrom', 'soTo'].forEach(id => $(id).addEventListener('change', () => { document.querySelectorAll('[data-sopreset]').forEach(b => b.classList.remove('active')); render(); }));
+  const getJ = u => fetch(u + '?_=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+  Promise.all([getJ('./web_data.json'), getJ('./web_leads.json')]).then(([j, leads]) => {
+    W = j || {}; L = leads;
+    $('soUpdated').textContent = W.updated_at ? 'Actualizado: ' + new Date(W.updated_at).toLocaleString('es-PE', {dateStyle: 'medium', timeStyle: 'short'}) + ' · se actualiza cada hora' : 'Esperando la primera actualización.';
+    setRange('28');
+  });
+})();
+</script>
+<!-- #endregion seo-script -->
 </body>
 </html>
