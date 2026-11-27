@@ -3,6 +3,8 @@
  * Proyecto de Apps Script en la cuenta fabian02032000@gmail.com.
  * Servicios avanzados activados: Google Analytics Data API (AnalyticsData)
  * y Google Analytics Admin API (AnalyticsAdmin).
+ * También lee Google Search Console (SEO) de https://wexsell.co/ con el permiso
+ * webmasters.readonly (declarado en appsscript.json).
  *
  * 1. Ejecuta "configurar" una vez (pide permisos y deja la actualización cada hora).
  * 2. El script deja los números en la hoja "Xsell – Datos Web (dashboard)",
@@ -11,6 +13,7 @@
 var MEDICION = 'G-9308K1YS8Q';
 var NOMBRE_HOJA = 'Xsell – Datos Web (dashboard)';
 var TROZO = 40000;
+var SITIO_SC = 'https://wexsell.co/';
 var EVENTOS = ['page_view', 'diagnostico_abierto', 'diag_paso_0_inicio', 'diag_paso_1_tu_negocio', 'diag_paso_2_tus_numeros',
   'diag_paso_3_tu_reto', 'diag_paso_4_resultado', 'diag_paso_5_datos_contacto', 'generate_lead', 'clic_whatsapp'];
 
@@ -33,8 +36,13 @@ function actualizar() {
     eventos_origen: reporte(prop, desde, hasta, ['date', 'eventName', 'sessionSource', 'sessionMedium'], ['eventCount'], EVENTOS),
     paginas: reporte(prop, desde, hasta, ['date', 'landingPage'], ['sessions', 'engagedSessions', 'userEngagementDuration']),
     dispositivo: reporte(prop, desde, hasta, ['date', 'deviceCategory'], ['sessions', 'userEngagementDuration']),
-    hora: reporte(prop, desde, hasta, ['date', 'hour'], ['sessions'])
+    hora: reporte(prop, desde, hasta, ['date', 'hour'], ['sessions']),
+    // Mapa de calor por secciones: eventos sec_ver_<seccion> y sec_clic_<seccion>
+    secciones: reporte(prop, desde, hasta, ['date', 'eventName', 'deviceCategory'], ['eventCount', 'totalUsers'], null, 'sec_'),
+    // SEO: visitas de Google sin pagar por página de entrada
+    organico_paginas: reporte(prop, desde, hasta, ['date', 'landingPage'], ['sessions', 'engagedSessions', 'userEngagementDuration'], null, null, 'Organic Search')
   };
+  datos.sc = searchConsole();
   var ss = abrirHoja();
   var hoja = ss.getSheets()[0];
   hoja.setName('json');
@@ -65,7 +73,7 @@ function propiedad() {
   throw new Error('No encontré la propiedad de Analytics con ' + MEDICION);
 }
 
-function reporte(prop, desde, hasta, dims, mets, soloEventos) {
+function reporte(prop, desde, hasta, dims, mets, soloEventos, prefijo, canal) {
   var pedido = {
     dateRanges: [{ startDate: desde, endDate: hasta }],
     dimensions: dims.map(function (d) { return { name: d }; }),
@@ -73,6 +81,8 @@ function reporte(prop, desde, hasta, dims, mets, soloEventos) {
     limit: 100000
   };
   if (soloEventos) pedido.dimensionFilter = { filter: { fieldName: 'eventName', inListFilter: { values: soloEventos } } };
+  if (prefijo) pedido.dimensionFilter = { filter: { fieldName: 'eventName', stringFilter: { matchType: 'BEGINS_WITH', value: prefijo } } };
+  if (canal) pedido.dimensionFilter = { filter: { fieldName: 'sessionDefaultChannelGroup', stringFilter: { matchType: 'EXACT', value: canal } } };
   var res = AnalyticsData.Properties.runReport(pedido, prop);
   return (res.rows || []).map(function (r) {
     var fila = r.dimensionValues.map(function (v, i) {
@@ -89,4 +99,28 @@ function abrirHoja() {
   var ss = archivos.hasNext() ? SpreadsheetApp.openById(archivos.next().getId()) : SpreadsheetApp.create(NOMBRE_HOJA);
   DriveApp.getFileById(ss.getId()).setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
   return ss;
+}
+
+// SEO: Google Search Console (palabras, páginas y días). Si falla, el resto sigue igual.
+function searchConsole() {
+  var fin = new Date(), ini = new Date(fin.getTime() - 120 * 864e5);
+  var f = function (d) { return Utilities.formatDate(d, 'America/Lima', 'yyyy-MM-dd'); };
+  var url = 'https://searchconsole.googleapis.com/webmasters/v3/sites/' + encodeURIComponent(SITIO_SC) + '/searchAnalytics/query';
+  var pedir = function (dims) {
+    var res = UrlFetchApp.fetch(url, {
+      method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+      headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() },
+      payload: JSON.stringify({ startDate: f(ini), endDate: f(fin), dimensions: dims, rowLimit: 25000, dataState: 'all' })
+    });
+    if (res.getResponseCode() !== 200) throw new Error('Search Console ' + res.getResponseCode() + ': ' + res.getContentText().slice(0, 300));
+    return (JSON.parse(res.getContentText()).rows || []).map(function (r) {
+      return r.keys.concat([r.clicks, r.impressions, Math.round(r.position * 10) / 10]);
+    });
+  };
+  try {
+    return { sitio: SITIO_SC, dia: pedir(['date']), palabras: pedir(['date', 'query']), paginas: pedir(['date', 'page']), equipo: pedir(['date', 'device']) };
+  } catch (e) {
+    Logger.log(e);
+    return { sitio: SITIO_SC, error: String(e).slice(0, 300) };
+  }
 }
