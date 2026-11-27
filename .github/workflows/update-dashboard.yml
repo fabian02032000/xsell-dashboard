@@ -8,7 +8,9 @@ on:
     # momento quieres más o menos frecuencia — OJO: GitHub puede demorar un
     # poco más la ejecución en horas de mucho tráfico, así que 5 minutos es
     # el mejor esfuerzo, no una garantía exacta.
-    - cron: "*/5 * * * *"
+    # Varias horas fijas por hora, lejos del minuto 0 (GitHub descarta muchas
+    # ejecuciones programadas en los minutos más cargados).
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch: {}
   push:
     branches: [ main ]
