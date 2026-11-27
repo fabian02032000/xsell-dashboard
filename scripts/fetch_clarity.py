@@ -34,11 +34,16 @@ def main():
         return
     url = "https://www.clarity.ms/export-data/api/v1/project-live-insights?numOfDays=1&dimension1=Device"
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            res = json.loads(r.read().decode("utf-8"))
-    except Exception as e:  # noqa: BLE001
-        print(f"No se pudo consultar Clarity: {e}")
+    # Clarity a veces demora en responder: esperamos hasta 3 minutos y reintentamos una vez.
+    res = None
+    for intento in (1, 2):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                res = json.loads(r.read().decode("utf-8"))
+            break
+        except Exception as e:  # noqa: BLE001
+            print(f"No se pudo consultar Clarity (intento {intento}): {e}")
+    if res is None:
         return
     hoy = ahora.astimezone(LIMA).strftime("%Y-%m-%d")
     dia = {}
